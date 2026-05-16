@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phone ElectriK | Phone & Electronics Repair in Torrance, CA</title>
+  <meta name="description" content="Phone ElectriK in Torrance, CA offers fast, affordable phone and electronics repair — iPhone, Samsung, iPad, Apple Watch, laptops, game consoles & more. Walk-ins welcome. Call (323) 348-5667." />
+  <meta name="keywords" content="phone repair Torrance, iPhone repair Torrance, Samsung repair, iPad repair, screen repair, battery replacement, water damage repair, game console repair, laptop repair, Apple Watch repair, Phone ElectriK" />
+  <meta name="author" content="Phone ElectriK" />
+  <link rel="canonical" href="https://phoneelectrik.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Phone ElectriK | Electronics Repair in Torrance, CA" />
+  <meta property="og:description" content="Affordable, quality phone and electronics repair while you wait. iPhone, Samsung, iPad, laptops, game consoles & more. Located in Torrance, CA." />
+  <meta property="og:url" content="https://phoneelectrik.com/" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ElectronicsStore",
+    "name": "Phone ElectriK",
+    "image": "",
+    "url": "https://phoneelectrik.com",
+    "telephone": "+13233485667",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3025 Artesia Blvd STE 101",
+      "addressLocality": "Torrance",
+      "addressRegion": "CA",
+      "postalCode": "90504",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "09:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "10:00",
+        "closes": "18:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "reviewCount": "168"
+    },
+    "priceRange": "$$",
+    "description": "Phone ElectriK is an electronics repair shop in Torrance offering affordable repairs for iPhones, Samsung, iPads, laptops, game consoles, Apple Watch and more — while you wait."
+  }
+  </script>
+
+  <style>
+    /* ── Reset & Base ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: #1a1a2e;
+      background: #fff;
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Colors ───────────────────────────────────── */
+    :root {
+      --blue:       #1565c0;
+      --blue-dark:  #0d47a1;
+      --blue-light: #e3f0ff;
+      --silver:     #b0bec5;
+      --silver-light: #eceff1;
+      --dark:       #1a1a2e;
+      --text-muted: #546e7a;
+      --white:      #ffffff;
+      --radius:     10px;
+    }
+
+    /* ── Utilities ────────────────────────────────── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .section-label {
+      display: inline-block;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 50px;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 560px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 13px 30px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: transform 0.15s, box-shadow 0.15s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+    .btn-primary { background: var(--blue); color: var(--white); }
+    .btn-outline { background: transparent; color: var(--blue); border: 2px solid var(--blue); }
+
+    /* ── NAV ──────────────────────────────────────── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid #e0e7ef;
+      box-shadow: 0 2px 12px rgba(21,101,192,0.07);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .logo {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--blue-dark);
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: var(--silver); }
+    .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+    .nav-links a {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--dark);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-cta { background: var(--blue); color: var(--white) !important; padding: 8px 20px; border-radius: var(--radius); }
+    .nav-cta:hover { background: var(--blue-dark); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--dark); border-radius: 2px; transition: 0.3s; }
+
+    /* ── HERO ─────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, #1976d2 60%, #42a5f5 100%);
+      color: var(--white);
+      padding: 90px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-content { position: relative; max-width: 720px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      backdrop-filter: blur(4px);
+    }
+    .star-icon { color: #ffd54f; }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .hero h1 em { font-style: normal; color: #90caf9; }
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-hero-primary {
+      background: var(--white);
+      color: var(--blue-dark);
+      font-weight: 800;
+    }
+    .btn-hero-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 56px;
+      flex-wrap: wrap;
+    }
+    .hero-stat strong { display: block; font-size: 1.8rem; font-weight: 900; }
+    .hero-stat span { font-size: 0.82rem; opacity: 0.8; }
+
+    /* ── TRUST BAR ────────────────────────────────── */
+    .trust-bar {
+      background: var(--silver-light);
+      border-bottom: 1px solid #dde3ea;
+      padding: 18px 20px;
+    }
+    .trust-bar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .trust-icon { font-size: 1.1rem; }
+
+    /* ── SERVICES ─────────────────────────────────── */
+    .services { padding: 80px 20px; }
+    .services-header { text-align: center; margin-bottom: 50px; }
+    .services-header .section-sub { margin: 0 auto; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 22px;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid #dde3ea;
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .service-card:hover {
+      border-color: var(--blue);
+      box-shadow: 0 8px 28px rgba(21,101,192,0.12);
+      transform: translateY(-3px);
+    }
+    .service-icon {
+      width: 52px; height: 52px;
+      background: var(--blue-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+    .service-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; color: var(--dark); }
+    .service-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
+
+    /* ── WHY US ───────────────────────────────────── */
+    .why-us {
+      background: linear-gradient(135deg, #f0f6ff 0%, var(--silver-light) 100%);
+      padding: 80px 20px;
+    }
+    .why-us-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .why-us-content .section-sub { margin-bottom: 32px; }
+    .pillars { display: flex; flex-direction: column; gap: 20px; }
+    .pillar {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .pillar-icon {
+      width: 44px; height: 44px;
+      background: var(--blue);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      color: white;
+    }
+    .pillar-text h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 3px; }
+    .pillar-text p { font-size: 0.87rem; color: var(--text-muted); }
+    .why-us-visual {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px;
+      box-shadow: 0 4px 24px rgba(21,101,192,0.1);
+      border: 1px solid #dde3ea;
+    }
+    .rating-display { text-align: center; margin-bottom: 28px; }
+    .rating-stars { font-size: 2rem; margin-bottom: 8px; }
+    .rating-number { font-size: 3.5rem; font-weight: 900; color: var(--blue-dark); line-height: 1; }
+    .rating-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+    .review-divider { border: none; border-top: 1px solid #e8ecf0; margin: 24px 0; }
+    .review-item { margin-bottom: 18px; }
+    .review-meta { display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 4px; }
+    .review-name { font-weight: 700; color: var(--dark); }
+    .review-stars { color: #ffc107; font-size: 0.85rem; }
+    .review-text { font-size: 0.87rem; color: var(--text-muted); font-style: italic; }
+
+    /* ── ABOUT ────────────────────────────────────── */
+    .about { padding: 80px 20px; }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-card {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, #1976d2 100%);
+      border-radius: 16px;
+      padding: 48px 36px;
+      color: white;
+      text-align: center;
+    }
+    .about-card .big-number { font-size: 5rem; font-weight: 900; line-height: 1; color: #90caf9; }
+    .about-card .big-label { font-size: 1rem; font-weight: 600; margin-top: 8px; opacity: 0.9; }
+    .about-card .divider { border: none; border-top: 1px solid rgba(255,255,255,0.2); margin: 28px 0; }
+    .about-card .about-values { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+    .about-value { font-size: 0.85rem; font-weight: 700; padding: 8px 16px; background: rgba(255,255,255,0.12); border-radius: 50px; }
+    .about-content .section-sub { margin-bottom: 24px; }
+    .about-content p { color: var(--text-muted); margin-bottom: 16px; line-height: 1.75; }
+    .brands-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .brand-tag {
+      background: var(--blue-light);
+      color: var(--blue-dark);
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 50px;
+    }
+
+    /* ── ACCESSORIES ──────────────────────────────── */
+    .accessories {
+      background: var(--silver-light);
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .accessories-header { margin-bottom: 36px; }
+    .accessories-header .section-sub { margin: 0 auto; }
+    .acc-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .acc-item {
+      background: white;
+      border: 1px solid #dde3ea;
+      border-radius: var(--radius);
+      padding: 20px 28px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--dark);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .acc-item:hover { border-color: var(--blue); box-shadow: 0 4px 16px rgba(21,101,192,0.1); }
+    .acc-item span { font-size: 1.3rem; }
+
+    /* ── CONTACT ──────────────────────────────────── */
+    .contact { padding: 80px 20px; }
+    .contact-header { text-align: center; margin-bottom: 50px; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 22px; }
+    .contact-card {
+      background: var(--white);
+      border: 1px solid #dde3ea;
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+    .contact-card:hover { border-color: var(--blue); }
+    .contact-card-icon {
+      width: 46px; height: 46px;
+      background: var(--blue-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .contact-card h4 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; }
+    .contact-card p, .contact-card a { font-size: 0.97rem; font-weight: 600; color: var(--dark); }
+    .contact-card a:hover { color: var(--blue); }
+    .map-container {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid #dde3ea;
+      min-height: 340px;
+    }
+    .map-container iframe { width: 100%; height: 100%; min-height: 340px; border: none; }
+
+    /* ── FOOTER ───────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.75);
+      padding: 48px 20px 28px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 36px;
+    }
+    .footer-brand .logo { font-size: 1.3rem; color: white; margin-bottom: 12px; }
+    .footer-brand p { font-size: 0.87rem; line-height: 1.7; }
+    .footer-col h5 { color: white; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col ul a { font-size: 0.87rem; transition: color 0.2s; }
+    .footer-col ul a:hover { color: white; }
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* ── MOBILE ───────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 62px; left: 0; right: 0; background: white; padding: 20px; border-bottom: 1px solid #e0e7ef; gap: 16px; }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      .why-us-inner, .about-inner, .contact-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+      .hero-stats { gap: 24px; }
+      .trust-bar-inner { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ─────────────────────────────────────── -->
+  <header>
+    <nav>
+      <a href="#home" class="logo">Phone <span>Electri</span>K</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="tel:3233485667" class="nav-cta">Call Now</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ── HERO ────────────────────────────────────── -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="star-icon">★</span>
+        4.6 Stars &mdash; 168 Google Reviews &mdash; Torrance, CA
+      </div>
+      <h1>Your Trusted <em>Electronics Repair</em> Shop in Torrance</h1>
+      <p>We repair iPhones, Samsung, iPads, Apple Watch, laptops, game consoles &amp; more — while you wait. Affordable prices, quality work, and honest service every time.</p>
+      <div class="hero-btns">
+        <a href="tel:3233485667" class="btn btn-hero-primary">📞 Call (323) 348-5667</a>
+        <a href="#services" class="btn btn-hero-outline">See Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>4.6 ★</strong>
+          <span>Google Rating</span>
+        </div>
+        <div class="hero-stat">
+          <strong>168+</strong>
+          <span>Happy Customers</span>
+        </div>
+        <div class="hero-stat">
+          <strong>10+</strong>
+          <span>Years Experience</span>
+        </div>
+        <div class="hero-stat">
+          <strong>Same Day</strong>
+          <span>Most Repairs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRUST BAR ─────────────────────────────────── -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><span class="trust-icon">✅</span> Walk-ins Welcome</div>
+      <div class="trust-item"><span class="trust-icon">⚡</span> Same-Day Repairs</div>
+      <div class="trust-item"><span class="trust-icon">💰</span> Affordable Prices</div>
+      <div class="trust-item"><span class="trust-icon">🔒</span> Quality Guaranteed</div>
+      <div class="trust-item"><span class="trust-icon">📍</span> Torrance, CA</div>
+    </div>
+  </div>
+
+  <!-- ── SERVICES ──────────────────────────────────── -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-header">
+        <div class="section-label">What We Fix</div>
+        <h2 class="section-title">Repair Services We Offer</h2>
+        <p class="section-sub">From cracked screens to water damage — we handle it all while you wait or browse our accessories.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Screen Repair</h3>
+          <p>Cracked or shattered screen? We replace displays on iPhones, Samsung, Android phones and tablets.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔋</div>
+          <h3>Battery Replacement</h3>
+          <p>Battery draining fast or not charging? We swap it out quickly so you're back to full power.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💧</div>
+          <h3>Water Damage Repair</h3>
+          <p>Dropped your phone in water? Bring it in fast — we diagnose and restore water-damaged devices.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔌</div>
+          <h3>Charging Port Repair</h3>
+          <p>Won't charge no matter what cable you try? We repair and replace charging ports on all devices.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⌚</div>
+          <h3>Apple Watch Repair</h3>
+          <p>Screen cracks and battery issues on Apple Watch — we've got you covered.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💻</div>
+          <h3>Laptop Repair</h3>
+          <p>MacBook, Android, or Windows laptop — we handle screens, batteries, keyboards and more.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎮</div>
+          <h3>Game Console Repair</h3>
+          <p>PlayStation, Xbox, Nintendo Switch — we fix controller issues, HDMI ports, disc drives and more.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📟</div>
+          <h3>iPad &amp; Tablet Repair</h3>
+          <p>Apple iPad and Android tablets — screen replacements, battery swaps and charging port repairs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY US ─────────────────────────────────────── -->
+  <section class="why-us" id="reviews">
+    <div class="container">
+      <div class="why-us-inner">
+        <div class="why-us-content">
+          <div class="section-label">Why Choose Us</div>
+          <h2 class="section-title">Repair Done Right, Every Time</h2>
+          <p class="section-sub">We built Phone ElectriK on three promises that set us apart from every other repair shop.</p>
+          <div class="pillars">
+            <div class="pillar">
+              <div class="pillar-icon">💵</div>
+              <div class="pillar-text">
+                <h4>Affordable Prices</h4>
+                <p>We offer repair and accessories pricing that no other local shop can match.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🛠️</div>
+              <div class="pillar-text">
+                <h4>Quality Workmanship</h4>
+                <p>Every repair is done by an experienced technician using quality parts.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🤝</div>
+              <div class="pillar-text">
+                <h4>Honesty First</h4>
+                <p>We tell you exactly what's wrong and what it'll cost — no surprise fees, ever.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="why-us-visual">
+          <div class="rating-display">
+            <div class="rating-stars">★★★★★</div>
+            <div class="rating-number">4.6</div>
+            <div class="rating-label">Based on 168 Google Reviews</div>
+          </div>
+          <hr class="review-divider" />
+          <div class="review-item">
+            <div class="review-meta">
+              <span class="review-name">Google Customer</span>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <p class="review-text">"Fast, affordable, and honest. Best phone repair shop in Torrance!"</p>
+          </div>
+          <div class="review-item">
+            <div class="review-meta">
+              <span class="review-name">Google Customer</span>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <p class="review-text">"Fixed my cracked screen while I waited. Great prices, great service."</p>
+          </div>
+          <div class="review-item">
+            <div class="review-meta">
+              <span class="review-name">Google Customer</span>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <p class="review-text">"Came in with water damage and they saved my phone. Highly recommend!"</p>
+          </div>
+          <a href="https://share.google/Si7LBz2h9Vl2pFTNS" target="_blank" rel="noopener" class="btn btn-outline" style="width:100%;text-align:center;margin-top:16px;">Read All Reviews on Google</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ──────────────────────────────────────── -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-card">
+          <div class="big-number">10+</div>
+          <div class="big-label">Years Serving the Community</div>
+          <hr class="divider" />
+          <div class="about-values">
+            <div class="about-value">Affordable</div>
+            <div class="about-value">Quality</div>
+            <div class="about-value">Honest</div>
+          </div>
+        </div>
+        <div class="about-content">
+          <div class="section-label">Our Story</div>
+          <h2 class="section-title">Built by a Technician, for the Community</h2>
+          <p>Phone ElectriK is an electronics repair shop located in Torrance, CA. We repair Apple, Samsung, Motorola, and many more devices while you wait — or browse our wide selection of accessories.</p>
+          <p>Phone ElectriK was founded by a technician with years of experience working in multiple repair shops across the country. With vast knowledge of the repair industry, we're bringing what's been missing from phone repair: <strong>Affordable Prices, Quality, and Honesty.</strong></p>
+          <p>We carry cases, power banks, charging cables, car chargers, and mounts — everything you need to protect and power your device, all at prices like no other shop.</p>
+          <div class="brands-row">
+            <span class="brand-tag">Apple</span>
+            <span class="brand-tag">Samsung</span>
+            <span class="brand-tag">Motorola</span>
+            <span class="brand-tag">Android</span>
+            <span class="brand-tag">iPad</span>
+            <span class="brand-tag">Apple Watch</span>
+            <span class="brand-tag">Laptop</span>
+            <span class="brand-tag">Game Console</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ACCESSORIES ────────────────────────────────── -->
+  <section class="accessories">
+    <div class="container">
+      <div class="accessories-header">
+        <div class="section-label">In-Store Products</div>
+        <h2 class="section-title">Accessories We Carry</h2>
+        <p class="section-sub">Browse our wide selection of quality accessories at unbeatable prices.</p>
+      </div>
+      <div class="acc-grid">
+        <div class="acc-item"><span>📱</span> Phone Cases</div>
+        <div class="acc-item"><span>🔋</span> Power Banks</div>
+        <div class="acc-item"><span>🔌</span> Charging Cables</div>
+        <div class="acc-item"><span>🚗</span> Car Chargers</div>
+        <div class="acc-item"><span>🗻</span> Phone Mounts</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ────────────────────────────────────── -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-header">
+        <div class="section-label">Find Us</div>
+        <h2 class="section-title">Visit Phone ElectriK</h2>
+        <p class="section-sub" style="margin:0 auto;">Walk-ins always welcome. Come see us in Torrance — we're ready to help.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-card-icon">📍</div>
+            <div>
+              <h4>Address</h4>
+              <p>3025 Artesia Blvd STE 101<br>Torrance, CA 90504</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">📞</div>
+            <div>
+              <h4>Phone</h4>
+              <a href="tel:3233485667">(323) 348-5667</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">🕐</div>
+            <div>
+              <h4>Hours</h4>
+              <p>Monday – Saturday: 9:00 AM – 8:00 PM<br>Sunday: 10:00 AM – 6:00 PM</p>
+            </div>
+          </div>
+          <a href="tel:3233485667" class="btn btn-primary" style="text-align:center;">Call Us Now — (323) 348-5667</a>
+        </div>
+        <div class="map-container">
+          <iframe
+            title="Phone ElectriK Location"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=3025+Artesia+Blvd+STE+101,Torrance,CA+90504"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">Phone <span>Electri</span>K</div>
+        <p>Electronics repair done right. Affordable prices, quality work, and honest service in Torrance, CA.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Screen Repair</a></li>
+          <li><a href="#services">Battery Replacement</a></li>
+          <li><a href="#services">Water Damage</a></li>
+          <li><a href="#services">Charging Port</a></li>
+          <li><a href="#services">Laptop Repair</a></li>
+          <li><a href="#services">Game Console</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:3233485667">(323) 348-5667</a></li>
+          <li><a href="#contact">3025 Artesia Blvd STE 101</a></li>
+          <li><a href="#contact">Torrance, CA 90504</a></li>
+          <li><a href="#contact">Mon–Sat: 9AM–8PM</a></li>
+          <li><a href="#contact">Sun: 10AM–6PM</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Phone ElectriK. All rights reserved.</span>
+      <span>3025 Artesia Blvd STE 101, Torrance, CA 90504</span>
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
