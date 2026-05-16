@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phone ElectriK | Phone & Electronics Repair in Torrance, CA</title>
-  <meta name="description" content="Phone ElectriK in Torrance, CA offers fast, affordable phone and electronics repair — iPhone, Samsung, iPad, Apple Watch, laptops, game consoles & more. Walk-ins welcome. Call (323) 348-5667." />
-  <meta name="keywords" content="phone repair Torrance, iPhone repair Torrance, Samsung repair, iPad repair, screen repair, battery replacement, water damage repair, game console repair, laptop repair, Apple Watch repair, Phone ElectriK" />
+  <title>Phone ElectriK | Phone & Electronics Repair in Torrance, CA — Starting at $35</title>
+  <meta name="description" content="Phone ElectriK in Torrance, CA — affordable iPhone, Samsung & iPad screen repair starting at $35, done in 15–30 mins with a 90-day warranty. Laptops, game consoles, Apple Watch & more. Walk-ins welcome. Call (323) 348-5667." />
+  <meta name="keywords" content="phone repair Torrance, iPhone repair Torrance, Samsung repair Torrance, iPad repair Torrance, screen repair, battery replacement, water damage repair, game console repair, laptop repair, Apple Watch repair, unlock phone Torrance, data recovery Torrance, Phone ElectriK, cheap phone repair Torrance CA" />
   <meta name="author" content="Phone ElectriK" />
   <link rel="canonical" href="https://phoneelectrik.com/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Phone ElectriK | Electronics Repair in Torrance, CA" />
-  <meta property="og:description" content="Affordable, quality phone and electronics repair while you wait. iPhone, Samsung, iPad, laptops, game consoles & more. Located in Torrance, CA." />
+  <meta property="og:title" content="Phone ElectriK | Electronics Repair Torrance, CA — From $35" />
+  <meta property="og:description" content="5-star rated phone & electronics repair. Screen repairs from $35 in 15–30 mins. 90-day warranty. iPhone, Samsung, iPad, laptops & more. Walk-ins welcome in Torrance, CA." />
   <meta property="og:url" content="https://phoneelectrik.com/" />
 
   <!-- JSON-LD Structured Data -->
@@ -48,11 +48,11 @@
     ],
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.6",
-      "reviewCount": "168"
+      "ratingValue": "5",
+      "reviewCount": "197"
     },
     "priceRange": "$$",
-    "description": "Phone ElectriK is an electronics repair shop in Torrance offering affordable repairs for iPhones, Samsung, iPads, laptops, game consoles, Apple Watch and more — while you wait."
+    "description": "Phone ElectriK is an electronics repair shop in Torrance offering affordable repairs for iPhones, Samsung, iPads, laptops, game consoles, Apple Watch and more — while you wait. Screen repairs start at $35 and are done in 15–30 minutes with a 90-day warranty."
   }
   </script>
 
@@ -80,6 +80,7 @@
       --text-muted: #546e7a;
       --white:      #ffffff;
       --radius:     10px;
+      --gold:       #ffc107;
     }
 
     /* ── Utilities ────────────────────────────────── */
@@ -174,7 +175,7 @@
       inset: 0;
       background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
-    .hero-content { position: relative; max-width: 720px; margin: 0 auto; }
+    .hero-content { position: relative; max-width: 760px; margin: 0 auto; }
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -190,7 +191,7 @@
     }
     .star-icon { color: #ffd54f; }
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-size: clamp(2rem, 5vw, 3.4rem);
       font-weight: 900;
       line-height: 1.15;
       margin-bottom: 20px;
@@ -204,24 +205,36 @@
       line-height: 1.7;
     }
     .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn-hero-primary {
-      background: var(--white);
-      color: var(--blue-dark);
-      font-weight: 800;
+    .btn-hero-primary { background: var(--white); color: var(--blue-dark); font-weight: 800; }
+    .btn-hero-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.6); }
+
+    /* Price pills in hero */
+    .hero-perks {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 28px;
     }
-    .btn-hero-outline {
-      background: transparent;
-      color: var(--white);
-      border: 2px solid rgba(255,255,255,0.6);
+    .hero-perk {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 50px;
+      padding: 6px 16px;
+      font-size: 0.82rem;
+      font-weight: 600;
     }
+
     .hero-stats {
       display: flex;
       justify-content: center;
       gap: 40px;
-      margin-top: 56px;
+      margin-top: 48px;
       flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 36px;
     }
-    .hero-stat strong { display: block; font-size: 1.8rem; font-weight: 900; }
+    .hero-stat strong { display: block; font-size: 1.9rem; font-weight: 900; }
     .hero-stat span { font-size: 0.82rem; opacity: 0.8; }
 
     /* ── TRUST BAR ────────────────────────────────── */
@@ -264,11 +277,22 @@
       border-radius: var(--radius);
       padding: 28px 24px;
       transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      position: relative;
     }
     .service-card:hover {
       border-color: var(--blue);
       box-shadow: 0 8px 28px rgba(21,101,192,0.12);
       transform: translateY(-3px);
+    }
+    .service-badge {
+      position: absolute;
+      top: 14px; right: 14px;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 50px;
     }
     .service-icon {
       width: 52px; height: 52px;
@@ -282,6 +306,7 @@
     }
     .service-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; color: var(--dark); }
     .service-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
+    .service-price { margin-top: 12px; font-size: 0.85rem; font-weight: 700; color: var(--blue); }
 
     /* ── WHY US ───────────────────────────────────── */
     .why-us {
@@ -322,14 +347,16 @@
       border: 1px solid #dde3ea;
     }
     .rating-display { text-align: center; margin-bottom: 28px; }
-    .rating-stars { font-size: 2rem; margin-bottom: 8px; }
-    .rating-number { font-size: 3.5rem; font-weight: 900; color: var(--blue-dark); line-height: 1; }
-    .rating-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+    .rating-stars { font-size: 2rem; color: var(--gold); margin-bottom: 8px; }
+    .rating-scores { display: flex; justify-content: center; gap: 28px; }
+    .rating-score strong { display: block; font-size: 2.4rem; font-weight: 900; color: var(--blue-dark); line-height: 1; }
+    .rating-score span { font-size: 0.78rem; color: var(--text-muted); }
     .review-divider { border: none; border-top: 1px solid #e8ecf0; margin: 24px 0; }
     .review-item { margin-bottom: 18px; }
     .review-meta { display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 4px; }
     .review-name { font-weight: 700; color: var(--dark); }
-    .review-stars { color: #ffc107; font-size: 0.85rem; }
+    .review-stars { color: var(--gold); font-size: 0.85rem; }
+    .review-source { font-size: 0.72rem; color: var(--text-muted); }
     .review-text { font-size: 0.87rem; color: var(--text-muted); font-style: italic; }
 
     /* ── ABOUT ────────────────────────────────────── */
@@ -350,7 +377,7 @@
     .about-card .big-number { font-size: 5rem; font-weight: 900; line-height: 1; color: #90caf9; }
     .about-card .big-label { font-size: 1rem; font-weight: 600; margin-top: 8px; opacity: 0.9; }
     .about-card .divider { border: none; border-top: 1px solid rgba(255,255,255,0.2); margin: 28px 0; }
-    .about-card .about-values { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+    .about-card .about-values { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
     .about-value { font-size: 0.85rem; font-weight: 700; padding: 8px 16px; background: rgba(255,255,255,0.12); border-radius: 50px; }
     .about-content .section-sub { margin-bottom: 24px; }
     .about-content p { color: var(--text-muted); margin-bottom: 16px; line-height: 1.75; }
@@ -477,6 +504,7 @@
       .footer-inner { grid-template-columns: 1fr; gap: 28px; }
       .hero-stats { gap: 24px; }
       .trust-bar-inner { gap: 20px; }
+      .rating-scores { gap: 16px; }
     }
   </style>
 </head>
@@ -502,31 +530,37 @@
   <section class="hero" id="home">
     <div class="hero-content">
       <div class="hero-badge">
-        <span class="star-icon">★</span>
-        4.6 Stars &mdash; 168 Google Reviews &mdash; Torrance, CA
+        <span class="star-icon">★★★★★</span>
+        5-Star Rated &mdash; 197 Yelp Reviews &mdash; Torrance, CA
       </div>
-      <h1>Your Trusted <em>Electronics Repair</em> Shop in Torrance</h1>
-      <p>We repair iPhones, Samsung, iPads, Apple Watch, laptops, game consoles &amp; more — while you wait. Affordable prices, quality work, and honest service every time.</p>
+      <h1>We Fix Most Makes &amp; Models — <em>While You Wait</em></h1>
+      <p>Broken screen? Dead battery? Water damage? Most repairs are done in <strong>15–30 minutes</strong> with a <strong>90-day warranty</strong>. iPhone, Samsung, iPad, Apple Watch, laptops, game consoles &amp; more.</p>
       <div class="hero-btns">
         <a href="tel:3233485667" class="btn btn-hero-primary">📞 Call (323) 348-5667</a>
-        <a href="#services" class="btn btn-hero-outline">See Our Services</a>
+        <a href="#services" class="btn btn-hero-outline">View Services &amp; Prices</a>
+      </div>
+      <div class="hero-perks">
+        <span class="hero-perk">✅ Screen Repairs from $35</span>
+        <span class="hero-perk">⚡ Done in 15–30 Minutes</span>
+        <span class="hero-perk">🛡️ 90-Day Warranty</span>
+        <span class="hero-perk">🚶 Walk-ins Welcome</span>
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
-          <strong>4.6 ★</strong>
-          <span>Google Rating</span>
+          <strong>5 ★</strong>
+          <span>Yelp Rating</span>
         </div>
         <div class="hero-stat">
-          <strong>168+</strong>
-          <span>Happy Customers</span>
+          <strong>197+</strong>
+          <span>5-Star Reviews</span>
         </div>
         <div class="hero-stat">
-          <strong>10+</strong>
-          <span>Years Experience</span>
+          <strong>$35</strong>
+          <span>Repairs Start At</span>
         </div>
         <div class="hero-stat">
-          <strong>Same Day</strong>
-          <span>Most Repairs</span>
+          <strong>15–30 min</strong>
+          <span>Most Repairs Done</span>
         </div>
       </div>
     </div>
@@ -536,10 +570,11 @@
   <div class="trust-bar">
     <div class="trust-bar-inner">
       <div class="trust-item"><span class="trust-icon">✅</span> Walk-ins Welcome</div>
-      <div class="trust-item"><span class="trust-icon">⚡</span> Same-Day Repairs</div>
-      <div class="trust-item"><span class="trust-icon">💰</span> Affordable Prices</div>
-      <div class="trust-item"><span class="trust-icon">🔒</span> Quality Guaranteed</div>
-      <div class="trust-item"><span class="trust-icon">📍</span> Torrance, CA</div>
+      <div class="trust-item"><span class="trust-icon">⚡</span> 15–30 Min Repairs</div>
+      <div class="trust-item"><span class="trust-icon">🛡️</span> 90-Day Warranty</div>
+      <div class="trust-item"><span class="trust-icon">💰</span> Starting at $35</div>
+      <div class="trust-item"><span class="trust-icon">🔓</span> Device Unlocking</div>
+      <div class="trust-item"><span class="trust-icon">💾</span> Data Recovery</div>
     </div>
   </div>
 
@@ -548,49 +583,69 @@
     <div class="container">
       <div class="services-header">
         <div class="section-label">What We Fix</div>
-        <h2 class="section-title">Repair Services We Offer</h2>
-        <p class="section-sub">From cracked screens to water damage — we handle it all while you wait or browse our accessories.</p>
+        <h2 class="section-title">Repair Services &amp; Pricing</h2>
+        <p class="section-sub">All repairs come with a <strong>90-day warranty</strong>. Most are done in 15–30 minutes while you wait or browse accessories.</p>
       </div>
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">📱</div>
           <h3>Screen Repair</h3>
-          <p>Cracked or shattered screen? We replace displays on iPhones, Samsung, Android phones and tablets.</p>
+          <p>Cracked or shattered screen? We replace displays on iPhones, Samsung, Android phones and tablets fast.</p>
+          <div class="service-price">Starting at $35 · Done in 15–30 min</div>
         </div>
         <div class="service-card">
           <div class="service-icon">🔋</div>
           <h3>Battery Replacement</h3>
-          <p>Battery draining fast or not charging? We swap it out quickly so you're back to full power.</p>
+          <p>Battery draining fast or not holding a charge? We swap it out so you're back to full power quickly.</p>
+          <div class="service-price">Call for pricing</div>
         </div>
         <div class="service-card">
           <div class="service-icon">💧</div>
           <h3>Water Damage Repair</h3>
-          <p>Dropped your phone in water? Bring it in fast — we diagnose and restore water-damaged devices.</p>
+          <p>Dropped your phone in water? Bring it in ASAP — we diagnose and restore water-damaged devices.</p>
+          <div class="service-price">Call for pricing</div>
         </div>
         <div class="service-card">
           <div class="service-icon">🔌</div>
           <h3>Charging Port Repair</h3>
           <p>Won't charge no matter what cable you try? We repair and replace charging ports on all devices.</p>
+          <div class="service-price">Call for pricing</div>
         </div>
         <div class="service-card">
           <div class="service-icon">⌚</div>
           <h3>Apple Watch Repair</h3>
-          <p>Screen cracks and battery issues on Apple Watch — we've got you covered.</p>
+          <p>Screen cracks, battery issues, and more on Apple Watch — we've got the parts and expertise.</p>
+          <div class="service-price">Call for pricing</div>
         </div>
         <div class="service-card">
           <div class="service-icon">💻</div>
           <h3>Laptop Repair</h3>
-          <p>MacBook, Android, or Windows laptop — we handle screens, batteries, keyboards and more.</p>
+          <p>MacBook, Windows, or Android laptop — we fix screens, batteries, keyboards and more.</p>
+          <div class="service-price">Call for pricing</div>
         </div>
         <div class="service-card">
           <div class="service-icon">🎮</div>
           <h3>Game Console Repair</h3>
-          <p>PlayStation, Xbox, Nintendo Switch — we fix controller issues, HDMI ports, disc drives and more.</p>
+          <p>PlayStation, Xbox, Nintendo Switch — HDMI ports, disc drives, controllers and more.</p>
+          <div class="service-price">Call for pricing</div>
         </div>
         <div class="service-card">
           <div class="service-icon">📟</div>
           <h3>iPad &amp; Tablet Repair</h3>
           <p>Apple iPad and Android tablets — screen replacements, battery swaps and charging port repairs.</p>
+          <div class="service-price">Call for pricing</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔓</div>
+          <h3>Device Unlocking</h3>
+          <p>Want to switch carriers? We unlock most major phone brands so you can use any network.</p>
+          <div class="service-price">Call for pricing</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💾</div>
+          <h3>Data Recovery</h3>
+          <p>Don't lose your photos and contacts. We recover data from damaged or unresponsive devices.</p>
+          <div class="service-price">Call for pricing</div>
         </div>
       </div>
     </div>
@@ -609,21 +664,28 @@
               <div class="pillar-icon">💵</div>
               <div class="pillar-text">
                 <h4>Affordable Prices</h4>
-                <p>We offer repair and accessories pricing that no other local shop can match.</p>
+                <p>Screen repairs start at $35. We offer pricing that no other local shop can match.</p>
               </div>
             </div>
             <div class="pillar">
               <div class="pillar-icon">🛠️</div>
               <div class="pillar-text">
-                <h4>Quality Workmanship</h4>
-                <p>Every repair is done by an experienced technician using quality parts.</p>
+                <h4>Quality with Warranty</h4>
+                <p>Every repair comes with a 90-day warranty. We stand behind our work.</p>
               </div>
             </div>
             <div class="pillar">
               <div class="pillar-icon">🤝</div>
               <div class="pillar-text">
                 <h4>Honesty First</h4>
-                <p>We tell you exactly what's wrong and what it'll cost — no surprise fees, ever.</p>
+                <p>We tell you exactly what's wrong and what it costs — no surprise fees, ever.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">⚡</div>
+              <div class="pillar-text">
+                <h4>Fast While-You-Wait Service</h4>
+                <p>Most repairs are finished in 15–30 minutes. No appointment necessary.</p>
               </div>
             </div>
           </div>
@@ -631,32 +693,40 @@
         <div class="why-us-visual">
           <div class="rating-display">
             <div class="rating-stars">★★★★★</div>
-            <div class="rating-number">4.6</div>
-            <div class="rating-label">Based on 168 Google Reviews</div>
+            <div class="rating-scores">
+              <div class="rating-score">
+                <strong>5.0</strong>
+                <span>Yelp · 197 reviews</span>
+              </div>
+              <div class="rating-score">
+                <strong>4.6</strong>
+                <span>Google · 168 reviews</span>
+              </div>
+            </div>
           </div>
           <hr class="review-divider" />
           <div class="review-item">
             <div class="review-meta">
-              <span class="review-name">Google Customer</span>
+              <span class="review-name">Yelp Customer</span>
               <span class="review-stars">★★★★★</span>
             </div>
-            <p class="review-text">"Fast, affordable, and honest. Best phone repair shop in Torrance!"</p>
+            <p class="review-text">"Fast, affordable and friendly. The only place that will truly help me fix it without breaking the bank."</p>
           </div>
           <div class="review-item">
             <div class="review-meta">
-              <span class="review-name">Google Customer</span>
+              <span class="review-name">Yelp Customer</span>
               <span class="review-stars">★★★★★</span>
             </div>
-            <p class="review-text">"Fixed my cracked screen while I waited. Great prices, great service."</p>
+            <p class="review-text">"Fast, polite, good communicative service and the screen is better quality than the original!"</p>
           </div>
           <div class="review-item">
             <div class="review-meta">
-              <span class="review-name">Google Customer</span>
+              <span class="review-name">Yelp Customer</span>
               <span class="review-stars">★★★★★</span>
             </div>
-            <p class="review-text">"Came in with water damage and they saved my phone. Highly recommend!"</p>
+            <p class="review-text">"Got my iPad mini fixed and it was very quick and looks like new!"</p>
           </div>
-          <a href="https://share.google/Si7LBz2h9Vl2pFTNS" target="_blank" rel="noopener" class="btn btn-outline" style="width:100%;text-align:center;margin-top:16px;">Read All Reviews on Google</a>
+          <a href="https://www.yelp.com/biz/phone-electrik-torrance-2" target="_blank" rel="noopener" class="btn btn-outline" style="width:100%;text-align:center;margin-top:16px;">Read All Reviews on Yelp</a>
         </div>
       </div>
     </div>
@@ -679,8 +749,8 @@
         <div class="about-content">
           <div class="section-label">Our Story</div>
           <h2 class="section-title">Built by a Technician, for the Community</h2>
-          <p>Phone ElectriK is an electronics repair shop located in Torrance, CA. We repair Apple, Samsung, Motorola, and many more devices while you wait — or browse our wide selection of accessories.</p>
-          <p>Phone ElectriK was founded by a technician with years of experience working in multiple repair shops across the country. With vast knowledge of the repair industry, we're bringing what's been missing from phone repair: <strong>Affordable Prices, Quality, and Honesty.</strong></p>
+          <p>Phone ElectriK is an electronics repair shop located in Torrance, CA. We repair Apple, Samsung, Motorola, and many more devices <strong>while you wait</strong> — or browse our wide selection of accessories.</p>
+          <p>Phone ElectriK was founded by a technician with years of experience working in multiple repair shops across the country. With deep knowledge of the repair industry, we're bringing what's been missing: <strong>Affordable Prices, Quality, and Honesty.</strong></p>
           <p>We carry cases, power banks, charging cables, car chargers, and mounts — everything you need to protect and power your device, all at prices like no other shop.</p>
           <div class="brands-row">
             <span class="brand-tag">Apple</span>
@@ -720,8 +790,8 @@
     <div class="container">
       <div class="contact-header">
         <div class="section-label">Find Us</div>
-        <h2 class="section-title">Visit Phone ElectriK</h2>
-        <p class="section-sub" style="margin:0 auto;">Walk-ins always welcome. Come see us in Torrance — we're ready to help.</p>
+        <h2 class="section-title">Visit Phone ElectriK in Torrance</h2>
+        <p class="section-sub" style="margin:0 auto;">Walk-ins always welcome. No appointment needed — come see us today.</p>
       </div>
       <div class="contact-grid">
         <div class="contact-info">
@@ -746,12 +816,12 @@
               <p>Monday – Saturday: 9:00 AM – 8:00 PM<br>Sunday: 10:00 AM – 6:00 PM</p>
             </div>
           </div>
-          <a href="tel:3233485667" class="btn btn-primary" style="text-align:center;">Call Us Now — (323) 348-5667</a>
+          <a href="tel:3233485667" class="btn btn-primary" style="text-align:center;">Call Us — (323) 348-5667</a>
         </div>
         <div class="map-container">
           <iframe
-            title="Phone ElectriK Location"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=3025+Artesia+Blvd+STE+101,Torrance,CA+90504"
+            title="Phone ElectriK Location — 3025 Artesia Blvd Torrance CA"
+            src="https://maps.google.com/maps?q=3025+Artesia+Blvd+STE+101,+Torrance,+CA+90504&output=embed"
             allowfullscreen
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade">
@@ -766,17 +836,19 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="logo">Phone <span>Electri</span>K</div>
-        <p>Electronics repair done right. Affordable prices, quality work, and honest service in Torrance, CA.</p>
+        <p>5-star rated electronics repair in Torrance, CA. Affordable prices, quality work, and honest service — while you wait.</p>
       </div>
       <div class="footer-col">
         <h5>Services</h5>
         <ul>
-          <li><a href="#services">Screen Repair</a></li>
+          <li><a href="#services">Screen Repair from $35</a></li>
           <li><a href="#services">Battery Replacement</a></li>
           <li><a href="#services">Water Damage</a></li>
           <li><a href="#services">Charging Port</a></li>
           <li><a href="#services">Laptop Repair</a></li>
           <li><a href="#services">Game Console</a></li>
+          <li><a href="#services">Device Unlocking</a></li>
+          <li><a href="#services">Data Recovery</a></li>
         </ul>
       </div>
       <div class="footer-col">
