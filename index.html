@@ -777,11 +777,16 @@
       <button class="btn btn-blue" style="width:100%;font-size:1rem;padding:15px" onclick="sendQuote()">
         📱 Send Quote Request via Text
       </button>
+      <div id="quote-success" style="display:none;margin-top:16px;background:#e8f5e9;border:1px solid #a5d6a7;border-radius:var(--radius);padding:14px 16px;font-size:.88rem;color:#1b5e20;font-weight:600;text-align:center">
+        ✅ Your text app should have opened. Hit <strong>Send</strong> to submit your quote request. We'll text you back shortly!
+      </div>
+      <div id="quote-desktop" style="display:none;margin-top:16px;background:#fff3e0;border:1px solid #ffcc02;border-radius:var(--radius);padding:14px 16px;font-size:.88rem;color:#bf360c;text-align:center">
+        📞 SMS links work on mobile phones. To get a quote, call or text us directly at <a href="tel:3233485667" style="color:#bf360c;font-weight:800">(323) 348-5667</a>
+      </div>
       <p class="form-note">
-        Tapping the button opens your text message app with your info already filled in — just hit <strong>Send</strong>.<br><br>
-        We'll text you back with your repair options and pricing. For example, for a broken screen we may offer multiple options — aftermarket, aftermarket plus, or OEM — so you can choose what works best for your budget.<br><br>
-        <strong>Works best on a mobile phone.</strong> On desktop, call us instead:<br>
-        <a href="tel:3233485667" style="color:var(--blue);font-weight:700">(323) 348-5667</a>
+        Tapping the button opens your text message app pre-filled with your info — just hit <strong>Send</strong>.<br>
+        We'll text you back with pricing options for your repair.<br><br>
+        <strong>On a computer?</strong> Call or text us at <a href="tel:3233485667" style="color:var(--blue);font-weight:700">(323) 348-5667</a>
       </p>
     </div>
   </div>
@@ -994,6 +999,11 @@
     const phone  = document.getElementById('q-phone').value.trim()
     const device = document.getElementById('q-device').value.trim()
     const issue  = document.getElementById('q-issue').value.trim()
+    const success = document.getElementById('quote-success')
+    const desktop = document.getElementById('quote-desktop')
+
+    success.style.display = 'none'
+    desktop.style.display = 'none'
 
     if(!first || !last || !phone || !device || !issue){
       alert('Please fill out all fields before sending.')
@@ -1001,13 +1011,28 @@
     }
 
     const msg =
-      `Hi Phone ElectriK! I'd like a repair quote.\n\n` +
-      `Name: ${first} ${last}\n` +
-      `My Number: ${phone}\n` +
-      `Device: ${device}\n` +
-      `Issue: ${issue}`
+      'Hi Phone ElectriK! I would like a repair quote.\n\n' +
+      'Name: ' + first + ' ' + last + '\n' +
+      'My Number: ' + phone + '\n' +
+      'Device: ' + device + '\n' +
+      'Issue: ' + issue
 
-    window.location.href = `sms:3233485667?body=${encodeURIComponent(msg)}`
+    const encoded = encodeURIComponent(msg)
+
+    // Try sms: link — works on iOS and Android
+    const a = document.createElement('a')
+    a.href = 'sms:+13233485667?body=' + encoded
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+
+    // Show success message after short delay
+    setTimeout(function(){
+      // If still on page, show confirmation
+      success.style.display = 'block'
+      // Also show desktop fallback for users where sms: didn't open
+      setTimeout(function(){ desktop.style.display = 'block' }, 2500)
+    }, 800)
   }
 </script>
 </body>
