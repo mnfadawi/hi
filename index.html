@@ -777,16 +777,19 @@
       <button class="btn btn-blue" style="width:100%;font-size:1rem;padding:15px" onclick="sendQuote()">
         📱 Send Quote Request via Text
       </button>
-      <div id="quote-success" style="display:none;margin-top:16px;background:#e8f5e9;border:1px solid #a5d6a7;border-radius:var(--radius);padding:14px 16px;font-size:.88rem;color:#1b5e20;font-weight:600;text-align:center">
-        ✅ Your text app should have opened. Hit <strong>Send</strong> to submit your quote request. We'll text you back shortly!
+      <div id="quote-success" style="display:none;margin-top:16px;background:#e8f5e9;border:1px solid #a5d6a7;border-radius:var(--radius);padding:16px;text-align:center">
+        <div style="font-size:1.5rem;margin-bottom:6px">✅</div>
+        <p style="font-weight:700;color:#1b5e20;font-size:.95rem;margin-bottom:4px">Your Messages app should have opened!</p>
+        <p style="font-size:.85rem;color:#2e7d32">Your info is already filled in — just tap <strong>Send</strong> in your Messages app and we will text you back with your quote.</p>
       </div>
-      <div id="quote-desktop" style="display:none;margin-top:16px;background:#fff3e0;border:1px solid #ffcc02;border-radius:var(--radius);padding:14px 16px;font-size:.88rem;color:#bf360c;text-align:center">
-        📞 SMS links work on mobile phones. To get a quote, call or text us directly at <a href="tel:3233485667" style="color:#bf360c;font-weight:800">(323) 348-5667</a>
+      <div id="quote-desktop" style="display:none;margin-top:12px;background:#fff3e0;border:1px solid #ffe0b2;border-radius:var(--radius);padding:14px 16px;text-align:center">
+        <p style="font-size:.85rem;color:#bf360c;margin-bottom:8px">If your Messages app didn't open, text or call us directly:</p>
+        <a href="sms:+13233485667" style="display:inline-block;background:#1565c0;color:#fff;font-weight:800;padding:10px 22px;border-radius:8px;font-size:.95rem;margin-right:8px">💬 Text (323) 348-5667</a>
+        <a href="tel:3233485667" style="display:inline-block;background:#0d47a1;color:#fff;font-weight:800;padding:10px 22px;border-radius:8px;font-size:.95rem">📞 Call Us</a>
       </div>
-      <p class="form-note">
-        Tapping the button opens your text message app pre-filled with your info — just hit <strong>Send</strong>.<br>
-        We'll text you back with pricing options for your repair.<br><br>
-        <strong>On a computer?</strong> Call or text us at <a href="tel:3233485667" style="color:var(--blue);font-weight:700">(323) 348-5667</a>
+      <p class="form-note" style="margin-top:16px">
+        After you tap the button, your phone's Messages app opens with your info pre-filled. Tap <strong>Send</strong> — we get your text and reply back with your repair options and pricing.<br><br>
+        <strong>On a computer?</strong> Text or call us at <a href="tel:3233485667" style="color:var(--blue);font-weight:700">(323) 348-5667</a>
       </p>
     </div>
   </div>
@@ -1005,10 +1008,11 @@
     success.style.display = 'none'
     desktop.style.display = 'none'
 
-    if(!first || !last || !phone || !device || !issue){
-      alert('Please fill out all fields before sending.')
-      return
-    }
+    if(!first){ alert('Please enter your first name.'); return }
+    if(!last){  alert('Please enter your last name.');  return }
+    if(!phone){ alert('Please enter your phone number.'); return }
+    if(!device){alert('Please tell us what device you have.'); return }
+    if(!issue){ alert('Please describe what is wrong with your device.'); return }
 
     const msg =
       'Hi Phone ElectriK! I would like a repair quote.\n\n' +
@@ -1018,21 +1022,23 @@
       'Issue: ' + issue
 
     const encoded = encodeURIComponent(msg)
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
+    const shopNumber = '+13233485667'
 
-    // Try sms: link — works on iOS and Android
+    // iOS uses & separator, Android uses ?
+    const smsHref = isIOS
+      ? 'sms:' + shopNumber + '&body=' + encoded
+      : 'sms:' + shopNumber + '?body=' + encoded
+
     const a = document.createElement('a')
-    a.href = 'sms:+13233485667?body=' + encoded
+    a.href = smsHref
+    a.style.display = 'none'
     document.body.appendChild(a)
     a.click()
     document.body.removeChild(a)
 
-    // Show success message after short delay
-    setTimeout(function(){
-      // If still on page, show confirmation
-      success.style.display = 'block'
-      // Also show desktop fallback for users where sms: didn't open
-      setTimeout(function(){ desktop.style.display = 'block' }, 2500)
-    }, 800)
+    success.style.display = 'block'
+    setTimeout(function(){ desktop.style.display = 'block' }, 3000)
   }
 </script>
 </body>
