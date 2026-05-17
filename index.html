@@ -604,6 +604,28 @@
     el.style.transitionDelay = (i % 4 * 0.08) + 's'
     obs.observe(el)
   })
+
+  // Keep scroll-padding-top equal to actual header height (fixes anchor landing)
+  function syncScrollPad(){document.documentElement.style.scrollPaddingTop=(document.querySelector('header').offsetHeight+6)+'px'}
+  syncScrollPad()
+  window.addEventListener('resize',syncScrollPad)
+
+  // Scroll-spy: highlight the correct nav link as sections scroll into view
+  ;(function(){
+    var map={home:'index.html',brands:'#brands',why:'#reviews'}
+    var links=document.querySelectorAll('.header-nav a')
+    function activate(href){
+      links.forEach(function(a){a.classList.remove('active')})
+      links.forEach(function(a){if(a.getAttribute('href')===href)a.classList.add('active')})
+    }
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting)return
+        var href=map[e.target.id];if(href)activate(href)
+      })
+    },{rootMargin:'-'+(document.querySelector('header').offsetHeight+6)+'px 0px -45% 0px',threshold:0})
+    ;['home','brands','why'].forEach(function(id){var el=document.getElementById(id);if(el)obs.observe(el)})
+  })()
 </script>
 </body>
 </html>

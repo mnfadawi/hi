@@ -555,6 +555,11 @@
     el.style.transitionDelay = (i % 4 * 0.08) + 's'
     obs.observe(el)
   })
+
+  // Keep scroll-padding-top equal to actual header height (fixes anchor landing)
+  function syncScrollPad(){document.documentElement.style.scrollPaddingTop=(document.querySelector('header').offsetHeight+6)+'px'}
+  syncScrollPad()
+  window.addEventListener('resize',syncScrollPad)
 </script>
 </body>
 </html>
