@@ -233,7 +233,7 @@
     <div class="section-header center">
       <div class="label">Free Quote</div>
       <h2 class="title" style="background:linear-gradient(135deg,#111 0%,#c94a10 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Get a Repair Quote</h2>
-      <p class="sub" style="margin:0 auto">Fill out the form below and tap <strong>Send Quote Request</strong>. Your email app will open with everything pre-filled — just hit Send. We'll get back to you with pricing.</p>
+      <p class="sub" style="margin:0 auto">Fill out the form and choose how to send it — your Mail app or Gmail. We'll get back to you with pricing.</p>
     </div>
     <div class="quote-form">
       <div class="form-row">
@@ -258,16 +258,15 @@
         <label for="q-issue">What's Wrong With Your Device?</label>
         <textarea id="q-issue" placeholder="e.g. Cracked screen, battery drains fast, not charging, lines on screen, black screen..."></textarea>
       </div>
-      <button type="button" class="btn btn-blue" style="width:100%;font-size:1rem;padding:15px" onclick="sendQuote()">
-        📧 Send Quote Request
-      </button>
-      <div id="quote-success" style="display:none;margin-top:16px;background:#e8f5e9;border:1px solid #a5d6a7;border-radius:var(--radius);padding:16px;text-align:center">
-        <div style="font-size:1.5rem;margin-bottom:6px">✅</div>
-        <p style="font-weight:700;color:#1b5e20;font-size:.95rem;margin-bottom:4px">Your email app is opening!</p>
-        <p style="font-size:.85rem;color:#2e7d32">Everything is pre-filled — just tap <strong>Send</strong> in your email app. We'll reply with your quote.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px">
+        <button type="button" class="btn btn-blue" style="width:100%;font-size:1rem;padding:15px" onclick="sendQuote('mail')">
+          ✉️ Send via Mail App
+        </button>
+        <button type="button" class="btn" style="width:100%;font-size:1rem;padding:15px;background:#EA4335;color:#fff;box-shadow:0 4px 16px rgba(234,67,53,.35)" onclick="sendQuote('gmail')">
+          <img src="https://www.google.com/favicon.ico" style="width:18px;height:18px;display:inline;vertical-align:middle;margin-right:7px;border-radius:3px" alt="" />Send via Gmail
+        </button>
       </div>
-      <p class="form-note" style="margin-top:16px">
-        Tapping the button opens your email app with everything filled in. Just hit <strong>Send</strong>.<br><br>
+      <p class="form-note" style="margin-top:14px;text-align:center">
         Prefer to call? <a href="tel:3233486756" style="color:var(--orange);font-weight:700">(323) 348-6756</a>
       </p>
     </div>
@@ -338,14 +337,12 @@
     obs.observe(el)
   })
 
-  function sendQuote(){
+  function sendQuote(type){
     const first  = document.getElementById('q-first').value.trim()
     const last   = document.getElementById('q-last').value.trim()
     const email  = document.getElementById('q-email').value.trim()
     const device = document.getElementById('q-device').value.trim()
     const issue  = document.getElementById('q-issue').value.trim()
-    const success = document.getElementById('quote-success')
-    success.style.display = 'none'
     if(!first){ showFormError('q-first','Please enter your first name.'); return }
     if(!last){  showFormError('q-last','Please enter your last name.'); return }
     if(!email){ showFormError('q-email','Please enter your email address.'); return }
@@ -358,10 +355,14 @@
       'Email: ' + email + '\n' +
       'Device: ' + device + '\n' +
       'Issue: ' + issue
-    window.location.href = 'mailto:phoneelectrik5@gmail.com' +
-      '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(body)
-    success.style.display = 'block'
+    const to = 'phoneelectrik5@gmail.com'
+    const s  = encodeURIComponent(subject)
+    const b  = encodeURIComponent(body)
+    if(type === 'gmail'){
+      window.open('https://mail.google.com/mail/?view=cm&to=' + to + '&su=' + s + '&body=' + b, '_blank')
+    } else {
+      window.location.href = 'mailto:' + to + '?subject=' + s + '&body=' + b
+    }
   }
 
   function showFormError(fieldId, msg){
