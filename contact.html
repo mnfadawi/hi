@@ -353,14 +353,48 @@
     const to      = 'info@phoneelectrik.com'
     const subject = 'Repair Quote Request — ' + first + ' ' + last
     const body    = 'Hi Phone ElectriK! Quote request from the website.\n\nName: ' + first + ' ' + last + '\nEmail: ' + email + '\nDevice: ' + device + '\nIssue: ' + issue
-    const s = encodeURIComponent(subject)
-    const b = encodeURIComponent(body)
-    document.getElementById('opt-mail').href    = 'mailto:' + to + '?subject=' + s + '&body=' + b
-    document.getElementById('opt-gmail').href   = 'https://mail.google.com/mail/?view=cm&to=' + to + '&su=' + s + '&body=' + b
-    document.getElementById('opt-yahoo').href   = 'https://compose.mail.yahoo.com/?to=' + to + '&subject=' + s + '&body=' + b
-    document.getElementById('opt-outlook').href = 'https://outlook.live.com/mail/0/deeplink/compose?to=' + to + '&subject=' + s + '&body=' + b
+    const s  = encodeURIComponent(subject)
+    const b  = encodeURIComponent(body)
+    const mailtoUrl = 'mailto:' + to + '?subject=' + s + '&body=' + b
+
+    // Apple Mail — standard mailto, opens default mail app
+    document.getElementById('opt-mail').onclick = function(e){
+      e.preventDefault(); window.location.href = mailtoUrl
+    }
+    // Gmail — try app URL scheme first, fall back to web
+    document.getElementById('opt-gmail').onclick = function(e){
+      e.preventDefault()
+      var appUrl = 'googlegmail://co?to=' + to + '&subject=' + s + '&body=' + b
+      tryApp(appUrl, 'https://mail.google.com/mail/?view=cm&to=' + to + '&su=' + s + '&body=' + b)
+    }
+    // Yahoo Mail — try app URL scheme first, fall back to web
+    document.getElementById('opt-yahoo').onclick = function(e){
+      e.preventDefault()
+      var appUrl = 'ymail://mail/compose?to=' + to + '&subject=' + s + '&body=' + b
+      tryApp(appUrl, 'https://compose.mail.yahoo.com/?to=' + to + '&subject=' + s + '&body=' + b)
+    }
+    // Outlook — try app URL scheme first, fall back to web
+    document.getElementById('opt-outlook').onclick = function(e){
+      e.preventDefault()
+      var appUrl = 'ms-outlook://compose?to=' + to + '&subject=' + s + '&body=' + b
+      tryApp(appUrl, 'https://outlook.live.com/mail/0/deeplink/compose?to=' + to + '&subject=' + s + '&body=' + b)
+    }
     document.getElementById('emailOverlay').classList.add('open')
   }
+
+  function tryApp(appUrl, webUrl){
+    var iframe = document.createElement('iframe')
+    iframe.style.display = 'none'
+    document.body.appendChild(iframe)
+    var didOpen = false
+    window.addEventListener('blur', function(){ didOpen = true }, {once:true})
+    iframe.src = appUrl
+    setTimeout(function(){
+      document.body.removeChild(iframe)
+      if(!didOpen) window.open(webUrl, '_blank')
+    }, 1200)
+  }
+
   function closeEmailPicker(){
     document.getElementById('emailOverlay').classList.remove('open')
   }
