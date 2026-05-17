@@ -258,15 +258,11 @@
         <label for="q-issue">What's Wrong With Your Device?</label>
         <textarea id="q-issue" placeholder="e.g. Cracked screen, battery drains fast, not charging, lines on screen, black screen..."></textarea>
       </div>
-      <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px">
-        <button type="button" class="btn btn-blue" style="width:100%;font-size:1rem;padding:15px" onclick="sendQuote('mail')">
-          ✉️ Send via Mail App
-        </button>
-        <button type="button" class="btn" style="width:100%;font-size:1rem;padding:15px;background:#EA4335;color:#fff;box-shadow:0 4px 16px rgba(234,67,53,.35)" onclick="sendQuote('gmail')">
-          <img src="https://www.google.com/favicon.ico" style="width:18px;height:18px;display:inline;vertical-align:middle;margin-right:7px;border-radius:3px" alt="" />Send via Gmail
-        </button>
-      </div>
+      <button type="button" class="btn btn-blue" style="width:100%;font-size:1rem;padding:15px" onclick="sendQuote()">
+        📧 Send Quote Request
+      </button>
       <p class="form-note" style="margin-top:14px;text-align:center">
+        Your phone will ask which email app to use — Mail, Gmail, Yahoo, Outlook, or any app you have installed.<br><br>
         Prefer to call? <a href="tel:3233486756" style="color:var(--orange);font-weight:700">(323) 348-6756</a>
       </p>
     </div>
@@ -337,7 +333,7 @@
     obs.observe(el)
   })
 
-  function sendQuote(type){
+  function sendQuote(){
     const first  = document.getElementById('q-first').value.trim()
     const last   = document.getElementById('q-last').value.trim()
     const email  = document.getElementById('q-email').value.trim()
@@ -355,14 +351,9 @@
       'Email: ' + email + '\n' +
       'Device: ' + device + '\n' +
       'Issue: ' + issue
-    const to = 'phoneelectrik5@gmail.com'
-    const s  = encodeURIComponent(subject)
-    const b  = encodeURIComponent(body)
-    if(type === 'gmail'){
-      window.open('https://mail.google.com/mail/?view=cm&to=' + to + '&su=' + s + '&body=' + b, '_blank')
-    } else {
-      window.location.href = 'mailto:' + to + '?subject=' + s + '&body=' + b
-    }
+    window.location.href = 'mailto:phoneelectrik5@gmail.com' +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body)
   }
 
   function showFormError(fieldId, msg){
