@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact & Quote | Phone ElectriK — Torrance, CA</title>
+  <meta name="description" content="Contact Phone ElectriK in Torrance, CA. Call (323) 348-6756. 3025 Artesia Blvd STE 101. Mon–Sat 9AM–8PM, Sun 10AM–6PM. Get a free repair quote by email." />
+  <link rel="canonical" href="https://mnfadawi.github.io/hi/contact.html" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:#111;background:#fff;line-height:1.6}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    :root{
+      --orange:#F26522;--black:#111111;--orange-mid:#E05818;
+      --orange-light:#fff3e0;--silver-light:#eceff1;
+      --dark:#111111;--muted:#555555;--white:#fff;--gold:#ffc107;
+      --radius:10px;--radius-lg:16px;
+    }
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    .label{display:inline-block;background:var(--orange-light);color:var(--orange);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 14px;border-radius:50px;margin-bottom:12px}
+    .title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:var(--dark);margin-bottom:10px}
+    .sub{color:var(--muted);font-size:.97rem;max-width:580px;line-height:1.7}
+    .btn{display:inline-block;padding:13px 28px;border-radius:var(--radius);font-weight:700;font-size:.93rem;cursor:pointer;border:none;position:relative;overflow:hidden;transition:transform .15s,box-shadow .15s}
+    .btn::after{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transform:skewX(-15deg);transition:left .5s ease}
+    .btn:hover::after{left:140%}
+    .btn-blue{background:linear-gradient(135deg,var(--orange),var(--orange-mid));color:#fff;box-shadow:0 4px 16px rgba(242,101,34,.35)}
+    .btn-blue:hover{box-shadow:0 8px 32px rgba(242,101,34,.6);transform:translateY(-3px)}
+    .btn-outline{background:transparent;color:var(--orange);border:2px solid var(--orange)}
+    .btn-outline:hover{background:var(--orange);color:#fff;transform:translateY(-2px)}
+
+    /* HEADER */
+    header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #e0e7ef;box-shadow:0 2px 12px rgba(242,101,34,.07)}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:13px 24px;max-width:1100px;margin:0 auto}
+    .nav-links{display:flex;gap:22px;align-items:center;list-style:none}
+    .nav-links a{font-size:.88rem;font-weight:600;color:var(--dark);transition:color .2s;white-space:nowrap}
+    .nav-links a:hover,.nav-links a.active{color:var(--orange)}
+    .nav-cta{background:var(--orange);color:#fff!important;padding:8px 18px;border-radius:var(--radius)}
+    .nav-cta:hover{background:var(--black)!important}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+    .hamburger span{width:24px;height:2px;background:var(--dark);border-radius:2px;transition:.3s;display:block}
+
+    /* PAGE HERO */
+    .page-hero{background:linear-gradient(150deg,#0d0d0d 0%,#1c0a00 28%,#b84210 65%,#FF8C42 100%);color:#fff;padding:52px 24px;text-align:center}
+    .page-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin-bottom:10px;text-shadow:0 2px 16px rgba(0,0,0,.35)}
+    .page-hero p{font-size:.97rem;opacity:.88;max-width:580px;margin:0 auto}
+
+    /* SECTIONS */
+    .section{padding:76px 0}
+    .section-alt{background:linear-gradient(135deg,#fff8f4 0%,#f5f5f5 100%)}
+    .section-header{margin-bottom:44px}
+    .section-header.center{text-align:center}
+    .section-header.center .sub{margin:0 auto}
+    .section-header.center .title{background:linear-gradient(135deg,#111 0%,#c94a10 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+    /* ABOUT */
+    .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+    .about-card{background:linear-gradient(150deg,#0d0d0d 0%,#1c0600 40%,#c94a10 100%);border-radius:var(--radius-lg);padding:44px 32px;color:#fff;text-align:center;position:relative;overflow:hidden}
+    .about-card::after{content:'';position:absolute;top:-40%;left:-40%;width:80%;height:80%;background:radial-gradient(ellipse at center,rgba(242,101,34,.18) 0%,transparent 70%);pointer-events:none}
+    .big-num{font-size:5rem;font-weight:900;color:#fff;line-height:1;text-shadow:0 0 30px rgba(242,101,34,.6)}
+    .big-lbl{font-size:.97rem;font-weight:600;opacity:.9;margin-top:6px}
+    .about-values{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+    .about-val{font-size:.83rem;font-weight:700;padding:7px 15px;background:rgba(255,255,255,.12);border-radius:50px}
+    .about-text p{color:var(--muted);margin-bottom:14px;line-height:1.75}
+    .brand-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+    .brand-tag{background:var(--orange-light);color:var(--black);font-size:.8rem;font-weight:700;padding:5px 13px;border-radius:50px}
+
+    /* CONTACT */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+    .contact-cards{display:flex;flex-direction:column;gap:18px}
+    .contact-card{background:#fff;border:1px solid #dde3ea;border-radius:var(--radius);padding:20px 22px;display:flex;gap:16px;align-items:flex-start;transition:border-color .2s,box-shadow .2s,transform .2s}
+    .contact-card:hover{border-color:var(--orange);box-shadow:0 6px 22px rgba(242,101,34,.14);transform:translateX(4px)}
+    .c-icon{width:44px;height:44px;background:var(--orange-light);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+    .contact-card h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700;margin-bottom:3px}
+    .contact-card p,.contact-card a{font-size:.95rem;font-weight:600;color:var(--dark)}
+    .contact-card a:hover{color:var(--orange)}
+    .map-wrap{border-radius:var(--radius);overflow:hidden;border:1px solid #dde3ea;min-height:340px}
+    .map-wrap iframe{width:100%;height:100%;min-height:340px;border:none}
+
+    /* QUOTE FORM */
+    .quote-form{background:#fff;border:1px solid #dde3ea;border-radius:var(--radius-lg);padding:36px;box-shadow:0 4px 24px rgba(242,101,34,.08);max-width:640px;margin:0 auto}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+    .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+    .form-group label{font-size:.82rem;font-weight:700;color:var(--dark);text-transform:uppercase;letter-spacing:.05em}
+    .form-group input,.form-group textarea{border:1px solid #cfd8dc;border-radius:var(--radius);padding:11px 14px;font-size:.92rem;font-family:inherit;color:var(--dark);transition:border-color .2s,box-shadow .2s;outline:none;background:#fff}
+    .form-group input:focus,.form-group textarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(242,101,34,.1)}
+    .form-group textarea{resize:vertical;min-height:100px}
+    .form-note{font-size:.8rem;color:var(--muted);margin-top:10px;text-align:center;line-height:1.6}
+
+    /* FOOTER */
+    footer{background:linear-gradient(180deg,#0d0d0d 0%,#111 100%);color:rgba(255,255,255,.72);padding:52px 24px 28px}
+    .footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;margin-bottom:36px}
+    .footer-col h5{color:#fff;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:13px}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+    .footer-col a{font-size:.84rem;transition:color .2s}
+    .footer-col a:hover{color:#fff}
+    .footer-bottom{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;flex-wrap:wrap;gap:8px}
+
+    /* ANIMATIONS */
+    @keyframes pulseGlow{0%,100%{box-shadow:0 4px 20px rgba(242,101,34,.35)}50%{box-shadow:0 8px 40px rgba(242,101,34,.65)}}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .55s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    /* MOBILE */
+    @media(max-width:820px){
+      .nav-links{display:none;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:#fff;padding:20px 24px;border-bottom:1px solid #e0e7ef;gap:14px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+      .nav-links.open{display:flex}
+      .hamburger{display:flex}
+      .about-inner,.contact-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr;gap:24px}
+      .form-row{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <a href="index.html" class="logo" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+      <svg width="42" height="38" viewBox="0 0 42 38" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="9" height="38" rx="2" fill="#F26522"/>
+        <path d="M9 0 L26 0 Q39 0 39 9.5 Q39 19 26 19 L9 19 Z" fill="#F26522"/>
+        <rect x="5" y="5.5" width="32" height="4" rx="1.5" fill="white"/>
+        <rect x="5" y="13" width="28" height="4" rx="1.5" fill="white"/>
+        <rect x="14" y="1.5" width="6" height="9" rx="1.5" fill="white" opacity="0.35"/>
+      </svg>
+      <span style="line-height:1.1;font-size:.82rem;font-weight:900;letter-spacing:.04em;color:#111">PH<span style="color:#F26522">⚡</span>NE<br>ELECTRIK</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="policies.html">Policies</a></li>
+      <li><a href="contact.html#about">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="contact.html#quote">Get a Quote</a></li>
+      <li><a href="tel:3233486756" class="nav-cta">📞 Call Now</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="label" style="background:rgba(255,255,255,.15);color:#fff">Find Us</div>
+  <h1>Contact Phone ElectriK</h1>
+  <p>No appointment needed — walk in or call us. We're here to help.</p>
+</div>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-header center">
+      <div class="label">Visit Us</div>
+      <h2 class="title">We're in Torrance, CA</h2>
+      <p class="sub">Walk in anytime during business hours — no appointment needed.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-cards">
+        <div class="contact-card reveal">
+          <div class="c-icon">📍</div>
+          <div><h4>Address</h4><p>3025 Artesia Blvd STE 101<br>Torrance, CA 90504</p></div>
+        </div>
+        <div class="contact-card reveal">
+          <div class="c-icon">📞</div>
+          <div><h4>Phone</h4><a href="tel:3233486756">(323) 348-6756</a></div>
+        </div>
+        <div class="contact-card reveal">
+          <div class="c-icon">🕐</div>
+          <div><h4>Hours</h4><p>Monday – Saturday: 9:00 AM – 8:00 PM<br>Sunday: 10:00 AM – 6:00 PM</p></div>
+        </div>
+        <a href="tel:3233486756" class="btn btn-blue" style="text-align:center;animation:pulseGlow 2.5s ease-in-out infinite">📞 Call Us — (323) 348-6756</a>
+      </div>
+      <div class="map-wrap reveal">
+        <iframe title="Phone ElectriK — 3025 Artesia Blvd Torrance CA"
+          src="https://maps.google.com/maps?q=3025+Artesia+Blvd+STE+101,+Torrance,+CA+90504&output=embed"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section-alt" id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-card reveal">
+        <div class="big-num">10+</div>
+        <div class="big-lbl">Years Serving the Community</div>
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,.2);margin:24px 0"/>
+        <div class="about-values">
+          <span class="about-val">Affordable</span>
+          <span class="about-val">Quality</span>
+          <span class="about-val">Honest</span>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <div class="label">Our Story</div>
+        <h2 class="title" style="background:linear-gradient(135deg,#111 0%,#c94a10 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Built by a Technician, for the Community</h2>
+        <p>Phone ElectriK is an electronics repair shop in Torrance, CA. We repair Apple, Samsung, Motorola, LG, OnePlus, TCL, Nokia, and many more devices — while you wait or browse our wide selection of accessories.</p>
+        <p>Founded by <strong>Mahmoud</strong>, a technician with over 10 years of hands-on experience, Phone ElectriK was built around what has been missing from the repair industry: <strong>Affordable Prices, Quality, and Honesty.</strong></p>
+        <p>We also carry devices and accessories in store. Come in and see what we have.</p>
+        <div class="brand-tags">
+          <span class="brand-tag">Apple</span>
+          <span class="brand-tag">Samsung</span>
+          <span class="brand-tag">Motorola</span>
+          <span class="brand-tag">LG</span>
+          <span class="brand-tag">OnePlus</span>
+          <span class="brand-tag">TCL</span>
+          <span class="brand-tag">Nokia</span>
+          <span class="brand-tag">Android</span>
+          <span class="brand-tag">iPad</span>
+          <span class="brand-tag">MacBook</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="section" id="quote">
+  <div class="container">
+    <div class="section-header center">
+      <div class="label">Free Quote</div>
+      <h2 class="title" style="background:linear-gradient(135deg,#111 0%,#c94a10 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Get a Repair Quote</h2>
+      <p class="sub" style="margin:0 auto">Fill out the form below and tap <strong>Send Quote Request</strong>. Your email app will open with everything pre-filled — just hit Send. We'll get back to you with pricing.</p>
+    </div>
+    <div class="quote-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="q-first">First Name</label>
+          <input type="text" id="q-first" placeholder="John" autocomplete="given-name" />
+        </div>
+        <div class="form-group">
+          <label for="q-last">Last Name</label>
+          <input type="text" id="q-last" placeholder="Smith" autocomplete="family-name" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="q-email">Your Email Address</label>
+        <input type="email" id="q-email" placeholder="you@email.com" autocomplete="email" />
+      </div>
+      <div class="form-group">
+        <label for="q-device">What Device Do You Have?</label>
+        <input type="text" id="q-device" placeholder="e.g. iPhone 17, Samsung Galaxy S26, iPad Pro..." />
+      </div>
+      <div class="form-group">
+        <label for="q-issue">What's Wrong With Your Device?</label>
+        <textarea id="q-issue" placeholder="e.g. Cracked screen, battery drains fast, not charging, lines on screen, black screen..."></textarea>
+      </div>
+      <button type="button" class="btn btn-blue" style="width:100%;font-size:1rem;padding:15px" onclick="sendQuote()">
+        📧 Send Quote Request
+      </button>
+      <div id="quote-success" style="display:none;margin-top:16px;background:#e8f5e9;border:1px solid #a5d6a7;border-radius:var(--radius);padding:16px;text-align:center">
+        <div style="font-size:1.5rem;margin-bottom:6px">✅</div>
+        <p style="font-weight:700;color:#1b5e20;font-size:.95rem;margin-bottom:4px">Your email app is opening!</p>
+        <p style="font-size:.85rem;color:#2e7d32">Everything is pre-filled — just tap <strong>Send</strong> in your email app. We'll reply with your quote.</p>
+      </div>
+      <p class="form-note" style="margin-top:16px">
+        Tapping the button opens your email app with everything filled in. Just hit <strong>Send</strong>.<br><br>
+        Prefer to call? <a href="tel:3233486756" style="color:var(--orange);font-weight:700">(323) 348-6756</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+        <svg width="36" height="32" viewBox="0 0 42 38" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="9" height="38" rx="2" fill="#F26522"/>
+          <path d="M9 0 L26 0 Q39 0 39 9.5 Q39 19 26 19 L9 19 Z" fill="#F26522"/>
+          <rect x="5" y="5.5" width="32" height="4" rx="1.5" fill="white"/>
+          <rect x="5" y="13" width="28" height="4" rx="1.5" fill="white"/>
+          <rect x="14" y="1.5" width="6" height="9" rx="1.5" fill="white" opacity="0.35"/>
+        </svg>
+        <span style="color:#fff;font-weight:900;font-size:.9rem;line-height:1.2">PH<span style="color:#F26522">⚡</span>NE<br>ELECTRIK</span>
+      </div>
+      <p style="font-size:.84rem;line-height:1.7">Torrance's top-rated electronics repair shop. 90-day warranty on every repair. Walk in or call us.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Pages</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="policies.html">Policies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html#quote">Get a Quote</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Visit Us</h5>
+      <ul>
+        <li><a href="tel:3233486756">(323) 348-6756</a></li>
+        <li><a href="contact.html">3025 Artesia Blvd STE 101</a></li>
+        <li><a href="contact.html">Torrance, CA 90504</a></li>
+        <li><a href="contact.html">Mon–Sat: 9AM–8PM</a></li>
+        <li><a href="contact.html">Sun: 10AM–6PM</a></li>
+        <li><a href="https://www.yelp.com/biz/phone-electrik-torrance-2" target="_blank" rel="noopener">Yelp ★★★★★</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Phone ElectriK. All rights reserved.</span>
+    <span>3025 Artesia Blvd STE 101, Torrance, CA 90504</span>
+  </div>
+</footer>
+
+<script>
+  function toggleNav(){document.getElementById('navLinks').classList.toggle('open')}
+
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
+  },{threshold:.08,rootMargin:'0px 0px -40px 0px'})
+  document.querySelectorAll('.reveal').forEach((el,i)=>{
+    el.style.transitionDelay = (i % 4 * 0.08) + 's'
+    obs.observe(el)
+  })
+
+  function sendQuote(){
+    const first  = document.getElementById('q-first').value.trim()
+    const last   = document.getElementById('q-last').value.trim()
+    const email  = document.getElementById('q-email').value.trim()
+    const device = document.getElementById('q-device').value.trim()
+    const issue  = document.getElementById('q-issue').value.trim()
+    const success = document.getElementById('quote-success')
+    success.style.display = 'none'
+    if(!first){ showFormError('q-first','Please enter your first name.'); return }
+    if(!last){  showFormError('q-last','Please enter your last name.'); return }
+    if(!email){ showFormError('q-email','Please enter your email address.'); return }
+    if(!device){showFormError('q-device','Please tell us what device you have.'); return }
+    if(!issue){ showFormError('q-issue','Please describe what is wrong with your device.'); return }
+    const subject = 'Repair Quote Request — ' + first + ' ' + last
+    const body =
+      'Hi Phone ElectriK! Quote request from the website.\n\n' +
+      'Name: ' + first + ' ' + last + '\n' +
+      'Email: ' + email + '\n' +
+      'Device: ' + device + '\n' +
+      'Issue: ' + issue
+    window.location.href = 'mailto:phoneelectrik5@gmail.com' +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body)
+    success.style.display = 'block'
+  }
+
+  function showFormError(fieldId, msg){
+    const el = document.getElementById(fieldId)
+    el.style.borderColor = '#e53935'
+    el.style.boxShadow = '0 0 0 3px rgba(229,57,53,.15)'
+    el.focus()
+    const existing = el.parentNode.querySelector('.field-error')
+    if(existing) existing.remove()
+    const err = document.createElement('span')
+    err.className = 'field-error'
+    err.style.cssText = 'color:#c62828;font-size:.78rem;font-weight:600;margin-top:2px'
+    err.textContent = msg
+    el.parentNode.appendChild(err)
+    el.addEventListener('input', function(){
+      el.style.borderColor = ''
+      el.style.boxShadow = ''
+      const e = el.parentNode.querySelector('.field-error')
+      if(e) e.remove()
+    }, {once:true})
+  }
+</script>
+</body>
+</html>
