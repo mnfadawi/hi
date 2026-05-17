@@ -154,9 +154,14 @@
     .rating-score strong{display:block;font-size:2.2rem;font-weight:900;color:var(--black);line-height:1}
     .rating-score span{font-size:.75rem;color:var(--muted)}
     .review-divider{border:none;border-top:1px solid #e8ecf0;margin:20px 0}
-    .review-item{margin-bottom:15px}
-    .review-meta{display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:3px}
-    .review-name{font-weight:700;color:var(--dark)}
+    .review-item{margin-bottom:12px;padding:12px;border-radius:var(--radius);border:1px solid #eee}
+    .review-link{display:block;text-decoration:none;color:inherit;transition:box-shadow .2s,transform .2s,border-color .2s}
+    .review-link:hover{box-shadow:0 4px 18px rgba(0,0,0,.1);transform:translateY(-2px);border-color:#ccc}
+    .review-meta{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;margin-bottom:6px}
+    .review-name{font-weight:700;color:var(--dark);display:flex;align-items:center;gap:7px}
+    .review-source{font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:50px;color:#fff}
+    .review-source-yelp{background:#d32323}
+    .review-source-google{background:#4285F4}
     .review-stars{color:var(--gold);font-size:.82rem}
     .review-text{font-size:.85rem;color:var(--muted);font-style:italic;line-height:1.55}
 
@@ -495,18 +500,23 @@
           </div>
         </div>
         <hr class="review-divider" />
-        <div class="review-item">
-          <div class="review-meta"><span class="review-name">Maria S. — Yelp</span><span class="review-stars">★★★★★</span></div>
-          <p class="review-text">"Fast, affordable and friendly. The only place that will truly help me fix it without breaking the bank."</p>
-        </div>
-        <div class="review-item">
-          <div class="review-meta"><span class="review-name">James T. — Yelp</span><span class="review-stars">★★★★★</span></div>
-          <p class="review-text">"Mahmoud was very sweet and knowledgeable. So amazed at how nice and helpful everyone was here."</p>
-        </div>
-        <div class="review-item">
-          <div class="review-meta"><span class="review-name">Ashley R. — Yelp</span><span class="review-stars">★★★★★</span></div>
-          <p class="review-text">"Got my iPad mini fixed, very quick and looks like new! Would give them more than 5 stars if I could."</p>
-        </div>
+
+        <a href="https://m.yelp.com/biz/phone-electrik-torrance-2" target="_blank" rel="noopener" class="review-item review-link">
+          <div class="review-meta">
+            <span class="review-name">Dania F. <span class="review-source review-source-yelp">Yelp</span></span>
+            <span class="review-stars">★★★★★</span>
+          </div>
+          <p class="review-text">"I went in to repair my phone's speaker. I was helped promptly by Mahmoud, who was very sweet and knowledgeable. He gave me a complimentary cleaning since I got a privacy screen, and now people can hear me speak on the phone clearly. Honestly couldn't believe how quick they were able to fix it — I was dealing with this issue for months. I appreciate that they were communicative and clear both about pricing and timing. I'd trust these guys with all my electronics!!"</p>
+        </a>
+
+        <a href="https://www.google.com/search?q=phone+electrik+google+reviews&ie=UTF-8&oe=UTF-8&hl=en-us&client=safari&sei=FwEKap7UC52ckPIP-ZHpyQk&dlnr=1#ebo=1" target="_blank" rel="noopener" class="review-item review-link">
+          <div class="review-meta">
+            <span class="review-name">Riki Fried <span class="review-source review-source-google">Google</span></span>
+            <span class="review-stars">★★★★★</span>
+          </div>
+          <p class="review-text">"Sha helped me at the store. He was fantastic. He diagnosed the problem, fixed it quickly and the whole time he had such a pleasant demeanor and a smile on his face. I highly recommend this store to repair your phones. Mine was an iPhone and he repaired it with iPhone parts. The price was also reasonable."</p>
+        </a>
+
         <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px">
           <a href="https://m.yelp.com/biz/phone-electrik-torrance-2" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:9px;background:#d32323;color:#fff;padding:13px 20px;border-radius:10px;font-weight:800;font-size:.95rem;text-decoration:none">⭐ Read &amp; Leave a Review on Yelp</a>
           <a href="https://www.google.com/search?q=phone+electrik+google+reviews&ie=UTF-8&oe=UTF-8&hl=en-us&client=safari&sei=FwEKap7UC52ckPIP-ZHpyQk&dlnr=1#ebo=1" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:9px;background:#4285F4;color:#fff;padding:13px 20px;border-radius:10px;font-weight:800;font-size:.95rem;text-decoration:none">🌟 Leave Us a Review on Google</a>
