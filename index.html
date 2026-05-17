@@ -81,7 +81,7 @@
     .dropdown a:hover{background:var(--orange-light);color:var(--orange);padding-left:24px}
 
     /* HERO */
-    .hero{background:linear-gradient(150deg,#0d0d0d 0%,#1c0a00 28%,#b84210 65%,#FF8C42 100%);color:#fff;padding:80px 24px 70px;text-align:center;position:relative;overflow:hidden}
+    .hero{background:linear-gradient(150deg,rgba(13,13,13,.93) 0%,rgba(28,10,0,.88) 30%,rgba(184,66,16,.82) 65%,rgba(255,140,66,.78) 100%),url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1400&q=80&auto=format&fit=crop') center/cover no-repeat;color:#fff;padding:80px 24px 70px;text-align:center;position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")}
     .hero-inner{position:relative;max-width:740px;margin:0 auto}
     .hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:600;margin-bottom:22px;backdrop-filter:blur(8px)}
@@ -97,15 +97,15 @@
 
     /* DEVICE STRIP */
     .device-strip{background:#0d0d0d;padding:0;overflow:hidden;position:relative}
-    .device-strip::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(transparent,rgba(242,101,34,.06));pointer-events:none}
     .device-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-    .d-card{position:relative;overflow:hidden;aspect-ratio:4/3;cursor:default}
-    .d-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease,filter .4s ease;filter:brightness(.65) saturate(.9)}
-    .d-card:hover img{transform:scale(1.06);filter:brightness(.8) saturate(1.1)}
-    .d-card-info{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.88));padding:18px 14px 14px;transition:padding .3s}
-    .d-card:hover .d-card-info{padding-bottom:18px}
-    .d-card-info p{color:#fff;font-weight:700;font-size:.85rem;margin-bottom:3px}
-    .d-card-info span{color:#F26522;font-size:.72rem;font-weight:600}
+    .d-card{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:default}
+    .d-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease,filter .5s ease;filter:brightness(.6) saturate(.85)}
+    .d-card:hover img{transform:scale(1.08);filter:brightness(.85) saturate(1.15)}
+    .d-card-info{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent 0%,rgba(0,0,0,.75) 50%,rgba(0,0,0,.95) 100%);padding:40px 14px 16px;transition:padding .3s}
+    .d-card:hover .d-card-info{padding-bottom:20px}
+    .d-card-info p{color:#fff;font-weight:800;font-size:.9rem;margin-bottom:4px;letter-spacing:.01em}
+    .d-card-info span{color:#F26522;font-size:.75rem;font-weight:600}
+    .d-card-badge{position:absolute;top:12px;left:12px;background:var(--orange);color:#fff;font-size:.65rem;font-weight:800;padding:3px 9px;border-radius:50px;letter-spacing:.05em;text-transform:uppercase}
 
     /* TRUST BAR */
     .trust-bar{background:linear-gradient(135deg,#111 0%,#1e1e1e 100%);border-bottom:2px solid var(--orange);padding:16px 24px}
@@ -278,23 +278,26 @@
   <div class="device-grid">
 
     <div class="d-card">
-      <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500&h=375&fit=crop&auto=format&q=80" alt="iPhone 17 Pro Max" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a1a,#2a1500)';this.style.display='none'" />
+      <div class="d-card-badge">We Fix</div>
+      <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=800&fit=crop&auto=format&q=85" alt="iPhone 17 Pro Max" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(180deg,#1a1200,#2a1500)';this.style.display='none'" />
       <div class="d-card-info">
         <p>iPhone 17 Pro Max</p>
-        <span>Screen · Battery · Back Glass</span>
+        <span>Screen · Battery · Back Glass · Charging Port</span>
       </div>
     </div>
 
     <div class="d-card">
-      <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500&h=375&fit=crop&auto=format&q=80" alt="Samsung Galaxy S26" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a1a,#001a10)';this.style.display='none'" />
+      <div class="d-card-badge">We Fix</div>
+      <img src="https://images.unsplash.com/photo-1610945264803-c22b62d2a7b3?w=600&h=800&fit=crop&auto=format&q=85" alt="Samsung Galaxy S26" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(180deg,#00111a,#001a12)';this.style.display='none'" />
       <div class="d-card-info">
         <p>Samsung Galaxy S26</p>
-        <span>Screen · Battery · Back Glass</span>
+        <span>Screen · Battery · Back Glass · All Models</span>
       </div>
     </div>
 
     <div class="d-card">
-      <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&h=375&fit=crop&auto=format&q=80" alt="Apple iPad" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a1a,#00101a)';this.style.display='none'" />
+      <div class="d-card-badge">We Fix</div>
+      <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&h=800&fit=crop&auto=format&q=85" alt="Apple iPad" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(180deg,#001020,#0a0a1a)';this.style.display='none'" />
       <div class="d-card-info">
         <p>Apple iPad</p>
         <span>Screen · Battery · Charging Port</span>
@@ -302,15 +305,17 @@
     </div>
 
     <div class="d-card">
-      <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&h=375&fit=crop&auto=format&q=80" alt="MacBook Pro" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a1a,#0d0d0d)';this.style.display='none'" />
+      <div class="d-card-badge">We Fix</div>
+      <img src="https://images.unsplash.com/photo-1611186871525-9c4ba5f05f2a?w=600&h=800&fit=crop&auto=format&q=85" alt="MacBook Pro" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(180deg,#0d0d0d,#111)';this.style.display='none'" />
       <div class="d-card-info">
         <p>MacBook Pro</p>
-        <span>Screen · Battery · Keyboard</span>
+        <span>Screen · Battery · Keyboard · All Models</span>
       </div>
     </div>
 
     <div class="d-card">
-      <img src="https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=500&h=375&fit=crop&auto=format&q=80" alt="Apple Watch" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a1a,#1a0a00)';this.style.display='none'" />
+      <div class="d-card-badge">We Fix</div>
+      <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600&h=800&fit=crop&auto=format&q=85" alt="Apple Watch" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(180deg,#1a0a00,#120800)';this.style.display='none'" />
       <div class="d-card-info">
         <p>Apple Watch</p>
         <span>Screen · Battery · All Series</span>
@@ -318,31 +323,34 @@
     </div>
 
     <div class="d-card">
-      <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=500&h=375&fit=crop&auto=format&q=80" alt="PlayStation 5" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a1a,#00001a)';this.style.display='none'" />
+      <div class="d-card-badge">We Fix</div>
+      <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=600&h=800&fit=crop&auto=format&q=85" alt="PlayStation 5" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(180deg,#00001a,#050510)';this.style.display='none'" />
       <div class="d-card-info">
         <p>PlayStation 5</p>
-        <span>HDMI · Disc Drive · Controller</span>
+        <span>HDMI · Disc Drive · Controller Repair</span>
       </div>
     </div>
 
     <div class="d-card">
-      <img src="https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=500&h=375&fit=crop&auto=format&q=80" alt="Xbox Series X" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a1a,#001a00)';this.style.display='none'" />
+      <div class="d-card-badge">We Fix</div>
+      <img src="https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=600&h=800&fit=crop&auto=format&q=85" alt="Xbox Series X" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(180deg,#001a00,#001200)';this.style.display='none'" />
       <div class="d-card-info">
         <p>Xbox Series X</p>
-        <span>HDMI · Controller · Disc Drive</span>
+        <span>HDMI · Disc Drive · Controller Repair</span>
       </div>
     </div>
 
     <div class="d-card">
-      <img src="https://images.unsplash.com/photo-1585504198199-20277593b94f?w=500&h=375&fit=crop&auto=format&q=80" alt="Nintendo Switch" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a1a,#1a0000)';this.style.display='none'" />
+      <div class="d-card-badge">We Fix</div>
+      <img src="https://images.unsplash.com/photo-1585504198199-20277593b94f?w=600&h=800&fit=crop&auto=format&q=85" alt="Nintendo Switch" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(180deg,#1a0000,#120000)';this.style.display='none'" />
       <div class="d-card-info">
         <p>Nintendo Switch</p>
-        <span>Screen · Joy-Con · Charging</span>
+        <span>Screen · Joy-Con · Charging Port</span>
       </div>
     </div>
 
   </div>
-  <p style="text-align:center;color:rgba(255,255,255,.35);font-size:.78rem;padding:14px 24px">We fix most makes &amp; models. Don't see yours? Walk in and ask.</p>
+  <p style="text-align:center;color:rgba(255,255,255,.4);font-size:.78rem;padding:14px 24px 18px">Don't see your device? Walk in and ask — we fix most makes &amp; models.</p>
 </div>
 
 <!-- TRUST BAR -->
