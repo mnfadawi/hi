@@ -60,9 +60,9 @@
 
     /* HEADER */
     header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #e0e7ef;box-shadow:0 2px 12px rgba(242,101,34,.07)}
-    nav{display:flex;align-items:center;justify-content:space-between;padding:20px 28px;max-width:1100px;margin:0 auto}
+    nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1100px;margin:0 auto;gap:0}
     .logo{font-size:1.4rem;font-weight:900;color:var(--dark);flex-shrink:0}
-    .nav-links{display:flex;gap:22px;align-items:center;list-style:none}
+    .nav-links{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;list-style:none}
     .nav-links a{font-size:1rem;font-weight:600;color:var(--dark);transition:color .2s;white-space:nowrap}
     .nav-links a:hover,.nav-links a.active{color:var(--orange)}
     .nav-cta{background:var(--orange);color:#fff!important;padding:11px 24px;border-radius:var(--radius)}
@@ -194,9 +194,10 @@
 
     /* MOBILE */
     @media(max-width:820px){
-      .nav-links{display:none;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:#fff;padding:20px 24px;border-bottom:1px solid #e0e7ef;gap:14px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-      .nav-links.open{display:flex}
-      .hamburger{display:flex}
+      .nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:6px 8px;border-top:1px solid #e0e7ef;padding:8px 0 4px;margin-top:4px}
+      .nav-links a{font-size:.78rem}
+      .nav-cta{font-size:.8rem!important;padding:7px 14px!important}
+      .hamburger{display:none!important}
       .reviews-inner{grid-template-columns:1fr}
       .footer-grid{grid-template-columns:1fr;gap:24px}
       .hero-stats{gap:20px}
@@ -223,8 +224,9 @@
       <li><a href="services.html">Services</a></li>
       <li><a href="#brands">What We Fix</a></li>
       <li><a href="#why">Reviews</a></li>
-      <li><a href="contact.html">Contact</a></li>
       <li><a href="policies.html">Policies</a></li>
+      <li><a href="contact.html">Hours &amp; Location</a></li>
+      <li><a href="contact.html#about">About Us</a></li>
       <li><a href="tel:3233486756" class="nav-cta">&#128222; Call Now</a></li>
     </ul>
       </li>
@@ -239,9 +241,6 @@
       </li>
       <li><a href="tel:3233486756" class="nav-cta">📞 Call Now</a></li>
     </ul>
-    <div class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </div>
   </nav>
 </header>
 
@@ -282,80 +281,80 @@
     <div class="d-card">
       <img src="IMG_0096.jpeg" alt="iPhone 17 Pro Max" loading="lazy" style="width:100%;height:100%;object-fit:contain" />
       <div class="d-card-info">
-        <p>iPhone 17 Pro Max</p>
-        <span>Screen · Battery · Back Glass · Charging Port</span>
+        <p>Apple iPhone — Any Model</p>
+        <span>Any issue · Screen · Battery · Back Glass · Port</span>
       </div>
     </div>
 
     <div class="d-card">
       <img src="IMG_0097.jpeg" alt="Samsung Galaxy S26" loading="lazy" style="width:100%;height:100%;object-fit:contain" />
       <div class="d-card-info">
-        <p>Samsung Galaxy S26</p>
-        <span>Screen · Battery · Back Glass · All Models</span>
+        <p>Samsung Galaxy — All Series</p>
+        <span>S · A · Note · Any model · Any issue</span>
       </div>
     </div>
 
     <div class="d-card">
       <img src="IMG_0108.jpeg" alt="Google Pixel" loading="lazy" style="width:100%;height:100%;object-fit:contain" />
       <div class="d-card-info">
-        <p>Google Pixel</p>
-        <span>Screen · Battery · Charging Port</span>
+        <p>Google Pixel — Any Model</p>
+        <span>Any issue · Screen · Battery · Port</span>
       </div>
     </div>
 
     <div class="d-card">
       <img src="IMG_0110.jpeg" alt="Motorola Razr" loading="lazy" style="width:100%;height:100%;object-fit:contain" />
       <div class="d-card-info">
-        <p>Motorola</p>
-        <span>Screen · Battery · Charging Port</span>
+        <p>Motorola — Any Model</p>
+        <span>Any issue · Screen · Battery · Port</span>
       </div>
     </div>
 
     <div class="d-card">
       <img src="IMG_0112.webp" alt="LG Phone" loading="lazy" style="width:100%;height:100%;object-fit:contain" />
       <div class="d-card-info">
-        <p>LG</p>
-        <span>Screen · Battery · All Models</span>
+        <p>LG — Any Model</p>
+        <span>Any issue · Screen · Battery · Port</span>
       </div>
     </div>
 
     <div class="d-card">
       <img src="IMG_0113.webp" alt="Nokia Phone" loading="lazy" style="width:100%;height:100%;object-fit:contain" />
       <div class="d-card-info">
-        <p>Nokia</p>
-        <span>Screen · Battery · Charging Port</span>
+        <p>Nokia — Any Model</p>
+        <span>Any issue · Screen · Battery · Port</span>
       </div>
     </div>
 
     <div class="d-card">
       <img src="IMG_0100.jpeg" alt="MacBook Pro" loading="lazy" style="width:100%;height:100%;object-fit:contain" />
       <div class="d-card-info">
-        <p>MacBook Pro</p>
-        <span>Screen · Battery · Keyboard · All Models</span>
+        <p>MacBook &amp; Laptop — Any Model</p>
+        <span>Any issue · Screen · Battery · Keyboard · Port</span>
       </div>
     </div>
 
     <div class="d-card">
       <img src="IMG_0101.png" alt="Apple Watch" loading="lazy" style="width:100%;height:100%;object-fit:contain" />
       <div class="d-card-info">
-        <p>Apple Watch</p>
-        <span>Screen · Battery · All Series</span>
+        <p>Apple Watch — Any Series</p>
+        <span>Series 1–10 · Ultra · SE · Any issue</span>
       </div>
     </div>
 
     <div class="d-card">
       <img src="IMG_0099.png" alt="PlayStation 5" loading="lazy" style="width:100%;height:100%;object-fit:contain" />
       <div class="d-card-info">
-        <p>PlayStation 5</p>
-        <span>HDMI · Disc Drive · Controller Repair</span>
+        <p>PlayStation — PS4 &amp; PS5 Pro</p>
+        <span>Any issue · HDMI · Disc Drive · Controller</span>
       </div>
     </div>
 
     <div class="d-card">
       <img src="IMG_0098.jpeg" alt="Nintendo Switch 2" loading="lazy" style="width:100%;height:100%;object-fit:contain" />
       <div class="d-card-info">
-        <p>Nintendo Switch 2</p>
-        <span>Screen · Joy-Con · Charging Port</span>
+        <p>Nintendo Switch &amp; Switch 2</p>
+        <span>Any issue · Screen · Joy-Con · Port</span>
       </div>
     </div>
 
