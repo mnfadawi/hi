@@ -55,7 +55,7 @@
       { "@type": "Question", "name": "How long does a phone repair take?", "acceptedAnswer": { "@type": "Answer", "text": "Most repairs are done while you wait. Some repairs require ordering a part which typically arrives next day but can take up to a week." } },
       { "@type": "Question", "name": "Do you take appointments?", "acceptedAnswer": { "@type": "Answer", "text": "No appointment needed — just walk in during business hours or call us first." } },
       { "@type": "Question", "name": "What is your warranty?", "acceptedAnswer": { "@type": "Answer", "text": "We offer a 90-day warranty on the specific part replaced. The warranty does not cover physical damage, new liquid damage, or unrelated components." } },
-      { "@type": "Question", "name": "How do I know if my iPhone battery needs replacing?", "acceptedAnswer": { "@type": "Answer", "text": "Go to Settings → Battery → Battery Health & Charging. If Maximum Capacity is 85% or below, you need a new battery." } }
+      { "@type": "Question", "name": "How do I know if my iPhone battery needs replacing?", "acceptedAnswer": { "@type": "Answer", "text": "If your battery is draining fast or not lasting after you charge it, it likely needs to be replaced. Come in and we'll take a look." } }
     ]
   }
   </script>
@@ -324,7 +324,7 @@
 <section class="hero" id="home">
   <div class="hero-inner">
     <div class="hero-badge"><span style="color:#ffd54f">★★★★★</span> 5-Star Rated · 197 Yelp Reviews · Torrance, CA</div>
-    <h1 style="color:#111">We Fix Most Makes &amp; Models — <em>While You Wait</em></h1>
+    <h1 style="color:#111">We Fix Most Makes &amp; Models — <em style="color:#111">While You Wait</em></h1>
     <p>iPhone, Samsung, iPad, MacBook, Apple Watch, game consoles &amp; more. No appointment needed — walk in or call us. Every repair backed by a <strong>90-day warranty</strong>.</p>
     <div class="hero-btns">
       <a href="tel:3233486756" class="btn btn-white">📞 (323) 348-6756</a>
@@ -332,7 +332,6 @@
     </div>
     <div class="hero-perks">
       <span class="hero-perk">🚶 No Appointment Needed — Walk In or Call</span>
-      <span class="hero-perk">🚶 Walk In or Call Us</span>
       <span class="hero-perk">🛡️ 90-Day Warranty</span>
       <span class="hero-perk">⚡ Most Repairs Done Fast</span>
       <span class="hero-perk">📦 Special Orders Available</span>
@@ -476,7 +475,6 @@
           <li>HDMI ports, disc drives, controllers</li>
           <li>Parts ordered from our vendors</li>
           <li>Usually next day — up to 1 week</li>
-          <li>Remaining balance paid when you pick up</li>
           <li>Leave device here or bring it back when part arrives</li>
         </ul>
       </div>
@@ -521,7 +519,7 @@
         <ul class="card-bullets">
           <li>Don't know what's wrong? We'll find out</li>
           <li>Any device, any problem</li>
-          <li>Water damage, black screen, won't charge</li>
+          <li>Liquid damage, black screen, won't charge</li>
           <li>We tell you the problem &amp; cost — you decide</li>
         </ul>
         <div class="card-note">→ Full details in Diagnostic section below</div>
@@ -559,7 +557,7 @@
     <div>
       <div class="label diag-label">Diagnostic Service</div>
       <h2 class="title diag-title">Not Sure What's Wrong? We'll Find Out.</h2>
-      <p class="sub diag-sub" style="margin-bottom:6px;">When a device comes in and the problem is unknown — black screen, won't turn on, won't charge, acting up after water or liquid exposure — we run a full diagnostic to find the root cause before any repair begins.</p>
+      <p class="sub diag-sub" style="margin-bottom:6px;">When a device comes in and the problem is unknown — black screen, won't turn on, won't charge, acting up after liquid exposure — we run a full diagnostic to find the root cause before any repair begins.</p>
       <p style="font-size:.88rem;color:rgba(255,255,255,.8);margin-bottom:4px;">We tell you exactly what the problem is and what it costs to fix. You're welcome to go ahead with the repair — or you're welcome to leave. No pressure.</p>
       <div class="diag-steps">
         <div class="diag-step">
@@ -623,7 +621,7 @@
           </div>
           <div class="pillar">
             <div class="pillar-icon">🚶</div>
-            <div><h4>No Appointment Needed</h4><p>No appointment needed — walk in or give us a call.</p></div>
+            <div><h4>No Appointment Needed</h4><p>Just walk in or give us a call — we're here to help.</p></div>
           </div>
         </div>
       </div>
@@ -767,10 +765,6 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="q-phone">Your Phone Number</label>
-        <input type="tel" id="q-phone" placeholder="(555) 123-4567" autocomplete="tel" />
-      </div>
-      <div class="form-group">
         <label for="q-email">Your Email Address</label>
         <input type="email" id="q-email" placeholder="you@email.com" autocomplete="email" />
       </div>
@@ -858,15 +852,10 @@
         </ul>
       </div>
 
-      <!-- Repair Terms -->
+      <!-- Payment Methods -->
       <div class="policy-card blue-top">
-        <h3>📄 Repair Terms &amp; Conditions</h3>
-        <ul class="policy-list">
-          <li><span class="pi pi-check">✓</span><span>90-day warranty on all repairs except custom ordered parts (30 days)</span></li>
-          <li><span class="pi pi-x">✕</span><span>No warranty on physical damage</span></li>
-          <li><span class="pi pi-x">✕</span><span>No warranty on liquid damage</span></li>
-        </ul>
-        <div style="margin-top:14px">
+        <h3>💳 Accepted Payment Methods</h3>
+        <div style="margin-top:8px">
           <p style="font-size:.8rem;font-weight:700;color:var(--muted);margin-bottom:8px">Accepted Payments:</p>
           <div class="payment-methods">
             <span class="pm-tag">💵 Cash</span>
@@ -936,7 +925,7 @@
         <li><a href="#diagnostic">Diagnostic Service</a></li>
         <li><a href="#services">Special Orders</a></li>
         <li><a href="#policies">Warranty &amp; Policies</a></li>
-        <li><a href="#policies">Refund Policy</a></li>
+        <li><a href="#policies">Policies</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -964,7 +953,6 @@
   function sendQuote(){
     const first  = document.getElementById('q-first').value.trim()
     const last   = document.getElementById('q-last').value.trim()
-    const phone  = document.getElementById('q-phone').value.trim()
     const email  = document.getElementById('q-email').value.trim()
     const device = document.getElementById('q-device').value.trim()
     const issue  = document.getElementById('q-issue').value.trim()
@@ -974,7 +962,7 @@
 
     if(!first){ showFormError('q-first','Please enter your first name.'); return }
     if(!last){  showFormError('q-last','Please enter your last name.'); return }
-    if(!phone){ showFormError('q-phone','Please enter your phone number.'); return }
+    if(!email){ showFormError('q-email','Please enter your email address.'); return }
     if(!device){showFormError('q-device','Please tell us what device you have.'); return }
     if(!issue){ showFormError('q-issue','Please describe what is wrong with your device.'); return }
 
@@ -982,8 +970,7 @@
     const body =
       'Hi Phone ElectriK! Quote request from the website.\n\n' +
       'Name: ' + first + ' ' + last + '\n' +
-      'Phone: ' + phone + '\n' +
-      (email ? 'Email: ' + email + '\n' : '') +
+      'Email: ' + email + '\n' +
       'Device: ' + device + '\n' +
       'Issue: ' + issue
 
