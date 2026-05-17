@@ -93,6 +93,18 @@
     .form-group textarea{resize:vertical;min-height:100px}
     .form-note{font-size:.8rem;color:var(--muted);margin-top:10px;text-align:center;line-height:1.6}
 
+    /* EMAIL PICKER MODAL */
+    .email-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:999;align-items:flex-end;justify-content:center}
+    .email-overlay.open{display:flex}
+    .email-sheet{background:#fff;border-radius:20px 20px 0 0;width:100%;max-width:520px;padding:24px 20px 36px;box-shadow:0 -8px 40px rgba(0,0,0,.18)}
+    .email-sheet h3{font-size:1rem;font-weight:800;text-align:center;margin-bottom:6px;color:#111}
+    .email-sheet p{font-size:.82rem;color:#666;text-align:center;margin-bottom:18px}
+    .email-options{display:flex;flex-direction:column;gap:10px}
+    .email-opt{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:12px;border:1.5px solid #e0e7ef;font-weight:700;font-size:.95rem;color:#111;text-decoration:none;transition:background .15s,border-color .15s;cursor:pointer;background:#fff}
+    .email-opt:hover{background:#f8f9fa;border-color:#ccc}
+    .email-opt-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+    .sheet-cancel{width:100%;margin-top:12px;padding:13px;border-radius:12px;background:#f2f2f2;border:none;font-size:.95rem;font-weight:700;color:#555;cursor:pointer}
+
     /* FOOTER */
     footer{background:linear-gradient(180deg,#0d0d0d 0%,#111 100%);color:rgba(255,255,255,.72);padding:52px 24px 28px}
     .footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;margin-bottom:36px}
@@ -344,16 +356,19 @@
     if(!email){ showFormError('q-email','Please enter your email address.'); return }
     if(!device){showFormError('q-device','Please tell us what device you have.'); return }
     if(!issue){ showFormError('q-issue','Please describe what is wrong with your device.'); return }
+    const to      = 'info@phoneelectrik.com'
     const subject = 'Repair Quote Request — ' + first + ' ' + last
-    const body =
-      'Hi Phone ElectriK! Quote request from the website.\n\n' +
-      'Name: ' + first + ' ' + last + '\n' +
-      'Email: ' + email + '\n' +
-      'Device: ' + device + '\n' +
-      'Issue: ' + issue
-    window.location.href = 'mailto:phoneelectrik5@gmail.com' +
-      '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(body)
+    const body    = 'Hi Phone ElectriK! Quote request from the website.\n\nName: ' + first + ' ' + last + '\nEmail: ' + email + '\nDevice: ' + device + '\nIssue: ' + issue
+    const s = encodeURIComponent(subject)
+    const b = encodeURIComponent(body)
+    document.getElementById('opt-mail').href    = 'mailto:' + to + '?subject=' + s + '&body=' + b
+    document.getElementById('opt-gmail').href   = 'https://mail.google.com/mail/?view=cm&to=' + to + '&su=' + s + '&body=' + b
+    document.getElementById('opt-yahoo').href   = 'https://compose.mail.yahoo.com/?to=' + to + '&subject=' + s + '&body=' + b
+    document.getElementById('opt-outlook').href = 'https://outlook.live.com/mail/0/deeplink/compose?to=' + to + '&subject=' + s + '&body=' + b
+    document.getElementById('emailOverlay').classList.add('open')
+  }
+  function closeEmailPicker(){
+    document.getElementById('emailOverlay').classList.remove('open')
   }
 
   function showFormError(fieldId, msg){
@@ -376,5 +391,38 @@
     }, {once:true})
   }
 </script>
+
+<!-- EMAIL APP PICKER -->
+<div class="email-overlay" id="emailOverlay" onclick="if(event.target===this)closeEmailPicker()">
+  <div class="email-sheet">
+    <h3>Choose Your Email App</h3>
+    <p>Pick whichever email app you use</p>
+    <div class="email-options" id="emailOptions">
+      <a class="email-opt" id="opt-mail">
+        <div class="email-opt-icon" style="background:#f0f4ff">✉️</div>
+        <span>Apple Mail</span>
+      </a>
+      <a class="email-opt" id="opt-gmail">
+        <div class="email-opt-icon" style="background:#fff0f0">
+          <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" style="width:24px;height:24px;border-radius:4px" alt="Gmail" />
+        </div>
+        <span>Gmail</span>
+      </a>
+      <a class="email-opt" id="opt-yahoo">
+        <div class="email-opt-icon" style="background:#f5f0ff">
+          <img src="https://s.yimg.com/cv/apiv2/default/20201112/favicon.ico" style="width:24px;height:24px;border-radius:4px" alt="Yahoo Mail" />
+        </div>
+        <span>Yahoo Mail</span>
+      </a>
+      <a class="email-opt" id="opt-outlook">
+        <div class="email-opt-icon" style="background:#f0f6ff">
+          <img src="https://res.cdn.office.net/assets/mail/pwa/v1/favicons/favicon-32.png" style="width:24px;height:24px;border-radius:4px" alt="Outlook" />
+        </div>
+        <span>Outlook / Hotmail</span>
+      </a>
+    </div>
+    <button class="sheet-cancel" onclick="closeEmailPicker()">Cancel</button>
+  </div>
+</div>
 </body>
 </html>
