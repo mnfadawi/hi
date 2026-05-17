@@ -32,14 +32,14 @@
 
     /* HEADER */
     header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #e0e7ef;box-shadow:0 2px 12px rgba(242,101,34,.07)}
-    nav{display:flex;align-items:center;justify-content:space-between;padding:13px 24px;max-width:1100px;margin:0 auto}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:20px 28px;max-width:1100px;margin:0 auto}
     .nav-links{display:flex;gap:22px;align-items:center;list-style:none}
-    .nav-links a{font-size:.88rem;font-weight:600;color:var(--dark);transition:color .2s;white-space:nowrap}
+    .nav-links a{font-size:1rem;font-weight:600;color:var(--dark);transition:color .2s;white-space:nowrap}
     .nav-links a:hover,.nav-links a.active{color:var(--orange)}
-    .nav-cta{background:var(--orange);color:#fff!important;padding:8px 18px;border-radius:var(--radius)}
+    .nav-cta{background:var(--orange);color:#fff!important;padding:11px 24px;border-radius:var(--radius)}
     .nav-cta:hover{background:var(--black)!important}
     .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-    .hamburger span{width:24px;height:2px;background:var(--dark);border-radius:2px;transition:.3s;display:block}
+    .hamburger span{width:28px;height:3px;background:var(--dark);border-radius:2px;transition:.3s;display:block}
 
     /* DROPDOWN */
     .has-dropdown{position:relative}
@@ -132,23 +132,17 @@
 <header>
   <nav>
     <a href="index.html" class="logo" style="display:flex;align-items:center;text-decoration:none">
-      <img src="IMG_0092.png" alt="Phone ElectriK" style="height:44px;width:auto;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.15)" />
+      <img src="IMG_0092.png" alt="Phone ElectriK" style="height:54px;width:auto;border-radius:9px;box-shadow:0 2px 12px rgba(0,0,0,.18)" />
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
-      <li class="has-dropdown">
-        <a href="services.html">Services <span class="dd-arrow">▾</span></a>
-        <ul class="dropdown">
-          <li><a href="services.html">📱 Screen Repair</a></li>
-          <li><a href="services.html">🔋 Battery Replacement</a></li>
-          <li><a href="services.html">🪟 Back Glass Repair</a></li>
-          <li><a href="services.html">🔌 Charging Port Repair</a></li>
-          <li><a href="services.html">💻 MacBook &amp; Laptop</a></li>
-          <li><a href="services.html">🎮 Game Console Repair</a></li>
-          <li><a href="services.html">🔓 Device Unlocking</a></li>
-          <li><a href="services.html#diagnostic">🔍 Diagnostic Service</a></li>
-          <li><a href="services.html#accessories">🔊 Accessories &amp; Devices</a></li>
-        </ul>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="index.html#brands">What We Fix</a></li>
+      <li><a href="index.html#why">Reviews</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="policies.html">Policies</a></li>
+      <li><a href="tel:3233486756" class="nav-cta">&#128222; Call Now</a></li>
+    </ul>
       </li>
       <li><a href="policies.html">Policies</a></li>
       <li class="has-dropdown">
@@ -320,6 +314,13 @@
         <li><a href="contact.html">Sun: 10AM–6PM</a></li>
         <li><a href="https://www.yelp.com/biz/phone-electrik-torrance-2" target="_blank" rel="noopener">Yelp ★★★★★</a></li>
       </ul>
+    </div>
+  </div>
+  <div style="text-align:center;border-top:1px solid rgba(255,255,255,.1);padding:28px 24px">
+    <p style="color:rgba(255,255,255,.55);font-size:.88rem;margin-bottom:14px;font-weight:600">Happy with your repair? Your review helps us a lot!</p>
+    <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <a href="https://www.yelp.com/biz/phone-electrik-torrance-2" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#d32323;color:#fff;padding:12px 24px;border-radius:10px;font-weight:800;font-size:.92rem;text-decoration:none">&#11088; Leave a Review on Yelp</a>
+      <a href="https://www.google.com/maps/place/Phone+ElectriK/@33.8688,-118.3400,17z" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#4285F4;color:#fff;padding:12px 24px;border-radius:10px;font-weight:800;font-size:.92rem;text-decoration:none">&#127775; Leave a Review on Google</a>
     </div>
   </div>
   <div class="footer-bottom">
