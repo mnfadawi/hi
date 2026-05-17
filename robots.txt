@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mnfadawi.github.io/hi/sitemap.xml
