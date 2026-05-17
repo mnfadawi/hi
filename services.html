@@ -42,6 +42,16 @@
     .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
     .hamburger span{width:24px;height:2px;background:var(--dark);border-radius:2px;transition:.3s;display:block}
 
+    /* DROPDOWN */
+    .has-dropdown{position:relative}
+    .dd-arrow{font-size:.6rem;margin-left:3px;display:inline-block;transition:transform .2s}
+    .has-dropdown:hover .dd-arrow{transform:rotate(180deg)}
+    .dropdown{list-style:none;position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-8px);background:#fff;border:1px solid #e0e7ef;border-radius:var(--radius);box-shadow:0 10px 36px rgba(0,0,0,.15);min-width:210px;z-index:300;padding:6px 0;visibility:hidden;opacity:0;transition:opacity .2s ease,transform .2s ease,visibility .2s}
+    .has-dropdown:hover .dropdown{visibility:visible;opacity:1;transform:translateX(-50%) translateY(0)}
+    .dropdown li{list-style:none}
+    .dropdown a{padding:10px 18px;font-size:.86rem;color:var(--dark);font-weight:600;display:block;transition:background .15s,color .15s,padding-left .15s;white-space:nowrap}
+    .dropdown a:hover{background:var(--orange-light);color:var(--orange);padding-left:24px}
+
     /* PAGE HERO */
     .page-hero{background:linear-gradient(150deg,#0d0d0d 0%,#1c0a00 28%,#b84210 65%,#FF8C42 100%);color:#fff;padding:52px 24px;text-align:center}
     .page-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin-bottom:10px;text-shadow:0 2px 16px rgba(0,0,0,.35)}
@@ -128,6 +138,9 @@
       .diag-inner{grid-template-columns:1fr}
       .footer-grid{grid-template-columns:1fr;gap:24px}
       .battery-tip{flex-direction:column;gap:12px}
+      .dropdown{position:static;visibility:visible;opacity:1;transform:none!important;box-shadow:none;border:none;border-left:3px solid var(--orange);margin-left:12px;padding:0;display:none;min-width:auto;background:transparent}
+      .has-dropdown.open .dropdown{display:flex;flex-direction:column}
+      .dropdown a{padding:8px 14px;font-size:.84rem}
     }
   </style>
 </head>
@@ -148,11 +161,29 @@
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
-      <li><a href="services.html" class="active">Services</a></li>
+      <li class="has-dropdown">
+        <a href="services.html" class="active">Services <span class="dd-arrow">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="services.html">📱 Screen Repair</a></li>
+          <li><a href="services.html">🔋 Battery Replacement</a></li>
+          <li><a href="services.html">🪟 Back Glass Repair</a></li>
+          <li><a href="services.html">🔌 Charging Port Repair</a></li>
+          <li><a href="services.html">💻 MacBook &amp; Laptop</a></li>
+          <li><a href="services.html">🎮 Game Console Repair</a></li>
+          <li><a href="services.html">🔓 Device Unlocking</a></li>
+          <li><a href="services.html#diagnostic">🔍 Diagnostic Service</a></li>
+          <li><a href="services.html#accessories">🔊 Accessories &amp; Devices</a></li>
+        </ul>
+      </li>
       <li><a href="policies.html">Policies</a></li>
-      <li><a href="contact.html#about">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="contact.html#quote">Get a Quote</a></li>
+      <li class="has-dropdown">
+        <a href="contact.html">Contact <span class="dd-arrow">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="contact.html">📍 Visit Us &amp; Hours</a></li>
+          <li><a href="contact.html#about">🏪 About Us</a></li>
+          <li><a href="contact.html#quote">✉️ Get a Free Quote</a></li>
+        </ul>
+      </li>
       <li><a href="tel:3233486756" class="nav-cta">📞 Call Now</a></li>
     </ul>
     <div class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
@@ -533,6 +564,15 @@
 
 <script>
   function toggleNav(){document.getElementById('navLinks').classList.toggle('open')}
+  document.querySelectorAll('.has-dropdown > a').forEach(function(link){
+    link.addEventListener('click',function(e){
+      if(window.innerWidth<=820){e.preventDefault();this.parentElement.classList.toggle('open')}
+    })
+  })
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.has-dropdown'))
+      document.querySelectorAll('.has-dropdown').forEach(function(el){el.classList.remove('open')})
+  })
   const obs = new IntersectionObserver(entries=>{
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
   },{threshold:.08,rootMargin:'0px 0px -40px 0px'})
