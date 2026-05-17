@@ -605,25 +605,41 @@
     obs.observe(el)
   })
 
-  // Keep scroll-padding-top equal to actual header height (fixes anchor landing)
-  function syncScrollPad(){document.documentElement.style.scrollPaddingTop=(document.querySelector('header').offsetHeight+6)+'px'}
-  syncScrollPad()
-  window.addEventListener('resize',syncScrollPad)
-
-  // Scroll-spy: highlight the correct nav link as sections scroll into view
+  // Dynamic scroll-padding + nav active state
   ;(function(){
-    var map={home:'index.html',brands:'#brands',why:'#reviews'}
+    var hdr=document.querySelector('header')
+    function syncPad(){document.documentElement.style.scrollPaddingTop=(hdr.offsetHeight+4)+'px'}
+    syncPad(); window.addEventListener('resize',syncPad)
+
     var links=document.querySelectorAll('.header-nav a')
-    function activate(href){
+    window._navActivate=function(href){
       links.forEach(function(a){a.classList.remove('active')})
       links.forEach(function(a){if(a.getAttribute('href')===href)a.classList.add('active')})
     }
+
+    // Activate correct link based on current page + URL hash
+    var page=(location.pathname.split('/').pop()||'index.html')
+    var hash=location.hash
+    if(hash){
+      // Does a nav link match just the hash (in-page link like '#brands')?
+      var found=false
+      links.forEach(function(a){if(!found&&a.getAttribute('href')===hash){window._navActivate(hash);found=true}})
+      // Otherwise match page+hash (cross-page link like 'contact.html#about')
+      if(!found) links.forEach(function(a){if(!found&&a.getAttribute('href')===page+hash){window._navActivate(page+hash);found=true}})
+    } else {
+      links.forEach(function(a){var h=a.getAttribute('href');if(h===page)window._navActivate(page)})
+    }
+  })()
+
+  // Scroll-spy: keep nav in sync while scrolling (index.html)
+  ;(function(){
+    var map={home:'index.html',brands:'#brands',why:'#reviews'}
+    var hh=document.querySelector('header').offsetHeight
     var obs=new IntersectionObserver(function(entries){
       entries.forEach(function(e){
-        if(!e.isIntersecting)return
-        var href=map[e.target.id];if(href)activate(href)
+        if(e.isIntersecting&&map[e.target.id]) window._navActivate(map[e.target.id])
       })
-    },{rootMargin:'-'+(document.querySelector('header').offsetHeight+6)+'px 0px -45% 0px',threshold:0})
+    },{rootMargin:'-'+(hh+4)+'px 0px -40% 0px',threshold:0})
     ;['home','brands','why'].forEach(function(id){var el=document.getElementById(id);if(el)obs.observe(el)})
   })()
 </script>

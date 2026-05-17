@@ -556,10 +556,31 @@
     obs.observe(el)
   })
 
-  // Keep scroll-padding-top equal to actual header height (fixes anchor landing)
-  function syncScrollPad(){document.documentElement.style.scrollPaddingTop=(document.querySelector('header').offsetHeight+6)+'px'}
-  syncScrollPad()
-  window.addEventListener('resize',syncScrollPad)
+  // Dynamic scroll-padding + nav active state
+  ;(function(){
+    var hdr=document.querySelector('header')
+    function syncPad(){document.documentElement.style.scrollPaddingTop=(hdr.offsetHeight+4)+'px'}
+    syncPad(); window.addEventListener('resize',syncPad)
+
+    var links=document.querySelectorAll('.header-nav a')
+    window._navActivate=function(href){
+      links.forEach(function(a){a.classList.remove('active')})
+      links.forEach(function(a){if(a.getAttribute('href')===href)a.classList.add('active')})
+    }
+
+    // Activate correct link based on current page + URL hash
+    var page=(location.pathname.split('/').pop()||'index.html')
+    var hash=location.hash
+    if(hash){
+      // Does a nav link match just the hash (in-page link like '#brands')?
+      var found=false
+      links.forEach(function(a){if(!found&&a.getAttribute('href')===hash){window._navActivate(hash);found=true}})
+      // Otherwise match page+hash (cross-page link like 'contact.html#about')
+      if(!found) links.forEach(function(a){if(!found&&a.getAttribute('href')===page+hash){window._navActivate(page+hash);found=true}})
+    } else {
+      links.forEach(function(a){var h=a.getAttribute('href');if(h===page)window._navActivate(page)})
+    }
+  })()
 </script>
 </body>
 </html>
