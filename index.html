@@ -83,7 +83,7 @@
     /* HERO */
     .hero{background:linear-gradient(150deg,rgba(13,13,13,.93) 0%,rgba(28,10,0,.88) 30%,rgba(184,66,16,.82) 65%,rgba(255,140,66,.78) 100%),url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1400&q=80&auto=format&fit=crop') center/cover no-repeat;color:#fff;padding:80px 24px 70px;text-align:center;position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")}
-    .hero-inner{position:relative;max-width:740px;margin:0 auto}
+    .hero-inner{position:relative;max-width:740px;margin:0 auto;z-index:1}
     .hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:600;margin-bottom:22px;backdrop-filter:blur(8px)}
     .hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.15;margin-bottom:18px;letter-spacing:-.5px;text-shadow:0 2px 24px rgba(0,0,0,.45)}
     .hero p{font-size:1.05rem;opacity:.9;margin-bottom:32px;line-height:1.75}
@@ -95,12 +95,17 @@
     .hero-stat strong{display:block;font-size:1.85rem;font-weight:900;background:linear-gradient(135deg,#fff 40%,#ffcc80 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 10px rgba(242,101,34,.45))}
     .hero-stat span{font-size:.8rem;opacity:.8}
 
+    /* HERO PHONES */
+    .hero-phone-img{position:absolute;bottom:0;height:95%;object-fit:contain;z-index:0;opacity:.45;pointer-events:none;filter:drop-shadow(0 0 40px rgba(242,101,34,.3))}
+    .hero-phone-left{left:0;transform-origin:bottom left}
+    .hero-phone-right{right:0;transform-origin:bottom right}
+
     /* DEVICE STRIP */
     .device-strip{background:#0d0d0d;padding:0;overflow:hidden;position:relative}
     .device-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-    .d-card{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:default}
-    .d-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease,filter .5s ease;filter:brightness(.6) saturate(.85)}
-    .d-card:hover img{transform:scale(1.08);filter:brightness(.85) saturate(1.15)}
+    .d-card{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:default;background:#111}
+    .d-card img{width:100%;height:100%;object-fit:contain;display:block;transition:filter .5s ease;filter:brightness(.95) saturate(1.05);padding:8px}
+    .d-card:hover img{filter:brightness(1.1) saturate(1.2)}
     .d-card-info{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent 0%,rgba(0,0,0,.75) 50%,rgba(0,0,0,.95) 100%);padding:40px 14px 16px;transition:padding .3s}
     .d-card:hover .d-card-info{padding-bottom:20px}
     .d-card-info p{color:#fff;font-weight:800;font-size:.9rem;margin-bottom:4px;letter-spacing:.01em}
@@ -198,6 +203,7 @@
       .trust-inner{gap:16px}
       .rating-scores{gap:14px}
       .device-grid{grid-template-columns:repeat(2,1fr)}
+      .hero-phone-img{display:none}
       .dropdown{position:static;visibility:visible;opacity:1;transform:none!important;box-shadow:none;border:none;border-left:3px solid var(--orange);margin-left:12px;padding:0;display:none;min-width:auto;background:transparent}
       .has-dropdown.open .dropdown{display:flex;flex-direction:column}
       .dropdown a{padding:8px 14px;font-size:.84rem}
@@ -262,6 +268,8 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
+  <img src="IMG_0096.jpeg" class="hero-phone-img hero-phone-left" alt="" aria-hidden="true" />
+  <img src="IMG_0097.jpeg" class="hero-phone-img hero-phone-right" alt="" aria-hidden="true" />
   <div class="hero-inner">
     <div style="margin-bottom:28px">
       <img src="IMG_0092.png" alt="Phone ElectriK Logo" style="width:min(340px,90vw);height:auto;margin:0 auto;filter:drop-shadow(0 6px 28px rgba(242,101,34,.7))" />
