@@ -305,7 +305,7 @@
       </button>
       <div id="quoteFeedback" style="display:none;margin-top:14px;padding:16px 18px;border-radius:12px;text-align:center;font-weight:700;font-size:.95rem"></div>
       <p class="form-note" style="margin-top:14px;text-align:center">
-        We'll receive your request instantly and get back to you shortly.<br><br>
+        Your mail app will open with everything pre-filled — just tap Send.<br><br>
         Prefer to call? <a href="tel:3233486756" style="color:var(--orange);font-weight:700">(323) 348-6756</a>
       </p>
     </div>
@@ -383,50 +383,68 @@
 
     const btn      = document.getElementById('quoteBtn')
     const feedback = document.getElementById('quoteFeedback')
-    btn.disabled   = true
-    btn.textContent = 'Sending...'
-    feedback.style.display = 'none'
+    const WEB3_KEY = 'PASTE_YOUR_WEB3FORMS_KEY_HERE'
 
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {'Content-Type':'application/json','Accept':'application/json'},
-        body: JSON.stringify({
-          access_key: 'PASTE_YOUR_WEB3FORMS_KEY_HERE',
-          subject: 'Quote Request: ' + device + ' — ' + first + ' ' + last,
-          from_name: first + ' ' + last,
-          replyto: email,
-          message: 'Name: '   + first + ' ' + last +
-                   '\nEmail: ' + email +
-                   '\nDevice: '+ device +
-                   '\nIssue: ' + issue
+    // ── Path A: fully automatic send (requires Web3Forms key) ──────────
+    if(WEB3_KEY && WEB3_KEY !== 'PASTE_YOUR_WEB3FORMS_KEY_HERE'){
+      btn.disabled = true
+      btn.textContent = 'Sending...'
+      feedback.style.display = 'none'
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json','Accept':'application/json'},
+          body: JSON.stringify({
+            access_key: WEB3_KEY,
+            subject: 'Quote Request: ' + device + ' — ' + first + ' ' + last,
+            from_name: first + ' ' + last,
+            replyto: email,
+            message: 'Name: '    + first + ' ' + last +
+                     '\nEmail: '  + email +
+                     '\nDevice: ' + device +
+                     '\nIssue: '  + issue
+          })
         })
-      })
-      const data = await res.json()
-      if(data.success){
-        btn.textContent = '✓ Message Sent!'
-        btn.style.background = 'linear-gradient(135deg,#2e7d32,#43a047)'
-        btn.style.boxShadow  = '0 4px 20px rgba(67,160,71,.4)'
-        feedback.style.cssText = 'display:block;margin-top:14px;padding:16px 18px;border-radius:12px;text-align:center;font-weight:700;font-size:.95rem;background:#e8f5e9;color:#2e7d32;border:1.5px solid #a5d6a7'
-        feedback.textContent = '✓ Your request was sent! We\'ll contact you soon.'
-        document.getElementById('q-first').value  = ''
-        document.getElementById('q-last').value   = ''
-        document.getElementById('q-email').value  = ''
-        document.getElementById('q-device').value = ''
-        document.getElementById('q-issue').value  = ''
-        setTimeout(function(){
-          btn.disabled = false
-          btn.textContent = 'Send Quote Request'
-          btn.style.background = ''
-          btn.style.boxShadow  = ''
-        }, 6000)
-      } else { throw new Error('not ok') }
-    } catch(err){
-      btn.disabled = false
-      btn.textContent = 'Send Quote Request'
-      feedback.style.cssText = 'display:block;margin-top:14px;padding:16px 18px;border-radius:12px;text-align:center;font-weight:700;font-size:.9rem;background:#ffebee;color:#c62828;border:1.5px solid #ef9a9a'
-      feedback.textContent = 'Could not send right now. Please call us: (323) 348-6756'
+        const data = await res.json()
+        if(data.success){
+          btn.textContent = '✓ Message Sent!'
+          btn.style.background = 'linear-gradient(135deg,#2e7d32,#43a047)'
+          btn.style.boxShadow  = '0 4px 20px rgba(67,160,71,.4)'
+          feedback.style.cssText = 'display:block;margin-top:14px;padding:16px 18px;border-radius:12px;text-align:center;font-weight:700;font-size:.95rem;background:#e8f5e9;color:#2e7d32;border:1.5px solid #a5d6a7'
+          feedback.textContent = '✓ Your request was sent! We\'ll contact you soon.'
+          document.getElementById('q-first').value  = ''
+          document.getElementById('q-last').value   = ''
+          document.getElementById('q-email').value  = ''
+          document.getElementById('q-device').value = ''
+          document.getElementById('q-issue').value  = ''
+          setTimeout(function(){
+            btn.disabled = false
+            btn.textContent = 'Send Quote Request'
+            btn.style.background = ''
+            btn.style.boxShadow  = ''
+          }, 6000)
+        } else { throw new Error('api error') }
+      } catch(err){
+        btn.disabled = false
+        btn.textContent = 'Send Quote Request'
+        feedback.style.cssText = 'display:block;margin-top:14px;padding:16px 18px;border-radius:12px;text-align:center;font-weight:700;font-size:.9rem;background:#ffebee;color:#c62828;border:1.5px solid #ef9a9a'
+        feedback.textContent = 'Could not send. Please call us: (323) 348-6756'
+      }
+      return
     }
+
+    // ── Path B: mailto fallback (works immediately, no key needed) ─────
+    // Opens the customer's default mail app with everything pre-filled.
+    const to      = 'info@phoneelectrik.com'
+    const subject = encodeURIComponent('Quote Request: ' + device + ' — ' + first + ' ' + last)
+    const body    = encodeURIComponent(
+      'Name: '    + first + ' ' + last +
+      '\nEmail: '  + email +
+      '\nDevice: ' + device +
+      '\nIssue: '  + issue
+    )
+    window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body
+  }
   }
 
   function showFormError(fieldId, msg){
