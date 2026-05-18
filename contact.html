@@ -125,18 +125,6 @@
     .form-group textarea{resize:vertical;min-height:100px}
     .form-note{font-size:.8rem;color:var(--muted);margin-top:10px;text-align:center;line-height:1.6}
 
-    /* EMAIL PICKER MODAL */
-    .email-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:999;align-items:flex-end;justify-content:center}
-    .email-overlay.open{display:flex}
-    .email-sheet{background:#fff;border-radius:20px 20px 0 0;width:100%;max-width:520px;padding:24px 20px 36px;box-shadow:0 -8px 40px rgba(0,0,0,.18)}
-    .email-sheet h3{font-size:1rem;font-weight:800;text-align:center;margin-bottom:6px;color:#111}
-    .email-sheet p{font-size:.82rem;color:#666;text-align:center;margin-bottom:18px}
-    .email-options{display:flex;flex-direction:column;gap:10px}
-    .email-opt{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:12px;border:1.5px solid #e0e7ef;font-weight:700;font-size:.95rem;color:#111;text-decoration:none;transition:background .15s,border-color .15s;cursor:pointer;background:#fff}
-    .email-opt:hover{background:#f8f9fa;border-color:#ccc}
-    .email-opt-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
-    .opt-arrow{margin-left:auto;font-size:1.4rem;color:#bbb;flex-shrink:0}
-    .sheet-cancel{width:100%;margin-top:12px;padding:13px;border-radius:12px;background:#f2f2f2;border:none;font-size:.95rem;font-weight:700;color:#555;cursor:pointer}
 
     /* FOOTER */
     footer{background:linear-gradient(180deg,#0d0d0d 0%,#111 100%);color:rgba(255,255,255,.72);padding:52px 24px 28px}
@@ -312,11 +300,12 @@
         <label for="q-issue">What's Wrong With Your Device?</label>
         <textarea id="q-issue" placeholder="e.g. Cracked screen, battery drains fast, not charging, lines on screen, black screen..."></textarea>
       </div>
-      <button type="button" class="btn btn-blue" style="width:100%;font-size:1rem;padding:15px" onclick="sendQuote()">
-        📧 Send Quote Request
+      <button type="button" id="quoteBtn" class="btn btn-blue" style="width:100%;font-size:1rem;padding:15px" onclick="sendQuote()">
+        Send Quote Request
       </button>
+      <div id="quoteFeedback" style="display:none;margin-top:14px;padding:16px 18px;border-radius:12px;text-align:center;font-weight:700;font-size:.95rem"></div>
       <p class="form-note" style="margin-top:14px;text-align:center">
-        Your phone will ask which email app to use — Mail, Gmail, Yahoo, Outlook, or any app you have installed.<br><br>
+        We'll receive your request instantly and get back to you shortly.<br><br>
         Prefer to call? <a href="tel:3233486756" style="color:var(--orange);font-weight:700">(323) 348-6756</a>
       </p>
     </div>
@@ -380,7 +369,7 @@
     obs.observe(el)
   })
 
-  function sendQuote(){
+  async function sendQuote(){
     const first  = document.getElementById('q-first').value.trim()
     const last   = document.getElementById('q-last').value.trim()
     const email  = document.getElementById('q-email').value.trim()
@@ -391,47 +380,53 @@
     if(!email){ showFormError('q-email','Please enter your email address.'); return }
     if(!device){showFormError('q-device','Please tell us what device you have.'); return }
     if(!issue){ showFormError('q-issue','Please describe what is wrong with your device.'); return }
-    const to      = 'info@phoneelectrik.com'
-    const subject = 'Repair Quote Request — ' + first + ' ' + last
-    const body    = 'Hi Phone ElectriK! Quote request from the website.\n\nName: ' + first + ' ' + last + '\nEmail: ' + email + '\nDevice: ' + device + '\nIssue: ' + issue
-    const s  = encodeURIComponent(subject)
-    const b  = encodeURIComponent(body)
-    const mailtoUrl = 'mailto:' + to + '?subject=' + s + '&body=' + b
 
-    var optMail    = document.getElementById('opt-mail')
-    var optGmail   = document.getElementById('opt-gmail')
-    var optYahoo   = document.getElementById('opt-yahoo')
-    var optOutlook = document.getElementById('opt-outlook')
+    const btn      = document.getElementById('quoteBtn')
+    const feedback = document.getElementById('quoteFeedback')
+    btn.disabled   = true
+    btn.textContent = 'Sending...'
+    feedback.style.display = 'none'
 
-    var gmailUrl   = 'https://mail.google.com/mail/?view=cm&to=' + to + '&su=' + s + '&body=' + b
-    var yahooUrl   = 'https://compose.mail.yahoo.com/?to=' + to + '&subject=' + s + '&body=' + b
-    var outlookUrl = 'https://outlook.live.com/mail/0/deeplink/compose?to=' + to + '&subject=' + s + '&body=' + b
-
-    // Set href as accessible fallback
-    optMail.href    = mailtoUrl
-    optGmail.href   = gmailUrl
-    optYahoo.href   = yahooUrl
-    optOutlook.href = outlookUrl
-
-    // Synchronous onclick — called directly by user tap, never blocked by popup blocker
-    optMail.onclick = function(e){
-      e.preventDefault(); closeEmailPicker(); window.location.href = mailtoUrl
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({
+          access_key: 'PASTE_YOUR_WEB3FORMS_KEY_HERE',
+          subject: 'Quote Request: ' + device + ' — ' + first + ' ' + last,
+          from_name: first + ' ' + last,
+          replyto: email,
+          message: 'Name: '   + first + ' ' + last +
+                   '\nEmail: ' + email +
+                   '\nDevice: '+ device +
+                   '\nIssue: ' + issue
+        })
+      })
+      const data = await res.json()
+      if(data.success){
+        btn.textContent = '✓ Message Sent!'
+        btn.style.background = 'linear-gradient(135deg,#2e7d32,#43a047)'
+        btn.style.boxShadow  = '0 4px 20px rgba(67,160,71,.4)'
+        feedback.style.cssText = 'display:block;margin-top:14px;padding:16px 18px;border-radius:12px;text-align:center;font-weight:700;font-size:.95rem;background:#e8f5e9;color:#2e7d32;border:1.5px solid #a5d6a7'
+        feedback.textContent = '✓ Your request was sent! We\'ll contact you soon.'
+        document.getElementById('q-first').value  = ''
+        document.getElementById('q-last').value   = ''
+        document.getElementById('q-email').value  = ''
+        document.getElementById('q-device').value = ''
+        document.getElementById('q-issue').value  = ''
+        setTimeout(function(){
+          btn.disabled = false
+          btn.textContent = 'Send Quote Request'
+          btn.style.background = ''
+          btn.style.boxShadow  = ''
+        }, 6000)
+      } else { throw new Error('not ok') }
+    } catch(err){
+      btn.disabled = false
+      btn.textContent = 'Send Quote Request'
+      feedback.style.cssText = 'display:block;margin-top:14px;padding:16px 18px;border-radius:12px;text-align:center;font-weight:700;font-size:.9rem;background:#ffebee;color:#c62828;border:1.5px solid #ef9a9a'
+      feedback.textContent = 'Could not send right now. Please call us: (323) 348-6756'
     }
-    optGmail.onclick = function(e){
-      e.preventDefault(); closeEmailPicker(); window.open(gmailUrl, '_blank', 'noopener')
-    }
-    optYahoo.onclick = function(e){
-      e.preventDefault(); closeEmailPicker(); window.open(yahooUrl, '_blank', 'noopener')
-    }
-    optOutlook.onclick = function(e){
-      e.preventDefault(); closeEmailPicker(); window.open(outlookUrl, '_blank', 'noopener')
-    }
-
-    document.getElementById('emailOverlay').classList.add('open')
-  }
-
-  function closeEmailPicker(){
-    document.getElementById('emailOverlay').classList.remove('open')
   }
 
   function showFormError(fieldId, msg){
@@ -511,35 +506,5 @@
   })
 </script>
 
-<!-- EMAIL APP PICKER -->
-<div class="email-overlay" id="emailOverlay" onclick="if(event.target===this)closeEmailPicker()">
-  <div class="email-sheet">
-    <h3>Choose Your Email App</h3>
-    <p>Pick whichever email app you use</p>
-    <div class="email-options" id="emailOptions">
-      <a class="email-opt" id="opt-mail" href="#">
-        <div class="email-opt-icon" style="background:#e8f0fe">✉️</div>
-        <span>Default Mail App</span>
-        <span class="opt-arrow">&#8250;</span>
-      </a>
-      <a class="email-opt" id="opt-gmail" href="#" target="_blank" rel="noopener">
-        <div class="email-opt-icon" style="background:#EA4335;color:#fff;font-family:Arial,sans-serif;font-weight:900;font-size:1.15rem;line-height:1">G</div>
-        <span>Gmail</span>
-        <span class="opt-arrow">&#8250;</span>
-      </a>
-      <a class="email-opt" id="opt-yahoo" href="#" target="_blank" rel="noopener">
-        <div class="email-opt-icon" style="background:#6001D2;color:#fff;font-family:Arial,sans-serif;font-weight:900;font-size:1rem;line-height:1">Y!</div>
-        <span>Yahoo Mail</span>
-        <span class="opt-arrow">&#8250;</span>
-      </a>
-      <a class="email-opt" id="opt-outlook" href="#" target="_blank" rel="noopener">
-        <div class="email-opt-icon" style="background:#0078D4;color:#fff;font-family:Arial,sans-serif;font-weight:900;font-size:1.1rem;line-height:1">O</div>
-        <span>Outlook / Hotmail</span>
-        <span class="opt-arrow">&#8250;</span>
-      </a>
-    </div>
-    <button class="sheet-cancel" onclick="closeEmailPicker()">Cancel</button>
-  </div>
-</div>
 </body>
 </html>
