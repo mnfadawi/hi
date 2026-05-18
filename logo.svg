@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90" width="90" height="90">
   <defs>
-    <radialGradient id="bg" cx="30%" cy="20%" r="90%">
-      <stop offset="0" stop-color="#222222"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d1d1d"/>
       <stop offset="1" stop-color="#080808"/>
-    </radialGradient>
-    <linearGradient id="og" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ffb347"/>
-      <stop offset="1" stop-color="#d94e12"/>
+    </linearGradient>
+    <linearGradient id="bolt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe0b2"/>
+      <stop offset="1" stop-color="#ffb347"/>
     </linearGradient>
   </defs>
 
   <!-- Background -->
   <rect width="90" height="90" rx="18" fill="url(#bg)"/>
 
-  <!-- P — bold filled orange -->
-  <rect x="12" y="18" width="7" height="52" rx="2" fill="url(#og)"/>
-  <path d="M19 18 C32 18 40 23.5 40 31.5 C40 39.5 32 45 19 45 Z" fill="url(#og)"/>
+  <!-- Phone body — orange outline, no fill -->
+  <rect x="22" y="8" width="46" height="74" rx="9"
+        fill="none" stroke="#F26522" stroke-width="2.2"/>
 
-  <!-- E — bold filled white -->
-  <rect x="48" y="18" width="7" height="52" rx="2" fill="rgba(255,255,255,0.88)"/>
-  <rect x="48" y="18" width="26" height="7" rx="2" fill="rgba(255,255,255,0.88)"/>
-  <rect x="48" y="39.5" width="20" height="6" rx="2" fill="rgba(255,255,255,0.88)"/>
-  <rect x="48" y="63" width="26" height="7" rx="2" fill="rgba(255,255,255,0.88)"/>
+  <!-- Speaker slot at top -->
+  <rect x="34" y="13" width="22" height="3" rx="1.5"
+        fill="#F26522" opacity="0.55"/>
 
-  <!-- Orange swoosh underline -->
-  <path d="M12 74 Q45 80 78 72" stroke="#F26522" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
+  <!-- Screen area — very subtle orange tint -->
+  <rect x="27" y="20" width="36" height="52" rx="3"
+        fill="#F26522" fill-opacity="0.06"/>
 
-  <!-- 4-point sparkle top-right -->
-  <g transform="translate(77,13)" fill="#ffb347" opacity="0.9">
+  <!-- Lightning bolt inside screen -->
+  <path d="M49 24 L38 48 L44 48 L42 64 L54 40 L48 40 Z"
+        fill="url(#bolt)" opacity="0.96"/>
+
+  <!-- Home bar at bottom of phone -->
+  <rect x="36" y="77" width="18" height="2.5" rx="1.25"
+        fill="#F26522" opacity="0.5"/>
+
+  <!-- Sparkle accent — top right -->
+  <g transform="translate(72,16)" fill="#ffb347" opacity="0.82">
     <path d="M0,-3 L0.65,-0.65 L3,0 L0.65,0.65 L0,3 L-0.65,0.65 L-3,0 L-0.65,-0.65 Z"/>
   </g>
 </svg>
