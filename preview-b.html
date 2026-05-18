@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Design B — Neon Glow | Phone ElectriK</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Arial Black',Arial,sans-serif;background:#f2f2f2;color:#111}
+
+/* ═══════════════════════════════════════
+   DESIGN B — "NEON GLOW"
+   ─ Pure black, pulsing electric orange
+     glow on text and icon, premium dark
+═══════════════════════════════════════ */
+
+@keyframes glowPulse{
+  0%,100%{
+    text-shadow:
+      0 0 4px rgba(242,101,34,.95),
+      0 0 10px rgba(242,101,34,.75),
+      0 0 22px rgba(242,101,34,.5),
+      0 0 45px rgba(242,101,34,.25);
+  }
+  50%{
+    text-shadow:
+      0 0 6px rgba(242,101,34,1),
+      0 0 16px rgba(242,101,34,.9),
+      0 0 34px rgba(242,101,34,.65),
+      0 0 70px rgba(242,101,34,.35),
+      0 0 120px rgba(242,101,34,.15);
+  }
+}
+@keyframes iconPulse{
+  0%,100%{filter:drop-shadow(0 0 10px rgba(242,101,34,.7)) drop-shadow(0 0 22px rgba(242,101,34,.4))}
+  50%{filter:drop-shadow(0 0 18px rgba(242,101,34,1)) drop-shadow(0 0 38px rgba(242,101,34,.65))}
+}
+@keyframes linePulse{
+  0%,100%{box-shadow:0 0 6px #F26522, 0 0 14px rgba(242,101,34,.5)}
+  50%{box-shadow:0 0 12px #F26522, 0 0 28px rgba(242,101,34,.7), 0 0 52px rgba(242,101,34,.3)}
+}
+
+.hdr{
+  position:sticky;top:0;z-index:200;
+  background:#050505;
+  box-shadow:0 2px 30px rgba(0,0,0,.7);
+}
+/* Subtle warm glow on left behind logo */
+.hdr::before{
+  content:'';
+  position:absolute;
+  left:-60px;top:-60px;
+  width:380px;height:260px;
+  background:radial-gradient(ellipse at 25% 40%,rgba(242,101,34,.16) 0%,transparent 65%);
+  pointer-events:none;
+}
+/* Glowing bottom line */
+.hdr::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:1.5px;
+  background:#F26522;
+  animation:linePulse 3s ease-in-out infinite;
+}
+
+.hdr-inner{
+  max-width:1200px;margin:0 auto;
+  padding:0 28px;height:76px;
+  display:flex;align-items:center;
+  justify-content:space-between;gap:24px;
+  position:relative;z-index:1;
+}
+
+/* ── BRAND ── */
+.hdr-brand{
+  display:flex;align-items:center;gap:16px;
+  text-decoration:none;flex-shrink:0;
+}
+.hdr-icon{
+  height:52px;width:auto;display:block;
+  border-radius:12px;flex-shrink:0;
+  animation:iconPulse 2.5s ease-in-out infinite;
+}
+.hdr-words{display:flex;flex-direction:column;gap:3px}
+
+.hdr-name{
+  font-family:'Arial Black','Arial Bold',Arial,sans-serif;
+  font-weight:900;line-height:1;text-transform:uppercase;
+  white-space:nowrap;font-size:clamp(1.05rem,2.3vw,1.6rem);
+  letter-spacing:.07em;display:flex;align-items:center;gap:.14em;
+}
+.hdr-name .w-phone{color:rgba(255,255,255,.88)}
+.hdr-name .w-dot{
+  color:#F26522;font-weight:300;font-size:.9em;opacity:.7;
+}
+.hdr-name .w-electrik{
+  color:#F26522;
+  animation:glowPulse 3s ease-in-out infinite;
+}
+.hdr-sub{
+  font-size:.52rem;letter-spacing:.17em;
+  color:rgba(255,255,255,.28);text-transform:uppercase;font-weight:500;
+}
+
+/* ── NAV ── */
+.hdr-nav{display:flex;align-items:center;flex:1;justify-content:flex-end}
+.hdr-nav ul{
+  display:flex;flex-wrap:nowrap;list-style:none;
+  margin:0;padding:0;gap:0;align-items:center;
+}
+.hdr-nav ul li a{
+  display:block;padding:8px 11px;
+  font-size:.83rem;font-weight:700;
+  color:rgba(255,255,255,.6);
+  text-decoration:none;white-space:nowrap;
+  border-radius:5px;
+  transition:color .15s,background .15s,text-shadow .15s;
+  font-family:Arial,sans-serif;
+}
+.hdr-nav ul li a:hover,
+.hdr-nav ul li a.active{
+  color:#F26522;
+  background:rgba(242,101,34,.09);
+  text-shadow:0 0 10px rgba(242,101,34,.55);
+}
+
+.nav-call{
+  background:linear-gradient(135deg,#e05010,#F26522)!important;
+  color:#fff!important;
+  border-radius:8px!important;
+  margin:0 6px!important;padding:8px 16px!important;
+  font-weight:700!important;
+  box-shadow:0 0 16px rgba(242,101,34,.35)!important;
+}
+.nav-call:hover{
+  background:linear-gradient(135deg,#c84008,#d94e12)!important;
+  box-shadow:0 0 28px rgba(242,101,34,.65)!important;
+}
+
+/* ════════════════════════
+   PREVIEW CHROME
+════════════════════════ */
+.preview-badge{
+  background:#111;border-bottom:1px solid #222;
+  padding:10px 28px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.preview-badge span{color:rgba(255,255,255,.45);font-size:.75rem;letter-spacing:.1em;font-weight:600;text-transform:uppercase}
+.preview-badge a{color:#F26522;font-size:.75rem;font-weight:700;text-decoration:none;letter-spacing:.06em}
+
+/* ════════════════════════
+   DEMO PAGE CONTENT
+════════════════════════ */
+.demo-hero{
+  background:radial-gradient(ellipse at 50% 0%,rgba(242,101,34,.18) 0%,transparent 60%),#050505;
+  color:#fff;padding:90px 24px 80px;text-align:center;
+}
+.demo-hero h1{
+  font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;
+  line-height:1.15;letter-spacing:-.5px;margin-bottom:20px;
+}
+.demo-hero h1 em{
+  color:#F26522;font-style:normal;
+  text-shadow:0 0 20px rgba(242,101,34,.6);
+}
+.demo-hero p{font-size:1.05rem;color:rgba(255,255,255,.65);max-width:560px;margin:0 auto 32px;line-height:1.75}
+.demo-btn{
+  display:inline-block;
+  background:linear-gradient(135deg,#e05010,#F26522);
+  color:#fff;padding:14px 36px;font-weight:900;font-size:.95rem;
+  text-decoration:none;letter-spacing:.06em;text-transform:uppercase;
+  border-radius:8px;
+  box-shadow:0 0 24px rgba(242,101,34,.45);
+}
+
+.demo-section{max-width:960px;margin:0 auto;padding:64px 24px;text-align:center}
+.demo-section h2{font-size:1.8rem;font-weight:900;margin-bottom:12px}
+.demo-section p{color:#555;line-height:1.7}
+
+.choice-box{
+  background:#fff;border:2px solid #F26522;border-radius:16px;
+  padding:28px 32px;margin-top:28px;
+  display:inline-block;text-align:center;
+}
+.choice-box p{font-size:.9rem;color:#333;margin-bottom:14px;font-weight:600}
+.choice-box a{
+  display:inline-block;background:#0d0d0d;color:#fff;
+  padding:12px 28px;border-radius:8px;text-decoration:none;
+  font-weight:700;font-size:.85rem;margin:6px;
+}
+</style>
+</head>
+<body>
+
+<div class="preview-badge">
+  <span>⚡ Design B — "Neon Glow"</span>
+  <a href="preview-a.html">← See Design A instead</a>
+</div>
+
+<header class="hdr">
+  <div class="hdr-inner">
+    <a href="index.html" class="hdr-brand">
+      <img src="logo.svg" alt="Phone ElectriK" class="hdr-icon"/>
+      <div class="hdr-words">
+        <div class="hdr-name">
+          <span class="w-phone">PHONE</span>
+          <span class="w-dot">·</span>
+          <span class="w-electrik">ELECTRIK</span>
+        </div>
+        <div class="hdr-sub">Repair &middot; Accessories &middot; Torrance, CA</div>
+      </div>
+    </a>
+    <nav class="hdr-nav">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
+        <li><a href="policies.html">Policies</a></li>
+        <li><a href="contact.html">Hours</a></li>
+        <li><a href="contact.html#about">About</a></li>
+        <li><a href="tel:3233486756" class="nav-call">📞 Call Now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="demo-hero">
+  <h1>Phone Repair Done <em>Fast</em><br>Same Day · Walk-Ins Welcome</h1>
+  <p>iPhone, Samsung, iPad, MacBook, Apple Watch & more. Every repair backed by a 90-day warranty.</p>
+  <a href="#" class="demo-btn">Get a Free Quote</a>
+</section>
+
+<div class="demo-section">
+  <h2>This is Design B — "Neon Glow"</h2>
+  <p>Pure black background with a pulsing orange electric glow on "ELECTRIK" and the bolt icon. The bottom line of the header glows like a live wire. Hover the nav links to see the glow effect.</p>
+  <div class="choice-box">
+    <p>Which header do you prefer?</p>
+    <a href="preview-a.html">See Design A →</a>
+    <a href="index.html" style="background:#F26522">Back to Live Site</a>
+  </div>
+</div>
+
+</body>
+</html>
