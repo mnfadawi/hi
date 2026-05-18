@@ -293,6 +293,10 @@
         <input type="email" id="q-email" placeholder="you@email.com" autocomplete="email" />
       </div>
       <div class="form-group">
+        <label for="q-phone">Phone Number <span style="font-weight:400;color:#888;text-transform:none;letter-spacing:0">(optional)</span></label>
+        <input type="tel" id="q-phone" placeholder="(555) 000-0000" autocomplete="tel" />
+      </div>
+      <div class="form-group">
         <label for="q-device">What Device Do You Have?</label>
         <input type="text" id="q-device" placeholder="e.g. iPhone 17, Samsung Galaxy S26, iPad Pro..." />
       </div>
@@ -373,6 +377,7 @@
     const first  = document.getElementById('q-first').value.trim()
     const last   = document.getElementById('q-last').value.trim()
     const email  = document.getElementById('q-email').value.trim()
+    const phone  = document.getElementById('q-phone').value.trim()
     const device = document.getElementById('q-device').value.trim()
     const issue  = document.getElementById('q-issue').value.trim()
     if(!first){ showFormError('q-first','Please enter your first name.'); return }
@@ -384,15 +389,13 @@
     const btn      = document.getElementById('quoteBtn')
     const feedback = document.getElementById('quoteFeedback')
 
-    // Build the email — opens customer's own mail app pre-filled.
-    // Customer taps Send once → arrives in shop inbox as a real email,
-    // and saves to customer's Sent folder automatically.
     const subject = encodeURIComponent('Quote Request: ' + device + ' — ' + first + ' ' + last)
     const body    = encodeURIComponent(
       'Hi Phone ElectriK,' +
       '\n\nI\'d like a quote for my device.' +
       '\n\nName: '    + first + ' ' + last +
       '\nEmail: '  + email +
+      (phone ? '\nPhone: ' + phone : '') +
       '\nDevice: ' + device +
       '\nIssue: '  + issue +
       '\n\nThank you!'
