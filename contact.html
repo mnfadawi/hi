@@ -135,6 +135,7 @@
     .email-opt{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:12px;border:1.5px solid #e0e7ef;font-weight:700;font-size:.95rem;color:#111;text-decoration:none;transition:background .15s,border-color .15s;cursor:pointer;background:#fff}
     .email-opt:hover{background:#f8f9fa;border-color:#ccc}
     .email-opt-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+    .opt-arrow{margin-left:auto;font-size:1.4rem;color:#bbb;flex-shrink:0}
     .sheet-cancel{width:100%;margin-top:12px;padding:13px;border-radius:12px;background:#f2f2f2;border:none;font-size:.95rem;font-weight:700;color:#555;cursor:pointer}
 
     /* FOOTER */
@@ -397,26 +398,34 @@
     const b  = encodeURIComponent(body)
     const mailtoUrl = 'mailto:' + to + '?subject=' + s + '&body=' + b
 
-    // Set href on each option so clicking them is a real link (no popup blocker issues)
     var optMail    = document.getElementById('opt-mail')
     var optGmail   = document.getElementById('opt-gmail')
     var optYahoo   = document.getElementById('opt-yahoo')
     var optOutlook = document.getElementById('opt-outlook')
 
+    var gmailUrl   = 'https://mail.google.com/mail/?view=cm&to=' + to + '&su=' + s + '&body=' + b
+    var yahooUrl   = 'https://compose.mail.yahoo.com/?to=' + to + '&subject=' + s + '&body=' + b
+    var outlookUrl = 'https://outlook.live.com/mail/0/deeplink/compose?to=' + to + '&subject=' + s + '&body=' + b
+
+    // Set href as accessible fallback
     optMail.href    = mailtoUrl
-    optMail.removeAttribute('target')
+    optGmail.href   = gmailUrl
+    optYahoo.href   = yahooUrl
+    optOutlook.href = outlookUrl
 
-    optGmail.href   = 'https://mail.google.com/mail/?view=cm&to=' + to + '&su=' + s + '&body=' + b
-    optGmail.target = '_blank'
-    optGmail.rel    = 'noopener'
-
-    optYahoo.href   = 'https://compose.mail.yahoo.com/?to=' + to + '&subject=' + s + '&body=' + b
-    optYahoo.target = '_blank'
-    optYahoo.rel    = 'noopener'
-
-    optOutlook.href   = 'https://outlook.live.com/mail/0/deeplink/compose?to=' + to + '&subject=' + s + '&body=' + b
-    optOutlook.target = '_blank'
-    optOutlook.rel    = 'noopener'
+    // Synchronous onclick — called directly by user tap, never blocked by popup blocker
+    optMail.onclick = function(e){
+      e.preventDefault(); closeEmailPicker(); window.location.href = mailtoUrl
+    }
+    optGmail.onclick = function(e){
+      e.preventDefault(); closeEmailPicker(); window.open(gmailUrl, '_blank', 'noopener')
+    }
+    optYahoo.onclick = function(e){
+      e.preventDefault(); closeEmailPicker(); window.open(yahooUrl, '_blank', 'noopener')
+    }
+    optOutlook.onclick = function(e){
+      e.preventDefault(); closeEmailPicker(); window.open(outlookUrl, '_blank', 'noopener')
+    }
 
     document.getElementById('emailOverlay').classList.add('open')
   }
@@ -508,27 +517,25 @@
     <h3>Choose Your Email App</h3>
     <p>Pick whichever email app you use</p>
     <div class="email-options" id="emailOptions">
-      <a class="email-opt" id="opt-mail">
-        <div class="email-opt-icon" style="background:#f0f4ff">✉️</div>
-        <span>Apple Mail</span>
+      <a class="email-opt" id="opt-mail" href="#">
+        <div class="email-opt-icon" style="background:#e8f0fe">✉️</div>
+        <span>Default Mail App</span>
+        <span class="opt-arrow">&#8250;</span>
       </a>
-      <a class="email-opt" id="opt-gmail">
-        <div class="email-opt-icon" style="background:#fff0f0">
-          <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" style="width:24px;height:24px;border-radius:4px" alt="Gmail" />
-        </div>
+      <a class="email-opt" id="opt-gmail" href="#" target="_blank" rel="noopener">
+        <div class="email-opt-icon" style="background:#EA4335;color:#fff;font-family:Arial,sans-serif;font-weight:900;font-size:1.15rem;line-height:1">G</div>
         <span>Gmail</span>
+        <span class="opt-arrow">&#8250;</span>
       </a>
-      <a class="email-opt" id="opt-yahoo">
-        <div class="email-opt-icon" style="background:#f5f0ff">
-          <img src="https://s.yimg.com/cv/apiv2/default/20201112/favicon.ico" style="width:24px;height:24px;border-radius:4px" alt="Yahoo Mail" />
-        </div>
+      <a class="email-opt" id="opt-yahoo" href="#" target="_blank" rel="noopener">
+        <div class="email-opt-icon" style="background:#6001D2;color:#fff;font-family:Arial,sans-serif;font-weight:900;font-size:1rem;line-height:1">Y!</div>
         <span>Yahoo Mail</span>
+        <span class="opt-arrow">&#8250;</span>
       </a>
-      <a class="email-opt" id="opt-outlook">
-        <div class="email-opt-icon" style="background:#f0f6ff">
-          <img src="https://res.cdn.office.net/assets/mail/pwa/v1/favicons/favicon-32.png" style="width:24px;height:24px;border-radius:4px" alt="Outlook" />
-        </div>
+      <a class="email-opt" id="opt-outlook" href="#" target="_blank" rel="noopener">
+        <div class="email-opt-icon" style="background:#0078D4;color:#fff;font-family:Arial,sans-serif;font-weight:900;font-size:1.1rem;line-height:1">O</div>
         <span>Outlook / Hotmail</span>
+        <span class="opt-arrow">&#8250;</span>
       </a>
     </div>
     <button class="sheet-cancel" onclick="closeEmailPicker()">Cancel</button>
