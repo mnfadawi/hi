@@ -1,59 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90" width="90" height="90">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0.3" y2="1">
-      <stop offset="0" stop-color="#1a1208"/>
-      <stop offset="1" stop-color="#060606"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f0804"/>
+      <stop offset="1" stop-color="#050505"/>
     </linearGradient>
-    <linearGradient id="crack" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%"   stop-color="#ffe566"/>
-      <stop offset="45%"  stop-color="#F26522"/>
-      <stop offset="100%" stop-color="#a83800"/>
+    <linearGradient id="body" x1="0" y1="0" x2=".25" y2="1">
+      <stop offset="0"   stop-color="#ff8844"/>
+      <stop offset="45%" stop-color="#F26522"/>
+      <stop offset="100%" stop-color="#a83610"/>
+    </linearGradient>
+    <linearGradient id="screen-bg" x1="0" y1="0" x2=".05" y2="1">
+      <stop offset="0"   stop-color="#0e0e0e"/>
+      <stop offset="100%" stop-color="#060606"/>
+    </linearGradient>
+    <linearGradient id="crack" x1="0%" y1="0%" x2="12%" y2="100%">
+      <stop offset="0%"   stop-color="#fff8d0"/>
+      <stop offset="22%"  stop-color="#ffe566"/>
+      <stop offset="58%"  stop-color="#F26522"/>
+      <stop offset="100%" stop-color="#6e2200"/>
     </linearGradient>
   </defs>
 
   <!-- Background -->
   <rect width="90" height="90" rx="20" fill="url(#bg)"/>
 
-  <!-- Phone body outline — thin, elegant white -->
-  <rect x="23" y="10" width="44" height="70" rx="9"
-        fill="none" stroke="rgba(255,255,255,.72)" stroke-width="1.8"/>
+  <!-- Phone body — orange, like iPhone 17 Pro -->
+  <rect x="14" y="6" width="62" height="78" rx="14" fill="url(#body)"/>
 
-  <!-- Speaker slot -->
-  <rect x="33" y="15" width="24" height="2.5" rx="1.25"
-        fill="rgba(255,255,255,.42)"/>
+  <!-- Edge specular highlight -->
+  <rect x="14" y="20" width="1.5" height="50" rx=".75"
+        fill="rgba(255,200,140,.22)"/>
 
-  <!-- Home bar -->
-  <rect x="36" y="74" width="18" height="2.5" rx="1.25"
-        fill="rgba(255,255,255,.38)"/>
+  <!-- Screen area — dark inset -->
+  <rect x="18.5" y="17" width="53" height="61" rx="5.5" fill="url(#screen-bg)"/>
 
-  <!-- Screen area — very faint warm tint -->
-  <rect x="28" y="21" width="34" height="50" rx="2"
-        fill="rgba(242,101,34,.06)"/>
+  <!-- Earpiece pill -->
+  <rect x="30" y="10.5" width="30" height="3.2" rx="1.6" fill="rgba(0,0,0,.55)"/>
 
-  <!-- Crack glow — outermost soft halo -->
-  <path d="M54 23 L42 47 L50 47 L36 71"
-        stroke="rgba(242,101,34,.18)" stroke-width="10"
+  <!-- Home indicator -->
+  <rect x="33" y="80" width="24" height="2.2" rx="1.1" fill="rgba(0,0,0,.35)"/>
+
+  <!-- Front camera punch-hole -->
+  <circle cx="45" cy="22.5" r="2.3" fill="rgba(0,0,0,.55)"/>
+  <circle cx="45" cy="22.5" r="1.1" fill="#1c1c1c"/>
+
+  <!-- Faint warm tint on screen from crack glow -->
+  <rect x="18.5" y="17" width="53" height="61" rx="5.5"
+        fill="rgba(242,101,34,.055)"/>
+
+  <!-- Outermost glow halo -->
+  <path d="M58 25 L40 47 L50 50 L34 71"
+        stroke="rgba(242,101,34,.13)" stroke-width="14"
         fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- Crack glow — inner tighter glow -->
-  <path d="M54 23 L42 47 L50 47 L36 71"
-        stroke="rgba(255,210,80,.32)" stroke-width="4.5"
+  <!-- Middle warm glow -->
+  <path d="M58 25 L40 47 L50 50 L34 71"
+        stroke="rgba(255,215,80,.25)" stroke-width="5.5"
         fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- Main crack — Z-lightning bolt, gradient stroke -->
-  <path d="M54 23 L42 47 L50 47 L36 71"
-        stroke="url(#crack)" stroke-width="2.2"
+  <!-- Inner bright core glow -->
+  <path d="M58 25 L40 47 L50 50 L34 71"
+        stroke="rgba(255,248,170,.52)" stroke-width="2.2"
         fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- Hairline cracks radiating from impact point (54,23) -->
-  <path d="M54 23 L63 18 M54 23 L50 16 M50 47 L59 50 M36 71 L28 74"
-        stroke="rgba(255,200,80,.42)" stroke-width=".85"
+  <!-- Main crack — gradient stroke -->
+  <path d="M58 25 L40 47 L50 50 L34 71"
+        stroke="url(#crack)" stroke-width="1.4"
+        fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Hairlines from impact point (58,25) -->
+  <path d="M58 25 L67 19  M58 25 L54 16  M58 25 L64 30"
+        stroke="rgba(255,210,80,.38)" stroke-width=".7"
         fill="none" stroke-linecap="round"/>
 
-  <!-- Spark / starburst at impact point -->
-  <g transform="translate(54,23)">
-    <path d="M0,-4.2 L.9,-.9 L4.2,0 L.9,.9 L0,4.2 L-.9,.9 L-4.2,0 L-.9,-.9 Z"
-          fill="#ffe566" opacity=".92" transform="scale(.72)"/>
+  <!-- Spider-web micro-cracks near impact -->
+  <path d="M63 21 L67 23  M56 17 L58 14  M61 28 L66 27"
+        stroke="rgba(255,200,80,.22)" stroke-width=".55"
+        fill="none" stroke-linecap="round"/>
+
+  <!-- Hairlines from mid-kink and tail -->
+  <path d="M50 50 L58 55  M43 38 L49 34  M37 60 L43 65
+            M34 71 L25 75  M34 71 L31 79"
+        stroke="rgba(255,200,80,.26)" stroke-width=".62"
+        fill="none" stroke-linecap="round"/>
+
+  <!-- Impact starburst at (58,25) -->
+  <g transform="translate(58,25)">
+    <line x1="0" y1="-6"   x2="0"    y2="-3.2" stroke="#ffe566" stroke-width=".85" opacity=".85"/>
+    <line x1="6"  y1="0"   x2="3.2"  y2="0"    stroke="#ffe566" stroke-width=".85" opacity=".85"/>
+    <line x1="0"  y1="6"   x2="0"    y2="3.2"  stroke="#ffe566" stroke-width=".85" opacity=".85"/>
+    <line x1="-6" y1="0"   x2="-3.2" y2="0"    stroke="#ffe566" stroke-width=".85" opacity=".85"/>
+    <line x1="4.2"  y1="-4.2" x2="2.4"  y2="-2.4" stroke="#ffe566" stroke-width=".72" opacity=".72"/>
+    <line x1="4.2"  y1="4.2"  x2="2.4"  y2="2.4"  stroke="#ffe566" stroke-width=".72" opacity=".72"/>
+    <line x1="-4.2" y1="4.2"  x2="-2.4" y2="2.4"  stroke="#ffe566" stroke-width=".72" opacity=".72"/>
+    <line x1="-4.2" y1="-4.2" x2="-2.4" y2="-2.4" stroke="#ffe566" stroke-width=".72" opacity=".72"/>
+    <path d="M0,-3.2 L1.3,0 L0,3.2 L-1.3,0 Z" fill="#fff8c0" opacity=".96"/>
   </g>
+
+  <!-- Phone body gloss — top-left curved sheen -->
+  <path d="M17 22 Q15 13 22 8" stroke="rgba(255,180,110,.2)"
+        stroke-width="1.8" fill="none" stroke-linecap="round"/>
 </svg>
