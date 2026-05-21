@@ -316,7 +316,7 @@
       </button>
       <div id="quoteFeedback" style="display:none;margin-top:14px;padding:16px 18px;border-radius:12px;text-align:center;font-weight:700;font-size:.95rem"></div>
       <p class="form-note" style="margin-top:14px;text-align:center">
-        Your email app will open with everything filled in — tap Send and you're done.<br>The request will appear in your Sent folder and arrive in our inbox.<br><br>
+        When you click the button, your email app (Gmail, Apple Mail, etc.) will open with everything already filled in — just press <strong>Send</strong>.<br><br>
         Prefer to call? <a href="tel:3233486756" style="color:var(--orange);font-weight:700">(323) 348-6756</a>
       </p>
     </div>
@@ -380,38 +380,46 @@
     obs.observe(el)
   })
 
-  async function sendQuote(){
-    const first  = document.getElementById('q-first').value.trim()
-    const last   = document.getElementById('q-last').value.trim()
-    const email  = document.getElementById('q-email').value.trim()
-    const phone  = document.getElementById('q-phone').value.trim()
-    const device = document.getElementById('q-device').value.trim()
-    const issue  = document.getElementById('q-issue').value.trim()
+  function sendQuote(){
+    var first  = document.getElementById('q-first').value.trim()
+    var last   = document.getElementById('q-last').value.trim()
+    var email  = document.getElementById('q-email').value.trim()
+    var phone  = document.getElementById('q-phone').value.trim()
+    var device = document.getElementById('q-device').value.trim()
+    var issue  = document.getElementById('q-issue').value.trim()
+
     if(!first){ showFormError('q-first','Please enter your first name.'); return }
     if(!last){  showFormError('q-last','Please enter your last name.'); return }
-    if(!email){ showFormError('q-email','Please enter your email address.'); return }
+    if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ showFormError('q-email','Please enter a valid email address.'); return }
     if(!device){showFormError('q-device','Please tell us what device you have.'); return }
     if(!issue){ showFormError('q-issue','Please describe what is wrong with your device.'); return }
 
-    const btn      = document.getElementById('quoteBtn')
-    const feedback = document.getElementById('quoteFeedback')
+    var feedback = document.getElementById('quoteFeedback')
+    var btn      = document.getElementById('quoteBtn')
 
-    const subject = encodeURIComponent('Quote Request: ' + device + ' — ' + first + ' ' + last)
-    const body    = encodeURIComponent(
-      'Hi Phone ElectriK,' +
-      '\n\nI\'d like a quote for my device.' +
-      '\n\nName: '    + first + ' ' + last +
-      '\nEmail: '  + email +
-      (phone ? '\nPhone: ' + phone : '') +
-      '\nDevice: ' + device +
-      '\nIssue: '  + issue +
-      '\n\nThank you!'
+    var subject = encodeURIComponent('Quote Request: ' + device + ' — ' + first + ' ' + last)
+    var body    = encodeURIComponent(
+      'Hi Phone ElectriK,\n\n' +
+      'I\'d like a repair quote.\n\n' +
+      'Name: '   + first + ' ' + last + '\n' +
+      'Email: '  + email + '\n' +
+      (phone ? 'Phone: ' + phone + '\n' : '') +
+      'Device: ' + device + '\n' +
+      'Issue: '  + issue + '\n\n' +
+      'Thank you!'
     )
 
-    feedback.style.cssText = 'display:block;margin-top:14px;padding:16px 18px;border-radius:12px;text-align:center;font-weight:700;font-size:.95rem;background:#fff8e1;color:#e65100;border:1.5px solid #ffcc80'
-    feedback.textContent = '📧 Your email app is opening — just tap Send to submit your request!'
+    var mailtoLink = 'mailto:info@phoneelectrik.com?subject=' + subject + '&body=' + body
 
-    window.location.href = 'mailto:info@phoneelectrik.com?subject=' + subject + '&body=' + body
+    // Open email app
+    window.location.href = mailtoLink
+
+    // Show success message
+    setTimeout(function(){
+      feedback.style.cssText = 'display:block;margin-top:14px;padding:18px;border-radius:12px;text-align:center;font-weight:700;font-size:.95rem;background:#e8f5e9;color:#2e7d32;border:1.5px solid #a5d6a7'
+      feedback.innerHTML = '&#10003; Your email app is opening!<br><span style="font-weight:500;font-size:.88rem">Your message is already filled in — just press <strong>Send</strong>.</span>'
+      btn.disabled = false
+    }, 400)
   }
 
   function showFormError(fieldId, msg){
