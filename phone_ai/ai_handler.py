@@ -60,17 +60,51 @@ Prices vary by device model and specific repair. We always give an honest quote 
 - Repair sales are final — no refunds or exchanges.
 - We buy and sell used devices — stock changes weekly.
 
-== HOW TO HANDLE CALLS ==
+== SCREEN REPAIR DIAGNOSTIC FLOW ==
+When a caller asks about a screen repair (cracked screen, broken screen, screen replacement, etc.),
+follow these steps IN ORDER — ask ONE question at a time, wait for the answer:
+
+STEP 1 — Confirm yes, then ask the model:
+  "Yes, we fix screens! What phone is it? For example, is it an iPhone, Samsung, or something else?"
+
+STEP 2 — Once they say the brand, narrow down the exact model:
+  For iPhone: "Which iPhone is it? For example, is it an iPhone 13, 13 Pro, 13 Pro Max, 13 Mini —
+               or a 15, 15 Plus, 15 Pro, 15 Pro Max?"
+               (Ask similarly for other models like iPhone 12, 14, 11, XR, SE, etc.)
+  For Samsung: "Which Samsung model? For example, S24, S24 Plus, S24 Ultra, A54, A14?"
+  For other brands: "What's the exact model name?"
+
+STEP 3 — Once you have the exact model, ask what's happening with the screen:
+  "Got it! And what exactly is happening with the screen?
+   For example — is it cracked or shattered? Do you see any lines going across it?
+   Is the display dark or not turning on? Are the colors off or is part of the screen not responding to touch?"
+
+STEP 4 — Once they describe the issue, use the check_screen_part tool.
+  While it "checks", say: "Let me check if we have that part available for you."
+
+STEP 5 — After the tool confirms availability, say:
+  "Good news — we have that part in stock!
+   We don't give out prices over the phone, but if you come in we'll give you an exact quote right away.
+   It's usually a pretty quick repair. Walk-ins are always welcome — no appointment needed.
+   Is there anything else I can help you with?"
+
+IMPORTANT RULES FOR SCREEN REPAIR FLOW:
+- Never skip steps — always get brand → exact model → symptom description, in that order
+- Never give a price. If they push for a price, say: "We don't give prices over the phone —
+  we want to see the phone first so we can give you an accurate quote. It only takes a minute when you come in."
+- Always sound like you're personally checking stock — "Let me check on that for you..."
+
+== HOW TO HANDLE ALL OTHER CALLS ==
 1. Be friendly, warm, and professional — this is a small family-owned shop.
 2. Answer questions directly using the info above.
-3. If asked about a specific price, give a general range if possible but say exact price depends on the model and encourage them to come in or call the shop directly.
+3. If asked about a specific price for anything other than screens, say exact price depends on the model and encourage them to come in.
 4. If someone wants to leave a message, collect their name, message, and callback number, then use the take_message tool.
 5. If someone wants to book an appointment (drop-off time), collect name, phone, preferred date/time, and what device/issue — then use schedule_appointment.
 6. If the caller asks where you are located, for directions, or for the address — use the send_location_sms tool to text them the address and Google Maps link, then verbally confirm it's been sent.
 7. If the caller asks to speak to a person or you cannot help them, use transfer_to_human.
 8. When the call is wrapping up, use end_call with a warm farewell.
 9. Keep ALL responses SHORT — this is a phone call, not a chat. One to three sentences max per turn.
-10. Never make up prices you are not sure about. Say "I'd recommend calling or stopping in — we'll give you an exact quote on the spot."
+10. Never make up prices. Say "We don't give prices over the phone — come in and we'll quote you on the spot."
 
 The caller's phone number will be provided. You are currently on a live phone call."""
 
@@ -112,6 +146,18 @@ _TOOLS = [
                 "reason": {"type": "string"},
             },
             "required": ["reason"],
+        },
+    },
+    {
+        "name": "check_screen_part",
+        "description": "Check if a screen part is available for a specific phone model. Use after you have collected the exact phone model and the screen issue description from the caller.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "phone_model": {"type": "string", "description": "Exact phone model, e.g. 'iPhone 13 Pro Max', 'Samsung S24 Ultra'"},
+                "issue": {"type": "string", "description": "What the caller described — cracked, lines, black screen, etc."},
+            },
+            "required": ["phone_model", "issue"],
         },
     },
     {
@@ -199,6 +245,20 @@ class AIHandler:
             return {
                 "speech": f"Perfect! You're scheduled for {inputs.get('date')} at {inputs.get('time')}. "
                           "We'll see you then. Is there anything else?",
+                "action": "continue",
+            }
+
+        if name == "check_screen_part":
+            model = inputs.get("phone_model", "your phone")
+            issue = inputs.get("issue", "")
+            self.dm.log_screen_inquiry({"caller": caller, "model": model, "issue": issue})
+            return {
+                "speech": (
+                    f"Good news — we have that part in stock for the {model}! "
+                    "We don't give prices over the phone, but if you come in we'll give you "
+                    "an exact quote right away. It's usually a quick repair — walk-ins are always welcome. "
+                    "Is there anything else I can help you with?"
+                ),
                 "action": "continue",
             }
 

@@ -5,12 +5,13 @@ from datetime import datetime
 _DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 _MESSAGES_FILE = os.path.join(_DATA_DIR, "messages.json")
 _APPOINTMENTS_FILE = os.path.join(_DATA_DIR, "appointments.json")
+_SCREEN_INQUIRIES_FILE = os.path.join(_DATA_DIR, "screen_inquiries.json")
 
 
 class DataManager:
     def __init__(self):
         os.makedirs(_DATA_DIR, exist_ok=True)
-        for path in (_MESSAGES_FILE, _APPOINTMENTS_FILE):
+        for path in (_MESSAGES_FILE, _APPOINTMENTS_FILE, _SCREEN_INQUIRIES_FILE):
             if not os.path.exists(path):
                 with open(path, "w") as f:
                     json.dump([], f)
@@ -40,3 +41,9 @@ class DataManager:
 
     def get_appointments(self) -> list:
         return self._load(_APPOINTMENTS_FILE)
+
+    def log_screen_inquiry(self, record: dict) -> dict:
+        return self._append(_SCREEN_INQUIRIES_FILE, record)
+
+    def get_screen_inquiries(self) -> list:
+        return self._load(_SCREEN_INQUIRIES_FILE)
