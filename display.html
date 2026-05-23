@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phone ElectriK — Store Display</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #F26522;
+      --orange-glow: rgba(242,101,34,.7);
+    }
+
+    html, body {
+      width: 100%; height: 100%;
+      background: #050505;
+      font-family: 'Arial Black', Arial, sans-serif;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    /* ── FULL POSTER ─────────────────────────────────────── */
+    .poster {
+      width: 100vw; height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ── TOP BRAND BAR ───────────────────────────────────── */
+    .brand-bar {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      padding: clamp(14px,2.5vh,28px) clamp(20px,4vw,56px);
+      background: #050505;
+      border-bottom: 2px solid var(--orange);
+      position: relative; z-index: 10;
+      box-shadow: 0 0 40px rgba(242,101,34,.3);
+    }
+    .brand-left {
+      display: flex; align-items: center; gap: clamp(10px,1.8vw,22px);
+    }
+    .brand-left img { height: clamp(40px,6vh,70px); width: auto; }
+    .brand-name {
+      display: flex; flex-direction: column; line-height: 1;
+    }
+    .bn-top {
+      font-size: clamp(.45rem,1vw,.65rem);
+      letter-spacing: .28em; color: rgba(255,255,255,.38);
+      font-family: Arial, sans-serif; font-weight: 600;
+      text-transform: uppercase; margin-bottom: 3px;
+    }
+    .bn-main {
+      font-size: clamp(1.2rem,3.5vw,2.6rem);
+      font-weight: 900; text-transform: uppercase;
+      color: var(--orange); letter-spacing: .06em;
+      text-shadow: 0 0 8px var(--orange-glow), 0 0 28px rgba(242,101,34,.4);
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+    .bn-sub {
+      font-size: clamp(.42rem,.9vw,.6rem);
+      letter-spacing: .15em; color: rgba(255,255,255,.28);
+      font-family: Arial, sans-serif; font-weight: 500;
+      text-transform: uppercase; margin-top: 4px;
+    }
+    .brand-tag {
+      font-family: Arial, sans-serif; font-weight: 700;
+      font-size: clamp(.55rem,1.2vw,.78rem);
+      letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+      text-align: right; line-height: 1.7;
+    }
+    .brand-tag strong { color: var(--orange); display: block; font-size: 1.15em; }
+
+    /* ── MAIN SPLIT SECTION ──────────────────────────────── */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* divider line */
+    .split::after {
+      content: '';
+      position: absolute;
+      left: 50%; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg,
+        transparent 0%,
+        var(--orange) 20%,
+        var(--orange) 80%,
+        transparent 100%);
+      box-shadow: 0 0 16px var(--orange-glow);
+      z-index: 5;
+    }
+
+    /* ── LEFT PANEL — NEW iPHONE 17 ──────────────────────── */
+    .panel-new {
+      position: relative;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: clamp(20px,3vh,48px) clamp(24px,4vw,60px);
+      overflow: hidden;
+      background: radial-gradient(ellipse at 55% 45%, #1a0800 0%, #050505 70%);
+    }
+
+    .new-glow {
+      position: absolute;
+      width: min(70%,400px); height: min(70%,400px);
+      background: radial-gradient(circle, rgba(242,101,34,.28) 0%, transparent 70%);
+      border-radius: 50%;
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      animation: breathe 4s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .new-inner {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column;
+      align-items: center; gap: clamp(10px,1.8vh,22px);
+      width: 100%;
+    }
+
+    .panel-badge {
+      display: inline-block;
+      background: var(--orange); color: #fff;
+      font-size: clamp(.52rem,1.1vw,.72rem);
+      font-weight: 800; letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: clamp(4px,0.7vh,7px) clamp(14px,2vw,22px);
+      border-radius: 50px;
+    }
+
+    .new-phone-wrap {
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .new-phone-ring {
+      position: absolute;
+      width: min(52vh,340px); height: min(52vh,340px);
+      border: 1.5px solid rgba(242,101,34,.18);
+      border-radius: 50%;
+      animation: spin 22s linear infinite;
+    }
+    .new-phone-ring::before {
+      content: '';
+      position: absolute; top: -4px; left: 50%;
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 14px var(--orange);
+    }
+    .new-phone-img {
+      height: min(46vh,380px); width: auto; object-fit: contain;
+      filter: drop-shadow(0 0 40px rgba(242,101,34,.5))
+              drop-shadow(0 16px 50px rgba(0,0,0,.6));
+      animation: phoneFloat 5s ease-in-out infinite;
+      position: relative; z-index: 2;
+    }
+
+    .new-headline {
+      font-size: clamp(1.4rem,3.8vw,3rem);
+      font-weight: 900; text-transform: uppercase;
+      text-align: center; line-height: 1.05;
+      letter-spacing: -.01em;
+    }
+    .new-headline em {
+      color: var(--orange); font-style: normal;
+      text-shadow: 0 0 18px var(--orange-glow);
+    }
+    .new-sub {
+      font-family: Arial, sans-serif; font-weight: 600;
+      font-size: clamp(.62rem,1.4vw,.88rem);
+      color: rgba(255,255,255,.6); text-align: center;
+      line-height: 1.65; max-width: 340px;
+    }
+    .pills {
+      display: flex; flex-wrap: wrap;
+      gap: 8px; justify-content: center;
+    }
+    .pill {
+      background: rgba(242,101,34,.14);
+      border: 1px solid rgba(242,101,34,.38);
+      color: rgba(255,255,255,.85);
+      font-family: Arial, sans-serif; font-weight: 700;
+      font-size: clamp(.52rem,1.1vw,.7rem);
+      padding: 5px 14px; border-radius: 50px;
+      letter-spacing: .06em; text-transform: uppercase;
+    }
+
+    /* ── RIGHT PANEL — CRACKED SCREEN REPAIR ─────────────── */
+    .panel-repair {
+      position: relative;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: clamp(20px,3vh,48px) clamp(24px,4vw,60px);
+      overflow: hidden;
+      background: radial-gradient(ellipse at 45% 50%, #0d0200 0%, #030303 70%);
+    }
+
+    .repair-glow {
+      position: absolute;
+      width: min(65%,380px); height: min(65%,380px);
+      background: radial-gradient(circle, rgba(200,30,10,.22) 0%, transparent 70%);
+      border-radius: 50%;
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      animation: dangerPulse 2.5s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .repair-inner {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column;
+      align-items: center; gap: clamp(10px,1.8vh,20px);
+      width: 100%;
+    }
+
+    .repair-badge {
+      display: inline-block;
+      background: transparent; color: var(--orange);
+      border: 2px solid var(--orange);
+      font-size: clamp(.52rem,1.1vw,.72rem);
+      font-weight: 800; letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: clamp(3px,0.6vh,6px) clamp(14px,2vw,22px);
+      border-radius: 50px;
+    }
+
+    .cracked-phone-wrap {
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cracked-phone-img {
+      height: min(46vh,380px); width: auto; object-fit: contain;
+      filter: drop-shadow(0 0 28px rgba(200,30,10,.4))
+              drop-shadow(0 16px 50px rgba(0,0,0,.7))
+              grayscale(30%) brightness(0.88);
+      animation: tiltShake 7s ease-in-out infinite;
+      position: relative; z-index: 2;
+    }
+    .crack-svg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      pointer-events: none; z-index: 3;
+    }
+
+    .repair-headline {
+      font-size: clamp(1.4rem,3.8vw,3rem);
+      font-weight: 900; text-transform: uppercase;
+      text-align: center; line-height: 1.05;
+      letter-spacing: -.01em;
+    }
+    .repair-headline em {
+      color: var(--orange); font-style: normal;
+      text-shadow: 0 0 18px var(--orange-glow);
+    }
+
+    .repair-list {
+      list-style: none;
+      display: flex; flex-direction: column;
+      gap: clamp(4px,.9vh,9px); width: 100%; max-width: 320px;
+    }
+    .repair-list li {
+      font-family: Arial, sans-serif; font-weight: 700;
+      font-size: clamp(.58rem,1.3vw,.82rem);
+      color: rgba(255,255,255,.78);
+      display: flex; align-items: center; gap: 9px;
+    }
+    .repair-list li::before {
+      content: '✓'; color: var(--orange);
+      font-size: 1em; flex-shrink: 0;
+    }
+
+    .warranty-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(242,101,34,.1);
+      border: 1.5px solid rgba(242,101,34,.45);
+      border-radius: 10px;
+      padding: clamp(6px,1vh,10px) clamp(14px,2vw,22px);
+      font-family: Arial, sans-serif; font-weight: 800;
+      font-size: clamp(.55rem,1.2vw,.78rem);
+      color: #fff; text-transform: uppercase; letter-spacing: .06em;
+    }
+    .warranty-badge span { color: var(--orange); }
+
+    /* ── BOTTOM FOOTER BAR ───────────────────────────────── */
+    .footer-bar {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap; gap: 6px;
+      padding: clamp(12px,2vh,22px) clamp(20px,4vw,56px);
+      background: #050505;
+      border-top: 2px solid var(--orange);
+      box-shadow: 0 0 40px rgba(242,101,34,.25);
+      position: relative; z-index: 10;
+    }
+    .footer-phone {
+      font-size: clamp(1.1rem,3vw,2.2rem);
+      font-weight: 900; color: #fff; letter-spacing: .04em;
+    }
+    .footer-phone span { color: var(--orange); }
+    .footer-hours {
+      font-family: Arial, sans-serif; font-weight: 700;
+      font-size: clamp(.5rem,1.1vw,.72rem);
+      color: rgba(255,255,255,.55);
+      text-transform: uppercase; letter-spacing: .07em;
+      text-align: center; line-height: 1.6;
+    }
+    .footer-hours strong { color: var(--orange); }
+    .footer-address {
+      font-family: Arial, sans-serif; font-weight: 600;
+      font-size: clamp(.5rem,1.1vw,.72rem);
+      color: rgba(255,255,255,.45);
+      text-transform: uppercase; letter-spacing: .06em;
+      text-align: right; line-height: 1.6;
+    }
+
+    /* ── ANIMATIONS ──────────────────────────────────────── */
+    @keyframes glowPulse {
+      0%,100% { text-shadow: 0 0 6px rgba(242,101,34,.9), 0 0 16px rgba(242,101,34,.45); }
+      50%      { text-shadow: 0 0 10px #F26522, 0 0 28px rgba(242,101,34,.8), 0 0 60px rgba(242,101,34,.3); }
+    }
+    @keyframes breathe {
+      0%,100% { transform: translate(-50%,-50%) scale(1);   opacity:.7; }
+      50%      { transform: translate(-50%,-50%) scale(1.14); opacity:1; }
+    }
+    @keyframes dangerPulse {
+      0%,100% { transform: translate(-50%,-50%) scale(1);   opacity:.55; }
+      50%      { transform: translate(-50%,-50%) scale(1.1); opacity:1; }
+    }
+    @keyframes phoneFloat {
+      0%,100% { transform: translateY(0)   rotate(0deg); }
+      33%      { transform: translateY(-10px) rotate(.5deg); }
+      66%      { transform: translateY(-5px)  rotate(-.3deg); }
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    @keyframes tiltShake {
+      0%,100%  { transform: rotate(-1.5deg); }
+      10%      { transform: rotate(-1.5deg) translate(-2px,-1px); }
+      20%      { transform: rotate(-1.5deg) translate(2px,1px); }
+      30%      { transform: rotate(-1.5deg) translate(-1px,2px); }
+      40%,90%  { transform: rotate(-1.5deg); }
+    }
+
+    /* ── RESPONSIVE (portrait) ───────────────────────────── */
+    @media (max-aspect-ratio: 1/1) {
+      .split {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+      .split::after {
+        left: 0; right: 0;
+        top: 50%; bottom: auto;
+        width: 100%; height: 2px;
+      }
+      .new-phone-img, .cracked-phone-img { height: min(28vh,220px); }
+      .new-headline, .repair-headline { font-size: clamp(1.2rem,5vw,2.2rem); }
+    }
+  </style>
+</head>
+<body>
+<div class="poster">
+
+  <!-- ── BRAND BAR ── -->
+  <div class="brand-bar">
+    <div class="brand-left">
+      <img src="logo.svg" alt="Phone ElectriK" />
+      <div class="brand-name">
+        <span class="bn-top">Phone</span>
+        <span class="bn-main">ElectriK</span>
+        <span class="bn-sub">Repair &middot; Accessories &middot; Torrance, CA</span>
+      </div>
+    </div>
+    <div class="brand-tag">
+      <strong>&#9889; Cell Phone + Tablet</strong>
+      Repair &amp; Accessories
+    </div>
+  </div>
+
+  <!-- ── SPLIT BODY ── -->
+  <div class="split">
+
+    <!-- LEFT · NEW iPhone 17 -->
+    <div class="panel-new">
+      <div class="new-glow"></div>
+      <div class="new-inner">
+
+        <span class="panel-badge">&#9889; New Arrival</span>
+
+        <div class="new-phone-wrap">
+          <div class="new-phone-ring"></div>
+          <img src="IMG_0096.jpeg" class="new-phone-img" alt="iPhone 17" />
+        </div>
+
+        <div class="new-headline">
+          iPhone <em>17</em><br>Is Here
+        </div>
+        <p class="new-sub">
+          We buy, sell &amp; trade every iPhone model.<br>
+          Refurbished deals in stock — ask us!
+        </p>
+        <div class="pills">
+          <span class="pill">&#128722; Buy &amp; Sell</span>
+          <span class="pill">&#128260; Trade-In</span>
+          <span class="pill">&#128241; All Models</span>
+          <span class="pill">&#128203; Accessories</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT · Cracked Screen Repair -->
+    <div class="panel-repair">
+      <div class="repair-glow"></div>
+      <div class="repair-inner">
+
+        <span class="repair-badge">Cracked? We Fix It.</span>
+
+        <div class="cracked-phone-wrap">
+          <img src="IMG_0096.jpeg" class="cracked-phone-img" alt="Cracked phone" />
+          <svg class="crack-svg" viewBox="0 0 220 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="cg">
+                <feGaussianBlur stdDeviation="1.2" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <g filter="url(#cg)" stroke="rgba(255,255,255,0.52)" stroke-width="1.1" fill="none" stroke-linecap="round">
+              <!-- main fracture lines from impact point ~(115,70) -->
+              <path d="M115,70 L98,130 L82,195 L62,295 L50,370"  stroke-width="1.6"/>
+              <path d="M115,70 L135,118 L155,178 L163,252"/>
+              <path d="M115,70 L148,88 L178,104"/>
+              <path d="M115,70 L86,84 L60,108 L40,150"/>
+              <path d="M115,70 L110,44 L118,18"/>
+              <!-- branches -->
+              <path d="M98,130  L72,138 L46,128"/>
+              <path d="M98,130  L113,144 L140,133 L162,138"/>
+              <path d="M82,195  L57,200 L36,190"/>
+              <path d="M82,195  L102,208 L128,198"/>
+              <path d="M135,118 L160,126 L178,122"/>
+              <path d="M155,178 L170,186 L185,180"/>
+              <path d="M62,295  L40,300 L24,294"/>
+              <path d="M62,295  L78,310 L94,305 L114,314"/>
+              <!-- hairlines -->
+              <path d="M148,88 L158,102 L153,118" stroke-width=".5" stroke="rgba(255,255,255,.3)"/>
+              <path d="M60,108  L48,124 L52,140" stroke-width=".5" stroke="rgba(255,255,255,.3)"/>
+              <path d="M128,198 L143,208 L141,224" stroke-width=".5" stroke="rgba(255,255,255,.3)"/>
+              <path d="M114,314 L122,332 L119,348" stroke-width=".5" stroke="rgba(255,255,255,.3)"/>
+              <!-- impact dot -->
+              <circle cx="115" cy="70" r="5"  stroke="rgba(255,210,60,.55)" stroke-width="1.5"/>
+              <circle cx="115" cy="70" r="11" stroke="rgba(255,210,60,.2)"  stroke-width="1"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="repair-headline">
+          <em>Screen</em> Repair<br>Done Fast
+        </div>
+        <ul class="repair-list">
+          <li>Cracked &amp; shattered screen</li>
+          <li>Battery replacement</li>
+          <li>Back glass &amp; charging port</li>
+          <li>Water damage &amp; diagnostics</li>
+          <li>iPhone · Samsung · iPad &amp; more</li>
+        </ul>
+        <div class="warranty-badge">
+          &#128737; <span>90-Day Warranty</span>&nbsp;on Every Repair
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /split -->
+
+  <!-- ── FOOTER BAR ── -->
+  <div class="footer-bar">
+    <div class="footer-phone">&#128222;&nbsp;<span>(323)</span>&nbsp;348-6756</div>
+    <div class="footer-hours">
+      <strong>Mon – Sat</strong> 9 AM – 8 PM &nbsp;&nbsp;|&nbsp;&nbsp;
+      <strong>Sun</strong> 10 AM – 6 PM<br>
+      Walk-Ins Welcome &nbsp;·&nbsp; No Appointment Needed
+    </div>
+    <div class="footer-address">
+      3025 Artesia Blvd STE 101<br>Torrance, CA 90504
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
