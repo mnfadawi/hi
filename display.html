@@ -9,258 +9,284 @@
 
     html, body {
       width: 100%; height: 100%;
-      background: #000;
+      background: #111;
       display: flex; align-items: center; justify-content: center;
       font-family: 'Arial Black', Arial, sans-serif;
     }
 
+    /* ── 9:16 portrait ─────────────────────────────────── */
     .poster {
       width:  min(100vw, calc(100vh * 9 / 16));
       height: min(100vh, calc(100vw * 16 / 9));
-      position: relative;
+      display: flex;
+      flex-direction: column;
       overflow: hidden;
-      background: #08050e;
+      background: #050505;
     }
 
-    /* ── FULL BLEED BACKGROUND ──────────────────────────── */
-    .bg {
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse at 25% 60%, rgba(242,101,34,.45) 0%, transparent 50%),
-        radial-gradient(ellipse at 75% 55%, rgba(100,160,255,.22) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 100%, rgba(242,101,34,.15) 0%, transparent 45%),
-        linear-gradient(160deg, #0f0800 0%, #08050e 40%, #030510 100%);
-    }
-
-    /* ── LEFT PHONE ─────────────────────────────────────── */
-    .phone-left {
-      position: absolute;
-      left: -6%;
-      top: 6%;
-      width: 62%;
-      height: 88%;
-      object-fit: contain;
-      object-position: center center;
-      filter:
-        drop-shadow(0 0 40px rgba(242,101,34,.7))
-        drop-shadow(8px 24px 60px rgba(0,0,0,.9));
-      animation: floatL 7s ease-in-out infinite;
-      z-index: 3;
-    }
-
-    /* ── RIGHT PHONE ─────────────────────────────────────── */
-    .phone-right {
-      position: absolute;
-      right: -6%;
-      top: 10%;
-      width: 60%;
-      height: 84%;
-      object-fit: contain;
-      object-position: center center;
-      filter:
-        drop-shadow(0 0 30px rgba(140,200,255,.5))
-        drop-shadow(-8px 24px 60px rgba(0,0,0,.9));
-      animation: floatR 7s 1.5s ease-in-out infinite;
-      z-index: 2;
-    }
-
-    /* ── CENTER LIGHTNING BOLT ──────────────────────────── */
-    .center-bolt {
-      position: absolute;
-      left: 50%; top: 50%;
-      transform: translate(-50%, -50%);
-      font-size: clamp(2.5rem, 12vw, 6rem);
-      color: #F26522;
-      text-shadow:
-        0 0 20px rgba(242,101,34,1),
-        0 0 50px rgba(242,101,34,.8),
-        0 0 100px rgba(242,101,34,.5);
-      z-index: 5;
-      animation: boltPulse 2s ease-in-out infinite;
-      line-height: 1;
-    }
-
-    /* ── TOP BRAND OVERLAY ──────────────────────────────── */
-    .brand-overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      z-index: 10;
-      background: linear-gradient(180deg,
-        rgba(5,3,10,.95) 0%,
-        rgba(5,3,10,.85) 55%,
-        transparent 100%);
-      padding: 4% 7% 10%;
+    /* ══════════════════════════════════════════════════════
+       TOP  —  brand header  ~18%
+    ══════════════════════════════════════════════════════ */
+    .top {
+      flex: 0 0 18%;
+      background: #050505;
+      border-bottom: 3px solid #F26522;
+      box-shadow: 0 4px 40px rgba(242,101,34,.4);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 5%;
+      justify-content: center;
+      gap: 7%;
+      padding: 2% 6%;
+      position: relative;
+      overflow: hidden;
     }
-    .brand-row {
+    .top::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 60%, rgba(242,101,34,.13) 0%, transparent 65%);
+    }
+    .logo-row {
       display: flex; align-items: center;
-      justify-content: center; gap: 5%;
+      justify-content: center; gap: 4%;
+      position: relative; z-index: 1;
     }
-    .brand-row img {
-      height: clamp(44px, 9%, 90px); width: auto;
-      filter:
-        drop-shadow(0 0 14px rgba(242,101,34,.8))
-        drop-shadow(0 0 36px rgba(242,101,34,.45));
+    .logo-row img {
+      height: clamp(40px, 8%, 80px); width: auto;
       animation: logoPulse 3s ease-in-out infinite;
     }
     .brand-words { display: flex; flex-direction: column; line-height: 1; }
     .bw-top {
-      font-size: clamp(.5rem, 2.2vw, .9rem);
-      letter-spacing: .34em; color: rgba(255,255,255,.35);
-      font-weight: 700; text-transform: uppercase; margin-bottom: 2%;
+      font-size: clamp(.46rem, 2vw, .82rem);
+      letter-spacing: .32em; color: rgba(255,255,255,.35);
+      font-weight: 700; text-transform: uppercase;
     }
     .bw-main {
-      font-size: clamp(1.8rem, 8.5vw, 4rem);
+      font-size: clamp(1.6rem, 7.5vw, 3.6rem);
       font-weight: 900; text-transform: uppercase;
       color: #F26522; letter-spacing: .05em;
       white-space: nowrap;
       animation: glowPulse 3s ease-in-out infinite;
     }
-    .brand-sub {
+    .tagline {
+      position: relative; z-index: 1;
       font-family: Arial, sans-serif; font-weight: 700;
-      font-size: clamp(.38rem, 1.7vw, .7rem);
+      font-size: clamp(.38rem, 1.7vw, .68rem);
       letter-spacing: .2em; text-transform: uppercase;
-      color: rgba(255,255,255,.38); text-align: center;
+      color: rgba(255,255,255,.42); text-align: center;
     }
 
-    /* phone name tags */
-    .tag-left, .tag-right {
-      position: absolute;
-      z-index: 8;
-      font-size: clamp(.4rem, 1.8vw, .72rem);
-      font-weight: 800; text-transform: uppercase;
-      letter-spacing: .1em; line-height: 1.3;
-      text-align: center;
+    /* ══════════════════════════════════════════════════════
+       MIDDLE  —  two phones  ~42%
+    ══════════════════════════════════════════════════════ */
+    .phones {
+      flex: 0 0 42%;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 25% 55%, rgba(242,101,34,.25) 0%, transparent 50%),
+        radial-gradient(ellipse at 75% 50%, rgba(120,180,255,.14) 0%, transparent 50%),
+        #050505;
     }
-    .tag-left {
-      bottom: 18%;
-      left: 3%;
+
+    .half {
+      flex: 1;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 0 2% 2%;
+      position: relative; overflow: hidden;
+    }
+    .half-l::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 55% 60%, rgba(242,101,34,.2) 0%, transparent 60%);
+    }
+    .half-r::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 45% 60%, rgba(130,185,255,.12) 0%, transparent 60%);
+    }
+    .ph-img {
+      position: relative; z-index: 2;
+      width: 86%;
+      max-height: 95%;
+      object-fit: contain;
+      display: block;
+    }
+    .half-l .ph-img {
+      filter: drop-shadow(0 0 28px rgba(242,101,34,.65)) drop-shadow(0 16px 40px rgba(0,0,0,.85));
+      animation: floatL 6s ease-in-out infinite;
+    }
+    .half-r .ph-img {
+      filter: drop-shadow(0 0 20px rgba(160,210,255,.4)) drop-shadow(0 16px 40px rgba(0,0,0,.85));
+      animation: floatR 6s 1.2s ease-in-out infinite;
+    }
+    .divider {
+      position: absolute; left: 50%; top: 5%; bottom: 5%;
+      transform: translateX(-50%);
+      width: 2px;
+      background: linear-gradient(180deg, transparent, rgba(242,101,34,.5) 25%, rgba(242,101,34,.5) 75%, transparent);
+      z-index: 6;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bolt {
+      background: #050505; color: #F26522;
+      font-size: clamp(.9rem, 3.8vw, 1.7rem);
+      padding: 8% 0; line-height: 1;
+      filter: drop-shadow(0 0 10px rgba(242,101,34,1));
+      animation: boltPulse 2s ease-in-out infinite;
+    }
+
+    /* ══════════════════════════════════════════════════════
+       BUY · SELL · REPAIR  band  ~12%
+    ══════════════════════════════════════════════════════ */
+    .bsr-band {
+      flex: 0 0 12%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4%;
+      padding: 0 5%;
+      border-top: 4px solid #F26522;
+      border-bottom: 4px solid #F26522;
+    }
+    .bsr-word {
+      font-size: clamp(1.1rem, 5.5vw, 2.8rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #111;
+      letter-spacing: .04em;
+      white-space: nowrap;
+    }
+    .bsr-dot {
+      font-size: clamp(.8rem, 3.5vw, 1.8rem);
       color: #F26522;
-      text-shadow: 0 0 10px rgba(242,101,34,.7);
-    }
-    .tag-right {
-      bottom: 18%;
-      right: 3%;
-      color: rgba(180,215,255,.8);
-      text-shadow: 0 0 10px rgba(140,200,255,.5);
+      font-weight: 900;
+      flex-shrink: 0;
     }
 
-    /* ── BOTTOM INFO OVERLAY ────────────────────────────── */
-    .info-overlay {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      z-index: 10;
-      background: linear-gradient(0deg,
-        rgba(5,3,10,.98) 0%,
-        rgba(5,3,10,.92) 65%,
-        transparent 100%);
-      padding: 10% 7% 4%;
+    /* ══════════════════════════════════════════════════════
+       PHONE NUMBER  —  huge  ~16%
+    ══════════════════════════════════════════════════════ */
+    .phone-band {
+      flex: 0 0 16%;
+      background: #F26522;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 5%;
+    }
+    .phone-num {
+      font-size: clamp(2rem, 10vw, 5rem);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: .03em;
+      white-space: nowrap;
+      text-shadow: 0 3px 16px rgba(0,0,0,.3);
+    }
+
+    /* ══════════════════════════════════════════════════════
+       HOURS + ADDRESS  —  bottom  ~12%
+    ══════════════════════════════════════════════════════ */
+    .bottom-info {
+      flex: 0 0 12%;
+      background: #050505;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 3%;
-      border-top: none;
+      justify-content: center;
+      gap: 8%;
+      padding: 1.5% 5%;
+      border-top: 3px solid #222;
     }
-    /* orange line above info */
-    .info-overlay::before {
-      content: '';
-      position: absolute;
-      bottom: 100%; left: 0; right: 0;
-      height: 3px;
-      background: transparent;
+    .hours-text {
+      font-family: Arial, sans-serif; font-weight: 800;
+      font-size: clamp(.55rem, 2.6vw, 1.1rem);
+      color: #fff;
+      text-transform: uppercase; letter-spacing: .08em;
+      text-align: center; white-space: nowrap;
     }
-    .orange-line {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 3px;
-      background: #F26522;
-      box-shadow: 0 0 20px rgba(242,101,34,.6);
-      z-index: 11;
-    }
-    .info-num {
-      font-size: clamp(1.3rem, 6.5vw, 3rem);
-      font-weight: 900; color: #fff; letter-spacing: .04em;
-    }
-    .info-num span { color: #F26522; }
-    .info-hours {
-      font-family: Arial, sans-serif; font-weight: 700;
-      font-size: clamp(.38rem, 1.7vw, .68rem);
-      color: rgba(255,255,255,.55); text-transform: uppercase;
-      letter-spacing: .08em; text-align: center;
-    }
-    .info-hours b { color: #F26522; font-weight: inherit; }
-    .info-addr {
-      font-family: Arial, sans-serif; font-weight: 500;
-      font-size: clamp(.32rem, 1.4vw, .56rem);
-      color: rgba(255,255,255,.3); text-transform: uppercase;
-      letter-spacing: .07em;
+    .hours-text span { color: #F26522; }
+    .addr-text {
+      font-family: Arial, sans-serif; font-weight: 600;
+      font-size: clamp(.48rem, 2.2vw, .92rem);
+      color: rgba(255,255,255,.55);
+      text-transform: uppercase; letter-spacing: .07em;
+      text-align: center;
     }
 
-    /* ── ANIMATIONS ──────────────────────────────────────── */
+    /* ── KEYFRAMES ──────────────────────────────────────── */
     @keyframes glowPulse {
-      0%,100% { text-shadow: 0 0 10px rgba(242,101,34,1), 0 0 28px rgba(242,101,34,.7), 0 0 60px rgba(242,101,34,.35); }
-      50%      { text-shadow: 0 0 16px #F26522, 0 0 44px rgba(242,101,34,.9), 0 0 100px rgba(242,101,34,.5); }
+      0%,100% { text-shadow: 0 0 8px rgba(242,101,34,1), 0 0 22px rgba(242,101,34,.6); }
+      50%      { text-shadow: 0 0 14px #F26522, 0 0 36px rgba(242,101,34,.9), 0 0 80px rgba(242,101,34,.4); }
     }
     @keyframes logoPulse {
-      0%,100% { filter: drop-shadow(0 0 12px rgba(242,101,34,.7)) drop-shadow(0 0 32px rgba(242,101,34,.35)); }
-      50%      { filter: drop-shadow(0 0 24px rgba(242,101,34,1)) drop-shadow(0 0 60px rgba(242,101,34,.65)); }
+      0%,100% { filter: drop-shadow(0 0 10px rgba(242,101,34,.65)); }
+      50%      { filter: drop-shadow(0 0 22px rgba(242,101,34,1)) drop-shadow(0 0 50px rgba(242,101,34,.55)); }
     }
     @keyframes boltPulse {
-      0%,100% { opacity:.7;  text-shadow: 0 0 20px rgba(242,101,34,1), 0 0 50px rgba(242,101,34,.7); }
-      50%      { opacity:1;   text-shadow: 0 0 30px #F26522, 0 0 80px rgba(242,101,34,.9), 0 0 120px rgba(242,101,34,.5); }
+      0%,100% { opacity:.8; }  50% { opacity:1; }
     }
     @keyframes floatL {
-      0%,100% { transform: translateY(0) rotate(-1deg); }
-      50%      { transform: translateY(-2.5%) rotate(0deg); }
+      0%,100% { transform: translateY(0) rotate(-.5deg); }
+      50%      { transform: translateY(-4%) rotate(.4deg); }
     }
     @keyframes floatR {
-      0%,100% { transform: translateY(0) rotate(1.5deg); }
-      50%      { transform: translateY(-2%) rotate(.3deg); }
+      0%,100% { transform: translateY(0) rotate(.5deg); }
+      50%      { transform: translateY(-3.5%) rotate(-.3deg); }
     }
   </style>
 </head>
 <body>
 <div class="poster">
 
-  <!-- BACKGROUND -->
-  <div class="bg"></div>
-
-  <!-- PHONES -->
-  <img src="IMG_0096.jpeg" class="phone-left"  alt="iPhone 17 Pro Max" />
-  <img src="IMG_0097.jpeg" class="phone-right" alt="Samsung Galaxy S26" />
-
-  <!-- CENTER BOLT -->
-  <div class="center-bolt">&#9889;</div>
-
-  <!-- PHONE NAME TAGS -->
-  <div class="tag-left">iPhone 17<br>Pro Max</div>
-  <div class="tag-right">Samsung<br>Galaxy S26</div>
-
-  <!-- TOP BRAND -->
-  <div class="brand-overlay">
-    <div class="brand-row">
+  <!-- BRAND -->
+  <div class="top">
+    <div class="logo-row">
       <img src="logo.svg" alt="Phone ElectriK" />
       <div class="brand-words">
         <span class="bw-top">Phone</span>
         <span class="bw-main">ElectriK</span>
       </div>
     </div>
-    <div class="brand-sub">Cell Phone + Tablet Repair and Accessories</div>
+    <div class="tagline">Cell Phone + Tablet Repair and Accessories</div>
   </div>
 
-  <!-- BOTTOM INFO -->
-  <div class="info-overlay">
-    <div class="info-num"><span>(323)</span>&nbsp;348-6756</div>
-    <div class="info-hours">
-      <b>Mon–Sat</b> 9AM–8PM &nbsp;·&nbsp;
-      <b>Sun</b> 10AM–6PM &nbsp;·&nbsp; Walk-Ins Welcome
+  <!-- PHONES -->
+  <div class="phones">
+    <div class="half half-l">
+      <img src="IMG_0096.jpeg" class="ph-img" alt="iPhone 17 Pro Max" />
     </div>
-    <div class="info-addr">3025 Artesia Blvd STE 101 · Torrance, CA 90504</div>
+    <div class="divider"><span class="bolt">&#9889;</span></div>
+    <div class="half half-r">
+      <img src="IMG_0097.jpeg" class="ph-img" alt="Samsung Galaxy S26" />
+    </div>
   </div>
-  <div class="orange-line"></div>
+
+  <!-- BUY · SELL · REPAIR -->
+  <div class="bsr-band">
+    <span class="bsr-word">Buy</span>
+    <span class="bsr-dot">&#9679;</span>
+    <span class="bsr-word">Sell</span>
+    <span class="bsr-dot">&#9679;</span>
+    <span class="bsr-word">Repair</span>
+  </div>
+
+  <!-- PHONE NUMBER BIG -->
+  <div class="phone-band">
+    <div class="phone-num">(323) 348-6756</div>
+  </div>
+
+  <!-- HOURS + ADDRESS -->
+  <div class="bottom-info">
+    <div class="hours-text">
+      <span>Mon–Sat</span> 9AM–8PM &nbsp;·&nbsp; <span>Sun</span> 10AM–6PM &nbsp;·&nbsp; Walk-Ins Welcome
+    </div>
+    <div class="addr-text">3025 Artesia Blvd STE 101 &nbsp;·&nbsp; Torrance, CA 90504</div>
+  </div>
 
 </div>
 </body>
