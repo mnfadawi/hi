@@ -9,61 +9,66 @@
 
     html, body {
       width: 100%; height: 100%;
-      background: #111;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: #0a0a0a;
+      display: flex; align-items: center; justify-content: center;
       font-family: 'Arial Black', Arial, sans-serif;
     }
 
-    /* Portrait poster — 9:16 aspect ratio */
+    /* ── 9:16 PORTRAIT POSTER ───────────────────────────── */
     .poster {
-      width: min(100vw, calc(100vh * 9 / 16));
+      width:  min(100vw, calc(100vh * 9 / 16));
       height: min(100vh, calc(100vw * 16 / 9));
-      background: #050505;
+      background: #060606;
       display: flex;
       flex-direction: column;
       overflow: hidden;
       position: relative;
     }
 
-    /* ── TOP: BRAND ─────────────────────────────────────── */
-    .top {
-      background: #050505;
-      border-bottom: 3px solid #F26522;
-      padding: 5% 8%;
-      display: flex;
-      align-items: center;
-      gap: 5%;
+    /* ── BRAND BAR ──────────────────────────────────────── */
+    .brand-bar {
       flex-shrink: 0;
-      box-shadow: 0 0 40px rgba(242,101,34,.4);
+      background: #060606;
+      border-bottom: 3px solid #F26522;
+      box-shadow: 0 4px 40px rgba(242,101,34,.35);
+      padding: 4% 7%;
+      display: flex; align-items: center; gap: 4%;
     }
-    .top img { height: clamp(36px,7%,64px); width: auto; }
-    .brand-name {
-      display: flex; flex-direction: column; line-height: 1;
+    .brand-bar img { height: clamp(32px, 6.5%, 60px); width: auto; }
+    .brand-txt { display: flex; flex-direction: column; line-height: 1; }
+    .bt-top {
+      font-size: clamp(.42rem, 1.8vw, .72rem);
+      letter-spacing: .28em; color: rgba(255,255,255,.38);
+      font-family: Arial, sans-serif; font-weight: 600;
+      text-transform: uppercase; margin-bottom: 2px;
     }
-    .bn-small {
-      font-size: clamp(.5rem,2.2vw,.9rem);
-      letter-spacing: .28em; color: rgba(255,255,255,.4);
-      font-family: Arial,sans-serif; font-weight:600;
-      text-transform: uppercase; margin-bottom: 3px;
-    }
-    .bn-big {
-      font-size: clamp(1.1rem,5.5vw,2.6rem);
+    .bt-main {
+      font-size: clamp(1rem, 5vw, 2.4rem);
       font-weight: 900; text-transform: uppercase;
-      color: #F26522; letter-spacing: .06em;
-      text-shadow: 0 0 10px rgba(242,101,34,.8), 0 0 30px rgba(242,101,34,.4);
+      color: #F26522; letter-spacing: .07em;
+      text-shadow: 0 0 10px rgba(242,101,34,.85), 0 0 30px rgba(242,101,34,.4);
       animation: glow 3s ease-in-out infinite;
     }
-    .bn-tag {
-      font-size: clamp(.4rem,1.7vw,.7rem);
-      letter-spacing: .14em; color: rgba(255,255,255,.3);
-      font-family: Arial,sans-serif; font-weight:500;
-      text-transform: uppercase; margin-top: 4px;
+    .bt-sub {
+      font-size: clamp(.38rem, 1.5vw, .6rem);
+      letter-spacing: .14em; color: rgba(255,255,255,.28);
+      font-family: Arial, sans-serif; font-weight: 500;
+      text-transform: uppercase; margin-top: 3px;
     }
 
-    /* ── MIDDLE: PHONE + HEADLINE ───────────────────────── */
-    .middle {
+    /* ── TAGLINE STRIP ──────────────────────────────────── */
+    .tagline-strip {
+      flex-shrink: 0;
+      background: #F26522;
+      padding: 1.8% 7%;
+      text-align: center;
+      font-size: clamp(.5rem, 2.1vw, .88rem);
+      font-weight: 800; letter-spacing: .2em;
+      color: #fff; text-transform: uppercase;
+    }
+
+    /* ── PHONES SECTION ─────────────────────────────────── */
+    .phones-section {
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -71,236 +76,246 @@
       justify-content: center;
       position: relative;
       overflow: hidden;
-      background: radial-gradient(ellipse at 50% 45%, #1c0800 0%, #050505 70%);
-      padding: 4% 8%;
-      gap: 5%;
+      padding: 3% 5% 2%;
+      gap: 3%;
+      background:
+        radial-gradient(ellipse at 25% 55%, rgba(242,101,34,.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 75% 45%, rgba(180,200,255,.08) 0%, transparent 55%),
+        #060606;
     }
 
-    /* ambient glow behind phone */
-    .glow-blob {
-      position: absolute;
-      width: 70%; height: 70%;
-      background: radial-gradient(circle, rgba(242,101,34,.22) 0%, transparent 70%);
-      border-radius: 50%;
-      top: 50%; left: 50%; transform: translate(-50%,-50%);
-      animation: breathe 4s ease-in-out infinite;
-      pointer-events: none;
+    .phones-row {
+      flex: 1;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 6%;
+      position: relative;
     }
 
-    .tag-pill {
-      background: #F26522; color: #fff;
-      font-size: clamp(.5rem,2.2vw,.85rem);
-      font-weight: 800; letter-spacing: .18em;
-      text-transform: uppercase;
-      padding: clamp(4px,1%,8px) clamp(14px,4%,28px);
-      border-radius: 50px;
-      position: relative; z-index: 2;
+    /* individual phone card */
+    .phone-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3%;
+      flex: 1;
+      height: 100%;
+      position: relative;
     }
 
-    .phone-wrap {
-      position: relative; z-index: 2;
-      display: flex; align-items: center; justify-content: center;
-      flex: 1; width: 100%;
-    }
-    .phone-ring {
-      position: absolute;
-      width: 85%; padding-top: 85%;
-      border: 1.5px solid rgba(242,101,34,.15);
-      border-radius: 50%;
-      top: 50%; left: 50%; transform: translate(-50%,-50%);
-      animation: spin 24s linear infinite;
-    }
-    .phone-ring::before {
-      content: '';
-      position: absolute; top: -4px; left: 50%;
-      width: 7px; height: 7px; border-radius: 50%;
-      background: #F26522; box-shadow: 0 0 14px #F26522;
-    }
-    .phone-img {
-      max-height: 100%; max-width: 80%;
+    .phone-card img {
+      max-height: 88%;
+      max-width: 100%;
       object-fit: contain;
-      filter: drop-shadow(0 0 40px rgba(242,101,34,.5))
-              drop-shadow(0 20px 60px rgba(0,0,0,.7));
-      animation: float 5s ease-in-out infinite;
+      position: relative; z-index: 2;
+      transition: filter .4s;
+    }
+    .phone-card.orange img {
+      filter: drop-shadow(0 0 28px rgba(242,101,34,.6))
+              drop-shadow(0 12px 40px rgba(0,0,0,.7));
+      animation: floatL 6s ease-in-out infinite;
+    }
+    .phone-card.white img {
+      filter: drop-shadow(0 0 20px rgba(200,220,255,.35))
+              drop-shadow(0 12px 40px rgba(0,0,0,.7));
+      animation: floatR 6s ease-in-out infinite;
+    }
+
+    /* glow discs behind each phone */
+    .phone-card.orange::before {
+      content: '';
+      position: absolute; bottom: 15%; left: 50%;
+      transform: translateX(-50%);
+      width: 80%; padding-top: 80%;
+      background: radial-gradient(circle, rgba(242,101,34,.2) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: breatheO 4s ease-in-out infinite;
+    }
+    .phone-card.white::before {
+      content: '';
+      position: absolute; bottom: 15%; left: 50%;
+      transform: translateX(-50%);
+      width: 80%; padding-top: 80%;
+      background: radial-gradient(circle, rgba(180,210,255,.12) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: breatheW 4s 1s ease-in-out infinite;
+    }
+
+    .phone-label {
+      font-size: clamp(.55rem, 2.2vw, .9rem);
+      font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; text-align: center;
       position: relative; z-index: 2;
     }
+    .phone-card.orange .phone-label { color: #F26522; }
+    .phone-card.white  .phone-label { color: rgba(200,220,255,.75); }
 
-    /* crack overlay */
-    .crack-svg {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 75%; height: 90%;
-      pointer-events: none; z-index: 3;
+    /* center divider / bolt */
+    .divider {
+      position: absolute; left: 50%; top: 8%; bottom: 8%;
+      transform: translateX(-50%);
+      width: 1px;
+      background: linear-gradient(180deg,
+        transparent 0%, rgba(242,101,34,.4) 30%,
+        rgba(242,101,34,.4) 70%, transparent 100%);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 3;
+    }
+    .bolt {
+      background: #060606;
+      padding: 4% 0;
+      font-size: clamp(.9rem, 3.5vw, 1.6rem);
+      color: #F26522;
+      filter: drop-shadow(0 0 8px rgba(242,101,34,.8));
+      line-height: 1;
     }
 
+    /* headline below phones */
     .headline {
+      flex-shrink: 0;
       color: #fff;
-      font-size: clamp(1.2rem,6vw,3rem);
+      font-size: clamp(1rem, 4.8vw, 2.2rem);
       font-weight: 900; text-transform: uppercase;
-      text-align: center; line-height: 1.1;
+      text-align: center; line-height: 1.15;
       letter-spacing: -.01em;
-      position: relative; z-index: 2;
     }
     .headline em {
       color: #F26522; font-style: normal;
-      text-shadow: 0 0 16px rgba(242,101,34,.7);
-    }
-
-    .sub-text {
-      color: rgba(255,255,255,.6);
-      font-family: Arial,sans-serif; font-weight: 600;
-      font-size: clamp(.55rem,2.3vw,.95rem);
-      text-align: center; line-height: 1.6;
-      position: relative; z-index: 2;
+      text-shadow: 0 0 14px rgba(242,101,34,.65);
     }
 
     /* ── SERVICES ROW ───────────────────────────────────── */
     .services {
-      display: flex;
-      justify-content: center;
-      gap: 3%;
-      flex-wrap: wrap;
-      padding: 3% 6%;
-      border-top: 1px solid rgba(242,101,34,.25);
-      border-bottom: 1px solid rgba(242,101,34,.25);
-      background: rgba(242,101,34,.06);
       flex-shrink: 0;
+      display: flex; flex-wrap: wrap;
+      justify-content: center; gap: 2% 3%;
+      padding: 2.5% 6%;
+      border-top: 1px solid rgba(242,101,34,.2);
+      border-bottom: 1px solid rgba(242,101,34,.2);
+      background: rgba(242,101,34,.05);
     }
     .svc {
-      color: rgba(255,255,255,.82);
-      font-family: Arial,sans-serif; font-weight: 700;
-      font-size: clamp(.42rem,1.8vw,.72rem);
+      font-family: Arial, sans-serif; font-weight: 700;
+      font-size: clamp(.4rem, 1.7vw, .68rem);
       text-transform: uppercase; letter-spacing: .06em;
-      display: flex; align-items: center; gap: 5px;
+      color: rgba(255,255,255,.75);
+      display: flex; align-items: center; gap: 4px;
     }
     .svc::before { content: '✓'; color: #F26522; }
 
-    /* ── BOTTOM: CONTACT ────────────────────────────────── */
+    /* ── BOTTOM BAR ─────────────────────────────────────── */
     .bottom {
-      background: #050505;
-      border-top: 3px solid #F26522;
-      padding: 4% 8%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2%;
       flex-shrink: 0;
-      box-shadow: 0 0 40px rgba(242,101,34,.35);
+      background: #060606;
+      border-top: 3px solid #F26522;
+      box-shadow: 0 -4px 40px rgba(242,101,34,.3);
+      padding: 3.5% 7%;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 1.5%;
     }
     .phone-num {
-      font-size: clamp(1.4rem,6.5vw,3.2rem);
+      font-size: clamp(1.3rem, 6vw, 3rem);
       font-weight: 900; color: #fff; letter-spacing: .04em;
     }
     .phone-num span { color: #F26522; }
     .hours {
-      font-family: Arial,sans-serif; font-weight: 700;
-      font-size: clamp(.42rem,1.8vw,.72rem);
+      font-family: Arial, sans-serif; font-weight: 700;
+      font-size: clamp(.4rem, 1.7vw, .68rem);
       color: rgba(255,255,255,.5);
       text-transform: uppercase; letter-spacing: .08em;
       text-align: center;
     }
     .hours strong { color: #F26522; }
     .address {
-      font-family: Arial,sans-serif; font-weight: 600;
-      font-size: clamp(.38rem,1.6vw,.65rem);
-      color: rgba(255,255,255,.35);
+      font-family: Arial, sans-serif; font-weight: 500;
+      font-size: clamp(.36rem, 1.5vw, .6rem);
+      color: rgba(255,255,255,.28);
       text-transform: uppercase; letter-spacing: .07em;
-      text-align: center;
     }
 
-    /* ── ANIMATIONS ─────────────────────────────────────── */
+    /* ── KEYFRAMES ──────────────────────────────────────── */
     @keyframes glow {
       0%,100% { text-shadow: 0 0 8px rgba(242,101,34,.9), 0 0 20px rgba(242,101,34,.4); }
-      50%      { text-shadow: 0 0 12px #F26522, 0 0 32px rgba(242,101,34,.8), 0 0 70px rgba(242,101,34,.3); }
+      50%      { text-shadow: 0 0 14px #F26522, 0 0 36px rgba(242,101,34,.8), 0 0 70px rgba(242,101,34,.3); }
     }
-    @keyframes breathe {
-      0%,100% { transform: translate(-50%,-50%) scale(1);    opacity:.6; }
-      50%      { transform: translate(-50%,-50%) scale(1.15); opacity:1; }
+    @keyframes floatL {
+      0%,100% { transform: translateY(0)   rotate(0deg); }
+      50%      { transform: translateY(-5%) rotate(.4deg); }
     }
-    @keyframes float {
+    @keyframes floatR {
       0%,100% { transform: translateY(0)    rotate(0deg); }
-      33%      { transform: translateY(-8%)  rotate(.5deg); }
-      66%      { transform: translateY(-4%)  rotate(-.3deg); }
+      50%      { transform: translateY(-3.5%) rotate(-.4deg); }
     }
-    @keyframes spin {
-      from { transform: translate(-50%,-50%) rotate(0deg); }
-      to   { transform: translate(-50%,-50%) rotate(360deg); }
+    @keyframes breatheO {
+      0%,100% { opacity:.6; transform: translateX(-50%) scale(1); }
+      50%      { opacity:1;  transform: translateX(-50%) scale(1.12); }
+    }
+    @keyframes breatheW {
+      0%,100% { opacity:.4; transform: translateX(-50%) scale(1); }
+      50%      { opacity:.8; transform: translateX(-50%) scale(1.1); }
     }
   </style>
 </head>
 <body>
 <div class="poster">
 
-  <!-- TOP BRAND BAR -->
-  <div class="top">
+  <!-- BRAND -->
+  <div class="brand-bar">
     <img src="logo.svg" alt="Phone ElectriK" />
-    <div class="brand-name">
-      <span class="bn-small">Phone</span>
-      <span class="bn-big">ElectriK</span>
-      <span class="bn-tag">Repair &middot; Accessories &middot; Torrance, CA</span>
+    <div class="brand-txt">
+      <span class="bt-top">Phone</span>
+      <span class="bt-main">ElectriK</span>
+      <span class="bt-sub">Repair &middot; Accessories &middot; Torrance, CA</span>
     </div>
   </div>
 
-  <!-- MAIN BODY -->
-  <div class="middle">
-    <div class="glow-blob"></div>
+  <!-- ORANGE TAGLINE STRIP -->
+  <div class="tagline-strip">&#9889; Cell Phone + Tablet Repair &amp; Accessories</div>
 
-    <span class="tag-pill">&#9889; Cracked Screen? We Fix It.</span>
+  <!-- PHONES -->
+  <div class="phones-section">
 
-    <div class="phone-wrap">
-      <div class="phone-ring"></div>
-      <img src="IMG_0096.jpeg" class="phone-img" alt="Phone" />
-      <!-- Spider crack SVG overlay -->
-      <svg class="crack-svg" viewBox="0 0 200 380" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="cg">
-            <feGaussianBlur stdDeviation="1" result="b"/>
-            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <g filter="url(#cg)" stroke="rgba(255,255,255,0.5)" stroke-width="1.1" fill="none" stroke-linecap="round">
-          <path d="M105,65 L90,125 L75,188 L56,292 L46,365" stroke-width="1.6"/>
-          <path d="M105,65 L124,114 L143,172 L150,246"/>
-          <path d="M105,65 L138,82 L165,97"/>
-          <path d="M105,65 L78,78 L54,102 L36,142"/>
-          <path d="M105,65 L100,42 L108,18"/>
-          <path d="M90,125 L65,133 L42,123"/>
-          <path d="M90,125 L104,138 L128,128 L150,133"/>
-          <path d="M75,188 L52,193 L33,184"/>
-          <path d="M75,188 L94,200 L118,191"/>
-          <path d="M56,292 L36,297 L22,291"/>
-          <path d="M56,292 L71,306 L86,301 L106,309"/>
-          <path d="M138,82 L148,95 L144,109" stroke-width=".5" stroke="rgba(255,255,255,.28)"/>
-          <path d="M54,102 L43,117 L47,132" stroke-width=".5" stroke="rgba(255,255,255,.28)"/>
-          <circle cx="105" cy="65" r="5"  stroke="rgba(255,210,60,.5)" stroke-width="1.5"/>
-          <circle cx="105" cy="65" r="11" stroke="rgba(255,210,60,.18)" stroke-width="1"/>
-        </g>
-      </svg>
+    <div class="phones-row">
+      <!-- left: iPhone 17 Pro Max orange -->
+      <div class="phone-card orange">
+        <img src="IMG_0096.jpeg" alt="iPhone 17 Pro Max" />
+      </div>
+
+      <!-- center bolt -->
+      <div class="divider"><span class="bolt">&#9889;</span></div>
+
+      <!-- right: Samsung S26 white -->
+      <div class="phone-card white">
+        <img src="IMG_0097.jpeg" alt="Samsung Galaxy S26" />
+      </div>
+    </div>
+
+    <div class="phones-row" style="flex:0 0 auto; gap:18%">
+      <div class="phone-label" style="color:#F26522">iPhone 17<br>Pro Max</div>
+      <div class="phone-label" style="color:rgba(200,220,255,.75)">Samsung<br>Galaxy S26</div>
     </div>
 
     <div class="headline">
-      Screen Repair<br><em>Done Fast</em>
+      We <em>Buy · Sell</em><br>&amp; Repair Every Model
     </div>
-    <p class="sub-text">
-      iPhone · Samsung · Google Pixel · iPad &amp; More<br>
-      Most repairs done <strong style="color:#fff">while you wait</strong>
-    </p>
+
   </div>
 
-  <!-- SERVICES ROW -->
+  <!-- SERVICES -->
   <div class="services">
     <span class="svc">Screen Repair</span>
     <span class="svc">Battery</span>
     <span class="svc">Back Glass</span>
     <span class="svc">Charging Port</span>
     <span class="svc">Water Damage</span>
-    <span class="svc">Buy &amp; Sell</span>
+    <span class="svc">Trade-In</span>
   </div>
 
-  <!-- BOTTOM CONTACT -->
+  <!-- CONTACT -->
   <div class="bottom">
-    <div class="phone-num"><span>(323)</span> 348-6756</div>
+    <div class="phone-num"><span>(323)</span>&nbsp;348-6756</div>
     <div class="hours">
       <strong>Mon–Sat</strong> 9AM–8PM &nbsp;·&nbsp;
       <strong>Sun</strong> 10AM–6PM &nbsp;·&nbsp; Walk-Ins Welcome
