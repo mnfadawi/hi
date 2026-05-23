@@ -3,7 +3,13 @@ Claude-powered AI brain for Phone ElectriK's phone answering system.
 """
 import os
 import anthropic
+from twilio.rest import Client as TwilioClient
 from data_manager import DataManager
+
+_STORE_ADDRESS = "3025 Artesia Blvd STE 101, Torrance, CA 90504"
+_MAPS_LINK = "https://maps.google.com/?q=3025+Artesia+Blvd+STE+101+Torrance+CA+90504"
+_STORE_PHONE = "(323) 348-6756"
+_TWILIO_NUMBER = os.getenv("TWILIO_NUMBER", "")  # The Twilio number that receives calls
 
 _SYSTEM_PROMPT = """You are the AI receptionist for Phone ElectriK, a phone and electronics repair shop in Torrance, CA.
 
@@ -60,10 +66,11 @@ Prices vary by device model and specific repair. We always give an honest quote 
 3. If asked about a specific price, give a general range if possible but say exact price depends on the model and encourage them to come in or call the shop directly.
 4. If someone wants to leave a message, collect their name, message, and callback number, then use the take_message tool.
 5. If someone wants to book an appointment (drop-off time), collect name, phone, preferred date/time, and what device/issue — then use schedule_appointment.
-6. If the caller asks to speak to a person or you cannot help them, use transfer_to_human.
-7. When the call is wrapping up, use end_call with a warm farewell.
-8. Keep ALL responses SHORT — this is a phone call, not a chat. One to three sentences max per turn.
-9. Never make up prices you are not sure about. Say "I'd recommend calling or stopping in — we'll give you an exact quote on the spot."
+6. If the caller asks where you are located, for directions, or for the address — use the send_location_sms tool to text them the address and Google Maps link, then verbally confirm it's been sent.
+7. If the caller asks to speak to a person or you cannot help them, use transfer_to_human.
+8. When the call is wrapping up, use end_call with a warm farewell.
+9. Keep ALL responses SHORT — this is a phone call, not a chat. One to three sentences max per turn.
+10. Never make up prices you are not sure about. Say "I'd recommend calling or stopping in — we'll give you an exact quote on the spot."
 
 The caller's phone number will be provided. You are currently on a live phone call."""
 
@@ -108,6 +115,15 @@ _TOOLS = [
         },
     },
     {
+        "name": "send_location_sms",
+        "description": "Text the caller our store address and Google Maps link so they can navigate here. Use whenever the caller asks where we are, for directions, or for our address.",
+        "input_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+        },
+    },
+    {
         "name": "end_call",
         "description": "End the call with a farewell message.",
         "input_schema": {
@@ -124,6 +140,10 @@ _TOOLS = [
 class AIHandler:
     def __init__(self):
         self.client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+        self.twilio = TwilioClient(
+            os.getenv("TWILIO_ACCOUNT_SID"),
+            os.getenv("TWILIO_AUTH_TOKEN"),
+        )
         self.dm = DataManager()
 
     def respond(self, history: list, user_input: str, caller: str) -> dict:
@@ -182,6 +202,9 @@ class AIHandler:
                 "action": "continue",
             }
 
+        if name == "send_location_sms":
+            return self._send_location_sms(caller)
+
         if name == "transfer_to_human":
             return {
                 "speech": "Sure thing — let me transfer you now. Please hold.",
@@ -198,3 +221,36 @@ class AIHandler:
             }
 
         return {"speech": "I'm sorry, something went wrong. Please hold.", "action": "transfer"}
+
+    def _send_location_sms(self, to_number: str) -> dict:
+        sms_body = (
+            f"Phone ElectriK\n"
+            f"📍 {_STORE_ADDRESS}\n"
+            f"🕐 Mon–Sat 9AM–8PM | Sun 10AM–6PM\n"
+            f"📞 {_STORE_PHONE}\n"
+            f"🗺️ {_MAPS_LINK}"
+        )
+        try:
+            if _TWILIO_NUMBER and to_number and not to_number.startswith("anonymous"):
+                self.twilio.messages.create(
+                    body=sms_body,
+                    from_=_TWILIO_NUMBER,
+                    to=to_number,
+                )
+            sms_sent = True
+        except Exception:
+            sms_sent = False
+
+        if sms_sent:
+            return {
+                "speech": "I just texted you our address and a Google Maps link. "
+                          "We're at 3025 Artesia Blvd, Suite 101, in Torrance. "
+                          "Is there anything else I can help you with?",
+                "action": "continue",
+            }
+        return {
+            "speech": "We're located at 3025 Artesia Blvd, Suite 101, Torrance, CA 90504. "
+                      "Monday through Saturday 9 AM to 8 PM, Sunday 10 AM to 6 PM. "
+                      "Is there anything else I can help you with?",
+            "action": "continue",
+        }

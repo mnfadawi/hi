@@ -40,7 +40,8 @@ Edit `.env` and fill in:
 | `ANTHROPIC_API_KEY` | https://console.anthropic.com |
 | `TWILIO_ACCOUNT_SID` | Twilio Console → Account Info |
 | `TWILIO_AUTH_TOKEN` | Twilio Console → Account Info |
-| `TRANSFER_NUMBER` | Your cell or the number to forward to when a human is requested |
+| `TWILIO_NUMBER` | Your Twilio phone number in +1XXXXXXXXXX format |
+| `TRANSFER_NUMBER` | Your cell — calls forward here when a human is requested |
 
 ---
 
@@ -62,17 +63,39 @@ Make sure the server runs on the PORT you set.
 
 ---
 
-## Step 4 — Point your Twilio number to this server
+## Step 4 — Connect your store number (323) 348-6756
+
+You have two options:
+
+### Option A: Port your number to Twilio (Recommended for production)
+This makes Twilio own your number so all calls go directly to the AI.
+
+1. Go to **Twilio Console → Phone Numbers → Port & Host a Number**
+2. Enter `(323) 348-6756` and follow the porting wizard
+3. Porting typically takes 2–4 weeks; your number keeps working during the transfer
+4. Once ported, set the webhook (see below)
+
+### Option B: Forward your store phone to a Twilio number (Fastest to test)
+Keep your existing carrier. Just forward calls to a Twilio number that runs the AI.
+
+1. In Twilio Console, **buy a new number** (≈$1/month)
+2. Set that number as `TWILIO_NUMBER` in your `.env`
+3. On your store phone, enable **call forwarding** to the new Twilio number
+   - Most carriers: dial `*72` then the Twilio number, press Call
+   - Or do it through your carrier's account portal
+4. Set the webhook on your Twilio number (see below)
+
+### Point the Twilio number at this server
 
 1. Go to **Twilio Console → Phone Numbers → Manage → Active Numbers**
-2. Click your business number
+2. Click your number
 3. Under **Voice & Fax**, set:
    - **A call comes in** → **Webhook**
    - URL: `https://YOUR-SERVER/voice/answer`
    - HTTP: **HTTP POST**
 4. Save.
 
-That's it. Call your number and the AI will answer.
+That's it — call the number and the AI will answer.
 
 ---
 
