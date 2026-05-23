@@ -22,126 +22,126 @@
     }
 
     /* ══════════════════════════════════════
-       PINK SECTION  —  68%
-       Phones cover it fully, logo+tag on top
+       PINK SECTION  —  70%
+       Pink background visible all around phones
     ══════════════════════════════════════ */
     .pink {
-      flex: 0 0 65%;
+      flex: 0 0 70%;
       position: relative;
       background: #F2A8C0;
       overflow: hidden;
     }
 
-    /* subtle chevron pattern */
+    /* subtle chevron pattern on pink bg */
     .pink::before {
       content: '';
       position: absolute; inset: 0; z-index: 1;
-      background-image: url("data:image/svg+xml,%3Csvg width='50' height='30' viewBox='0 0 50 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='0,15 12,0 25,15 37,0 50,15' fill='none' stroke='rgba(160,60,90,0.12)' stroke-width='2'/%3E%3Cpolyline points='0,30 12,15 25,30 37,15 50,30' fill='none' stroke='rgba(160,60,90,0.12)' stroke-width='2'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width='50' height='30' viewBox='0 0 50 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='0,15 12,0 25,15 37,0 50,15' fill='none' stroke='rgba(160,60,90,0.10)' stroke-width='2'/%3E%3Cpolyline points='0,30 12,15 25,30 37,15 50,30' fill='none' stroke='rgba(160,60,90,0.10)' stroke-width='2'/%3E%3C/svg%3E");
       pointer-events: none;
     }
 
-    /* Phones fill the ENTIRE pink area — no gaps, start from top */
-    .phones {
-      position: absolute;
-      inset: 0;           /* ← top/left/right/bottom all = 0 */
-      z-index: 2;
-      display: flex;
-      align-items: flex-end;
-    }
-    .ph {
-      flex: 1;
-      height: 100%;
-      overflow: hidden;
-    }
-    .ph img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      display: block;
-    }
-
-    /* Logo + tagline overlaid ON TOP of phones */
-    .overlay-top {
+    /* Brand: logo + tagline at the very top on pink */
+    .brand {
       position: absolute;
       top: 0; left: 0; right: 0;
       z-index: 4;
-      /* dark gradient so text is readable over phones */
-      background: linear-gradient(180deg,
-        rgba(242,168,192,.97) 0%,
-        rgba(242,168,192,.90) 30%,
-        rgba(242,168,192,.50) 60%,
-        transparent 100%);
-      padding: 4% 5% 12%;
+      padding: 5% 5% 3%;
       display: flex;
       flex-direction: column;
-      gap: 5%;
+      gap: 3%;
     }
 
     .logo-row {
       display: flex; align-items: center; gap: 4%;
     }
     .logo-row img {
-      height: clamp(56px, 13vw, 110px);
+      height: clamp(42px, 9vw, 80px);
       width: auto;
       filter: brightness(0) saturate(100%)
               invert(22%) sepia(70%) saturate(700%)
               hue-rotate(295deg) brightness(80%);
-      drop-shadow(0 2px 6px rgba(0,0,0,.4));
     }
     .brand-txt { display: flex; flex-direction: column; line-height: 1; }
     .bt-ph {
-      font-size: clamp(.55rem, 2.4vw, 1rem);
-      letter-spacing: .3em; color: rgba(80,10,30,.8);
+      font-size: clamp(.5rem, 2.2vw, .9rem);
+      letter-spacing: .3em; color: rgba(100,15,45,.7);
       font-weight: 900; text-transform: uppercase;
     }
     .bt-el {
-      font-size: clamp(1.8rem, 8.5vw, 4rem);
+      font-size: clamp(1.4rem, 7vw, 3.2rem);
       font-weight: 900; text-transform: uppercase;
-      color: #7A0F2E; letter-spacing: .04em; white-space: nowrap;
-      text-shadow: 0 2px 8px rgba(0,0,0,.25);
+      color: #8C1435; letter-spacing: .04em; white-space: nowrap;
     }
 
     .tagline {
-      font-family: Arial, sans-serif; font-weight: 900;
-      font-size: clamp(.6rem, 2.8vw, 1.1rem);
+      font-family: Arial, sans-serif; font-weight: 800;
+      font-size: clamp(.55rem, 2.5vw, 1rem);
       letter-spacing: .12em; text-transform: uppercase;
-      color: #1a0810;
-      text-shadow: 0 1px 4px rgba(255,255,255,.5);
+      color: #2a0810;
     }
 
+    /* Phones: side by side, floating on pink — pink visible around them */
+    .phones {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 76%;
+      z-index: 2;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 3%;
+      padding: 0 3%;
+    }
+
+    .ph {
+      flex: 0 0 44%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .ph img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      object-position: bottom center;
+      display: block;
+    }
+    .ph.left  img { filter: drop-shadow( 6px 8px 24px rgba(0,0,0,.40)); }
+    .ph.right img { filter: drop-shadow(-6px 8px 24px rgba(0,0,0,.35)); }
+
     /* ══════════════════════════════════════
-       WHITE BAND  —  14%
+       WHITE BAND  —  13%
     ══════════════════════════════════════ */
     .white-band {
-      flex: 0 0 14%;
+      flex: 0 0 13%;
       background: #fff;
-      border-top: 4px solid #111;
-      border-bottom: 4px solid #111;
+      border-top: 5px solid #111;
+      border-bottom: 5px solid #111;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
       padding: 0 3%;
     }
     .bsr {
-      font-size: clamp(1.5rem, 7.5vw, 3.6rem);
+      font-size: clamp(1.6rem, 8vw, 3.8rem);
       font-weight: 900; color: #111;
       text-transform: uppercase; letter-spacing: .01em;
     }
-    .dot { font-size: clamp(.9rem, 4vw, 1.8rem); color: #888; }
+    .dot { font-size: clamp(1rem, 4.5vw, 2rem); color: #888; }
 
     /* ══════════════════════════════════════
-       ORANGE BAND  —  11%
+       ORANGE BAND  —  10%
     ══════════════════════════════════════ */
     .orange-band {
-      flex: 0 0 11%;
+      flex: 0 0 10%;
       background: #F26522;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .big-num {
-      font-size: clamp(2.2rem, 11vw, 5.2rem);
+      font-size: clamp(2rem, 10vw, 4.8rem);
       font-weight: 900; color: #fff;
       letter-spacing: .03em; white-space: nowrap;
     }
@@ -150,25 +150,25 @@
        DARK FOOTER  —  7%
     ══════════════════════════════════════ */
     .footer {
-      flex: 0 0 9%;
+      flex: 0 0 7%;
       background: #111;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 6%; padding: 1% 3%;
+      gap: 8%; padding: 1% 4%;
     }
     .f-hrs {
       font-family: Arial, sans-serif; font-weight: 800;
-      font-size: clamp(.72rem, 3.2vw, 1.4rem);
+      font-size: clamp(.6rem, 2.8vw, 1.2rem);
       color: #fff; text-transform: uppercase;
-      letter-spacing: .06em; text-align: center; white-space: nowrap;
+      letter-spacing: .07em; text-align: center; white-space: nowrap;
     }
-    .f-hrs b { color: #F26522; font-weight: inherit; }
+    .f-hrs b { color: #F26522; }
     .f-adr {
-      font-family: Arial, sans-serif; font-weight: 700;
-      font-size: clamp(.6rem, 2.6vw, 1.1rem);
-      color: rgba(255,255,255,.75);
+      font-family: Arial, sans-serif; font-weight: 600;
+      font-size: clamp(.5rem, 2.2vw, .95rem);
+      color: rgba(255,255,255,.65);
       text-transform: uppercase; letter-spacing: .06em; text-align: center;
     }
   </style>
@@ -176,21 +176,11 @@
 <body>
 <div class="poster">
 
-  <!-- PINK + PHONES + OVERLAY -->
+  <!-- PINK BACKGROUND + BRAND ON TOP + PHONES FLOATING -->
   <div class="pink">
 
-    <!-- Phones cover entire pink area -->
-    <div class="phones">
-      <div class="ph left">
-        <img src="iphone_front.jpeg" alt="iPhone 17 Pro Max" />
-      </div>
-      <div class="ph right">
-        <img src="samsung_front.jpeg" alt="Samsung Galaxy S26" />
-      </div>
-    </div>
-
-    <!-- Logo + tagline overlaid on top of phones -->
-    <div class="overlay-top">
+    <!-- Logo and tagline on clear pink background -->
+    <div class="brand">
       <div class="logo-row">
         <img src="logo.svg" alt="Phone ElectriK" />
         <div class="brand-txt">
@@ -199,6 +189,16 @@
         </div>
       </div>
       <div class="tagline">Cell Phone + Tablet Repair and Accessories</div>
+    </div>
+
+    <!-- Both phones side by side, floating on pink background -->
+    <div class="phones">
+      <div class="ph left">
+        <img src="iphone_back.jpeg" alt="iPhone 17 Pro Max" />
+      </div>
+      <div class="ph right">
+        <img src="samsung_front.jpeg" alt="Samsung Galaxy S26" />
+      </div>
     </div>
 
   </div>
@@ -212,7 +212,7 @@
     <span class="bsr">Repair</span>
   </div>
 
-  <!-- NUMBER -->
+  <!-- PHONE NUMBER -->
   <div class="orange-band">
     <div class="big-num">(323) 348-6756</div>
   </div>
