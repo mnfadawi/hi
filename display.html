@@ -8,254 +8,232 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
       width: 100%; height: 100%;
-      background: #111;
+      background: #222;
       display: flex; align-items: center; justify-content: center;
       font-family: 'Arial Black', Arial, sans-serif;
     }
 
-    /* 9:16 portrait */
     .poster {
       width:  min(100vw, calc(100vh * 9 / 16));
       height: min(100vh, calc(100vw * 16 / 9));
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      position: relative;
     }
 
-    /* ══════════════════════════════════════════════════════
-       TOP PINK SECTION  ~60%
-       — matches the old sign: pink bg, logo top-left, tagline, phones
-    ══════════════════════════════════════════════════════ */
-    .sec-top {
-      flex: 0 0 60%;
+    /* ══════════════════════
+       PINK TOP  —  68%
+       Logo top-left, tagline, phones fill it
+    ══════════════════════ */
+    .pink {
+      flex: 0 0 68%;
       position: relative;
+      /* same pink/salmon as old sign */
+      background: #F2A8C0;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      /* PINK background like the old sign */
-      background: #F2A7BF;
     }
 
-    /* chevron/arrow pattern in background like old sign */
-    .sec-top::before {
+    /* subtle chevron pattern like old sign */
+    .pink::after {
       content: '';
       position: absolute; inset: 0;
-      background-image:
-        repeating-linear-gradient(
-          -55deg,
-          rgba(180,80,110,.12) 0px, rgba(180,80,110,.12) 18px,
-          transparent 18px, transparent 42px
-        );
+      background-image: url("data:image/svg+xml,%3Csvg width='40' height='24' viewBox='0 0 40 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 12 L10 0 L20 12 L30 0 L40 12' stroke='rgba(180,70,100,0.13)' stroke-width='2' fill='none'/%3E%3Cpath d='M0 24 L10 12 L20 24 L30 12 L40 24' stroke='rgba(180,70,100,0.13)' stroke-width='2' fill='none'/%3E%3C/svg%3E");
       z-index: 0;
       pointer-events: none;
     }
 
-    /* LOGO top-left — large, like old sign */
-    .logo-topleft {
+    /* LOGO — top left, on pink, no dark bar */
+    .logo-area {
       position: absolute;
-      top: 4%; left: 4%;
-      z-index: 2;
-      display: flex; align-items: center; gap: 6%;
+      top: 3%; left: 4%;
+      z-index: 3;
+      display: flex; align-items: center; gap: 5%;
     }
-    .logo-topleft img {
-      height: clamp(50px, 10%, 90px);
+    .logo-area img {
+      height: clamp(44px, 9%, 80px);
       width: auto;
-      /* tint logo to match old sign pink/magenta style */
-      filter: brightness(0) saturate(100%) invert(35%) sepia(60%) saturate(800%) hue-rotate(300deg) brightness(90%);
+      /* make logo match old sign's pink/magenta tone */
+      filter: brightness(0) saturate(100%)
+              invert(28%) sepia(60%) saturate(600%)
+              hue-rotate(295deg) brightness(85%) contrast(110%);
     }
-    .logo-words {
+    .logo-name {
       display: flex; flex-direction: column; line-height: 1;
     }
-    .lw-ph {
+    .ln-phone {
       font-size: clamp(.4rem, 1.8vw, .7rem);
-      letter-spacing: .28em; color: rgba(100,20,50,.55);
-      font-weight: 700; text-transform: uppercase;
+      letter-spacing: .28em; font-weight: 700;
+      color: rgba(120,20,55,.55); text-transform: uppercase;
     }
-    .lw-el {
-      font-size: clamp(1rem, 5vw, 2.2rem);
+    .ln-electrik {
+      font-size: clamp(1.1rem, 5.2vw, 2.4rem);
       font-weight: 900; text-transform: uppercase;
-      color: #C0305A; letter-spacing: .05em;
-      text-shadow: 1px 1px 0 rgba(255,255,255,.3);
-      white-space: nowrap;
+      color: #B02858; letter-spacing: .05em; white-space: nowrap;
     }
 
-    /* TAGLINE — dark text like old sign */
-    .tagline {
+    /* TAGLINE — dark text on pink like old sign */
+    .tag {
       position: absolute;
-      top: 18%; left: 0; right: 0;
-      z-index: 2;
+      top: 17%; left: 0; right: 0;
+      z-index: 3;
       text-align: center;
       font-family: Arial, sans-serif; font-weight: 800;
-      font-size: clamp(.42rem, 2vw, .82rem);
-      letter-spacing: .18em; text-transform: uppercase;
+      font-size: clamp(.44rem, 2vw, .82rem);
+      letter-spacing: .16em; text-transform: uppercase;
       color: #1a0810;
     }
 
-    /* PHONES container — fills the pink area below tagline */
-    .phones-wrap {
+    /* PHONES — fill the lower 78% of pink section */
+    .phones {
       position: absolute;
-      top: 26%; left: 0; right: 0; bottom: 0;
-      z-index: 3;
+      top: 24%; left: 0; right: 0; bottom: 0;
+      z-index: 2;
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      gap: 2%;
-      padding: 0 2% 0;
     }
-
-    .ph {
+    .phone-col {
       flex: 1;
       height: 100%;
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      position: relative;
     }
-    .ph img {
-      max-height: 96%;
-      max-width: 92%;
+    .phone-col img {
+      width: 92%;
+      max-height: 100%;
       object-fit: contain;
-      position: relative; z-index: 2;
+      object-position: bottom center;
       display: block;
     }
-    .ph-l img {
-      filter:
-        drop-shadow(0 0 20px rgba(242,101,34,.6))
-        drop-shadow(4px 12px 30px rgba(0,0,0,.5));
+    .phone-col.left img {
+      filter: drop-shadow(2px 8px 18px rgba(0,0,0,.35));
     }
-    .ph-r img {
-      filter:
-        drop-shadow(0 0 16px rgba(100,160,255,.35))
-        drop-shadow(-4px 12px 30px rgba(0,0,0,.45));
+    .phone-col.right img {
+      filter: drop-shadow(-2px 8px 18px rgba(0,0,0,.3));
     }
 
-    /* ══════════════════════════════════════════════════════
-       WHITE BUY · SELL · REPAIR  ~14%
-    ══════════════════════════════════════════════════════ */
-    .sec-bsr {
+    /* ══════════════════════
+       WHITE BAND  —  14%
+       BUY SELL REPAIR huge
+    ══════════════════════ */
+    .white-band {
       flex: 0 0 14%;
       background: #ffffff;
-      border-top: 5px solid #222;
-      border-bottom: 5px solid #222;
+      border-top: 4px solid #222;
+      border-bottom: 4px solid #222;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 3%;
-      padding: 0 4%;
+      justify-content: space-evenly;
+      padding: 0 5%;
     }
-    .bsr-w {
-      font-size: clamp(1.3rem, 6.5vw, 3.2rem);
+    .bsr {
+      font-size: clamp(1.4rem, 7vw, 3.4rem);
       font-weight: 900;
       color: #111;
       text-transform: uppercase;
       letter-spacing: .02em;
-      white-space: nowrap;
     }
-    .bsr-d {
-      font-size: clamp(.9rem, 4vw, 1.9rem);
-      color: #111; font-weight: 900; flex-shrink: 0;
+    .bsr-sep {
+      font-size: clamp(1rem, 4.5vw, 2.2rem);
+      color: #555; font-weight: 900;
     }
 
-    /* ══════════════════════════════════════════════════════
-       ORANGE NUMBER BAND  ~15%  — like the pink strip on old sign
-    ══════════════════════════════════════════════════════ */
-    .sec-num {
-      flex: 0 0 15%;
+    /* ══════════════════════
+       ORANGE BAND  —  11%
+       Phone number HUGE
+    ══════════════════════ */
+    .orange-band {
+      flex: 0 0 11%;
       background: #F26522;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0 4%;
     }
-    .big-num {
-      font-size: clamp(2.2rem, 11vw, 5.2rem);
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: .03em;
-      white-space: nowrap;
-      text-shadow: 0 3px 14px rgba(0,0,0,.2);
+    .num {
+      font-size: clamp(2rem, 10.5vw, 5rem);
+      font-weight: 900; color: #fff;
+      letter-spacing: .03em; white-space: nowrap;
     }
 
-    /* ══════════════════════════════════════════════════════
-       HOURS + ADDRESS  ~11%
-    ══════════════════════════════════════════════════════ */
-    .sec-info {
-      flex: 0 0 11%;
+    /* ══════════════════════
+       DARK FOOTER  —  7%
+       Hours + address
+    ══════════════════════ */
+    .footer {
+      flex: 0 0 7%;
       background: #111;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 10%;
-      padding: 1% 5%;
-      border-top: 3px solid #F26522;
+      gap: 8%;
+      padding: 1% 4%;
     }
-    .hrs {
+    .f-hours {
       font-family: Arial, sans-serif; font-weight: 800;
-      font-size: clamp(.55rem, 2.6vw, 1.08rem);
-      color: #fff;
-      text-transform: uppercase; letter-spacing: .07em;
-      text-align: center; white-space: nowrap;
+      font-size: clamp(.5rem, 2.4vw, 1rem);
+      color: #fff; text-transform: uppercase;
+      letter-spacing: .07em; text-align: center;
+      white-space: nowrap;
     }
-    .hrs b { color: #F26522; font-weight: inherit; }
-    .adr {
+    .f-hours b { color: #F26522; font-weight: inherit; }
+    .f-addr {
       font-family: Arial, sans-serif; font-weight: 600;
-      font-size: clamp(.46rem, 2.1vw, .88rem);
+      font-size: clamp(.44rem, 2vw, .84rem);
       color: rgba(255,255,255,.5);
       text-transform: uppercase; letter-spacing: .06em;
-      text-align: center;
     }
   </style>
 </head>
 <body>
 <div class="poster">
 
-  <!-- TOP PINK SECTION -->
-  <div class="sec-top">
+  <!-- PINK SECTION -->
+  <div class="pink">
 
-    <!-- Logo top-left like old sign -->
-    <div class="logo-topleft">
+    <!-- Logo top-left on pink — like old sign -->
+    <div class="logo-area">
       <img src="logo.svg" alt="Phone ElectriK" />
-      <div class="logo-words">
-        <span class="lw-ph">Phone</span>
-        <span class="lw-el">ElectriK</span>
+      <div class="logo-name">
+        <span class="ln-phone">Phone</span>
+        <span class="ln-electrik">ElectriK</span>
       </div>
     </div>
 
-    <!-- Tagline -->
-    <div class="tagline">Cell Phone + Tablet Repair and Accessories</div>
+    <!-- Tagline dark text on pink — like old sign -->
+    <div class="tag">Cell Phone + Tablet Repair and Accessories</div>
 
-    <!-- Two phones -->
-    <div class="phones-wrap">
-      <div class="ph ph-l">
+    <!-- Two phones filling the pink area -->
+    <div class="phones">
+      <div class="phone-col left">
         <img src="IMG_0096.jpeg" alt="iPhone 17 Pro Max" />
       </div>
-      <div class="ph ph-r">
+      <div class="phone-col right">
         <img src="IMG_0097.jpeg" alt="Samsung Galaxy S26" />
       </div>
     </div>
 
   </div>
 
-  <!-- BUY · SELL · REPAIR -->
-  <div class="sec-bsr">
-    <span class="bsr-w">Buy</span>
-    <span class="bsr-d">&nbsp;·&nbsp;</span>
-    <span class="bsr-w">Sell</span>
-    <span class="bsr-d">&nbsp;·&nbsp;</span>
-    <span class="bsr-w">Repair</span>
+  <!-- BUY SELL REPAIR -->
+  <div class="white-band">
+    <span class="bsr">Buy</span>
+    <span class="bsr-sep">·</span>
+    <span class="bsr">Sell</span>
+    <span class="bsr-sep">·</span>
+    <span class="bsr">Repair</span>
   </div>
 
   <!-- PHONE NUMBER -->
-  <div class="sec-num">
-    <div class="big-num">(323) 348-6756</div>
+  <div class="orange-band">
+    <div class="num">(323) 348-6756</div>
   </div>
 
   <!-- HOURS + ADDRESS -->
-  <div class="sec-info">
-    <div class="hrs"><b>Mon–Sat</b> 9AM–8PM &nbsp;·&nbsp; <b>Sun</b> 10AM–6PM &nbsp;·&nbsp; Walk-Ins Welcome</div>
-    <div class="adr">3025 Artesia Blvd STE 101 &nbsp;·&nbsp; Torrance, CA 90504</div>
+  <div class="footer">
+    <div class="f-hours"><b>Mon–Sat</b> 9AM–8PM &nbsp;·&nbsp; <b>Sun</b> 10AM–6PM &nbsp;·&nbsp; Walk-Ins Welcome</div>
+    <div class="f-addr">3025 Artesia Blvd STE 101 · Torrance, CA 90504</div>
   </div>
 
 </div>
