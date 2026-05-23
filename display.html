@@ -6,7 +6,6 @@
   <title>Phone ElectriK — Store Poster</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html, body {
       width: 100%; height: 100%;
       background: #111;
@@ -14,37 +13,38 @@
       font-family: 'Arial Black', Arial, sans-serif;
     }
 
-    /* ── 9:16 portrait ─────────────────────────────────── */
+    /* 9:16 portrait */
     .poster {
       width:  min(100vw, calc(100vh * 9 / 16));
       height: min(100vh, calc(100vw * 16 / 9));
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      background: #050505;
+      position: relative;
     }
 
     /* ══════════════════════════════════════════════════════
-       TOP  —  brand header  ~18%
+       SECTION 1 — Brand header  ~16%
     ══════════════════════════════════════════════════════ */
-    .top {
-      flex: 0 0 18%;
-      background: #050505;
-      border-bottom: 3px solid #F26522;
-      box-shadow: 0 4px 40px rgba(242,101,34,.4);
+    .sec-brand {
+      flex: 0 0 16%;
+      background: #0a0a0a;
+      border-bottom: 4px solid #F26522;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 7%;
+      gap: 6%;
       padding: 2% 6%;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 5px 40px rgba(242,101,34,.5);
+      z-index: 2;
     }
-    .top::before {
+    .sec-brand::before {
       content: '';
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 60%, rgba(242,101,34,.13) 0%, transparent 65%);
+      background: radial-gradient(ellipse at 50% 70%, rgba(242,101,34,.15) 0%, transparent 60%);
     }
     .logo-row {
       display: flex; align-items: center;
@@ -52,17 +52,17 @@
       position: relative; z-index: 1;
     }
     .logo-row img {
-      height: clamp(40px, 8%, 80px); width: auto;
+      height: clamp(38px,7%,72px); width: auto;
       animation: logoPulse 3s ease-in-out infinite;
     }
     .brand-words { display: flex; flex-direction: column; line-height: 1; }
-    .bw-top {
-      font-size: clamp(.46rem, 2vw, .82rem);
+    .bw-sm {
+      font-size: clamp(.44rem,1.9vw,.76rem);
       letter-spacing: .32em; color: rgba(255,255,255,.35);
       font-weight: 700; text-transform: uppercase;
     }
-    .bw-main {
-      font-size: clamp(1.6rem, 7.5vw, 3.6rem);
+    .bw-lg {
+      font-size: clamp(1.6rem,7.5vw,3.4rem);
       font-weight: 900; text-transform: uppercase;
       color: #F26522; letter-spacing: .05em;
       white-space: nowrap;
@@ -71,221 +71,209 @@
     .tagline {
       position: relative; z-index: 1;
       font-family: Arial, sans-serif; font-weight: 700;
-      font-size: clamp(.38rem, 1.7vw, .68rem);
-      letter-spacing: .2em; text-transform: uppercase;
-      color: rgba(255,255,255,.42); text-align: center;
+      font-size: clamp(.36rem,1.65vw,.66rem);
+      letter-spacing: .22em; text-transform: uppercase;
+      color: rgba(255,255,255,.4); text-align: center;
     }
 
     /* ══════════════════════════════════════════════════════
-       MIDDLE  —  two phones  ~42%
+       SECTION 2 — Phone hero  ~44%
+       Warm gradient background + big logo watermark + phone
     ══════════════════════════════════════════════════════ */
-    .phones {
-      flex: 0 0 42%;
-      display: flex;
+    .sec-phone {
+      flex: 0 0 44%;
       position: relative;
       overflow: hidden;
-      background:
-        radial-gradient(ellipse at 25% 55%, rgba(242,101,34,.25) 0%, transparent 50%),
-        radial-gradient(ellipse at 75% 50%, rgba(120,180,255,.14) 0%, transparent 50%),
-        #050505;
-    }
-
-    .half {
-      flex: 1;
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      padding: 0 2% 2%;
-      position: relative; overflow: hidden;
+      /* warm gradient like the old sign */
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(255,120,20,.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 80%, rgba(242,101,34,.2) 0%, transparent 45%),
+        radial-gradient(ellipse at 80% 70%, rgba(255,80,10,.15) 0%, transparent 45%),
+        linear-gradient(160deg, #1a0800 0%, #0d0400 50%, #180600 100%);
     }
-    .half-l::before {
+
+    /* big PE logo watermark in background — like the old sign */
+    .watermark {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 85%; height: auto;
+      opacity: .07;
+      z-index: 0;
+      pointer-events: none;
+      filter: invert(1) sepia(1) saturate(5) hue-rotate(5deg);
+    }
+
+    /* diagonal chevron pattern like old sign */
+    .sec-phone::before {
       content: '';
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 55% 60%, rgba(242,101,34,.2) 0%, transparent 60%);
+      background-image:
+        repeating-linear-gradient(
+          -45deg,
+          rgba(242,101,34,.04) 0px,
+          rgba(242,101,34,.04) 2px,
+          transparent 2px,
+          transparent 28px
+        );
+      z-index: 1;
     }
-    .half-r::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 45% 60%, rgba(130,185,255,.12) 0%, transparent 60%);
-    }
-    .ph-img {
-      position: relative; z-index: 2;
+
+    .phone-hero {
+      position: relative; z-index: 3;
       width: 86%;
-      max-height: 95%;
+      max-height: 100%;
       object-fit: contain;
+      object-position: center bottom;
       display: block;
-    }
-    .half-l .ph-img {
-      filter: drop-shadow(0 0 28px rgba(242,101,34,.65)) drop-shadow(0 16px 40px rgba(0,0,0,.85));
-      animation: floatL 6s ease-in-out infinite;
-    }
-    .half-r .ph-img {
-      filter: drop-shadow(0 0 20px rgba(160,210,255,.4)) drop-shadow(0 16px 40px rgba(0,0,0,.85));
-      animation: floatR 6s 1.2s ease-in-out infinite;
-    }
-    .divider {
-      position: absolute; left: 50%; top: 5%; bottom: 5%;
-      transform: translateX(-50%);
-      width: 2px;
-      background: linear-gradient(180deg, transparent, rgba(242,101,34,.5) 25%, rgba(242,101,34,.5) 75%, transparent);
-      z-index: 6;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .bolt {
-      background: #050505; color: #F26522;
-      font-size: clamp(.9rem, 3.8vw, 1.7rem);
-      padding: 8% 0; line-height: 1;
-      filter: drop-shadow(0 0 10px rgba(242,101,34,1));
-      animation: boltPulse 2s ease-in-out infinite;
+      filter:
+        drop-shadow(0 0 36px rgba(242,101,34,.65))
+        drop-shadow(0 -4px 60px rgba(242,101,34,.3))
+        drop-shadow(0 20px 50px rgba(0,0,0,.85));
+      animation: phoneFloat 6s ease-in-out infinite;
     }
 
     /* ══════════════════════════════════════════════════════
-       BUY · SELL · REPAIR  band  ~12%
+       SECTION 3 — BUY · SELL · REPAIR  ~13%
     ══════════════════════════════════════════════════════ */
-    .bsr-band {
-      flex: 0 0 12%;
-      background: #fff;
+    .sec-bsr {
+      flex: 0 0 13%;
+      background: #ffffff;
+      border-top: 5px solid #F26522;
+      border-bottom: 5px solid #F26522;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 4%;
-      padding: 0 5%;
-      border-top: 4px solid #F26522;
-      border-bottom: 4px solid #F26522;
+      gap: 3%;
+      padding: 0 4%;
+      z-index: 2;
     }
     .bsr-word {
-      font-size: clamp(1.1rem, 5.5vw, 2.8rem);
+      font-size: clamp(1.2rem,6vw,2.9rem);
       font-weight: 900;
-      text-transform: uppercase;
       color: #111;
-      letter-spacing: .04em;
+      text-transform: uppercase;
+      letter-spacing: .02em;
       white-space: nowrap;
     }
-    .bsr-dot {
-      font-size: clamp(.8rem, 3.5vw, 1.8rem);
+    .bsr-sep {
       color: #F26522;
+      font-size: clamp(1rem,4.5vw,2.2rem);
       font-weight: 900;
       flex-shrink: 0;
     }
 
     /* ══════════════════════════════════════════════════════
-       PHONE NUMBER  —  huge  ~16%
+       SECTION 4 — Phone number HUGE  ~15%
     ══════════════════════════════════════════════════════ */
-    .phone-band {
-      flex: 0 0 16%;
+    .sec-num {
+      flex: 0 0 15%;
       background: #F26522;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0 5%;
+      z-index: 2;
     }
-    .phone-num {
-      font-size: clamp(2rem, 10vw, 5rem);
+    .big-num {
+      font-size: clamp(2.2rem,11vw,5.4rem);
       font-weight: 900;
       color: #fff;
       letter-spacing: .03em;
       white-space: nowrap;
-      text-shadow: 0 3px 16px rgba(0,0,0,.3);
+      text-shadow: 0 3px 20px rgba(0,0,0,.25);
     }
 
     /* ══════════════════════════════════════════════════════
-       HOURS + ADDRESS  —  bottom  ~12%
+       SECTION 5 — Hours + address  ~12%
     ══════════════════════════════════════════════════════ */
-    .bottom-info {
+    .sec-info {
       flex: 0 0 12%;
-      background: #050505;
+      background: #0a0a0a;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 8%;
+      gap: 9%;
       padding: 1.5% 5%;
-      border-top: 3px solid #222;
+      z-index: 2;
     }
-    .hours-text {
+    .hours-line {
       font-family: Arial, sans-serif; font-weight: 800;
-      font-size: clamp(.55rem, 2.6vw, 1.1rem);
+      font-size: clamp(.58rem,2.7vw,1.15rem);
       color: #fff;
-      text-transform: uppercase; letter-spacing: .08em;
+      text-transform: uppercase; letter-spacing: .07em;
       text-align: center; white-space: nowrap;
     }
-    .hours-text span { color: #F26522; }
-    .addr-text {
+    .hours-line b { color: #F26522; font-weight: inherit; }
+    .addr-line {
       font-family: Arial, sans-serif; font-weight: 600;
-      font-size: clamp(.48rem, 2.2vw, .92rem);
-      color: rgba(255,255,255,.55);
-      text-transform: uppercase; letter-spacing: .07em;
+      font-size: clamp(.5rem,2.3vw,.95rem);
+      color: rgba(255,255,255,.52);
+      text-transform: uppercase; letter-spacing: .06em;
       text-align: center;
     }
 
-    /* ── KEYFRAMES ──────────────────────────────────────── */
+    /* ── ANIMATIONS ──────────────────────────────────────── */
     @keyframes glowPulse {
       0%,100% { text-shadow: 0 0 8px rgba(242,101,34,1), 0 0 22px rgba(242,101,34,.6); }
-      50%      { text-shadow: 0 0 14px #F26522, 0 0 36px rgba(242,101,34,.9), 0 0 80px rgba(242,101,34,.4); }
+      50%      { text-shadow: 0 0 16px #F26522, 0 0 40px rgba(242,101,34,.9), 0 0 90px rgba(242,101,34,.4); }
     }
     @keyframes logoPulse {
-      0%,100% { filter: drop-shadow(0 0 10px rgba(242,101,34,.65)); }
+      0%,100% { filter: drop-shadow(0 0 10px rgba(242,101,34,.7)); }
       50%      { filter: drop-shadow(0 0 22px rgba(242,101,34,1)) drop-shadow(0 0 50px rgba(242,101,34,.55)); }
     }
-    @keyframes boltPulse {
-      0%,100% { opacity:.8; }  50% { opacity:1; }
-    }
-    @keyframes floatL {
+    @keyframes phoneFloat {
       0%,100% { transform: translateY(0) rotate(-.5deg); }
-      50%      { transform: translateY(-4%) rotate(.4deg); }
-    }
-    @keyframes floatR {
-      0%,100% { transform: translateY(0) rotate(.5deg); }
-      50%      { transform: translateY(-3.5%) rotate(-.3deg); }
+      50%      { transform: translateY(-3%) rotate(.3deg); }
     }
   </style>
 </head>
 <body>
 <div class="poster">
 
-  <!-- BRAND -->
-  <div class="top">
+  <!-- 1. BRAND -->
+  <div class="sec-brand">
     <div class="logo-row">
       <img src="logo.svg" alt="Phone ElectriK" />
       <div class="brand-words">
-        <span class="bw-top">Phone</span>
-        <span class="bw-main">ElectriK</span>
+        <span class="bw-sm">Phone</span>
+        <span class="bw-lg">ElectriK</span>
       </div>
     </div>
     <div class="tagline">Cell Phone + Tablet Repair and Accessories</div>
   </div>
 
-  <!-- PHONES -->
-  <div class="phones">
-    <div class="half half-l">
-      <img src="IMG_0096.jpeg" class="ph-img" alt="iPhone 17 Pro Max" />
-    </div>
-    <div class="divider"><span class="bolt">&#9889;</span></div>
-    <div class="half half-r">
-      <img src="IMG_0097.jpeg" class="ph-img" alt="Samsung Galaxy S26" />
-    </div>
+  <!-- 2. PHONE HERO -->
+  <div class="sec-phone">
+    <!-- big logo watermark in background -->
+    <img src="logo.svg" class="watermark" alt="" aria-hidden="true" />
+    <!-- hero phone -->
+    <img src="IMG_0096.jpeg" class="phone-hero" alt="iPhone 17 Pro Max" />
   </div>
 
-  <!-- BUY · SELL · REPAIR -->
-  <div class="bsr-band">
+  <!-- 3. BUY · SELL · REPAIR -->
+  <div class="sec-bsr">
     <span class="bsr-word">Buy</span>
-    <span class="bsr-dot">&#9679;</span>
+    <span class="bsr-sep">&#9679;</span>
     <span class="bsr-word">Sell</span>
-    <span class="bsr-dot">&#9679;</span>
+    <span class="bsr-sep">&#9679;</span>
     <span class="bsr-word">Repair</span>
   </div>
 
-  <!-- PHONE NUMBER BIG -->
-  <div class="phone-band">
-    <div class="phone-num">(323) 348-6756</div>
+  <!-- 4. PHONE NUMBER -->
+  <div class="sec-num">
+    <div class="big-num">(323) 348-6756</div>
   </div>
 
-  <!-- HOURS + ADDRESS -->
-  <div class="bottom-info">
-    <div class="hours-text">
-      <span>Mon–Sat</span> 9AM–8PM &nbsp;·&nbsp; <span>Sun</span> 10AM–6PM &nbsp;·&nbsp; Walk-Ins Welcome
+  <!-- 5. HOURS + ADDRESS -->
+  <div class="sec-info">
+    <div class="hours-line">
+      <b>Mon–Sat</b> 9AM–8PM &nbsp;·&nbsp; <b>Sun</b> 10AM–6PM &nbsp;·&nbsp; Walk-Ins Welcome
     </div>
-    <div class="addr-text">3025 Artesia Blvd STE 101 &nbsp;·&nbsp; Torrance, CA 90504</div>
+    <div class="addr-line">3025 Artesia Blvd STE 101 &nbsp;·&nbsp; Torrance, CA 90504</div>
   </div>
 
 </div>
