@@ -9,140 +9,129 @@
 
     :root {
       --orange: #F26522;
-      --orange-glow: rgba(242, 101, 34, 0.7);
-      --orange-dim: rgba(242, 101, 34, 0.25);
+      --orange-glow: rgba(242,101,34,.7);
     }
 
     html, body {
       width: 100%; height: 100%;
       background: #050505;
-      font-family: 'Arial Black', 'Impact', Arial, sans-serif;
+      font-family: 'Arial Black', Arial, sans-serif;
       overflow: hidden;
+      color: #fff;
     }
 
-    /* ── SLIDE WRAPPER ───────────────────────────────────── */
-    .display {
+    /* ── FULL POSTER ─────────────────────────────────────── */
+    .poster {
       width: 100vw; height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
       position: relative;
       overflow: hidden;
     }
 
-    .slide {
-      position: absolute; inset: 0;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      opacity: 0;
-      transition: opacity 1.2s ease;
-      pointer-events: none;
-    }
-    .slide.active { opacity: 1; pointer-events: auto; }
-
-    /* ── SHARED HEADER BAR ───────────────────────────────── */
+    /* ── TOP BRAND BAR ───────────────────────────────────── */
     .brand-bar {
-      position: absolute; top: 0; left: 0; right: 0;
-      display: flex; align-items: center; gap: 16px;
-      padding: 18px 32px;
-      background: linear-gradient(180deg, rgba(5,5,5,1) 70%, transparent);
-      z-index: 10;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      padding: clamp(14px,2.5vh,28px) clamp(20px,4vw,56px);
+      background: #050505;
+      border-bottom: 2px solid var(--orange);
+      position: relative; z-index: 10;
+      box-shadow: 0 0 40px rgba(242,101,34,.3);
     }
-    .brand-bar img { height: 52px; width: auto; }
+    .brand-left {
+      display: flex; align-items: center; gap: clamp(10px,1.8vw,22px);
+    }
+    .brand-left img { height: clamp(40px,6vh,70px); width: auto; }
     .brand-name {
       display: flex; flex-direction: column; line-height: 1;
     }
     .bn-top {
-      font-size: .6rem; letter-spacing: .28em;
-      color: rgba(255,255,255,.4); font-family: Arial, sans-serif;
-      font-weight: 600; text-transform: uppercase; margin-bottom: 4px;
+      font-size: clamp(.45rem,1vw,.65rem);
+      letter-spacing: .28em; color: rgba(255,255,255,.38);
+      font-family: Arial, sans-serif; font-weight: 600;
+      text-transform: uppercase; margin-bottom: 3px;
     }
     .bn-main {
-      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      font-size: clamp(1.2rem,3.5vw,2.6rem);
       font-weight: 900; text-transform: uppercase;
       color: var(--orange); letter-spacing: .06em;
-      text-shadow: 0 0 8px var(--orange-glow), 0 0 24px var(--orange-dim);
+      text-shadow: 0 0 8px var(--orange-glow), 0 0 28px rgba(242,101,34,.4);
       animation: glowPulse 3s ease-in-out infinite;
     }
     .bn-sub {
-      font-size: .6rem; letter-spacing: .15em;
-      color: rgba(255,255,255,.28); font-family: Arial, sans-serif;
-      font-weight: 500; text-transform: uppercase; margin-top: 5px;
+      font-size: clamp(.42rem,.9vw,.6rem);
+      letter-spacing: .15em; color: rgba(255,255,255,.28);
+      font-family: Arial, sans-serif; font-weight: 500;
+      text-transform: uppercase; margin-top: 4px;
+    }
+    .brand-tag {
+      font-family: Arial, sans-serif; font-weight: 700;
+      font-size: clamp(.55rem,1.2vw,.78rem);
+      letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+      text-align: right; line-height: 1.7;
+    }
+    .brand-tag strong { color: var(--orange); display: block; font-size: 1.15em; }
+
+    /* ── MAIN SPLIT SECTION ──────────────────────────────── */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 100%;
+      overflow: hidden;
     }
 
-    /* ── SHARED FOOTER BAR ───────────────────────────────── */
-    .info-bar {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 8px;
-      padding: 18px 32px;
-      background: linear-gradient(0deg, rgba(5,5,5,1) 70%, transparent);
-      z-index: 10;
-    }
-    .info-phone {
-      font-size: clamp(1.4rem, 3.5vw, 2.4rem);
-      font-weight: 900; color: #fff; letter-spacing: .04em;
-    }
-    .info-phone span { color: var(--orange); }
-    .info-address {
-      font-size: clamp(.6rem, 1.5vw, .9rem);
-      color: rgba(255,255,255,.5); font-family: Arial, sans-serif;
-      font-weight: 600; text-transform: uppercase; letter-spacing: .07em;
-      text-align: right; line-height: 1.5;
-    }
-    .info-hours {
-      font-size: clamp(.6rem, 1.3vw, .78rem);
-      color: var(--orange); font-family: Arial, sans-serif;
-      font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+    /* divider line */
+    .split::after {
+      content: '';
+      position: absolute;
+      left: 50%; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg,
+        transparent 0%,
+        var(--orange) 20%,
+        var(--orange) 80%,
+        transparent 100%);
+      box-shadow: 0 0 16px var(--orange-glow);
+      z-index: 5;
     }
 
-    /* ── PROGRESS BAR ────────────────────────────────────── */
-    .progress-bar {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      height: 4px; background: rgba(255,255,255,.1); z-index: 20;
-    }
-    .progress-fill {
-      height: 100%; width: 0%;
-      background: var(--orange);
-      box-shadow: 0 0 10px var(--orange-glow);
-      transition: none;
+    /* ── LEFT PANEL — NEW iPHONE 17 ──────────────────────── */
+    .panel-new {
+      position: relative;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: clamp(20px,3vh,48px) clamp(24px,4vw,60px);
+      overflow: hidden;
+      background: radial-gradient(ellipse at 55% 45%, #1a0800 0%, #050505 70%);
     }
 
-    /* ── SLIDE INDICATORS ────────────────────────────────── */
-    .dots {
-      position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
-      display: flex; gap: 10px; z-index: 20;
-    }
-    .dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: rgba(255,255,255,.25);
-      transition: background .3s, transform .3s;
-    }
-    .dot.active { background: var(--orange); transform: scale(1.4); }
-
-    /* ═══════════════════════════════════════════════════════
-       SLIDE 1 — iPhone 17 "NEW ARRIVAL"
-    ═══════════════════════════════════════════════════════ */
-    .slide-new {
-      background: radial-gradient(ellipse at 60% 40%, #1a0800 0%, #050505 65%);
-    }
-
-    /* big ambient glow behind phone */
     .new-glow {
       position: absolute;
-      width: min(60vw, 500px); height: min(60vw, 500px);
-      background: radial-gradient(circle, rgba(242,101,34,.35) 0%, transparent 70%);
+      width: min(70%,400px); height: min(70%,400px);
+      background: radial-gradient(circle, rgba(242,101,34,.28) 0%, transparent 70%);
       border-radius: 50%;
-      top: 50%; left: 50%; transform: translate(-40%, -50%);
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
       animation: breathe 4s ease-in-out infinite;
       pointer-events: none;
     }
 
-    .new-content {
-      position: relative; z-index: 5;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: clamp(24px, 4vw, 60px);
-      padding: clamp(100px, 14vh, 160px) clamp(24px, 5vw, 80px);
-      width: 100%; max-width: 1400px;
+    .new-inner {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column;
+      align-items: center; gap: clamp(10px,1.8vh,22px);
+      width: 100%;
+    }
+
+    .panel-badge {
+      display: inline-block;
+      background: var(--orange); color: #fff;
+      font-size: clamp(.52rem,1.1vw,.72rem);
+      font-weight: 800; letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: clamp(4px,0.7vh,7px) clamp(14px,2vw,22px);
+      border-radius: 50px;
     }
 
     .new-phone-wrap {
@@ -151,433 +140,356 @@
     }
     .new-phone-ring {
       position: absolute;
-      width: min(55vw, 420px); height: min(55vw, 420px);
-      border: 2px solid rgba(242,101,34,.2);
+      width: min(52vh,340px); height: min(52vh,340px);
+      border: 1.5px solid rgba(242,101,34,.18);
       border-radius: 50%;
-      animation: spin 20s linear infinite;
+      animation: spin 22s linear infinite;
     }
     .new-phone-ring::before {
       content: '';
-      position: absolute; top: -3px; left: 50%;
-      width: 6px; height: 6px; border-radius: 50%;
+      position: absolute; top: -4px; left: 50%;
+      width: 7px; height: 7px; border-radius: 50%;
       background: var(--orange);
-      box-shadow: 0 0 12px var(--orange);
+      box-shadow: 0 0 14px var(--orange);
     }
     .new-phone-img {
-      height: min(62vh, 520px);
-      width: auto; object-fit: contain;
-      filter: drop-shadow(0 0 40px rgba(242,101,34,.5)) drop-shadow(0 20px 60px rgba(0,0,0,.6));
+      height: min(46vh,380px); width: auto; object-fit: contain;
+      filter: drop-shadow(0 0 40px rgba(242,101,34,.5))
+              drop-shadow(0 16px 50px rgba(0,0,0,.6));
       animation: phoneFloat 5s ease-in-out infinite;
       position: relative; z-index: 2;
     }
 
-    .new-text { color: #fff; }
-    .new-tag {
-      display: inline-block;
-      background: var(--orange); color: #fff;
-      font-size: clamp(.6rem, 1.4vw, .78rem);
-      font-weight: 800; letter-spacing: .18em;
-      text-transform: uppercase; padding: 6px 20px;
-      border-radius: 50px; margin-bottom: clamp(10px, 2vh, 20px);
-    }
     .new-headline {
-      font-size: clamp(2rem, 5.5vw, 4.5rem);
+      font-size: clamp(1.4rem,3.8vw,3rem);
       font-weight: 900; text-transform: uppercase;
-      line-height: 1.02; letter-spacing: -.01em;
-      margin-bottom: clamp(8px, 1.5vh, 18px);
+      text-align: center; line-height: 1.05;
+      letter-spacing: -.01em;
     }
     .new-headline em {
       color: var(--orange); font-style: normal;
-      text-shadow: 0 0 20px var(--orange-glow);
+      text-shadow: 0 0 18px var(--orange-glow);
     }
     .new-sub {
-      font-size: clamp(.75rem, 1.8vw, 1.1rem);
       font-family: Arial, sans-serif; font-weight: 600;
-      color: rgba(255,255,255,.65); line-height: 1.65;
-      margin-bottom: clamp(14px, 2.5vh, 30px);
+      font-size: clamp(.62rem,1.4vw,.88rem);
+      color: rgba(255,255,255,.6); text-align: center;
+      line-height: 1.65; max-width: 340px;
     }
-    .new-pills {
-      display: flex; gap: 10px; flex-wrap: wrap;
+    .pills {
+      display: flex; flex-wrap: wrap;
+      gap: 8px; justify-content: center;
     }
     .pill {
-      background: rgba(242,101,34,.15);
-      border: 1px solid rgba(242,101,34,.4);
+      background: rgba(242,101,34,.14);
+      border: 1px solid rgba(242,101,34,.38);
       color: rgba(255,255,255,.85);
       font-family: Arial, sans-serif; font-weight: 700;
-      font-size: clamp(.6rem, 1.3vw, .78rem);
-      padding: 6px 16px; border-radius: 50px;
-      letter-spacing: .05em; text-transform: uppercase;
+      font-size: clamp(.52rem,1.1vw,.7rem);
+      padding: 5px 14px; border-radius: 50px;
+      letter-spacing: .06em; text-transform: uppercase;
     }
 
-    /* ═══════════════════════════════════════════════════════
-       SLIDE 2 — Cracked Screen REPAIR
-    ═══════════════════════════════════════════════════════ */
-    .slide-repair {
-      background: radial-gradient(ellipse at 40% 55%, #0d0500 0%, #030303 65%);
+    /* ── RIGHT PANEL — CRACKED SCREEN REPAIR ─────────────── */
+    .panel-repair {
+      position: relative;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: clamp(20px,3vh,48px) clamp(24px,4vw,60px);
+      overflow: hidden;
+      background: radial-gradient(ellipse at 45% 50%, #0d0200 0%, #030303 70%);
     }
 
-    .repair-content {
-      position: relative; z-index: 5;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: clamp(24px, 4vw, 60px);
-      padding: clamp(100px, 14vh, 160px) clamp(24px, 5vw, 80px);
-      width: 100%; max-width: 1400px;
+    .repair-glow {
+      position: absolute;
+      width: min(65%,380px); height: min(65%,380px);
+      background: radial-gradient(circle, rgba(200,30,10,.22) 0%, transparent 70%);
+      border-radius: 50%;
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      animation: dangerPulse 2.5s ease-in-out infinite;
+      pointer-events: none;
     }
 
-    /* Left: text */
-    .repair-text { color: #fff; }
-    .repair-tag {
+    .repair-inner {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column;
+      align-items: center; gap: clamp(10px,1.8vh,20px);
+      width: 100%;
+    }
+
+    .repair-badge {
       display: inline-block;
       background: transparent; color: var(--orange);
       border: 2px solid var(--orange);
-      font-size: clamp(.6rem, 1.4vw, .78rem);
-      font-weight: 800; letter-spacing: .18em;
-      text-transform: uppercase; padding: 5px 18px;
-      border-radius: 50px; margin-bottom: clamp(10px, 2vh, 20px);
+      font-size: clamp(.52rem,1.1vw,.72rem);
+      font-weight: 800; letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: clamp(3px,0.6vh,6px) clamp(14px,2vw,22px);
+      border-radius: 50px;
     }
-    .repair-headline {
-      font-size: clamp(2rem, 5.5vw, 4.5rem);
-      font-weight: 900; text-transform: uppercase;
-      line-height: 1.02; letter-spacing: -.01em;
-      margin-bottom: clamp(8px, 1.5vh, 18px);
-    }
-    .repair-headline em {
-      color: var(--orange); font-style: normal;
-      text-shadow: 0 0 20px var(--orange-glow);
-    }
-    .repair-sub {
-      font-size: clamp(.75rem, 1.8vw, 1.1rem);
-      font-family: Arial, sans-serif; font-weight: 600;
-      color: rgba(255,255,255,.65); line-height: 1.65;
-      margin-bottom: clamp(14px, 2.5vh, 30px);
-    }
-    .repair-list {
-      list-style: none;
-      display: flex; flex-direction: column; gap: 10px;
-      margin-bottom: clamp(14px, 2.5vh, 28px);
-    }
-    .repair-list li {
-      font-family: Arial, sans-serif; font-weight: 700;
-      font-size: clamp(.72rem, 1.6vw, .97rem);
-      color: rgba(255,255,255,.82);
-      display: flex; align-items: center; gap: 10px;
-    }
-    .repair-list li::before {
-      content: '✓';
-      color: var(--orange); font-size: 1em; flex-shrink: 0;
-    }
-    .warranty-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(242,101,34,.12);
-      border: 1.5px solid rgba(242,101,34,.5);
-      border-radius: 12px;
-      padding: 10px 20px;
-      font-family: Arial, sans-serif; font-weight: 800;
-      font-size: clamp(.68rem, 1.5vw, .88rem);
-      color: #fff; text-transform: uppercase; letter-spacing: .06em;
-    }
-    .warranty-badge span { color: var(--orange); }
 
-    /* Right: cracked phone visual */
-    .repair-phone-wrap {
+    .cracked-phone-wrap {
       position: relative;
       display: flex; align-items: center; justify-content: center;
-    }
-
-    /* red danger glow */
-    .repair-glow {
-      position: absolute;
-      width: min(55vw, 420px); height: min(55vw, 420px);
-      background: radial-gradient(circle, rgba(200,30,10,.3) 0%, transparent 70%);
-      border-radius: 50%; pointer-events: none;
-      animation: dangerPulse 2s ease-in-out infinite;
-    }
-
-    .cracked-phone {
-      position: relative;
-      height: min(62vh, 520px);
-      display: flex; align-items: center; justify-content: center;
-      z-index: 2;
     }
     .cracked-phone-img {
-      height: 100%; width: auto; object-fit: contain;
-      filter: drop-shadow(0 0 30px rgba(200,30,10,.4)) drop-shadow(0 20px 60px rgba(0,0,0,.7));
-      animation: shake 6s ease-in-out infinite;
+      height: min(46vh,380px); width: auto; object-fit: contain;
+      filter: drop-shadow(0 0 28px rgba(200,30,10,.4))
+              drop-shadow(0 16px 50px rgba(0,0,0,.7))
+              grayscale(30%) brightness(0.88);
+      animation: tiltShake 7s ease-in-out infinite;
       position: relative; z-index: 2;
     }
-
-    /* SVG crack overlay */
     .crack-svg {
       position: absolute; inset: 0;
       width: 100%; height: 100%;
       pointer-events: none; z-index: 3;
     }
 
+    .repair-headline {
+      font-size: clamp(1.4rem,3.8vw,3rem);
+      font-weight: 900; text-transform: uppercase;
+      text-align: center; line-height: 1.05;
+      letter-spacing: -.01em;
+    }
+    .repair-headline em {
+      color: var(--orange); font-style: normal;
+      text-shadow: 0 0 18px var(--orange-glow);
+    }
+
+    .repair-list {
+      list-style: none;
+      display: flex; flex-direction: column;
+      gap: clamp(4px,.9vh,9px); width: 100%; max-width: 320px;
+    }
+    .repair-list li {
+      font-family: Arial, sans-serif; font-weight: 700;
+      font-size: clamp(.58rem,1.3vw,.82rem);
+      color: rgba(255,255,255,.78);
+      display: flex; align-items: center; gap: 9px;
+    }
+    .repair-list li::before {
+      content: '✓'; color: var(--orange);
+      font-size: 1em; flex-shrink: 0;
+    }
+
+    .warranty-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(242,101,34,.1);
+      border: 1.5px solid rgba(242,101,34,.45);
+      border-radius: 10px;
+      padding: clamp(6px,1vh,10px) clamp(14px,2vw,22px);
+      font-family: Arial, sans-serif; font-weight: 800;
+      font-size: clamp(.55rem,1.2vw,.78rem);
+      color: #fff; text-transform: uppercase; letter-spacing: .06em;
+    }
+    .warranty-badge span { color: var(--orange); }
+
+    /* ── BOTTOM FOOTER BAR ───────────────────────────────── */
+    .footer-bar {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap; gap: 6px;
+      padding: clamp(12px,2vh,22px) clamp(20px,4vw,56px);
+      background: #050505;
+      border-top: 2px solid var(--orange);
+      box-shadow: 0 0 40px rgba(242,101,34,.25);
+      position: relative; z-index: 10;
+    }
+    .footer-phone {
+      font-size: clamp(1.1rem,3vw,2.2rem);
+      font-weight: 900; color: #fff; letter-spacing: .04em;
+    }
+    .footer-phone span { color: var(--orange); }
+    .footer-hours {
+      font-family: Arial, sans-serif; font-weight: 700;
+      font-size: clamp(.5rem,1.1vw,.72rem);
+      color: rgba(255,255,255,.55);
+      text-transform: uppercase; letter-spacing: .07em;
+      text-align: center; line-height: 1.6;
+    }
+    .footer-hours strong { color: var(--orange); }
+    .footer-address {
+      font-family: Arial, sans-serif; font-weight: 600;
+      font-size: clamp(.5rem,1.1vw,.72rem);
+      color: rgba(255,255,255,.45);
+      text-transform: uppercase; letter-spacing: .06em;
+      text-align: right; line-height: 1.6;
+    }
+
     /* ── ANIMATIONS ──────────────────────────────────────── */
     @keyframes glowPulse {
-      0%,100% { text-shadow: 0 0 6px rgba(242,101,34,.9), 0 0 16px rgba(242,101,34,.5); }
-      50%      { text-shadow: 0 0 10px rgba(242,101,34,1), 0 0 28px rgba(242,101,34,.8), 0 0 60px rgba(242,101,34,.35); }
+      0%,100% { text-shadow: 0 0 6px rgba(242,101,34,.9), 0 0 16px rgba(242,101,34,.45); }
+      50%      { text-shadow: 0 0 10px #F26522, 0 0 28px rgba(242,101,34,.8), 0 0 60px rgba(242,101,34,.3); }
     }
     @keyframes breathe {
-      0%,100% { opacity: .7; transform: translate(-40%, -50%) scale(1); }
-      50%      { opacity: 1;  transform: translate(-40%, -50%) scale(1.12); }
+      0%,100% { transform: translate(-50%,-50%) scale(1);   opacity:.7; }
+      50%      { transform: translate(-50%,-50%) scale(1.14); opacity:1; }
     }
     @keyframes dangerPulse {
-      0%,100% { opacity: .6; transform: scale(1); }
-      50%      { opacity: 1;  transform: scale(1.08); }
+      0%,100% { transform: translate(-50%,-50%) scale(1);   opacity:.55; }
+      50%      { transform: translate(-50%,-50%) scale(1.1); opacity:1; }
     }
     @keyframes phoneFloat {
-      0%,100% { transform: translateY(0px) rotate(0deg); }
-      33%      { transform: translateY(-12px) rotate(.6deg); }
-      66%      { transform: translateY(-6px) rotate(-.4deg); }
+      0%,100% { transform: translateY(0)   rotate(0deg); }
+      33%      { transform: translateY(-10px) rotate(.5deg); }
+      66%      { transform: translateY(-5px)  rotate(-.3deg); }
     }
     @keyframes spin {
       from { transform: rotate(0deg); }
       to   { transform: rotate(360deg); }
     }
-    @keyframes shake {
-      0%,100% { transform: translate(0, 0) rotate(0deg); }
-      10%      { transform: translate(-2px, -1px) rotate(-.3deg); }
-      20%      { transform: translate(2px, 1px) rotate(.3deg); }
-      30%      { transform: translate(-1px, 2px) rotate(0deg); }
-      40%      { transform: translate(1px, -1px) rotate(.2deg); }
-      50%      { transform: translate(-1px, 0px) rotate(-.2deg); }
-      60%,90%  { transform: translate(0, 0) rotate(0deg); }
-    }
-    @keyframes progressAnim {
-      from { width: 0%; }
-      to   { width: 100%; }
+    @keyframes tiltShake {
+      0%,100%  { transform: rotate(-1.5deg); }
+      10%      { transform: rotate(-1.5deg) translate(-2px,-1px); }
+      20%      { transform: rotate(-1.5deg) translate(2px,1px); }
+      30%      { transform: rotate(-1.5deg) translate(-1px,2px); }
+      40%,90%  { transform: rotate(-1.5deg); }
     }
 
-    /* ── RESPONSIVE (portrait / narrow) ─────────────────── */
-    @media (max-aspect-ratio: 3/4) {
-      .new-content, .repair-content {
+    /* ── RESPONSIVE (portrait) ───────────────────────────── */
+    @media (max-aspect-ratio: 1/1) {
+      .split {
         grid-template-columns: 1fr;
-        text-align: center;
-        gap: 20px;
-        padding: clamp(90px, 12vh, 130px) clamp(16px, 4vw, 40px) clamp(80px, 10vh, 110px);
+        grid-template-rows: 1fr 1fr;
       }
-      .new-phone-wrap, .repair-phone-wrap { order: -1; }
-      .new-phone-img, .cracked-phone { height: min(38vh, 300px); }
-      .new-pills, .repair-list { justify-content: center; }
-      .new-pills { flex-direction: column; align-items: center; }
-      .info-bar { flex-direction: column; align-items: center; gap: 4px; text-align: center; }
-    }
-
-    @media (max-width: 600px) {
-      .brand-bar { padding: 12px 16px; gap: 10px; }
-      .brand-bar img { height: 38px; }
-      .info-bar { padding: 12px 16px; }
+      .split::after {
+        left: 0; right: 0;
+        top: 50%; bottom: auto;
+        width: 100%; height: 2px;
+      }
+      .new-phone-img, .cracked-phone-img { height: min(28vh,220px); }
+      .new-headline, .repair-headline { font-size: clamp(1.2rem,5vw,2.2rem); }
     }
   </style>
 </head>
 <body>
+<div class="poster">
 
-<div class="display">
-
-  <!-- ══ SLIDE 1 · iPhone 17 New ══════════════════════════ -->
-  <div class="slide slide-new active" id="slide1">
-    <div class="new-glow"></div>
-
-    <!-- Header -->
-    <div class="brand-bar">
-      <img src="logo.svg" alt="Phone ElectriK logo" />
+  <!-- ── BRAND BAR ── -->
+  <div class="brand-bar">
+    <div class="brand-left">
+      <img src="logo.svg" alt="Phone ElectriK" />
       <div class="brand-name">
         <span class="bn-top">Phone</span>
         <span class="bn-main">ElectriK</span>
-        <span class="bn-sub">Repair · Accessories · Torrance, CA</span>
+        <span class="bn-sub">Repair &middot; Accessories &middot; Torrance, CA</span>
       </div>
     </div>
+    <div class="brand-tag">
+      <strong>&#9889; Cell Phone + Tablet</strong>
+      Repair &amp; Accessories
+    </div>
+  </div>
 
-    <!-- Body -->
-    <div class="new-content">
-      <!-- Phone image -->
-      <div class="new-phone-wrap">
-        <div class="new-phone-ring"></div>
-        <img src="IMG_0096.jpeg" class="new-phone-img" alt="iPhone 17" />
-      </div>
+  <!-- ── SPLIT BODY ── -->
+  <div class="split">
 
-      <!-- Text -->
-      <div class="new-text">
-        <span class="new-tag">&#9889; New Arrival</span>
+    <!-- LEFT · NEW iPhone 17 -->
+    <div class="panel-new">
+      <div class="new-glow"></div>
+      <div class="new-inner">
+
+        <span class="panel-badge">&#9889; New Arrival</span>
+
+        <div class="new-phone-wrap">
+          <div class="new-phone-ring"></div>
+          <img src="IMG_0096.jpeg" class="new-phone-img" alt="iPhone 17" />
+        </div>
+
         <div class="new-headline">
           iPhone <em>17</em><br>Is Here
         </div>
         <p class="new-sub">
-          Sleek. Powerful. Stunning camera.<br>
-          We buy, sell &amp; repair every iPhone model.<br>
+          We buy, sell &amp; trade every iPhone model.<br>
           Refurbished deals in stock — ask us!
         </p>
-        <div class="new-pills">
+        <div class="pills">
           <span class="pill">&#128722; Buy &amp; Sell</span>
           <span class="pill">&#128260; Trade-In</span>
           <span class="pill">&#128241; All Models</span>
           <span class="pill">&#128203; Accessories</span>
         </div>
+
       </div>
     </div>
 
-    <!-- Footer -->
-    <div class="info-bar">
-      <div>
-        <div class="info-phone">&#128222; <span>(323)</span> 348-6756</div>
-        <div class="info-hours">Mon–Sat 9AM–8PM &nbsp;·&nbsp; Sun 10AM–6PM &nbsp;·&nbsp; Walk-Ins Welcome</div>
-      </div>
-      <div class="info-address">
-        3025 Artesia Blvd STE 101<br>Torrance, CA 90504
-      </div>
-    </div>
-  </div>
-  <!-- ════════════════════════════════════════════════════ -->
+    <!-- RIGHT · Cracked Screen Repair -->
+    <div class="panel-repair">
+      <div class="repair-glow"></div>
+      <div class="repair-inner">
 
+        <span class="repair-badge">Cracked? We Fix It.</span>
 
-  <!-- ══ SLIDE 2 · Cracked Screen Repair ══════════════════ -->
-  <div class="slide slide-repair" id="slide2">
-
-    <!-- Header -->
-    <div class="brand-bar">
-      <img src="logo.svg" alt="Phone ElectriK logo" />
-      <div class="brand-name">
-        <span class="bn-top">Phone</span>
-        <span class="bn-main">ElectriK</span>
-        <span class="bn-sub">Repair · Accessories · Torrance, CA</span>
-      </div>
-    </div>
-
-    <!-- Body -->
-    <div class="repair-content">
-      <!-- Text -->
-      <div class="repair-text">
-        <span class="repair-tag">Cracked? We Fix It.</span>
-        <div class="repair-headline">
-          <em>Screen</em><br>Repair<br>Done Fast
+        <div class="cracked-phone-wrap">
+          <img src="IMG_0096.jpeg" class="cracked-phone-img" alt="Cracked phone" />
+          <svg class="crack-svg" viewBox="0 0 220 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="cg">
+                <feGaussianBlur stdDeviation="1.2" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <g filter="url(#cg)" stroke="rgba(255,255,255,0.52)" stroke-width="1.1" fill="none" stroke-linecap="round">
+              <!-- main fracture lines from impact point ~(115,70) -->
+              <path d="M115,70 L98,130 L82,195 L62,295 L50,370"  stroke-width="1.6"/>
+              <path d="M115,70 L135,118 L155,178 L163,252"/>
+              <path d="M115,70 L148,88 L178,104"/>
+              <path d="M115,70 L86,84 L60,108 L40,150"/>
+              <path d="M115,70 L110,44 L118,18"/>
+              <!-- branches -->
+              <path d="M98,130  L72,138 L46,128"/>
+              <path d="M98,130  L113,144 L140,133 L162,138"/>
+              <path d="M82,195  L57,200 L36,190"/>
+              <path d="M82,195  L102,208 L128,198"/>
+              <path d="M135,118 L160,126 L178,122"/>
+              <path d="M155,178 L170,186 L185,180"/>
+              <path d="M62,295  L40,300 L24,294"/>
+              <path d="M62,295  L78,310 L94,305 L114,314"/>
+              <!-- hairlines -->
+              <path d="M148,88 L158,102 L153,118" stroke-width=".5" stroke="rgba(255,255,255,.3)"/>
+              <path d="M60,108  L48,124 L52,140" stroke-width=".5" stroke="rgba(255,255,255,.3)"/>
+              <path d="M128,198 L143,208 L141,224" stroke-width=".5" stroke="rgba(255,255,255,.3)"/>
+              <path d="M114,314 L122,332 L119,348" stroke-width=".5" stroke="rgba(255,255,255,.3)"/>
+              <!-- impact dot -->
+              <circle cx="115" cy="70" r="5"  stroke="rgba(255,210,60,.55)" stroke-width="1.5"/>
+              <circle cx="115" cy="70" r="11" stroke="rgba(255,210,60,.2)"  stroke-width="1"/>
+            </g>
+          </svg>
         </div>
-        <p class="repair-sub">
-          Most screens fixed <strong style="color:#fff">same day</strong> —
-          while you wait. iPhone, Samsung, Google Pixel, iPad &amp; more.
-        </p>
+
+        <div class="repair-headline">
+          <em>Screen</em> Repair<br>Done Fast
+        </div>
         <ul class="repair-list">
-          <li>Cracked screen &amp; shattered glass</li>
-          <li>Black / white / green screen</li>
+          <li>Cracked &amp; shattered screen</li>
           <li>Battery replacement</li>
           <li>Back glass &amp; charging port</li>
           <li>Water damage &amp; diagnostics</li>
+          <li>iPhone · Samsung · iPad &amp; more</li>
         </ul>
         <div class="warranty-badge">
           &#128737; <span>90-Day Warranty</span>&nbsp;on Every Repair
         </div>
-      </div>
 
-      <!-- Cracked phone visual -->
-      <div class="repair-phone-wrap">
-        <div class="repair-glow"></div>
-        <div class="cracked-phone">
-          <img src="IMG_0096.jpeg" class="cracked-phone-img" alt="Cracked phone" />
-          <!-- SVG crack overlay drawn over the phone -->
-          <svg class="crack-svg" viewBox="0 0 200 380" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="1.5" result="blur"/>
-                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-            </defs>
-            <g filter="url(#glow)" stroke="rgba(255,255,255,0.55)" stroke-width="1" fill="none" stroke-linecap="round">
-              <!-- Main spider crack from top impact point -->
-              <path d="M112,60 L95,120 L80,180 L60,280 L50,360" stroke-width="1.5"/>
-              <path d="M112,60 L130,110 L150,170 L160,240"/>
-              <path d="M112,60 L140,80 L170,100"/>
-              <path d="M112,60 L85,75 L60,100 L40,140"/>
-              <path d="M112,60 L108,40 L115,20"/>
-              <!-- Branch cracks -->
-              <path d="M95,120 L70,130 L45,120"/>
-              <path d="M95,120 L110,135 L135,125 L155,130"/>
-              <path d="M80,180 L55,185 L35,175"/>
-              <path d="M80,180 L100,195 L125,185"/>
-              <path d="M130,110 L155,118 L170,115"/>
-              <path d="M150,170 L165,178 L180,172"/>
-              <path d="M60,280 L38,285 L22,280"/>
-              <path d="M60,280 L75,295 L90,290 L110,298"/>
-              <!-- Fine hairline cracks -->
-              <path d="M140,80 L150,95 L145,110" stroke-width=".5" stroke="rgba(255,255,255,0.35)"/>
-              <path d="M60,100 L48,115 L52,130" stroke-width=".5" stroke="rgba(255,255,255,0.35)"/>
-              <path d="M125,185 L140,195 L138,210" stroke-width=".5" stroke="rgba(255,255,255,0.35)"/>
-              <path d="M110,298 L118,315 L115,330" stroke-width=".5" stroke="rgba(255,255,255,0.35)"/>
-              <!-- Impact dot at top -->
-              <circle cx="112" cy="60" r="5" stroke="rgba(255,220,80,0.5)" stroke-width="1.5"/>
-              <circle cx="112" cy="60" r="10" stroke="rgba(255,220,80,0.2)" stroke-width="1"/>
-            </g>
-          </svg>
-        </div>
       </div>
     </div>
 
-    <!-- Footer -->
-    <div class="info-bar">
-      <div>
-        <div class="info-phone">&#128222; <span>(323)</span> 348-6756</div>
-        <div class="info-hours">Mon–Sat 9AM–8PM &nbsp;·&nbsp; Sun 10AM–6PM &nbsp;·&nbsp; Walk-Ins Welcome</div>
-      </div>
-      <div class="info-address">
-        3025 Artesia Blvd STE 101<br>Torrance, CA 90504
-      </div>
+  </div><!-- /split -->
+
+  <!-- ── FOOTER BAR ── -->
+  <div class="footer-bar">
+    <div class="footer-phone">&#128222;&nbsp;<span>(323)</span>&nbsp;348-6756</div>
+    <div class="footer-hours">
+      <strong>Mon – Sat</strong> 9 AM – 8 PM &nbsp;&nbsp;|&nbsp;&nbsp;
+      <strong>Sun</strong> 10 AM – 6 PM<br>
+      Walk-Ins Welcome &nbsp;·&nbsp; No Appointment Needed
+    </div>
+    <div class="footer-address">
+      3025 Artesia Blvd STE 101<br>Torrance, CA 90504
     </div>
   </div>
-  <!-- ════════════════════════════════════════════════════ -->
 
-
-  <!-- Slide dots -->
-  <div class="dots">
-    <div class="dot active" id="dot1"></div>
-    <div class="dot" id="dot2"></div>
-  </div>
-
-  <!-- Progress bar -->
-  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 </div>
-
-<script>
-  var slides = document.querySelectorAll('.slide');
-  var dots   = document.querySelectorAll('.dot');
-  var fill   = document.getElementById('progressFill');
-  var cur    = 0;
-  var dur    = 9000; // ms per slide
-  var timer, progTimer;
-
-  function showSlide(idx) {
-    slides[cur].classList.remove('active');
-    dots[cur].classList.remove('active');
-    cur = idx % slides.length;
-    slides[cur].classList.add('active');
-    dots[cur].classList.add('active');
-    startProgress();
-  }
-
-  function startProgress() {
-    fill.style.transition = 'none';
-    fill.style.width = '0%';
-    // force reflow
-    fill.getBoundingClientRect();
-    fill.style.transition = 'width ' + dur + 'ms linear';
-    fill.style.width = '100%';
-  }
-
-  function next() { showSlide(cur + 1); }
-
-  function startLoop() {
-    timer = setInterval(next, dur);
-    startProgress();
-  }
-
-  startLoop();
-
-  // Tap / click to advance manually
-  document.querySelector('.display').addEventListener('click', function() {
-    clearInterval(timer);
-    next();
-    startLoop();
-  });
-</script>
 </body>
 </html>
