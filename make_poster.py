@@ -64,28 +64,28 @@ def fit_font(text, max_w, start_size, step=4):
     f = ImageFont.truetype(BOLD, size)
     return f, draw.textbbox((0, 0), text, font=f)
 
-# ── Logo top-left corner (PE brand image) ─────────────────────────────────────
+# ── Logo centered in header ────────────────────────────────────────────────────
 logo_img = Image.open(os.path.join(BASE, 'logo_pe_cropped.png')).convert('RGB')
 lw, lh   = logo_img.size   # 858 × 606
-LOGO_H   = 160
+LOGO_H   = 200
 LOGO_W   = int(lw * LOGO_H / lh)
 logo_img = logo_img.resize((LOGO_W, LOGO_H), Image.LANCZOS)
-LOGO_Y   = 30
-canvas.paste(logo_img, (PAD, LOGO_Y))
+LOGO_Y   = 20
+canvas.paste(logo_img, ((W - LOGO_W) // 2, LOGO_Y))
 
-# ── Brand: PHONE (white) ElectriK (orange) — same line, right of logo ────────
-logo_r     = PAD + LOGO_W + 28
-TEXT_MAX_W = W - logo_r - PAD
-fnt_brand, _ = fit_font('PHONE ElectriK', TEXT_MAX_W, 240)
-BRAND_Y = max(LOGO_Y + (LOGO_H - fnt_brand.size) // 2, 12)
+# ── Brand: PHONE (white) ElectriK (orange) — centered below logo ─────────────
+fnt_brand, _ = fit_font('PHONE ElectriK', W - PAD * 2, 200)
+BRAND_Y = LOGO_Y + LOGO_H + 10
 
-bb_p  = draw.textbbox((0, 0), 'PHONE', font=fnt_brand)
-bb_sp = draw.textbbox((0, 0), ' ',     font=fnt_brand)
-draw.text((logo_r, BRAND_Y), 'PHONE', font=fnt_brand, fill=WHITE)
-draw.text((logo_r + (bb_p[2]-bb_p[0]) + (bb_sp[2]-bb_sp[0]), BRAND_Y),
-          'ElectriK', font=fnt_brand, fill=ORANGE)
+bb_p  = draw.textbbox((0, 0), 'PHONE',    font=fnt_brand)
+bb_sp = draw.textbbox((0, 0), ' ',        font=fnt_brand)
+bb_e  = draw.textbbox((0, 0), 'ElectriK', font=fnt_brand)
+brand_w = (bb_p[2]-bb_p[0]) + (bb_sp[2]-bb_sp[0]) + (bb_e[2]-bb_e[0])
+bx = (W - brand_w) // 2
+draw.text((bx,                                              BRAND_Y), 'PHONE',    font=fnt_brand, fill=WHITE)
+draw.text((bx + (bb_p[2]-bb_p[0]) + (bb_sp[2]-bb_sp[0]),  BRAND_Y), 'ElectriK', font=fnt_brand, fill=ORANGE)
 
-# ── Tagline — WHITE, large, below logo + brand ───────────────────────────────
+# ── Tagline — WHITE, large, below brand ──────────────────────────────────────
 TAG_Y   = BRAND_Y + fnt_brand.size + 12
 tag_txt = 'Repair:  Cell Phones  ·  iPads  ·  MacBooks  ·  Laptops  ·  Computers  ·  Game Consoles'
 fnt_tag, bb_tag = fit_font(tag_txt, W - PAD * 2, 68)
