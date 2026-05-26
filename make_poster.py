@@ -65,7 +65,7 @@ def fit_font(text, max_w, start_size, step=4):
     f = ImageFont.truetype(BOLD, size)
     return f, draw.textbbox((0, 0), text, font=f)
 
-# ── Header: logo top-left + PHONE ElectriK large to the right ────────────────
+# ── Header: logo top-left + stacked text to the right ────────────────────────
 logo_img = Image.open(os.path.join(BASE, 'logo_pe_cropped.png')).convert('RGB')
 lw, lh   = logo_img.size
 LOGO_H   = 240
@@ -77,14 +77,32 @@ canvas.paste(logo_img, (PAD, LOGO_Y))
 
 logo_r     = PAD + LOGO_W + 80
 TEXT_MAX_W = W - logo_r - PAD
-fnt_brand, _ = fit_font('PHONE ElectriK', TEXT_MAX_W, 260)
-BRAND_Y = LOGO_Y + (LOGO_H - fnt_brand.size) // 2
 
+# "PHONE ELECTRIK" large — all caps
+fnt_brand, _ = fit_font('PHONE ELECTRIK', TEXT_MAX_W, 260)
+bb_brand = draw.textbbox((0, 0), 'PHONE ELECTRIK', font=fnt_brand)
+brand_h  = bb_brand[3] - bb_brand[1]
+
+# "CELL PHONE REPAIR" above it — sized to match width of brand text
+brand_w  = bb_brand[2] - bb_brand[0]
+fnt_sub, bb_sub = fit_font('CELL PHONE REPAIR', brand_w, fnt_brand.size // 2 + 10)
+sub_h    = bb_sub[3] - bb_sub[1]
+
+GAP_LINES = 10
+total_text_h = sub_h + GAP_LINES + brand_h
+text_top = LOGO_Y + (LOGO_H - total_text_h) // 2
+
+# Draw "CELL PHONE REPAIR" centered over the brand text block
+sub_x = logo_r + (brand_w - (bb_sub[2]-bb_sub[0])) // 2
+draw.text((sub_x, text_top), 'CELL PHONE REPAIR', font=fnt_sub, fill=WHITE)
+
+# Draw "PHONE ELECTRIK" below
+BRAND_Y = text_top + sub_h + GAP_LINES
 bb_p  = draw.textbbox((0, 0), 'PHONE', font=fnt_brand)
 bb_sp = draw.textbbox((0, 0), ' ',     font=fnt_brand)
 draw.text((logo_r, BRAND_Y), 'PHONE', font=fnt_brand, fill=WHITE)
 draw.text((logo_r + (bb_p[2]-bb_p[0]) + (bb_sp[2]-bb_sp[0]), BRAND_Y),
-          'ElectriK', font=fnt_brand, fill=ORANGE)
+          'ELECTRIK', font=fnt_brand, fill=ORANGE)
 
 # Tagline
 TAG_Y   = HDR_H - TAG_RESERVE + 8
