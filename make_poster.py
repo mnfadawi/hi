@@ -82,11 +82,11 @@ draw.text((logo_r, BRAND_Y), 'PHONE', font=fnt_brand, fill=WHITE)
 ek_x = logo_r + (bb_p[2] - bb_p[0]) + (bb_sp[2] - bb_sp[0])
 draw.text((ek_x, BRAND_Y), 'ElectriK', font=fnt_brand, fill=ORANGE)
 
-# ── Tagline ───────────────────────────────────────────────────────────────────
+# ── Tagline (centered under brand) ───────────────────────────────────────────
 TAG_Y   = BRAND_Y + fnt_brand.size + 16
-tag_txt = 'Cell Phones  ·  Tablets  ·  MacBooks  ·  Laptops  ·  Computers'
-fnt_tag, _ = fit_font(tag_txt, W - PAD * 2, 60)
-draw.text((PAD, TAG_Y), tag_txt, font=fnt_tag, fill=GREY)
+tag_txt = 'Repair:  Cell Phones  ·  iPads  ·  MacBooks  ·  Laptops  ·  Computers'
+fnt_tag, bb_tag = fit_font(tag_txt, W - PAD * 2, 60)
+draw.text(((W - (bb_tag[2] - bb_tag[0])) // 2, TAG_Y), tag_txt, font=fnt_tag, fill=GREY)
 
 # ── Phone images (cover-fill, edge-to-edge) ───────────────────────────────────
 def paste_phone_cover(path, slot_x):
@@ -119,7 +119,7 @@ draw.text((SLOT_W + GAP + SLOT_W // 2 - (bb2[2] - bb2[0]) // 2, LBL_Y), lbl2, fo
 
 # ── Device strip ──────────────────────────────────────────────────────────────
 draw.rectangle([0, DEVICE_Y, W, DEVICE_Y + DEVICE_H], fill='#161616')
-dev_txt = 'We Buy & Sell:  Phones  ·  iPads  ·  MacBooks  ·  Laptops  ·  Computers'
+dev_txt = 'We Repair:  Cell Phones  ·  iPads  ·  MacBooks  ·  Laptops  ·  Computers'
 fnt_dev, bb_dev = fit_font(dev_txt, W - 100, 58)
 dev_y = DEVICE_Y + (DEVICE_H - (bb_dev[3] - bb_dev[1])) // 2
 draw.text(((W - (bb_dev[2] - bb_dev[0])) // 2, dev_y), dev_txt, font=fnt_dev, fill=GREY)
