@@ -26,12 +26,12 @@ def natural_h(path):
 
 TARGET_H = min(natural_h(p1), natural_h(p2))
 
-HDR_H    = 560
+HDR_H    = 480
 PHONE_H  = TARGET_H
 LABEL_H  = 90
 DEVICE_H = 230
-WHITE_H  = 260
-ORANGE_H = 320
+WHITE_H  = 250
+ORANGE_H = 270
 FOOTER_H = H - HDR_H - PHONE_H - LABEL_H - DEVICE_H - WHITE_H - ORANGE_H
 
 PHONE_Y  = HDR_H
@@ -186,15 +186,15 @@ footer_lines = [
 fnt_footer, _ = fit_font(
     max(footer_lines, key=lambda l: len(l[0]))[0], W - PAD*2, 120)
 
-line_h   = fnt_footer.size
-line_gap = 40
-total_h  = line_h * len(footer_lines) + line_gap * (len(footer_lines)-1)
+footer_bbs = [draw.textbbox((0,0), t, font=fnt_footer) for t, _ in footer_lines]
+line_hs    = [bb[3]-bb[1] for bb in footer_bbs]
+line_gap   = 28
+total_h    = sum(line_hs) + line_gap * (len(footer_lines)-1)
 y = FOOTER_Y + 10 + (FOOTER_H - 10 - total_h) // 2
 
-for text, color in footer_lines:
-    bb = draw.textbbox((0,0), text, font=fnt_footer)
+for (text, color), bb, lh in zip(footer_lines, footer_bbs, line_hs):
     draw.text(((W-(bb[2]-bb[0]))//2, y), text, font=fnt_footer, fill=color)
-    y += line_h + line_gap
+    y += lh + line_gap
 
 # ── Save ─────────────────────────────────────────────────────────────────────
 canvas.save(os.path.join(BASE, 'poster.png'), dpi=(300, 300))
