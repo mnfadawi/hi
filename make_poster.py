@@ -19,8 +19,8 @@ PHONE_H  = 1540
 LABEL_H  = 100
 DEVICE_H = 100
 WHITE_H  = 330
-ORANGE_H = 430
-FOOTER_H = 340  # 460+1540+100+100+330+430+340 = 3300
+ORANGE_H = 360
+FOOTER_H = 410  # 460+1540+100+100+330+360+410 = 3300
 
 PHONE_Y  = HDR_H
 LABEL_Y  = PHONE_Y  + PHONE_H
@@ -167,20 +167,23 @@ draw.text((W // 2, ORANGE_Y + ORANGE_H // 2),
 
 # ── Footer ────────────────────────────────────────────────────────────────────
 draw.rectangle([0, FOOTER_Y, W, H], fill=BG)
-fnt_wi  = ImageFont.truetype(BOLD, 72)
-fnt_hrs = ImageFont.truetype(BOLD, 58)
-fnt_adr = ImageFont.truetype(BOLD, 48)
 
-wi_txt  = 'WALK-INS WELCOME'
-hrs_txt = 'MON–SAT  9AM–8PM   ·   SUN  10AM–6PM'
-adr_txt = '3025 Artesia Blvd STE 101   ·   Torrance, CA 90504'
+footer_lines = [
+    ('WALK-IN ONLY  ·  NO APPOINTMENT NEEDED', ORANGE, 62),
+    ('MON–SAT  9AM–8PM   ·   SUN  10AM–6PM',  WHITE,  66),
+    ('3025 Artesia Blvd STE 101   ·   Torrance, CA 90504', WHITE, 52),
+    ('Call or Text:  (323) 348-6756',           ORANGE, 52),
+]
 
-bb = draw.textbbox((0, 0), wi_txt, font=fnt_wi)
-draw.text(((W-(bb[2]-bb[0]))//2, FOOTER_Y + 18), wi_txt, font=fnt_wi, fill=ORANGE)
-bb = draw.textbbox((0, 0), hrs_txt, font=fnt_hrs)
-draw.text(((W-(bb[2]-bb[0]))//2, FOOTER_Y + 106), hrs_txt, font=fnt_hrs, fill=WHITE)
-bb = draw.textbbox((0, 0), adr_txt, font=fnt_adr)
-draw.text(((W-(bb[2]-bb[0]))//2, FOOTER_Y + 178), adr_txt, font=fnt_adr, fill=GREY)
+# Stack lines evenly inside FOOTER_H with padding
+line_gap = 14
+total_h = sum(sz for _, _, sz in footer_lines) + line_gap * (len(footer_lines) - 1)
+y = FOOTER_Y + (FOOTER_H - total_h) // 2
+
+for text, color, size in footer_lines:
+    fnt, bb = fit_font(text, W - PAD * 2, size)
+    draw.text(((W - (bb[2]-bb[0])) // 2, y), text, font=fnt, fill=color)
+    y += (bb[3] - bb[1]) + line_gap
 
 # ── Save ──────────────────────────────────────────────────────────────────────
 out = os.path.join(BASE, 'poster.png')
