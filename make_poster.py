@@ -32,7 +32,7 @@ TARGET_H = min(natural_h(p1), natural_h(p2))   # 1534 px — same height both ph
 HDR_H    = 380
 PHONE_H  = TARGET_H          # exact — phones never overflow
 LABEL_H  = 80
-DEVICE_H = 80
+DEVICE_H = 170
 WHITE_H  = 260
 ORANGE_H = 320
 FOOTER_H = H - HDR_H - PHONE_H - LABEL_H - DEVICE_H - WHITE_H - ORANGE_H
@@ -134,12 +134,20 @@ LBL_Y = LABEL_Y + (LABEL_H - (bb1[3]-bb1[1])) // 2
 draw.text((SLOT_W//2 - (bb1[2]-bb1[0])//2, LBL_Y), lbl1, font=fnt_lbl, fill=ORANGE)
 draw.text((SLOT_W+GAP + SLOT_W//2 - (bb2[2]-bb2[0])//2, LBL_Y), lbl2, font=fnt_lbl, fill=BLUE)
 
-# ── Device strip ──────────────────────────────────────────────────────────────
+# ── Device strip (2 lines) ────────────────────────────────────────────────────
 draw.rectangle([0, DEVICE_Y, W, DEVICE_Y+DEVICE_H], fill='#1a1a1a')
-dev_txt = 'We Repair:  Apple  ·  Samsung  ·  Motorola  ·  LG  ·  OnePlus  ·  Google Pixel'
-fnt_dev, bb_dev = fit_font(dev_txt, W-100, 58)
-dev_y = DEVICE_Y + (DEVICE_H - (bb_dev[3]-bb_dev[1])) // 2
-draw.text(((W-(bb_dev[2]-bb_dev[0]))//2, dev_y), dev_txt, font=fnt_dev, fill=WHITE)
+
+dev_line1 = 'We Repair Any Device — Any Brand, Any Model'
+dev_line2 = 'Apple  ·  Samsung  ·  Motorola  ·  LG  ·  OnePlus  ·  Google Pixel  ·  & Many More Makes & Models'
+
+fnt_d1, bb_d1 = fit_font(dev_line1, W-100, 62)
+fnt_d2, bb_d2 = fit_font(dev_line2, W-100, 54)
+
+total_dev_h = (bb_d1[3]-bb_d1[1]) + 16 + (bb_d2[3]-bb_d2[1])
+dy = DEVICE_Y + (DEVICE_H - total_dev_h) // 2
+
+draw.text(((W-(bb_d1[2]-bb_d1[0]))//2, dy),        dev_line1, font=fnt_d1, fill=ORANGE)
+draw.text(((W-(bb_d2[2]-bb_d2[0]))//2, dy + (bb_d1[3]-bb_d1[1]) + 16), dev_line2, font=fnt_d2, fill=WHITE)
 
 # ── White band: BUY · SELL · REPAIR ──────────────────────────────────────────
 draw.rectangle([0, WHITE_Y, W, WHITE_Y+WHITE_H], fill=WHITE)
