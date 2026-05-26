@@ -14,12 +14,12 @@ BLUE   = '#4fc3e8'
 
 # Section heights — must sum to H=3300
 HDR_H    = 460
-PHONE_H  = 1580
+PHONE_H  = 1640   # tall enough to show full iPhone at slot width (1630px)
 LABEL_H  = 100
 DEVICE_H = 100
-WHITE_H  = 340
-ORANGE_H = 410
-FOOTER_H = 310  # 460+1580+100+100+340+410+310 = 3300
+WHITE_H  = 330
+ORANGE_H = 380
+FOOTER_H = 290  # 460+1640+100+100+330+380+290 = 3300
 
 HDR_Y    = 0
 PHONE_Y  = HDR_H
@@ -92,16 +92,9 @@ draw.text(((W - (bb_tag[2] - bb_tag[0])) // 2, TAG_Y), tag_txt, font=fnt_tag, fi
 def paste_phone_cover(path, slot_x):
     img = Image.open(path)
     iw, ih = img.size
-    scale = max(SLOT_W / iw, PHONE_H / ih)
+    scale = SLOT_W / iw          # fill slot width exactly, never crop
     nw, nh = int(iw * scale), int(ih * scale)
     img = img.resize((nw, nh), Image.LANCZOS)
-    if nw > SLOT_W:
-        cx = (nw - SLOT_W) // 2
-        img = img.crop((cx, 0, cx + SLOT_W, nh))
-        nw = SLOT_W
-    if nh > PHONE_H:
-        img = img.crop((0, nh - PHONE_H, nw, nh))
-        nh = PHONE_H
     canvas.paste(img, (slot_x, PHONE_Y + (PHONE_H - nh)))
 
 base = os.path.dirname(__file__)
