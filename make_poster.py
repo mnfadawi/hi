@@ -169,14 +169,12 @@ draw.text((W // 2, ORANGE_Y + ORANGE_H // 2),
 draw.rectangle([0, FOOTER_Y, W, H], fill=BG)
 
 footer_lines = [
-    ('WALK-IN ONLY  ·  NO APPOINTMENT NEEDED', ORANGE, 62),
-    ('MON–SAT  9AM–8PM   ·   SUN  10AM–6PM',  WHITE,  66),
-    ('3025 Artesia Blvd STE 101   ·   Torrance, CA 90504', WHITE, 52),
-    ('Call or Text:  (323) 348-6756',           ORANGE, 52),
+    ('WALK-IN  ·  NO APPOINTMENT NEEDED',               ORANGE, 68),
+    ('MON–SAT  9AM–8PM   ·   SUN  10AM–6PM',            WHITE,  68),
+    ('3025 Artesia Blvd STE 101   ·   Torrance, CA 90504', GREY, 52),
 ]
 
-# Stack lines evenly inside FOOTER_H with padding
-line_gap = 14
+line_gap = 28
 total_h = sum(sz for _, _, sz in footer_lines) + line_gap * (len(footer_lines) - 1)
 y = FOOTER_Y + (FOOTER_H - total_h) // 2
 
