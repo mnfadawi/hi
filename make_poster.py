@@ -1,9 +1,10 @@
-"""Run: python3 make_poster.py  →  generates poster.png"""
+"""Run: python3 make_poster.py  →  generates poster.png  (8.5×11 in @ 300 DPI)"""
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import cairosvg, io, os
 
 W, H = 2550, 3300   # US Letter 8.5×11 in at 300 DPI
 BOLD = '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf'
+BASE = os.path.dirname(__file__)
 
 BG     = '#0D0D0D'
 ORANGE = '#F26522'
@@ -21,7 +22,6 @@ WHITE_H  = 330
 ORANGE_H = 430
 FOOTER_H = 340  # 460+1540+100+100+330+430+340 = 3300
 
-HDR_Y    = 0
 PHONE_Y  = HDR_H
 LABEL_Y  = PHONE_Y  + PHONE_H
 DEVICE_Y = LABEL_Y  + LABEL_H
@@ -34,9 +34,9 @@ assert FOOTER_Y + FOOTER_H == H
 PAD     = 60
 LOGO_SZ = 160
 GAP     = 6
-SLOT_W  = (W - GAP) // 2  # 1077
+SLOT_W  = (W - GAP) // 2
 
-# ── Glow layer (phone background atmosphere) ──────────────────────────────────
+# ── Glow ─────────────────────────────────────────────────────────────────────
 canvas = Image.new('RGB', (W, H), BG)
 glow   = Image.new('RGB', (W, H), BG)
 gd     = ImageDraw.Draw(glow)
@@ -44,8 +44,7 @@ gd.ellipse([0,           PHONE_Y + 60, SLOT_W,       PHONE_Y + PHONE_H], fill='#
 gd.ellipse([SLOT_W + GAP, PHONE_Y + 60, W,            PHONE_Y + PHONE_H], fill='#001320')
 glow   = glow.filter(ImageFilter.GaussianBlur(100))
 canvas = Image.blend(canvas, glow, alpha=0.78)
-
-draw = ImageDraw.Draw(canvas)
+draw   = ImageDraw.Draw(canvas)
 
 def fit_font(text, max_w, start_size, step=4):
     size = start_size
@@ -59,7 +58,7 @@ def fit_font(text, max_w, start_size, step=4):
     return f, draw.textbbox((0, 0), text, font=f)
 
 # ── Logo ──────────────────────────────────────────────────────────────────────
-svg_bytes = cairosvg.svg2png(url=os.path.join(os.path.dirname(__file__), 'logo.svg'),
+svg_bytes = cairosvg.svg2png(url=os.path.join(BASE, 'logo.svg'),
                               output_width=LOGO_SZ, output_height=LOGO_SZ)
 logo_img = Image.open(io.BytesIO(svg_bytes)).convert('RGBA')
 r, g, b, a = logo_img.split()
@@ -70,40 +69,37 @@ tinted = Image.merge('RGBA', (
 LOGO_Y = 40
 canvas.paste(tinted, (PAD, LOGO_Y), mask=a)
 
-# ── Brand: PHONE (white) ElectriK (orange) — same line ───────────────────────
+# ── Brand: PHONE (white) ElectriK (orange) — same font, same size, one line ──
 logo_r     = PAD + LOGO_SZ + 28
 TEXT_MAX_W = W - logo_r - PAD
+# Fit "PHONE ElectriK" — both words rendered at the exact same font size
 fnt_brand, _ = fit_font('PHONE ElectriK', TEXT_MAX_W, 240)
-BRAND_Y = max(LOGO_Y + (LOGO_SZ - fnt_brand.size) // 2, 16)
 
 bb_p  = draw.textbbox((0, 0), 'PHONE', font=fnt_brand)
 bb_sp = draw.textbbox((0, 0), ' ',     font=fnt_brand)
-draw.text((logo_r, BRAND_Y), 'PHONE', font=fnt_brand, fill=WHITE)
-ek_x = logo_r + (bb_p[2] - bb_p[0]) + (bb_sp[2] - bb_sp[0])
-draw.text((ek_x, BRAND_Y), 'ElectriK', font=fnt_brand, fill=ORANGE)
+BRAND_Y = max(LOGO_Y + (LOGO_SZ - fnt_brand.size) // 2, 16)
 
-# ── Tagline (centered under brand) ───────────────────────────────────────────
+draw.text((logo_r, BRAND_Y), 'PHONE',    font=fnt_brand, fill=WHITE)
+draw.text((logo_r + (bb_p[2]-bb_p[0]) + (bb_sp[2]-bb_sp[0]), BRAND_Y),
+          'ElectriK', font=fnt_brand, fill=ORANGE)
+
+# ── Tagline ───────────────────────────────────────────────────────────────────
 TAG_Y   = BRAND_Y + fnt_brand.size + 16
 tag_txt = 'Repair:  Cell Phones  ·  iPads  ·  MacBooks  ·  Laptops  ·  Computers'
 fnt_tag, bb_tag = fit_font(tag_txt, W - PAD * 2, 60)
 draw.text(((W - (bb_tag[2] - bb_tag[0])) // 2, TAG_Y), tag_txt, font=fnt_tag, fill=GREY)
 
-# ── Phone images (cover-fill, edge-to-edge) ───────────────────────────────────
-base = os.path.dirname(__file__)
-p1 = os.path.join(base, 'IMG_0096.jpeg')
-p2 = os.path.join(base, 'IMG_0097.jpeg')
+# ── Phone images ──────────────────────────────────────────────────────────────
+p1 = os.path.join(BASE, 'IMG_0096.jpeg')
+p2 = os.path.join(BASE, 'IMG_0097.jpeg')
 
-# Compute the height each phone would be if scaled to fill slot width
 def h_at_slot_width(path):
-    from PIL import Image as _I
-    iw, ih = _I.open(path).size
+    iw, ih = Image.open(path).size
     return int(ih * SLOT_W / iw)
 
-# Use the smaller of the two heights so neither gets cropped
 TARGET_H = min(h_at_slot_width(p1), h_at_slot_width(p2))
 
-def round_corners(img, radius):
-    """Clip image corners to a rounded rectangle — phone stays fully visible."""
+def round_corners(img, radius=70):
     img = img.convert('RGBA')
     mask = Image.new('L', img.size, 0)
     ImageDraw.Draw(mask).rounded_rectangle(
@@ -111,19 +107,19 @@ def round_corners(img, radius):
     img.putalpha(mask)
     return img
 
-def paste_phone_same_size(path, slot_x):
+def paste_phone(path, slot_x):
     img = Image.open(path)
     iw, ih = img.size
-    scale = TARGET_H / ih           # same height for both, no cropping
+    scale = TARGET_H / ih
     nw, nh = int(iw * scale), int(ih * scale)
     img = img.resize((nw, nh), Image.LANCZOS)
-    img = round_corners(img, radius=70)   # smooth corners, phone untouched
+    img = round_corners(img)
     x = slot_x + (SLOT_W - nw) // 2
     y = PHONE_Y + (PHONE_H - nh)
     canvas.paste(img, (x, y), mask=img.split()[3])
 
-paste_phone_same_size(p1, 0)
-paste_phone_same_size(p2, SLOT_W + GAP)
+paste_phone(p1, 0)
+paste_phone(p2, SLOT_W + GAP)
 
 # ── Phone labels ──────────────────────────────────────────────────────────────
 fnt_lbl = ImageFont.truetype(BOLD, 56)
@@ -154,11 +150,10 @@ while bsr_sz > 60:
     if tw <= W - 80:
         break
     bsr_sz -= 4
-bsr_h_bb = draw.textbbox((0, 0), 'BUY', font=fb)
-bsr_h_val = bsr_h_bb[3] - bsr_h_bb[1]
-tw = sum((draw.textbbox((0,0),t,font=fb)[2]-draw.textbbox((0,0),t,font=fb)[0]) for t,_ in bsr_parts)
-x = (W - tw) // 2
-y = WHITE_Y + (WHITE_H - bsr_h_val) // 2
+bsr_h_val = draw.textbbox((0,0),'BUY',font=fb)[3] - draw.textbbox((0,0),'BUY',font=fb)[1]
+tw  = sum((draw.textbbox((0,0),t,font=fb)[2]-draw.textbbox((0,0),t,font=fb)[0]) for t,_ in bsr_parts)
+x   = (W - tw) // 2
+y   = WHITE_Y + (WHITE_H - bsr_h_val) // 2
 for txt, clr in bsr_parts:
     bb = draw.textbbox((0, 0), txt, font=fb)
     draw.text((x, y), txt, font=fb, fill=clr)
@@ -167,9 +162,8 @@ for txt, clr in bsr_parts:
 # ── Orange band: phone number ─────────────────────────────────────────────────
 draw.rectangle([0, ORANGE_Y, W, ORANGE_Y + ORANGE_H], fill=ORANGE)
 fnt_num, _ = fit_font('(323) 348-6756', W - 80, 270)
-draw.text(
-    (W // 2, ORANGE_Y + ORANGE_H // 2),
-    '(323) 348-6756', font=fnt_num, fill=WHITE, anchor='mm')
+draw.text((W // 2, ORANGE_Y + ORANGE_H // 2),
+          '(323) 348-6756', font=fnt_num, fill=WHITE, anchor='mm')
 
 # ── Footer ────────────────────────────────────────────────────────────────────
 draw.rectangle([0, FOOTER_Y, W, H], fill=BG)
@@ -182,13 +176,13 @@ hrs_txt = 'MON–SAT  9AM–8PM   ·   SUN  10AM–6PM'
 adr_txt = '3025 Artesia Blvd STE 101   ·   Torrance, CA 90504'
 
 bb = draw.textbbox((0, 0), wi_txt, font=fnt_wi)
-draw.text(((W - (bb[2] - bb[0])) // 2, FOOTER_Y + 18), wi_txt, font=fnt_wi, fill=ORANGE)
+draw.text(((W-(bb[2]-bb[0]))//2, FOOTER_Y + 18), wi_txt, font=fnt_wi, fill=ORANGE)
 bb = draw.textbbox((0, 0), hrs_txt, font=fnt_hrs)
-draw.text(((W - (bb[2] - bb[0])) // 2, FOOTER_Y + 106), hrs_txt, font=fnt_hrs, fill=WHITE)
+draw.text(((W-(bb[2]-bb[0]))//2, FOOTER_Y + 106), hrs_txt, font=fnt_hrs, fill=WHITE)
 bb = draw.textbbox((0, 0), adr_txt, font=fnt_adr)
-draw.text(((W - (bb[2] - bb[0])) // 2, FOOTER_Y + 178), adr_txt, font=fnt_adr, fill=GREY)
+draw.text(((W-(bb[2]-bb[0]))//2, FOOTER_Y + 178), adr_txt, font=fnt_adr, fill=GREY)
 
 # ── Save ──────────────────────────────────────────────────────────────────────
-out = os.path.join(os.path.dirname(__file__), 'poster.png')
+out = os.path.join(BASE, 'poster.png')
 canvas.save(out, dpi=(300, 300))
 print('Saved:', out)
