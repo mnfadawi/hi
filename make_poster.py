@@ -51,9 +51,6 @@ glow   = glow.filter(ImageFilter.GaussianBlur(120))
 canvas = Image.blend(canvas, glow, alpha=0.85)
 draw   = ImageDraw.Draw(canvas)
 
-# Orange accent line across the very top
-draw.rectangle([0, 0, W, 14], fill=ORANGE)
-
 def fit_font(text, max_w, start_size, step=4):
     size = start_size
     while size > 24:
@@ -65,17 +62,24 @@ def fit_font(text, max_w, start_size, step=4):
     f = ImageFont.truetype(BOLD, size)
     return f, draw.textbbox((0, 0), text, font=f)
 
-# ── Header: logo top-left + stacked text to the right ────────────────────────
+# ── Orange banner at the very top: CELL PHONE REPAIR ─────────────────────────
+BANNER_H = 150
+draw.rectangle([0, 0, W, BANNER_H], fill=ORANGE)
+fnt_banner, _ = fit_font('CELL PHONE REPAIR', W - PAD * 2, 130)
+draw.text((W // 2, BANNER_H // 2), 'CELL PHONE REPAIR',
+          font=fnt_banner, fill=WHITE, anchor='mm')
+
+# ── Header: logo top-left + PHONE ELECTRIK to the right ──────────────────────
 logo_img = Image.open(os.path.join(BASE, 'logo_pe_cropped.png')).convert('RGB')
 lw, lh   = logo_img.size
 LOGO_H   = 240
 LOGO_W   = int(lw * LOGO_H / lh)
 logo_img = logo_img.resize((LOGO_W, LOGO_H), Image.LANCZOS)
 
-TAG_RESERVE  = 130                          # space reserved at bottom for tagline
-CONTENT_TOP  = 18                           # below the orange stripe
-CONTENT_BOT  = HDR_H - TAG_RESERVE         # top of tagline zone
-content_cy   = (CONTENT_TOP + CONTENT_BOT) // 2   # vertical center for logo + text
+TAG_RESERVE  = 130
+CONTENT_TOP  = BANNER_H + 14
+CONTENT_BOT  = HDR_H - TAG_RESERVE
+content_cy   = (CONTENT_TOP + CONTENT_BOT) // 2
 
 # Logo — centered vertically in the content zone
 logo_y = content_cy - LOGO_H // 2
@@ -84,37 +88,19 @@ canvas.paste(logo_img, (PAD, logo_y))
 logo_r     = PAD + LOGO_W + 80
 TEXT_MAX_W = W - logo_r - PAD
 
-# "PHONE ELECTRIK" large — all caps
+# "PHONE ELECTRIK" — centered vertically with the logo
 fnt_brand, _ = fit_font('PHONE ELECTRIK', TEXT_MAX_W, 240)
-bb_b   = draw.textbbox((0, 0), 'PHONE ELECTRIK', font=fnt_brand)
+bb_b    = draw.textbbox((0, 0), 'PHONE ELECTRIK', font=fnt_brand)
 brand_h = bb_b[3] - bb_b[1]
-brand_w = bb_b[2] - bb_b[0]
+BRAND_Y = content_cy - brand_h // 2
 
-# "CELL PHONE REPAIR" above — sized to span the same width as the brand text
-fnt_sub, _ = fit_font('CELL PHONE REPAIR', brand_w, fnt_brand.size // 2 + 10)
-bb_sub  = draw.textbbox((0, 0), 'CELL PHONE REPAIR', font=fnt_sub)
-sub_h   = bb_sub[3] - bb_sub[1]
-
-GAP_LINES    = 16
-total_text_h = sub_h + GAP_LINES + brand_h
-
-# Center the text block vertically the same way the logo is centered
-text_top = content_cy - total_text_h // 2
-text_top = max(CONTENT_TOP + 4, text_top)   # never clip the top
-
-# Draw "CELL PHONE REPAIR" — horizontally centered over the brand block
-sub_x = logo_r + (brand_w - (bb_sub[2] - bb_sub[0])) // 2
-draw.text((sub_x, text_top), 'CELL PHONE REPAIR', font=fnt_sub, fill=WHITE)
-
-# Draw "PHONE ELECTRIK"
-BRAND_Y = text_top + sub_h + GAP_LINES
-bb_p  = draw.textbbox((0, 0), 'PHONE',    font=fnt_brand)
-bb_sp = draw.textbbox((0, 0), ' ',        font=fnt_brand)
+bb_p  = draw.textbbox((0, 0), 'PHONE', font=fnt_brand)
+bb_sp = draw.textbbox((0, 0), ' ',     font=fnt_brand)
 draw.text((logo_r, BRAND_Y), 'PHONE', font=fnt_brand, fill=WHITE)
 draw.text((logo_r + (bb_p[2]-bb_p[0]) + (bb_sp[2]-bb_sp[0]), BRAND_Y),
           'ELECTRIK', font=fnt_brand, fill=ORANGE)
 
-# Tagline — centered in the reserved zone at the bottom of the header
+# Tagline
 TAG_Y   = CONTENT_BOT + (TAG_RESERVE - 80) // 2
 tag_txt = 'Cell Phones  ·  iPads  ·  MacBooks  ·  Laptops  ·  Computers  ·  Game Consoles'
 fnt_tag, bb_tag = fit_font(tag_txt, W - PAD * 2, 80)
