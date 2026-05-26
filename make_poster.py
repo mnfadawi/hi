@@ -64,17 +64,33 @@ def fit_font(text, max_w, start_size, step=4):
     f = ImageFont.truetype(BOLD, size)
     return f, draw.textbbox((0, 0), text, font=f)
 
-# ── Logo (PE brand logo — centered, fills header) ────────────────────────────
+# ── Logo left corner + "PHONE ElectriK" brand name ───────────────────────────
 logo_img = Image.open(os.path.join(BASE, 'logo_pe_cropped.png')).convert('RGB')
 lw, lh   = logo_img.size   # 858 × 606
-logo_h   = HDR_H - 110     # leave room for tagline below
-logo_w   = int(lw * logo_h / lh)
-logo_img = logo_img.resize((logo_w, logo_h), Image.LANCZOS)
-logo_x   = (W - logo_w) // 2
-canvas.paste(logo_img, (logo_x, 18))
+LOGO_H   = 220
+LOGO_W   = int(lw * LOGO_H / lh)
+logo_img = logo_img.resize((LOGO_W, LOGO_H), Image.LANCZOS)
+TAG_RESERVE = 90
+logo_y   = (HDR_H - TAG_RESERVE - LOGO_H) // 2 + 10
+logo_center_y = logo_y + LOGO_H // 2
+canvas.paste(logo_img, (PAD, logo_y))
 
-# ── Tagline — WHITE, large, below the logo ───────────────────────────────────
-TAG_Y   = 18 + logo_h + 14
+# "PHONE ElectriK" to the right of the logo, vertically centered with it
+brand_x  = PAD + LOGO_W + 36
+avail_w  = W - brand_x - PAD
+fnt_brand, _ = fit_font('PHONE ElectriK', avail_w, 230)
+
+phone_txt, elec_txt = 'PHONE ', 'ElectriK'
+bb_ph = draw.textbbox((0, 0), phone_txt, font=fnt_brand)
+bb_el = draw.textbbox((0, 0), elec_txt,  font=fnt_brand)
+brand_w = (bb_ph[2]-bb_ph[0]) + (bb_el[2]-bb_el[0])
+bx = brand_x + (avail_w - brand_w) // 2
+by = logo_center_y - (bb_ph[3]-bb_ph[1]) // 2
+draw.text((bx,                       by), phone_txt, font=fnt_brand, fill=WHITE)
+draw.text((bx + bb_ph[2]-bb_ph[0],   by), elec_txt,  font=fnt_brand, fill=ORANGE)
+
+# ── Tagline — WHITE, large, below logo + brand ───────────────────────────────
+TAG_Y   = HDR_H - TAG_RESERVE + 4
 tag_txt = 'Repair:  Cell Phones  ·  iPads  ·  MacBooks  ·  Laptops  ·  Computers  ·  Game Consoles'
 fnt_tag, bb_tag = fit_font(tag_txt, W - PAD * 2, 68)
 draw.text(((W - (bb_tag[2]-bb_tag[0])) // 2, TAG_Y), tag_txt, font=fnt_tag, fill=WHITE)
