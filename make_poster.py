@@ -26,7 +26,7 @@ def natural_h(path):
 
 TARGET_H = min(natural_h(p1), natural_h(p2))
 
-HDR_H    = 400
+HDR_H    = 560
 PHONE_H  = TARGET_H
 LABEL_H  = 90
 DEVICE_H = 230
@@ -64,32 +64,17 @@ def fit_font(text, max_w, start_size, step=4):
     f = ImageFont.truetype(BOLD, size)
     return f, draw.textbbox((0, 0), text, font=f)
 
-# ── Logo ──────────────────────────────────────────────────────────────────────
-svg_bytes = cairosvg.svg2png(url=os.path.join(BASE, 'logo.svg'),
-                              output_width=LOGO_SZ, output_height=LOGO_SZ)
-logo_img = Image.open(io.BytesIO(svg_bytes)).convert('RGBA')
-r, g, b, a = logo_img.split()
-tinted = Image.merge('RGBA', (
-    r.point(lambda x: int(x * .95)),
-    g.point(lambda x: int(x * .40)),
-    b.point(lambda x: int(x * .10)), a))
-LOGO_Y = 30
-canvas.paste(tinted, (PAD, LOGO_Y), mask=a)
+# ── Logo (PE brand logo — centered, fills header) ────────────────────────────
+logo_img = Image.open(os.path.join(BASE, 'logo_pe_cropped.png')).convert('RGB')
+lw, lh   = logo_img.size   # 858 × 606
+logo_h   = HDR_H - 110     # leave room for tagline below
+logo_w   = int(lw * logo_h / lh)
+logo_img = logo_img.resize((logo_w, logo_h), Image.LANCZOS)
+logo_x   = (W - logo_w) // 2
+canvas.paste(logo_img, (logo_x, 18))
 
-# ── Brand: PHONE (white) ElectriK (orange) ───────────────────────────────────
-logo_r     = PAD + LOGO_SZ + 28
-TEXT_MAX_W = W - logo_r - PAD
-fnt_brand, _ = fit_font('PHONE ElectriK', TEXT_MAX_W, 240)
-BRAND_Y = max(LOGO_Y + (LOGO_SZ - fnt_brand.size) // 2, 12)
-
-bb_p  = draw.textbbox((0, 0), 'PHONE', font=fnt_brand)
-bb_sp = draw.textbbox((0, 0), ' ',     font=fnt_brand)
-draw.text((logo_r, BRAND_Y), 'PHONE', font=fnt_brand, fill=WHITE)
-draw.text((logo_r + (bb_p[2]-bb_p[0]) + (bb_sp[2]-bb_sp[0]), BRAND_Y),
-          'ElectriK', font=fnt_brand, fill=ORANGE)
-
-# ── Tagline — WHITE, large, fully visible ────────────────────────────────────
-TAG_Y   = BRAND_Y + fnt_brand.size + 12
+# ── Tagline — WHITE, large, below the logo ───────────────────────────────────
+TAG_Y   = 18 + logo_h + 14
 tag_txt = 'Repair:  Cell Phones  ·  iPads  ·  MacBooks  ·  Laptops  ·  Computers  ·  Game Consoles'
 fnt_tag, bb_tag = fit_font(tag_txt, W - PAD * 2, 68)
 draw.text(((W - (bb_tag[2]-bb_tag[0])) // 2, TAG_Y), tag_txt, font=fnt_tag, fill=WHITE)
