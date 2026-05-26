@@ -9,12 +9,10 @@ BASE   = os.path.dirname(__file__)
 BG     = '#0D0D0D'
 ORANGE = '#F26522'
 WHITE  = '#FFFFFF'
-GREY   = '#AAAAAA'
 BLACK  = '#111111'
-BLUE   = '#4fc3e8'
 
 GAP    = 6
-SLOT_W = (W - GAP) // 2   # 1272 px each phone slot
+SLOT_W = (W - GAP) // 2
 PAD    = 60
 LOGO_SZ = 160
 
@@ -26,13 +24,12 @@ def natural_h(path):
     iw, ih = Image.open(path).size
     return int(ih * SLOT_W / iw)
 
-TARGET_H = min(natural_h(p1), natural_h(p2))   # 1534 px — same height both phones
+TARGET_H = min(natural_h(p1), natural_h(p2))
 
-# Fixed section heights (everything except footer which fills the rest)
-HDR_H    = 380
-PHONE_H  = TARGET_H          # exact — phones never overflow
-LABEL_H  = 80
-DEVICE_H = 210
+HDR_H    = 400
+PHONE_H  = TARGET_H
+LABEL_H  = 90
+DEVICE_H = 230
 WHITE_H  = 260
 ORANGE_H = 320
 FOOTER_H = H - HDR_H - PHONE_H - LABEL_H - DEVICE_H - WHITE_H - ORANGE_H
@@ -67,11 +64,6 @@ def fit_font(text, max_w, start_size, step=4):
     f = ImageFont.truetype(BOLD, size)
     return f, draw.textbbox((0, 0), text, font=f)
 
-def center_text(text, y, color, size):
-    fnt, bb = fit_font(text, W - PAD * 2, size)
-    draw.text(((W - (bb[2]-bb[0])) // 2, y), text, font=fnt, fill=color)
-    return bb[3] - bb[1]   # return actual rendered height
-
 # ── Logo ──────────────────────────────────────────────────────────────────────
 svg_bytes = cairosvg.svg2png(url=os.path.join(BASE, 'logo.svg'),
                               output_width=LOGO_SZ, output_height=LOGO_SZ)
@@ -84,7 +76,7 @@ tinted = Image.merge('RGBA', (
 LOGO_Y = 30
 canvas.paste(tinted, (PAD, LOGO_Y), mask=a)
 
-# ── Brand: PHONE (white) ElectriK (orange) — same font, same size ────────────
+# ── Brand: PHONE (white) ElectriK (orange) ───────────────────────────────────
 logo_r     = PAD + LOGO_SZ + 28
 TEXT_MAX_W = W - logo_r - PAD
 fnt_brand, _ = fit_font('PHONE ElectriK', TEXT_MAX_W, 240)
@@ -96,13 +88,13 @@ draw.text((logo_r, BRAND_Y), 'PHONE', font=fnt_brand, fill=WHITE)
 draw.text((logo_r + (bb_p[2]-bb_p[0]) + (bb_sp[2]-bb_sp[0]), BRAND_Y),
           'ElectriK', font=fnt_brand, fill=ORANGE)
 
-# ── Tagline ───────────────────────────────────────────────────────────────────
-TAG_Y   = BRAND_Y + fnt_brand.size + 10
+# ── Tagline — WHITE, large, fully visible ────────────────────────────────────
+TAG_Y   = BRAND_Y + fnt_brand.size + 12
 tag_txt = 'Repair:  Cell Phones  ·  iPads  ·  MacBooks  ·  Laptops  ·  Computers  ·  Game Consoles'
-fnt_tag, bb_tag = fit_font(tag_txt, W - PAD * 2, 60)
-draw.text(((W - (bb_tag[2]-bb_tag[0])) // 2, TAG_Y), tag_txt, font=fnt_tag, fill=GREY)
+fnt_tag, bb_tag = fit_font(tag_txt, W - PAD * 2, 68)
+draw.text(((W - (bb_tag[2]-bb_tag[0])) // 2, TAG_Y), tag_txt, font=fnt_tag, fill=WHITE)
 
-# ── Phone images — exact height, no overflow ──────────────────────────────────
+# ── Phone images ──────────────────────────────────────────────────────────────
 def round_corners(img, radius=70):
     img = img.convert('RGBA')
     mask = Image.new('L', img.size, 0)
@@ -125,45 +117,43 @@ def paste_phone(path, slot_x):
 paste_phone(p1, 0)
 paste_phone(p2, SLOT_W + GAP)
 
-# ── Phone labels ──────────────────────────────────────────────────────────────
-fnt_lbl = ImageFont.truetype(BOLD, 58)
+# ── Phone labels — both WHITE for maximum visibility ─────────────────────────
+fnt_lbl = ImageFont.truetype(BOLD, 62)
 lbl1, lbl2 = 'iPhone 17 Pro Max', 'Samsung Galaxy S26'
 bb1 = draw.textbbox((0, 0), lbl1, font=fnt_lbl)
 bb2 = draw.textbbox((0, 0), lbl2, font=fnt_lbl)
 LBL_Y = LABEL_Y + (LABEL_H - (bb1[3]-bb1[1])) // 2
 draw.text((SLOT_W//2 - (bb1[2]-bb1[0])//2, LBL_Y), lbl1, font=fnt_lbl, fill=ORANGE)
-draw.text((SLOT_W+GAP + SLOT_W//2 - (bb2[2]-bb2[0])//2, LBL_Y), lbl2, font=fnt_lbl, fill=BLUE)
+draw.text((SLOT_W+GAP + SLOT_W//2 - (bb2[2]-bb2[0])//2, LBL_Y), lbl2, font=fnt_lbl, fill=WHITE)
 
-# ── Device strip (2 lines) ────────────────────────────────────────────────────
+# ── Device strip — all lines WHITE or ORANGE, nothing grey ───────────────────
 draw.rectangle([0, DEVICE_Y, W, DEVICE_Y+DEVICE_H], fill='#1a1a1a')
 
 dev_line1 = 'We Repair Any Device — Any Brand, Any Model'
 dev_line2 = 'Apple  ·  Samsung  ·  Motorola  ·  LG  ·  OnePlus  ·  Google Pixel  ·  & Many More Makes & Models'
-
-fnt_d1, bb_d1 = fit_font(dev_line1, W-100, 62)
-fnt_d2, bb_d2 = fit_font(dev_line2, W-100, 54)
-
-total_dev_h = (bb_d1[3]-bb_d1[1]) + 16 + (bb_d2[3]-bb_d2[1])
-dy = DEVICE_Y + (DEVICE_H - total_dev_h) // 2
-
 dev_line3 = "Don't see your device? Bring it in — We are more than happy to help you!"
-fnt_d3, bb_d3 = fit_font(dev_line3, W-100, 50)
 
-total_dev_h = (bb_d1[3]-bb_d1[1]) + 14 + (bb_d2[3]-bb_d2[1]) + 14 + (bb_d3[3]-bb_d3[1])
+fnt_d1, bb_d1 = fit_font(dev_line1, W-100, 66)
+fnt_d2, bb_d2 = fit_font(dev_line2, W-100, 56)
+fnt_d3, bb_d3 = fit_font(dev_line3, W-100, 54)
+
+total_dev_h = ((bb_d1[3]-bb_d1[1]) + 16 +
+               (bb_d2[3]-bb_d2[1]) + 16 +
+               (bb_d3[3]-bb_d3[1]))
 dy = DEVICE_Y + (DEVICE_H - total_dev_h) // 2
 
 draw.text(((W-(bb_d1[2]-bb_d1[0]))//2, dy), dev_line1, font=fnt_d1, fill=ORANGE)
-dy += (bb_d1[3]-bb_d1[1]) + 14
+dy += (bb_d1[3]-bb_d1[1]) + 16
 draw.text(((W-(bb_d2[2]-bb_d2[0]))//2, dy), dev_line2, font=fnt_d2, fill=WHITE)
-dy += (bb_d2[3]-bb_d2[1]) + 14
-draw.text(((W-(bb_d3[2]-bb_d3[0]))//2, dy), dev_line3, font=fnt_d3, fill=GREY)
+dy += (bb_d2[3]-bb_d2[1]) + 16
+draw.text(((W-(bb_d3[2]-bb_d3[0]))//2, dy), dev_line3, font=fnt_d3, fill=WHITE)
 
 # ── White band: BUY · SELL · REPAIR ──────────────────────────────────────────
 draw.rectangle([0, WHITE_Y, W, WHITE_Y+WHITE_H], fill=WHITE)
 draw.rectangle([0, WHITE_Y, W, WHITE_Y+8], fill=BLACK)
 draw.rectangle([0, WHITE_Y+WHITE_H-8, W, WHITE_Y+WHITE_H], fill=BLACK)
 
-bsr_parts = [('BUY',BLACK),('  ·  ','#888'),('SELL',BLACK),('  ·  ','#888'),('REPAIR',ORANGE)]
+bsr_parts = [('BUY',BLACK),('  ·  ','#555'),('SELL',BLACK),('  ·  ','#555'),('REPAIR',ORANGE)]
 bsr_sz = 190
 while bsr_sz > 60:
     fb = ImageFont.truetype(BOLD, bsr_sz)
@@ -184,33 +174,31 @@ fnt_num, _ = fit_font('(323) 348-6756', W-80, 260)
 draw.text((W//2, ORANGE_Y+ORANGE_H//2), '(323) 348-6756',
           font=fnt_num, fill=WHITE, anchor='mm')
 
-# ── Footer — large, bright, readable from far away ───────────────────────────
-draw.rectangle([0, FOOTER_Y, W, H], fill='#141414')
-draw.rectangle([0, FOOTER_Y, W, FOOTER_Y+8], fill=ORANGE)
+# ── Footer — large, bright, all WHITE/ORANGE ─────────────────────────────────
+draw.rectangle([0, FOOTER_Y, W, H], fill='#161616')
+draw.rectangle([0, FOOTER_Y, W, FOOTER_Y+10], fill=ORANGE)
 
-lines = [
-    ('WALK-IN  ·  NO APPOINTMENT NEEDED',               ORANGE),
-    ('MON–SAT  9AM–8PM   ·   SUN  10AM–6PM',            WHITE),
-    ('3025 Artesia Blvd STE 101  ·  Torrance, CA 90504', WHITE),
+footer_lines = [
+    ('WALK-IN  ·  NO APPOINTMENT NEEDED',                  ORANGE),
+    ('MON–SAT  9AM–8PM   ·   SUN  10AM–6PM',               WHITE),
+    ('3025 Artesia Blvd STE 101  ·  Torrance, CA 90504',   WHITE),
 ]
 
-# Size all three lines to the same large font so they look uniform
-fnt_footer, _ = fit_font(max(lines, key=lambda l: len(l[0]))[0], W-PAD*2, 110)
+# Size every footer line to fill the full width at the same size
+fnt_footer, _ = fit_font(
+    max(footer_lines, key=lambda l: len(l[0]))[0], W - PAD*2, 120)
 
 line_h   = fnt_footer.size
-line_gap = 34
-total_h  = line_h * len(lines) + line_gap * (len(lines)-1)
-y = FOOTER_Y + 8 + (FOOTER_H - 8 - total_h) // 2
+line_gap = 40
+total_h  = line_h * len(footer_lines) + line_gap * (len(footer_lines)-1)
+y = FOOTER_Y + 10 + (FOOTER_H - 10 - total_h) // 2
 
-for text, color in lines:
+for text, color in footer_lines:
     bb = draw.textbbox((0,0), text, font=fnt_footer)
     draw.text(((W-(bb[2]-bb[0]))//2, y), text, font=fnt_footer, fill=color)
     y += line_h + line_gap
 
-# ── Save PNG + PDF ────────────────────────────────────────────────────────────
-png_out = os.path.join(BASE, 'poster.png')
-pdf_out = os.path.join(BASE, 'poster.pdf')
-canvas.save(png_out, dpi=(300, 300))
-canvas.save(pdf_out, 'PDF', resolution=300)
-print('Saved:', png_out)
-print('Saved:', pdf_out)
+# ── Save ─────────────────────────────────────────────────────────────────────
+canvas.save(os.path.join(BASE, 'poster.png'), dpi=(300, 300))
+canvas.save(os.path.join(BASE, 'poster.pdf'), 'PDF', resolution=300)
+print('Saved poster.png + poster.pdf')
