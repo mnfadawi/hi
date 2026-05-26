@@ -102,32 +102,25 @@ def h_at_slot_width(path):
 # Use the smaller of the two heights so neither gets cropped
 TARGET_H = min(h_at_slot_width(p1), h_at_slot_width(p2))
 
-def remove_white_bg(img, threshold=32):
-    """Flood-fill from all four corners to erase near-white background."""
+def round_corners(img, radius):
+    """Clip image corners to a rounded rectangle — phone stays fully visible."""
     img = img.convert('RGBA')
-    mask = Image.new('L', img.size, 255)   # 255=keep, 0=erase
-    for xy in [(0,0),(img.width-1,0),(0,img.height-1),(img.width-1,img.height-1)]:
-        ImageDraw.floodfill(mask, xy, 0, thresh=threshold)
+    mask = Image.new('L', img.size, 0)
+    ImageDraw.Draw(mask).rounded_rectangle(
+        [0, 0, img.width - 1, img.height - 1], radius=radius, fill=255)
     img.putalpha(mask)
     return img
 
 def paste_phone_same_size(path, slot_x):
     img = Image.open(path)
-    # Remove white background if corners are near-white
-    px = img.convert('RGB').load()
-    corner = px[0, 0]
-    if all(c > 200 for c in corner):
-        img = remove_white_bg(img)
     iw, ih = img.size
     scale = TARGET_H / ih           # same height for both, no cropping
     nw, nh = int(iw * scale), int(ih * scale)
     img = img.resize((nw, nh), Image.LANCZOS)
-    x = slot_x + (SLOT_W - nw) // 2   # center horizontally in slot
-    y = PHONE_Y + (PHONE_H - nh)       # bottom-align
-    if img.mode == 'RGBA':
-        canvas.paste(img, (x, y), mask=img.split()[3])
-    else:
-        canvas.paste(img, (x, y))
+    img = round_corners(img, radius=70)   # smooth corners, phone untouched
+    x = slot_x + (SLOT_W - nw) // 2
+    y = PHONE_Y + (PHONE_H - nh)
+    canvas.paste(img, (x, y), mask=img.split()[3])
 
 paste_phone_same_size(p1, 0)
 paste_phone_same_size(p2, SLOT_W + GAP)
