@@ -32,7 +32,7 @@ TARGET_H = min(natural_h(p1), natural_h(p2))   # 1534 px — same height both ph
 HDR_H    = 380
 PHONE_H  = TARGET_H          # exact — phones never overflow
 LABEL_H  = 80
-DEVICE_H = 170
+DEVICE_H = 210
 WHITE_H  = 260
 ORANGE_H = 320
 FOOTER_H = H - HDR_H - PHONE_H - LABEL_H - DEVICE_H - WHITE_H - ORANGE_H
@@ -146,8 +146,17 @@ fnt_d2, bb_d2 = fit_font(dev_line2, W-100, 54)
 total_dev_h = (bb_d1[3]-bb_d1[1]) + 16 + (bb_d2[3]-bb_d2[1])
 dy = DEVICE_Y + (DEVICE_H - total_dev_h) // 2
 
-draw.text(((W-(bb_d1[2]-bb_d1[0]))//2, dy),        dev_line1, font=fnt_d1, fill=ORANGE)
-draw.text(((W-(bb_d2[2]-bb_d2[0]))//2, dy + (bb_d1[3]-bb_d1[1]) + 16), dev_line2, font=fnt_d2, fill=WHITE)
+dev_line3 = "Don't see your device? Bring it in — We are more than happy to help you!"
+fnt_d3, bb_d3 = fit_font(dev_line3, W-100, 50)
+
+total_dev_h = (bb_d1[3]-bb_d1[1]) + 14 + (bb_d2[3]-bb_d2[1]) + 14 + (bb_d3[3]-bb_d3[1])
+dy = DEVICE_Y + (DEVICE_H - total_dev_h) // 2
+
+draw.text(((W-(bb_d1[2]-bb_d1[0]))//2, dy), dev_line1, font=fnt_d1, fill=ORANGE)
+dy += (bb_d1[3]-bb_d1[1]) + 14
+draw.text(((W-(bb_d2[2]-bb_d2[0]))//2, dy), dev_line2, font=fnt_d2, fill=WHITE)
+dy += (bb_d2[3]-bb_d2[1]) + 14
+draw.text(((W-(bb_d3[2]-bb_d3[0]))//2, dy), dev_line3, font=fnt_d3, fill=GREY)
 
 # ── White band: BUY · SELL · REPAIR ──────────────────────────────────────────
 draw.rectangle([0, WHITE_Y, W, WHITE_Y+WHITE_H], fill=WHITE)
