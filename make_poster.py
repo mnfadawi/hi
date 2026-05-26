@@ -1,6 +1,6 @@
 """Run: python3 make_poster.py  →  generates poster.png  (8.5×11 in @ 300 DPI)"""
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
-import cairosvg, io, os
+import img2pdf, os
 
 W, H   = 2550, 3300
 BOLD   = '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf'
@@ -197,6 +197,12 @@ for (text, color), bb, lh in zip(footer_lines, footer_bbs, line_hs):
     y += lh + line_gap
 
 # ── Save ─────────────────────────────────────────────────────────────────────
-canvas.save(os.path.join(BASE, 'poster.png'), dpi=(300, 300))
-canvas.save(os.path.join(BASE, 'poster.pdf'), 'PDF', resolution=300)
+png_out = os.path.join(BASE, 'poster.png')
+pdf_out = os.path.join(BASE, 'poster.pdf')
+canvas.save(png_out, dpi=(300, 300))
+
+# Use img2pdf so the image fills the full 8.5×11 page exactly — no printer-added margins
+letter = (img2pdf.in_to_pt(8.5), img2pdf.in_to_pt(11))
+with open(pdf_out, 'wb') as f:
+    f.write(img2pdf.convert(png_out, layout_fun=img2pdf.get_layout_fun(letter)))
 print('Saved poster.png + poster.pdf')
