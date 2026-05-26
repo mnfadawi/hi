@@ -102,15 +102,32 @@ def h_at_slot_width(path):
 # Use the smaller of the two heights so neither gets cropped
 TARGET_H = min(h_at_slot_width(p1), h_at_slot_width(p2))
 
+def remove_white_bg(img, threshold=32):
+    """Flood-fill from all four corners to erase near-white background."""
+    img = img.convert('RGBA')
+    mask = Image.new('L', img.size, 255)   # 255=keep, 0=erase
+    for xy in [(0,0),(img.width-1,0),(0,img.height-1),(img.width-1,img.height-1)]:
+        ImageDraw.floodfill(mask, xy, 0, thresh=threshold)
+    img.putalpha(mask)
+    return img
+
 def paste_phone_same_size(path, slot_x):
     img = Image.open(path)
+    # Remove white background if corners are near-white
+    px = img.convert('RGB').load()
+    corner = px[0, 0]
+    if all(c > 200 for c in corner):
+        img = remove_white_bg(img)
     iw, ih = img.size
     scale = TARGET_H / ih           # same height for both, no cropping
     nw, nh = int(iw * scale), int(ih * scale)
     img = img.resize((nw, nh), Image.LANCZOS)
     x = slot_x + (SLOT_W - nw) // 2   # center horizontally in slot
     y = PHONE_Y + (PHONE_H - nh)       # bottom-align
-    canvas.paste(img, (x, y))
+    if img.mode == 'RGBA':
+        canvas.paste(img, (x, y), mask=img.split()[3])
+    else:
+        canvas.paste(img, (x, y))
 
 paste_phone_same_size(p1, 0)
 paste_phone_same_size(p2, SLOT_W + GAP)
@@ -156,11 +173,10 @@ for txt, clr in bsr_parts:
 
 # ── Orange band: phone number ─────────────────────────────────────────────────
 draw.rectangle([0, ORANGE_Y, W, ORANGE_Y + ORANGE_H], fill=ORANGE)
-fnt_num, bb_num = fit_font('(323)  348-6756', W - 80, 270)
+fnt_num, _ = fit_font('(323) 348-6756', W - 80, 270)
 draw.text(
-    ((W - (bb_num[2] - bb_num[0])) // 2,
-     ORANGE_Y + (ORANGE_H - (bb_num[3] - bb_num[1])) // 2),
-    '(323)  348-6756', font=fnt_num, fill=WHITE)
+    (W // 2, ORANGE_Y + ORANGE_H // 2),
+    '(323) 348-6756', font=fnt_num, fill=WHITE, anchor='mm')
 
 # ── Footer ────────────────────────────────────────────────────────────────────
 draw.rectangle([0, FOOTER_Y, W, H], fill=BG)
