@@ -97,7 +97,7 @@ draw.text((logo_r + (bb_p[2]-bb_p[0]) + (bb_sp[2]-bb_sp[0]), content_cy), 'ELECT
 
 # Tagline
 TAG_Y   = CONTENT_BOT + (TAG_RESERVE - 80) // 2
-tag_txt = 'Cell Phones  ·  iPads  ·  MacBooks  ·  Laptops  ·  Computers  ·  Game Consoles'
+tag_txt = 'Cell Phones  ·  iPads  ·  MacBooks  ·  Laptops  ·  Computers  ·  Game Consoles  ·  Apple Watches'
 fnt_tag, bb_tag = fit_font(tag_txt, W - PAD * 2, 80)
 draw.text(((W - (bb_tag[2]-bb_tag[0])) // 2, TAG_Y), tag_txt, font=fnt_tag, fill=ORANGE)
 
