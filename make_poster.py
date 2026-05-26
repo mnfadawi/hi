@@ -68,14 +68,14 @@ def fit_font(text, max_w, start_size, step=4):
 # ── Header: logo top-left + PHONE ElectriK large to the right ────────────────
 logo_img = Image.open(os.path.join(BASE, 'logo_pe_cropped.png')).convert('RGB')
 lw, lh   = logo_img.size
-LOGO_H   = 180
+LOGO_H   = 240
 LOGO_W   = int(lw * LOGO_H / lh)
 logo_img = logo_img.resize((LOGO_W, LOGO_H), Image.LANCZOS)
 TAG_RESERVE = 96
 LOGO_Y   = 18 + (HDR_H - TAG_RESERVE - LOGO_H) // 2
 canvas.paste(logo_img, (PAD, LOGO_Y))
 
-logo_r     = PAD + LOGO_W + 32
+logo_r     = PAD + LOGO_W + 80
 TEXT_MAX_W = W - logo_r - PAD
 fnt_brand, _ = fit_font('PHONE ElectriK', TEXT_MAX_W, 260)
 BRAND_Y = LOGO_Y + (LOGO_H - fnt_brand.size) // 2
@@ -154,7 +154,7 @@ draw.rectangle([0, WHITE_Y, W, WHITE_Y+WHITE_H], fill=WHITE)
 draw.rectangle([0, WHITE_Y,   W, WHITE_Y+10],        fill=BLACK)
 draw.rectangle([0, WHITE_Y+WHITE_H-10, W, WHITE_Y+WHITE_H], fill=BLACK)
 
-bsr_parts = [('BUY', BLACK), ('  ·  ', '#333'), ('SELL', BLACK), ('  ·  ', '#333'), ('REPAIR', ORANGE)]
+bsr_parts = [('REPAIR', ORANGE), ('  ·  ', '#333'), ('SELL', BLACK), ('  ·  ', '#333'), ('BUY', BLACK)]
 bsr_sz = 210
 while bsr_sz > 60:
     fb  = ImageFont.truetype(BOLD, bsr_sz)
