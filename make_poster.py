@@ -63,9 +63,9 @@ def fit_font(text, max_w, start_size, step=4):
     return f, draw.textbbox((0, 0), text, font=f)
 
 # ── Orange banner at the very top: CELL PHONE REPAIR ─────────────────────────
-BANNER_H = 150
+BANNER_H = 210
 draw.rectangle([0, 0, W, BANNER_H], fill=ORANGE)
-fnt_banner, _ = fit_font('CELL PHONE REPAIR', W - PAD * 2, 130)
+fnt_banner, _ = fit_font('CELL PHONE REPAIR', W - PAD * 2, 190)
 draw.text((W // 2, BANNER_H // 2), 'CELL PHONE REPAIR',
           font=fnt_banner, fill=WHITE, anchor='mm')
 
