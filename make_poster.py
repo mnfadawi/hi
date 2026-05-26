@@ -88,17 +88,12 @@ canvas.paste(logo_img, (PAD, logo_y))
 logo_r     = PAD + LOGO_W + 80
 TEXT_MAX_W = W - logo_r - PAD
 
-# "PHONE ELECTRIK" — centered vertically with the logo
+# "PHONE ELECTRIK" — same vertical centerline as the logo (anchor='lm' = left, middle)
 fnt_brand, _ = fit_font('PHONE ELECTRIK', TEXT_MAX_W, 240)
-bb_b    = draw.textbbox((0, 0), 'PHONE ELECTRIK', font=fnt_brand)
-brand_h = bb_b[3] - bb_b[1]
-BRAND_Y = content_cy - brand_h // 2
-
 bb_p  = draw.textbbox((0, 0), 'PHONE', font=fnt_brand)
 bb_sp = draw.textbbox((0, 0), ' ',     font=fnt_brand)
-draw.text((logo_r, BRAND_Y), 'PHONE', font=fnt_brand, fill=WHITE)
-draw.text((logo_r + (bb_p[2]-bb_p[0]) + (bb_sp[2]-bb_sp[0]), BRAND_Y),
-          'ELECTRIK', font=fnt_brand, fill=ORANGE)
+draw.text((logo_r,                                              content_cy), 'PHONE',    font=fnt_brand, fill=WHITE,  anchor='lm')
+draw.text((logo_r + (bb_p[2]-bb_p[0]) + (bb_sp[2]-bb_sp[0]), content_cy), 'ELECTRIK', font=fnt_brand, fill=ORANGE, anchor='lm')
 
 # Tagline
 TAG_Y   = CONTENT_BOT + (TAG_RESERVE - 80) // 2
