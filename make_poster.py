@@ -14,12 +14,12 @@ BLUE   = '#4fc3e8'
 
 # Section heights — must sum to H=3300
 HDR_H    = 460
-PHONE_H  = 1640   # tall enough to show full iPhone at slot width (1630px)
+PHONE_H  = 1540
 LABEL_H  = 100
 DEVICE_H = 100
 WHITE_H  = 330
-ORANGE_H = 380
-FOOTER_H = 290  # 460+1640+100+100+330+380+290 = 3300
+ORANGE_H = 430
+FOOTER_H = 340  # 460+1540+100+100+330+430+340 = 3300
 
 HDR_Y    = 0
 PHONE_Y  = HDR_H
@@ -89,17 +89,31 @@ fnt_tag, bb_tag = fit_font(tag_txt, W - PAD * 2, 60)
 draw.text(((W - (bb_tag[2] - bb_tag[0])) // 2, TAG_Y), tag_txt, font=fnt_tag, fill=GREY)
 
 # ── Phone images (cover-fill, edge-to-edge) ───────────────────────────────────
-def paste_phone_cover(path, slot_x):
+base = os.path.dirname(__file__)
+p1 = os.path.join(base, 'IMG_0096.jpeg')
+p2 = os.path.join(base, 'IMG_0097.jpeg')
+
+# Compute the height each phone would be if scaled to fill slot width
+def h_at_slot_width(path):
+    from PIL import Image as _I
+    iw, ih = _I.open(path).size
+    return int(ih * SLOT_W / iw)
+
+# Use the smaller of the two heights so neither gets cropped
+TARGET_H = min(h_at_slot_width(p1), h_at_slot_width(p2))
+
+def paste_phone_same_size(path, slot_x):
     img = Image.open(path)
     iw, ih = img.size
-    scale = SLOT_W / iw          # fill slot width exactly, never crop
+    scale = TARGET_H / ih           # same height for both, no cropping
     nw, nh = int(iw * scale), int(ih * scale)
     img = img.resize((nw, nh), Image.LANCZOS)
-    canvas.paste(img, (slot_x, PHONE_Y + (PHONE_H - nh)))
+    x = slot_x + (SLOT_W - nw) // 2   # center horizontally in slot
+    y = PHONE_Y + (PHONE_H - nh)       # bottom-align
+    canvas.paste(img, (x, y))
 
-base = os.path.dirname(__file__)
-paste_phone_cover(os.path.join(base, 'IMG_0096.jpeg'), 0)
-paste_phone_cover(os.path.join(base, 'IMG_0097.jpeg'), SLOT_W + GAP)
+paste_phone_same_size(p1, 0)
+paste_phone_same_size(p2, SLOT_W + GAP)
 
 # ── Phone labels ──────────────────────────────────────────────────────────────
 fnt_lbl = ImageFont.truetype(BOLD, 56)
