@@ -14,13 +14,13 @@ BLACK  = '#111111'
 BLUE   = '#4fc3e8'
 
 # Section heights — must sum to H=3300
-HDR_H    = 460
-PHONE_H  = 1540
-LABEL_H  = 100
-DEVICE_H = 100
-WHITE_H  = 330
+HDR_H    = 420
+PHONE_H  = 1400
+LABEL_H  = 80
+DEVICE_H = 80
+WHITE_H  = 300
 ORANGE_H = 360
-FOOTER_H = 410  # 460+1540+100+100+330+360+410 = 3300
+FOOTER_H = 660  # 420+1400+80+80+300+360+660 = 3300
 
 PHONE_Y  = HDR_H
 LABEL_Y  = PHONE_Y  + PHONE_H
@@ -166,17 +166,19 @@ draw.text((W // 2, ORANGE_Y + ORANGE_H // 2),
           '(323) 348-6756', font=fnt_num, fill=WHITE, anchor='mm')
 
 # ── Footer ────────────────────────────────────────────────────────────────────
-draw.rectangle([0, FOOTER_Y, W, H], fill=BG)
+draw.rectangle([0, FOOTER_Y, W, H], fill='#141414')
+# Bright orange top border so footer stands out
+draw.rectangle([0, FOOTER_Y, W, FOOTER_Y + 10], fill=ORANGE)
 
 footer_lines = [
-    ('WALK-IN  ·  NO APPOINTMENT NEEDED',               ORANGE, 68),
-    ('MON–SAT  9AM–8PM   ·   SUN  10AM–6PM',            WHITE,  68),
-    ('3025 Artesia Blvd STE 101   ·   Torrance, CA 90504', GREY, 52),
+    ('WALK-IN  ·  NO APPOINTMENT NEEDED',                  ORANGE, 100),
+    ('MON–SAT  9AM–8PM   ·   SUN  10AM–6PM',               WHITE,  100),
+    ('3025 Artesia Blvd STE 101  ·  Torrance, CA 90504',   WHITE,   76),
 ]
 
-line_gap = 28
+line_gap = 36
 total_h = sum(sz for _, _, sz in footer_lines) + line_gap * (len(footer_lines) - 1)
-y = FOOTER_Y + (FOOTER_H - total_h) // 2
+y = FOOTER_Y + 10 + (FOOTER_H - 10 - total_h) // 2
 
 for text, color, size in footer_lines:
     fnt, bb = fit_font(text, W - PAD * 2, size)
