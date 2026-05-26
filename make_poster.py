@@ -2,7 +2,7 @@
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import cairosvg, io, os
 
-W, H = 2160, 2880
+W, H = 2550, 3300   # US Letter 8.5×11 in at 300 DPI
 BOLD = '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf'
 
 BG     = '#0D0D0D'
@@ -12,14 +12,14 @@ GREY   = '#999999'
 BLACK  = '#111111'
 BLUE   = '#4fc3e8'
 
-# Section heights — must sum to H=2880
-HDR_H    = 400
-PHONE_H  = 1350
-LABEL_H  = 90
-DEVICE_H = 90
-WHITE_H  = 300
-ORANGE_H = 360
-FOOTER_H = 290  # 400+1350+90+90+300+360+290 = 2880
+# Section heights — must sum to H=3300
+HDR_H    = 460
+PHONE_H  = 1580
+LABEL_H  = 100
+DEVICE_H = 100
+WHITE_H  = 340
+ORANGE_H = 410
+FOOTER_H = 310  # 460+1580+100+100+340+410+310 = 3300
 
 HDR_Y    = 0
 PHONE_Y  = HDR_H
@@ -174,5 +174,5 @@ draw.text(((W - (bb[2] - bb[0])) // 2, FOOTER_Y + 178), adr_txt, font=fnt_adr, f
 
 # ── Save ──────────────────────────────────────────────────────────────────────
 out = os.path.join(os.path.dirname(__file__), 'poster.png')
-canvas.save(out)
+canvas.save(out, dpi=(300, 300))
 print('Saved:', out)
