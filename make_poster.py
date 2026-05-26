@@ -190,7 +190,10 @@ for text, color in lines:
     draw.text(((W-(bb[2]-bb[0]))//2, y), text, font=fnt_footer, fill=color)
     y += line_h + line_gap
 
-# ── Save ──────────────────────────────────────────────────────────────────────
-out = os.path.join(BASE, 'poster.png')
-canvas.save(out, dpi=(300,300))
-print('Saved:', out)
+# ── Save PNG + PDF ────────────────────────────────────────────────────────────
+png_out = os.path.join(BASE, 'poster.png')
+pdf_out = os.path.join(BASE, 'poster.pdf')
+canvas.save(png_out, dpi=(300, 300))
+canvas.save(pdf_out, 'PDF', resolution=300)
+print('Saved:', png_out)
+print('Saved:', pdf_out)
