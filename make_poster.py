@@ -157,17 +157,17 @@ draw.rectangle([0, WHITE_Y+WHITE_H-10, W, WHITE_Y+WHITE_H], fill=BLACK)
 bsr_parts = [('REPAIR', ORANGE), ('  ·  ', '#333'), ('SELL', BLACK), ('  ·  ', '#333'), ('BUY', BLACK)]
 bsr_sz = 210
 while bsr_sz > 60:
-    fb  = ImageFont.truetype(BOLD, bsr_sz)
-    tw  = sum(draw.textbbox((0,0),t,font=fb)[2]-draw.textbbox((0,0),t,font=fb)[0] for t,_ in bsr_parts)
+    fb = ImageFont.truetype(BOLD, bsr_sz)
+    tw = sum(draw.textbbox((0,0),t,font=fb)[2]-draw.textbbox((0,0),t,font=fb)[0] for t,_ in bsr_parts)
     if tw <= W - 80: break
     bsr_sz -= 4
-bsr_h = draw.textbbox((0,0),'BUY',font=fb)[3] - draw.textbbox((0,0),'BUY',font=fb)[1]
-tw    = sum(draw.textbbox((0,0),t,font=fb)[2]-draw.textbbox((0,0),t,font=fb)[0] for t,_ in bsr_parts)
-x, y  = (W-tw)//2, WHITE_Y + (WHITE_H-bsr_h)//2
+tw = sum(draw.textbbox((0,0),t,font=fb)[2]-draw.textbbox((0,0),t,font=fb)[0] for t,_ in bsr_parts)
+x  = (W - tw) // 2                  # horizontally centered
+cy = WHITE_Y + WHITE_H // 2         # vertical center of band
 for txt, clr in bsr_parts:
     bb = draw.textbbox((0,0), txt, font=fb)
-    draw.text((x, y), txt, font=fb, fill=clr)
-    x += bb[2]-bb[0]
+    draw.text((x, cy), txt, font=fb, fill=clr, anchor='lm')
+    x += bb[2] - bb[0]
 
 # ── Orange band: phone number ─────────────────────────────────────────────────
 draw.rectangle([0, ORANGE_Y, W, ORANGE_Y+ORANGE_H], fill=ORANGE)
