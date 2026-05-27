@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Eid al-Adha 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #000; }
+
+.flyer {
+  width: 540px;
+  height: 960px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* ══════════════════════════════════════
+   Kaaba — full-bleed background
+   ══════════════════════════════════════ */
+.hero {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.hero img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* ══════════════════════════════════════
+   Gradient overlay — darkens top & bottom
+   so text is always readable; lets the
+   Kaaba shine in the middle
+   ══════════════════════════════════════ */
+.overlay {
+  position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.72)  0%,
+    rgba(0,0,0,0.38) 18%,
+    rgba(0,0,0,0.10) 38%,
+    rgba(0,0,0,0.10) 58%,
+    rgba(0,0,0,0.42) 74%,
+    rgba(0,0,0,0.70) 100%
+  );
+}
+
+/* ══════════════════════════════════════
+   TEXT LAYERS (z-index 10)
+   ══════════════════════════════════════ */
+
+/* ── TOP greeting ── */
+.top-block {
+  position: absolute;
+  top: 40px; left: 0; right: 0;
+  text-align: center;
+  padding: 0 20px;
+  z-index: 10;
+}
+
+.ornament {
+  display: block;
+  color: #d4a726;
+  font-size: 20px;
+  letter-spacing: 14px;
+  margin-bottom: 12px;
+  text-shadow: 0 0 28px rgba(212,167,38,0.90);
+}
+
+.eid-en {
+  font-family: 'Great Vibes', cursive;
+  font-size: 108px;
+  color: #ffffff;
+  line-height: 0.92;
+  display: block;
+  text-shadow:
+    0 0 120px rgba(212,167,38,0.72),
+    0 3px 30px rgba(0,0,0,1);
+}
+
+.eid-ar {
+  font-family: 'Amiri', serif;
+  font-size: 72px;
+  color: #f5c518;
+  direction: rtl;
+  line-height: 1.18;
+  margin-top: 2px;
+  display: block;
+  text-shadow:
+    0 0 60px rgba(212,167,38,0.55),
+    0 3px 26px rgba(0,0,0,1);
+}
+
+.eid-sub-ar {
+  font-family: 'Amiri', serif;
+  font-size: 32px;
+  color: #fffbf0;
+  direction: rtl;
+  display: block;
+  margin-top: 6px;
+  text-shadow: 0 2px 18px rgba(0,0,0,1);
+}
+
+.eid-sub-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: rgba(255,255,255,0.95);
+  display: block;
+  margin-top: 5px;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 16px rgba(0,0,0,1);
+}
+
+.divider-row {
+  display: flex; align-items: center;
+  gap: 10px; margin: 13px 34px;
+}
+.dv-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(to right, transparent, rgba(212,167,38,0.80));
+}
+.dv-line-r {
+  flex: 1; height: 1px;
+  background: linear-gradient(to left, transparent, rgba(212,167,38,0.80));
+}
+.dv-gem {
+  width: 7px; height: 7px;
+  background: #d4a726; transform: rotate(45deg); flex-shrink: 0;
+}
+
+.occ-ar {
+  font-family: 'Amiri', serif;
+  font-size: 24px;
+  color: #a8e6a8;
+  direction: rtl;
+  display: block;
+  text-shadow: 0 1px 14px rgba(0,0,0,1);
+}
+.occ-en {
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #a8e6a8;
+  display: block;
+  margin-top: 4px;
+  text-shadow: 0 1px 14px rgba(0,0,0,1);
+}
+
+/* ── DUA CARD: lower half over the Kaaba ── */
+.dua-card {
+  position: absolute;
+  top: 610px; left: 28px; right: 28px;
+  z-index: 10;
+  background: rgba(0,0,0,0.60);
+  border: 1px solid rgba(212,167,38,0.55);
+  border-radius: 14px;
+  padding: 22px 28px 20px;
+  text-align: center;
+}
+
+.dua-ar {
+  font-family: 'Amiri', serif;
+  font-size: 32px;
+  color: #f5c518;
+  direction: rtl;
+  line-height: 1.55;
+  display: block;
+  margin-bottom: 6px;
+}
+.dua-en {
+  font-style: italic;
+  font-size: 16px;
+  color: #ffffff;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.inner-sep {
+  width: 130px; height: 1px;
+  background: linear-gradient(to right, transparent, rgba(212,167,38,0.65), transparent);
+  margin: 0 auto 14px;
+}
+
+.blessing-ar {
+  font-family: 'Amiri', serif;
+  font-size: 28px;
+  color: #fffbf0;
+  direction: rtl;
+  display: block;
+  margin-bottom: 6px;
+}
+.blessing-en {
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(255,255,255,0.95);
+  display: block;
+}
+
+/* ── BOTTOM ornament ── */
+.bot-ornament {
+  position: absolute;
+  bottom: 22px; left: 0; right: 0;
+  text-align: center; z-index: 10;
+  color: #d4a726;
+  font-size: 20px;
+  letter-spacing: 14px;
+  text-shadow: 0 0 24px rgba(212,167,38,0.75);
+}
+</style>
+</head>
+<body>
+<div class="flyer">
+
+  <!-- ═══ KAABA — full background ═══ -->
+  <div class="hero">
+    <img src="IMG_0171.jpeg" alt="Kaaba">
+  </div>
+
+  <div class="overlay"></div>
+
+  <!-- ═══ GREETING ═══ -->
+  <div class="top-block">
+    <span class="ornament">☽ &nbsp;✦&nbsp; ☾</span>
+    <span class="eid-en">Eid Mubarak</span>
+    <span class="eid-ar">عيد مبارك</span>
+    <span class="eid-sub-ar">عيدكم سعيد &nbsp;·&nbsp; عيد كريم</span>
+    <span class="eid-sub-en">Happy Eid &nbsp;·&nbsp; Blessed Eid</span>
+    <div class="divider-row">
+      <div class="dv-line"></div>
+      <div class="dv-gem"></div>
+      <div class="dv-line-r"></div>
+    </div>
+    <span class="occ-ar">عيد الأضحى المبارك</span>
+    <span class="occ-en">Eid al-Adha Mubarak</span>
+  </div>
+
+  <!-- ═══ DUA + BLESSING ═══ -->
+  <div class="dua-card">
+    <span class="dua-ar">تَقَبَّلَ اللهُ مِنَّا وَمِنكُمْ صَالِحَ الأَعْمَالِ</span>
+    <span class="dua-en">May Allah accept our good deeds and bless us all</span>
+    <div class="inner-sep"></div>
+    <span class="blessing-ar">كُلُّ عَامٍ وَأَنتُمْ بِأَلفِ خَيْرٍ وَصِحَّةٍ وَسَلَامَةٍ</span>
+    <span class="blessing-en">May every year bring you joy, good health, and peace</span>
+  </div>
+
+  <!-- ═══ BOTTOM ORNAMENT ═══ -->
+  <div class="bot-ornament">☽ &nbsp;✦&nbsp; ☾</div>
+
+</div>
+</body>
+</html>
