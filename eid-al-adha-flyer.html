@@ -1,522 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Eid al-Adha Mubarak 2026</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body {
-      background: #aaa;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px 16px;
-      gap: 12px;
-      font-family: Arial, sans-serif;
-    }
-    .hint {
-      font-size: 12px; color: #555; text-align: center;
-      max-width: 540px; line-height: 1.6;
-    }
-    @media print {
-      html, body { background: white; padding: 0; }
-      .hint { display: none; }
-    }
+<meta charset="UTF-8">
+<title>Eid al-Adha 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    .flyer {
-      width: 540px; height: 960px;
-      position: relative; overflow: hidden;
-      box-shadow: 0 10px 50px rgba(0,0,0,0.4);
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      background: linear-gradient(160deg,
-        #e8f8f3 0%, #d8edf8 20%, #e4f2ec 52%, #f0ece0 82%, #f5f0e5 100%);
-    }
-    .frame-outer {
-      position: absolute; inset: 13px;
-      border: 1.5px solid rgba(201,168,76,0.55);
-      pointer-events: none; z-index: 20;
-    }
-    .frame-inner {
-      position: absolute; inset: 20px;
-      border: 0.75px solid rgba(201,168,76,0.28);
-      pointer-events: none; z-index: 20;
-    }
-    .corner {
-      position: absolute; width: 56px; height: 56px; z-index: 21;
-    }
-    .corner.tl { top: 9px; left: 9px; }
-    .corner.tr { top: 9px; right: 9px; transform: scaleX(-1); }
-    .corner.bl { bottom: 9px; left: 9px; transform: scaleY(-1); }
-    .corner.br { bottom: 9px; right: 9px; transform: scale(-1,-1); }
+body { background: #000; }
 
-    .content {
-      position: relative; z-index: 5; height: 100%;
-      display: flex; flex-direction: column; align-items: center;
-      padding: 38px 36px 30px;
-    }
-    .top-ornament  { margin-bottom: 10px; flex-shrink: 0; }
-    .divider {
-      width: 140px; height: 1px;
-      background: linear-gradient(to right, transparent, #c9a84c 20%, #c9a84c 80%, transparent);
-      margin: 0 auto 6px;
-    }
-    .divider-sm {
-      width: 80px; height: 1px;
-      background: linear-gradient(to right, transparent, #c9a84c, transparent);
-      margin: 7px auto;
-    }
-    .wishes-line { display: none; }
-    .eid-script {
-      font-family: 'Great Vibes', cursive;
-      font-size: 78px; color: #122f55;
-      text-align: center; line-height: 0.92; margin-bottom: 1px;
-    }
-    .eid-en-sub {
-      font-size: 11px; font-weight: 700; letter-spacing: 6px;
-      text-transform: uppercase; color: #122f55; text-align: center; margin-bottom: 4px;
-    }
-    .eid-ar {
-      font-family: 'Amiri', serif; font-size: 25px; color: #c9a84c;
-      text-align: center; margin-bottom: 12px; direction: rtl; line-height: 1.2;
-    }
-    .arch-section { flex-shrink: 0; }
-    .qurbani-row {
-      display: flex; align-items: center; gap: 8px;
-      margin: 5px 0 0;
-    }
-    .qurbani-label {
-      font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #c9a84c;
-    }
-    .star-sep {
-      display: flex; align-items: center; gap: 8px;
-      color: #c9a84c; font-size: 11px; margin: 6px 0;
-    }
-    .dua-block { text-align: center; padding: 0 22px; }
-    .dua-en {
-      font-size: 14px; font-style: italic; color: #2b3a4a; line-height: 1.68;
-    }
-    .dua-ar {
-      font-family: 'Amiri', serif; font-size: 21px; color: #c9a84c;
-      direction: rtl; line-height: 1.5;
-    }
-    .syria-row {
-      display: flex; align-items: center; gap: 10px; margin-top: 10px;
-    }
-    .syria-text { text-align: left; }
-    .syria-text .en {
-      font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #444; display: block;
-    }
-    .syria-text .ar {
-      font-family: 'Amiri', serif; font-size: 15px; color: #666;
-      direction: rtl; display: block; text-align: right;
-    }
-    .date-line {
-      font-size: 9.5px; letter-spacing: 4px; text-transform: uppercase;
-      color: #1a5c3c; text-align: center; margin-top: 7px;
-    }
-    .bottom-ornament { margin-top: 8px; flex-shrink: 0; }
-  </style>
+.flyer {
+  width: 540px;
+  height: 960px;
+  background: #0a1a0c;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* ─── HERO ─── */
+.hero {
+  flex: 0 0 540px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.18) 0%,
+    rgba(0,0,0,0.08) 20%,
+    rgba(0,0,0,0.28) 50%,
+    rgba(10,26,12,0.86) 80%,
+    rgba(10,26,12,1.0) 100%
+  );
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 26px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 0 28px;
+}
+
+.ornament {
+  display: block;
+  color: #c9a227;
+  font-size: 18px;
+  letter-spacing: 10px;
+  margin-bottom: 12px;
+}
+
+.eid-mubarak-en {
+  font-family: 'Great Vibes', cursive;
+  font-size: 82px;
+  color: #f5e6c4;
+  line-height: 0.95;
+  text-shadow:
+    0 0 50px rgba(201,162,39,0.45),
+    0 2px 12px rgba(0,0,0,0.7);
+}
+
+.eid-mubarak-ar {
+  font-family: 'Amiri', serif;
+  font-size: 52px;
+  color: #c9a227;
+  direction: rtl;
+  line-height: 1.2;
+  margin-top: 4px;
+}
+
+.divider-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 50px;
+}
+
+.div-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(149,199,149,0.55));
+}
+
+.div-line-r {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to left, transparent, rgba(149,199,149,0.55));
+}
+
+.div-gem {
+  width: 5px;
+  height: 5px;
+  background: #95c795;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.occasion-text {
+  font-size: 13.5px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #95c795;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+}
+
+/* ─── DUA ─── */
+.dua-section {
+  flex: 0 0 118px;
+  background: linear-gradient(135deg, #111f15 0%, #0a1a0c 100%);
+  border-top: 1px solid rgba(149,199,149,0.2);
+  border-bottom: 1px solid rgba(149,199,149,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 36px;
+  gap: 7px;
+  text-align: center;
+}
+
+.dua-ar {
+  font-family: 'Amiri', serif;
+  font-size: 26px;
+  color: #c9a227;
+  direction: rtl;
+  line-height: 1.3;
+}
+
+.dua-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14.5px;
+  color: #8fba8f;
+  letter-spacing: 0.6px;
+}
+
+/* ─── BOTTOM ─── */
+.bottom-section {
+  flex: 1;
+  background: #0a1a0c;
+  padding: 18px 18px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-label {
+  text-align: center;
+  font-size: 11.5px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: rgba(149,199,149,0.55);
+  margin-bottom: 11px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.photos-row {
+  display: flex;
+  gap: 10px;
+  height: 168px;
+  margin-bottom: 13px;
+}
+
+.photo-frame {
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1px solid rgba(149,199,149,0.22);
+  flex-shrink: 0;
+}
+
+.citadel-frame { width: 230px; }
+.citadel-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.syria-frame {
+  width: 127px;
+  background: #050d07;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.syria-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+  display: block;
+}
+
+.goat-frame { width: 127px; }
+.goat-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 12%;
+  display: block;
+}
+
+.location-text {
+  text-align: center;
+  font-family: 'Amiri', serif;
+  font-size: 17px;
+  color: #b0ccb0;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+}
+
+.date-text {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13.5px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #c9a227;
+}
+</style>
 </head>
 <body>
-
-<p class="hint">
-  Open in Chrome/Edge for best fonts. <strong>Save as image:</strong>
-  Ctrl+P → Save as PDF, or right-click flyer → Inspect → select .flyer div → ⋮ → Capture node screenshot.
-</p>
-
 <div class="flyer">
-  <div class="frame-outer"></div>
-  <div class="frame-inner"></div>
 
-  <!-- Corner ornaments (4) -->
-  <svg class="corner tl" viewBox="0 0 56 56" fill="none">
-    <path d="M3 3 L53 3" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-    <path d="M3 3 L3 53" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-    <path d="M3 3 Q30 3 30 30" stroke="#c9a84c" stroke-width="0.65" opacity="0.5" fill="none"/>
-    <path d="M3 3 Q17 3 17 17" stroke="#c9a84c" stroke-width="0.45" opacity="0.35" fill="none"/>
-    <circle cx="3" cy="3" r="2.8" fill="#c9a84c"/>
-    <circle cx="53" cy="3" r="1.3" fill="#c9a84c" opacity="0.5"/>
-    <circle cx="3" cy="53" r="1.3" fill="#c9a84c" opacity="0.5"/>
-    <path d="M13 3 L13 13 L3 13" stroke="#c9a84c" stroke-width="0.65" opacity="0.42" fill="none"/>
-  </svg>
-  <svg class="corner tr" viewBox="0 0 56 56" fill="none">
-    <path d="M3 3 L53 3" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-    <path d="M3 3 L3 53" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-    <path d="M3 3 Q30 3 30 30" stroke="#c9a84c" stroke-width="0.65" opacity="0.5" fill="none"/>
-    <path d="M3 3 Q17 3 17 17" stroke="#c9a84c" stroke-width="0.45" opacity="0.35" fill="none"/>
-    <circle cx="3" cy="3" r="2.8" fill="#c9a84c"/>
-    <circle cx="53" cy="3" r="1.3" fill="#c9a84c" opacity="0.5"/>
-    <circle cx="3" cy="53" r="1.3" fill="#c9a84c" opacity="0.5"/>
-    <path d="M13 3 L13 13 L3 13" stroke="#c9a84c" stroke-width="0.65" opacity="0.42" fill="none"/>
-  </svg>
-  <svg class="corner bl" viewBox="0 0 56 56" fill="none">
-    <path d="M3 3 L53 3" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-    <path d="M3 3 L3 53" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-    <path d="M3 3 Q30 3 30 30" stroke="#c9a84c" stroke-width="0.65" opacity="0.5" fill="none"/>
-    <path d="M3 3 Q17 3 17 17" stroke="#c9a84c" stroke-width="0.45" opacity="0.35" fill="none"/>
-    <circle cx="3" cy="3" r="2.8" fill="#c9a84c"/>
-    <circle cx="53" cy="3" r="1.3" fill="#c9a84c" opacity="0.5"/>
-    <circle cx="3" cy="53" r="1.3" fill="#c9a84c" opacity="0.5"/>
-    <path d="M13 3 L13 13 L3 13" stroke="#c9a84c" stroke-width="0.65" opacity="0.42" fill="none"/>
-  </svg>
-  <svg class="corner br" viewBox="0 0 56 56" fill="none">
-    <path d="M3 3 L53 3" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-    <path d="M3 3 L3 53" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-    <path d="M3 3 Q30 3 30 30" stroke="#c9a84c" stroke-width="0.65" opacity="0.5" fill="none"/>
-    <path d="M3 3 Q17 3 17 17" stroke="#c9a84c" stroke-width="0.45" opacity="0.35" fill="none"/>
-    <circle cx="3" cy="3" r="2.8" fill="#c9a84c"/>
-    <circle cx="53" cy="3" r="1.3" fill="#c9a84c" opacity="0.5"/>
-    <circle cx="3" cy="53" r="1.3" fill="#c9a84c" opacity="0.5"/>
-    <path d="M13 3 L13 13 L3 13" stroke="#c9a84c" stroke-width="0.65" opacity="0.42" fill="none"/>
-  </svg>
-
-  <div class="content">
-
-    <!-- Top ornament: crescent + sunburst -->
-    <div class="top-ornament">
-      <svg width="88" height="68" viewBox="0 0 88 68" fill="none">
-        <g stroke="#c9a84c" stroke-width="1" stroke-linecap="round" opacity="0.45">
-          <line x1="44" y1="6"  x2="44" y2="20"/>
-          <line x1="57" y1="9"  x2="53" y2="22"/>
-          <line x1="68" y1="17" x2="61" y2="28"/>
-          <line x1="75" y1="30" x2="63" y2="34"/>
-          <line x1="31" y1="9"  x2="35" y2="22"/>
-          <line x1="20" y1="17" x2="27" y2="28"/>
-          <line x1="13" y1="30" x2="25" y2="34"/>
-        </g>
-        <circle cx="44" cy="44" r="19" fill="#c9a84c" opacity="0.1"/>
-        <path d="M44,25 Q63,32 63,46 Q63,60 44,64 Q62,60 65,46 Q68,29 44,25 Z" fill="#c9a84c" opacity="0.82"/>
-        <g transform="translate(67,27) scale(0.55)">
-          <polygon points="0,-5 1.18,-1.62 4.76,-1.54 1.9,0.62 2.94,4.05 0,2 -2.94,4.05 -1.9,0.62 -4.76,-1.54 -1.18,-1.62" fill="#c9a84c" opacity="0.75"/>
-        </g>
-      </svg>
-    </div>
-
-    <!-- Greeting -->
-    <div class="eid-script">Eid Mubarak</div>
-    <div class="eid-en-sub">Eid al-Adha</div>
-    <div class="eid-ar">عيد الأضحى المبارك</div>
-
-    <!-- ── ARCH WITH KAABA ─────────────────────────── -->
-    <div class="arch-section">
-      <svg width="290" height="286" viewBox="0 0 290 286" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <!-- Islamic pointed arch clip: smooth, symmetric -->
-          <clipPath id="ac">
-            <path d="M16,286 L16,148 Q80,12 145,12 Q210,12 274,148 L274,286 Z"/>
-          </clipPath>
-          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%"  stop-color="#06101e"/>
-            <stop offset="45%" stop-color="#0c1e3c"/>
-            <stop offset="100%" stop-color="#142e58"/>
-          </linearGradient>
-          <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%"  stop-color="#f0d068"/>
-            <stop offset="50%" stop-color="#c9a84c"/>
-            <stop offset="100%" stop-color="#9a7520"/>
-          </linearGradient>
-          <linearGradient id="marble" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%"  stop-color="#f5f0e8"/>
-            <stop offset="100%" stop-color="#e8ddc8"/>
-          </linearGradient>
-          <radialGradient id="mhalo" cx="50%" cy="50%" r="50%">
-            <stop offset="0%"  stop-color="#fffae8" stop-opacity="0.5"/>
-            <stop offset="100%" stop-color="#fffae8" stop-opacity="0"/>
-          </radialGradient>
-          <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="b"/>
-            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-
-        <g clip-path="url(#ac)">
-          <!-- Sky -->
-          <rect width="290" height="286" fill="url(#sky)"/>
-
-          <!-- Stars -->
-          <circle cx="32"  cy="24" r="1.2" fill="white" opacity="0.9"/>
-          <circle cx="62"  cy="15" r="0.8" fill="white" opacity="0.7"/>
-          <circle cx="95"  cy="32" r="1.4" fill="white" opacity="0.8"/>
-          <circle cx="122" cy="18" r="0.7" fill="white" opacity="0.6"/>
-          <circle cx="150" cy="9"  r="1.0" fill="white" opacity="0.85"/>
-          <circle cx="178" cy="20" r="0.9" fill="white" opacity="0.7"/>
-          <circle cx="204" cy="14" r="1.3" fill="white" opacity="0.8"/>
-          <circle cx="234" cy="30" r="0.8" fill="white" opacity="0.65"/>
-          <circle cx="258" cy="20" r="1.1" fill="white" opacity="0.75"/>
-          <circle cx="44"  cy="50" r="0.7" fill="white" opacity="0.5"/>
-          <circle cx="135" cy="54" r="0.6" fill="white" opacity="0.45"/>
-          <circle cx="220" cy="46" r="0.8" fill="white" opacity="0.5"/>
-          <circle cx="72"  cy="66" r="0.6" fill="white" opacity="0.4"/>
-          <circle cx="198" cy="62" r="0.7" fill="white" opacity="0.45"/>
-
-          <!-- Moon halo -->
-          <circle cx="232" cy="56" r="26" fill="url(#mhalo)"/>
-          <!-- Crescent -->
-          <circle cx="232" cy="56" r="16" fill="#fffae8" opacity="0.95" filter="url(#glow)"/>
-          <circle cx="239" cy="52" r="13.5" fill="#0c1e3c"/>
-          <circle cx="252" cy="44" r="2.5" fill="#fffae8" opacity="0.90"/>
-
-          <!-- Background minarets (far, ghostly) -->
-          <rect x="40"  y="92" width="10" height="134" fill="#c9a84c" opacity="0.16"/>
-          <path d="M36,92 Q45,78 54,92" fill="#c9a84c" opacity="0.16"/>
-          <circle cx="45" cy="76" r="3" fill="#c9a84c" opacity="0.10"/>
-          <rect x="242" y="92" width="10" height="134" fill="#c9a84c" opacity="0.16"/>
-          <path d="M238,92 Q247,78 256,92" fill="#c9a84c" opacity="0.16"/>
-          <circle cx="247" cy="76" r="3" fill="#c9a84c" opacity="0.10"/>
-
-          <!-- Arcade arches (faint background colonnade) -->
-          <rect x="16" y="200" width="258" height="42" fill="#9b8260" opacity="0.10"/>
-          <g fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.10">
-            <path d="M16,200 Q29,188 42,200"/>
-            <path d="M42,200 Q55,188 68,200"/>
-            <path d="M68,200 Q81,188 94,200"/>
-            <path d="M164,200 Q177,188 190,200"/>
-            <path d="M190,200 Q203,188 216,200"/>
-            <path d="M216,200 Q229,188 242,200"/>
-          </g>
-
-          <!-- Marble floor -->
-          <rect x="16" y="246" width="258" height="40" fill="url(#marble)" opacity="0.9"/>
-          <rect x="16" y="246" width="258" height="3"  fill="#c8b898" opacity="0.55"/>
-          <!-- Marble tile lines -->
-          <line x1="70"  y1="249" x2="70"  y2="286" stroke="#d8cca8" stroke-width="0.5" opacity="0.4"/>
-          <line x1="122" y1="249" x2="122" y2="286" stroke="#d8cca8" stroke-width="0.5" opacity="0.4"/>
-          <line x1="176" y1="249" x2="176" y2="286" stroke="#d8cca8" stroke-width="0.5" opacity="0.4"/>
-          <line x1="228" y1="249" x2="228" y2="286" stroke="#d8cca8" stroke-width="0.5" opacity="0.4"/>
-          <line x1="16"  y1="264" x2="274" y2="264" stroke="#d8cca8" stroke-width="0.5" opacity="0.4"/>
-          <line x1="16"  y1="278" x2="274" y2="278" stroke="#d8cca8" stroke-width="0.5" opacity="0.4"/>
-
-          <!-- ── THE KAABA ──────────────────────────── -->
-
-          <!-- Floor shadow -->
-          <ellipse cx="145" cy="252" rx="64" ry="7" fill="#000" opacity="0.22"/>
-
-          <!-- Hatim (semicircular low wall) -->
-          <path d="M76,246 Q145,218 214,246" stroke="white" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.72"/>
-          <path d="M82,246 Q145,222 208,246" stroke="white" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.38"/>
-
-          <!-- Kaaba base step -->
-          <rect x="73" y="242" width="144" height="8" fill="#8a7858" rx="1"/>
-          <rect x="73" y="242" width="144" height="2" fill="#a09068" rx="1"/>
-
-          <!-- Kaaba main body (black) -->
-          <rect x="77" y="130" width="136" height="114" fill="#090909"/>
-
-          <!-- HIZAM: top gold band -->
-          <rect x="77" y="130" width="136" height="12" fill="url(#gold)"/>
-          <rect x="77" y="135" width="136" height="1.5" fill="#f0d880" opacity="0.55"/>
-          <rect x="77" y="138" width="136" height="1"   fill="#8a6010" opacity="0.45"/>
-
-          <!-- KISWA: lower golden-brown cloth with calligraphy bands -->
-          <rect x="77" y="192" width="136" height="52" fill="#5e4006"/>
-          <!-- Embroidery lines (gold horizontal bands) -->
-          <rect x="77" y="196" width="136" height="2.5" fill="#c9a84c" opacity="0.88"/>
-          <rect x="77" y="202" width="136" height="1.5" fill="#c9a84c" opacity="0.72"/>
-          <rect x="77" y="207" width="136" height="1.5" fill="#c9a84c" opacity="0.72"/>
-          <rect x="77" y="212" width="136" height="1.5" fill="#c9a84c" opacity="0.72"/>
-          <rect x="77" y="217" width="136" height="1.5" fill="#c9a84c" opacity="0.72"/>
-          <rect x="77" y="222" width="136" height="1.5" fill="#c9a84c" opacity="0.72"/>
-          <rect x="77" y="227" width="136" height="1.5" fill="#c9a84c" opacity="0.72"/>
-          <rect x="77" y="232" width="136" height="1.5" fill="#c9a84c" opacity="0.72"/>
-          <rect x="77" y="237" width="136" height="2.5" fill="#c9a84c" opacity="0.88"/>
-          <!-- Central calligraphy band (implied) -->
-          <rect x="88" y="210" width="114" height="9" fill="#b08020" opacity="0.38"/>
-
-          <!-- ── DOOR (BAB AL-KAABA, elevated) ───────── -->
-          <!-- Outer gold door frame -->
-          <rect x="111" y="138" width="54" height="66" fill="url(#gold)" rx="2"/>
-          <!-- Pointed arch above door -->
-          <path d="M111,162 Q138,142 165,162" fill="url(#gold)"/>
-          <!-- Inner door frame (darker gold) -->
-          <rect x="115" y="165" width="46" height="39" fill="#9a7520" rx="1"/>
-          <!-- Door interior (dark wood) -->
-          <rect x="118" y="167" width="40" height="37" fill="#291804"/>
-          <!-- Inner arch -->
-          <path d="M118,178 Q138,163 158,178" fill="#291804"/>
-          <!-- Door panel detail lines (vertical) -->
-          <line x1="128" y1="170" x2="128" y2="204" stroke="#c9a84c" stroke-width="0.7" opacity="0.5"/>
-          <line x1="138" y1="170" x2="138" y2="204" stroke="#c9a84c" stroke-width="0.7" opacity="0.5"/>
-          <line x1="148" y1="170" x2="148" y2="204" stroke="#c9a84c" stroke-width="0.7" opacity="0.5"/>
-          <line x1="158" y1="170" x2="158" y2="204" stroke="#c9a84c" stroke-width="0.7" opacity="0.5"/>
-          <!-- Horizontal panel line -->
-          <line x1="118" y1="186" x2="158" y2="186" stroke="#c9a84c" stroke-width="0.7" opacity="0.5"/>
-          <!-- Gold chains hanging from door base to floor -->
-          <line x1="128" y1="204" x2="122" y2="242" stroke="#c9a84c" stroke-width="1.4" opacity="0.6"/>
-          <line x1="138" y1="204" x2="138" y2="242" stroke="#c9a84c" stroke-width="1.4" opacity="0.6"/>
-          <line x1="148" y1="204" x2="154" y2="242" stroke="#c9a84c" stroke-width="1.4" opacity="0.6"/>
-          <!-- Door threshold step -->
-          <rect x="117" y="204" width="52" height="5" fill="#b08020" rx="1"/>
-
-          <!-- BLACK STONE (Al-Hajar al-Aswad) — lower right corner -->
-          <ellipse cx="210" cy="236" rx="9" ry="7" fill="#0e0600" opacity="0.95"/>
-          <ellipse cx="210" cy="236" rx="9" ry="7" fill="none" stroke="#c9a84c" stroke-width="1.8"/>
-          <ellipse cx="210" cy="236" rx="11" ry="9" fill="none" stroke="#a09090" stroke-width="1" opacity="0.55"/>
-
-          <!-- Kaaba side edge lines -->
-          <line x1="77"  y1="130" x2="77"  y2="242" stroke="#1c1c1c" stroke-width="1" opacity="0.65"/>
-          <line x1="213" y1="130" x2="213" y2="242" stroke="#1c1c1c" stroke-width="1" opacity="0.65"/>
-
-          <!-- Ambient light at base -->
-          <rect x="77" y="236" width="136" height="10" fill="#fffae8" opacity="0.04"/>
-
-          <!-- Tawaf crowd (faint dots on marble) -->
-          <circle cx="100" cy="256" r="1.2" fill="#999" opacity="0.4"/>
-          <circle cx="115" cy="260" r="1.0" fill="#999" opacity="0.35"/>
-          <circle cx="130" cy="255" r="1.2" fill="#999" opacity="0.4"/>
-          <circle cx="158" cy="258" r="1.0" fill="#999" opacity="0.35"/>
-          <circle cx="172" cy="254" r="1.2" fill="#999" opacity="0.4"/>
-          <circle cx="188" cy="260" r="1.0" fill="#999" opacity="0.35"/>
-        </g>
-
-        <!-- Gold arch border on top of scene -->
-        <path d="M16,286 L16,148 Q80,12 145,12 Q210,12 274,148 L274,286"
-              fill="none" stroke="#c9a84c" stroke-width="2.8" stroke-linecap="round"/>
-        <path d="M24,286 L24,150 Q86,21 145,21 Q204,21 266,150 L266,286"
-              fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.36"/>
-        <!-- Arch accent dots -->
-        <circle cx="145" cy="12"  r="5.5" fill="#c9a84c"/>
-        <circle cx="16"  cy="148" r="4"   fill="#c9a84c"/>
-        <circle cx="274" cy="148" r="4"   fill="#c9a84c"/>
-        <!-- Base lines beside arch feet -->
-        <line x1="0"   y1="285" x2="16"  y2="285" stroke="#c9a84c" stroke-width="1.5"/>
-        <line x1="274" y1="285" x2="290" y2="285" stroke="#c9a84c" stroke-width="1.5"/>
-      </svg>
-    </div><!-- end arch-section -->
-
-    <!-- Goat row (Qurbani) -->
-    <div class="qurbani-row">
-      <!-- Goat silhouette (facing right) -->
-      <svg viewBox="0 0 128 100" width="72" height="56">
-        <g fill="#c9a84c">
-          <!-- Body -->
-          <ellipse cx="50" cy="56" rx="40" ry="21"/>
-          <!-- Neck -->
-          <path d="M84,44 Q93,34 91,22 Q86,12 80,18 Q78,28 80,44 Z"/>
-          <!-- Head -->
-          <ellipse cx="94" cy="28" rx="17" ry="13" transform="rotate(-8,94,28)"/>
-          <!-- Snout -->
-          <ellipse cx="106" cy="33" rx="9" ry="7" fill="#b09028"/>
-          <!-- Eye -->
-          <circle cx="96" cy="22" r="3.5" fill="white" opacity="0.9"/>
-          <circle cx="97" cy="23" r="2" fill="#1a0a00"/>
-          <!-- Ear -->
-          <ellipse cx="83" cy="18" rx="4.5" ry="8" transform="rotate(-22,83,18)" fill="#d4b03c"/>
-          <!-- Horn 1 -->
-          <path d="M87,16 Q82,4 88,0" stroke="#9a7820" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-          <!-- Horn 2 -->
-          <path d="M94,14 Q94,2 102,-1" stroke="#9a7820" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-          <!-- Beard -->
-          <path d="M106,39 Q112,49 107,56" stroke="#b09028" stroke-width="3" fill="none" stroke-linecap="round"/>
-          <!-- Tail (left, upward) -->
-          <path d="M12,50 Q3,42 8,34" stroke="#c9a84c" stroke-width="5" fill="none" stroke-linecap="round"/>
-          <!-- Back legs -->
-          <rect x="22" y="74" width="9" height="24" rx="3.5"/>
-          <rect x="34" y="74" width="9" height="24" rx="3.5"/>
-          <!-- Front legs -->
-          <rect x="60" y="74" width="9" height="24" rx="3.5"/>
-          <rect x="72" y="74" width="9" height="24" rx="3.5"/>
-        </g>
-        <!-- Hooves (darker) -->
-        <rect x="22" y="93" width="9" height="5" rx="2" fill="#9a7820"/>
-        <rect x="34" y="93" width="9" height="5" rx="2" fill="#9a7820"/>
-        <rect x="60" y="93" width="9" height="5" rx="2" fill="#9a7820"/>
-        <rect x="72" y="93" width="9" height="5" rx="2" fill="#9a7820"/>
-      </svg>
-      <div class="qurbani-label">Qurbani · الأضحية</div>
-      <!-- Mirrored goat (facing left) -->
-      <svg viewBox="0 0 128 100" width="72" height="56" style="transform:scaleX(-1)">
-        <g fill="#c9a84c">
-          <ellipse cx="50" cy="56" rx="40" ry="21"/>
-          <path d="M84,44 Q93,34 91,22 Q86,12 80,18 Q78,28 80,44 Z"/>
-          <ellipse cx="94" cy="28" rx="17" ry="13" transform="rotate(-8,94,28)"/>
-          <ellipse cx="106" cy="33" rx="9" ry="7" fill="#b09028"/>
-          <circle cx="96" cy="22" r="3.5" fill="white" opacity="0.9"/>
-          <circle cx="97" cy="23" r="2" fill="#1a0a00"/>
-          <ellipse cx="83" cy="18" rx="4.5" ry="8" transform="rotate(-22,83,18)" fill="#d4b03c"/>
-          <path d="M87,16 Q82,4 88,0" stroke="#9a7820" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-          <path d="M94,14 Q94,2 102,-1" stroke="#9a7820" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-          <path d="M106,39 Q112,49 107,56" stroke="#b09028" stroke-width="3" fill="none" stroke-linecap="round"/>
-          <path d="M12,50 Q3,42 8,34" stroke="#c9a84c" stroke-width="5" fill="none" stroke-linecap="round"/>
-          <rect x="22" y="74" width="9" height="24" rx="3.5"/>
-          <rect x="34" y="74" width="9" height="24" rx="3.5"/>
-          <rect x="60" y="74" width="9" height="24" rx="3.5"/>
-          <rect x="72" y="74" width="9" height="24" rx="3.5"/>
-        </g>
-        <rect x="22" y="93" width="9" height="5" rx="2" fill="#9a7820"/>
-        <rect x="34" y="93" width="9" height="5" rx="2" fill="#9a7820"/>
-        <rect x="60" y="93" width="9" height="5" rx="2" fill="#9a7820"/>
-        <rect x="72" y="93" width="9" height="5" rx="2" fill="#9a7820"/>
-      </svg>
-    </div>
-
-    <!-- Stars separator -->
-    <div class="star-sep">
-      <span>✦</span>
-      <svg width="50" height="1"><rect width="50" height="1" fill="#c9a84c" opacity="0.52"/></svg>
-      <span>✦</span>
-      <svg width="50" height="1"><rect width="50" height="1" fill="#c9a84c" opacity="0.52"/></svg>
-      <span>✦</span>
-    </div>
-
-    <!-- Dua -->
-    <div class="dua-block">
-      <div class="dua-en">
-        May Allah accept your sacrifice and prayers,<br>
-        bless you and your family with joy and peace,<br>
-        and grant mercy to all.
+  <!-- HERO: Kaaba at night in the rain -->
+  <div class="hero">
+    <img class="hero-bg" src="IMG_0171.jpeg" alt="">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="ornament">☽ &nbsp;✦&nbsp; ☾</span>
+      <div class="eid-mubarak-en">Eid Mubarak</div>
+      <div class="eid-mubarak-ar">عيد مبارك</div>
+      <div class="divider-row">
+        <div class="div-line"></div>
+        <div class="div-gem"></div>
+        <div class="div-line-r"></div>
       </div>
-      <div class="divider-sm"></div>
-      <div class="dua-ar">تَقَبَّلَ اللهُ مِنَّا وَمِنكُم</div>
+      <div class="occasion-text">Eid al-Adha &nbsp;·&nbsp; عيد الأضحى &nbsp;·&nbsp; 2026</div>
     </div>
+  </div>
 
-    <!-- Syrian flag + Aleppo -->
-    <div class="syria-row">
-      <!-- Syrian independence flag (black / white+stars / green) -->
-      <svg viewBox="0 0 66 44" width="66" height="44" style="border:0.5px solid #ccc; border-radius:2px; flex-shrink:0;">
-        <rect x="0" y="0"    width="66" height="14.67" fill="#000"/>
-        <rect x="0" y="14.67" width="66" height="14.67" fill="#fff"/>
-        <rect x="0" y="29.33" width="66" height="14.67" fill="#007a3d"/>
-        <!-- Three red 5-pointed stars in white stripe (centered at y=21.5) -->
-        <g fill="#ce1126">
-          <polygon transform="translate(16,21.5) scale(0.82)"
-            points="0,-5 1.18,-1.62 4.76,-1.54 1.9,0.62 2.94,4.05 0,2 -2.94,4.05 -1.9,0.62 -4.76,-1.54 -1.18,-1.62"/>
-          <polygon transform="translate(33,21.5) scale(0.82)"
-            points="0,-5 1.18,-1.62 4.76,-1.54 1.9,0.62 2.94,4.05 0,2 -2.94,4.05 -1.9,0.62 -4.76,-1.54 -1.18,-1.62"/>
-          <polygon transform="translate(50,21.5) scale(0.82)"
-            points="0,-5 1.18,-1.62 4.76,-1.54 1.9,0.62 2.94,4.05 0,2 -2.94,4.05 -1.9,0.62 -4.76,-1.54 -1.18,-1.62"/>
-        </g>
-      </svg>
-      <div class="syria-text">
-        <span class="en">Aleppo, Syria</span>
-        <span class="ar">حلب، سوريا</span>
+  <!-- DUA -->
+  <div class="dua-section">
+    <div class="dua-ar">تَقَبَّلَ اللهُ مِنَّا وَمِنكُم</div>
+    <div class="dua-en">May Allah accept from us and from you</div>
+  </div>
+
+  <!-- BOTTOM: Citadel · Syria · Goat -->
+  <div class="bottom-section">
+    <div class="photo-label">Aleppo Citadel &nbsp;·&nbsp; قلعة حلب &nbsp;·&nbsp; Syria &nbsp;·&nbsp; Qurbani</div>
+    <div class="photos-row">
+      <div class="photo-frame citadel-frame">
+        <img src="IMG_0168.jpeg" alt="Citadel of Aleppo">
+      </div>
+      <div class="photo-frame syria-frame">
+        <img src="IMG_0172.png" alt="Syria Independence Flag">
+      </div>
+      <div class="photo-frame goat-frame">
+        <img src="IMG_0169.webp" alt="Qurbani">
       </div>
     </div>
+    <div class="location-text">حلب، سوريا &nbsp;·&nbsp; Aleppo, Syria</div>
+    <div class="date-text">Wednesday &nbsp;·&nbsp; May 27, 2026</div>
+  </div>
 
-    <!-- Date -->
-    <div class="date-line">Wednesday · May 27, 2026</div>
-
-    <!-- Bottom ornament -->
-    <div class="bottom-ornament">
-      <svg width="168" height="24" viewBox="0 0 168 24" fill="none">
-        <line x1="0"   y1="12" x2="56"  y2="12" stroke="#c9a84c" stroke-width="0.8" opacity="0.46" stroke-linecap="round"/>
-        <circle cx="63"  cy="12" r="2.2" fill="#c9a84c" opacity="0.36"/>
-        <path d="M70,12 Q84,3 98,12 Q84,21 70,12 Z" fill="#c9a84c" opacity="0.46"/>
-        <circle cx="84"  cy="12" r="3.2" fill="#c9a84c" opacity="0.66"/>
-        <circle cx="105" cy="12" r="2.2" fill="#c9a84c" opacity="0.36"/>
-        <line x1="112" y1="12" x2="168" y2="12" stroke="#c9a84c" stroke-width="0.8" opacity="0.46" stroke-linecap="round"/>
-      </svg>
-    </div>
-
-  </div><!-- end .content -->
-</div><!-- end .flyer -->
-
-<p class="hint" style="font-size:11px; color:#777; margin-top:8px;">
-  Best rendered in Chrome or Edge with internet access for Google Fonts.
-</p>
-
+</div>
 </body>
 </html>
