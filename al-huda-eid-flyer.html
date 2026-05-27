@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=540, initial-scale=1.0">
+  <title>Al Huda — Eid al-Adha Mubarak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      background: #b8b8b8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+      gap: 14px;
+      font-family: Arial, sans-serif;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #555;
+      text-align: center;
+      max-width: 540px;
+      line-height: 1.6;
+    }
+    .hint strong { color: #333; }
+
+    @media print {
+      html, body { background: white; padding: 0; }
+      .hint { display: none; }
+      .flyer { box-shadow: none !important; }
+      @page { margin: 0; size: 540px 960px; }
+    }
+
+    /* ── FLYER CARD ─────────────────────────────────── */
+    .flyer {
+      width: 540px;
+      height: 960px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 50px rgba(0,0,0,0.35);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      /* Soft mint-to-cream gradient background */
+      background:
+        linear-gradient(160deg,
+          #e6f8f2 0%,
+          #d8edf8 22%,
+          #e4f2ec 50%,
+          #f0ece0 80%,
+          #f5f0e5 100%
+        );
+    }
+
+    /* Double gold border frame */
+    .frame-outer {
+      position: absolute;
+      inset: 13px;
+      border: 1.5px solid rgba(201,168,76,0.55);
+      pointer-events: none;
+      z-index: 20;
+    }
+    .frame-inner {
+      position: absolute;
+      inset: 20px;
+      border: 0.75px solid rgba(201,168,76,0.28);
+      pointer-events: none;
+      z-index: 20;
+    }
+
+    /* Corner ornaments */
+    .corner {
+      position: absolute;
+      width: 58px;
+      height: 58px;
+      z-index: 21;
+    }
+    .corner.tl { top: 9px; left: 9px; }
+    .corner.tr { top: 9px; right: 9px; transform: scaleX(-1); }
+    .corner.bl { bottom: 9px; left: 9px; transform: scaleY(-1); }
+    .corner.br { bottom: 9px; right: 9px; transform: scale(-1,-1); }
+
+    /* ── CONTENT ─────────────────────────────────────── */
+    .content {
+      position: relative;
+      z-index: 5;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 52px 40px 38px;
+    }
+
+    /* Top crescent ornament */
+    .top-ornament { margin-bottom: 16px; }
+
+    /* Org name block */
+    .org-block { text-align: center; margin-bottom: 12px; }
+    .org-en {
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: #1a5c3c;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .org-ar {
+      font-family: 'Amiri', serif;
+      font-size: 28px;
+      color: #c9a84c;
+      line-height: 1;
+    }
+
+    /* Dividers */
+    .divider {
+      width: 140px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #c9a84c 20%, #c9a84c 80%, transparent);
+      margin: 0 auto 8px;
+    }
+    .divider-sm {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #c9a84c, transparent);
+      margin: 10px auto;
+    }
+
+    .wishes-line {
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 16px;
+    }
+
+    /* Main greeting */
+    .eid-script {
+      font-family: 'Great Vibes', 'Brush Script MT', cursive;
+      font-size: 82px;
+      color: #122f55;
+      text-align: center;
+      line-height: 0.95;
+      margin-bottom: 2px;
+    }
+    .eid-en-sub {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: #122f55;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .eid-ar {
+      font-family: 'Amiri', serif;
+      font-size: 28px;
+      color: #c9a84c;
+      text-align: center;
+      margin-bottom: 20px;
+      direction: rtl;
+      line-height: 1.2;
+    }
+
+    /* Arch section */
+    .arch-section { margin-bottom: 18px; }
+
+    /* Stars separator */
+    .star-sep {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      color: #c9a84c;
+      font-size: 13px;
+    }
+
+    /* Dua */
+    .dua-block { text-align: center; padding: 0 28px; }
+    .dua-en {
+      font-size: 15px;
+      font-style: italic;
+      color: #2b3a4a;
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+    .dua-ar {
+      font-family: 'Amiri', serif;
+      font-size: 23px;
+      color: #c9a84c;
+      direction: rtl;
+      line-height: 1.6;
+    }
+
+    /* Date */
+    .date-line {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #1a5c3c;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* Bottom ornament */
+    .bottom-ornament { margin-top: 14px; }
+  </style>
+</head>
+<body>
+
+<p class="hint">
+  Open in Chrome or Edge for best font rendering.<br>
+  <strong>To save as image:</strong> Press <strong>Ctrl+P</strong> (or Cmd+P on Mac) → Save as PDF,
+  then convert with any PDF-to-image tool. Or right-click → Inspect → select the .flyer div → ⋮ → Capture node screenshot.
+</p>
+
+<div class="flyer">
+  <!-- Gold double border -->
+  <div class="frame-outer"></div>
+  <div class="frame-inner"></div>
+
+  <!-- Corner ornaments (repeated SVG, mirrored via CSS) -->
+  <svg class="corner tl" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 3 L55 3" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M3 3 L3 55" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M3 3 Q32 3 32 32" stroke="#c9a84c" stroke-width="0.7" fill="none" opacity="0.55"/>
+    <path d="M3 3 Q18 3 18 18" stroke="#c9a84c" stroke-width="0.5" fill="none" opacity="0.38"/>
+    <circle cx="3" cy="3" r="2.8" fill="#c9a84c"/>
+    <circle cx="55" cy="3" r="1.4" fill="#c9a84c" opacity="0.5"/>
+    <circle cx="3" cy="55" r="1.4" fill="#c9a84c" opacity="0.5"/>
+    <path d="M14 3 L14 14 L3 14" stroke="#c9a84c" stroke-width="0.7" fill="none" opacity="0.45"/>
+  </svg>
+  <svg class="corner tr" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 3 L55 3" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M3 3 L3 55" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M3 3 Q32 3 32 32" stroke="#c9a84c" stroke-width="0.7" fill="none" opacity="0.55"/>
+    <path d="M3 3 Q18 3 18 18" stroke="#c9a84c" stroke-width="0.5" fill="none" opacity="0.38"/>
+    <circle cx="3" cy="3" r="2.8" fill="#c9a84c"/>
+    <circle cx="55" cy="3" r="1.4" fill="#c9a84c" opacity="0.5"/>
+    <circle cx="3" cy="55" r="1.4" fill="#c9a84c" opacity="0.5"/>
+    <path d="M14 3 L14 14 L3 14" stroke="#c9a84c" stroke-width="0.7" fill="none" opacity="0.45"/>
+  </svg>
+  <svg class="corner bl" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 3 L55 3" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M3 3 L3 55" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M3 3 Q32 3 32 32" stroke="#c9a84c" stroke-width="0.7" fill="none" opacity="0.55"/>
+    <path d="M3 3 Q18 3 18 18" stroke="#c9a84c" stroke-width="0.5" fill="none" opacity="0.38"/>
+    <circle cx="3" cy="3" r="2.8" fill="#c9a84c"/>
+    <circle cx="55" cy="3" r="1.4" fill="#c9a84c" opacity="0.5"/>
+    <circle cx="3" cy="55" r="1.4" fill="#c9a84c" opacity="0.5"/>
+    <path d="M14 3 L14 14 L3 14" stroke="#c9a84c" stroke-width="0.7" fill="none" opacity="0.45"/>
+  </svg>
+  <svg class="corner br" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 3 L55 3" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M3 3 L3 55" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M3 3 Q32 3 32 32" stroke="#c9a84c" stroke-width="0.7" fill="none" opacity="0.55"/>
+    <path d="M3 3 Q18 3 18 18" stroke="#c9a84c" stroke-width="0.5" fill="none" opacity="0.38"/>
+    <circle cx="3" cy="3" r="2.8" fill="#c9a84c"/>
+    <circle cx="55" cy="3" r="1.4" fill="#c9a84c" opacity="0.5"/>
+    <circle cx="3" cy="55" r="1.4" fill="#c9a84c" opacity="0.5"/>
+    <path d="M14 3 L14 14 L3 14" stroke="#c9a84c" stroke-width="0.7" fill="none" opacity="0.45"/>
+  </svg>
+
+  <!-- ── MAIN CONTENT ───────────────────────────────── -->
+  <div class="content">
+
+    <!-- Crescent / sunburst ornament -->
+    <div class="top-ornament">
+      <svg width="92" height="72" viewBox="0 0 92 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#c9a84c" stroke-width="1" stroke-linecap="round" opacity="0.48">
+          <line x1="46" y1="7"  x2="46" y2="22"/>
+          <line x1="60" y1="10" x2="55" y2="24"/>
+          <line x1="72" y1="19" x2="64" y2="30"/>
+          <line x1="79" y1="33" x2="66" y2="36"/>
+          <line x1="32" y1="10" x2="37" y2="24"/>
+          <line x1="20" y1="19" x2="28" y2="30"/>
+          <line x1="13" y1="33" x2="26" y2="36"/>
+        </g>
+        <!-- Crescent -->
+        <circle cx="46" cy="46" r="20" fill="#c9a84c" opacity="0.13"/>
+        <path d="M46,26 Q66,33 66,48 Q66,63 46,68 Q65,63 68,48 Q71,30 46,26 Z" fill="#c9a84c" opacity="0.82"/>
+        <!-- Small star -->
+        <g transform="translate(68,28) scale(0.6)">
+          <polygon points="8,0 10,5.5 16,5.5 11,9 13,14.5 8,11 3,14.5 5,9 0,5.5 6,5.5"
+                   fill="#c9a84c" opacity="0.75"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Al Huda name -->
+    <div class="org-block">
+      <div class="org-en">Al Huda</div>
+      <div class="org-ar">الهُدى</div>
+    </div>
+    <div class="divider"></div>
+    <div class="wishes-line">wishes you</div>
+
+    <!-- Main greeting -->
+    <div class="eid-script">Eid Mubarak</div>
+    <div class="eid-en-sub">Eid al-Adha</div>
+    <div class="eid-ar">عيد الأضحى المبارك</div>
+
+    <!-- ── ARCH + MOSQUE ILLUSTRATION ────────────────── -->
+    <div class="arch-section">
+      <svg width="308" height="336" viewBox="0 0 308 336" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <!-- Islamic pointed arch clip -->
+          <clipPath id="archClip">
+            <path d="M18,336 L18,152 Q18,14 154,14 Q290,14 290,152 L290,336 Z"/>
+          </clipPath>
+
+          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stop-color="#081828"/>
+            <stop offset="45%"  stop-color="#0f2d54"/>
+            <stop offset="100%" stop-color="#173e6e"/>
+          </linearGradient>
+          <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stop-color="#f0d070"/>
+            <stop offset="50%"  stop-color="#c9a84c"/>
+            <stop offset="100%" stop-color="#9a7520"/>
+          </linearGradient>
+          <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stop-color="#7a6848"/>
+            <stop offset="100%" stop-color="#4e4030"/>
+          </linearGradient>
+          <radialGradient id="moonHalo" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="#fffae8" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#fffae8" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="domeShine" cx="40%" cy="25%" r="65%">
+            <stop offset="0%"   stop-color="#f5d878" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="softGlow" x="-25%" y="-25%" width="150%" height="150%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- ── CLIPPED ARCH SCENE ──────────────────── -->
+        <g clip-path="url(#archClip)">
+
+          <!-- Sky -->
+          <rect width="308" height="336" fill="url(#skyGrad)"/>
+
+          <!-- Stars -->
+          <circle cx="42"  cy="32"  r="1.3" fill="white" opacity="0.90"/>
+          <circle cx="78"  cy="18"  r="0.9" fill="white" opacity="0.70"/>
+          <circle cx="112" cy="44"  r="1.5" fill="white" opacity="0.80"/>
+          <circle cx="142" cy="20"  r="0.7" fill="white" opacity="0.60"/>
+          <circle cx="170" cy="10"  r="1.2" fill="white" opacity="0.88"/>
+          <circle cx="204" cy="37"  r="0.9" fill="white" opacity="0.72"/>
+          <circle cx="238" cy="24"  r="1.4" fill="white" opacity="0.80"/>
+          <circle cx="262" cy="48"  r="0.8" fill="white" opacity="0.60"/>
+          <circle cx="90"  cy="65"  r="0.8" fill="white" opacity="0.48"/>
+          <circle cx="154" cy="56"  r="0.9" fill="white" opacity="0.55"/>
+          <circle cx="218" cy="60"  r="0.7" fill="white" opacity="0.45"/>
+          <circle cx="36"  cy="78"  r="0.6" fill="white" opacity="0.40"/>
+          <circle cx="274" cy="70"  r="0.8" fill="white" opacity="0.50"/>
+          <circle cx="130" cy="82"  r="0.6" fill="white" opacity="0.38"/>
+
+          <!-- Moon halo glow -->
+          <circle cx="68" cy="82" r="32" fill="url(#moonHalo)"/>
+          <!-- Crescent moon -->
+          <circle cx="70" cy="80" r="18" fill="#fffae8" filter="url(#softGlow)"/>
+          <circle cx="79" cy="74" r="15.5" fill="#0f2d54"/>
+          <!-- Star beside moon -->
+          <circle cx="98" cy="69" r="2.8" fill="#fffae8" opacity="0.92"/>
+
+          <!-- Ground -->
+          <rect x="0"  y="262" width="308" height="74" fill="url(#groundGrad)"/>
+          <rect x="0"  y="262" width="308" height="4"  fill="#9b8a62" opacity="0.7"/>
+
+          <!-- Reflecting water strip -->
+          <rect x="74" y="274" width="160" height="16" rx="3" fill="#0f2d54" opacity="0.45"/>
+          <!-- Water shimmer highlights -->
+          <line x1="90"  y1="280" x2="160" y2="280" stroke="white" stroke-width="0.6" opacity="0.18"/>
+          <line x1="100" y1="284" x2="150" y2="284" stroke="white" stroke-width="0.5" opacity="0.12"/>
+
+          <!-- ── MOSQUE ──────────────────────────────── -->
+
+          <!-- Main body platform -->
+          <rect x="32" y="220" width="244" height="46" fill="url(#goldGrad)" opacity="0.92" rx="2"/>
+
+          <!-- Arched windows / doors on body -->
+          <!-- Window group — left -->
+          <g fill="#0f2d54" opacity="0.65">
+            <rect x="42"  y="228" width="19" height="36" rx="0"/>
+            <path d="M42,228 Q51.5,217 61,228"/>
+            <rect x="72"  y="228" width="19" height="36" rx="0"/>
+            <path d="M72,228 Q81.5,217 91,228"/>
+          </g>
+          <!-- Central grand door (slightly larger) -->
+          <rect x="124" y="220" width="28" height="46" fill="#0f2d54" opacity="0.70" rx="0"/>
+          <path d="M124,220 Q138,205 152,220" fill="#0f2d54" opacity="0.70"/>
+          <!-- Window group — right -->
+          <g fill="#0f2d54" opacity="0.65">
+            <rect x="165" y="228" width="19" height="36" rx="0"/>
+            <path d="M165,228 Q174.5,217 184,228"/>
+            <rect x="195" y="228" width="19" height="36" rx="0"/>
+            <path d="M195,228 Q204.5,217 214,228"/>
+          </g>
+
+          <!-- Small side domes -->
+          <ellipse cx="90"  cy="220" rx="22" ry="17" fill="url(#goldGrad)"/>
+          <ellipse cx="90"  cy="217" rx="19" ry="12" fill="url(#domeShine)"/>
+          <ellipse cx="218" cy="220" rx="22" ry="17" fill="url(#goldGrad)"/>
+          <ellipse cx="218" cy="217" rx="19" ry="12" fill="url(#domeShine)"/>
+
+          <!-- Main central dome -->
+          <ellipse cx="154" cy="205" rx="56" ry="44" fill="url(#goldGrad)" filter="url(#softGlow)"/>
+          <ellipse cx="154" cy="201" rx="50" ry="36" fill="url(#domeShine)"/>
+          <!-- Dome drum / base ring -->
+          <rect x="98"  y="214" width="112" height="12" fill="#9a7520" rx="2"/>
+          <rect x="100" y="215" width="108" height="7"  fill="#c9a84c" rx="1"/>
+
+          <!-- Crescent on main dome -->
+          <g transform="translate(143,160)" filter="url(#softGlow)">
+            <circle cx="11" cy="5"  r="9"   fill="#fffae8" opacity="0.95"/>
+            <circle cx="16" cy="2"  r="7.8" fill="#c9a84c"/>
+            <circle cx="28" cy="-2" r="2.8" fill="#fffae8" opacity="0.90"/>
+          </g>
+
+          <!-- Left minaret -->
+          <rect x="48" y="108" width="18" height="118" fill="url(#goldGrad)" rx="1"/>
+          <!-- Balcony bands -->
+          <rect x="44" y="148" width="26" height="5" fill="#9a7520" rx="1" opacity="0.8"/>
+          <rect x="44" y="180" width="26" height="5" fill="#9a7520" rx="1" opacity="0.8"/>
+          <!-- Cap -->
+          <rect x="44" y="103" width="26" height="10" fill="#9a7520" rx="1"/>
+          <path d="M44,103 Q57,84 70,103 Z" fill="url(#goldGrad)"/>
+          <path d="M47,103 Q57,87 67,103 Z" fill="#f0d070" opacity="0.22"/>
+          <!-- Crescent on left minaret -->
+          <g transform="translate(51,80)" filter="url(#softGlow)">
+            <circle cx="6"  cy="4"  r="6.5" fill="#fffae8" opacity="0.95"/>
+            <circle cx="10" cy="1"  r="5.7" fill="#c9a84c"/>
+            <circle cx="19" cy="-1" r="2.1" fill="#fffae8" opacity="0.90"/>
+          </g>
+
+          <!-- Right minaret -->
+          <rect x="242" y="108" width="18" height="118" fill="url(#goldGrad)" rx="1"/>
+          <rect x="238" y="148" width="26" height="5" fill="#9a7520" rx="1" opacity="0.8"/>
+          <rect x="238" y="180" width="26" height="5" fill="#9a7520" rx="1" opacity="0.8"/>
+          <rect x="238" y="103" width="26" height="10" fill="#9a7520" rx="1"/>
+          <path d="M238,103 Q251,84 264,103 Z" fill="url(#goldGrad)"/>
+          <path d="M241,103 Q251,87 261,103 Z" fill="#f0d070" opacity="0.22"/>
+          <g transform="translate(245,80)" filter="url(#softGlow)">
+            <circle cx="6"  cy="4"  r="6.5" fill="#fffae8" opacity="0.95"/>
+            <circle cx="10" cy="1"  r="5.7" fill="#c9a84c"/>
+            <circle cx="19" cy="-1" r="2.1" fill="#fffae8" opacity="0.90"/>
+          </g>
+
+        </g><!-- end clip -->
+
+        <!-- ── ARCH GOLD BORDER (drawn on top) ──────── -->
+        <path d="M18,336 L18,152 Q18,14 154,14 Q290,14 290,152 L290,336"
+              fill="none" stroke="#c9a84c" stroke-width="2.8" stroke-linecap="round"/>
+        <path d="M26,336 L26,154 Q26,22 154,22 Q282,22 282,154 L282,336"
+              fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.38"/>
+
+        <!-- Arch accent dots -->
+        <circle cx="154" cy="14" r="5.5" fill="#c9a84c"/>
+        <circle cx="18"  cy="152" r="4"   fill="#c9a84c"/>
+        <circle cx="290" cy="152" r="4"   fill="#c9a84c"/>
+        <!-- Base lines -->
+        <line x1="0"   y1="335" x2="18"  y2="335" stroke="#c9a84c" stroke-width="1.5"/>
+        <line x1="290" y1="335" x2="308" y2="335" stroke="#c9a84c" stroke-width="1.5"/>
+      </svg>
+    </div><!-- end arch-section -->
+
+    <!-- ✦ — ✦ separator -->
+    <div class="star-sep">
+      <span>✦</span>
+      <svg width="55" height="1"><rect width="55" height="1" fill="#c9a84c" opacity="0.55"/></svg>
+      <span>✦</span>
+      <svg width="55" height="1"><rect width="55" height="1" fill="#c9a84c" opacity="0.55"/></svg>
+      <span>✦</span>
+    </div>
+
+    <!-- Dua -->
+    <div class="dua-block">
+      <div class="dua-en">
+        May Allah bless you and your family,<br>
+        fill your hearts with joy and peace,<br>
+        and accept all your prayers and good deeds.
+      </div>
+      <div class="divider-sm"></div>
+      <div class="dua-ar">تَقَبَّلَ اللهُ مِنَّا وَمِنكُم</div>
+    </div>
+
+    <!-- Date -->
+    <div class="date-line">Wednesday · May 27, 2026</div>
+
+    <!-- Bottom ornament -->
+    <div class="bottom-ornament">
+      <svg width="170" height="26" viewBox="0 0 170 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0"   y1="13" x2="58"  y2="13" stroke="#c9a84c" stroke-width="0.8" opacity="0.48" stroke-linecap="round"/>
+        <circle cx="65" cy="13" r="2.2" fill="#c9a84c" opacity="0.38"/>
+        <path d="M72,13 Q85,4 98,13 Q85,22 72,13 Z" fill="#c9a84c" opacity="0.48"/>
+        <circle cx="85" cy="13" r="3.2" fill="#c9a84c" opacity="0.68"/>
+        <circle cx="105" cy="13" r="2.2" fill="#c9a84c" opacity="0.38"/>
+        <line x1="112" y1="13" x2="170" y2="13" stroke="#c9a84c" stroke-width="0.8" opacity="0.48" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+  </div><!-- end .content -->
+</div><!-- end .flyer -->
+
+<p class="hint" style="margin-top:10px; font-size:11px; color:#777;">
+  Best viewed in Chrome or Edge with an internet connection (for Google Fonts).
+</p>
+
+</body>
+</html>
