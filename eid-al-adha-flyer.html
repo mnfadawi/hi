@@ -3,189 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <title>Eid al-Adha 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 body { background: #000; }
 
 .flyer {
   width: 540px;
   height: 960px;
-  background: #0a1a0c;
+  position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
   font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
-/* ─── HERO ─── */
-.hero {
-  flex: 0 0 540px;
-  position: relative;
-  overflow: hidden;
+/* ══════════════════════════════════════
+   LAYER 1 — Kaaba: full-bleed base
+   Building sits at y ≈ 576–960
+   ══════════════════════════════════════ */
+.bg-kaaba {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
-
-.hero-bg {
+.bg-kaaba img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   display: block;
 }
 
-.hero-overlay {
+/* ══════════════════════════════════════
+   LAYER 2 — Aleppo Citadel
+   Placed in upper-left, over dark sky
+   Blends as a glowing vision
+   ══════════════════════════════════════ */
+.bg-citadel {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0,0,0,0.18) 0%,
-    rgba(0,0,0,0.08) 20%,
-    rgba(0,0,0,0.28) 50%,
-    rgba(10,26,12,0.86) 80%,
-    rgba(10,26,12,1.0) 100%
-  );
-}
-
-.hero-content {
-  position: absolute;
-  bottom: 26px;
+  top: 258px;
   left: 0;
-  right: 0;
-  text-align: center;
-  padding: 0 28px;
+  width: 320px;
+  height: 290px;
+  z-index: 2;
+  opacity: 0.54;
+  mix-blend-mode: screen;
+  -webkit-mask-image: radial-gradient(ellipse 85% 80% at 45% 55%, black 10%, rgba(0,0,0,0.6) 55%, transparent 85%);
+  mask-image:         radial-gradient(ellipse 85% 80% at 45% 55%, black 10%, rgba(0,0,0,0.6) 55%, transparent 85%);
 }
-
-.ornament {
-  display: block;
-  color: #c9a227;
-  font-size: 18px;
-  letter-spacing: 10px;
-  margin-bottom: 12px;
-}
-
-.eid-mubarak-en {
-  font-family: 'Great Vibes', cursive;
-  font-size: 82px;
-  color: #f5e6c4;
-  line-height: 0.95;
-  text-shadow:
-    0 0 50px rgba(201,162,39,0.45),
-    0 2px 12px rgba(0,0,0,0.7);
-}
-
-.eid-mubarak-ar {
-  font-family: 'Amiri', serif;
-  font-size: 52px;
-  color: #c9a227;
-  direction: rtl;
-  line-height: 1.2;
-  margin-top: 4px;
-}
-
-.divider-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 10px 50px;
-}
-
-.div-line {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(149,199,149,0.55));
-}
-
-.div-line-r {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to left, transparent, rgba(149,199,149,0.55));
-}
-
-.div-gem {
-  width: 5px;
-  height: 5px;
-  background: #95c795;
-  transform: rotate(45deg);
-  flex-shrink: 0;
-}
-
-.occasion-text {
-  font-size: 13.5px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #95c795;
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
-}
-
-/* ─── DUA ─── */
-.dua-section {
-  flex: 0 0 118px;
-  background: linear-gradient(135deg, #111f15 0%, #0a1a0c 100%);
-  border-top: 1px solid rgba(149,199,149,0.2);
-  border-bottom: 1px solid rgba(149,199,149,0.2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 36px;
-  gap: 7px;
-  text-align: center;
-}
-
-.dua-ar {
-  font-family: 'Amiri', serif;
-  font-size: 26px;
-  color: #c9a227;
-  direction: rtl;
-  line-height: 1.3;
-}
-
-.dua-en {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 14.5px;
-  color: #8fba8f;
-  letter-spacing: 0.6px;
-}
-
-/* ─── BOTTOM ─── */
-.bottom-section {
-  flex: 1;
-  background: #0a1a0c;
-  padding: 18px 18px 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.photo-label {
-  text-align: center;
-  font-size: 11.5px;
-  letter-spacing: 3.5px;
-  text-transform: uppercase;
-  color: rgba(149,199,149,0.55);
-  margin-bottom: 11px;
-  font-family: 'Cormorant Garamond', serif;
-}
-
-.photos-row {
-  display: flex;
-  gap: 10px;
-  height: 168px;
-  margin-bottom: 13px;
-}
-
-.photo-frame {
-  border-radius: 7px;
-  overflow: hidden;
-  border: 1px solid rgba(149,199,149,0.22);
-  flex-shrink: 0;
-}
-
-.citadel-frame { width: 230px; }
-.citadel-frame img {
+.bg-citadel img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -193,91 +58,290 @@ body { background: #000; }
   display: block;
 }
 
-.syria-frame {
-  width: 127px;
-  background: #050d07;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ══════════════════════════════════════
+   LAYER 3 — Goats
+   Placed in upper-right, over dark sky
+   ══════════════════════════════════════ */
+.bg-goats {
+  position: absolute;
+  top: 238px;
+  right: 0;
+  width: 260px;
+  height: 300px;
+  z-index: 2;
+  opacity: 0.46;
+  mix-blend-mode: screen;
+  -webkit-mask-image: radial-gradient(ellipse 82% 80% at 55% 50%, black 10%, rgba(0,0,0,0.55) 50%, transparent 82%);
+  mask-image:         radial-gradient(ellipse 82% 80% at 55% 50%, black 10%, rgba(0,0,0,0.55) 50%, transparent 82%);
 }
-.syria-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 10px;
-  display: block;
-}
-
-.goat-frame { width: 127px; }
-.goat-frame img {
+.bg-goats img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 12%;
+  object-position: center 8%;
   display: block;
 }
 
-.location-text {
-  text-align: center;
-  font-family: 'Amiri', serif;
-  font-size: 17px;
-  color: #b0ccb0;
-  letter-spacing: 0.8px;
-  margin-bottom: 8px;
+/* ══════════════════════════════════════
+   LAYER 4 — Syria independence flag/map
+   Centered, just above the Kaaba building
+   ══════════════════════════════════════ */
+.bg-syria {
+  position: absolute;
+  top: 430px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 140px;
+  z-index: 3;
+  opacity: 0.52;
+  mix-blend-mode: screen;
+  -webkit-mask-image: radial-gradient(ellipse 82% 78% at 50% 50%, black 15%, rgba(0,0,0,0.4) 55%, transparent 82%);
+  mask-image:         radial-gradient(ellipse 82% 78% at 50% 50%, black 15%, rgba(0,0,0,0.4) 55%, transparent 82%);
+}
+.bg-syria img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
-.date-text {
+/* ══════════════════════════════════════
+   LAYER 5 — Gradient overlay
+   Darkens top (for text) + bottom (for text)
+   Stays very open in the mid-lower zone
+   so Kaaba building is fully revealed
+   ══════════════════════════════════════ */
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.68)  0%,
+    rgba(0,0,0,0.40) 10%,
+    rgba(0,0,0,0.12) 24%,
+    rgba(0,0,0,0.05) 48%,
+    rgba(0,0,0,0.02) 64%,
+    rgba(0,0,0,0.35) 78%,
+    rgba(0,0,0,0.62) 91%,
+    rgba(0,0,0,0.70) 100%
+  );
+}
+
+/* ══════════════════════════════════════
+   TEXT CONTENT
+   ══════════════════════════════════════ */
+
+/* ── TOP: greeting block ── */
+.top-block {
+  position: absolute;
+  top: 46px;
+  left: 0; right: 0;
   text-align: center;
-  font-family: 'Cormorant Garamond', serif;
+  padding: 0 26px;
+  z-index: 10;
+}
+
+.ornament {
+  display: block;
+  color: #c9a227;
+  font-size: 16px;
+  letter-spacing: 12px;
+  margin-bottom: 12px;
+  text-shadow: 0 0 20px rgba(201,162,39,0.5);
+}
+
+.eid-en {
+  font-family: 'Great Vibes', cursive;
+  font-size: 86px;
+  color: #f5e6c4;
+  line-height: 0.92;
+  display: block;
+  text-shadow:
+    0 0 80px rgba(201,162,39,0.60),
+    0 2px 20px rgba(0,0,0,0.90);
+}
+
+.eid-ar {
+  font-family: 'Amiri', serif;
+  font-size: 54px;
+  color: #c9a227;
+  direction: rtl;
+  line-height: 1.2;
+  margin-top: 2px;
+  display: block;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.85);
+}
+
+.divider-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 11px 44px;
+}
+.dv-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(to right, transparent, rgba(149,199,149,0.60));
+}
+.dv-line-r {
+  flex: 1; height: 1px;
+  background: linear-gradient(to left, transparent, rgba(149,199,149,0.60));
+}
+.dv-gem {
+  width: 5px; height: 5px;
+  background: #95c795;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.occasion {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #95c795;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.95);
+}
+
+/* ── DUA block: overlaid just above Kaaba building ── */
+.dua-block {
+  position: absolute;
+  top: 596px;
+  left: 0; right: 0;
+  text-align: center;
+  padding: 0 36px;
+  z-index: 10;
+}
+
+.dua-ar {
+  font-family: 'Amiri', serif;
+  font-size: 28px;
+  color: #c9a227;
+  direction: rtl;
+  line-height: 1.45;
+  display: block;
+  text-shadow:
+    0 0 30px rgba(0,0,0,1),
+    0 2px 18px rgba(0,0,0,1),
+    0 0 6px rgba(0,0,0,1);
+  margin-bottom: 6px;
+}
+
+.dua-en {
+  font-style: italic;
+  font-size: 14.5px;
+  color: rgba(245,245,240,0.88);
+  text-shadow: 0 1px 12px rgba(0,0,0,1), 0 0 6px rgba(0,0,0,1);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.blessing-ar {
+  font-family: 'Amiri', serif;
+  font-size: 22px;
+  color: rgba(201,162,39,0.92);
+  direction: rtl;
+  display: block;
+  text-shadow: 0 2px 14px rgba(0,0,0,1), 0 0 6px rgba(0,0,0,1);
+  margin-bottom: 4px;
+}
+
+.blessing-en {
+  font-style: italic;
   font-size: 13.5px;
+  color: rgba(220,230,220,0.82);
+  text-shadow: 0 1px 10px rgba(0,0,0,1), 0 0 5px rgba(0,0,0,1);
+  display: block;
+}
+
+/* ── BOTTOM: location + date ── */
+.bottom-block {
+  position: absolute;
+  bottom: 34px;
+  left: 0; right: 0;
+  text-align: center;
+  z-index: 10;
+  padding: 0 30px;
+}
+
+.sep-line {
+  width: 140px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201,162,39,0.55), transparent);
+  margin: 0 auto 12px;
+}
+
+.location {
+  font-family: 'Amiri', serif;
+  font-size: 18px;
+  color: #cce0cc;
+  letter-spacing: 0.8px;
+  display: block;
+  margin-bottom: 9px;
+  text-shadow: 0 2px 12px rgba(0,0,0,1), 0 0 5px rgba(0,0,0,0.9);
+}
+
+.date {
+  font-size: 13px;
   letter-spacing: 3.5px;
   text-transform: uppercase;
   color: #c9a227;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.95);
 }
 </style>
 </head>
 <body>
 <div class="flyer">
 
-  <!-- HERO: Kaaba at night in the rain -->
-  <div class="hero">
-    <img class="hero-bg" src="IMG_0171.jpeg" alt="">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <span class="ornament">☽ &nbsp;✦&nbsp; ☾</span>
-      <div class="eid-mubarak-en">Eid Mubarak</div>
-      <div class="eid-mubarak-ar">عيد مبارك</div>
-      <div class="divider-row">
-        <div class="div-line"></div>
-        <div class="div-gem"></div>
-        <div class="div-line-r"></div>
-      </div>
-      <div class="occasion-text">Eid al-Adha &nbsp;·&nbsp; عيد الأضحى &nbsp;·&nbsp; 2026</div>
-    </div>
+  <!-- Kaaba full-bleed — building visible at bottom of flyer -->
+  <div class="bg-kaaba">
+    <img src="IMG_0171.jpeg" alt="">
   </div>
 
-  <!-- DUA -->
-  <div class="dua-section">
-    <div class="dua-ar">تَقَبَّلَ اللهُ مِنَّا وَمِنكُم</div>
-    <div class="dua-en">May Allah accept from us and from you</div>
+  <!-- Citadel of Aleppo — upper-left, screen-blended over dark sky -->
+  <div class="bg-citadel">
+    <img src="IMG_0168.jpeg" alt="">
   </div>
 
-  <!-- BOTTOM: Citadel · Syria · Goat -->
-  <div class="bottom-section">
-    <div class="photo-label">Aleppo Citadel &nbsp;·&nbsp; قلعة حلب &nbsp;·&nbsp; Syria &nbsp;·&nbsp; Qurbani</div>
-    <div class="photos-row">
-      <div class="photo-frame citadel-frame">
-        <img src="IMG_0168.jpeg" alt="Citadel of Aleppo">
-      </div>
-      <div class="photo-frame syria-frame">
-        <img src="IMG_0172.png" alt="Syria Independence Flag">
-      </div>
-      <div class="photo-frame goat-frame">
-        <img src="IMG_0169.webp" alt="Qurbani">
-      </div>
+  <!-- Goats — upper-right, screen-blended over dark sky -->
+  <div class="bg-goats">
+    <img src="IMG_0169.webp" alt="">
+  </div>
+
+  <!-- Syria independence flag/map — centered, between text and Kaaba -->
+  <div class="bg-syria">
+    <img src="IMG_0172.png" alt="">
+  </div>
+
+  <!-- Unifying gradient overlay -->
+  <div class="bg-overlay"></div>
+
+  <!-- ── GREETING (top) ── -->
+  <div class="top-block">
+    <span class="ornament">☽ &nbsp;✦&nbsp; ☾</span>
+    <span class="eid-en">Eid Mubarak</span>
+    <span class="eid-ar">عيد مبارك</span>
+    <div class="divider-row">
+      <div class="dv-line"></div>
+      <div class="dv-gem"></div>
+      <div class="dv-line-r"></div>
     </div>
-    <div class="location-text">حلب، سوريا &nbsp;·&nbsp; Aleppo, Syria</div>
-    <div class="date-text">Wednesday &nbsp;·&nbsp; May 27, 2026</div>
+    <div class="occasion">Eid al-Adha &nbsp;·&nbsp; عيد الأضحى &nbsp;·&nbsp; 2026</div>
+  </div>
+
+  <!-- ── DUA (over Kaaba building) ── -->
+  <div class="dua-block">
+    <span class="dua-ar">تَقَبَّلَ اللهُ مِنَّا وَمِنكُم</span>
+    <span class="dua-en">May Allah accept from us and from you</span>
+    <span class="blessing-ar">كُلُّ عَامٍ وَأَنتُمْ بِخَيْرٍ</span>
+    <span class="blessing-en">May you be well every year</span>
+  </div>
+
+  <!-- ── LOCATION + DATE (bottom) ── -->
+  <div class="bottom-block">
+    <div class="sep-line"></div>
+    <span class="location">حلب، سوريا &nbsp;·&nbsp; Aleppo, Syria</span>
+    <div class="date">Wednesday &nbsp;·&nbsp; May 27, 2026</div>
   </div>
 
 </div>
