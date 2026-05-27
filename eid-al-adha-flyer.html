@@ -14,219 +14,147 @@ body { background: #000; }
   position: relative;
   overflow: hidden;
   font-family: 'Cormorant Garamond', Georgia, serif;
+  text-align: center;
 }
 
-/* ══════════════════════════
-   2×2 PHOTO GRID — all four
-   photos clearly visible
-   ══════════════════════════ */
-
-.q {
-  position: absolute;
-  overflow: hidden;
+/* ── Kaaba photo: full-bleed background ── */
+.bg {
+  position: absolute; inset: 0; z-index: 1;
 }
-.q img {
+.bg img {
   width: 100%; height: 100%;
   object-fit: cover;
+  object-position: center center;
   display: block;
 }
 
-/* top-left: Kaaba */
-.q-kaaba {
-  top: 0; left: 0;
-  width: 270px; height: 480px;
-}
-.q-kaaba img { object-position: center bottom; }
-
-/* top-right: Goats */
-.q-goats {
-  top: 0; left: 270px;
-  width: 270px; height: 480px;
-}
-.q-goats img { object-position: center 10%; }
-
-/* bottom-left: Aleppo Citadel */
-.q-citadel {
-  top: 480px; left: 0;
-  width: 270px; height: 480px;
-}
-.q-citadel img { object-position: center center; }
-
-/* bottom-right: Syria map/flag */
-.q-syria {
-  top: 480px; left: 270px;
-  width: 270px; height: 480px;
-  background: #06100a;
-  display: flex; align-items: center; justify-content: center;
-}
-.q-syria img {
-  width: 88%; height: 88%;
-  object-fit: contain;
-}
-
-/* Gold grid lines */
-.grid-v {
-  position: absolute;
-  top: 0; left: 269px;
-  width: 2px; height: 960px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(201,162,39,0.65) 10%,
-    rgba(201,162,39,0.65) 90%,
-    transparent 100%
-  );
-  z-index: 5;
-}
-.grid-h {
-  position: absolute;
-  top: 479px; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(201,162,39,0.65) 10%,
-    rgba(201,162,39,0.65) 90%,
-    transparent 100%
-  );
-  z-index: 5;
-}
-
-/* Overall darkening overlay for text readability */
+/* ── Dark overlay so every word is readable ── */
 .overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 6;
+  position: absolute; inset: 0; z-index: 2;
   background: linear-gradient(
     180deg,
-    rgba(0,0,0,0.44) 0%,
-    rgba(0,0,0,0.22) 16%,
-    rgba(0,0,0,0.04) 34%,
-    rgba(0,0,0,0.04) 52%,
-    rgba(0,0,0,0.18) 68%,
-    rgba(0,0,0,0.36) 85%,
-    rgba(0,0,0,0.46) 100%
+    rgba(0,0,0,0.65)  0%,
+    rgba(0,0,0,0.42) 18%,
+    rgba(0,0,0,0.20) 36%,
+    rgba(0,0,0,0.20) 58%,
+    rgba(0,0,0,0.42) 78%,
+    rgba(0,0,0,0.68) 100%
   );
 }
 
-/* ══════════════════════════
-   TEXT CONTENT
-   ══════════════════════════ */
-
-/* ── Top greeting ── */
-.top-block {
-  position: absolute;
-  top: 32px;
-  left: 0; right: 0;
-  text-align: center;
-  padding: 0 24px;
-  z-index: 10;
+/* ── All content centered vertically & horizontally ── */
+.content {
+  position: absolute; inset: 0; z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 44px 28px 40px;
 }
 
+/* ─ Ornament ─ */
 .ornament {
-  display: block;
-  color: #c9a227;
-  font-size: 18px;
-  letter-spacing: 12px;
-  margin-bottom: 10px;
-  text-shadow: 0 0 20px rgba(201,162,39,0.6);
+  color: #d4a726;
+  font-size: 20px;
+  letter-spacing: 14px;
+  text-shadow: 0 0 28px rgba(212,167,38,0.8);
 }
+
+/* ─ Main heading ─ */
+.heading { width: 100%; }
 
 .eid-en {
   font-family: 'Great Vibes', cursive;
-  font-size: 100px;
+  font-size: 102px;
   color: #ffffff;
   line-height: 0.92;
   display: block;
   text-shadow:
-    0 0 90px rgba(201,162,39,0.70),
-    0 3px 24px rgba(0,0,0,0.95);
+    0 0 100px rgba(212,167,38,0.70),
+    0 3px 28px rgba(0,0,0,1);
 }
 
 .eid-ar {
   font-family: 'Amiri', serif;
-  font-size: 68px;
+  font-size: 70px;
   color: #f5c518;
   direction: rtl;
   line-height: 1.18;
-  margin-top: 2px;
   display: block;
-  text-shadow: 0 3px 20px rgba(0,0,0,0.9), 0 0 50px rgba(201,162,39,0.5);
+  margin-top: 2px;
+  text-shadow:
+    0 0 55px rgba(212,167,38,0.55),
+    0 3px 24px rgba(0,0,0,1);
 }
+
+/* ─ Secondary greetings ─ */
+.greetings { width: 100%; }
 
 .eid-sub-ar {
   font-family: 'Amiri', serif;
-  font-size: 32px;
-  color: #fff8ec;
+  font-size: 33px;
+  color: #fffbf0;
   direction: rtl;
   display: block;
-  letter-spacing: 1px;
-  margin-top: 6px;
-  text-shadow: 0 2px 14px rgba(0,0,0,0.9);
+  text-shadow: 0 2px 18px rgba(0,0,0,1);
 }
-
 .eid-sub-en {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 20px;
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.94);
   display: block;
-  letter-spacing: 1.5px;
-  margin-top: 3px;
-  text-shadow: 0 1px 10px rgba(0,0,0,0.9);
+  margin-top: 5px;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 14px rgba(0,0,0,1);
 }
 
-.divider-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 10px 40px;
-}
-.dv-line {
-  flex: 1; height: 1px;
-  background: linear-gradient(to right, transparent, rgba(201,162,39,0.7));
-}
-.dv-line-r {
-  flex: 1; height: 1px;
-  background: linear-gradient(to left, transparent, rgba(201,162,39,0.7));
-}
-.dv-gem {
-  width: 6px; height: 6px;
-  background: #c9a227;
-  transform: rotate(45deg);
-  flex-shrink: 0;
-}
+/* ─ Occasion ─ */
+.occasion { width: 100%; }
 
-.occasion-ar {
+.occ-ar {
   font-family: 'Amiri', serif;
-  font-size: 23px;
+  font-size: 24px;
   color: #a8e6a8;
   direction: rtl;
   display: block;
-  text-shadow: 0 1px 10px rgba(0,0,0,0.95);
+  text-shadow: 0 1px 12px rgba(0,0,0,1);
 }
-
-.occasion-en {
+.occ-en {
   font-size: 15px;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: #a8e6a8;
   display: block;
-  margin-top: 3px;
-  text-shadow: 0 1px 10px rgba(0,0,0,0.95);
+  margin-top: 4px;
+  text-shadow: 0 1px 12px rgba(0,0,0,1);
 }
 
-/* ── Dua card (middle-bottom) ── */
-.dua-card {
-  position: absolute;
-  top: 510px;
-  left: 24px; right: 24px;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.58);
-  border: 1px solid rgba(201,162,39,0.50);
+/* ─ Divider ─ */
+.divider {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%; padding: 0 38px;
+}
+.dv-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(to right, transparent, rgba(212,167,38,0.75));
+}
+.dv-line-r {
+  flex: 1; height: 1px;
+  background: linear-gradient(to left, transparent, rgba(212,167,38,0.75));
+}
+.dv-gem {
+  width: 7px; height: 7px;
+  background: #d4a726; transform: rotate(45deg); flex-shrink: 0;
+}
+
+/* ─ Dua block ─ */
+.dua-block {
+  width: 100%;
+  background: rgba(0,0,0,0.52);
+  border: 1px solid rgba(212,167,38,0.45);
   border-radius: 12px;
-  padding: 24px 28px 22px;
-  text-align: center;
+  padding: 22px 26px 20px;
 }
 
 .dua-ar {
@@ -234,117 +162,91 @@ body { background: #000; }
   font-size: 33px;
   color: #f5c518;
   direction: rtl;
-  line-height: 1.45;
+  line-height: 1.5;
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
-
 .dua-en {
   font-style: italic;
   font-size: 17px;
-  color: rgba(255,255,255,0.94);
+  color: #ffffff;
   display: block;
   margin-bottom: 16px;
-  letter-spacing: 0.3px;
 }
 
-.card-sep {
-  width: 120px;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(201,162,39,0.65), transparent);
+.inner-sep {
+  width: 120px; height: 1px;
+  background: linear-gradient(to right, transparent, rgba(212,167,38,0.65), transparent);
   margin: 0 auto 15px;
 }
 
 .blessing-ar {
   font-family: 'Amiri', serif;
   font-size: 28px;
-  color: #fff8ec;
+  color: #fffbf0;
   direction: rtl;
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
-
 .blessing-en {
   font-style: italic;
   font-size: 16px;
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.93);
   display: block;
 }
 
-/* ── Date ── */
-.date-block {
-  position: absolute;
-  bottom: 26px;
-  left: 0; right: 0;
-  text-align: center;
-  z-index: 10;
-}
-
-.date {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #c9a227;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.95);
-  display: block;
-}
-
-.date-ar {
-  font-family: 'Amiri', serif;
-  font-size: 16px;
-  color: rgba(201,162,39,0.85);
-  direction: rtl;
-  display: block;
-  margin-top: 4px;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.95);
+/* ─ Bottom ornament ─ */
+.bot-ornament {
+  color: #d4a726;
+  font-size: 20px;
+  letter-spacing: 14px;
+  text-shadow: 0 0 24px rgba(212,167,38,0.65);
 }
 </style>
 </head>
 <body>
 <div class="flyer">
 
-  <!-- ── 4 PHOTO GRID ── -->
-  <div class="q q-kaaba">  <img src="IMG_0171.jpeg" alt=""></div>
-  <div class="q q-goats">  <img src="IMG_0169.webp" alt=""></div>
-  <div class="q q-citadel"><img src="IMG_0168.jpeg" alt=""></div>
-  <div class="q q-syria">  <img src="IMG_0172.png"  alt=""></div>
-
-  <!-- Gold grid lines -->
-  <div class="grid-v"></div>
-  <div class="grid-h"></div>
-
-  <!-- Overlay -->
+  <!-- Kaaba photo only -->
+  <div class="bg"><img src="IMG_0171.jpeg" alt=""></div>
   <div class="overlay"></div>
 
-  <!-- ── GREETING ── -->
-  <div class="top-block">
-    <span class="ornament">☽ &nbsp;✦&nbsp; ☾</span>
-    <span class="eid-en">Eid Mubarak</span>
-    <span class="eid-ar">عيد مبارك</span>
-    <span class="eid-sub-ar">عيدكم سعيد &nbsp;·&nbsp; عيد كريم</span>
-    <span class="eid-sub-en">Happy Eid to You &nbsp;·&nbsp; Blessed Eid</span>
-    <div class="divider-row">
+  <!-- All content centered -->
+  <div class="content">
+
+    <div class="ornament">☽ &nbsp;✦&nbsp; ☾</div>
+
+    <div class="heading">
+      <span class="eid-en">Eid Mubarak</span>
+      <span class="eid-ar">عيد مبارك</span>
+    </div>
+
+    <div class="greetings">
+      <span class="eid-sub-ar">عيدكم سعيد &nbsp;·&nbsp; عيد كريم</span>
+      <span class="eid-sub-en">Happy Eid to You &nbsp;·&nbsp; Blessed Eid</span>
+    </div>
+
+    <div class="divider">
       <div class="dv-line"></div>
       <div class="dv-gem"></div>
       <div class="dv-line-r"></div>
     </div>
-    <span class="occasion-ar">عيد الأضحى المبارك &nbsp;·&nbsp; ٢٠٢٦</span>
-    <span class="occasion-en">Eid al-Adha Mubarak &nbsp;·&nbsp; 2026</span>
-  </div>
 
-  <!-- ── DUA CARD ── -->
-  <div class="dua-card">
-    <span class="dua-ar">تَقَبَّلَ اللهُ مِنَّا وَمِنكُمْ صَالِحَ الأَعْمَالِ</span>
-    <span class="dua-en">May Allah accept from us and from you our righteous deeds</span>
-    <div class="card-sep"></div>
-    <span class="blessing-ar">كُلُّ عَامٍ وَأَنتُمْ بِأَلفِ خَيْرٍ وَصِحَّةٍ وَسَلَامَةٍ</span>
-    <span class="blessing-en">Wishing you endless goodness, health and peace every year</span>
-  </div>
+    <div class="occasion">
+      <span class="occ-ar">عيد الأضحى المبارك &nbsp;·&nbsp; ٢٠٢٦</span>
+      <span class="occ-en">Eid al-Adha Mubarak &nbsp;·&nbsp; 2026</span>
+    </div>
 
-  <!-- ── BOTTOM ORNAMENT ── -->
-  <div style="position:absolute;bottom:28px;left:0;right:0;text-align:center;z-index:10;">
-    <span style="color:#c9a227;font-size:20px;letter-spacing:12px;text-shadow:0 0 20px rgba(201,162,39,0.6);">☽ &nbsp;✦&nbsp; ☾</span>
+    <div class="dua-block">
+      <span class="dua-ar">تَقَبَّلَ اللهُ مِنَّا وَمِنكُمْ صَالِحَ الأَعْمَالِ</span>
+      <span class="dua-en">May Allah accept from us and from you our righteous deeds</span>
+      <div class="inner-sep"></div>
+      <span class="blessing-ar">كُلُّ عَامٍ وَأَنتُمْ بِأَلفِ خَيْرٍ وَصِحَّةٍ وَسَلَامَةٍ</span>
+      <span class="blessing-en">Wishing you endless goodness, health and peace every year</span>
+    </div>
+
+    <div class="bot-ornament">☽ &nbsp;✦&nbsp; ☾</div>
+
   </div>
 
 </div>
