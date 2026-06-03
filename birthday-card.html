@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 1st Birthday Mahmoudi!</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; }
+
+    .card {
+      position: relative;
+      width: 100vw;
+      height: 100dvh;
+    }
+
+    /* Photo fills screen, no stretch, no distortion */
+    .card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Very light tint — photo stays bright and visible */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.10);
+    }
+
+    /* All text centered, no boxes */
+    .text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 20px 28px;
+      text-align: center;
+      font-family: 'Georgia', serif;
+    }
+
+    .shadow { text-shadow: 0 1px 6px #000, 0 2px 18px #000; }
+
+    .heading-ar {
+      font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
+      font-size: 26px;
+      font-weight: bold;
+      color: #fff;
+      direction: rtl;
+    }
+    .heading-en {
+      font-size: 12px;
+      color: #fff;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .big-one {
+      font-size: 110px;
+      line-height: 1;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 0 0 40px rgba(144,202,249,0.9), 0 2px 20px #000;
+      animation: glow 2.2s ease-in-out infinite alternate;
+      margin-top: 2px;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 20px rgba(144,202,249,0.5), 0 2px 16px #000; }
+      to   { text-shadow: 0 0 60px rgba(144,202,249,1), 0 2px 16px #000; }
+    }
+
+    .name {
+      font-size: 26px;
+      font-weight: bold;
+      color: #fff;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin-top: -8px;
+    }
+
+    .cake { font-size: 28px; animation: bounce 1.1s ease-in-out infinite alternate; }
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to   { transform: translateY(-5px); }
+    }
+
+    .divider {
+      width: 55%;
+      height: 1px;
+      background: rgba(255,255,255,0.45);
+      border: none;
+      margin: 2px 0;
+    }
+
+    .levantine-ar {
+      font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
+      font-size: 18px;
+      color: #fff;
+      direction: rtl;
+      line-height: 1.7;
+      font-weight: bold;
+    }
+    .levantine-en {
+      font-size: 12px;
+      color: #fff;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .dua-ar {
+      font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
+      font-size: 16px;
+      color: #fff;
+      direction: rtl;
+      line-height: 1.8;
+      font-weight: bold;
+    }
+    .dua-en {
+      font-size: 11px;
+      color: #fff;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .sig {
+      font-size: 13px;
+      color: #fff;
+      font-style: italic;
+      line-height: 1.8;
+    }
+    .sig-ar {
+      display: block;
+      font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: bold;
+      color: #fff;
+      direction: rtl;
+    }
+    b { color: #fff; font-style: normal; }
+
+    .icons { font-size: 20px; letter-spacing: 8px; animation: pulse 1.6s ease-in-out infinite; }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50%       { transform: scale(1.1); }
+    }
+
+    .confetti-piece {
+      position: fixed;
+      top: -20px;
+      pointer-events: none;
+      z-index: 10;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <img src="IMG_4203.jpeg" alt="Mahmoudi" />
+    <div class="overlay"></div>
+
+    <div class="text">
+
+      <div class="heading-ar shadow">عيد ميلاد سعيد 🎉</div>
+      <div class="heading-en shadow">Happy 1st Birthday</div>
+
+      <div class="big-one">1</div>
+      <div class="name shadow">Mahmoudi</div>
+      <span class="cake shadow">🎂</span>
+
+      <hr class="divider" />
+
+      <div class="levantine-ar shadow">كل عام وانت بخير وصحة وسلامة 🎈 مبروك الف</div>
+      <div class="levantine-en shadow">Wishing you health &amp; happiness every year — a thousand congratulations!</div>
+
+      <div class="dua-ar shadow">🤲 اللهم بارك فيه وأطل عمره واجعله قرة عين لأهله. آمين.</div>
+      <div class="dua-en shadow">May Allah bless him, grant him a long life &amp; make him the joy of his family. Ameen.</div>
+
+      <hr class="divider" />
+
+      <div class="sig shadow">
+        From your uncle, <b>Hamoushi</b> 🤍
+        <span class="sig-ar shadow">من عمك <b>هموشي</b> 🤍</span>
+      </div>
+      <div class="icons shadow">🎈 ⭐ 🎁</div>
+
+    </div>
+  </div>
+
+  <script>
+    const colors = ['#90caf9','#fff','#bbdefb','#42a5f5','#fff9c4'];
+    for (let i = 0; i < 30; i++) {
+      const el = document.createElement('div');
+      el.className = 'confetti-piece';
+      const s = 6 + Math.random() * 8;
+      el.style.cssText = `left:${Math.random()*100}vw;width:${s}px;height:${s}px;background:${colors[Math.floor(Math.random()*colors.length)]};border-radius:${Math.random()>.5?'50%':'2px'};animation-duration:${3+Math.random()*5}s;animation-delay:${Math.random()*8}s;`;
+      document.body.appendChild(el);
+    }
+  </script>
+</body>
+</html>
