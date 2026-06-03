@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 1st Birthday Mahmoudi!</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fecfef, #ffecd2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Georgia', serif;
+      overflow: hidden;
+    }
+
+    /* Confetti */
+    .confetti-piece {
+      position: fixed;
+      width: 12px;
+      height: 12px;
+      top: -20px;
+      animation: fall linear infinite;
+      border-radius: 2px;
+    }
+    @keyframes fall {
+      0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(720deg); opacity: 0.3; }
+    }
+
+    /* Balloons */
+    .balloon {
+      position: fixed;
+      bottom: -120px;
+      font-size: 64px;
+      animation: rise linear infinite;
+      user-select: none;
+    }
+    @keyframes rise {
+      0%   { transform: translateY(0) rotate(-5deg); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 1; }
+      100% { transform: translateY(-110vh) rotate(5deg); opacity: 0; }
+    }
+
+    /* Card */
+    .card {
+      background: white;
+      border-radius: 32px;
+      padding: 48px 56px;
+      text-align: center;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.18);
+      max-width: 580px;
+      width: 92%;
+      position: relative;
+      z-index: 10;
+      animation: pop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    }
+    @keyframes pop {
+      from { transform: scale(0.5); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+
+    .big-one {
+      font-size: 110px;
+      line-height: 1;
+      background: linear-gradient(135deg, #f093fb, #f5576c, #fda085);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: wiggle 1.8s ease-in-out infinite;
+    }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(-4deg) scale(1); }
+      50%       { transform: rotate(4deg)  scale(1.05); }
+    }
+
+    .name {
+      font-size: 40px;
+      font-weight: bold;
+      color: #7c3aed;
+      margin: 4px 0 0;
+      letter-spacing: 2px;
+    }
+
+    .cake {
+      font-size: 76px;
+      animation: bounce 1s ease-in-out infinite alternate;
+      display: block;
+      margin: 0 auto 16px;
+    }
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to   { transform: translateY(-12px); }
+    }
+
+    /* Divider */
+    .divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #c084fc, transparent);
+      margin: 20px 0;
+    }
+
+    /* English section */
+    .en-heading {
+      font-size: 30px;
+      color: #1e1b4b;
+      margin-bottom: 10px;
+    }
+    .en-message {
+      font-size: 16px;
+      color: #4b5563;
+      line-height: 1.75;
+      margin-bottom: 4px;
+    }
+
+    /* Arabic section */
+    .ar {
+      direction: rtl;
+      font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
+    }
+    .ar-heading {
+      font-size: 34px;
+      color: #1e1b4b;
+      margin-bottom: 10px;
+    }
+    .ar-message {
+      font-size: 18px;
+      color: #4b5563;
+      line-height: 1.9;
+    }
+
+    .from-block {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #9ca3af;
+      font-style: italic;
+    }
+    .from-block .ar {
+      font-size: 16px;
+      direction: rtl;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .hearts {
+      font-size: 26px;
+      letter-spacing: 8px;
+      animation: heartbeat 1.2s ease-in-out infinite;
+      display: block;
+      margin-top: 16px;
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50%       { transform: scale(1.2); }
+    }
+
+    .stars {
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 28px;
+      letter-spacing: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="stars">⭐🌟⭐</div>
+
+    <span class="cake">🎂</span>
+    <span class="big-one">1</span>
+    <div class="name">Mahmoudi</div>
+
+    <hr class="divider" />
+
+    <!-- English -->
+    <p class="en-heading">Happy 1st Birthday!</p>
+    <p class="en-message">
+      You've filled our world with laughter and love<br>
+      for one whole year. Keep growing, keep smiling,<br>
+      and keep being the most wonderful little guy! 🎉
+    </p>
+
+    <hr class="divider" />
+
+    <!-- Arabic -->
+    <p class="ar ar-heading">عيد ميلاد سعيد يا محمودي! 🎈</p>
+    <p class="ar ar-message">
+      ملأت حياتنا بهجةً وفرحاً طوال هذا العام،<br>
+      كل عام وأنت بخير يا حبيبنا،<br>
+      ألف مبروك على أول عيد ميلادك! 🌟
+    </p>
+
+    <hr class="divider" />
+
+    <div class="from-block">
+      With all the love in the world, your Uncle 🤍
+      <span class="ar">بكل الحب، من عمك 🤍</span>
+    </div>
+
+    <span class="hearts">🎈 🎁 🎊</span>
+  </div>
+
+  <script>
+    const confettiColors = ['#f093fb','#f5576c','#fda085','#ffecd2','#a18cd1','#fbc2eb','#84fab0','#8fd3f4'];
+    for (let i = 0; i < 48; i++) {
+      const el = document.createElement('div');
+      el.className = 'confetti-piece';
+      el.style.left = Math.random() * 100 + 'vw';
+      el.style.background = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+      el.style.animationDuration = (2.5 + Math.random() * 4) + 's';
+      el.style.animationDelay = (Math.random() * 6) + 's';
+      el.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+      document.body.appendChild(el);
+    }
+
+    const balloonEmojis = ['🎈','🎀','🌟','✨'];
+    for (let i = 0; i < 8; i++) {
+      const el = document.createElement('div');
+      el.className = 'balloon';
+      el.textContent = balloonEmojis[Math.floor(Math.random() * balloonEmojis.length)];
+      el.style.left = (5 + Math.random() * 90) + 'vw';
+      el.style.animationDuration = (6 + Math.random() * 8) + 's';
+      el.style.animationDelay = (Math.random() * 10) + 's';
+      document.body.appendChild(el);
+    }
+  </script>
+
+</body>
+</html>
