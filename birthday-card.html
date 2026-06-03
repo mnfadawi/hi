@@ -14,181 +14,173 @@
       font-family: 'Georgia', serif;
     }
 
-    /* Confetti behind everything */
+    /* Confetti */
     .confetti-piece {
       position: fixed;
       top: -20px;
       animation: fall linear infinite;
       pointer-events: none;
-      z-index: 0;
+      z-index: 5;
     }
     @keyframes fall {
-      0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+      0%   { transform: translateY(0) rotate(0deg); opacity: 0.9; }
       100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
     }
 
-    /*
-     * THE CARD = full screen.
-     * ── When the photo is ready, replace the linear-gradient with:
-     *    background-image: url('mahmoudi.jpg');
-     */
+    /* Full-screen card — photo is the entire background */
     .card {
       position: relative;
       width: 100vw;
-      height: 100dvh; /* dynamic viewport — hides phone browser bars */
-      background-image: linear-gradient(160deg, #90caf9 0%, #bbdefb 50%, #e3f2fd 100%);
+      height: 100dvh;
+      background-image: url('IMG_4203.jpeg');
       background-size: cover;
       background-position: center top;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: space-between;
       overflow: hidden;
     }
 
-    /* Semi-transparent overlay for readability */
-    .card::before {
+    /* Dark gradient at bottom so text is readable, photo clear at top */
+    .card::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(255,255,255,0.45);
-      z-index: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.15) 0%,
+        rgba(0,0,0,0)    25%,
+        rgba(0,0,0,0)    45%,
+        rgba(0,0,0,0.55) 68%,
+        rgba(0,0,0,0.82) 100%
+      );
+      pointer-events: none;
+      z-index: 1;
     }
 
-    /* ── TOP BAND ── */
+    /* TOP — greeting floats over the dark top corners */
     .top {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       text-align: center;
-      padding: 28px 24px 0;
+      padding: 32px 20px 0;
     }
     .top-ar {
       font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
-      font-size: clamp(22px, 6vw, 32px);
-      color: #0d47a1;
+      font-size: clamp(20px, 6vw, 28px);
+      color: #fff;
       direction: rtl;
-      line-height: 1.3;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+      letter-spacing: 1px;
     }
     .top-en {
-      font-size: clamp(11px, 3vw, 15px);
-      color: #1976d2;
+      font-size: clamp(10px, 3vw, 13px);
+      color: rgba(255,255,255,0.8);
       letter-spacing: 4px;
       text-transform: uppercase;
       margin-top: 3px;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.9);
     }
 
-    /* ── CENTER ── */
-    .center {
+    /* BOTTOM — all remaining text over dark gradient */
+    .bottom {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       text-align: center;
-      line-height: 1;
+      padding: 0 24px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
     }
+
     .big-one {
-      font-size: clamp(120px, 32vw, 200px);
-      color: #0d47a1;
-      animation: glow 2.2s ease-in-out infinite alternate;
+      font-size: clamp(80px, 22vw, 130px);
       line-height: 1;
+      color: #fff;
+      text-shadow: 0 0 40px rgba(144,202,249,0.9), 0 2px 20px rgba(0,0,0,0.6);
+      animation: glow 2.2s ease-in-out infinite alternate;
     }
     @keyframes glow {
-      from { text-shadow: 0 0 20px rgba(13,71,161,0.2); }
-      to   { text-shadow: 0 0 60px rgba(13,71,161,0.7), 0 0 120px rgba(100,181,246,0.4); }
+      from { text-shadow: 0 0 20px rgba(144,202,249,0.5), 0 2px 16px rgba(0,0,0,0.6); }
+      to   { text-shadow: 0 0 60px rgba(144,202,249,1),   0 2px 16px rgba(0,0,0,0.6); }
     }
+
     .name {
-      font-size: clamp(22px, 7vw, 36px);
+      font-size: clamp(18px, 6vw, 28px);
       font-weight: bold;
-      color: #0d47a1;
+      color: #fff;
       letter-spacing: 6px;
       text-transform: uppercase;
-      margin-top: -8px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+      margin-top: -6px;
     }
+
     .cake {
-      font-size: clamp(28px, 8vw, 44px);
-      display: block;
-      margin-top: 6px;
+      font-size: clamp(24px, 7vw, 36px);
       animation: bounce 1.1s ease-in-out infinite alternate;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
     }
     @keyframes bounce {
       from { transform: translateY(0); }
-      to   { transform: translateY(-8px); }
+      to   { transform: translateY(-6px); }
     }
 
-    /* ── BOTTOM BAND ── */
-    .bottom {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      padding: 0 28px 28px;
-      text-align: center;
-    }
-
-    /* Dua — compact single block */
-    .dua {
-      background: rgba(255,255,255,0.7);
-      border: 1px solid rgba(25,118,210,0.25);
-      border-radius: 16px;
-      padding: 12px 18px;
-      margin-bottom: 14px;
-    }
-    .dua-ar {
-      font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
-      font-size: clamp(14px, 4vw, 18px);
-      color: #0d47a1;
-      direction: rtl;
-      line-height: 1.9;
-    }
-    .dua-label { margin-left: 6px; }
-    .dua-en {
-      font-size: clamp(10px, 2.8vw, 12px);
-      color: #546e7a;
-      font-style: italic;
-      line-height: 1.6;
-      margin-top: 5px;
-    }
-
-    .levantine {
-      font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
-      font-size: clamp(13px, 3.8vw, 17px);
-      color: #1565c0;
-      direction: rtl;
-      line-height: 1.7;
-      margin-bottom: 10px;
-    }
-
+    /* Thin divider */
     .rule {
+      width: 60%;
       border: none;
       height: 1px;
-      background: linear-gradient(to right, transparent, rgba(25,118,210,0.35), transparent);
-      margin: 10px 0;
+      background: rgba(255,255,255,0.3);
     }
 
-    .signature {
-      font-size: clamp(12px, 3.5vw, 15px);
-      color: #546e7a;
-      font-style: italic;
+    /* Levantine phrase */
+    .levantine {
+      font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
+      font-size: clamp(14px, 4.2vw, 18px);
+      color: #fff;
+      direction: rtl;
+      line-height: 1.75;
+      text-shadow: 0 1px 10px rgba(0,0,0,0.9);
+    }
+
+    /* Dua — one compact line */
+    .dua {
+      font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
+      font-size: clamp(13px, 3.8vw, 16px);
+      color: rgba(255,255,255,0.88);
+      direction: rtl;
       line-height: 1.8;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.9);
+    }
+
+    /* Signature */
+    .signature {
+      font-size: clamp(12px, 3.5vw, 14px);
+      color: rgba(255,255,255,0.7);
+      font-style: italic;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.9);
+      line-height: 1.7;
     }
     .sig-ar {
       font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
       direction: rtl;
       font-style: normal;
-      font-size: clamp(13px, 3.8vw, 16px);
-      color: #1565c0;
+      font-size: clamp(13px, 3.8vw, 15px);
+      color: rgba(255,255,255,0.85);
       display: block;
-      margin-top: 1px;
     }
-    .bold { font-weight: bold; font-style: normal; color: #0d47a1; }
+    .bold { font-weight: bold; font-style: normal; color: #fff; }
 
     .icons {
-      font-size: clamp(16px, 4.5vw, 22px);
+      font-size: clamp(16px, 5vw, 22px);
       letter-spacing: 8px;
-      display: block;
-      margin-top: 10px;
+      filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5));
       animation: pulse 1.6s ease-in-out infinite;
     }
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.7; transform: scale(1.1); }
+      50%       { opacity: 0.75; transform: scale(1.1); }
     }
   </style>
 </head>
@@ -196,29 +188,27 @@
 
   <div class="card">
 
+    <!-- TOP: greeting -->
     <div class="top">
       <div class="top-ar">عيد ميلاد سعيد 🎉</div>
       <div class="top-en">Happy 1st Birthday</div>
     </div>
 
-    <div class="center">
+    <!-- BOTTOM: everything else -->
+    <div class="bottom">
       <div class="big-one">1</div>
       <div class="name">Mahmoudi</div>
       <span class="cake">🎂</span>
-    </div>
 
-    <div class="bottom">
+      <hr class="rule" />
+
       <div class="levantine">
-        كل عام وانت بخير وصحة وسلامة،<br>
-        ينعاد عليك وعلى الجميع، مبروك الف 🎈
+        كل عام وانت بخير وصحة وسلامة 🎈<br>
+        مبروك الف يا حبيبنا
       </div>
 
       <div class="dua">
-        <div class="dua-ar">
-          🤲 اللهم بارك في محمودي، وأطل عمره على طاعتك،<br>
-          واجعله قرة عين لأهله. آمين.
-        </div>
-        <div class="dua-en">O Allah, bless Mahmoudi, grant him a long life in Your obedience, and make him the joy of his family. Ameen.</div>
+        🤲 اللهم بارك فيه وأطل عمره واجعله قرة عين لأهله. آمين.
       </div>
 
       <hr class="rule" />
@@ -227,17 +217,17 @@
         From your uncle, <span class="bold">Hamoushi</span> 🤍
         <span class="sig-ar">من عمك <span class="bold">هموشي</span> 🤍</span>
       </div>
-      <span class="icons">🎈 ⭐ 🎁</span>
+      <div class="icons">🎈 ⭐ 🎁</div>
     </div>
 
   </div>
 
   <script>
-    const colors = ['#90caf9','#42a5f5','#1976d2','#ffffff','#bbdefb','#64b5f6'];
-    for (let i = 0; i < 40; i++) {
+    const colors = ['#90caf9','#ffffff','#bbdefb','#42a5f5','#e3f2fd','#fff9c4'];
+    for (let i = 0; i < 35; i++) {
       const el = document.createElement('div');
       el.className = 'confetti-piece';
-      const size = 7 + Math.random() * 8;
+      const size = 6 + Math.random() * 8;
       el.style.cssText = `
         left:${Math.random()*100}vw;
         width:${size}px; height:${size}px;
@@ -245,7 +235,7 @@
         border-radius:${Math.random()>.5?'50%':'2px'};
         animation-duration:${3+Math.random()*5}s;
         animation-delay:${Math.random()*8}s;
-        opacity:0.9;
+        opacity:0.85;
       `;
       document.body.appendChild(el);
     }
