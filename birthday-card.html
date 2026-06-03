@@ -33,12 +33,14 @@
       width: 100vw;
       height: 100dvh;
       background-image: url('IMG_4203.jpeg');
-      background-size: cover;
+      background-size: contain;
       background-position: center center;
-      background-color: #000;
+      background-repeat: no-repeat;
+      background-color: #0d0d0d;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: center;
       overflow: hidden;
     }
 
@@ -52,12 +54,12 @@
       z-index: 1;
     }
 
-    /* TOP — greeting floats over the dark top corners */
+    /* TOP — greeting */
     .top {
       position: relative;
       z-index: 2;
       text-align: center;
-      padding: 32px 20px 0;
+      padding: 0 20px;
     }
     .top-ar {
       font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
@@ -76,16 +78,16 @@
       text-shadow: 0 1px 8px rgba(0,0,0,0.9);
     }
 
-    /* BOTTOM — all remaining text over dark gradient */
+    /* BOTTOM — all remaining text */
     .bottom {
       position: relative;
       z-index: 2;
       text-align: center;
-      padding: 0 24px 28px;
+      padding: 0 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .big-one {
