@@ -9,7 +9,7 @@
 
     body {
       min-height: 100vh;
-      background: radial-gradient(ellipse at top, #1a3a5c, #0a1628 70%);
+      background: linear-gradient(160deg, #c9e8ff, #e8f5ff, #b3d9f7);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -43,15 +43,14 @@
 
     /* Card */
     .card {
-      background: linear-gradient(160deg, #0d1b2a, #1b2f47);
-      border: 1.5px solid rgba(212, 175, 55, 0.4);
+      background: #ffffff;
+      border: 1.5px solid rgba(100, 181, 246, 0.5);
       border-radius: 28px;
       padding: 52px 58px;
       text-align: center;
       box-shadow:
-        0 0 0 1px rgba(212,175,55,0.1),
-        0 0 80px rgba(212,175,55,0.12),
-        0 32px 80px rgba(0,0,0,0.6);
+        0 0 60px rgba(100, 181, 246, 0.2),
+        0 24px 64px rgba(0,0,0,0.1);
       max-width: 520px;
       width: 92%;
       position: relative;
@@ -82,13 +81,13 @@
     .heading-ar {
       font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
       font-size: 28px;
-      color: #d4af37;
+      color: #1565c0;
       direction: rtl;
       line-height: 1.4;
     }
     .heading-en {
       font-size: 20px;
-      color: rgba(212,175,55,0.65);
+      color: #64b5f6;
       letter-spacing: 3px;
       text-transform: uppercase;
       margin-top: 2px;
@@ -98,19 +97,19 @@
     .big-one {
       font-size: 130px;
       line-height: 0.95;
-      color: #d4af37;
+      color: #1976d2;
       animation: glow 2.2s ease-in-out infinite alternate;
     }
     @keyframes glow {
-      from { text-shadow: 0 0 20px rgba(212,175,55,0.3); }
-      to   { text-shadow: 0 0 60px rgba(212,175,55,0.9), 0 0 120px rgba(255,200,50,0.4); }
+      from { text-shadow: 0 0 20px rgba(25,118,210,0.2); }
+      to   { text-shadow: 0 0 50px rgba(25,118,210,0.6), 0 0 100px rgba(100,181,246,0.3); }
     }
 
     /* Name */
     .name {
       font-size: 34px;
       font-weight: bold;
-      color: #ffffff;
+      color: #0d47a1;
       letter-spacing: 5px;
       text-transform: uppercase;
       margin: 10px 0 32px;
@@ -122,31 +121,31 @@
     }
     .line-en {
       font-size: 16px;
-      color: rgba(255,255,255,0.72);
+      color: #455a64;
       line-height: 1.75;
     }
     .line-ar {
       font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
       font-size: 19px;
-      color: rgba(212,175,55,0.88);
+      color: #1565c0;
       direction: rtl;
       line-height: 1.9;
       margin-top: 2px;
     }
     .gap { margin-top: 14px; }
 
-    /* Gold rule */
+    /* Blue rule */
     .rule {
       border: none;
       height: 1px;
-      background: linear-gradient(to right, transparent, rgba(212,175,55,0.4), transparent);
+      background: linear-gradient(to right, transparent, rgba(100,181,246,0.5), transparent);
       margin: 28px 0;
     }
 
     /* Dua block */
     .dua-block {
-      background: rgba(212,175,55,0.07);
-      border: 1px solid rgba(212,175,55,0.22);
+      background: rgba(100,181,246,0.08);
+      border: 1px solid rgba(100,181,246,0.35);
       border-radius: 14px;
       padding: 18px 22px;
       margin-bottom: 28px;
@@ -159,13 +158,13 @@
     .dua-ar {
       font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
       font-size: 20px;
-      color: rgba(212,175,55,0.95);
+      color: #1565c0;
       direction: rtl;
       line-height: 2;
     }
     .dua-en {
       font-size: 13px;
-      color: rgba(255,255,255,0.45);
+      color: #78909c;
       line-height: 1.7;
       margin-top: 8px;
       font-style: italic;
@@ -174,7 +173,7 @@
     /* Signature — one line, both languages together */
     .signature {
       font-size: 15px;
-      color: rgba(255,255,255,0.45);
+      color: #78909c;
       font-style: italic;
       line-height: 1.9;
     }
@@ -183,11 +182,11 @@
       direction: rtl;
       font-style: normal;
       font-size: 17px;
-      color: rgba(212,175,55,0.6);
+      color: #64b5f6;
       display: block;
       margin-top: 2px;
     }
-    .gold { color: #d4af37; font-style: normal; font-weight: bold; }
+    .gold { color: #1565c0; font-style: normal; font-weight: bold; }
 
     .icons {
       font-size: 24px;
@@ -265,7 +264,7 @@
   </div>
 
   <script>
-    const colors = ['#d4af37','#f0c040','#4a90d9','#7ec8f5','#ffffff','#ff8c00'];
+    const colors = ['#90caf9','#42a5f5','#1976d2','#ffffff','#bbdefb','#e3f2fd','#64b5f6'];
     for (let i = 0; i < 50; i++) {
       const el = document.createElement('div');
       el.className = 'confetti-piece';
