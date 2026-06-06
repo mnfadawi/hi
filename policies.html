@@ -30,13 +30,13 @@
     :root{
       --orange:#F26522;--black:#111111;--orange-mid:#E05818;
       --orange-light:#fff3e0;--silver-light:#eceff1;
-      --dark:#111111;--muted:#555555;--white:#fff;--gold:#ffc107;
+      --dark:#111111;--muted:#222222;--white:#fff;--gold:#ffc107;
       --radius:10px;--radius-lg:16px;
     }
     .container{max-width:1100px;margin:0 auto;padding:0 24px}
     .label{display:inline-block;background:var(--orange-light);color:var(--orange);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 14px;border-radius:50px;margin-bottom:12px}
     .title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:var(--dark);margin-bottom:10px;background:linear-gradient(135deg,#111 0%,#c94a10 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .sub{color:var(--muted);font-size:.97rem;max-width:580px;line-height:1.7}
+    .sub{color:var(--muted);font-size:1.05rem;max-width:580px;line-height:1.7}
     .btn{display:inline-block;padding:13px 28px;border-radius:var(--radius);font-weight:700;font-size:.93rem;cursor:pointer;border:none;position:relative;overflow:hidden;transition:transform .15s,box-shadow .15s}
     .btn-blue{background:linear-gradient(135deg,var(--orange),var(--orange-mid));color:#fff;box-shadow:0 4px 16px rgba(242,101,34,.35)}
     .btn-blue:hover{box-shadow:0 8px 32px rgba(242,101,34,.6);transform:translateY(-3px)}
@@ -97,7 +97,7 @@
     .policy-card.gold-top{border-top:3px solid var(--gold)}
     .policy-card h3{font-size:.97rem;font-weight:800;color:var(--dark);margin-bottom:12px;display:flex;align-items:center;gap:8px}
     .policy-list{list-style:none;display:flex;flex-direction:column;gap:7px}
-    .policy-list li{font-size:.84rem;color:var(--muted);display:flex;gap:8px;align-items:flex-start;line-height:1.5}
+    .policy-list li{font-size:.97rem;color:#222;display:flex;gap:8px;align-items:flex-start;line-height:1.5}
     .policy-list li .pi{flex-shrink:0;font-weight:800;margin-top:1px}
     .pi-check{color:#2e7d32}
     .pi-x{color:#c62828}
@@ -106,13 +106,13 @@
     .pm-tag{background:var(--silver-light);border:1px solid #cfd8dc;border-radius:6px;padding:5px 12px;font-size:.8rem;font-weight:600;color:var(--dark)}
 
     /* FOOTER */
-    footer{background:linear-gradient(180deg,#0d0d0d 0%,#111 100%);color:rgba(255,255,255,.72);padding:52px 24px 28px}
+    footer{background:linear-gradient(180deg,#0d0d0d 0%,#111 100%);color:rgba(255,255,255,.95);padding:52px 24px 28px}
     .footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;margin-bottom:36px}
     .footer-col h5{color:#fff;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:13px}
     .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-    .footer-col a{font-size:.84rem;transition:color .2s}
+    .footer-col a{font-size:.95rem;transition:color .2s}
     .footer-col a:hover{color:#fff}
-    .footer-bottom{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;flex-wrap:wrap;gap:8px}
+    .footer-bottom{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:.92rem;flex-wrap:wrap;gap:8px}
 
     /* ANIMATIONS */
     .reveal{opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .55s ease}
@@ -216,7 +216,7 @@
       <!-- Physical Screen Damage -->
       <div class="policy-card red-top reveal">
         <h3>⚠️ Physically Damaged Screens — No Warranty</h3>
-        <p style="font-size:.84rem;color:var(--muted);margin-bottom:12px">The following screen conditions resulting from physical damage carry <strong>no warranty</strong>:</p>
+        <p style="font-size:.97rem;color:#222;margin-bottom:12px">The following screen conditions resulting from physical damage carry <strong>no warranty</strong>:</p>
         <ul class="policy-list">
           <li><span class="pi pi-x">✕</span><span>Cracked screen</span></li>
           <li><span class="pi pi-x">✕</span><span>Vertical lines on screen</span></li>
@@ -277,7 +277,7 @@
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
         <img src="phone-logo.png?v=2" alt="Phone ElectriK" style="height:48px;width:auto;border-radius:8px" />
       </div>
-      <p style="font-size:.84rem;line-height:1.7">Torrance's top-rated phone repair shop. 90-day warranty on every repair. Serving the South Bay Area — Torrance, Redondo Beach, Hermosa Beach, Manhattan Beach, El Segundo, Lomita, Wilmington, Long Beach, Gardena, Palos Verdes Peninsula, Carson, Compton, Lawndale, Hawthorne &amp; surrounding areas.</p>
+      <p style="font-size:.97rem;line-height:1.8">Torrance's top-rated phone repair shop. 90-day warranty on every repair. Serving the South Bay Area — Torrance, Redondo Beach, Hermosa Beach, Manhattan Beach, El Segundo, Lomita, Wilmington, Long Beach, Gardena, Palos Verdes Peninsula, Carson, Compton, Lawndale, Hawthorne &amp; surrounding areas.</p>
     </div>
     <div class="footer-col">
       <h5>Pages</h5>
