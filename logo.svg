@@ -1,32 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 130" width="310" height="130">
-  <!-- Dark background -->
-  <rect width="310" height="130" fill="#0d0d0d" rx="10"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 120" width="310" height="120">
+  <!-- No background — transparent so it blends into the dark header -->
 
   <!-- P mark clipping shape -->
   <defs>
     <clipPath id="p-logo">
-      <!-- Vertical stem of P -->
-      <rect x="10" y="10" width="16" height="110" rx="1"/>
-      <!-- Bowl of P — angular geometric, like the real logo -->
-      <polygon points="26,10 66,10 86,26 86,56 66,72 26,72"/>
+      <rect x="10" y="8" width="16" height="104" rx="1"/>
+      <polygon points="26,8 68,8 88,26 88,58 68,74 26,74"/>
     </clipPath>
   </defs>
 
-  <!-- Orange fill -->
-  <rect x="0" y="0" width="96" height="130" fill="#F26522" clip-path="url(#p-logo)"/>
+  <!-- Orange fill for P mark -->
+  <rect x="0" y="0" width="96" height="120" fill="#F26522" clip-path="url(#p-logo)"/>
 
-  <!-- 4 white horizontal speed lines through the P mark -->
-  <g clip-path="url(#p-logo)" fill="white" opacity="1">
-    <rect x="0" y="26" width="96" height="7"/>
-    <rect x="0" y="40" width="96" height="7"/>
-    <rect x="0" y="78" width="96" height="7"/>
-    <rect x="0" y="92" width="96" height="7"/>
+  <!-- White speed lines through the P mark -->
+  <g clip-path="url(#p-logo)" fill="white" opacity="0.9">
+    <rect x="0" y="24" width="96" height="7"/>
+    <rect x="0" y="38" width="96" height="7"/>
+    <rect x="0" y="76" width="96" height="7"/>
+    <rect x="0" y="90" width="96" height="7"/>
   </g>
 
   <!-- PHONE text -->
-  <text x="104" y="64" font-family="Arial Black, 'Arial Bold', Arial, sans-serif" font-weight="900" font-size="36" fill="white" letter-spacing="1">PHONE</text>
+  <text x="104" y="58" font-family="Arial Black, 'Arial Bold', Arial, sans-serif" font-weight="900" font-size="36" fill="white" letter-spacing="1">PHONE</text>
   <!-- ELECTRIK text -->
-  <text x="104" y="100" font-family="Arial Black, 'Arial Bold', Arial, sans-serif" font-weight="900" font-size="36" fill="white" letter-spacing="1">ELECTRIK</text>
+  <text x="104" y="94" font-family="Arial Black, 'Arial Bold', Arial, sans-serif" font-weight="900" font-size="36" fill="white" letter-spacing="1">ELECTRIK</text>
   <!-- Tagline -->
-  <text x="104" y="117" font-family="Arial, sans-serif" font-weight="400" font-size="8.5" fill="#999999" letter-spacing="0.4">CELL PHONE + TABLET REPAIR AND ACCESSORIES</text>
+  <text x="104" y="112" font-family="Arial, sans-serif" font-weight="500" font-size="8" fill="rgba(255,255,255,0.6)" letter-spacing="0.5">CELL PHONE + TABLET REPAIR AND ACCESSORIES</text>
 </svg>
