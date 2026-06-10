@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rate Us | Phone ElectriK – Torrance, CA</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      background: #111;
+      border: 2px solid #fbbf24;
+      border-radius: 20px;
+      padding: 36px 32px 32px;
+      max-width: 680px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(251,191,36,0.15);
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 6px;
+    }
+
+    .logo-row img {
+      height: 52px;
+      width: auto;
+    }
+
+    .store-name {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #fbbf24;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: #aaa;
+      margin-bottom: 8px;
+    }
+
+    .address {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 28px;
+    }
+
+    .scan-heading {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 24px;
+      letter-spacing: 0.3px;
+    }
+
+    .qr-row {
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .qr-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 14px;
+      padding: 22px 24px 18px;
+      min-width: 200px;
+      flex: 1;
+      max-width: 260px;
+      transition: border-color 0.2s;
+    }
+
+    .qr-block:hover { border-color: #fbbf24; }
+
+    .qr-frame {
+      background: #fff;
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-block;
+    }
+
+    .qr-frame canvas, .qr-frame img { display: block; }
+
+    .platform-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .badge-google { color: #4285F4; }
+    .badge-yelp   { color: #FF1A1A; }
+
+    .platform-icon {
+      width: 26px;
+      height: 26px;
+    }
+
+    .divider {
+      height: 1px;
+      background: #222;
+      margin: 28px 0 20px;
+    }
+
+    .footer-note {
+      font-size: 0.8rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .footer-note strong { color: #fbbf24; }
+
+    /* ---- Print styles ---- */
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+        padding: 0;
+      }
+      .card {
+        border: 2px solid #000;
+        box-shadow: none;
+        background: #fff;
+        color: #000;
+        max-width: 100%;
+        border-radius: 10px;
+      }
+      .store-name { color: #111; }
+      .tagline, .address, .footer-note { color: #444; }
+      .scan-heading { color: #000; }
+      .qr-block {
+        background: #f9f9f9;
+        border: 1px solid #ccc;
+      }
+      .badge-google { color: #4285F4; }
+      .badge-yelp   { color: #d32323; }
+      .divider { background: #ccc; }
+      .footer-note strong { color: #111; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo-row">
+      <img src="logo.svg" alt="Phone ElectriK logo" />
+      <span class="store-name">Phone ElectriK</span>
+    </div>
+    <div class="tagline">Torrance's Top-Rated Phone Repair</div>
+    <div class="address">3025 Artesia Blvd STE 101, Torrance, CA 90504 &nbsp;·&nbsp; (323) 348-6756</div>
+
+    <div class="scan-heading">&#128242; Scan to Leave Us a Review!</div>
+
+    <div class="qr-row">
+      <!-- Google -->
+      <div class="qr-block">
+        <div class="qr-frame"><img src="data:image/png;base64,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" width="180" height="180" alt="Google review QR code" /></div>
+        <div class="platform-badge badge-google">
+          <!-- Google "G" icon -->
+          <svg class="platform-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          </svg>
+          Google
+        </div>
+      </div>
+
+      <!-- Yelp -->
+      <div class="qr-block">
+        <div class="qr-frame"><img src="data:image/png;base64,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" width="180" height="180" alt="Yelp review QR code" /></div>
+        <div class="platform-badge badge-yelp">
+          <!-- Yelp burst icon -->
+          <svg class="platform-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FF1A1A" d="M20.16 12.73l-4.23-1.3a.52.52 0 0 0-.63.68l1.68 4.05a.52.52 0 0 0 .85.14l2.55-2.75a.52.52 0 0 0-.22-.82zM9.94 14.6l-4.38.3a.52.52 0 0 0-.35.86l2.9 2.44a.52.52 0 0 0 .83-.22l1.48-3.1a.52.52 0 0 0-.48-.28zm9.3-6.1l-2.9-2.44a.52.52 0 0 0-.83.22l-1.48 3.1a.52.52 0 0 0 .48.28l4.38-.3a.52.52 0 0 0 .35-.86zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.66 17.94V14.5a.66.66 0 0 0-.66-.66.66.66 0 0 0-.66.66v5.44A8.35 8.35 0 0 1 3.65 12c0-4.6 3.75-8.35 8.35-8.35S20.35 7.4 20.35 12a8.35 8.35 0 0 1-7.69 7.94z"/>
+          </svg>
+          Yelp
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="footer-note">
+      Thank you for choosing <strong>Phone ElectriK</strong>! Your review helps our small business grow.<br>
+      Walk-ins welcome &nbsp;·&nbsp; Mon–Sat 9am–8pm &nbsp;·&nbsp; Sun 10am–6pm &nbsp;·&nbsp; 90-day warranty on every repair
+    </div>
+
+  </div>
+</body>
+</html>
