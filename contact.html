@@ -34,7 +34,7 @@
     .service-bar{background:linear-gradient(180deg,#c94510 0%,#F26522 38%,#c94510 70%,#111111 100%);padding:14px 24px 18px;text-align:center;line-height:1.6}
     .service-bar-title{display:block;font-size:1.15rem;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;text-shadow:0 1px 6px rgba(0,0,0,.55)}
     .service-bar-cities{display:block;font-size:.95rem;font-weight:800;color:rgba(255,255,255,.92);letter-spacing:.02em}
-    header{position:sticky;top:0;z-index:200;box-shadow:0 3px 18px rgba(0,0,0,.22)}
+    header{position:fixed;top:0;left:0;right:0;z-index:200;box-shadow:0 3px 18px rgba(0,0,0,.22)}
     .header-brand{background:#111111;border-bottom:3px solid var(--orange);width:100%;display:flex;align-items:center;justify-content:space-between}
     .brand-link{display:flex;align-items:center;gap:20px;padding:12px 28px;max-width:1200px;margin:0 auto;text-decoration:none}
     .brand-link img{height:86px;width:auto;flex-shrink:0;display:block;filter:drop-shadow(0 2px 10px rgba(242,101,34,.3))}
@@ -147,13 +147,12 @@
   </defs>
 </svg>
 
-<div class="service-bar">
-  <span class="service-bar-title">&#128205; Serving the South Bay Area</span>
-  <span class="service-bar-cities">Torrance &bull; Redondo Beach &bull; Hermosa Beach &bull; Manhattan Beach &bull; El Segundo &bull; Lomita &bull; Wilmington &bull; Long Beach &bull; Gardena &bull; Palos Verdes Peninsula &bull; Carson &bull; Compton &bull; Lawndale &bull; Hawthorne</span>
-</div>
-
 <!-- HEADER -->
 <header>
+  <div class="service-bar">
+    <span class="service-bar-title">&#128205; Serving the South Bay Area</span>
+    <span class="service-bar-cities">Torrance &bull; Redondo Beach &bull; Hermosa Beach &bull; Manhattan Beach &bull; El Segundo &bull; Lomita &bull; Wilmington &bull; Long Beach &bull; Gardena &bull; Palos Verdes Peninsula &bull; Carson &bull; Compton &bull; Lawndale &bull; Hawthorne</span>
+  </div>
   <div class="header-brand">
     <a href="index.html" class="brand-link">
       <img src="logo-pe.png" alt="Phone ElectriK" />
@@ -164,7 +163,7 @@
     </a>
     <button class="hamburger" id="hamBtn" onclick="toggleHam()" aria-label="Menu">
       <div class="ham-icon"><span></span><span></span><span></span></div>
-      <span class="ham-label">Pages</span>
+      <span class="ham-label">Menu</span>
     </button>
   </div>
   <nav class="header-nav">
@@ -437,6 +436,9 @@ function toggleHam(){
   document.getElementById('navLinks').classList.toggle('open');
   document.getElementById('hamBtn').classList.toggle('open');
 }
+function fixPadding(){document.body.style.paddingTop=document.querySelector('header').offsetHeight+'px'}
+fixPadding();
+window.addEventListener('resize',fixPadding);
 document.addEventListener('click',function(e){
   if(!e.target.closest('header')){
     document.getElementById('navLinks').classList.remove('open');
