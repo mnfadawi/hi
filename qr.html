@@ -29,36 +29,29 @@
       box-shadow: 0 0 40px rgba(251,191,36,0.15);
     }
 
-    .logo-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      margin-bottom: 6px;
+    .logo-wrap {
+      display: inline-block;
+      margin-bottom: 10px;
     }
 
-    .logo-row img {
-      height: 52px;
+    .logo-wrap img {
+      display: block;
+      height: 130px;
       width: auto;
     }
 
-    .store-name {
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: #fbbf24;
-    }
+    .store-name { display: none; }
 
     .tagline {
       font-size: 1rem;
       color: #aaa;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .address {
       font-size: 0.85rem;
       color: #666;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
     }
 
     .scan-heading {
@@ -164,9 +157,8 @@
 </head>
 <body>
   <div class="card">
-    <div class="logo-row">
-      <img src="logo.svg" alt="Phone ElectriK logo" />
-      <span class="store-name">Phone ElectriK</span>
+    <div class="logo-wrap">
+      <img src="phone-logo-transparent.png" alt="Phone ElectriK logo" />
     </div>
     <div class="tagline">Torrance's Top-Rated Phone Repair</div>
     <div class="address">3025 Artesia Blvd STE 101, Torrance, CA 90504 &nbsp;·&nbsp; (323) 348-6756</div>
