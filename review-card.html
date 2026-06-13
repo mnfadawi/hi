@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Review Card — Phone ElectriK</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Arial Black', Arial, sans-serif;
+      background: #bbb;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 100vh; padding: 20px;
+    }
+    /* 4x6 landscape card */
+    .card {
+      width: 660px;
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+    }
+    /* top bar */
+    .top {
+      background: linear-gradient(135deg, #d45000, #f97316, #ffb347);
+      padding: 16px 28px 14px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .top::before {
+      content:''; position:absolute; inset:0;
+      background: repeating-linear-gradient(-45deg,transparent,transparent 12px,rgba(255,255,255,0.07) 12px,rgba(255,255,255,0.07) 24px);
+    }
+    .top > * { position:relative; z-index:1; }
+    .logo-img { height:44px; filter:brightness(0) invert(1); }
+    .top-text { flex:1; }
+    .top-stars { font-size:1.8rem; letter-spacing:3px; line-height:1; margin-bottom:4px; }
+    .top-headline {
+      font-size:1.55rem; font-weight:900; color:#fff;
+      text-transform:uppercase; line-height:1.05;
+      text-shadow:0 2px 6px rgba(0,0,0,0.3);
+    }
+    .top-sub {
+      font-size:0.72rem; color:rgba(255,255,255,0.9);
+      font-family:Arial,sans-serif; margin-top:4px;
+    }
+    /* bridge */
+    .bridge {
+      background:#111; color:#f97316;
+      font-size:0.65rem; font-weight:900;
+      text-transform:uppercase; letter-spacing:5px;
+      text-align:center; padding:7px;
+    }
+    /* qr row */
+    .qr-row {
+      display:flex; gap:0;
+      flex:1;
+    }
+    .qr-half {
+      flex:1;
+      padding:14px 18px 12px;
+      text-align:center;
+    }
+    .qr-half.g { background:#EBF3FF; border-right:2px solid #e0e0e0; border-top:4px solid #4285F4; }
+    .qr-half.y { background:#FFF0F0; border-top:4px solid #D01212; }
+    .badge {
+      display:inline-block; font-size:0.6rem; font-weight:900;
+      text-transform:uppercase; letter-spacing:1px;
+      padding:3px 10px; border-radius:100px; margin-bottom:8px;
+    }
+    .gbadge { background:#4285F4; color:#fff; }
+    .ybadge { background:#D01212; color:#fff; }
+    .arrow { font-size:1.4rem; margin-bottom:6px; }
+    .qr-half img { display:block; width:168px; height:168px; margin:0 auto; }
+    .pname {
+      font-size:1rem; font-weight:900; text-transform:uppercase;
+      letter-spacing:1px; margin-top:10px;
+      display:flex; align-items:center; justify-content:center; gap:6px;
+    }
+    .gn { color:#4285F4; } .yn { color:#D01212; }
+    /* bottom */
+    .bottom {
+      background:#111; padding:10px 24px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .bname { color:#f97316; font-size:0.85rem; font-weight:900; }
+    .binfo { color:#777; font-size:0.6rem; margin-top:2px; line-height:1.4; font-family:Arial,sans-serif; }
+    .bthanks { color:#fff; font-size:0.95rem; font-weight:900; }
+
+    @media print {
+      body { background:#fff; padding:0; min-height:0; }
+      .card { box-shadow:none; border-radius:0; width:100%; }
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+
+  <div class="top">
+    <img class="logo-img" src="phone-logo-transparent.png" alt="Phone ElectriK" />
+    <div class="top-text">
+      <div class="top-stars">⭐⭐⭐⭐⭐</div>
+      <div class="top-headline">Loved Your Visit?<br>Leave a Review!</div>
+      <div class="top-sub">Scan with your phone — takes 30 seconds!</div>
+    </div>
+  </div>
+
+  <div class="bridge">📱 &nbsp; Point your camera at a code below &nbsp; 📱</div>
+
+  <div class="qr-row">
+    <div class="qr-half g">
+      <div class="badge gbadge">Google Review</div>
+      <div class="arrow">👇</div>
+      <img src="data:image/png;base64,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" alt="Google QR" />
+      <div class="pname gn">
+        <svg width="18" height="18" viewBox="0 0 24 24">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+        Google
+      </div>
+    </div>
+    <div class="qr-half y">
+      <div class="badge ybadge">Yelp Review</div>
+      <div class="arrow">👇</div>
+      <img src="data:image/png;base64,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" alt="Yelp QR" />
+      <div class="pname yn">
+        <svg width="18" height="18" viewBox="0 0 24 24">
+          <path fill="#D01212" d="M20.16 12.73l-4.23-1.3a.52.52 0 0 0-.63.68l1.68 4.05a.52.52 0 0 0 .85.14l2.55-2.75a.52.52 0 0 0-.22-.82zM9.94 14.6l-4.38.3a.52.52 0 0 0-.35.86l2.9 2.44a.52.52 0 0 0 .83-.22l1.48-3.1a.52.52 0 0 0-.48-.28zm9.3-6.1l-2.9-2.44a.52.52 0 0 0-.83.22l-1.48 3.1a.52.52 0 0 0 .48.28l4.38-.3a.52.52 0 0 0 .35-.86zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.66 17.94V14.5a.66.66 0 0 0-.66-.66.66.66 0 0 0-.66.66v5.44A8.35 8.35 0 0 1 3.65 12c0-4.6 3.75-8.35 8.35-8.35S20.35 7.4 20.35 12a8.35 8.35 0 0 1-7.69 7.94z"/>
+        </svg>
+        Yelp
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div>
+      <div class="bname">Phone ElectriK</div>
+      <div class="binfo">3025 Artesia Blvd STE 101, Torrance, CA 90504 · (323) 348-6756</div>
+    </div>
+    <div class="bthanks">THANK YOU! 🙏</div>
+  </div>
+
+</div>
+</body>
+</html>
