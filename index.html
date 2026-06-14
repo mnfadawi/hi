@@ -258,6 +258,21 @@
       .device-grid{grid-template-columns:repeat(2,1fr);}
       .hero-phone-img{display:none}
     }
+
+    /* FLOATING MOBILE CALL BUTTON */
+    .mobile-call-bar{display:none}
+    @media(max-width:820px){
+      .mobile-call-bar{
+        display:flex;align-items:center;justify-content:center;
+        position:fixed;bottom:0;left:0;right:0;z-index:999;
+        background:#F26522;color:#fff;
+        font-size:1.08rem;font-weight:900;letter-spacing:.02em;
+        padding:16px 20px;text-decoration:none;
+        box-shadow:0 -4px 20px rgba(242,101,34,.5);
+        border-top:2px solid rgba(255,255,255,.25);
+      }
+      .mobile-call-bar:hover{background:#E05818}
+    }
   </style>
 </head>
 <body>
@@ -446,6 +461,34 @@
   </div>
 </div>
 
+<!-- HOW IT WORKS -->
+<section style="background:#0d0d0d;padding:64px 0;text-align:center">
+  <div class="container">
+    <div class="label" style="background:rgba(242,101,34,.15);color:#F26522">Simple Process</div>
+    <h2 class="title" style="-webkit-text-fill-color:#fff;background:none;color:#fff;margin-bottom:40px">How It Works</h2>
+    <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap">
+      <div style="flex:1;min-width:180px;max-width:260px">
+        <div style="font-size:3rem;margin-bottom:14px">🚶</div>
+        <div style="font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#F26522;margin-bottom:6px">Step 1</div>
+        <div style="font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:6px">Walk In — No Appointment</div>
+        <div style="font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.6">Come in anytime during business hours. No scheduling required.</div>
+      </div>
+      <div style="flex:1;min-width:180px;max-width:260px">
+        <div style="font-size:3rem;margin-bottom:14px">🔍</div>
+        <div style="font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#F26522;margin-bottom:6px">Step 2</div>
+        <div style="font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:6px">Free Diagnosis</div>
+        <div style="font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.6">We assess your device, tell you exactly what's wrong, and give you an upfront price.</div>
+      </div>
+      <div style="flex:1;min-width:180px;max-width:260px">
+        <div style="font-size:3rem;margin-bottom:14px">⚡</div>
+        <div style="font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#F26522;margin-bottom:6px">Step 3</div>
+        <div style="font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:6px">Fixed While You Wait</div>
+        <div style="font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.6">Most repairs are done in 30–60 minutes. Walk out with a working device.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FEATURED SERVICES -->
 <section class="section" id="services">
   <div class="container">
@@ -511,8 +554,8 @@
 <section style="padding:56px 0;background:#f8f9fa;border-top:1px solid #e0e7ef;border-bottom:1px solid #e0e7ef" id="brands">
   <div class="container">
     <div class="section-header center" style="margin-bottom:32px">
-      <div class="label">Most Common Repairs</div>
-      <h2 class="title">What We Fix</h2>
+      <div class="label">All Makes &amp; Models</div>
+      <h2 class="title">Brands &amp; Devices We Fix</h2>
       <p class="sub">These are the devices we see most — and we fix them every day, while you wait.</p>
     </div>
     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:24px">
@@ -601,6 +644,11 @@
   </div>
 </section>
 
+<!-- URGENCY / TRUST BAR -->
+<div style="background:#111;padding:14px 24px;text-align:center;border-top:1px solid rgba(242,101,34,.3);border-bottom:1px solid rgba(242,101,34,.3)">
+  <p style="color:rgba(255,255,255,.88);font-size:.9rem;font-weight:600;line-height:1.7">⚡ Most repairs completed same day &nbsp;&middot;&nbsp; 🛡️ 90-Day Warranty &nbsp;&middot;&nbsp; ⭐ 4.7 Stars &nbsp;&middot;&nbsp; 📞 <a href="tel:3233486756" style="color:#F26522;font-weight:800">(323) 348-6756</a></p>
+</div>
+
 <!-- CTA BAND -->
 <div class="cta-band">
   <h2>Ready to Get Your Device Fixed?</h2>
@@ -681,6 +729,9 @@
     <span>3025 Artesia Blvd STE 101, Torrance, CA 90504</span>
   </div>
 </footer>
+
+<!-- FLOATING MOBILE CALL BUTTON -->
+<a href="tel:3233486756" class="mobile-call-bar" aria-label="Call Phone ElectriK">📞 Call Now &mdash; (323) 348-6756</a>
 
 <script>
   function toggleNav(){document.getElementById('navLinks').classList.toggle('open')}
