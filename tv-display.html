@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phone ElectriK — Welcome</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{width:100%;height:100%;overflow:hidden;background:#0d0d0d;font-family:'Segoe UI',system-ui,-apple-system,sans-serif}
+
+    .screen{
+      width:100vw;height:100vh;
+      background:radial-gradient(ellipse at 30% 50%,#1c0800 0%,#0d0d0d 60%);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      position:relative;overflow:hidden;
+    }
+
+    /* Background glow */
+    .screen::before{
+      content:'';position:absolute;
+      width:900px;height:900px;
+      background:radial-gradient(circle,rgba(242,101,34,.12) 0%,transparent 70%);
+      top:50%;left:50%;transform:translate(-50%,-50%);
+      pointer-events:none;
+    }
+
+    /* Animated orange lines */
+    .line{position:absolute;height:1px;background:linear-gradient(90deg,transparent,rgba(242,101,34,.4),transparent);width:100%}
+    .line-1{top:20%}
+    .line-2{top:80%}
+
+    .logo-row{display:flex;align-items:center;gap:32px;margin-bottom:32px}
+
+    .pe-logo{
+      width:110px;height:110px;
+      background:linear-gradient(135deg,#F26522,#c94a10);
+      border-radius:24px;
+      display:flex;align-items:center;justify-content:center;
+      font-size:3.2rem;font-weight:900;color:#fff;
+      box-shadow:0 0 60px rgba(242,101,34,.5);
+      flex-shrink:0;
+    }
+
+    .brand-text{text-align:left}
+    .brand-phone{font-size:3.8rem;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:.06em;line-height:1}
+    .brand-electrik{font-size:3.8rem;font-weight:900;color:#F26522;text-transform:uppercase;letter-spacing:.06em;line-height:1}
+
+    .welcome{
+      font-size:1.4rem;font-weight:600;color:rgba(255,255,255,.5);
+      text-transform:uppercase;letter-spacing:.3em;
+      margin-bottom:48px;
+    }
+
+    .tagline{
+      font-size:2rem;font-weight:800;color:#fff;
+      text-align:center;margin-bottom:16px;
+      text-shadow:0 2px 30px rgba(0,0,0,.5);
+    }
+
+    .sub{
+      font-size:1.1rem;color:rgba(255,255,255,.55);
+      text-align:center;letter-spacing:.04em;margin-bottom:56px;
+    }
+
+    .pills{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;max-width:900px;margin-bottom:56px}
+    .pill{
+      background:rgba(242,101,34,.12);
+      border:1px solid rgba(242,101,34,.35);
+      color:rgba(255,255,255,.88);
+      padding:10px 22px;border-radius:50px;
+      font-size:.95rem;font-weight:700;
+    }
+
+    .bottom{
+      display:flex;gap:60px;align-items:center;
+      border-top:1px solid rgba(255,255,255,.08);
+      padding-top:36px;
+    }
+    .bottom-item{text-align:center}
+    .bottom-label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.4);margin-bottom:6px}
+    .bottom-value{font-size:1.25rem;font-weight:800;color:#F26522}
+
+    /* Pulse animation on logo */
+    @keyframes pulse{0%,100%{box-shadow:0 0 60px rgba(242,101,34,.5)}50%{box-shadow:0 0 100px rgba(242,101,34,.8)}}
+    .pe-logo{animation:pulse 3s ease-in-out infinite}
+  </style>
+</head>
+<body>
+<div class="screen">
+  <div class="line line-1"></div>
+  <div class="line line-2"></div>
+
+  <div class="welcome">Welcome to</div>
+
+  <div class="logo-row">
+    <div class="pe-logo">⚡</div>
+    <div class="brand-text">
+      <div class="brand-phone">Phone</div>
+      <div class="brand-electrik">ElectriK</div>
+    </div>
+  </div>
+
+  <div class="tagline">Cell Phone · Tablet Repair &amp; Accessories</div>
+  <div class="sub">Torrance, CA &nbsp;·&nbsp; Walk-Ins Welcome &nbsp;·&nbsp; No Appointment Needed</div>
+
+  <div class="pills">
+    <span class="pill">📱 Screen Repair</span>
+    <span class="pill">🔋 Battery Replacement</span>
+    <span class="pill">🪟 Back Glass</span>
+    <span class="pill">🔌 Charging Port</span>
+    <span class="pill">📷 Camera Lens</span>
+    <span class="pill">🦠 Virus Removal</span>
+    <span class="pill">🔀 Data Transfer</span>
+    <span class="pill">💻 MacBook &amp; Laptop</span>
+    <span class="pill">🎮 Game Consoles</span>
+    <span class="pill">⌚ Apple Watch</span>
+    <span class="pill">🔓 Unlocking</span>
+    <span class="pill">🛍️ Accessories In Store</span>
+  </div>
+
+  <div class="bottom">
+    <div class="bottom-item">
+      <div class="bottom-label">Call Us</div>
+      <div class="bottom-value">(323) 348-6756</div>
+    </div>
+    <div class="bottom-item">
+      <div class="bottom-label">Warranty</div>
+      <div class="bottom-value">90-Day on Every Repair</div>
+    </div>
+    <div class="bottom-item">
+      <div class="bottom-label">Hours</div>
+      <div class="bottom-value">Mon–Sat 9AM–8PM &nbsp;·&nbsp; Sun 10AM–6PM</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
