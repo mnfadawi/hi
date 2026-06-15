@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <radialGradient id="bg" cx="35%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1c0800"/>
+      <stop offset="100%" stop-color="#0d0d0d"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F26522" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#F26522" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F26522"/>
+      <stop offset="100%" stop-color="#c94a10"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <ellipse cx="960" cy="540" rx="700" ry="700" fill="url(#glow)"/>
+
+  <!-- Top & bottom accent lines -->
+  <line x1="0" y1="160" x2="1920" y2="160" stroke="#F26522" stroke-opacity="0.2" stroke-width="1"/>
+  <line x1="0" y1="920" x2="1920" y2="920" stroke="#F26522" stroke-opacity="0.2" stroke-width="1"/>
+
+  <!-- WELCOME TO -->
+  <text x="960" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="600" fill="rgba(255,255,255,0.45)" letter-spacing="18">WELCOME TO</text>
+
+  <!-- Logo box -->
+  <rect x="710" y="175" width="130" height="130" rx="24" fill="url(#logo-grad)"/>
+  <text x="775" y="262" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="72" fill="#fff">⚡</text>
+
+  <!-- PHONE ELECTRIK text -->
+  <text x="870" y="240" font-family="Segoe UI, Arial Black, sans-serif" font-size="88" font-weight="900" fill="#ffffff" letter-spacing="4">PHONE</text>
+  <text x="870" y="340" font-family="Segoe UI, Arial Black, sans-serif" font-size="88" font-weight="900" fill="#F26522" letter-spacing="4">ELECTRIK</text>
+
+  <!-- Tagline -->
+  <text x="960" y="415" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="rgba(255,255,255,0.9)" letter-spacing="2">Cell Phone · Tablet Repair &amp; Accessories · Torrance, CA</text>
+
+  <!-- Divider -->
+  <line x1="360" y1="445" x2="1560" y2="445" stroke="rgba(242,101,34,0.3)" stroke-width="1"/>
+
+  <!-- Walk in text -->
+  <text x="960" y="500" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600" fill="rgba(255,255,255,0.5)" letter-spacing="6">WALK-INS WELCOME · NO APPOINTMENT NEEDED</text>
+
+  <!-- Service pills - Row 1 -->
+  <rect x="180" y="530" width="230" height="52" rx="26" fill="rgba(242,101,34,0.15)" stroke="rgba(242,101,34,0.4)" stroke-width="1"/>
+  <text x="295" y="563" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.9)">📱 Screen Repair</text>
+
+  <rect x="430" y="530" width="270" height="52" rx="26" fill="rgba(242,101,34,0.15)" stroke="rgba(242,101,34,0.4)" stroke-width="1"/>
+  <text x="565" y="563" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.9)">🔋 Battery Replacement</text>
+
+  <rect x="720" y="530" width="240" height="52" rx="26" fill="rgba(242,101,34,0.15)" stroke="rgba(242,101,34,0.4)" stroke-width="1"/>
+  <text x="840" y="563" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.9)">🪟 Back Glass Repair</text>
+
+  <rect x="980" y="530" width="250" height="52" rx="26" fill="rgba(242,101,34,0.15)" stroke="rgba(242,101,34,0.4)" stroke-width="1"/>
+  <text x="1105" y="563" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.9)">🔌 Charging Port</text>
+
+  <rect x="1250" y="530" width="250" height="52" rx="26" fill="rgba(242,101,34,0.15)" stroke="rgba(242,101,34,0.4)" stroke-width="1"/>
+  <text x="1375" y="563" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.9)">📷 Camera Lens</text>
+
+  <rect x="1520" y="530" width="220" height="52" rx="26" fill="rgba(242,101,34,0.15)" stroke="rgba(242,101,34,0.4)" stroke-width="1"/>
+  <text x="1630" y="563" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.9)">🦠 Virus Removal</text>
+
+  <!-- Service pills - Row 2 -->
+  <rect x="180" y="600" width="230" height="52" rx="26" fill="rgba(242,101,34,0.15)" stroke="rgba(242,101,34,0.4)" stroke-width="1"/>
+  <text x="295" y="633" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.9)">🔀 Data Transfer</text>
+
+  <rect x="430" y="600" width="270" height="52" rx="26" fill="rgba(242,101,34,0.15)" stroke="rgba(242,101,34,0.4)" stroke-width="1"/>
+  <text x="565" y="633" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.9)">💻 MacBook &amp; Laptop</text>
+
+  <rect x="720" y="600" width="240" height="52" rx="26" fill="rgba(242,101,34,0.15)" stroke="rgba(242,101,34,0.4)" stroke-width="1"/>
+  <text x="840" y="633" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.9)">🎮 Game Consoles</text>
+
+  <rect x="980" y="600" width="240" height="52" rx="26" fill="rgba(242,101,34,0.15)" stroke="rgba(242,101,34,0.4)" stroke-width="1"/>
+  <text x="1100" y="633" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.9)">⌚ Apple Watch</text>
+
+  <rect x="1240" y="600" width="260" height="52" rx="26" fill="rgba(242,101,34,0.15)" stroke="rgba(242,101,34,0.4)" stroke-width="1"/>
+  <text x="1370" y="633" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.9)">📟 iPad &amp; Tablet</text>
+
+  <rect x="1520" y="600" width="220" height="52" rx="26" fill="rgba(242,101,34,0.15)" stroke="rgba(242,101,34,0.4)" stroke-width="1"/>
+  <text x="1630" y="633" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.9)">🔓 Unlocking</text>
+
+  <!-- Row 3 -->
+  <rect x="430" y="670" width="270" height="52" rx="26" fill="rgba(242,101,34,0.15)" stroke="rgba(242,101,34,0.4)" stroke-width="1"/>
+  <text x="565" y="703" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.9)">💾 Data Recovery</text>
+
+  <rect x="720" y="670" width="240" height="52" rx="26" fill="rgba(242,101,34,0.15)" stroke="rgba(242,101,34,0.4)" stroke-width="1"/>
+  <text x="840" y="703" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.9)">🔁 Phone Reset</text>
+
+  <rect x="980" y="670" width="260" height="52" rx="26" fill="rgba(242,101,34,0.15)" stroke="rgba(242,101,34,0.4)" stroke-width="1"/>
+  <text x="1110" y="703" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.9)">🛍️ Accessories In Store</text>
+
+  <!-- Divider -->
+  <line x1="160" y1="758" x2="1760" y2="758" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+  <!-- Bottom info bar -->
+  <!-- Call -->
+  <text x="400" y="820" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.4)" letter-spacing="6">CALL US</text>
+  <text x="400" y="868" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="900" fill="#F26522">(323) 348-6756</text>
+
+  <!-- Divider -->
+  <line x1="700" y1="790" x2="700" y2="890" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+  <!-- Warranty -->
+  <text x="960" y="820" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.4)" letter-spacing="6">WARRANTY</text>
+  <text x="960" y="868" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="900" fill="#F26522">90-Day on Every Repair</text>
+
+  <!-- Divider -->
+  <line x1="1220" y1="790" x2="1220" y2="890" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+  <!-- Hours -->
+  <text x="1520" y="820" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.4)" letter-spacing="6">HOURS</text>
+  <text x="1520" y="855" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="800" fill="#F26522">Mon–Sat: 9AM – 8PM</text>
+  <text x="1520" y="890" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="800" fill="#F26522">Sun: 10AM – 6PM</text>
+
+  <!-- Website -->
+  <text x="960" y="960" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="rgba(255,255,255,0.3)" letter-spacing="4">phoneelectrik.com · 3025 Artesia Blvd STE 101, Torrance, CA 90504</text>
+</svg>
