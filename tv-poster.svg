@@ -18,7 +18,7 @@
   <text x="540" y="636" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="92" font-weight="900" fill="#ffffff" letter-spacing="4">PHONE ELECTRIK</text>
 
   <!-- Welcome -->
-  <text x="540" y="920" text-anchor="middle" font-family="Arial Black, Georgia, sans-serif" font-size="230" font-weight="900" fill="#ffffff" letter-spacing="-6">Welcome</text>
+  <text x="540" y="920" text-anchor="middle" font-family="Arial Black, Georgia, sans-serif" font-size="200" font-weight="900" fill="#ffffff" letter-spacing="-4">Welcome</text>
 
   <!-- ORANGE BAND 2 — tagline -->
   <rect x="0" y="970" width="1080" height="120" fill="#F26522"/>
