@@ -87,8 +87,11 @@
         fill="#ffffff">3025 Artesia Blvd STE 101</text>
 
   <!-- Bottom tagline -->
-  <text x="540" y="1865" text-anchor="middle"
-        font-family="Arial, sans-serif" font-size="30" font-weight="700"
-        fill="#F26522">@phoneelectrik on Instagram &amp; TikTok</text>
+  <text x="540" y="1850" text-anchor="middle"
+        font-family="Arial Black, sans-serif" font-size="36" font-weight="900"
+        fill="#F26522" letter-spacing="6">FOLLOW US</text>
+  <text x="540" y="1895" text-anchor="middle"
+        font-family="Arial Black, sans-serif" font-size="44" font-weight="900"
+        fill="#ffffff">@phoneelectrik</text>
 
 </svg>
