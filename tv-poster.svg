@@ -81,8 +81,8 @@
         font-family="Arial Black, sans-serif" font-size="46" font-weight="900"
         fill="#ffffff">@phoneelectrik</text>
 
-  <text x="540" y="1880" text-anchor="middle"
-        font-family="Arial, sans-serif" font-size="26" font-weight="600"
-        fill="rgba(255,255,255,0.55)" letter-spacing="1">phoneelectrik.com</text>
+  <text x="540" y="1882" text-anchor="middle"
+        font-family="Arial Black, sans-serif" font-size="34" font-weight="900"
+        fill="#ffffff" letter-spacing="1">phoneelectrik.com</text>
 
 </svg>
