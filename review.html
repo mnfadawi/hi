@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6J2Q2B0C4D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6J2Q2B0C4D');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#F26522" />
+  <title>Leave Us a Review | Phone ElectriK</title>
+  <meta name="description" content="Happy with your repair? Leave Phone ElectriK a review on Yelp or Google — it takes less than a minute and means a lot to us." />
+  <link rel="canonical" href="https://phoneelectrik.com/review.html" />
+  <meta property="og:url" content="https://phoneelectrik.com/review.html" />
+  <meta property="og:image" content="https://phoneelectrik.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://phoneelectrik.com/og-image.png" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:120px}
+    body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:#111;background:#fff;line-height:1.6}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    :root{
+      --orange:#F26522;--black:#111111;--orange-mid:#E05818;
+      --orange-light:#fff3e0;--silver-light:#eceff1;
+      --dark:#111111;--muted:#555555;--white:#fff;--gold:#ffc107;
+      --radius:10px;--radius-lg:16px;
+    }
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    .label{display:inline-block;background:var(--orange-light);color:var(--orange);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 14px;border-radius:50px;margin-bottom:12px}
+    .title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:var(--dark);margin-bottom:10px}
+    .sub{color:var(--muted);font-size:.97rem;max-width:580px;line-height:1.7}
+    .btn{display:inline-block;padding:13px 28px;border-radius:var(--radius);font-weight:700;font-size:.93rem;cursor:pointer;border:none;position:relative;overflow:hidden;transition:transform .15s,box-shadow .15s}
+    .btn::after{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transform:skewX(-15deg);transition:left .5s ease}
+    .btn:hover::after{left:140%}
+    .btn-blue{background:linear-gradient(135deg,var(--orange),var(--orange-mid));color:#fff;box-shadow:0 4px 16px rgba(242,101,34,.35)}
+    .btn-blue:hover{box-shadow:0 8px 32px rgba(242,101,34,.6);transform:translateY(-3px)}
+
+    /* HEADER */
+    .service-bar{background:linear-gradient(180deg,#c94510 0%,#F26522 38%,#c94510 70%,#111111 100%);padding:14px 24px 18px;text-align:center;line-height:1.6}
+    .service-bar-title{display:block;font-size:1.15rem;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;text-shadow:0 1px 6px rgba(0,0,0,.55)}
+    .service-bar-cities{display:block;font-size:.95rem;font-weight:800;color:rgba(255,255,255,.92);letter-spacing:.02em}
+    header{position:fixed;top:0;left:0;right:0;z-index:200;box-shadow:0 3px 18px rgba(0,0,0,.22)}
+    .header-brand{background:#111111;border-bottom:3px solid var(--orange);width:100%;display:flex;align-items:center;justify-content:space-between}
+    .brand-link{display:flex;align-items:center;gap:20px;padding:12px 28px;max-width:1200px;margin:0 auto;text-decoration:none}
+    .brand-link img{height:86px;width:auto;flex-shrink:0;display:block;filter:drop-shadow(0 2px 10px rgba(242,101,34,.3))}
+    .brand-words{display:flex;flex-direction:column;gap:4px;flex:1}
+    .brand-name{font-size:clamp(1.4rem,4vw,2.4rem);font-weight:900;color:#ffffff;letter-spacing:.05em;text-transform:uppercase;line-height:1}
+    .brand-tagline{font-size:clamp(.65rem,.9vw,.78rem);color:rgba(255,255,255,.55);letter-spacing:.12em;font-weight:600;text-transform:uppercase}
+    .header-nav{position:relative}
+    .header-nav ul{display:none;flex-direction:column;list-style:none;position:absolute;top:100%;left:0;right:0;background:#060606;border-top:1px solid rgba(242,101,34,.2);border-bottom:2px solid #F26522;z-index:300;box-shadow:0 16px 50px rgba(0,0,0,.85);padding:8px 0 14px;gap:0}
+    .header-nav ul.open{display:flex}
+    .header-nav ul li{width:100%;border-bottom:1px solid rgba(255,255,255,.06)}
+    .header-nav ul li a{display:block;padding:16px 32px;font-size:1.08rem;font-weight:700;color:rgba(255,255,255,.82);white-space:nowrap;transition:color .15s,background .15s,padding-left .15s}
+    .header-nav ul li a:hover,.header-nav ul li a.active{color:#F26522;background:rgba(242,101,34,.1);padding-left:42px}
+    .nav-call{background:linear-gradient(135deg,#e05010,#F26522)!important;color:#fff!important;margin:10px 20px 2px!important;padding:13px 22px!important;border-radius:8px!important;text-align:center;border-bottom:none!important;display:block}
+    .hamburger{display:flex;background:rgba(242,101,34,.12);border:2px solid rgba(242,101,34,.55);padding:11px 20px;cursor:pointer;align-items:center;gap:11px;flex-shrink:0;border-radius:10px;transition:background .2s,border-color .2s,box-shadow .2s;margin-right:12px}
+    .hamburger:hover,.hamburger.open{background:rgba(242,101,34,.22);border-color:#F26522;box-shadow:0 0 20px rgba(242,101,34,.3)}
+    .ham-label{font-size:1rem;font-weight:900;color:#F26522;letter-spacing:.06em;text-transform:uppercase}
+    .ham-icon{display:flex;flex-direction:column;gap:6px}
+    .ham-icon span{display:block;width:28px;height:3px;background:#F26522;border-radius:3px;transition:transform .3s,opacity .3s}
+    .hamburger.open .ham-icon span:first-child{transform:rotate(45deg) translate(5.5px,5.5px)}
+    .hamburger.open .ham-icon span:nth-child(2){opacity:0}
+    .hamburger.open .ham-icon span:last-child{transform:rotate(-45deg) translate(5.5px,-5.5px)}
+
+    /* PAGE HERO */
+    .page-hero{background:linear-gradient(150deg,rgba(13,13,13,.92) 0%,rgba(28,10,0,.88) 28%,rgba(184,66,16,.82) 65%,rgba(255,140,66,.78) 100%),url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1400&q=80&auto=format&fit=crop') center/cover no-repeat;color:#fff;padding:52px 24px;text-align:center}
+    .page-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin-bottom:10px;text-shadow:0 2px 16px rgba(0,0,0,.35)}
+    .page-hero p{font-size:.97rem;opacity:.88;max-width:580px;margin:0 auto}
+
+    /* SECTIONS */
+    .section{padding:76px 0}
+    .section-header{margin-bottom:44px}
+    .section-header.center{text-align:center}
+    .section-header.center .sub{margin:0 auto}
+    .section-header.center .title{background:linear-gradient(135deg,#111 0%,#c94a10 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+    /* REVIEW CARDS */
+    .review-platforms{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:760px;margin:0 auto}
+    .platform-card{background:#fff;border:1px solid #dde3ea;border-radius:var(--radius-lg);padding:34px 26px;text-align:center;box-shadow:0 4px 24px rgba(0,0,0,.05);transition:box-shadow .25s,transform .25s}
+    .platform-card:hover{box-shadow:0 14px 44px rgba(242,101,34,.18);transform:translateY(-5px)}
+    .platform-icon{font-size:2.6rem;margin-bottom:14px}
+    .platform-card h3{font-size:1.1rem;font-weight:800;margin-bottom:6px}
+    .platform-card .stars{color:#ffb400;font-size:1.1rem;margin-bottom:10px}
+    .platform-card p{font-size:.85rem;color:var(--muted);margin-bottom:20px}
+    .platform-btn{display:block;width:100%;text-align:center;padding:14px 20px;border-radius:var(--radius);font-weight:800;font-size:.95rem;color:#fff}
+    .platform-btn.yelp{background:#d32323}
+    .platform-btn.google{background:#4285F4}
+    .platform-btn.yelp:hover{background:#b91c1c}
+    .platform-btn.google:hover{background:#2f6fdb}
+
+    /* FOOTER */
+    footer{background:linear-gradient(180deg,#0d0d0d 0%,#111 100%);color:rgba(255,255,255,.72);padding:52px 24px 28px}
+    .footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;margin-bottom:36px}
+    .footer-col h5{color:#fff;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:13px}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+    .footer-col a{font-size:.84rem;transition:color .2s}
+    .footer-col a:hover{color:#fff}
+    .footer-bottom{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;flex-wrap:wrap;gap:8px}
+
+    /* ANIMATIONS */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .55s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    /* MOBILE */
+    @media(max-width:820px){
+      .brand-link{padding:8px 14px;gap:10px}
+      .brand-link img{height:48px}
+      .brand-name{font-size:1.1rem}
+      .brand-tagline{display:none}
+      .footer-grid{grid-template-columns:1fr;gap:24px}
+      .review-platforms{grid-template-columns:1fr}
+    }
+
+    /* FLOATING MOBILE CALL BUTTON */
+    .mobile-call-bar{display:none}
+    @media(max-width:820px){
+      .mobile-call-bar{
+        display:flex;align-items:center;justify-content:center;
+        position:fixed;bottom:0;left:0;right:0;z-index:999;
+        background:#F26522;color:#fff;
+        font-size:1.08rem;font-weight:900;letter-spacing:.02em;
+        padding:16px 20px;text-decoration:none;
+        box-shadow:0 -4px 20px rgba(242,101,34,.5);
+        border-top:2px solid rgba(255,255,255,.25);
+      }
+      .mobile-call-bar:hover{background:#E05818}
+    }
+  </style>
+</head>
+<body>
+
+<div class="service-bar">
+  <span class="service-bar-title">&#128205; Serving the South Bay Area</span>
+  <span class="service-bar-cities">Torrance &bull; Redondo Beach &bull; Hermosa Beach &bull; Manhattan Beach &bull; El Segundo &bull; Lomita &bull; Wilmington &bull; Long Beach &bull; Gardena &bull; Palos Verdes Peninsula &bull; Carson &bull; Compton &bull; Lawndale &bull; Hawthorne</span>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-brand">
+    <a href="index.html" class="brand-link">
+      <img src="logo-pe.png" alt="Phone ElectriK" />
+      <div class="brand-words">
+        <span class="brand-name" translate="no">Phone ElectriK</span>
+        <span class="brand-tagline">Cell Phone &middot; Tablet Repair &amp; Accessories &middot; Torrance, CA</span>
+      </div>
+    </a>
+    <button class="hamburger" id="hamBtn" onclick="toggleHam()" aria-label="Menu">
+      <div class="ham-icon"><span></span><span></span><span></span></div>
+      <span class="ham-label">Menu</span>
+    </button>
+  </div>
+  <nav class="header-nav">
+    <ul id="navLinks">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="services.html">🔧 Services &amp; Pricing</a></li>
+      <li><a href="index.html#brands">📱 What We Fix</a></li>
+      <li><a href="index.html#reviews">⭐ Customer Reviews</a></li>
+      <li><a href="review.html" class="active">📝 Leave Us a Review</a></li>
+      <li><a href="policies.html">📋 Warranty &amp; Policies</a></li>
+      <li><a href="contact.html">📍 Hours &amp; Location</a></li>
+      <li><a href="contact.html#about">ℹ️ About Us</a></li>
+      <li><a href="contact.html#quote">✉️ Get a Free Quote</a></li>
+      <li><a href="tel:3233486756" class="nav-call">&#128222; Call Now — (323) 348-6756</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="label" style="background:rgba(255,255,255,.15);color:#fff">We'd Love Your Feedback</div>
+  <h1>Leave Us a Review</h1>
+  <p>Happy with your repair? Tell us about it — it takes less than a minute and helps other people in Torrance find us.</p>
+</div>
+
+<!-- CHOOSE PLATFORM -->
+<section class="section">
+  <div class="container">
+    <div class="section-header center">
+      <div class="label">Choose a Platform</div>
+      <h2 class="title">Where Would You Like to Leave a Review?</h2>
+      <p class="sub">Pick whichever you use most — both help us a lot.</p>
+    </div>
+    <div class="review-platforms">
+      <div class="platform-card reveal">
+        <div class="platform-icon">⭐</div>
+        <h3>Yelp</h3>
+        <div class="stars">★★★★★ 4.7</div>
+        <p>268 reviews and counting. Leave us a review on Yelp.</p>
+        <a href="https://m.yelp.com/biz/phone-electrik-torrance-2" target="_blank" rel="noopener" class="platform-btn yelp">Review on Yelp</a>
+      </div>
+      <div class="platform-card reveal">
+        <div class="platform-icon">🌟</div>
+        <h3>Google</h3>
+        <div class="stars">★★★★★ 4.6</div>
+        <p>168 reviews and counting. Leave us a review on Google.</p>
+        <a href="https://www.google.com/search?q=Phone+ElectriK+Torrance+reviews" target="_blank" rel="noopener" class="platform-btn google">Review on Google</a>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:.88rem;color:#777;margin-top:32px">Thank you for supporting our shop — every review helps! 🙏</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+        <img src="logo-pe.png" alt="Phone ElectriK" style="height:48px;width:auto;filter:drop-shadow(0 1px 6px rgba(242,101,34,.3))" />
+      </div>
+      <p style="font-size:.84rem;line-height:1.7">Torrance's top-rated electronics repair shop. 90-day warranty on every repair. Walk in or call us.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="services.html">Screen Repair</a></li>
+        <li><a href="services.html">Battery Replacement</a></li>
+        <li><a href="services.html">Charging Port</a></li>
+        <li><a href="policies.html">Warranty &amp; Policies</a></li>
+        <li><a href="review.html">Leave Us a Review</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Visit Us</h5>
+      <ul>
+        <li><a href="tel:3233486756">(323) 348-6756</a></li>
+        <li><a href="contact.html">3025 Artesia Blvd STE 101</a></li>
+        <li><a href="contact.html">Torrance, CA 90504</a></li>
+        <li><a href="contact.html">Mon–Sat: 9AM–8PM</a></li>
+        <li><a href="contact.html">Sun: 10AM–6PM</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Phone ElectriK. All rights reserved.</span>
+    <span>3025 Artesia Blvd STE 101, Torrance, CA 90504</span>
+  </div>
+</footer>
+
+<!-- FLOATING MOBILE CALL BUTTON -->
+<a href="tel:3233486756" class="mobile-call-bar" aria-label="Call Phone ElectriK">📞 Call Now &mdash; (323) 348-6756</a>
+
+<script>
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
+  },{threshold:.08,rootMargin:'0px 0px -40px 0px'})
+  document.querySelectorAll('.reveal').forEach((el,i)=>{
+    el.style.transitionDelay = (i % 4 * 0.08) + 's'
+    obs.observe(el)
+  })
+</script>
+<script>
+function toggleHam(){
+  document.getElementById('navLinks').classList.toggle('open');
+  document.getElementById('hamBtn').classList.toggle('open');
+}
+function fixPadding(){document.body.style.paddingTop=document.querySelector('header').offsetHeight+'px'}
+fixPadding();
+window.addEventListener('resize',fixPadding);
+document.addEventListener('click',function(e){
+  if(!e.target.closest('header')){
+    document.getElementById('navLinks').classList.remove('open');
+    document.getElementById('hamBtn').classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
