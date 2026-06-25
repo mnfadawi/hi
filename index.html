@@ -164,7 +164,7 @@
     .brand-name{font-size:clamp(1.4rem,4vw,2.4rem);font-weight:900;color:#ffffff;letter-spacing:.05em;text-transform:uppercase;line-height:1}
     .brand-tagline{font-size:clamp(.65rem,.9vw,.78rem);color:rgba(255,255,255,.55);letter-spacing:.12em;font-weight:600;text-transform:uppercase}
     .header-nav{position:relative}
-    .header-nav ul{display:none;flex-direction:column;list-style:none;position:absolute;top:100%;left:0;right:0;background:#060606;border-top:1px solid rgba(242,101,34,.2);border-bottom:2px solid #F26522;z-index:300;box-shadow:0 16px 50px rgba(0,0,0,.85);padding:8px 0 14px;gap:0}
+    .header-nav ul{display:none;flex-direction:column;list-style:none;position:absolute;top:100%;left:0;right:0;background:#060606;border-top:1px solid rgba(242,101,34,.2);border-bottom:2px solid #F26522;z-index:300;box-shadow:0 16px 50px rgba(0,0,0,.85);padding:8px 0 14px;gap:0;max-height:calc(100vh - 100px);overflow-y:auto;-webkit-overflow-scrolling:touch}
     .header-nav ul.open{display:flex}
     .header-nav ul li{width:100%;border-bottom:1px solid rgba(255,255,255,.06)}
     .header-nav ul li a{display:block;padding:16px 32px;font-size:1.08rem;font-weight:700;color:rgba(255,255,255,.82);white-space:nowrap;transition:color .15s,background .15s,padding-left .15s}
@@ -365,8 +365,8 @@
       <li><a href="index.html" class="active">🏠 Home</a></li>
       <li><a href="services.html">🔧 Services &amp; Pricing</a></li>
       <li><a href="#brands">📱 What We Fix</a></li>
-      <li><a href="#reviews">⭐ Customer Reviews</a></li>
-      <li><a href="review.html">📝 Leave Us a Review</a></li>
+      <li><a href="#why">💡 Why Choose Us</a></li>
+      <li><a href="review.html">⭐ Reviews &amp; Feedback</a></li>
       <li><a href="policies.html">📋 Warranty &amp; Policies</a></li>
       <li><a href="contact.html">📍 Hours &amp; Location</a></li>
       <li><a href="contact.html#about">ℹ️ About Us</a></li>
@@ -659,43 +659,21 @@
     <div class="section-header center">
       <div class="label">What Customers Say</div>
       <h2 class="title" style="background:linear-gradient(135deg,#111 0%,#c94a10 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Customer Reviews</h2>
-      <p class="sub">Real ratings and real reviews from real customers.</p>
+      <p class="sub">Real ratings from real customers — see what people are saying and leave your own.</p>
     </div>
-    <div class="reviews-box reveal" id="reviews" style="max-width:560px;margin:0 auto">
-        <div class="rating-top">
-          <div class="rating-stars">★★★★★</div>
-          <div class="rating-scores">
-            <div class="rating-score"><strong>4.7</strong><span>Yelp · 268 reviews</span></div>
-            <div class="rating-score"><strong>4.6</strong><span>Google · 168 reviews</span></div>
-          </div>
-        </div>
-        <hr class="review-divider" />
-
-        <a href="https://m.yelp.com/biz/phone-electrik-torrance-2" target="_blank" rel="noopener" class="review-item review-link">
-          <div class="review-meta">
-            <span class="review-name">Dania F. <span class="review-source review-source-yelp">Yelp</span></span>
-            <span class="review-stars">★★★★★</span>
-          </div>
-          <p class="review-text">"I went in to repair my phone's speaker. I was helped promptly by Mahmoud, who was very sweet and knowledgeable. He gave me a complimentary cleaning since I got a privacy screen, and now people can hear me speak on the phone clearly. Honestly couldn't believe how quick they were able to fix it — I was dealing with this issue for months. I appreciate that they were communicative and clear both about pricing and timing. I'd trust these guys with all my electronics!!"</p>
-        </a>
-
-        <a href="https://www.google.com/search?q=Phone+ElectriK+Torrance+reviews" target="_blank" rel="noopener" class="review-item review-link">
-          <div class="review-meta">
-            <span class="review-name">Riki Fried <span class="review-source review-source-google">Google</span></span>
-            <span class="review-stars">★★★★★</span>
-          </div>
-          <p class="review-text">"Sha helped me at the store. He was fantastic. He diagnosed the problem, fixed it quickly and the whole time he had such a pleasant demeanor and a smile on his face. I highly recommend this store to repair your phones. Mine was an iPhone and he repaired it with iPhone parts. The price was also reasonable."</p>
-        </a>
-
-        <div style="margin-top:20px;padding-top:18px;border-top:1px solid #e8ecf0">
-          <p style="text-align:center;font-weight:700;color:#111;font-size:.95rem;margin-bottom:12px">Happy with your repair? Your review helps us a lot!</p>
-          <div style="display:flex;flex-direction:column;gap:10px">
-            <a href="https://m.yelp.com/biz/phone-electrik-torrance-2" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:9px;background:#d32323;color:#fff;padding:13px 20px;border-radius:10px;font-weight:800;font-size:.95rem;text-decoration:none">⭐ Leave a Review on Yelp</a>
-            <a href="https://www.google.com/search?q=Phone+ElectriK+Torrance+reviews" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:9px;background:#4285F4;color:#fff;padding:13px 20px;border-radius:10px;font-weight:800;font-size:.95rem;text-decoration:none">🌟 Leave a Review on Google</a>
-          </div>
+    <div class="reviews-box reveal" id="reviews" style="max-width:560px;margin:0 auto;text-align:center">
+      <div class="rating-top">
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-scores">
+          <div class="rating-score"><strong>4.7</strong><span>Yelp · 268 reviews</span></div>
+          <div class="rating-score"><strong>4.6</strong><span>Google · 168 reviews</span></div>
         </div>
       </div>
+      <hr class="review-divider" />
+      <p style="font-size:.92rem;color:#555;margin-bottom:18px">Read what customers like Dania and Riki had to say about their repairs, or share your own experience.</p>
+      <a href="review.html" class="btn btn-blue">⭐ Read Reviews &amp; Leave Yours</a>
     </div>
+  </div>
 </section>
 
 <!-- URGENCY / TRUST BAR -->
