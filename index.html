@@ -943,15 +943,18 @@ document.addEventListener('click',function(e){
 </div>
 <script>
 (function(){
-  document.querySelectorAll('a[href*="instagram.com/phoneelectrik"]').forEach(function(a){
-    a.addEventListener('click',function(e){
-      e.preventDefault();
-      document.getElementById('ig-modal').style.display='flex';
+  var isMobile=/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if(!isMobile){
+    document.querySelectorAll('a[href*="instagram.com/phoneelectrik"]').forEach(function(a){
+      a.addEventListener('click',function(e){
+        e.preventDefault();
+        document.getElementById('ig-modal').style.display='flex';
+      });
     });
-  });
-  document.getElementById('ig-modal').addEventListener('click',function(e){
-    if(e.target===this)this.style.display='none';
-  });
+    document.getElementById('ig-modal').addEventListener('click',function(e){
+      if(e.target===this)this.style.display='none';
+    });
+  }
 })();
 </script>
 
@@ -1014,15 +1017,18 @@ document.addEventListener('click',function(e){
 </div>
 <script>
 (function(){
-  document.querySelectorAll('a[href*="ZTSonFKFo"]').forEach(function(a){
-    a.addEventListener('click',function(e){
-      e.preventDefault();
-      document.getElementById('tt-shop-modal').style.display='flex';
+  var isMobile=/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if(!isMobile){
+    document.querySelectorAll('a[href*="ZTSonFKFo"]').forEach(function(a){
+      a.addEventListener('click',function(e){
+        e.preventDefault();
+        document.getElementById('tt-shop-modal').style.display='flex';
+      });
     });
-  });
-  document.getElementById('tt-shop-modal').addEventListener('click',function(e){
-    if(e.target===this)this.style.display='none';
-  });
+    document.getElementById('tt-shop-modal').addEventListener('click',function(e){
+      if(e.target===this)this.style.display='none';
+    });
+  }
 })();
 </script>
 
