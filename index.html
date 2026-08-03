@@ -527,7 +527,9 @@ body {
 }
 
 /* === RESPONSIVE === */
-@media (max-width: 720px) {
+
+/* Tablet (iPad portrait and below) */
+@media (max-width: 768px) {
   .about-grid,
   .info-grid,
   .footer-grid {
@@ -536,8 +538,30 @@ body {
   }
 
   .hero-stats { gap: 28px; }
-
   .section { padding: 56px 20px; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Phone */
+@media (max-width: 540px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .reviews-row { grid-template-columns: 1fr; }
+
+  .hero h1 { font-size: clamp(2.2rem, 11vw, 3rem); }
+  .hero { padding: 56px 20px 52px; }
+  .hero-stats { gap: 20px; flex-wrap: wrap; }
+
+  .hero-btns { flex-direction: column; }
+  .btn-red, .btn-ghost { text-align: center; }
+
+  .header-inner { padding: 0 16px; }
+  .logo { font-size: 1.05rem; }
+  .header-cta { font-size: 0.82rem; padding: 8px 14px; }
+
+  .section { padding: 48px 16px; }
+  .section-h2 { font-size: 1.7rem; }
+  .footer-grid { gap: 24px; }
+  .review-card { padding: 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
