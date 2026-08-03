@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cuko's Restaurant & Bakery | Torrance, CA</title>
+  <title>Taqueria El Otro Amigo | Torrance, CA</title>
   <style>
     :root {
-      --gold: #C8840A;
-      --gold-light: #E09B1A;
-      --red: #B03020;
-      --bg: #FBF8F3;
+      --red: #8B1A1A;
+      --red-bright: #B02020;
+      --gold: #C8900A;
+      --green: #2A5C2A;
+      --bg: #FDF6EC;
       --bg-surface: #FFFFFF;
-      --bg-warm: #F2EBE0;
-      --text: #1E1410;
-      --text-muted: #6B5744;
-      --border: #E2D5C3;
+      --bg-warm: #F7EDD8;
+      --text: #1A0A00;
+      --text-muted: #6B4C35;
+      --border: #E8D8C0;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,8 +29,7 @@
 
     /* HEADER */
     .site-header {
-      background: #1E1410;
-      border-bottom: 3px solid var(--gold);
+      background: var(--red);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -47,22 +47,22 @@
     }
 
     .logo {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 900;
-      color: #FBF8F3;
+      color: #fff;
       text-decoration: none;
       line-height: 1.1;
       white-space: nowrap;
     }
 
-    .logo span { color: var(--gold); }
+    .logo span { color: #FFD87A; }
 
     .header-cta {
       display: flex;
       align-items: center;
       gap: 6px;
-      background: var(--gold);
-      color: #1E1410;
+      background: #FFD87A;
+      color: var(--red);
       text-decoration: none;
       padding: 9px 16px;
       border-radius: 4px;
@@ -74,8 +74,8 @@
 
     /* HERO */
     .hero {
-      background: #1E1410;
-      color: #FBF8F3;
+      background: var(--red);
+      color: #fff;
       padding: 56px 20px 52px;
       position: relative;
       overflow: hidden;
@@ -86,8 +86,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse at 80% 50%, rgba(200,132,10,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse at 20% 80%, rgba(176,48,32,0.1) 0%, transparent 50%);
+        radial-gradient(ellipse at 90% 20%, rgba(255,216,122,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 10% 90%, rgba(0,0,0,0.2) 0%, transparent 50%);
       pointer-events: none;
     }
 
@@ -103,34 +103,39 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.2em;
-      color: var(--gold);
+      color: #FFD87A;
       margin-bottom: 16px;
     }
 
     .hero h1 {
-      font-size: clamp(2.6rem, 10vw, 5.5rem);
+      font-size: clamp(2.4rem, 10vw, 5.5rem);
       font-weight: 900;
       line-height: 0.95;
       color: #fff;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
-    .hero h1 .sub {
+    .hero h1 .line2 {
       display: block;
-      font-size: clamp(1rem, 3.5vw, 1.8rem);
-      font-weight: 400;
-      color: var(--gold-light);
-      letter-spacing: 0.04em;
-      margin-top: 8px;
-      line-height: 1.3;
+      color: #FFD87A;
+    }
+
+    .hero-sub-name {
+      font-size: clamp(0.9rem, 3vw, 1.3rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 10px;
+      margin-bottom: 20px;
     }
 
     .hero-desc {
       font-size: 1rem;
-      color: #A8957E;
+      color: rgba(255,255,255,0.75);
       max-width: 480px;
       line-height: 1.7;
-      margin: 24px 0 32px;
+      margin-bottom: 32px;
     }
 
     .hero-btns {
@@ -143,9 +148,9 @@
       .hero-btns { flex-direction: row; flex-wrap: wrap; }
     }
 
-    .btn-gold {
-      background: var(--gold);
-      color: #1E1410;
+    .btn-yellow {
+      background: #FFD87A;
+      color: var(--red);
       text-decoration: none;
       padding: 14px 28px;
       border-radius: 4px;
@@ -156,34 +161,38 @@
 
     .btn-outline {
       background: transparent;
-      color: #FBF8F3;
+      color: #fff;
       text-decoration: none;
       padding: 14px 28px;
       border-radius: 4px;
       font-weight: 700;
       font-size: 1rem;
       text-align: center;
-      border: 1.5px solid rgba(251,248,243,0.3);
+      border: 1.5px solid rgba(255,255,255,0.35);
     }
 
-    .hero-badges {
+    .hero-stats {
       display: flex;
-      gap: 10px;
+      gap: 32px;
       flex-wrap: wrap;
       margin-top: 40px;
       padding-top: 32px;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      border-top: 1px solid rgba(255,255,255,0.15);
     }
 
-    .hero-badge {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 100px;
-      padding: 6px 14px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #C8B89A;
-      letter-spacing: 0.04em;
+    .stat-val {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #FFD87A;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
     }
 
     /* SECTIONS */
@@ -195,7 +204,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.2em;
-      color: var(--gold);
+      color: var(--red-bright);
       margin-bottom: 8px;
     }
 
@@ -215,8 +224,12 @@
       margin-bottom: 36px;
     }
 
-    /* MENU SECTION */
-    .menu-section { background: var(--bg-warm); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    /* MENU */
+    .menu-section {
+      background: var(--bg-warm);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
 
     .menu-cols {
       display: grid;
@@ -224,21 +237,16 @@
       gap: 32px;
     }
 
-    @media (min-width: 640px) {
-      .menu-cols { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (min-width: 900px) {
-      .menu-cols { grid-template-columns: 1fr 1fr 1fr; }
-    }
+    @media (min-width: 560px) { .menu-cols { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 900px) { .menu-cols { grid-template-columns: 1fr 1fr 1fr; } }
 
     .menu-group h3 {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--red);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       padding-bottom: 10px;
       border-bottom: 2px solid var(--border);
     }
@@ -246,17 +254,13 @@
     .menu-item {
       padding: 10px 0;
       border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 8px;
     }
 
     .menu-item:last-child { border-bottom: none; }
 
     .menu-item-name {
       font-size: 0.95rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text);
     }
 
@@ -264,6 +268,7 @@
       font-size: 0.78rem;
       color: var(--text-muted);
       margin-top: 2px;
+      line-height: 1.4;
     }
 
     /* HOURS */
@@ -312,8 +317,8 @@
 
     .directions-btn {
       display: inline-block;
-      background: var(--gold);
-      color: #1E1410;
+      background: var(--red);
+      color: #fff;
       text-decoration: none;
       padding: 12px 22px;
       border-radius: 4px;
@@ -323,8 +328,8 @@
 
     /* FOOTER */
     .site-footer {
-      background: #1E1410;
-      color: #8A7060;
+      background: var(--red);
+      color: rgba(255,255,255,0.55);
       padding: 48px 20px 28px;
     }
 
@@ -336,31 +341,31 @@
       gap: 28px;
       padding-bottom: 32px;
       margin-bottom: 24px;
-      border-bottom: 1px solid #2E201A;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     @media (min-width: 640px) {
       .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; }
     }
 
-    .footer-logo { font-size: 1.1rem; font-weight: 900; color: #FBF8F3; margin-bottom: 10px; }
-    .footer-logo span { color: var(--gold); }
-    .footer-tagline { font-size: 0.85rem; color: #4A3428; line-height: 1.6; }
+    .footer-logo { font-size: 1.1rem; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .footer-logo span { color: #FFD87A; }
+    .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.6; }
 
     .footer-col h4 {
       font-size: 0.68rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      color: #FBF8F3;
+      color: #FFD87A;
       margin-bottom: 12px;
     }
 
-    .footer-col address { font-style: normal; font-size: 0.87rem; color: #8A7060; line-height: 1.8; }
-    .footer-col p { font-size: 0.87rem; color: #8A7060; line-height: 1.8; }
+    .footer-col address { font-style: normal; font-size: 0.87rem; color: rgba(255,255,255,0.55); line-height: 1.8; }
+    .footer-col p { font-size: 0.87rem; color: rgba(255,255,255,0.55); line-height: 1.8; }
 
     .footer-bottom { max-width: 1100px; margin: 0 auto; }
-    .footer-copy { font-size: 0.75rem; color: #2E201A; }
+    .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
   </style>
 </head>
 <body>
@@ -368,12 +373,12 @@
 <!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
-    <a href="#" class="logo"><span>Cuko's</span> Restaurant &amp; Bakery</a>
-    <a href="tel:+13105329300" class="header-cta">
+    <a href="#" class="logo"><span>Taqueria</span> El Otro Amigo</a>
+    <a href="tel:+13105166344" class="header-cta">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z"/>
       </svg>
-      (310) 532-9300
+      (310) 516-6344
     </a>
   </div>
 </header>
@@ -381,21 +386,30 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <p class="eyebrow">Torrance, California &mdash; Authentic Mexican Flavors</p>
+    <p class="eyebrow">Torrance, California &mdash; Authentic Mexican Cuisine</p>
     <h1>
-      Cuko's
-      <span class="sub">Restaurant &amp; Bakery</span>
+      El Otro
+      <span class="line2">Amigo</span>
     </h1>
-    <p class="hero-desc">Homestyle Mexican breakfast and freshly baked goods made with love — the way it's always been done.</p>
+    <p class="hero-sub-name">Taqueria &mdash; Torrance, CA</p>
+    <p class="hero-desc">Real Mexican food made the right way — birria tacos, burritos, enchiladas, and more. Torrance's go-to taqueria with over 595 happy customers on Yelp.</p>
     <div class="hero-btns">
-      <a href="tel:+13105329300" class="btn-gold">Call Us Now</a>
-      <a href="https://maps.google.com/?q=2314+W+Redondo+Beach+Blvd+Torrance+CA+90504" class="btn-outline" target="_blank" rel="noopener">Get Directions</a>
+      <a href="tel:+13105166344" class="btn-yellow">Call to Order</a>
+      <a href="https://maps.google.com/?q=17236+Crenshaw+Blvd+Torrance+CA+90504" class="btn-outline" target="_blank" rel="noopener">Get Directions</a>
     </div>
-    <div class="hero-badges">
-      <span class="hero-badge">Fresh Baked Daily</span>
-      <span class="hero-badge">Authentic Mexican Breakfast</span>
-      <span class="hero-badge">Family Owned</span>
-      <span class="hero-badge">Torrance Local Favorite</span>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-val">595+</div>
+        <div class="stat-label">Yelp Reviews</div>
+      </div>
+      <div>
+        <div class="stat-val">4★</div>
+        <div class="stat-label">Avg. Rating</div>
+      </div>
+      <div>
+        <div class="stat-val">6 Days</div>
+        <div class="stat-label">A Week</div>
+      </div>
     </div>
   </div>
 </section>
@@ -405,96 +419,66 @@
   <div class="section-inner">
     <p class="section-label">What We Serve</p>
     <h2 class="section-h2">Our Menu</h2>
-    <p class="section-desc">Fresh ingredients, real recipes, made every morning.</p>
+    <p class="section-desc">Everything made fresh — authentic flavors you can taste.</p>
     <div class="menu-cols">
 
       <div class="menu-group">
-        <h3>Breakfast Favorites</h3>
+        <h3>Tacos &amp; Burritos</h3>
         <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Chilaquiles</div>
-            <div class="menu-item-desc">Red or green sauce, topped with crema &amp; queso</div>
-          </div>
+          <div class="menu-item-name">Birria Tacos</div>
+          <div class="menu-item-desc">Slow-cooked beef, consomé for dipping, onion &amp; cilantro</div>
         </div>
         <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Huevos Rancheros</div>
-            <div class="menu-item-desc">Eggs over tortilla with house ranchero sauce</div>
-          </div>
+          <div class="menu-item-name">Tacos</div>
+          <div class="menu-item-desc">Choice of meat on fresh corn tortillas</div>
         </div>
         <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Breakfast Burrito</div>
-            <div class="menu-item-desc">Eggs, beans, cheese, and your choice of meat</div>
-          </div>
+          <div class="menu-item-name">Burritos</div>
+          <div class="menu-item-desc">Stuffed with rice, beans, meat, and salsa</div>
         </div>
         <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Caldo Tlalpeño</div>
-            <div class="menu-item-desc">Hearty traditional Mexican soup</div>
-          </div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Pancakes</div>
-            <div class="menu-item-desc">Fluffy and golden, served with syrup</div>
-          </div>
+          <div class="menu-item-name">Quesadillas</div>
+          <div class="menu-item-desc">Golden grilled with melted cheese and your choice of filling</div>
         </div>
       </div>
 
       <div class="menu-group">
-        <h3>Fresh Baked Goods</h3>
+        <h3>Plates &amp; Specialties</h3>
         <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Conchas</div>
-            <div class="menu-item-desc">Soft sweet bread with signature sugar topping</div>
-          </div>
+          <div class="menu-item-name">Enchiladas</div>
+          <div class="menu-item-desc">Smothered in red or green sauce, topped with cheese &amp; crema</div>
         </div>
         <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Empanadas</div>
-            <div class="menu-item-desc">Flaky pastries with sweet or savory fillings</div>
-          </div>
+          <div class="menu-item-name">Chile Relleno</div>
+          <div class="menu-item-desc">Roasted poblano stuffed with cheese, lightly battered</div>
         </div>
         <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Croissants</div>
-            <div class="menu-item-desc">Buttery and freshly baked every morning</div>
-          </div>
+          <div class="menu-item-name">Tortas</div>
+          <div class="menu-item-desc">Mexican sandwich on bolillo with beans, avocado &amp; meat</div>
         </div>
         <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Specialty Cakes</div>
-            <div class="menu-item-desc">Custom and seasonal cakes for any occasion</div>
-          </div>
+          <div class="menu-item-name">Daily Specials</div>
+          <div class="menu-item-desc">Ask us what's fresh today — rotating homestyle dishes</div>
         </div>
       </div>
 
       <div class="menu-group">
-        <h3>Mexican Plates</h3>
+        <h3>Sides &amp; Drinks</h3>
         <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Tacos</div>
-            <div class="menu-item-desc">Authentic street-style with fresh toppings</div>
-          </div>
+          <div class="menu-item-name">Chips &amp; Salsa</div>
+          <div class="menu-item-desc">Homemade chips with house-made salsa</div>
         </div>
         <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Enchiladas</div>
-            <div class="menu-item-desc">Smothered in red or green sauce with cheese</div>
-          </div>
+          <div class="menu-item-name">Rice &amp; Beans</div>
+          <div class="menu-item-desc">Mexican-style red rice and refried beans</div>
         </div>
         <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Fajitas</div>
-            <div class="menu-item-desc">Sizzling chicken or beef with peppers &amp; onions</div>
-          </div>
+          <div class="menu-item-name">Agua Fresca</div>
+          <div class="menu-item-desc">Fresh made daily — horchata, jamaica &amp; more</div>
         </div>
         <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Tamales</div>
-            <div class="menu-item-desc">Homemade masa with savory filling</div>
-          </div>
+          <div class="menu-item-name">Mexican Sodas</div>
+          <div class="menu-item-desc">Jarritos and other Mexican favorites</div>
         </div>
       </div>
 
@@ -507,28 +491,30 @@
   <div class="section-inner">
     <p class="section-label">Find Us</p>
     <h2 class="section-h2">Hours &amp; Location</h2>
-    <p class="section-desc">Come in for breakfast or lunch — we&rsquo;re right here in Torrance.</p>
+    <p class="section-desc">Right on Crenshaw Blvd in Torrance — come hungry.</p>
     <div class="hours-grid">
       <div>
         <table class="hours-table">
           <tbody>
-            <tr><td>Monday</td><td>7:00 AM – 3:00 PM</td></tr>
-            <tr class="day-closed"><td>Tuesday</td><td>Closed</td></tr>
-            <tr><td>Wednesday</td><td>7:00 AM – 3:00 PM</td></tr>
-            <tr><td>Thursday</td><td>7:00 AM – 3:00 PM</td></tr>
-            <tr><td>Friday</td><td>7:00 AM – 3:00 PM</td></tr>
+            <tr><td>Monday</td><td>10:00 AM – 9:00 PM</td></tr>
+            <tr><td>Tuesday</td><td>10:00 AM – 9:00 PM</td></tr>
+            <tr><td>Wednesday</td><td>10:00 AM – 9:00 PM</td></tr>
+            <tr><td>Thursday</td><td>10:00 AM – 9:00 PM</td></tr>
+            <tr><td>Friday</td><td>10:00 AM – 9:00 PM</td></tr>
+            <tr><td>Saturday</td><td>10:00 AM – 9:00 PM</td></tr>
+            <tr class="day-closed"><td>Sunday</td><td>Closed</td></tr>
           </tbody>
         </table>
       </div>
       <div>
         <div class="location-card">
           <address>
-            <strong>Cuko's Restaurant &amp; Bakery</strong>
-            2314 W Redondo Beach Blvd<br>
+            <strong>Taqueria El Otro Amigo</strong>
+            17236 Crenshaw Blvd<br>
             Torrance, CA 90504<br><br>
-            <strong>(310) 532-9300</strong>
+            <strong>(310) 516-6344</strong>
           </address>
-          <a class="directions-btn" href="https://maps.google.com/?q=2314+W+Redondo+Beach+Blvd+Torrance+CA+90504" target="_blank" rel="noopener">Get Directions &rarr;</a>
+          <a class="directions-btn" href="https://maps.google.com/?q=17236+Crenshaw+Blvd+Torrance+CA+90504" target="_blank" rel="noopener">Get Directions &rarr;</a>
         </div>
       </div>
     </div>
@@ -539,28 +525,27 @@
 <footer class="site-footer">
   <div class="footer-grid">
     <div>
-      <div class="footer-logo"><span>Cuko's</span> Restaurant &amp; Bakery</div>
-      <p class="footer-tagline">Authentic Mexican breakfast and fresh baked goods in the heart of Torrance.</p>
+      <div class="footer-logo"><span>Taqueria</span> El Otro Amigo</div>
+      <p class="footer-tagline">Authentic Mexican food on Crenshaw Blvd — Torrance's neighborhood taqueria.</p>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
       <address>
-        2314 W Redondo Beach Blvd<br>
+        17236 Crenshaw Blvd<br>
         Torrance, CA 90504<br><br>
-        (310) 532-9300
+        (310) 516-6344
       </address>
     </div>
     <div class="footer-col">
       <h4>Hours</h4>
       <p>
-        Mon: 7:00 AM – 3:00 PM<br>
-        Tue: Closed<br>
-        Wed – Fri: 7:00 AM – 3:00 PM
+        Mon – Sat: 10:00 AM – 9:00 PM<br>
+        Sunday: Closed
       </p>
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">&copy; 2025 Cuko's Restaurant &amp; Bakery &mdash; Torrance, CA. All rights reserved.</p>
+    <p class="footer-copy">&copy; 2025 Taqueria El Otro Amigo &mdash; Torrance, CA. All rights reserved.</p>
   </div>
 </footer>
 
