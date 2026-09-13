@@ -12,11 +12,11 @@ body{
   position:relative;
 }
 
-/* === BACKGROUND === */
+/* ── BACKGROUND ── */
 .bg{
   position:absolute;inset:0;
   background:
-    radial-gradient(ellipse 1100px 800px at 55% 52%, rgba(242,101,34,.10) 0%, transparent 65%),
+    radial-gradient(ellipse 1100px 800px at 55% 52%,rgba(242,101,34,.10) 0%,transparent 65%),
     linear-gradient(135deg,#0d0d0d 0%,#140700 45%,#0d0d0d 100%);
   opacity:0;
   transition:opacity 0.8s ease;
@@ -30,7 +30,32 @@ body{
   background-size:60px 60px;
 }
 
-/* === TOP STRIPE === */
+/* ── PHASE 1: INTRO LOGO (big, centered) ── */
+.intro-stage{
+  position:absolute;inset:0;z-index:20;
+  display:flex;align-items:center;justify-content:center;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity 0.7s ease;
+}
+.intro-stage.show{opacity:1}
+
+.intro-card{
+  background:rgba(255,255,255,0.95);
+  border-radius:28px;
+  padding:48px 72px;
+  box-shadow:0 8px 60px rgba(0,0,0,0.6),0 0 120px rgba(242,101,34,0.15);
+  transform:scale(0.88);
+  transition:transform 0.7s cubic-bezier(0.34,1.56,0.64,1);
+}
+.intro-stage.show .intro-card{
+  transform:scale(1);
+}
+.intro-card img{
+  height:360px;width:auto;display:block;
+}
+
+/* ── TOP STRIPE ── */
 .stripe-top{
   position:absolute;top:0;left:0;right:0;height:7px;
   background:linear-gradient(90deg,#a83800,#F26522,#E05818,#F26522,#a83800);
@@ -39,14 +64,14 @@ body{
 }
 .stripe-top.show{transform:scaleX(1)}
 
-/* === SERVICE BANNER === */
+/* ── SERVICE BANNER ── */
 .banner{
   position:absolute;top:7px;left:0;right:0;height:68px;
   background:linear-gradient(90deg,rgba(180,60,10,.95),rgba(242,101,34,1),rgba(224,88,24,.95),rgba(242,101,34,1),rgba(180,60,10,.95));
   display:flex;align-items:center;justify-content:center;
   box-shadow:0 4px 20px rgba(0,0,0,.4);
   opacity:0;transform:translateY(-100%);
-  transition:opacity 0.5s ease, transform 0.5s ease;
+  transition:opacity 0.5s ease,transform 0.5s ease;
 }
 .banner.show{opacity:1;transform:translateY(0)}
 .banner-text{
@@ -55,14 +80,14 @@ body{
   color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.35);
 }
 
-/* === MAIN LAYOUT === */
+/* ── MAIN LAYOUT ── */
 .main{
   position:absolute;
   top:75px;left:0;right:0;bottom:130px;
   display:flex;
 }
 
-/* === LEFT COL: Brand === */
+/* ── LEFT COL: Brand ── */
 .col-brand{
   width:540px;
   padding:40px 44px 40px 72px;
@@ -81,8 +106,8 @@ body{
 
 .logo-block{
   margin-bottom:28px;
-  opacity:0;transform:scale(0.85);
-  transition:opacity 0.7s ease, transform 0.7s ease;
+  opacity:0;transform:scale(0.9);
+  transition:opacity 0.6s ease,transform 0.6s ease;
 }
 .logo-block.show{opacity:1;transform:scale(1)}
 .logo-card{
@@ -102,7 +127,7 @@ body{
   border-left:3px solid #F26522;padding-left:14px;
   line-height:1.6;
   opacity:0;transform:translateX(-20px);
-  transition:opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+  transition:opacity 0.5s ease,transform 0.5s ease;
 }
 .brand-tagline.show{opacity:1;transform:translateX(0)}
 
@@ -111,7 +136,7 @@ body{
   background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.12);
   border-radius:50px;padding:10px 22px;
-  opacity:0;transition:opacity 0.5s ease 0.35s;
+  opacity:0;transition:opacity 0.5s ease;
 }
 .rating-badge.show{opacity:1}
 .stars{font-size:20px;color:#ffc107;letter-spacing:2px}
@@ -123,12 +148,12 @@ body{
   background:rgba(242,101,34,.1);
   border:1px solid rgba(242,101,34,.3);
   border-radius:50px;padding:8px 20px;
-  opacity:0;transition:opacity 0.5s ease 0.5s;
+  opacity:0;transition:opacity 0.5s ease;
 }
 .warranty-badge.show{opacity:1}
 .warranty-txt{font-size:13px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:2px;text-transform:uppercase}
 
-/* === CENTER COL: Contact === */
+/* ── CENTER COL: Contact ── */
 .col-contact{
   width:680px;
   padding:40px 44px 40px 56px;
@@ -138,7 +163,7 @@ body{
 .info-item{
   display:flex;flex-direction:column;gap:6px;
   opacity:0;transform:translateY(18px);
-  transition:opacity 0.5s ease, transform 0.5s ease;
+  transition:opacity 0.5s ease,transform 0.5s ease;
 }
 .info-item.show{opacity:1;transform:translateY(0)}
 .info-label{
@@ -156,7 +181,7 @@ body{
 }
 .info-val.website{color:#F26522;font-size:24px;font-weight:900}
 
-/* === RIGHT COL: Social === */
+/* ── RIGHT COL: Social ── */
 .col-social{
   flex:1;
   padding:40px 60px 40px 50px;
@@ -170,11 +195,10 @@ body{
   opacity:0;transition:opacity 0.5s ease;
 }
 .social-heading.show{opacity:1}
-
 .social-row{
   display:flex;align-items:center;gap:16px;
   opacity:0;transform:translateX(20px);
-  transition:opacity 0.5s ease, transform 0.5s ease;
+  transition:opacity 0.5s ease,transform 0.5s ease;
 }
 .social-row.show{opacity:1;transform:translateX(0)}
 .soc-icon{
@@ -191,16 +215,16 @@ body{
   font-family:'Segoe UI',Arial,sans-serif;
 }
 .ig-c{color:#e1306c}.tt-c{color:#25f4ee}.yt-c{color:#ff4444}.web-c{color:#F26522}
-.soc-handle{font-size:20px;font-weight:900;color:#fff;font-family:'Arial Black',Arial,sans-serif;}
+.soc-handle{font-size:20px;font-weight:900;color:#fff;font-family:'Arial Black',Arial,sans-serif}
 
-/* === BOTTOM BAR === */
+/* ── BOTTOM BAR ── */
 .bottom-bar{
   position:absolute;bottom:0;left:0;right:0;height:130px;
   background:linear-gradient(90deg,#080808,#110800,#080808);
   border-top:3px solid #F26522;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
   opacity:0;transform:translateY(100%);
-  transition:opacity 0.6s ease, transform 0.6s ease;
+  transition:opacity 0.6s ease,transform 0.6s ease;
 }
 .bottom-bar.show{opacity:1;transform:translateY(0)}
 .follow-cta{
@@ -218,13 +242,25 @@ body{
 <body>
 
 <div class="bg" id="bg"></div>
+
+<!-- PHASE 1: Big centered logo intro -->
+<div class="intro-stage" id="introStage">
+  <div class="intro-card">
+    <img src="logo-pe.png" alt="Phone ElectriK">
+  </div>
+</div>
+
+<!-- TOP STRIPE -->
 <div class="stripe-top" id="stripe"></div>
 
+<!-- SERVICE BANNER -->
 <div class="banner" id="banner">
   <span class="banner-text">Phone Repair &nbsp;&bull;&nbsp; Accessories &nbsp;&bull;&nbsp; More</span>
 </div>
 
+<!-- MAIN LAYOUT -->
 <div class="main">
+
   <!-- LEFT: Brand -->
   <div class="col-brand" id="colBrand">
     <div class="logo-block" id="logoBlock">
@@ -238,7 +274,7 @@ body{
       <span class="rating-txt">4.7 Star · 268+ Yelp Reviews</span>
     </div>
     <div class="warranty-badge" id="warranty">
-      <span style="font-size:16px">🛡️</span>
+      <span style="font-size:16px">&#128737;&#65039;</span>
       <span class="warranty-txt">90-Day Warranty · Every Repair</span>
     </div>
   </div>
@@ -255,7 +291,10 @@ body{
     </div>
     <div class="info-item" id="info3">
       <div class="info-label">Store Hours</div>
-      <div class="info-val">Mon – Sat &nbsp;&nbsp;9:00 AM – 8:00 PM<br>Sunday &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10:00 AM – 6:00 PM</div>
+      <div class="info-val">
+        Mon &#8211; Sat &nbsp;&nbsp;9:00 AM &#8211; 8:00 PM<br>
+        Sunday &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10:00 AM &#8211; 6:00 PM
+      </div>
     </div>
     <div class="info-item" id="info4">
       <div class="info-label">Website</div>
@@ -266,6 +305,7 @@ body{
   <!-- RIGHT: Social -->
   <div class="col-social">
     <div class="social-heading" id="socialHeading">Follow Us on Social Media</div>
+
     <div class="social-row" id="soc1">
       <div class="soc-icon soc-ig">
         <svg viewBox="0 0 24 24" width="26" height="26" fill="white">
@@ -277,6 +317,7 @@ body{
         <span class="soc-handle">@phoneelectrik</span>
       </div>
     </div>
+
     <div class="social-row" id="soc2">
       <div class="soc-icon soc-tt">
         <svg viewBox="0 0 24 24" width="26" height="26">
@@ -288,6 +329,7 @@ body{
         <span class="soc-handle" style="color:#25f4ee">@phoneelectrik</span>
       </div>
     </div>
+
     <div class="social-row" id="soc3">
       <div class="soc-icon soc-yt">
         <svg viewBox="0 0 24 24" width="26" height="26" fill="white">
@@ -299,7 +341,9 @@ body{
         <span class="soc-handle" style="color:#ff4444">@phoneelectrik8771</span>
       </div>
     </div>
+
     <div style="height:1px;background:rgba(255,255,255,.08);margin:4px 0"></div>
+
     <div class="social-row" id="soc4">
       <div class="soc-icon soc-web">
         <svg viewBox="0 0 24 24" width="26" height="26" fill="#F26522">
@@ -311,6 +355,7 @@ body{
         <span class="soc-handle" style="color:#F26522">phoneelectrik.com</span>
       </div>
     </div>
+
   </div>
 </div>
 
@@ -321,63 +366,54 @@ body{
 </div>
 
 <script>
-// Animation timeline — each entry: [elementId, showAtSeconds]
-const timeline = [
-  // 0-1.5s: background + logo
-  ['bg', 0.0],
-  ['logoBlock', 0.3],
-  ['stripe', 0.3],
-
-  // 1.5-3s: tagline + banner
-  ['tagline', 1.5],
-  ['colBrand', 1.5],
-  ['banner', 1.8],
-  ['rating', 2.0],
-  ['warranty', 2.2],
-
-  // 3-5s: contact info
-  ['info1', 3.0],
-  ['info2', 3.4],
-  ['info3', 3.8],
-  ['info4', 4.2],
-
-  // 5-7s: social media
-  ['socialHeading', 5.0],
-  ['soc1', 5.2],
-  ['soc2', 5.5],
-  ['soc3', 5.8],
-  ['soc4', 6.1],
-
-  // 7-8s: bottom bar CTA
-  ['bottomBar', 7.0],
-];
-
-// Expose setTime for Playwright frame capture
-window.setAnimTime = function(t) {
-  timeline.forEach(([id, showAt]) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    if (t >= showAt) {
-      el.classList.add('show');
-    } else {
-      el.classList.remove('show');
-    }
-  });
+// show timeline: [id, showAtSeconds]
+// hide timeline: {id: hideAtSeconds}
+const showAt = {
+  bg:           0.0,
+  introStage:   0.2,   // big centered logo
+  stripe:       1.8,
+  banner:       2.0,
+  colBrand:     2.0,
+  logoBlock:    2.0,
+  tagline:      2.4,
+  rating:       2.6,
+  warranty:     2.8,
+  info1:        3.0,
+  info2:        3.4,
+  info3:        3.8,
+  info4:        4.2,
+  socialHeading:5.0,
+  soc1:         5.2,
+  soc2:         5.5,
+  soc3:         5.8,
+  soc4:         6.1,
+  bottomBar:    7.0,
 };
 
-// Auto-play when not controlled externally
-let animStart = null;
-function autoPlay(ts) {
-  if (!animStart) animStart = ts;
-  const elapsed = (ts - animStart) / 1000;
-  window.setAnimTime(elapsed);
-  if (elapsed < 9) requestAnimationFrame(autoPlay);
-}
-// Only auto-play if not in frame-capture mode
+const hideAt = {
+  introStage: 2.2,  // fade out big logo as end card appears
+};
+
+window.setAnimTime = function(t) {
+  for (const [id, show] of Object.entries(showAt)) {
+    const el = document.getElementById(id);
+    if (!el) continue;
+    const hide = hideAt[id];
+    const active = t >= show && (hide === undefined || t < hide);
+    el.classList.toggle('show', active);
+  }
+};
+
 if (!window.__CAPTURE_MODE__) {
-  requestAnimationFrame(autoPlay);
+  let start = null;
+  const DURATION = 8.0;
+  (function tick(ts) {
+    if (!start) start = ts;
+    const t = Math.min((ts - start) / 1000, DURATION);
+    window.setAnimTime(t);
+    if (t < DURATION) requestAnimationFrame(tick);
+  })(performance.now());
 }
 </script>
-
 </body>
 </html>
