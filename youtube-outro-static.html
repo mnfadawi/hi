@@ -71,18 +71,16 @@ body{
 
 /* Logo block */
 .logo-block{
-  display:flex;align-items:center;gap:22px;
-  margin-bottom:24px;
+  margin-bottom:28px;
 }
-.p-mark-wrap{width:90px;flex-shrink:0}
-.brand-text{display:flex;flex-direction:column;line-height:1;gap:4px}
-.brand-phone{
-  font-size:56px;font-weight:900;color:#fff;
-  letter-spacing:4px;text-transform:uppercase;
+.logo-card{
+  display:inline-block;
+  background:rgba(255,255,255,0.93);
+  border-radius:16px;
+  padding:18px 30px;
 }
-.brand-elektrik{
-  font-size:56px;font-weight:900;color:#F26522;
-  letter-spacing:4px;text-transform:uppercase;
+.logo-card img{
+  height:180px;width:auto;display:block;
 }
 
 .brand-tagline{
@@ -213,27 +211,8 @@ body{
   <!-- LEFT: Brand -->
   <div class="col-brand">
     <div class="logo-block">
-      <!-- P mark SVG (from logo.svg) -->
-      <div class="p-mark-wrap">
-        <svg viewBox="0 0 96 120" width="90" height="113" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <clipPath id="pm">
-              <rect x="10" y="8" width="16" height="104" rx="1"/>
-              <polygon points="26,8 68,8 88,26 88,58 68,74 26,74"/>
-            </clipPath>
-          </defs>
-          <rect x="0" y="0" width="96" height="120" fill="#F26522" clip-path="url(#pm)"/>
-          <g clip-path="url(#pm)" fill="white" opacity="0.9">
-            <rect x="0" y="24" width="96" height="7"/>
-            <rect x="0" y="38" width="96" height="7"/>
-            <rect x="0" y="76" width="96" height="7"/>
-            <rect x="0" y="90" width="96" height="7"/>
-          </g>
-        </svg>
-      </div>
-      <div class="brand-text">
-        <span class="brand-phone">PHONE</span>
-        <span class="brand-elektrik">ELECTRIK</span>
+      <div class="logo-card">
+        <img src="logo-pe.png" alt="Phone ElectriK">
       </div>
     </div>
 
