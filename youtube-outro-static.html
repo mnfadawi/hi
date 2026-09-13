@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden}
+body{
+  font-family:'Arial Black','Arial Bold',Arial,sans-serif;
+  background:#0d0d0d;
+  color:#fff;
+  position:relative;
+}
+
+/* === BACKGROUND === */
+.bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 1100px 800px at 55% 52%, rgba(242,101,34,.10) 0%, transparent 65%),
+    linear-gradient(135deg,#0d0d0d 0%,#140700 45%,#0d0d0d 100%);
+}
+/* Subtle grid texture */
+.bg::after{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+
+/* === TOP STRIPE === */
+.stripe-top{
+  position:absolute;top:0;left:0;right:0;height:7px;
+  background:linear-gradient(90deg,#a83800,#F26522,#E05818,#F26522,#a83800);
+}
+
+/* === SERVICE BANNER === */
+.banner{
+  position:absolute;top:7px;left:0;right:0;height:68px;
+  background:linear-gradient(90deg,rgba(180,60,10,.95),rgba(242,101,34,1),rgba(224,88,24,.95),rgba(242,101,34,1),rgba(180,60,10,.95));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(0,0,0,.4);
+}
+.banner-text{
+  font-size:18px;font-weight:900;
+  letter-spacing:12px;text-transform:uppercase;
+  color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.35);
+}
+
+/* === MAIN LAYOUT === */
+.main{
+  position:absolute;
+  top:75px;left:0;right:0;bottom:130px;
+  display:flex;
+}
+
+/* === LEFT COL: Brand === */
+.col-brand{
+  width:540px;
+  padding:40px 44px 40px 72px;
+  display:flex;flex-direction:column;justify-content:center;
+  border-right:1px solid rgba(242,101,34,.25);
+  position:relative;
+}
+.col-brand::before{
+  content:'';
+  position:absolute;left:0;top:60px;bottom:60px;width:5px;
+  background:linear-gradient(180deg,transparent,#F26522 30%,#F26522 70%,transparent);
+  border-radius:3px;
+}
+
+/* Logo block */
+.logo-block{
+  margin-bottom:28px;
+}
+.logo-card{
+  display:inline-block;
+  background:rgba(255,255,255,0.93);
+  border-radius:16px;
+  padding:18px 30px;
+}
+.logo-card img{
+  height:180px;width:auto;display:block;
+}
+
+.brand-tagline{
+  font-size:11px;font-weight:700;letter-spacing:5px;
+  text-transform:uppercase;color:rgba(255,255,255,.45);
+  margin-bottom:28px;padding-left:4px;
+  border-left:3px solid #F26522;padding-left:14px;
+  line-height:1.6;
+}
+
+.rating-badge{
+  display:inline-flex;align-items:center;gap:12px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:50px;padding:10px 22px;
+}
+.stars{font-size:20px;color:#ffc107;letter-spacing:2px}
+.rating-txt{font-size:14px;font-weight:700;color:rgba(255,255,255,.8)}
+
+.warranty-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:14px;
+  background:rgba(242,101,34,.1);
+  border:1px solid rgba(242,101,34,.3);
+  border-radius:50px;padding:8px 20px;
+}
+.warranty-txt{font-size:13px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:2px;text-transform:uppercase}
+
+/* === CENTER COL: Contact === */
+.col-contact{
+  width:680px;
+  padding:40px 44px 40px 56px;
+  display:flex;flex-direction:column;justify-content:center;gap:26px;
+  border-right:1px solid rgba(255,255,255,.08);
+}
+
+.info-item{display:flex;flex-direction:column;gap:6px}
+.info-label{
+  font-size:10px;font-weight:700;letter-spacing:4px;
+  text-transform:uppercase;color:#F26522;
+  font-family:'Segoe UI',Arial,sans-serif;
+}
+.info-val{
+  font-size:22px;font-weight:700;color:#fff;line-height:1.45;
+  font-family:'Segoe UI','Arial',sans-serif;
+}
+.info-val.phone-num{
+  font-size:38px;font-weight:900;letter-spacing:2px;
+  color:#fff;
+  font-family:'Arial Black',Arial,sans-serif;
+}
+.info-val.website{color:#F26522;font-size:24px;font-weight:900}
+
+/* === RIGHT COL: Social === */
+.col-social{
+  flex:1;
+  padding:40px 60px 40px 50px;
+  display:flex;flex-direction:column;justify-content:center;gap:22px;
+}
+
+.social-heading{
+  font-size:10px;font-weight:800;letter-spacing:5px;
+  text-transform:uppercase;color:rgba(255,255,255,.4);
+  margin-bottom:6px;
+  font-family:'Segoe UI',Arial,sans-serif;
+}
+
+.social-row{
+  display:flex;align-items:center;gap:16px;
+}
+.soc-icon{
+  width:48px;height:48px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.soc-ig{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)}
+.soc-tt{background:#000;border:2px solid #25f4ee}
+.soc-yt{background:#ff0000}
+.soc-web{background:rgba(242,101,34,.18);border:2px solid rgba(242,101,34,.45)}
+
+.soc-info{display:flex;flex-direction:column;gap:2px}
+.soc-platform{
+  font-size:10px;font-weight:800;letter-spacing:3px;
+  text-transform:uppercase;
+  font-family:'Segoe UI',Arial,sans-serif;
+}
+.soc-platform.ig-c{color:#e1306c}
+.soc-platform.tt-c{color:#25f4ee}
+.soc-platform.yt-c{color:#ff4444}
+.soc-platform.web-c{color:#F26522}
+.soc-handle{
+  font-size:20px;font-weight:900;color:#fff;
+  font-family:'Arial Black',Arial,sans-serif;
+}
+
+/* === BOTTOM BAR === */
+.bottom-bar{
+  position:absolute;bottom:0;left:0;right:0;height:130px;
+  background:linear-gradient(90deg,#080808,#110800,#080808);
+  border-top:3px solid #F26522;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+}
+.follow-cta{
+  font-size:15px;font-weight:700;letter-spacing:7px;
+  text-transform:uppercase;color:rgba(255,255,255,.55);
+  font-family:'Segoe UI',Arial,sans-serif;
+}
+.like-cta{
+  font-size:30px;font-weight:900;letter-spacing:10px;
+  text-transform:uppercase;color:#F26522;
+  text-shadow:0 0 40px rgba(242,101,34,.5);
+}
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+<div class="stripe-top"></div>
+
+<!-- SERVICE BANNER -->
+<div class="banner">
+  <span class="banner-text">Phone Repair &nbsp;&bull;&nbsp; Accessories &nbsp;&bull;&nbsp; More</span>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="main">
+
+  <!-- LEFT: Brand -->
+  <div class="col-brand">
+    <div class="logo-block">
+      <div class="logo-card">
+        <img src="logo-pe.png" alt="Phone ElectriK">
+      </div>
+    </div>
+
+    <div class="brand-tagline">
+      Torrance's #1-Rated<br>Device Repair Shop
+    </div>
+
+    <div class="rating-badge">
+      <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span class="rating-txt">4.7 Star · 268+ Yelp Reviews</span>
+    </div>
+    <div class="warranty-badge">
+      <span style="font-size:16px">🛡️</span>
+      <span class="warranty-txt">90-Day Warranty · Every Repair</span>
+    </div>
+  </div>
+
+  <!-- CENTER: Contact -->
+  <div class="col-contact">
+    <div class="info-item">
+      <div class="info-label">Call or Text</div>
+      <div class="info-val phone-num">(323) 348-6756</div>
+    </div>
+
+    <div class="info-item">
+      <div class="info-label">Address</div>
+      <div class="info-val">3025 Artesia Blvd STE 101<br>Torrance, CA 90504</div>
+    </div>
+
+    <div class="info-item">
+      <div class="info-label">Store Hours</div>
+      <div class="info-val">
+        Mon – Sat &nbsp;&nbsp;9:00 AM – 8:00 PM<br>
+        Sunday &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10:00 AM – 6:00 PM
+      </div>
+    </div>
+
+    <div class="info-item">
+      <div class="info-label">Website</div>
+      <div class="info-val website">phoneelectrik.com</div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Social -->
+  <div class="col-social">
+    <div class="social-heading">Follow Us on Social Media</div>
+
+    <div class="social-row">
+      <div class="soc-icon soc-ig">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="white">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </div>
+      <div class="soc-info">
+        <span class="soc-platform ig-c">Instagram</span>
+        <span class="soc-handle">@phoneelectrik</span>
+      </div>
+    </div>
+
+    <div class="social-row">
+      <div class="soc-icon soc-tt">
+        <svg viewBox="0 0 24 24" width="26" height="26">
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.01a8.16 8.16 0 0 0 4.78 1.52V7.1a4.85 4.85 0 0 1-1.01-.41z" fill="#25f4ee"/>
+        </svg>
+      </div>
+      <div class="soc-info">
+        <span class="soc-platform tt-c">TikTok</span>
+        <span class="soc-handle" style="color:#25f4ee">@phoneelectrik</span>
+      </div>
+    </div>
+
+    <div class="social-row">
+      <div class="soc-icon soc-yt">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="white">
+          <path d="M19.6 8.2a2 2 0 0 0-1.4-1.4C16.9 6.4 12 6.4 12 6.4s-4.9 0-6.2.4a2 2 0 0 0-1.4 1.4C4 9.5 4 12 4 12s0 2.5.4 3.8a2 2 0 0 0 1.4 1.4c1.3.4 6.2.4 6.2.4s4.9 0 6.2-.4a2 2 0 0 0 1.4-1.4C20 14.5 20 12 20 12s0-2.5-.4-3.8zM10 14.5v-5l5 2.5-5 2.5z"/>
+        </svg>
+      </div>
+      <div class="soc-info">
+        <span class="soc-platform yt-c">YouTube</span>
+        <span class="soc-handle" style="color:#ff4444">@phoneelectrik8771</span>
+      </div>
+    </div>
+
+    <div style="height:1px;background:rgba(255,255,255,.08);margin:4px 0"></div>
+
+    <div class="social-row">
+      <div class="soc-icon soc-web">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="#F26522">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+      </div>
+      <div class="soc-info">
+        <span class="soc-platform web-c">Website</span>
+        <span class="soc-handle" style="color:#F26522">phoneelectrik.com</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<!-- BOTTOM BAR -->
+<div class="bottom-bar">
+  <span class="follow-cta">Follow Us for More Repairs</span>
+  <span class="like-cta">Like &nbsp;&bull;&nbsp; Comment &nbsp;&bull;&nbsp; Share &nbsp;&bull;&nbsp; Subscribe</span>
+</div>
+
+</body>
+</html>
