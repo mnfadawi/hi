@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Sahara Bites Fun Fair</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@300;400;700;900&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #120500;
+  --bg-card:   #1E0A00;
+  --bg-drip:   #4A1E00;
+  --gold:      #D4A017;
+  --gold-hi:   #F5CC50;
+  --gold-dim:  rgba(212,160,23,0.35);
+  --cream:     #F5E6C8;
+  --cream-dim: #B8966E;
+  --choc-geo:  rgba(212,160,23,0.18);
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+
+body {
+  font-family: 'Lato', system-ui, sans-serif;
+  background: #080200;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+/* ── FLYER SHELL ── */
+.flyer {
+  width: 580px;
+  max-width: 100%;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+  border: 1.5px solid rgba(212,160,23,0.45);
+  box-shadow: 0 0 80px rgba(212,160,23,0.12), 0 40px 120px rgba(0,0,0,0.9);
+}
+
+/* ── GEOMETRIC CORNERS ── */
+.corner {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  pointer-events: none;
+  z-index: 0;
+}
+.corner.tl { top:0; left:0; }
+.corner.tr { top:0; right:0; transform:scaleX(-1); }
+.corner.bl { bottom:0; left:0; transform:scaleY(-1); }
+.corner.br { bottom:0; right:0; transform:scale(-1,-1); }
+
+/* ── TOP: GOLD STRIPE + DRIP ── */
+.gold-stripe {
+  height: 5px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 25%, var(--gold-hi) 50%, var(--gold) 75%, transparent 100%);
+  position: relative;
+  z-index: 2;
+}
+
+.drip-bar {
+  height: 20px;
+  background: var(--bg-drip);
+  position: relative;
+  overflow: visible;
+  z-index: 2;
+}
+
+/* Individual drips as pseudo-elements via child spans */
+.drip-bar span {
+  position: absolute;
+  top: 20px;
+  background: var(--bg-drip);
+  border-radius: 0 0 50% 50%;
+}
+
+/* ── FLYER BODY ── */
+.flyer-body {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 40px 48px;
+}
+
+@media (max-width: 460px) {
+  .flyer-body { padding: 0 24px 40px; }
+}
+
+/* ── EYEBROW ── */
+.eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  opacity: 0.75;
+  padding-top: 38px;
+}
+
+/* ── BRAND NAME ── */
+.brand {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(52px, 13vw, 76px);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--gold-hi);
+  text-shadow: 0 0 50px rgba(245,204,80,0.35), 0 2px 8px rgba(0,0,0,0.6);
+  letter-spacing: -0.5px;
+  text-wrap: balance;
+  margin-top: 10px;
+}
+
+.brand-coming {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(38px, 9vw, 54px);
+  color: var(--cream);
+  margin-top: 0px;
+  line-height: 1.1;
+  text-shadow: 0 2px 14px rgba(212,160,23,0.25);
+}
+
+/* ── DIVIDER ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 22px auto;
+  width: 85%;
+}
+.div-line {
+  flex: 1;
+  height: 1px;
+}
+.div-line.l { background: linear-gradient(90deg, transparent, var(--gold-dim)); }
+.div-line.r { background: linear-gradient(90deg, var(--gold-dim), transparent); }
+.div-gem {
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+.div-gem.sm {
+  width: 4px;
+  height: 4px;
+  background: rgba(212,160,23,0.5);
+}
+
+/* ── FAIR HEADLINE ── */
+.fair-intro {
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  color: var(--cream-dim);
+  text-transform: uppercase;
+}
+.fair-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(26px, 6vw, 36px);
+  font-weight: 700;
+  color: var(--cream);
+  letter-spacing: 1px;
+  text-wrap: balance;
+  margin-top: 6px;
+}
+
+/* ── EVENT DETAILS ── */
+.event-card {
+  margin: 26px 0;
+  background: var(--bg-card);
+  border: 1px solid rgba(212,160,23,0.3);
+  padding: 28px 28px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+}
+.event-card::after {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(212,160,23,0.08);
+  pointer-events: none;
+}
+
+.ev-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.ev-icon {
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 30px;
+  text-align: center;
+  padding-top: 3px;
+}
+.ev-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.7;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.ev-value {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.15;
+}
+
+/* ── FLAVORS ── */
+.flavors-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.flavor-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.flavor-pill {
+  padding: 9px 20px;
+  border: 1px solid rgba(212,160,23,0.4);
+  background: rgba(74,30,0,0.5);
+  color: var(--cream);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* ── CLOSING ── */
+.closing {
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--cream-dim);
+  line-height: 1.75;
+  text-wrap: balance;
+}
+.closing strong {
+  font-weight: 700;
+  color: var(--cream);
+  font-size: 15px;
+}
+
+/* ── ICH LOGO ── */
+.ich-section {
+  margin-top: 32px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(212,160,23,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.ich-name {
+  font-family: 'Lato', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.ich-sub {
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+  opacity: 0.6;
+}
+
+/* ── BOTTOM STRIPE ── */
+.bottom-stripe {
+  height: 5px;
+  margin-top: 36px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 25%, var(--gold-hi) 50%, var(--gold) 75%, transparent 100%);
+}
+</style>
+</head>
+<body>
+
+<div class="flyer">
+
+  <!-- ── CORNER GEOMETRIC ORNAMENTS ── -->
+  <!-- Top-left -->
+  <svg class="corner tl" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.22" fill="none" stroke="#D4A017">
+      <circle cx="0" cy="0" r="70" stroke-width="0.6"/>
+      <circle cx="0" cy="0" r="100" stroke-width="0.4"/>
+      <line x1="0" y1="0" x2="90" y2="0" stroke-width="0.5"/>
+      <line x1="0" y1="0" x2="0" y2="90" stroke-width="0.5"/>
+      <line x1="0" y1="0" x2="64" y2="64" stroke-width="0.5"/>
+    </g>
+    <!-- 8-pointed star in corner -->
+    <g opacity="0.55" fill="#D4A017">
+      <path d="M28 0 L31 12 L44 9 L35 18 L44 27 L31 24 L28 36 L25 24 L12 27 L21 18 L12 9 L25 12 Z"/>
+    </g>
+    <!-- small diamonds along edges -->
+    <rect x="55" y="-2" width="5" height="5" transform="rotate(45 57.5 0.5)" fill="#D4A017" opacity="0.35"/>
+    <rect x="-2" y="55" width="5" height="5" transform="rotate(45 0.5 57.5)" fill="#D4A017" opacity="0.35"/>
+  </svg>
+
+  <!-- Top-right (mirrored) -->
+  <svg class="corner tr" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.22" fill="none" stroke="#D4A017">
+      <circle cx="0" cy="0" r="70" stroke-width="0.6"/>
+      <circle cx="0" cy="0" r="100" stroke-width="0.4"/>
+      <line x1="0" y1="0" x2="90" y2="0" stroke-width="0.5"/>
+      <line x1="0" y1="0" x2="0" y2="90" stroke-width="0.5"/>
+      <line x1="0" y1="0" x2="64" y2="64" stroke-width="0.5"/>
+    </g>
+    <g opacity="0.55" fill="#D4A017">
+      <path d="M28 0 L31 12 L44 9 L35 18 L44 27 L31 24 L28 36 L25 24 L12 27 L21 18 L12 9 L25 12 Z"/>
+    </g>
+    <rect x="55" y="-2" width="5" height="5" transform="rotate(45 57.5 0.5)" fill="#D4A017" opacity="0.35"/>
+    <rect x="-2" y="55" width="5" height="5" transform="rotate(45 0.5 57.5)" fill="#D4A017" opacity="0.35"/>
+  </svg>
+
+  <!-- Bottom-left (mirrored) -->
+  <svg class="corner bl" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.22" fill="none" stroke="#D4A017">
+      <circle cx="0" cy="0" r="70" stroke-width="0.6"/>
+      <circle cx="0" cy="0" r="100" stroke-width="0.4"/>
+      <line x1="0" y1="0" x2="90" y2="0" stroke-width="0.5"/>
+      <line x1="0" y1="0" x2="0" y2="90" stroke-width="0.5"/>
+      <line x1="0" y1="0" x2="64" y2="64" stroke-width="0.5"/>
+    </g>
+    <g opacity="0.55" fill="#D4A017">
+      <path d="M28 0 L31 12 L44 9 L35 18 L44 27 L31 24 L28 36 L25 24 L12 27 L21 18 L12 9 L25 12 Z"/>
+    </g>
+    <rect x="55" y="-2" width="5" height="5" transform="rotate(45 57.5 0.5)" fill="#D4A017" opacity="0.35"/>
+    <rect x="-2" y="55" width="5" height="5" transform="rotate(45 0.5 57.5)" fill="#D4A017" opacity="0.35"/>
+  </svg>
+
+  <!-- Bottom-right (mirrored) -->
+  <svg class="corner br" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.22" fill="none" stroke="#D4A017">
+      <circle cx="0" cy="0" r="70" stroke-width="0.6"/>
+      <circle cx="0" cy="0" r="100" stroke-width="0.4"/>
+      <line x1="0" y1="0" x2="90" y2="0" stroke-width="0.5"/>
+      <line x1="0" y1="0" x2="0" y2="90" stroke-width="0.5"/>
+      <line x1="0" y1="0" x2="64" y2="64" stroke-width="0.5"/>
+    </g>
+    <g opacity="0.55" fill="#D4A017">
+      <path d="M28 0 L31 12 L44 9 L35 18 L44 27 L31 24 L28 36 L25 24 L12 27 L21 18 L12 9 L25 12 Z"/>
+    </g>
+    <rect x="55" y="-2" width="5" height="5" transform="rotate(45 57.5 0.5)" fill="#D4A017" opacity="0.35"/>
+    <rect x="-2" y="55" width="5" height="5" transform="rotate(45 0.5 57.5)" fill="#D4A017" opacity="0.35"/>
+  </svg>
+
+  <!-- ── TOP: GOLD STRIPE ── -->
+  <div class="gold-stripe"></div>
+
+  <!-- ── CHOCOLATE DRIP BAR ── -->
+  <div class="drip-bar">
+    <!-- Each span = one drip: width / height / left position -->
+    <span style="width:14px;height:36px;left:40px;border-radius:0 0 7px 7px;"></span>
+    <span style="width:18px;height:52px;left:90px;border-radius:0 0 9px 9px;"></span>
+    <span style="width:12px;height:28px;left:148px;border-radius:0 0 6px 6px;"></span>
+    <span style="width:16px;height:46px;left:195px;border-radius:0 0 8px 8px;"></span>
+    <span style="width:20px;height:60px;left:250px;border-radius:0 0 10px 10px;"></span>
+    <span style="width:14px;height:34px;left:308px;border-radius:0 0 7px 7px;"></span>
+    <span style="width:18px;height:50px;left:355px;border-radius:0 0 9px 9px;"></span>
+    <span style="width:12px;height:30px;left:410px;border-radius:0 0 6px 6px;"></span>
+    <span style="width:16px;height:44px;left:458px;border-radius:0 0 8px 8px;"></span>
+    <span style="width:14px;height:38px;left:510px;border-radius:0 0 7px 7px;"></span>
+    <span style="width:10px;height:24px;left:548px;border-radius:0 0 5px 5px;"></span>
+  </div>
+
+  <!-- ── BODY ── -->
+  <div class="flyer-body">
+
+    <p class="eyebrow">✦ &nbsp; Presenting &nbsp; ✦</p>
+
+    <h1 class="brand">🍫 Sahara Bites</h1>
+    <p class="brand-coming">is coming!</p>
+
+    <!-- Divider -->
+    <div class="divider">
+      <div class="div-line l"></div>
+      <div class="div-gem sm"></div>
+      <div class="div-gem"></div>
+      <div class="div-gem sm"></div>
+      <div class="div-line r"></div>
+    </div>
+
+    <p class="fair-intro">Catch us at the</p>
+    <p class="fair-name">ICH Fun Fair &nbsp;🎡</p>
+
+    <!-- Divider -->
+    <div class="divider">
+      <div class="div-line l"></div>
+      <div class="div-gem sm"></div>
+      <div class="div-gem"></div>
+      <div class="div-gem sm"></div>
+      <div class="div-line r"></div>
+    </div>
+
+    <!-- Event Details -->
+    <div class="event-card">
+      <div class="ev-row">
+        <span class="ev-icon">📅</span>
+        <div>
+          <div class="ev-label">Date</div>
+          <div class="ev-value">Friday, October 2</div>
+        </div>
+      </div>
+      <div class="ev-row">
+        <span class="ev-icon">⏰</span>
+        <div>
+          <div class="ev-label">Time</div>
+          <div class="ev-value">5:00 – 10:30 PM</div>
+        </div>
+      </div>
+      <div class="ev-row">
+        <span class="ev-icon">📍</span>
+        <div>
+          <div class="ev-label">Location</div>
+          <div class="ev-value">Islamic Center of Hawthorne</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flavors -->
+    <p class="closing" style="margin-bottom:18px;">
+      We'll have our Dubai chocolate available,<br>including our flavors:
+    </p>
+
+    <p class="flavors-label">🍫 &nbsp; Dubai Chocolate Flavors &nbsp; 🍫</p>
+
+    <div class="flavor-row">
+      <span class="flavor-pill">🍪 Biscoff</span>
+      <span class="flavor-pill">🌿 Pistachio</span>
+      <span class="flavor-pill">🍫 Dark</span>
+      <span class="flavor-pill">🥭 Mango</span>
+    </div>
+
+    <!-- Divider -->
+    <div class="divider" style="margin:28px auto">
+      <div class="div-line l"></div>
+      <div class="div-gem"></div>
+      <div class="div-line r"></div>
+    </div>
+
+    <!-- Closing message -->
+    <p class="closing">
+      Come by, grab some chocolate, and enjoy the fun fair!<br>
+      <strong>Hope to see you all there! &nbsp;🫶🍫</strong>
+    </p>
+
+    <!-- ── ICH LOGO ── -->
+    <div class="ich-section">
+
+      <!-- Mosque / ICH SVG Mark -->
+      <svg width="90" height="72" viewBox="0 0 90 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Islamic Center of Hawthorne">
+        <!-- Outer minarets -->
+        <rect x="4"  y="30" width="9" height="28" fill="#D4A017" opacity="0.9"/>
+        <rect x="77" y="30" width="9" height="28" fill="#D4A017" opacity="0.9"/>
+        <!-- Minaret caps (pointed) -->
+        <polygon points="4,30 8.5,18 13,30"  fill="#D4A017"/>
+        <polygon points="77,30 81.5,18 86,30" fill="#D4A017"/>
+        <!-- Minaret decorative rings -->
+        <rect x="4"  y="36" width="9" height="2.5" fill="#120500" opacity="0.5"/>
+        <rect x="77" y="36" width="9" height="2.5" fill="#120500" opacity="0.5"/>
+        <!-- Central dome (arch) -->
+        <path d="M20 58 L20 38 Q20 14 45 14 Q70 14 70 38 L70 58 Z" fill="#D4A017" opacity="0.95"/>
+        <!-- Inner dome shading -->
+        <path d="M26 58 L26 40 Q26 22 45 22 Q64 22 64 40 L64 58 Z" fill="#120500" opacity="0.2"/>
+        <!-- Base wall -->
+        <rect x="2" y="58" width="86" height="8" fill="#D4A017" opacity="0.9"/>
+        <!-- Side arched windows -->
+        <path d="M23 58 L23 48 Q23 44 26.5 44 Q30 44 30 48 L30 58 Z" fill="#120500" opacity="0.55"/>
+        <path d="M60 58 L60 48 Q60 44 63.5 44 Q67 44 67 48 L67 58 Z" fill="#120500" opacity="0.55"/>
+        <!-- Central door -->
+        <path d="M38 66 L38 50 Q38 44 45 44 Q52 44 52 50 L52 66 Z" fill="#120500" opacity="0.6"/>
+        <!-- Crescent on dome -->
+        <path d="M44 5 C42 8, 42 12, 45 14 C48 12, 48 8, 45 5 C47 5, 50 8, 50 12 C50 16, 47 19, 45 19 C41 16, 40 12, 42 8 Z" fill="#D4A017"/>
+        <!-- Star -->
+        <path d="M53 6 L54.1 9.3 L57.6 9.3 L54.8 11.4 L55.9 14.7 L53 12.6 L50.1 14.7 L51.2 11.4 L48.4 9.3 L51.9 9.3 Z" fill="#D4A017" opacity="0.85"/>
+      </svg>
+
+      <p class="ich-name">ICH</p>
+      <p class="ich-sub">Islamic Center of Hawthorne</p>
+    </div>
+
+    <div class="bottom-stripe"></div>
+  </div>
+
+</div>
+
+</body>
+</html>
