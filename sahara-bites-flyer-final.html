@@ -293,33 +293,39 @@ html,body {
 
 .spacer { flex:1; min-height:8px; }
 
-/* ─────────── QURAN VERSE ─────────── */
+/* ─────────── QURAN VERSES ─────────── */
 .verse-block {
   width:100%;
-  padding:10px 56px 0;
-  display:flex; flex-direction:column; align-items:center; gap:5px;
+  padding:8px 48px 0;
+  display:flex; flex-direction:column; align-items:center; gap:3px;
 }
 .verse-arabic {
   font-family:'Amiri',serif;
-  font-size:30px;
+  font-size:22px;
   color:var(--gold-hi);
   text-shadow:var(--ts);
   direction:rtl; text-align:center;
-  line-height:1.65;
+  line-height:1.7;
 }
 .verse-english {
   font-family:'Playfair Display',serif;
   font-style:italic;
-  font-size:18px;
+  font-size:14px;
   color:var(--cream);
   text-shadow:var(--ts);
-  text-align:center; line-height:1.45;
+  text-align:center; line-height:1.4;
 }
 .verse-ref {
-  font-size:13px; font-weight:700;
+  font-size:11px; font-weight:700;
   letter-spacing:.1em;
   color:var(--gold); opacity:.75;
   text-shadow:var(--ts);
+  margin-bottom:6px;
+}
+.verse-divider {
+  width:40%; height:1px;
+  background:linear-gradient(90deg,transparent,rgba(200,150,12,.4),transparent);
+  margin:5px 0;
 }
 </style>
 </head>
@@ -436,11 +442,15 @@ html,body {
 
       <!-- CTA -->
       <div class="cta-bar">🎪 Join the Fair &amp; Visit Our Table<br>Try Premium Dubai Chocolate 🍫</div>
-      <!-- QURAN VERSE -->
+      <!-- QURAN VERSES — Al-Baqarah -->
       <div class="verse-block">
-        <div class="verse-arabic">لَن تَنَالُوا۟ ٱلْبِرَّ حَتَّىٰ تُنفِقُوا۟ مِمَّا تُحِبُّونَ</div>
-        <div class="verse-english">"You will never attain righteousness until you spend from what you love."</div>
-        <div class="verse-ref">— Surah Al-Imran 3:92</div>
+        <div class="verse-arabic">مَّثَلُ ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُمْ فِى سَبِيلِ ٱللَّهِ كَمَثَلِ حَبَّةٍ أَنۢبَتَتْ سَبْعَ سَنَابِلَ فِى كُلِّ سُنۢبُلَةٍ مِّا۟ئَةُ حَبَّةٍ ۗ وَٱللَّهُ يُضَٰعِفُ لِمَن يَشَآءُ</div>
+        <div class="verse-english">"Those who spend in the way of Allah are like a grain that grows seven ears — a hundred grains each. Allah multiplies for whom He wills."</div>
+        <div class="verse-ref">— Al-Baqarah 2:261</div>
+        <div class="verse-divider"></div>
+        <div class="verse-arabic">ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُم بِٱلَّيْلِ وَٱلنَّهَارِ سِرًّا وَعَلَانِيَةً فَلَهُمْ أَجْرُهُمْ عِندَ رَبِّهِمْ وَلَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ</div>
+        <div class="verse-english">"Those who spend by night and day, secretly and openly — their reward is with their Lord, and no fear will there be, nor will they grieve."</div>
+        <div class="verse-ref">— Al-Baqarah 2:274</div>
       </div>
   </div>
 
