@@ -11,133 +11,135 @@
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
 html,body {
   width:100%; height:100%;
-  background:#000;
+  background:#E8E0D0;
   display:flex; justify-content:center; align-items:flex-start;
   overflow:hidden;
 }
 .canvas {
   width:1080px; height:1350px;
-  background:#F7F2E8;
+  background:#F5F0E8;
   position:relative; overflow:hidden;
   transform-origin:top center; flex-shrink:0;
   font-family:'Lato',sans-serif;
-  padding:60px 68px 48px;
+  padding:56px 72px 44px;
   display:flex; flex-direction:column;
 }
 
 /* ── HEADER ── */
 .header {
   display:flex; justify-content:space-between; align-items:flex-start;
-  margin-bottom:20px;
+  margin-bottom:18px;
 }
 .insta-handle {
-  font-size:22px; color:#6B6260;
-  margin-bottom:6px;
-  display:flex; align-items:center; gap:8px;
+  font-size:26px; color:#7A7068;
+  margin-bottom:4px;
+  display:flex; align-items:center; gap:10px;
 }
 .brand-name {
   font-family:'Playfair Display',serif;
   font-style:italic; font-weight:700;
-  font-size:78px; color:#1A1008;
-  line-height:.92;
+  font-size:96px; color:#1C1008;
+  line-height:.88;
 }
 .menu-word {
-  font-size:60px; font-weight:900;
-  color:#1A1008; line-height:1;
+  font-size:80px; font-weight:900;
+  color:#1C1008; line-height:.98;
+  letter-spacing:.02em;
 }
 .authentic {
-  font-size:19px; font-weight:700;
-  letter-spacing:.18em; text-transform:uppercase;
-  color:#C8820A; margin-top:8px;
+  font-size:22px; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:#B87A08; margin-top:10px;
 }
 .product-photo {
-  width:290px; height:auto;
-  max-height:220px;
+  width:300px; height:auto;
+  max-height:240px;
   object-fit:contain;
   object-position:right top;
+  margin-top:8px;
 }
 
 /* ── DIVIDER ── */
 .divider {
   width:100%; height:2px;
-  background:#1A1008;
-  margin:18px 0 0;
+  background:#1C1008;
+  margin-bottom:0;
 }
 
 /* ── MENU TABLE ── */
 .menu-table {
   flex:1;
-  border:1.5px solid #C8B898;
+  border:1.5px solid #C8B890;
   margin-top:0;
 }
 .menu-row {
   display:flex; align-items:center;
-  padding:20px 28px;
-  border-bottom:1px solid #D4C4A0;
+  padding:21px 32px;
+  border-bottom:1px solid #CCC0A0;
+  min-height:88px;
 }
 .menu-row:last-child { border-bottom:none; }
-.menu-row.highlight { background:#EDE4D0; }
+.menu-row.highlight { background:#EDE3CC; }
 .item-name {
-  font-size:25px; font-weight:700;
-  color:#1A1008; flex:1;
+  font-size:28px; font-weight:700;
+  color:#1C1008; flex:1;
 }
 .item-size {
-  font-size:23px; font-weight:400;
-  color:#1A1008; margin-left:14px;
+  font-size:26px; font-weight:400;
+  color:#1C1008; margin-left:16px;
   white-space:nowrap;
 }
 .best-badge {
-  background:#C8820A; color:#fff;
-  font-size:13px; font-weight:900;
-  letter-spacing:.08em; text-transform:uppercase;
-  padding:5px 11px; margin-left:14px;
+  background:#B87A08; color:#fff;
+  font-size:15px; font-weight:900;
+  letter-spacing:.06em; text-transform:uppercase;
+  padding:6px 13px; margin-left:16px;
   white-space:nowrap;
 }
 .item-price {
-  font-size:27px; font-weight:900;
-  color:#1A1008; margin-left:18px;
+  font-size:30px; font-weight:900;
+  color:#1C1008; margin-left:20px;
   white-space:nowrap;
 }
 .item-deal {
-  font-size:22px; font-weight:400;
+  font-size:25px; font-weight:400;
   color:#5A5040; margin-left:10px;
   white-space:nowrap;
 }
 
 /* ── FOOTER ── */
 .footer {
-  margin-top:22px;
+  padding-top:20px;
+  margin-top:20px;
   display:flex;
-  padding-top:18px;
-  border-top:2.5px solid #C8820A;
+  border-top:2.5px solid #B87A08;
 }
 .footer-col {
   flex:1; text-align:center;
 }
 .footer-col:first-child {
-  border-right:1.5px solid #C8820A;
-  padding-right:20px;
+  border-right:1.5px solid #B87A08;
+  padding-right:24px;
 }
-.footer-col:last-child { padding-left:20px; }
+.footer-col:last-child { padding-left:24px; }
 .footer-label {
-  font-size:17px; font-weight:700;
-  letter-spacing:.14em; text-transform:uppercase;
-  color:#6B6260; margin-bottom:6px;
+  font-size:19px; font-weight:700;
+  letter-spacing:.13em; text-transform:uppercase;
+  color:#7A7068; margin-bottom:6px;
 }
 .footer-value {
-  font-size:30px; font-weight:900;
-  color:#C8820A; line-height:1.1;
+  font-size:36px; font-weight:900;
+  color:#B87A08; line-height:1.1;
 }
 </style>
 </head>
 <body>
 <div class="canvas">
 
-  <!-- HEADER -->
   <div class="header">
     <div>
       <div class="insta-handle">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B6260" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="#6B6260" stroke="none"/></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7A7068" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="#7A7068" stroke="none"/></svg>
         premiumdubaichocolate
       </div>
       <div class="brand-name">Sahara Bites</div>
@@ -149,7 +151,6 @@ html,body {
 
   <div class="divider"></div>
 
-  <!-- MENU ITEMS -->
   <div class="menu-table">
 
     <div class="menu-row highlight">
@@ -204,7 +205,6 @@ html,body {
 
   </div>
 
-  <!-- FOOTER -->
   <div class="footer">
     <div class="footer-col">
       <div class="footer-label">Text Only</div>
