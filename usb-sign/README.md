@@ -19,14 +19,23 @@ the folder whose picture is right-side up.
 
 Each folder contains:
 
-- **`PhoneElectriK-Welcome.mp4`**: **use this one.** A 30-minute 1920×1080
-  H.264 (Constrained Baseline, yuv420p) video of the sign with a soft shine across the orange bars.
-- `PhoneElectriK-Welcome.jpg`: a still image, for the test above or as a backup.
+- **`PhoneElectriK-Welcome.mp4`**: the welcome sign on its own. A 30-minute
+  1920×1080 H.264 (Constrained Baseline, yuv420p) video with a soft shine
+  across the orange bars.
+- **`PhoneElectriK-2Slide.mp4`**: a two-slide version to try. It shows the
+  welcome sign for 15 s, then a clean cut to **Our Repair Services** for 15 s,
+  repeating. It uses the same video settings and is also 30 minutes long.
+  The services slide uses the wording from `services.html` on the website,
+  including the refurbished devices and "We Also Buy Devices" sections.
+- `PhoneElectriK-Welcome.jpg` / `PhoneElectriK-Services.jpg`: still images
+  of each slide, for the test above or as a backup.
+
+Use **one** video on the drive, not both.
 
 ## Setting up the USB drive
 
 1. Format the drive as **FAT32** or **exFAT**. A drive with nothing else on it works best.
-2. Copy **only** `PhoneElectriK-Welcome.mp4` from the correct folder to the
+2. Copy **only one** video (`PhoneElectriK-Welcome.mp4` or `PhoneElectriK-2Slide.mp4`) from the correct folder to the
    **root** of the drive (not inside a folder). If there are other files on the
    drive, the TV will play them as well.
 3. Plug it into the TV. Open **Source → USB** and play the video.
@@ -72,8 +81,16 @@ Names vary slightly by model year:
 
 ## Changing the design
 
-Edit `../tv-poster.png` (portrait, 1080×1920), then rebuild:
+- Slide 1 / Welcome: edit `../tv-poster.png` (portrait, 1080×1920).
+- Slide 2 / Services: edit `slide2-services.html`. `render_slide.js` turns it
+  into a 1080×1920 picture and stops with an error if the text runs off the
+  bottom.
+
+Then rebuild everything:
 
 ```bash
-python3 usb-sign/build.py   # needs Python 3 with Pillow + numpy, and ffmpeg
+python3 usb-sign/build.py   # needs Python 3 (Pillow, numpy), ffmpeg, Node + playwright
 ```
+
+In the 2-slide video, slide 1's background is shifted from #0d0d0d to pure
+#000000 so both slides match. The Welcome-only video is left exactly as it was.
