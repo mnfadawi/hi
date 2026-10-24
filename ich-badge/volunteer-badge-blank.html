@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex" />
+<title>ICH Saturday School — Volunteer Badge (blank name)</title>
+<!-- Nine 2.125" x 3.375" (CR80) vertical badges on US Letter. Print at 100% /
+     Actual size with background graphics on, cut along the thin outlines,
+     write the name in the empty box, slide into a vertical badge holder. -->
+<style>
+  @page{size:8.5in 11in;margin:0}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#fff}
+  body{font-family:Inter,"Liberation Sans",Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sheet{width:8.5in;height:11in;display:grid;grid-template-columns:repeat(3,2.125in);grid-auto-rows:3.375in;
+         column-gap:.2in;row-gap:.12in;justify-content:center;align-content:center}
+
+  .card{position:relative;width:2.125in;height:3.375in;background:#111;color:#eee;outline:.5px solid #999;overflow:hidden;
+        display:flex;flex-direction:column;align-items:center}
+  .frame{position:absolute;inset:.09in;border:1px solid #5a5a5a;border-radius:.09in}
+
+  .org{margin-top:.3in;font-size:5.6pt;font-weight:600;letter-spacing:.16em;color:#d9d9d9;text-align:center}
+  .school{margin-top:.045in;font-size:4.8pt;font-weight:500;letter-spacing:.24em;color:#9a9a9a}
+  .diamond{margin-top:.07in;width:.045in;height:.045in;background:#bbb;transform:rotate(45deg)}
+  .logo{margin-top:.1in;width:1.02in;height:1.02in;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;
+        box-shadow:0 0 0 1.5px #d0d0d0}
+  .logo img{width:.96in;height:.96in;border-radius:50%;object-fit:cover}
+  .vol{margin-top:.15in;font-size:6pt;font-weight:600;letter-spacing:.3em;color:#e6e6e6;padding-left:.3em}
+
+  .role{margin-top:.08in;width:100%;background:#2b2b2b;border-top:1px solid #4a4a4a;border-bottom:1px solid #4a4a4a;
+        text-align:center;padding:.075in 0}
+  .role span{font-size:10.5pt;font-weight:800;letter-spacing:.02em;color:#f2f2f2}
+
+  /* Name left blank on purpose: write it in by hand */
+  .name{width:100%;height:.48in;border-bottom:1px solid #4a4a4a;display:flex;align-items:flex-end;justify-content:center;padding-bottom:.07in}
+  .name i{display:block;width:1.45in;border-bottom:1px solid #8a8a8a}
+  .place{margin-top:.08in;font-size:3.8pt;font-weight:500;letter-spacing:.3em;color:#8a8a8a}
+
+  .help{font:11px/1.4 Inter,Arial,sans-serif;color:#444;text-align:center;padding:12px}
+  @media print{.help{display:none}}
+</style>
+</head>
+<body>
+  <div class="sheet" id="sheet"></div>
+
+  <template id="badge">
+    <div class="card">
+      <div class="frame"></div>
+      <div class="org">ISLAMIC CENTER OF HAWTHORNE</div>
+      <div class="school">SATURDAY SCHOOL</div>
+      <div class="diamond"></div>
+      <div class="logo"><img src="ich-logo.jpg" alt="Islamic Center of Hawthorne"></div>
+      <div class="vol">VOLUNTEER</div>
+      <div class="role"><span>SECURITY GUARD</span></div>
+      <div class="name"><i></i></div>
+      <div class="place">HAWTHORNE · CALIFORNIA</div>
+    </div>
+  </template>
+
+  <script>
+    const sheet = document.getElementById('sheet');
+    const tpl = document.getElementById('badge');
+    for (let i = 0; i < 9; i++) sheet.appendChild(tpl.content.cloneNode(true));
+  </script>
+</body>
+</html>
