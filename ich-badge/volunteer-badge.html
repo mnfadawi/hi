@@ -4,37 +4,39 @@
 <meta charset="UTF-8" />
 <meta name="robots" content="noindex" />
 <title>ICH Saturday School — Volunteer Badge (no name)</title>
-<!-- Nine 2.125" x 3.375" (CR80) vertical badges on US Letter. Print at 100% /
-     Actual size with background graphics on, cut along the thin outlines and
-     slide into a vertical badge holder. No name: any volunteer can wear one. -->
+<!-- 2.125" x 3.375" (CR80) vertical badges on US Letter: 4 per page by default,
+     ?n=1 for one per page. Print at 100% / Actual size with background graphics
+     on, cut along the thin outlines and slide into a vertical badge holder.
+     No name: any volunteer can wear one. -->
 <style>
   @page{size:8.5in 11in;margin:0}
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{background:#fff}
-  body{font-family:Inter,"Liberation Sans",Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .sheet{width:8.5in;height:11in;display:grid;grid-template-columns:repeat(3,2.125in);grid-auto-rows:3.375in;
-         column-gap:.2in;row-gap:.12in;justify-content:center;align-content:center}
+  body{font-family:"Liberation Sans",Arial,Helvetica,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sheet{width:8.5in;height:11in;display:grid;grid-template-columns:repeat(2,2.125in);grid-auto-rows:3.375in;
+         gap:.6in;justify-content:center;align-content:center}
+  .sheet.one{grid-template-columns:2.125in}
 
   .card{position:relative;width:2.125in;height:3.375in;background:#111;color:#eee;outline:.5px solid #999;overflow:hidden;
         display:flex;flex-direction:column;align-items:center}
-  .frame{position:absolute;inset:.09in;border:1px solid #5a5a5a;border-radius:.09in}
+  .frame{position:absolute;inset:.09in;border:1px solid #6e6e6e;border-radius:.09in}
 
-  .org{margin-top:.34in;font-size:5.6pt;font-weight:600;letter-spacing:.16em;color:#d9d9d9;text-align:center}
-  .school{margin-top:.045in;font-size:4.8pt;font-weight:500;letter-spacing:.24em;color:#9a9a9a}
-  .diamond{margin-top:.07in;width:.045in;height:.045in;background:#bbb;transform:rotate(45deg)}
+  .org{margin-top:.32in;font-size:6.3pt;font-weight:700;letter-spacing:.1em;color:#fff;text-align:center}
+  .school{margin-top:.05in;font-size:5.6pt;font-weight:600;letter-spacing:.2em;color:#d4d4d4}
+  .diamond{margin-top:.07in;width:.05in;height:.05in;background:#d0d0d0;transform:rotate(45deg)}
   .logo{margin-top:.13in;width:1.14in;height:1.14in;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;
         box-shadow:0 0 0 1.5px #d0d0d0}
-  .logo img{width:1.08in;height:1.08in;border-radius:50%;object-fit:cover}
-  .vol{margin-top:.2in;font-size:6pt;font-weight:600;letter-spacing:.3em;color:#e6e6e6;padding-left:.3em}
+  .logo img{width:1.08in;height:1.08in;border-radius:50%;object-fit:cover;transform:scale(1.03)}
+  .vol{margin-top:.18in;font-size:7.2pt;font-weight:700;letter-spacing:.26em;color:#fff;padding-left:.26em}
 
-  .role{margin-top:.12in;width:100%;background:#2b2b2b;border-top:1px solid #4a4a4a;border-bottom:1px solid #4a4a4a;
+  .role{margin-top:.12in;width:100%;background:#303030;border-top:1px solid #5a5a5a;border-bottom:1px solid #5a5a5a;
         text-align:center;padding:.1in 0}
-  .role span{font-size:10.5pt;font-weight:800;letter-spacing:.02em;color:#f2f2f2}
+  .role span{font-size:11.5pt;font-weight:700;letter-spacing:.02em;color:#fff}
 
-  .rule{margin-top:.2in;width:.5in;height:1px;background:#6a6a6a}
-  .place{margin-top:.1in;font-size:3.8pt;font-weight:500;letter-spacing:.3em;color:#8a8a8a}
+  .rule{margin-top:.18in;width:.5in;height:1px;background:#8a8a8a}
+  .place{margin-top:.09in;font-size:5.4pt;font-weight:600;letter-spacing:.2em;color:#cfcfcf;padding-left:.2em}
 
-  .help{font:11px/1.4 Inter,Arial,sans-serif;color:#444;text-align:center;padding:12px}
+  .help{font:11px/1.4 Arial,sans-serif;color:#444;text-align:center;padding:12px}
   @media print{.help{display:none}}
 </style>
 </head>
@@ -47,7 +49,7 @@
       <div class="org">ISLAMIC CENTER OF HAWTHORNE</div>
       <div class="school">SATURDAY SCHOOL</div>
       <div class="diamond"></div>
-      <div class="logo"><img src="ich-logo.jpg" alt="Islamic Center of Hawthorne"></div>
+      <div class="logo"><img src="ich-logo-sharp.svg" alt="Islamic Center of Hawthorne"></div>
       <div class="vol">VOLUNTEER</div>
       <div class="role"><span>SECURITY GUARD</span></div>
       <div class="rule"></div>
@@ -58,7 +60,9 @@
   <script>
     const sheet = document.getElementById('sheet');
     const tpl = document.getElementById('badge');
-    for (let i = 0; i < 9; i++) sheet.appendChild(tpl.content.cloneNode(true));
+    const n = new URLSearchParams(location.search).get('n') === '1' ? 1 : 4;
+    if (n === 1) sheet.classList.add('one');
+    for (let i = 0; i < n; i++) sheet.appendChild(tpl.content.cloneNode(true));
   </script>
 </body>
 </html>
