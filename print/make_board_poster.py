@@ -215,7 +215,7 @@ footer_lines = [
     ('WALK-IN  ·  NO APPOINTMENT NEEDED',                ORANGE),
     ('MON–SAT  9AM–8PM  ·  SUN  10AM–6PM',               WHITE),
     ('3025 Artesia Blvd STE 101, Torrance, CA 90504',    WHITE),
-    ('SCAN: WEBSITE · SOCIAL MEDIA · DIRECTIONS',        ORANGE),
+    ('SCAN: WEBSITE · SOCIALS · DIRECTIONS · REVIEWS',   ORANGE),
 ]
 fnt_footer = ImageFont.truetype(BOLD, min(fit_font(t, TXT_W, 100)[0].size for t, _ in footer_lines))
 footer_bbs = [draw.textbbox((0,0), t, font=fnt_footer) for t, _ in footer_lines]
@@ -229,14 +229,13 @@ for (text, color), bb, lh in zip(footer_lines, footer_bbs, line_hs):
     y += lh + line_gap
 
 # ── Place on a white page with a safe margin (nothing gets cut off) ──────────
-M = int(0.25 * 300)
-sc = (W - 2 * M) / W
-sw, sh = W - 2 * M, int(H * sc)
+M = int(0.2 * 300)                      # same 0.2" border on all four sides
+sw, sh = W - 2 * M, H - 2 * M            # (<1.5% height squeeze, not visible)
 small = canvas.resize((sw, sh), Image.LANCZOS)
 mask = Image.new('L', (sw, sh), 0)
-ImageDraw.Draw(mask).rounded_rectangle([0, 0, sw - 1, sh - 1], 36, fill=255)
+ImageDraw.Draw(mask).rounded_rectangle([0, 0, sw - 1, sh - 1], 28, fill=255)
 page = Image.new('RGB', (W, H), WHITE)
-page.paste(small, (M, (H - sh) // 2), mask)
+page.paste(small, (M, M), mask)
 canvas = page
 
 # ── Save ─────────────────────────────────────────────────────────────────────
