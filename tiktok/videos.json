@@ -1,0 +1,221 @@
+{
+  "handle": "@phoneelectrik",
+  "videos": [
+    {
+      "id": "01-rice-myth",
+      "caption": "Stop putting wet phones in rice 🍚❌ Do this instead. Save this for later! #phonerepair #waterdamage #iphonetips #lifehack #torrance",
+      "slides": [
+        {
+          "type": "hook",
+          "text": "Dropped your phone in water? *DON'T* put it in rice",
+          "seconds": 2.6
+        },
+        {
+          "type": "text",
+          "label": "MYTH",
+          "text": "Rice does *not* pull the water out",
+          "sub": "Apple even says not to do it. Rice dust and starch can get stuck in the ports.",
+          "seconds": 3.4
+        },
+        {
+          "type": "text",
+          "label": "DO THIS",
+          "text": "Turn it *off* right away",
+          "sub": "Don't charge it. Don't keep turning it on to check.",
+          "seconds": 3.0
+        },
+        {
+          "type": "text",
+          "label": "THEN",
+          "text": "Get it opened up *fast*",
+          "sub": "Corrosion starts within hours. The sooner it's cleaned inside, the better your chances.",
+          "seconds": 3.4
+        },
+        {
+          "type": "end",
+          "text": "Water damage? Bring it in.",
+          "seconds": 3.0
+        }
+      ]
+    },
+    {
+      "id": "02-battery-signs",
+      "caption": "5 signs your battery is on its way out 🔋 Which one is your phone doing? #batterylife #iphonebattery #phonerepair #techtips #torrance",
+      "slides": [
+        {
+          "type": "hook",
+          "text": "5 signs your phone *battery* is dying",
+          "seconds": 2.4
+        },
+        {
+          "type": "text",
+          "label": "1",
+          "text": "It only lasts *a couple hours* after charging to 100%",
+          "sub": "It can't hold a charge anymore.",
+          "seconds": 3.2
+        },
+        {
+          "type": "text",
+          "label": "2",
+          "text": "It shuts off at *20%* or more",
+          "seconds": 2.6
+        },
+        {
+          "type": "text",
+          "label": "3",
+          "text": "It *shuts off* and turns back on by itself",
+          "seconds": 2.8
+        },
+        {
+          "type": "text",
+          "label": "4",
+          "text": "It gets *hot* when you're barely using it",
+          "seconds": 2.8
+        },
+        {
+          "type": "text",
+          "label": "5",
+          "text": "The screen is *lifting* or the back is bulging",
+          "sub": "That's a swollen battery. Stop charging it and get it checked.",
+          "seconds": 3.6
+        },
+        {
+          "type": "text",
+          "label": "iPHONE TIP",
+          "text": "Settings → Battery → *Battery Health*",
+          "sub": "Under 80% means it's time for a new one.",
+          "seconds": 3.2
+        },
+        {
+          "type": "end",
+          "text": "Battery replacement in Torrance",
+          "seconds": 3.0
+        }
+      ]
+    },
+    {
+      "id": "03-cracked-screen",
+      "caption": "That 'small' crack isn't staying small 📱💥 #crackedscreen #screenrepair #iphonerepair #samsungrepair #torrance",
+      "slides": [
+        {
+          "type": "hook",
+          "text": "Your cracked screen is about to get *worse*",
+          "seconds": 2.4
+        },
+        {
+          "type": "text",
+          "label": "1",
+          "text": "Cracks *spread*",
+          "sub": "Every bump and every hot or cold day pushes them further.",
+          "seconds": 3.0
+        },
+        {
+          "type": "text",
+          "label": "2",
+          "text": "Water gets in through the *cracks*",
+          "sub": "And water damage costs more than a screen.",
+          "seconds": 3.0
+        },
+        {
+          "type": "text",
+          "label": "3",
+          "text": "Touch starts *ghost tapping*",
+          "sub": "Random taps. Apps opening on their own.",
+          "seconds": 3.0
+        },
+        {
+          "type": "text",
+          "label": "4",
+          "text": "Broken glass can cut your *fingers*",
+          "seconds": 2.6
+        },
+        {
+          "type": "end",
+          "text": "Fix it before it spreads",
+          "seconds": 3.0
+        }
+      ]
+    },
+    {
+      "id": "04-charging-port",
+      "caption": "Phone won't charge? Try this before you pay for a repair 🔌 #chargingport #phonehacks #iphonetips #androidtips #torrance",
+      "slides": [
+        {
+          "type": "hook",
+          "text": "Phone won't charge? Try this *before* you pay for a repair",
+          "seconds": 2.8
+        },
+        {
+          "type": "text",
+          "label": "STEP 1",
+          "text": "Turn the phone *off*",
+          "seconds": 2.4
+        },
+        {
+          "type": "text",
+          "label": "STEP 2",
+          "text": "Shine a *light* into the port",
+          "sub": "Pocket lint packs in tight and stops the plug going all the way in.",
+          "seconds": 3.2
+        },
+        {
+          "type": "text",
+          "label": "STEP 3",
+          "text": "Gently scrape it out with a *wooden* toothpick",
+          "sub": "Never anything metal.",
+          "seconds": 3.2
+        },
+        {
+          "type": "text",
+          "label": "STEP 4",
+          "text": "Still nothing? Try a *different cable*",
+          "seconds": 2.6
+        },
+        {
+          "type": "end",
+          "text": "Still won't charge? Bring it in.",
+          "sub": "Port, cable or battery: we'll find out which",
+          "seconds": 3.2
+        }
+      ]
+    },
+    {
+      "id": "05-more-than-phones",
+      "caption": "Phones are just the start 👀 What should we fix next? #repairshop #nintendoswitch #macbookrepair #ipadrepair #torrance #smallbusiness",
+      "slides": [
+        {
+          "type": "hook",
+          "text": "We don't just fix *phones*",
+          "seconds": 2.2
+        },
+        {
+          "type": "text",
+          "text": "*Laptops* & MacBooks",
+          "sub": "Screens, batteries, keyboards & more",
+          "seconds": 2.4
+        },
+        {
+          "type": "text",
+          "text": "*Tablets* & iPads",
+          "seconds": 2.0
+        },
+        {
+          "type": "text",
+          "text": "*Nintendo Switch*",
+          "sub": "All models",
+          "seconds": 2.0
+        },
+        {
+          "type": "text",
+          "text": "*Smart watches*",
+          "seconds": 2.0
+        },
+        {
+          "type": "end",
+          "text": "Phone ElectriK",
+          "seconds": 3.2
+        }
+      ]
+    }
+  ]
+}
