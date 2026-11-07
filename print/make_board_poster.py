@@ -229,7 +229,7 @@ for (text, color), bb, lh in zip(footer_lines, footer_bbs, line_hs):
     y += lh + line_gap
 
 # ── Place on a white page with a safe margin (nothing gets cut off) ──────────
-M = int(0.4 * 300)
+M = int(0.25 * 300)
 sc = (W - 2 * M) / W
 sw, sh = W - 2 * M, int(H * sc)
 small = canvas.resize((sw, sh), Image.LANCZOS)
