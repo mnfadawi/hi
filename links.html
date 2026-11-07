@@ -12,11 +12,11 @@
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#F26522" />
   <title>Phone ElectriK — Links</title>
-  <meta name="description" content="Phone ElectriK — Torrance's top-rated phone repair shop. Call us, get directions, follow us on social media, and shop our products." />
+  <meta name="description" content="Phone ElectriK — Torrance's top-rated phone repair shop. Call us, get directions, follow us on social media, and leave us a review." />
   <link rel="canonical" href="https://phoneelectrik.com/links" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Phone ElectriK — Links" />
-  <meta property="og:description" content="Call us, get directions, follow us on social media, and shop our products — all in one place." />
+  <meta property="og:description" content="Call us, get directions, follow us on social media, and leave us a review — all in one place." />
   <meta property="og:url" content="https://phoneelectrik.com/links" />
   <meta property="og:image" content="https://phoneelectrik.com/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -157,6 +157,16 @@
     }
     .btn-map:hover { border-color: rgba(255,255,255,.28); transform: translateY(-1px); }
 
+    /* Google review */
+    .btn-review {
+      background: #fff;
+      color: #1a1a1a;
+      box-shadow: 0 4px 20px rgba(255,255,255,.12);
+    }
+    .btn-review:hover { box-shadow: 0 6px 28px rgba(251,188,5,.45); transform: translateY(-1px); }
+    .btn-review .btn-sub { color: #444; opacity: 1; }
+    .btn-review .btn-arrow { color: #1a1a1a; }
+
     /* Website */
     .btn-web {
       background: #1a1a1a;
@@ -193,15 +203,67 @@
     .btn-yt:hover { box-shadow: 0 6px 28px rgba(255,0,0,.35); transform: translateY(-1px); }
     .btn-yt .btn-label { color: #ff4444; }
 
-    /* Shop */
-    .btn-shop {
-      background: linear-gradient(135deg, #111, #1a0a00);
+
+    /* Yelp review */
+    .btn-yelp {
+      background: #d32323;
       color: #fff;
-      border: 2px solid #F26522;
-      box-shadow: 0 4px 20px rgba(242,101,34,.2);
+      box-shadow: 0 4px 20px rgba(211,35,35,.3);
     }
-    .btn-shop:hover { box-shadow: 0 6px 28px rgba(242,101,34,.45); transform: translateY(-1px); }
-    .btn-shop .btn-label { color: #F26522; }
+    .btn-yelp:hover { box-shadow: 0 6px 28px rgba(211,35,35,.55); transform: translateY(-1px); }
+
+    /* ── WHAT WE DO ── */
+    .offer {
+      width: 100%;
+      background: #1a1a1a;
+      border: 1px solid rgba(242,101,34,.35);
+      border-radius: 18px;
+      padding: 20px 18px 18px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .offer-title {
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #F26522;
+      margin-bottom: 6px;
+    }
+    .offer-promise {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
+    }
+    .chip {
+      font-size: .78rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.85);
+      background: #242424;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 999px;
+      padding: 6px 11px;
+    }
+    .chip-hot { color: #fff; background: #F26522; border-color: #F26522; }
+    .offer-group {
+      margin: 14px 0 8px;
+      font-size: .68rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+    }
+    .offer-note {
+      margin-top: 12px;
+      font-size: .78rem;
+      color: rgba(255,255,255,.5);
+      line-height: 1.5;
+    }
 
     /* ── CHEVRON ── */
     .btn-arrow {
@@ -261,6 +323,49 @@
     .qr-url strong {
       color: #F26522;
     }
+    .qr-url { line-height: 1.6; }
+    .share-lead {
+      font-size: .95rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.8);
+      line-height: 1.45;
+    }
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #e05010, #F26522);
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      padding: 15px 26px;
+      font-family: inherit;
+      font-size: 1.02rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(242,101,34,.4);
+      -webkit-tap-highlight-color: transparent;
+    }
+    .share-btn:active { transform: scale(.97); }
+    .share-btn svg { width: 20px; height: 20px; fill: currentColor; }
+    .qr-tap { border: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .qr-tap img { image-rendering: pixelated; }
+    .toast {
+      position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%) translateY(20px);
+      background: #fff; color: #111; font-weight: 800; font-size: .9rem; padding: 12px 20px; border-radius: 999px;
+      opacity: 0; transition: .25s; pointer-events: none; box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* Digital business card */
+    .btn-card {
+      background: linear-gradient(135deg, #1a1a1a, #241208);
+      color: #fff;
+      border: 2px solid #F26522;
+      box-shadow: 0 4px 20px rgba(242,101,34,.25);
+    }
+    .btn-card:hover { box-shadow: 0 6px 28px rgba(242,101,34,.45); transform: translateY(-1px); }
+    .btn-card .btn-label { color: #F26522; }
 
     /* ── FOOTER ── */
     .pg-footer {
@@ -310,6 +415,51 @@
     <span class="connect-label">Connect With Phone ElectriK</span>
   </div>
 
+  <!-- WHAT WE DO (matches services.html) -->
+  <div class="offer">
+    <div class="offer-title">What We Do</div>
+    <div class="offer-promise">Most repairs done while you wait<br>90-day warranty on every part we replace</div>
+    <div class="offer-group">Repairs</div>
+    <div class="chips">
+      <span class="chip">Screen Repair</span>
+      <span class="chip">Battery Replacement</span>
+      <span class="chip">Charging Ports</span>
+      <span class="chip">Back Glass</span>
+      <span class="chip">Camera Lens</span>
+      <span class="chip">Liquid Damage</span>
+      <span class="chip">Diagnostics</span>
+      <span class="chip">Data Transfer</span>
+      <span class="chip">Data Recovery</span>
+      <span class="chip">Unlocking</span>
+      <span class="chip">Factory Reset</span>
+      <span class="chip">Virus &amp; Malware Removal</span>
+      <span class="chip">Special Orders</span>
+    </div>
+    <div class="offer-group">Devices</div>
+    <div class="chips">
+      <span class="chip">iPhone</span>
+      <span class="chip">Samsung (S, A, Note, Z Fold, Z Flip)</span>
+      <span class="chip">Google Pixel</span>
+      <span class="chip">Motorola</span>
+      <span class="chip">LG</span>
+      <span class="chip">OnePlus</span>
+      <span class="chip">TCL</span>
+      <span class="chip">Nokia</span>
+      <span class="chip">iPad &amp; Tablets</span>
+      <span class="chip">MacBook</span>
+      <span class="chip">Windows Laptops &amp; PCs</span>
+      <span class="chip">PlayStation, Xbox &amp; Switch 2</span>
+      <span class="chip">Apple Watch</span>
+    </div>
+    <div class="offer-group">Buy &amp; Sell</div>
+    <div class="chips">
+      <span class="chip chip-hot">We Buy Your Devices</span>
+      <span class="chip chip-hot">Refurbished Phones, iPads &amp; MacBooks</span>
+      <span class="chip chip-hot">Cases, Chargers &amp; Accessories</span>
+    </div>
+    <div class="offer-note">Laptops, MacBooks &amp; game consoles: parts are ordered, usually ready the next day (up to 1 week).<br>Don&rsquo;t see your device? We fix any device &mdash; bring it in.<br>Walk in, no appointment needed.</div>
+  </div>
+
   <!-- LINKS -->
   <div class="links">
 
@@ -323,12 +473,42 @@
       <span class="btn-arrow">›</span>
     </a>
 
+    <!-- Digital business card -->
+    <a href="/card" class="btn btn-card">
+      <span class="btn-icon">💳</span>
+      <span class="btn-text">
+        <span class="btn-label">Our Digital Business Card</span>
+        <span class="btn-sub">Save our number &amp; share us in one tap</span>
+      </span>
+      <span class="btn-arrow">›</span>
+    </a>
+
     <!-- Directions -->
     <a href="https://www.google.com/maps/search/?api=1&query=Phone+ElectriK+3025+Artesia+Blvd+Torrance+CA+90504" target="_blank" rel="noopener" class="btn btn-map">
       <span class="btn-icon">📍</span>
       <span class="btn-text">
         <span class="btn-label">Get Directions</span>
         <span class="btn-sub">3025 Artesia Blvd, Torrance, CA 90504</span>
+      </span>
+      <span class="btn-arrow">›</span>
+    </a>
+
+    <!-- Google review -->
+    <a href="https://www.google.com/search?q=Phone+ElectriK+Torrance+reviews" target="_blank" rel="noopener" class="btn btn-review">
+      <span class="btn-icon">⭐</span>
+      <span class="btn-text">
+        <span class="btn-label">Leave Us a Google Review</span>
+        <span class="btn-sub">★★★★★ Takes 30 seconds &mdash; thank you!</span>
+      </span>
+      <span class="btn-arrow">›</span>
+    </a>
+
+    <!-- Yelp review -->
+    <a href="https://www.yelp.com/biz/phone-electrik-torrance-2" target="_blank" rel="noopener" class="btn btn-yelp">
+      <span class="btn-icon">⭐</span>
+      <span class="btn-text">
+        <span class="btn-label">Review Us on Yelp</span>
+        <span class="btn-sub">Help others find a shop they can trust</span>
       </span>
       <span class="btn-arrow">›</span>
     </a>
@@ -381,33 +561,23 @@
       <span class="btn-arrow" style="color:#ff4444">›</span>
     </a>
 
-    <div class="divider"></div>
-
-    <!-- Shop -->
-    <a href="https://www.tiktok.com/@phoneelectrik/shop" target="_blank" rel="noopener" class="btn btn-shop">
-      <span class="btn-icon">🛒</span>
-      <span class="btn-text">
-        <span class="btn-label">Shop Our Products</span>
-        <span class="btn-sub">Cases, chargers &amp; accessories</span>
-      </span>
-      <span class="btn-arrow" style="color:#F26522">›</span>
-    </a>
-
   </div><!-- /links -->
 
-  <!-- QR CODE (for poster / in-store) -->
+  <!-- SHARE (tap = phone's share menu; QR = show a friend in person) -->
   <div class="qr-section">
-    <div class="qr-title">Scan to Share This Page</div>
-    <div class="qr-frame">
-      <img
-        src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fphoneelectrik.com%2Flinks&ecc=H&margin=1"
-        alt="QR Code — phoneelectrik.com/links"
-        width="160"
-        height="160"
-      />
-    </div>
-    <div class="qr-url"><strong>phoneelectrik.com/links</strong></div>
+    <div class="qr-title">Share Phone ElectriK</div>
+    <div class="share-lead">Know someone with a broken phone?<br>Send them our page &mdash; it really helps us!</div>
+    <button type="button" class="share-btn" data-share>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.4 1.2l-6.7-3.4a3 3 0 0 0 0-1.6l6.7-3.4A3 3 0 1 0 15 7l-6.7 3.4a3 3 0 1 0 0 3.2L15 17a3 3 0 1 0 3-1z"/></svg>
+      Share With a Friend
+    </button>
+    <button type="button" class="qr-frame qr-tap" data-share aria-label="Share this page">
+      <img src="links-qr.png" alt="QR Code — phoneelectrik.com/links" width="160" height="160" />
+    </button>
+    <div class="qr-url">Tap the code to share, or let a friend scan it<br><strong>phoneelectrik.com/links</strong></div>
   </div>
+
+  <div class="toast" id="toast">Link copied &mdash; paste it to a friend!</div>
 
   <!-- FOOTER -->
   <div class="pg-footer">
@@ -422,5 +592,23 @@
 
 </div><!-- /page -->
 
+<script>
+  (function () {
+    var data = {
+      title: 'Phone ElectriK — Phone Repair in Torrance',
+      text: 'Phone ElectriK fixes phones, iPads, MacBooks & more. Most repairs done while you wait, 90-day warranty. (323) 348-6756',
+      url: 'https://phoneelectrik.com/links'
+    };
+    var toast = document.getElementById('toast');
+    function copied() { toast.classList.add('show'); setTimeout(function () { toast.classList.remove('show'); }, 2200); }
+    function share() {
+      if (navigator.share) { navigator.share(data).catch(function () {}); return; }
+      var t = data.text + ' ' + data.url;
+      if (navigator.clipboard) { navigator.clipboard.writeText(t).then(copied, function () { prompt('Copy this link:', data.url); }); }
+      else { prompt('Copy this link:', data.url); }
+    }
+    document.querySelectorAll('[data-share]').forEach(function (b) { b.addEventListener('click', share); });
+  })();
+</script>
 </body>
 </html>
