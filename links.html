@@ -327,6 +327,49 @@
     .qr-url strong {
       color: #F26522;
     }
+    .qr-url { line-height: 1.6; }
+    .share-lead {
+      font-size: .95rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.8);
+      line-height: 1.45;
+    }
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #e05010, #F26522);
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      padding: 15px 26px;
+      font-family: inherit;
+      font-size: 1.02rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(242,101,34,.4);
+      -webkit-tap-highlight-color: transparent;
+    }
+    .share-btn:active { transform: scale(.97); }
+    .share-btn svg { width: 20px; height: 20px; fill: currentColor; }
+    .qr-tap { border: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .qr-tap img { image-rendering: pixelated; }
+    .toast {
+      position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%) translateY(20px);
+      background: #fff; color: #111; font-weight: 800; font-size: .9rem; padding: 12px 20px; border-radius: 999px;
+      opacity: 0; transition: .25s; pointer-events: none; box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* Digital business card */
+    .btn-card {
+      background: linear-gradient(135deg, #1a1a1a, #241208);
+      color: #fff;
+      border: 2px solid #F26522;
+      box-shadow: 0 4px 20px rgba(242,101,34,.25);
+    }
+    .btn-card:hover { box-shadow: 0 6px 28px rgba(242,101,34,.45); transform: translateY(-1px); }
+    .btn-card .btn-label { color: #F26522; }
 
     /* ── FOOTER ── */
     .pg-footer {
@@ -408,6 +451,16 @@
       <span class="btn-text">
         <span class="btn-label">Call Us</span>
         <span class="btn-sub">(323) 348-6756</span>
+      </span>
+      <span class="btn-arrow">›</span>
+    </a>
+
+    <!-- Digital business card -->
+    <a href="/card" class="btn btn-card">
+      <span class="btn-icon">💳</span>
+      <span class="btn-text">
+        <span class="btn-label">Our Digital Business Card</span>
+        <span class="btn-sub">Save our number &amp; share us in one tap</span>
       </span>
       <span class="btn-arrow">›</span>
     </a>
@@ -504,19 +557,21 @@
 
   </div><!-- /links -->
 
-  <!-- QR CODE (for poster / in-store) -->
+  <!-- SHARE (tap = phone's share menu; QR = show a friend in person) -->
   <div class="qr-section">
-    <div class="qr-title">Scan to Share This Page</div>
-    <div class="qr-frame">
-      <img
-        src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fphoneelectrik.com%2Flinks&ecc=H&margin=1"
-        alt="QR Code — phoneelectrik.com/links"
-        width="160"
-        height="160"
-      />
-    </div>
-    <div class="qr-url"><strong>phoneelectrik.com/links</strong></div>
+    <div class="qr-title">Share Phone ElectriK</div>
+    <div class="share-lead">Know someone with a broken phone?<br>Send them our page &mdash; it really helps us!</div>
+    <button type="button" class="share-btn" data-share>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.4 1.2l-6.7-3.4a3 3 0 0 0 0-1.6l6.7-3.4A3 3 0 1 0 15 7l-6.7 3.4a3 3 0 1 0 0 3.2L15 17a3 3 0 1 0 3-1z"/></svg>
+      Share With a Friend
+    </button>
+    <button type="button" class="qr-frame qr-tap" data-share aria-label="Share this page">
+      <img src="links-qr.png" alt="QR Code — phoneelectrik.com/links" width="160" height="160" />
+    </button>
+    <div class="qr-url">Tap the code to share, or let a friend scan it<br><strong>phoneelectrik.com/links</strong></div>
   </div>
+
+  <div class="toast" id="toast">Link copied &mdash; paste it to a friend!</div>
 
   <!-- FOOTER -->
   <div class="pg-footer">
@@ -531,5 +586,23 @@
 
 </div><!-- /page -->
 
+<script>
+  (function () {
+    var data = {
+      title: 'Phone ElectriK — Phone Repair in Torrance',
+      text: 'Phone ElectriK fixes phones, iPads, MacBooks & more. Most repairs done while you wait, 90-day warranty. (323) 348-6756',
+      url: 'https://phoneelectrik.com/links'
+    };
+    var toast = document.getElementById('toast');
+    function copied() { toast.classList.add('show'); setTimeout(function () { toast.classList.remove('show'); }, 2200); }
+    function share() {
+      if (navigator.share) { navigator.share(data).catch(function () {}); return; }
+      var t = data.text + ' ' + data.url;
+      if (navigator.clipboard) { navigator.clipboard.writeText(t).then(copied, function () { prompt('Copy this link:', data.url); }); }
+      else { prompt('Copy this link:', data.url); }
+    }
+    document.querySelectorAll('[data-share]').forEach(function (b) { b.addEventListener('click', share); });
+  })();
+</script>
 </body>
 </html>
