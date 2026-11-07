@@ -518,6 +518,11 @@
     .slide-nav { box-shadow: 0 2px 8px rgba(0,0,0,.5); top: auto; bottom: -47px; transform: none; }
     .slide-nav.prev { left: 0; } .slide-nav.next { right: 0; }
     .dots { margin-top: 22px; min-height: 30px; align-items: center; }
+    .today { font-size: .82rem; font-weight: 700; color: rgba(255,255,255,.8); margin-top: 2px; }
+    .today .is-open { color: #3ddc84; }
+    .today .is-closed { color: #ff6b6b; }
+    .sub-title { font-size: .95rem; font-weight: 800; color: #F26522; margin: 0 0 8px; text-align: left; }
+    .divider-line { height: 1px; background: rgba(255,255,255,.1); margin: 14px 0; }
   </style>
 </head>
 <body>
@@ -530,109 +535,10 @@
     <div class="brand-name">Phone ElectriK</div>
     <div class="brand-tag">Phone Repair &middot; Buy &amp; Sell &middot; Torrance, CA</div>
     <span class="connect-label">Most repairs done while you wait</span>
+    <div class="today" id="today">Mon&ndash;Sat 9AM&ndash;8PM &middot; Sun 10AM&ndash;6PM</div>
   </div>
 
-  <!-- INFO CAROUSEL: swipe left/right like an Instagram post -->
-  <section class="info" aria-label="About Phone ElectriK">
-    <div class="info-head"><span class="swipe-hint">Swipe for more <span aria-hidden="true">→</span></span></div>
-    <div class="slider-wrap">
-      <button type="button" class="slide-nav prev" aria-label="Previous">‹</button>
-      <div class="slider" id="slider">
-      <article class="slide" aria-label="1 of 7">
-        <div class="slide-count">1 / 7</div>
-        <h3 class="slide-title">Why Choose Us</h3>
-        <ul class="facts">
-          <li><b>Affordable</b> prices</li>
-          <li><b>Same-day repairs</b>, most while you wait</li>
-          <li><b>90-day warranty</b> on parts we replace</li>
-          <li><b>Honest</b>: we explain the problem first</li>
-          <li><b>Walk-ins welcome</b>, no appointment</li>
-        </ul>
-        <p class="card-note">Rated 4.7 stars by our customers</p>      </article>
-      <article class="slide" aria-label="2 of 7">
-        <div class="slide-count">2 / 7</div>
-        <h3 class="slide-title">Our Story</h3>
-        <p class="story-head">Repair it. Don&rsquo;t replace it.</p>
-        <p class="story">We opened our shop so people could fix their phone instead of paying for a new one.</p>
-        <div class="stat-row">
-          <div class="stat"><b>10+</b><span>years in business</span></div>
-          <div class="stat"><b>1,000s</b><span>South Bay customers</span></div>
-        </div>
-        <p class="story">We&rsquo;re a local Torrance shop. Every visit, review and share helps us grow.</p>      </article>
-      <article class="slide" aria-label="3 of 7">
-        <div class="slide-count">3 / 7</div>
-        <h3 class="slide-title">Repairs We Do</h3>
-        <div class="chips">
-          <span class="chip">Screen Repair</span>
-          <span class="chip">Battery Replacement</span>
-          <span class="chip">Charging Ports</span>
-          <span class="chip">Back Glass</span>
-          <span class="chip">Camera Lens</span>
-          <span class="chip">Liquid Damage</span>
-          <span class="chip">Diagnostics</span>
-          <span class="chip">Data Transfer</span>
-          <span class="chip">Data Recovery</span>
-          <span class="chip">Unlocking</span>
-          <span class="chip">Factory Reset</span>
-          <span class="chip">Virus &amp; Malware Removal</span>
-          <span class="chip">Special Orders</span>
-        </div>
-      </article>
-      <article class="slide" aria-label="4 of 7">
-        <div class="slide-count">4 / 7</div>
-        <h3 class="slide-title">Devices We Fix</h3>
-        <div class="chips">
-          <span class="chip">iPhone</span>
-          <span class="chip">Samsung (S, A, Note, Z Fold, Z Flip)</span>
-          <span class="chip">Google Pixel</span>
-          <span class="chip">Motorola</span>
-          <span class="chip">LG</span>
-          <span class="chip">OnePlus</span>
-          <span class="chip">TCL</span>
-          <span class="chip">Nokia</span>
-          <span class="chip">iPad &amp; Tablets</span>
-          <span class="chip">MacBook</span>
-          <span class="chip">Windows Laptops &amp; PCs</span>
-          <span class="chip">PlayStation, Xbox &amp; Switch 2</span>
-          <span class="chip">Apple Watch</span>
-        </div>
-        <p class="card-note">Don&rsquo;t see yours? Bring it in, we fix any device.</p>
-      </article>
-      <article class="slide" aria-label="5 of 7">
-        <div class="slide-count">5 / 7</div>
-        <h3 class="slide-title">What We Sell</h3>
-        <ul class="facts">
-          <li><b>Refurbished phones</b>: our main item</li>
-          <li><b>Sometimes</b> iPads, laptops &amp; Apple Watches</li>
-          <li><b>Accessories</b>: cases, chargers, screen protectors, earbuds &amp; more</li>
-        </ul>
-        <p class="card-note">The phones we have for sale change often. Call to ask what we have right now.</p>
-      </article>
-      <article class="slide" aria-label="6 of 7">
-        <div class="slide-count">6 / 7</div>
-        <h3 class="slide-title">We Buy Devices</h3>
-        <ul class="facts">
-          <li><b>Want to sell</b> your phone, tablet or laptop?</li>
-          <li><b>Bring it to the store</b> so we can check it</li>
-          <li><b>We&rsquo;ll tell you</b> if we can buy it, and how much we&rsquo;ll pay</li>
-          <li>Depends on the device and its condition</li>
-        </ul>
-      </article>
-      <article class="slide" aria-label="7 of 7">
-        <div class="slide-count">7 / 7</div>
-        <h3 class="slide-title">Hours &amp; Location</h3>
-        <ul class="facts">
-          <li><b>Mon&ndash;Sat</b> 9AM&ndash;8PM</li>
-          <li><b>Sunday</b> 10AM&ndash;6PM</li>
-          <li>3025 Artesia Blvd STE 101, Torrance, CA 90504</li>
-        </ul>      </article>
-      </div>
-      <button type="button" class="slide-nav next" aria-label="Next">›</button>
-    </div>
-    <div class="dots" id="dots"><button type="button" aria-label="Go to 1"></button><button type="button" aria-label="Go to 2"></button><button type="button" aria-label="Go to 3"></button><button type="button" aria-label="Go to 4"></button><button type="button" aria-label="Go to 5"></button><button type="button" aria-label="Go to 6"></button><button type="button" aria-label="Go to 7"></button></div>
-  </section>
-
-  <!-- BUTTONS -->
+  <!-- CALL / DIRECTIONS: first thing people see -->
   <div class="section-label">Call or Visit</div>
   <div class="links">
 
@@ -657,6 +563,107 @@
     </a>
 
   </div>
+
+  <!-- BUTTONS -->
+  <!-- INFO CAROUSEL: swipe left/right like an Instagram post -->
+  <section class="info" aria-label="About Phone ElectriK">
+    <div class="info-head"><span class="swipe-hint">Swipe for more <span aria-hidden="true">→</span></span></div>
+    <div class="slider-wrap">
+      <button type="button" class="slide-nav prev" aria-label="Previous">‹</button>
+      <div class="slider" id="slider">
+      <article class="slide" aria-label="1 of 5">
+        <div class="slide-count">1 / 5</div>
+        <h3 class="slide-title">Why Choose Us</h3>
+        <ul class="facts">
+          <li><b>Affordable</b> prices</li>
+          <li><b>Same-day repairs</b>, most while you wait</li>
+          <li><b>90-day warranty</b> on parts we replace</li>
+          <li><b>Honest</b>: we explain the problem first</li>
+          <li><b>Walk-ins welcome</b>, no appointment</li>
+        </ul>
+        <p class="card-note">Rated 4.7 stars by our customers</p>
+        <div class="divider-line"></div>
+        <h4 class="sub-title">Our Story</h4>
+        <p class="story-head">Repair it. Don&rsquo;t replace it.</p>
+        <p class="story">We opened our shop so people could fix their phone instead of paying for a new one.</p>
+        <div class="stat-row">
+          <div class="stat"><b>10+</b><span>years in business</span></div>
+          <div class="stat"><b>1,000s</b><span>South Bay customers</span></div>
+        </div>
+        <p class="story">We&rsquo;re a local Torrance shop. Every visit, review and share helps us grow.</p>
+      </article>
+      <article class="slide" aria-label="2 of 5">
+        <div class="slide-count">2 / 5</div>
+        <h3 class="slide-title">Repairs We Do</h3>
+        <div class="chips">
+          <span class="chip">Screen Repair</span>
+          <span class="chip">Battery Replacement</span>
+          <span class="chip">Charging Ports</span>
+          <span class="chip">Back Glass</span>
+          <span class="chip">Camera Lens</span>
+          <span class="chip">Liquid Damage</span>
+          <span class="chip">Diagnostics</span>
+          <span class="chip">Data Transfer</span>
+          <span class="chip">Data Recovery</span>
+          <span class="chip">Unlocking</span>
+          <span class="chip">Factory Reset</span>
+          <span class="chip">Virus &amp; Malware Removal</span>
+          <span class="chip">Special Orders</span>
+        </div>
+      </article>
+      <article class="slide" aria-label="3 of 5">
+        <div class="slide-count">3 / 5</div>
+        <h3 class="slide-title">Devices We Fix</h3>
+        <div class="chips">
+          <span class="chip">iPhone</span>
+          <span class="chip">Samsung (S, A, Note, Z Fold, Z Flip)</span>
+          <span class="chip">Google Pixel</span>
+          <span class="chip">Motorola</span>
+          <span class="chip">LG</span>
+          <span class="chip">OnePlus</span>
+          <span class="chip">TCL</span>
+          <span class="chip">Nokia</span>
+          <span class="chip">iPad &amp; Tablets</span>
+          <span class="chip">MacBook</span>
+          <span class="chip">Windows Laptops &amp; PCs</span>
+          <span class="chip">PlayStation, Xbox &amp; Switch 2</span>
+          <span class="chip">Apple Watch</span>
+        </div>
+        <p class="card-note">Don&rsquo;t see yours? Bring it in, we fix any device.</p>
+      </article>
+      <article class="slide" aria-label="4 of 5">
+        <div class="slide-count">4 / 5</div>
+        <h3 class="slide-title">Sell &amp; Buy</h3>
+        <h4 class="sub-title">What We Sell</h4>
+        <ul class="facts">
+          <li><b>Refurbished phones</b>: our main item</li>
+          <li><b>Sometimes</b> iPads, laptops &amp; Apple Watches</li>
+          <li><b>Accessories</b>: cases, chargers, screen protectors, earbuds &amp; more</li>
+        </ul>
+        <p class="card-note">The phones we have for sale change often. Call to ask what we have right now.</p>
+        <div class="divider-line"></div>
+        <h4 class="sub-title">We Buy Devices</h4>
+        <ul class="facts">
+          <li><b>Want to sell</b> your phone, tablet or laptop?</li>
+          <li><b>Bring it to the store</b> so we can check it</li>
+          <li><b>We&rsquo;ll tell you</b> if we can buy it, and how much we&rsquo;ll pay</li>
+          <li>Depends on the device and its condition</li>
+        </ul>
+      </article>
+      <article class="slide" aria-label="5 of 5">
+        <div class="slide-count">5 / 5</div>
+        <h3 class="slide-title">Hours &amp; Location</h3>
+        <ul class="facts">
+          <li><b>Mon&ndash;Sat</b> 9AM&ndash;8PM</li>
+          <li><b>Sunday</b> 10AM&ndash;6PM</li>
+          <li>3025 Artesia Blvd STE 101, Torrance, CA 90504</li>
+        </ul>
+      </article>
+      </div>
+      <button type="button" class="slide-nav next" aria-label="Next">›</button>
+    </div>
+    <div class="dots" id="dots"><button type="button" aria-label="Go to 1"></button><button type="button" aria-label="Go to 2"></button><button type="button" aria-label="Go to 3"></button><button type="button" aria-label="Go to 4"></button><button type="button" aria-label="Go to 5"></button></div>
+  </section>
 
   <div class="section-label">Support Us</div>
   <div class="links">
@@ -816,6 +823,19 @@
     document.querySelector('.slide-nav.prev').addEventListener('click', function () { go(current() - 1); });
     document.querySelector('.slide-nav.next').addEventListener('click', function () { go(current() + 1); });
     mark();
+    // Today's hours in the header (Torrance time)
+    (function () {
+      var el = document.getElementById('today'); if (!el) return;
+      try {
+        var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
+        var get = function (t) { return (parts.find(function (p) { return p.type === t; }) || {}).value; };
+        var day = get('weekday'), h = parseInt(get('hour'), 10) % 24, m = parseInt(get('minute'), 10);
+        var sun = day === 'Sun', open = sun ? 10 : 9, close = sun ? 18 : 20, now = h + m / 60;
+        var hours = sun ? '10AM&ndash;6PM' : '9AM&ndash;8PM';
+        var isOpen = now >= open && now < close;
+        el.innerHTML = 'Open today ' + hours + ' &middot; <span class="' + (isOpen ? 'is-open' : 'is-closed') + '">' + (isOpen ? 'Open now' : 'Closed now') + '</span>';
+      } catch (e) {}
+    })();
   })();
 </script>
 </body>
