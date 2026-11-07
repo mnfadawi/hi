@@ -471,9 +471,16 @@
     .facts li { font-size: .92rem; color: rgba(255,255,255,.88); line-height: 1.4; padding-left: 22px; position: relative; }
     .facts li::before { content: '✓'; position: absolute; left: 0; color: #F26522; font-weight: 800; }
     .facts b { color: #fff; }
+    .story-head { font-size: 1.05rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .story { font-size: .9rem; color: rgba(255,255,255,.85); line-height: 1.5; text-align: left; margin-bottom: 12px; }
+    .story b { color: #fff; }
+    .stat-row { display: flex; gap: 10px; margin: 4px 0 14px; }
+    .stat { flex: 1; background: rgba(242,101,34,.12); border: 1px solid rgba(242,101,34,.4); border-radius: 14px; padding: 10px 6px; }
+    .stat b { display: block; font-size: 1.4rem; color: #F26522; }
+    .stat span { font-size: .72rem; color: rgba(255,255,255,.75); }
     .card-note { margin-top: 12px; font-size: .8rem; color: rgba(255,255,255,.6); line-height: 1.5; }
-    .slide-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; border: none; background: #F26522; color: #fff; font-size: 1.4rem; font-weight: 800; line-height: 1; cursor: pointer; z-index: 2; box-shadow: 0 4px 12px rgba(0,0,0,.6); }
-    .slide-nav.prev { left: -8px; } .slide-nav.next { right: -8px; }
+    .slide-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; border-radius: 50%; border: none; background: #F26522; color: #fff; font-size: 1.25rem; font-weight: 800; line-height: 1; cursor: pointer; z-index: 2; box-shadow: 0 4px 12px rgba(0,0,0,.6); }
+    .slide-nav.prev { left: -10px; } .slide-nav.next { right: -10px; }
     .slide-nav.off { opacity: 0; pointer-events: none; }
     .dots { display: flex; justify-content: center; gap: 7px; margin-top: 12px; }
     .dots button { width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; background: rgba(255,255,255,.3); cursor: pointer; transition: all .2s; }
@@ -501,20 +508,33 @@
     <div class="slider-wrap">
       <button type="button" class="slide-nav prev" aria-label="Previous">‹</button>
       <div class="slider" id="slider">
-      <article class="slide" aria-label="1 of 5">
-        <div class="slide-count">1 / 5</div>
-        <div class="slide-icon">⚡</div>
-        <h3 class="slide-title">Why Phone ElectriK</h3>
+      <article class="slide" aria-label="1 of 6">
+        <div class="slide-count">1 / 6</div>
+        <div class="slide-icon">⭐</div>
+        <h3 class="slide-title">Why Choose Us</h3>
         <ul class="facts">
-          <li><b>Most repairs done while you wait</b></li>
-          <li><b>90-day warranty</b> on every part we replace</li>
-          <li><b>Walk in</b> &mdash; no appointment needed</li>
-          <li><b>Any brand, any model</b> &mdash; bring it in</li>
-          <li><b>Not sure what&rsquo;s wrong?</b> We find out &mdash; you decide</li>
+          <li><b>Affordable</b> &mdash; we keep repairs affordable without cutting corners on quality</li>
+          <li><b>Fast turnaround</b> &mdash; most repairs done the same day, often while you wait</li>
+          <li><b>Quality &amp; 90-day warranty</b> on the part we replace &mdash; we stand behind our work</li>
+          <li><b>Honesty first</b> &mdash; we tell you exactly what&rsquo;s wrong before we start. No surprises, no pressure</li>
+          <li><b>No appointment needed</b> &mdash; just walk in or call</li>
         </ul>
+        <p class="card-note">⭐ 4.7 stars from our customers</p>
       </article>
-      <article class="slide" aria-label="2 of 5">
-        <div class="slide-count">2 / 5</div>
+      <article class="slide" aria-label="2 of 6">
+        <div class="slide-count">2 / 6</div>
+        <div class="slide-icon">❤️</div>
+        <h3 class="slide-title">Our Story &amp; Why Support Us</h3>
+        <p class="story-head">Repair It. Don&rsquo;t Replace It.</p>
+        <p class="story">We opened this shop because too many people were buying a brand-new phone when a simple repair could fix the problem. We do it differently &mdash; so our community never has to look anywhere else.</p>
+        <div class="stat-row">
+          <div class="stat"><b>10+</b><span>years serving the community</span></div>
+          <div class="stat"><b>1,000s</b><span>customers helped in the South Bay</span></div>
+        </div>
+        <p class="story">No upselling. No runaround. When you choose Phone ElectriK you support a <b>local Torrance repair shop</b> &mdash; and every review and share helps us keep helping our neighbors. Thank you! ❤️</p>
+      </article>
+      <article class="slide" aria-label="3 of 6">
+        <div class="slide-count">3 / 6</div>
         <div class="slide-icon">🔧</div>
         <h3 class="slide-title">Repairs We Do</h3>
         <div class="chips">
@@ -533,8 +553,8 @@
           <span class="chip">Special Orders</span>
         </div>
       </article>
-      <article class="slide" aria-label="3 of 5">
-        <div class="slide-count">3 / 5</div>
+      <article class="slide" aria-label="4 of 6">
+        <div class="slide-count">4 / 6</div>
         <div class="slide-icon">📱</div>
         <h3 class="slide-title">Devices We Fix</h3>
         <div class="chips">
@@ -554,8 +574,8 @@
         </div>
         <p class="card-note">Don&rsquo;t see yours? We fix any device &mdash; bring it in!</p>
       </article>
-      <article class="slide" aria-label="4 of 5">
-        <div class="slide-count">4 / 5</div>
+      <article class="slide" aria-label="5 of 6">
+        <div class="slide-count">5 / 6</div>
         <div class="slide-icon">💰</div>
         <h3 class="slide-title">We Buy &amp; Sell</h3>
         <div class="chips">
@@ -565,8 +585,8 @@
         </div>
         <p class="card-note">Selling your phone or tablet? Walk in and we&rsquo;ll take a look. Refurbished stock changes weekly &mdash; ask what we have.</p>
       </article>
-      <article class="slide" aria-label="5 of 5">
-        <div class="slide-count">5 / 5</div>
+      <article class="slide" aria-label="6 of 6">
+        <div class="slide-count">6 / 6</div>
         <div class="slide-icon">🕒</div>
         <h3 class="slide-title">Hours &amp; Good to Know</h3>
         <ul class="facts">
@@ -579,7 +599,7 @@
       </div>
       <button type="button" class="slide-nav next" aria-label="Next">›</button>
     </div>
-    <div class="dots" id="dots"><button type="button" aria-label="Go to 1"></button><button type="button" aria-label="Go to 2"></button><button type="button" aria-label="Go to 3"></button><button type="button" aria-label="Go to 4"></button><button type="button" aria-label="Go to 5"></button></div>
+    <div class="dots" id="dots"><button type="button" aria-label="Go to 1"></button><button type="button" aria-label="Go to 2"></button><button type="button" aria-label="Go to 3"></button><button type="button" aria-label="Go to 4"></button><button type="button" aria-label="Go to 5"></button><button type="button" aria-label="Go to 6"></button></div>
   </section>
 
   <!-- BUTTONS -->
