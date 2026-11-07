@@ -3,7 +3,7 @@
   "videos": [
     {
       "id": "01-rice-myth",
-      "caption": "Stop putting wet phones in rice 🍚❌ Do this instead. Save this for later! #phonerepair #waterdamage #iphonetips #lifehack #torrance",
+      "caption": "Stop putting wet phones in rice 🍚❌ Do this instead. Save this for later! Honest answers + a 90-day warranty on every repair. #phonerepair #waterdamage #iphonetips #lifehack #torrance",
       "slides": [
         {
           "type": "hook",
@@ -32,15 +32,23 @@
           "seconds": 3.4
         },
         {
+          "type": "text",
+          "label": "WHY US",
+          "text": "We tell you the *truth.* Every repair comes with a *90-day warranty.*",
+          "sub": "Honest answers. Real repairs.",
+          "seconds": 3.4
+        },
+        {
           "type": "end",
           "text": "Water damage? Bring it in.",
-          "seconds": 3.0
+          "seconds": 3.0,
+          "sub": "3025 Artesia Blvd, Torrance · 90-day warranty"
         }
       ]
     },
     {
       "id": "02-battery-signs",
-      "caption": "Your phone battery could be a fire hazard 🔥🔋 If your phone does ANY of these, come see us at Phone ElectriK in Torrance. We've got you. #batterylife #iphonebattery #phonerepair #firehazard #torrance #southbay",
+      "caption": "Your phone battery could be a fire hazard 🔥🔋 If your phone does ANY of these, come see us at Phone ElectriK in Torrance. We've got you. Honest answers + a 90-day warranty on every repair. #batterylife #iphonebattery #phonerepair #firehazard #torrance #southbay",
       "slides": [
         {
           "type": "hook",
@@ -106,9 +114,16 @@
           "seconds": 3.6
         },
         {
+          "type": "text",
+          "label": "WHY US",
+          "text": "We tell you the *truth.* Every repair comes with a *90-day warranty.*",
+          "sub": "Honest answers. Real repairs.",
+          "seconds": 3.4
+        },
+        {
           "type": "end",
           "text": "Torrance's *Phone ElectriK*",
-          "sub": "3025 Artesia Blvd, Torrance",
+          "sub": "3025 Artesia Blvd, Torrance · 90-day warranty",
           "cta": "Walk in today. We've got you.",
           "seconds": 3.4
         }
@@ -116,7 +131,7 @@
     },
     {
       "id": "03-cracked-screen",
-      "caption": "That 'small' crack isn't staying small 📱💥 #crackedscreen #screenrepair #iphonerepair #samsungrepair #torrance",
+      "caption": "That 'small' crack isn't staying small 📱💥 Honest answers + a 90-day warranty on every repair. #crackedscreen #screenrepair #iphonerepair #samsungrepair #torrance",
       "slides": [
         {
           "type": "hook",
@@ -151,15 +166,23 @@
           "seconds": 2.6
         },
         {
+          "type": "text",
+          "label": "WHY US",
+          "text": "We tell you the *truth.* Every repair comes with a *90-day warranty.*",
+          "sub": "Honest answers. Real repairs.",
+          "seconds": 3.4
+        },
+        {
           "type": "end",
           "text": "Fix it before it spreads",
-          "seconds": 3.0
+          "seconds": 3.0,
+          "sub": "3025 Artesia Blvd, Torrance · 90-day warranty"
         }
       ]
     },
     {
       "id": "04-charging-port",
-      "caption": "Phone won't charge? Try this before you pay for a repair 🔌 #chargingport #phonehacks #iphonetips #androidtips #torrance",
+      "caption": "Phone won't charge? Try this before you pay for a repair 🔌 Honest answers + a 90-day warranty on every repair. #chargingport #phonehacks #iphonetips #androidtips #torrance",
       "slides": [
         {
           "type": "hook",
@@ -193,16 +216,23 @@
           "seconds": 2.6
         },
         {
+          "type": "text",
+          "label": "WHY US",
+          "text": "We tell you the *truth.* Every repair comes with a *90-day warranty.*",
+          "sub": "Honest answers. Real repairs.",
+          "seconds": 3.4
+        },
+        {
           "type": "end",
           "text": "Still won't charge? Bring it in.",
-          "sub": "Port, cable or battery: we'll find out which",
+          "sub": "3025 Artesia Blvd, Torrance · 90-day warranty",
           "seconds": 3.2
         }
       ]
     },
     {
       "id": "05-more-than-phones",
-      "caption": "Phones are just the start 👀 What should we fix next? #repairshop #nintendoswitch #macbookrepair #ipadrepair #torrance #smallbusiness",
+      "caption": "Phones are just the start 👀 What should we fix next? Honest answers + a 90-day warranty on every repair. #repairshop #nintendoswitch #macbookrepair #ipadrepair #torrance #smallbusiness",
       "slides": [
         {
           "type": "hook",
@@ -232,9 +262,17 @@
           "seconds": 2.0
         },
         {
+          "type": "text",
+          "label": "WHY US",
+          "text": "We tell you the *truth.* Every repair comes with a *90-day warranty.*",
+          "sub": "Honest answers. Real repairs.",
+          "seconds": 3.4
+        },
+        {
           "type": "end",
           "text": "Phone ElectriK",
-          "seconds": 3.2
+          "seconds": 3.2,
+          "sub": "3025 Artesia Blvd, Torrance · 90-day warranty"
         }
       ]
     }
