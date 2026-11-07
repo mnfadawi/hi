@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write tiktok/CAPTIONS.md: a ready-to-paste caption for every video, for each platform."""
+"""Write tiktok/CAPTIONS.md: a ready-to-paste caption for every video for TikTok, Instagram, Facebook and YouTube."""
 import json, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -28,6 +28,10 @@ for v in [full] + data["videos"]:
     out += [f"## {v['id']}.mp4: {v['title']}", "",
             "**TikTok**", "```", f"{v['caption']} Walk in today, no appointment needed. 📍 Torrance", "", tags, "```",
             "**Instagram Reels**", "```", v["caption"], "", *SHOP, "", tags, "```",
+            "**Facebook Reels**", "```", v["caption"], "",
+            "Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.",
+            "📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed",
+            "🛡️ 90-day warranty on every repair", "", "#phonerepair #torrance #southbay", "```",
             "**YouTube Shorts**", "",
             "Title:", "```", f"{v['title']} #shorts", "```",
             "Description:", "```", v["caption"], "", *SHOP, "🌐 phoneelectrik.com", "", tags + " #shorts", "```", ""]

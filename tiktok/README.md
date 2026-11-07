@@ -1,17 +1,18 @@
 # Phone ElectriK social videos
 
-Ready-to-post vertical videos (1080x1920) for TikTok, Instagram Reels and YouTube Shorts.
+Ready-to-post vertical videos (1080x1920) for TikTok, Instagram Reels, Facebook Reels and YouTube Shorts.
 Every video has an AI voice reading it, and every video ends with the warranty slide and the shop's info.
 
 - **Videos:** `out/*.mp4` (the `-cover.jpg` next to each one is the opening screen, to use as the cover)
-- **Captions:** `CAPTIONS.md` (TikTok, Instagram and YouTube versions for every video)
+- **Captions:** `CAPTIONS.md` (TikTok, Instagram, Facebook and YouTube versions for every video)
 
 ## How to post
 1. Upload the video.
 2. Paste the caption for that platform from `CAPTIONS.md`.
 3. Tag the location: **Phone ElectriK, Torrance**.
 4. Optional: add a trending sound and turn its volume down to about 10–20%, so the voice is still clear.
-5. Post the same video to TikTok, Instagram Reels and YouTube Shorts.
+5. Post the same video to TikTok, Instagram Reels, Facebook Reels and YouTube Shorts.
+   Tip: Instagram can share each Reel to your Facebook page automatically (turn on "Share to Facebook" when posting).
 
 ## 3-week posting plan (1–2 a day)
 Strongest videos first, and a mix of repairs, trust and selling.
