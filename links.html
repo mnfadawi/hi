@@ -823,18 +823,29 @@
     document.querySelector('.slide-nav.prev').addEventListener('click', function () { go(current() - 1); });
     document.querySelector('.slide-nav.next').addEventListener('click', function () { go(current() + 1); });
     mark();
-    // Today's hours in the header (Torrance time)
+    // Today's hours in the header. Always uses Torrance (Pacific) time and re-checks every minute.
     (function () {
       var el = document.getElementById('today'); if (!el) return;
-      try {
-        var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
-        var get = function (t) { return (parts.find(function (p) { return p.type === t; }) || {}).value; };
-        var day = get('weekday'), h = parseInt(get('hour'), 10) % 24, m = parseInt(get('minute'), 10);
-        var sun = day === 'Sun', open = sun ? 10 : 9, close = sun ? 18 : 20, now = h + m / 60;
-        var hours = sun ? '10AM&ndash;6PM' : '9AM&ndash;8PM';
-        var isOpen = now >= open && now < close;
-        el.innerHTML = 'Open today ' + hours + ' &middot; <span class="' + (isOpen ? 'is-open' : 'is-closed') + '">' + (isOpen ? 'Open now' : 'Closed now') + '</span>';
-      } catch (e) {}
+      var HOURS = { Sun: [10, 18], Mon: [9, 20], Tue: [9, 20], Wed: [9, 20], Thu: [9, 20], Fri: [9, 20], Sat: [9, 20] };
+      var NEXT = { Sun: 'Mon', Mon: 'Tue', Tue: 'Wed', Wed: 'Thu', Thu: 'Fri', Fri: 'Sat', Sat: 'Sun' };
+      function fmt(h) { return (h % 12 || 12) + (h < 12 ? 'AM' : 'PM'); }
+      function update() {
+        try {
+          var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
+          var get = function (t) { return (parts.find(function (p) { return p.type === t; }) || {}).value; };
+          var day = get('weekday'), now = (parseInt(get('hour'), 10) % 24) + parseInt(get('minute'), 10) / 60;
+          var o = HOURS[day][0], c = HOURS[day][1], t = HOURS[NEXT[day]][0];
+          if (now >= o && now < c) {
+            el.innerHTML = '<span class="is-open">Open now</span> &middot; until ' + fmt(c) + ' today';
+          } else if (now < o) {
+            el.innerHTML = '<span class="is-closed">Closed now</span> &middot; opens today at ' + fmt(o);
+          } else {
+            el.innerHTML = '<span class="is-closed">Closed now</span> &middot; opens tomorrow at ' + fmt(t);
+          }
+        } catch (e) {}
+      }
+      update();
+      setInterval(update, 60000);
     })();
   })();
 </script>
