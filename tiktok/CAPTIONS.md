@@ -199,13 +199,13 @@ That 'small' crack isn't staying small 📱💥 Get it fixed before it costs you
 
 **TikTok**
 ```
-Only charges sometimes? Have to hold the cable just right? Won't charge at all? 🔌 Bring it to us. We'll clean it or replace it. Walk in today, no appointment needed. 📍 Torrance
+Only charges sometimes? Have to hold the cable just right? Won't charge at all? 🔌 Bring it to us. We can fix it or replace it. Walk in today, no appointment needed. 📍 Torrance
 
 #chargingport #phonenotcharging #phonerepair #iphonerepair #phoneelectrik #torrance #southbay
 ```
 **Instagram Reels**
 ```
-Only charges sometimes? Have to hold the cable just right? Won't charge at all? 🔌 Bring it to us. We'll clean it or replace it.
+Only charges sometimes? Have to hold the cable just right? Won't charge at all? 🔌 Bring it to us. We can fix it or replace it.
 
 📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
 📞 Call or text (323) 348-6756
@@ -216,7 +216,7 @@ Only charges sometimes? Have to hold the cable just right? Won't charge at all? 
 ```
 **Facebook Reels**
 ```
-Only charges sometimes? Have to hold the cable just right? Won't charge at all? 🔌 Bring it to us. We'll clean it or replace it.
+Only charges sometimes? Have to hold the cable just right? Won't charge at all? 🔌 Bring it to us. We can fix it or replace it.
 
 Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
 📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
@@ -232,7 +232,7 @@ Phone not charging right? Bring it to us #shorts
 ```
 Description:
 ```
-Only charges sometimes? Have to hold the cable just right? Won't charge at all? 🔌 Bring it to us. We'll clean it or replace it.
+Only charges sometimes? Have to hold the cable just right? Won't charge at all? 🔌 Bring it to us. We can fix it or replace it.
 
 📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
 📞 Call or text (323) 348-6756

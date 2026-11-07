@@ -51,14 +51,14 @@
     {
       "id": "04-charging-port",
       "title": "Phone not charging right? Bring it to us",
-      "caption": "Only charges sometimes? Have to hold the cable just right? Won't charge at all? 🔌 Bring it to us. We'll clean it or replace it.",
+      "caption": "Only charges sometimes? Have to hold the cable just right? Won't charge at all? 🔌 Bring it to us. We can fix it or replace it.",
       "tags": "#chargingport #phonenotcharging #phonerepair #iphonerepair",
       "slides": [
         {"type": "hook", "text": "Is your phone *not charging* right?", "seconds": 2.4},
         {"type": "text", "label": "SIGN 1", "text": "It only charges *sometimes*", "seconds": 2.4},
         {"type": "text", "label": "SIGN 2", "text": "You have to *hold the cable* at a certain angle", "seconds": 2.8},
         {"type": "text", "label": "SIGN 3", "text": "It won't charge *at all*", "seconds": 2.4},
-        {"type": "text", "label": "DON'T WAIT", "text": "Bring it to us before it *dies for good*", "sub": "We'll clean your charging port or replace it.", "seconds": 3.4}
+        {"type": "text", "label": "DON'T WAIT", "text": "Bring it to us before it *dies for good*", "sub": "We can fix your charging port or replace it.", "seconds": 3.4}
       ]
     },
     {
@@ -128,7 +128,7 @@
         {"type": "text", "text": "We *buy* devices", "sub": "Phones, tablets and more", "seconds": 2.4},
         {"type": "text", "text": "Any make. *Any model.*", "seconds": 2.2},
         {"type": "text", "text": "Walk in and we'll *take a look*", "sub": "Anytime during business hours", "seconds": 2.8},
-        {"type": "text", "label": "BONUS", "text": "Selling it somewhere else? We'll *wipe it clean* first", "sub": "Back up your data before you come in.", "seconds": 3.4}
+        {"type": "text", "label": "BONUS", "text": "Selling it somewhere else? We'll *erase your data* first", "sub": "Back up your data before you come in.", "seconds": 3.4}
       ]
     },
     {
