@@ -31,17 +31,18 @@ PAD = 50
 page = Image.new('RGB', (W, H), WHITE)
 
 # ── Card (the sign itself) ────────────────────────────────────────────────────
-BANNER_H, HDR_H, PHONE_H, LABEL_H = 170, 330, 790, 95
-DEVICE_H, RSB_H, NUM_H = 250, 215, 255
-FOOT_H = CH - (BANNER_H + HDR_H + PHONE_H + LABEL_H + DEVICE_H + RSB_H + NUM_H)
-assert FOOT_H >= 420, FOOT_H
+SYM = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+BANNER_H, HDR_H, PHONE_H, LABEL_H = 190, 300, 560, 85
+PROMISE_H, SVC_H, NUM_H = 250, 470, 230
+FOOT_H = CH - (BANNER_H + HDR_H + PHONE_H + LABEL_H + PROMISE_H + SVC_H + NUM_H)
+assert FOOT_H >= 400, FOOT_H
 
 card = Image.new('RGB', (CW, CH), BG)
 y_ph = BANNER_H + HDR_H
 glow = Image.new('RGB', (CW, CH), BG)
 gd = ImageDraw.Draw(glow)
-gd.ellipse([0, y_ph + 60, CW // 2, y_ph + PHONE_H], fill='#2a0f00')
-gd.ellipse([CW // 2, y_ph + 60, CW, y_ph + PHONE_H], fill='#001a2e')
+gd.ellipse([0, y_ph + 40, CW // 2, y_ph + PHONE_H], fill='#2a0f00')
+gd.ellipse([CW // 2, y_ph + 40, CW, y_ph + PHONE_H], fill='#001a2e')
 card = Image.blend(card, glow.filter(ImageFilter.GaussianBlur(110)), 0.85)
 d = ImageDraw.Draw(card)
 
@@ -55,22 +56,23 @@ def fit(text, max_w, size, font=BOLD):
     return ImageFont.truetype(font, size)
 
 
-def center(text, y, f, fill, draw=None):
-    (draw or d).text((CW // 2, y), text, font=f, fill=fill, anchor='mm')
+def center(text, y, f, fill, cx=None):
+    d.text((CW // 2 if cx is None else cx, y), text, font=f, fill=fill, anchor='mm')
 
 
+# 1. Hook banner — speaks to the person walking past with a problem
 y = 0
-# Banner
 d.rectangle([0, 0, CW, BANNER_H], fill=ORANGE)
-center('CELL PHONE REPAIR', BANNER_H // 2, fit('CELL PHONE REPAIR', CW - 2 * PAD, 160), WHITE)
+hook = 'CRACKED SCREEN?  DEAD BATTERY?  WE FIX IT!'
+center(hook, BANNER_H // 2, fit(hook, CW - 2 * PAD, 130), WHITE)
 y = BANNER_H
 
-# Header: logo + PHONE ELECTRIK, tagline
+# 2. Brand
 logo = Image.open(os.path.join(OUT, 'assets', 'logo_pe_cropped.png')).convert('RGB')
-LOGO_H = 200
+LOGO_H = 190
 logo = logo.resize((int(logo.width * LOGO_H / logo.height), LOGO_H), Image.LANCZOS)
-row_cy = y + 125
-fb = fit('PHONE ELECTRIK', CW - 2 * PAD - logo.width - 60, 210)
+row_cy = y + 115
+fb = fit('PHONE ELECTRIK', CW - 2 * PAD - logo.width - 60, 200)
 name_w = d.textlength('PHONE ELECTRIK', font=fb)
 x0 = (CW - (logo.width + 60 + name_w)) // 2
 card.paste(logo, (int(x0), row_cy - LOGO_H // 2))
@@ -78,12 +80,12 @@ tx = x0 + logo.width + 60
 d.text((tx, row_cy), 'PHONE ', font=fb, fill=WHITE, anchor='lm')
 d.text((tx + d.textlength('PHONE ', font=fb), row_cy), 'ELECTRIK', font=fb, fill=ORANGE, anchor='lm')
 tag = 'Cell Phones  ·  iPads  ·  MacBooks  ·  Laptops  ·  Computers  ·  Game Consoles  ·  Apple Watches'
-center(tag, y + HDR_H - 50, fit(tag, CW - 2 * PAD, 64), ORANGE)
+center(tag, y + HDR_H - 45, fit(tag, CW - 2 * PAD, 62), ORANGE)
 y += HDR_H
 
 
-# Phones
-def rounded(img, r=60):
+# 3. Phones (smaller than the stand sign — the words do the selling here)
+def rounded(img, r=50):
     img = img.convert('RGBA')
     m = Image.new('L', img.size, 0)
     ImageDraw.Draw(m).rounded_rectangle([0, 0, img.width - 1, img.height - 1], r, fill=255)
@@ -98,61 +100,79 @@ for i, fn in enumerate(['IMG_0096.jpeg', 'IMG_0097.jpeg']):
     sx = i * CW // 2 + (CW // 2 - im.width) // 2
     card.paste(im, (sx, y + PHONE_H - im.height), im)
 y += PHONE_H
-fl = ImageFont.truetype(BOLD, 66)
-d.text((CW // 4, y + LABEL_H // 2), 'iPhone 17 Pro Max', font=fl, fill=ORANGE, anchor='mm')
-d.text((3 * CW // 4, y + LABEL_H // 2), 'Samsung Galaxy S26', font=fl, fill=WHITE, anchor='mm')
+fl = ImageFont.truetype(BOLD, 60)
+center('iPhone 17 Pro Max', y + LABEL_H // 2, fl, ORANGE, CW // 4)
+center('Samsung Galaxy S26', y + LABEL_H // 2, fl, WHITE, 3 * CW // 4)
 y += LABEL_H
 
-# Device strip
-d.rectangle([0, y, CW, y + DEVICE_H], fill='#181818')
+# 4. Promise strip — the reason to walk in today
+d.rectangle([0, y, CW, y + PROMISE_H], fill='#181818')
 d.rectangle([0, y, CW, y + 5], fill=ORANGE)
-l1 = 'We Fix Any Device — Any Brand, Any Model'
-l2 = 'Apple  ·  Samsung  ·  Motorola  ·  LG  ·  OnePlus  ·  Google Pixel  ·  & More'
-l3 = 'Bring it in — We are happy to help!'
-center(l1, y + 62, fit(l1, CW - 80, 78), ORANGE)
-center(l2, y + 135, fit(l2, CW - 80, 62), WHITE)
-center(l3, y + 200, fit(l3, CW - 80, 60), WHITE)
-y += DEVICE_H
+p1 = 'Most Repairs Done While You Wait  ·  90-Day Warranty'
+p2 = 'Any Brand, Any Model: Apple · Samsung · Motorola · LG · OnePlus · Google Pixel & More'
+p3 = 'Walk in, no appointment needed. We are happy to help!'
+center(p1, y + 70, fit(p1, CW - 80, 84), ORANGE)
+center(p2, y + 145, fit(p2, CW - 80, 56), WHITE)
+center(p3, y + 208, fit(p3, CW - 80, 54), WHITE)
+y += PROMISE_H
 
-# REPAIR · SELL · BUY
-d.rectangle([0, y, CW, y + RSB_H], fill=WHITE)
-d.rectangle([0, y, CW, y + 8], fill=BLACK)
-d.rectangle([0, y + RSB_H - 8, CW, y + RSB_H], fill=BLACK)
-parts = [('REPAIR', ORANGE), ('  ·  ', '#333'), ('SELL', BLACK), ('  ·  ', '#333'), ('BUY', BLACK)]
-full = ''.join(t for t, _ in parts)
-fr = fit(full, CW - 120, 180)
-x = (CW - d.textlength(full, font=fr)) / 2
-for t, c in parts:
-    d.text((x, y + RSB_H // 2), t, font=fr, fill=c, anchor='lm')
-    x += d.textlength(t, font=fr)
-y += RSB_H
+# 5. Two clear money lanes: we REPAIR / we BUY & SELL
+d.rectangle([0, y, CW, y + SVC_H], fill=WHITE)
+half = CW // 2
+d.rectangle([half - 3, y + 40, half + 3, y + SVC_H - 40], fill='#DDDDDD')
+colw = half - 2 * PAD
 
-# Phone number
+
+def column(cx, title, tcol, lines):
+    center(title, y + 75, fit(title, colw, 120), tcol, cx)
+    fsz = min(fit(t, colw, 54).size for t in lines)
+    f = ImageFont.truetype(BOLD, fsz)
+    for k, t in enumerate(lines):
+        center(t, y + 175 + k * 72, f, BLACK, cx)
+
+
+column(half // 2, 'WE REPAIR', ORANGE, [
+    'Screens  ·  Batteries',
+    'Charging Ports  ·  Cameras',
+    'Back Glass  ·  Liquid Damage',
+    'Data Transfer & Recovery',
+])
+column(half + half // 2, 'WE BUY & SELL', BLACK, [
+    'Selling your phone or tablet?',
+    'Walk in, we\'ll take a look.',
+    'Refurbished iPhone · iPad',
+    'Samsung · MacBook',
+])
+y += SVC_H
+
+# 6. Phone number
 d.rectangle([0, y, CW, y + NUM_H], fill=ORANGE)
-center('(323) 348-6756', y + NUM_H // 2, fit('(323) 348-6756', CW - 120, 220), WHITE)
+center('CALL / TEXT  (323) 348-6756', y + NUM_H // 2, fit('CALL / TEXT  (323) 348-6756', CW - 120, 190), WHITE)
 y += NUM_H
 
-# Footer: info left, QR right
+# 7. Footer: where we are + ask for support, QR on the right
 d.rectangle([0, y, CW, CH], fill='#141414')
-QR = FOOT_H - 70
+QR = FOOT_H - 110
 q = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, border=2, box_size=20)
 q.add_data('https://phoneelectrik.com/links')
 q.make(fit=True)
 qimg = q.make_image(fill_color='black', back_color='white').convert('RGB').resize((QR, QR), Image.NEAREST)
 qx = CW - PAD - QR
-card.paste(qimg, (qx, y + 35))
+card.paste(qimg, (qx, y + 30))
+center('SCAN ME', y + 30 + QR + 40, ImageFont.truetype(BOLD, 50), ORANGE, qx + QR // 2)
 left_w = qx - 2 * PAD
 lines = [
-    ('90-DAY WARRANTY ON EVERY REPAIR', ORANGE),
-    ('WALK-IN  ·  NO APPOINTMENT NEEDED', WHITE),
-    ('MON–SAT 9AM–8PM  ·  SUN 10AM–6PM', WHITE),
     ('3025 Artesia Blvd STE 101, Torrance, CA 90504', WHITE),
-    ('SCAN QR:  call · directions · reviews · follow us', ORANGE),
+    ('MON–SAT 9AM–8PM  ·  SUN 10AM–6PM', WHITE),
+    ('Support your local Torrance repair shop!', ORANGE),
+    ('Happy customer? Scan & leave us a review', ORANGE),
+    ('Scan for directions · reviews · Instagram · TikTok', WHITE),
 ]
-ff = fit(max((t for t, _ in lines), key=lambda t: d.textlength(t, font=ImageFont.truetype(BOLD, 60))), left_w, 70)
-step = (FOOT_H - 60) / len(lines)
+fsz = min(fit(t, left_w, 70).size for t, _ in lines)
+ff = ImageFont.truetype(BOLD, fsz)
+step = (FOOT_H - 50) / len(lines)
 for i, (t, c) in enumerate(lines):
-    d.text((PAD, y + 30 + step * (i + 0.5)), t, font=ff, fill=c, anchor='lm')
+    d.text((PAD, y + 25 + step * (i + 0.5)), t, font=ff, fill=c, anchor='lm')
 
 # Paste card with rounded corners
 mask = Image.new('L', (CW, CH), 0)
@@ -189,7 +209,7 @@ for i in range(N):
     td = ImageDraw.Draw(tab)
     td.text((tab.width // 2, 50), 'PHONE ELECTRIK', font=ImageFont.truetype(BOLD, 44), fill=ORANGE, anchor='mm')
     td.text((tab.width // 2, 125), '(323) 348-6756', font=ImageFont.truetype(BOLD, 62), fill=BLACK, anchor='mm')
-    td.text((tab.width // 2, 200), 'Repair · Sell · Buy', font=ImageFont.truetype(REG, 38), fill='#333', anchor='mm')
+    td.text((tab.width // 2, 200), '3025 Artesia Blvd', font=ImageFont.truetype(REG, 38), fill='#333', anchor='mm')
     tab = tab.rotate(90, expand=True)
     page.paste(tab, (int(M + i * tw + 12), ty + 15))
 
