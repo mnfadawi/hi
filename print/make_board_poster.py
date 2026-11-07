@@ -194,20 +194,28 @@ draw.text((W//2, ORANGE_Y + ORANGE_H//2), '(323) 348-6756',
 draw.rectangle([0, FOOTER_Y, W, H], fill='#141414')
 draw.rectangle([0, FOOTER_Y, W, FOOTER_Y+12], fill=ORANGE)
 
-QR = FOOTER_H - 150
+URL_H = 90
+QR = FOOTER_H - 12 - URL_H - 70
 q = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, border=2, box_size=20)
 q.add_data('https://phoneelectrik.com/links')
 q.make(fit=True)
 qimg = q.make_image(fill_color='black', back_color='white').convert('RGB').resize((QR, QR), Image.NEAREST)
-qx = W - PAD - QR
-canvas.paste(qimg, (qx, FOOTER_Y + 12 + (FOOTER_H - 12 - QR) // 2))
+fnt_url = ImageFont.truetype(BOLD, 54)
+url_txt = 'phoneelectrik.com/links'
+url_w = draw.textlength(url_txt, font=fnt_url)
+col_w = max(QR, url_w)
+col_cx = W - PAD - col_w // 2
+qy = FOOTER_Y + 12 + 35
+canvas.paste(qimg, (int(col_cx - QR // 2), qy))
+draw.text((col_cx, qy + QR + URL_H // 2 + 5), url_txt, font=fnt_url, fill=WHITE, anchor='mm')
+qx = int(W - PAD - col_w)
 TXT_W = qx - PAD * 2
 
 footer_lines = [
     ('WALK-IN  ·  NO APPOINTMENT NEEDED',                ORANGE),
     ('MON–SAT  9AM–8PM  ·  SUN  10AM–6PM',               WHITE),
     ('3025 Artesia Blvd STE 101, Torrance, CA 90504',    WHITE),
-    ('SCAN THE QR FOR DIRECTIONS & REVIEWS',             ORANGE),
+    ('SCAN: WEBSITE · SOCIAL MEDIA · DIRECTIONS',        ORANGE),
 ]
 fnt_footer = ImageFont.truetype(BOLD, min(fit_font(t, TXT_W, 100)[0].size for t, _ in footer_lines))
 footer_bbs = [draw.textbbox((0,0), t, font=fnt_footer) for t, _ in footer_lines]
