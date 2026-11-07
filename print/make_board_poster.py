@@ -29,11 +29,11 @@ def natural_h(path):
     return int(ih * SLOT_W / iw)
 
 # Cap phone height so lower sections get enough room
-PHONE_H  = min(natural_h(p1), natural_h(p2), 1000)
+PHONE_H  = min(natural_h(p1), natural_h(p2), 860)
 
 HDR_H    = 580
 LABEL_H  = 120
-DEVICE_H = 310
+DEVICE_H = 450
 WHITE_H  = 300
 ORANGE_H = 360
 FOOTER_H = H - HDR_H - PHONE_H - LABEL_H - DEVICE_H - WHITE_H - ORANGE_H
@@ -103,7 +103,7 @@ draw.text((logo_r + (bb_p[2]-bb_p[0]) + (bb_sp[2]-bb_sp[0]), content_cy), 'ELECT
 
 # Tagline
 TAG_Y   = CONTENT_BOT + (TAG_RESERVE - 80) // 2
-tag_txt = 'Cell Phones  ·  iPads  ·  MacBooks  ·  Laptops  ·  Computers  ·  Game Consoles  ·  Apple Watches'
+tag_txt = 'Cell Phones  ·  iPads & Tablets  ·  MacBooks  ·  Laptops & PCs  ·  Game Consoles  ·  Apple Watches'
 fnt_tag, bb_tag = fit_font(tag_txt, W - PAD * 2, 80)
 draw.text(((W - (bb_tag[2]-bb_tag[0])) // 2, TAG_Y), tag_txt, font=fnt_tag, fill=ORANGE)
 
@@ -143,26 +143,25 @@ draw.text((SLOT_W+GAP + SLOT_W//2 - (bb2[2]-bb2[0])//2, LBL_Y), lbl2, font=fnt_l
 draw.rectangle([0, DEVICE_Y, W, DEVICE_Y+DEVICE_H], fill='#181818')
 draw.rectangle([0, DEVICE_Y, W, DEVICE_Y+5], fill=ORANGE)
 
-dev_line1 = 'Most Repairs Done While You Wait  ·  90-Day Warranty'
-dev_line2 = 'Any Brand, Any Model: Apple · Samsung · Motorola · LG · OnePlus · Google Pixel & More'
-dev_line3 = 'Bring it in — We are happy to help!'
-
-fnt_d1, bb_d1 = fit_font(dev_line1, W - 80, 84)
-fnt_d2, bb_d2 = fit_font(dev_line2, W - 80, 72)
-fnt_d3, bb_d3 = fit_font(dev_line3, W - 80, 68)
-
-gap12 = 18
-gap23 = 14
-total_dev_h = ((bb_d1[3]-bb_d1[1]) + gap12 +
-               (bb_d2[3]-bb_d2[1]) + gap23 +
-               (bb_d3[3]-bb_d3[1]))
+dev_lines = [
+    ('Most Repairs Done While You Wait  ·  90-Day Parts Warranty', ORANGE, 86),
+    ('Screens · Batteries · Charging Ports · Back Glass · Cameras', WHITE, 74),
+    ('Liquid Damage · Data Transfer · Unlocking · Virus Removal · Diagnostics', WHITE, 74),
+    ('Any Brand, Any Model: iPhone · Samsung · Google Pixel · Motorola · LG · OnePlus · TCL · Nokia', ORANGE, 62),
+]
+dfonts = [fit_font(t, W - 100, sz) for t, _, sz in dev_lines]
+# lines 2 and 3 share one size so they look like one list
+same = min(dfonts[1][0].size, dfonts[2][0].size)
+for k in (1, 2):
+    f = ImageFont.truetype(BOLD, same)
+    dfonts[k] = (f, draw.textbbox((0, 0), dev_lines[k][0], font=f))
+gaps = [26, 14, 26]
+hs = [bb[3] - bb[1] for _, bb in dfonts]
+total_dev_h = sum(hs) + sum(gaps)
 dy = DEVICE_Y + 5 + (DEVICE_H - 5 - total_dev_h) // 2
-
-draw.text(((W-(bb_d1[2]-bb_d1[0]))//2, dy), dev_line1, font=fnt_d1, fill=ORANGE)
-dy += (bb_d1[3]-bb_d1[1]) + gap12
-draw.text(((W-(bb_d2[2]-bb_d2[0]))//2, dy), dev_line2, font=fnt_d2, fill=WHITE)
-dy += (bb_d2[3]-bb_d2[1]) + gap23
-draw.text(((W-(bb_d3[2]-bb_d3[0]))//2, dy), dev_line3, font=fnt_d3, fill=WHITE)
+for k, ((t, c, _), (f, bb)) in enumerate(zip(dev_lines, dfonts)):
+    draw.text(((W - (bb[2] - bb[0])) // 2, dy - bb[1]), t, font=f, fill=c)
+    dy += hs[k] + (gaps[k] if k < len(gaps) else 0)
 
 # ── White band: BUY · SELL · REPAIR ──────────────────────────────────────────
 draw.rectangle([0, WHITE_Y, W, WHITE_Y+WHITE_H], fill=WHITE)
