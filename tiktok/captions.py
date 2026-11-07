@@ -25,6 +25,21 @@ out = ["# Captions for every video",
        ""]
 for v in [full] + data["videos"]:
     tags = " ".join(dict.fromkeys(f"{v['tags']} {LOCAL}".split()))  # no repeats
+    # a plain-text caption file next to each video, with the same name: 01-water-damage.mp4 -> 01-water-damage.txt
+    line = "-" * 40
+    open(os.path.join(HERE, "out", v["id"] + ".txt"), "w").write("\n".join([
+        f"VIDEO: {v['id']}.mp4", f"TOPIC: {v['title']}", "",
+        line, "TIKTOK (caption)", line,
+        f"{v['caption']} Walk in today, no appointment needed. 📍 Torrance", "", tags, "",
+        line, "INSTAGRAM REELS (caption)", line,
+        v["caption"], "", *SHOP, "", tags, "",
+        line, "FACEBOOK REELS (description)", line,
+        v["caption"], "", "Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.",
+        "📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed",
+        "🛡️ 90-day warranty on every repair", "", "#phonerepair #torrance #southbay", "",
+        line, "YOUTUBE SHORTS", line,
+        "TITLE:", f"{v['title']} #shorts", "", "DESCRIPTION:",
+        v["caption"], "", *SHOP, "🌐 phoneelectrik.com", "", tags + " #shorts", ""]))
     out += [f"## {v['id']}.mp4: {v['title']}", "",
             "**TikTok**", "```", f"{v['caption']} Walk in today, no appointment needed. 📍 Torrance", "", tags, "```",
             "**Instagram Reels**", "```", v["caption"], "", *SHOP, "", tags, "```",
