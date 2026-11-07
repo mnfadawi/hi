@@ -31,10 +31,16 @@ def ease_out(t):
 
 
 def parse(text):
-    """'Your *battery* is dying' -> [('Your', False), ('battery', True), ...]"""
-    words = []
+    """'Your *battery is* dying' -> [('Your', False), ('battery', True), ('is', True), ('dying', False)]"""
+    words, inside = [], False
     for raw in text.split():
-        hl = raw.startswith("*") or raw.endswith("*") or raw.endswith("*,") or raw.endswith("*.")
+        starts = raw.startswith("*")
+        hl = inside or starts
+        if starts:
+            inside = True
+        if raw.rstrip(".,?!:").endswith("*"):
+            inside = False
+            hl = True
         words.append((raw.replace("*", ""), hl))
     return words
 
