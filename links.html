@@ -443,53 +443,43 @@
     .soc-ig { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
     .soc-tt { background: #111; border: 2px solid #25f4ee; color: #25f4ee; }
     .soc-yt { background: #111; border: 2px solid #ff0000; color: #ff4444; }
-    .welcome {
-      width: 100%; text-align: center; background: linear-gradient(135deg, rgba(242,101,34,.18), rgba(242,101,34,.06));
-      border: 1px solid rgba(242,101,34,.45); border-radius: 18px; padding: 14px 16px; margin-bottom: 20px;
-    }
-    .welcome-hi { font-size: 1.15rem; font-weight: 800; color: #fff; }
-    .welcome-how { font-size: .9rem; color: rgba(255,255,255,.85); margin-top: 4px; line-height: 1.45; }
-    .welcome-how strong { color: #F26522; }
-    .welcome-steps { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
-    .welcome-steps span { font-size: .72rem; font-weight: 800; color: #fff; background: #F26522; border-radius: 999px; padding: 4px 10px; }
-    .section-label b { color: #F26522; font-weight: 800; }
-    .section-label { text-transform: none; letter-spacing: .02em; font-size: .92rem; color: #fff; }
-    .step-note { width: 100%; font-size: .8rem; color: rgba(255,255,255,.6); margin: -4px 0 10px 32px; }
-    .tap-pill {
-      align-self: flex-start; margin-top: 7px; font-size: .66rem; font-weight: 800; letter-spacing: .1em;
-      color: #fff; background: #F26522; border-radius: 999px; padding: 4px 9px;
-    }
-    .btn-call { animation: pulse 2s ease-in-out infinite; }
-    @keyframes pulse { 0%,100% { box-shadow: 0 4px 20px rgba(242,101,34,.4); } 50% { box-shadow: 0 4px 34px rgba(242,101,34,.85), 0 0 0 4px rgba(242,101,34,.25); } }
-    .guide-bar {
-      position: fixed; left: 12px; right: 12px; bottom: 14px; max-width: 456px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      background: #F26522; color: #fff; border: 2px solid rgba(255,255,255,.85); border-radius: 16px;
-      padding: 14px 16px; font-family: inherit; font-size: 1rem; font-weight: 800;
-      box-shadow: 0 10px 30px rgba(0,0,0,.6); cursor: pointer; z-index: 50; transition: opacity .3s, transform .3s;
-    }
-    .guide-arrow { display: inline-block; animation: bob 1.2s ease-in-out infinite; }
-    .guide-bar.hide { opacity: 0; transform: translateY(20px); pointer-events: none; }
-    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
     .page { padding-bottom: 110px; }
-    .scroll-rail {
-      position: fixed; right: 4px; top: 16vh; height: 64vh; width: 26px; z-index: 60;
-      display: flex; justify-content: center; touch-action: none; cursor: pointer;
+    /* slim always-visible scroll bar */
+    .scroll-rail { position: fixed; right: 0; top: 8vh; height: 84vh; width: 18px; z-index: 60; touch-action: none; cursor: pointer; }
+    .scroll-rail::before { content: ''; position: absolute; top: 0; bottom: 0; right: 5px; width: 4px; border-radius: 4px; background: rgba(255,255,255,.14); }
+    .scroll-thumb { position: absolute; right: 3px; width: 8px; min-height: 48px; border-radius: 8px; background: #F26522; box-shadow: 0 0 10px rgba(242,101,34,.6); }
+    .scroll-rail.dragging .scroll-thumb { width: 10px; right: 2px; background: #ff7a3a; }
+    .page { padding-bottom: 40px; padding-right: 26px; }
+    /* info carousel */
+    .info { width: 100%; margin-bottom: 26px; }
+    .info-head { display: flex; justify-content: center; margin-bottom: 10px; }
+    .swipe-hint { font-size: .85rem; font-weight: 800; color: #fff; background: rgba(242,101,34,.2); border: 1px solid rgba(242,101,34,.55); border-radius: 999px; padding: 6px 14px; animation: nudge 1.6s ease-in-out infinite; }
+    .swipe-hint.seen { animation: none; opacity: .7; }
+    @keyframes nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
+    .slider-wrap { position: relative; }
+    .slider { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 2px 2px 4px; }
+    .slider::-webkit-scrollbar { display: none; }
+    .slide {
+      position: relative; flex: 0 0 86%; scroll-snap-align: start; min-height: 330px;
+      background: linear-gradient(160deg, #1d1d1d, #141414); border: 1.5px solid rgba(242,101,34,.5);
+      border-radius: 20px; padding: 20px 18px 18px; text-align: center;
     }
-    .scroll-rail::before {
-      content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; margin-left: -2px;
-      border-radius: 4px; background: rgba(242,101,34,.35);
-    }
-    .scroll-thumb {
-      position: absolute; left: 0; width: 26px; min-height: 64px; border-radius: 14px;
-      background: #F26522; border: 2px solid #fff; box-shadow: 0 4px 14px rgba(0,0,0,.6);
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
-      color: #fff; touch-action: none;
-    }
-    .scroll-thumb span { writing-mode: vertical-rl; font-size: .55rem; font-weight: 800; letter-spacing: .12em; }
-    .scroll-thumb b { font-size: .9rem; line-height: .8; animation: bob 1.2s ease-in-out infinite; }
-    .scroll-rail.dragging .scroll-thumb { background: #ff7a3a; }
-    .page { padding-right: 34px; }
+    .slide-count { position: absolute; top: 12px; right: 14px; font-size: .72rem; font-weight: 800; color: #fff; background: rgba(0,0,0,.55); border-radius: 999px; padding: 3px 9px; }
+    .slide-icon { font-size: 2rem; line-height: 1; }
+    .slide-title { font-size: 1.15rem; font-weight: 800; color: #F26522; margin: 8px 0 14px; }
+    .facts { list-style: none; text-align: left; display: flex; flex-direction: column; gap: 10px; }
+    .facts li { font-size: .92rem; color: rgba(255,255,255,.88); line-height: 1.4; padding-left: 22px; position: relative; }
+    .facts li::before { content: '✓'; position: absolute; left: 0; color: #F26522; font-weight: 800; }
+    .facts b { color: #fff; }
+    .card-note { margin-top: 12px; font-size: .8rem; color: rgba(255,255,255,.6); line-height: 1.5; }
+    .slide-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; border: none; background: #F26522; color: #fff; font-size: 1.4rem; font-weight: 800; line-height: 1; cursor: pointer; z-index: 2; box-shadow: 0 4px 12px rgba(0,0,0,.6); }
+    .slide-nav.prev { left: -8px; } .slide-nav.next { right: -8px; }
+    .slide-nav.off { opacity: 0; pointer-events: none; }
+    .dots { display: flex; justify-content: center; gap: 7px; margin-top: 12px; }
+    .dots button { width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; background: rgba(255,255,255,.3); cursor: pointer; transition: all .2s; }
+    .dots button.on { width: 22px; border-radius: 6px; background: #F26522; }
+    .section-label { text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; color: rgba(255,255,255,.7); }
+
 
   </style>
 </head>
@@ -505,15 +495,95 @@
     <span class="connect-label">Most repairs done while you wait</span>
   </div>
 
-  <!-- WELCOME: tells people what to do -->
-  <div class="welcome">
-    <div class="welcome-hi">👋 Thanks for scanning!</div>
-    <div class="welcome-how">Just <strong>tap a button</strong> below &mdash; <strong>3 quick steps</strong>, keep scrolling to see them all.</div>
-    <div class="welcome-steps"><span>1 Call or Visit</span><span>2 Review &amp; Share</span><span>3 Save &amp; Follow</span></div>
-  </div>
+  <!-- INFO CAROUSEL: swipe left/right like an Instagram post -->
+  <section class="info" aria-label="About Phone ElectriK">
+    <div class="info-head"><span class="swipe-hint">👉 Swipe to see more</span></div>
+    <div class="slider-wrap">
+      <button type="button" class="slide-nav prev" aria-label="Previous">‹</button>
+      <div class="slider" id="slider">
+      <article class="slide" aria-label="1 of 5">
+        <div class="slide-count">1 / 5</div>
+        <div class="slide-icon">⚡</div>
+        <h3 class="slide-title">Why Phone ElectriK</h3>
+        <ul class="facts">
+          <li><b>Most repairs done while you wait</b></li>
+          <li><b>90-day warranty</b> on every part we replace</li>
+          <li><b>Walk in</b> &mdash; no appointment needed</li>
+          <li><b>Any brand, any model</b> &mdash; bring it in</li>
+          <li><b>Not sure what&rsquo;s wrong?</b> We find out &mdash; you decide</li>
+        </ul>
+      </article>
+      <article class="slide" aria-label="2 of 5">
+        <div class="slide-count">2 / 5</div>
+        <div class="slide-icon">🔧</div>
+        <h3 class="slide-title">Repairs We Do</h3>
+        <div class="chips">
+          <span class="chip">Screen Repair</span>
+          <span class="chip">Battery Replacement</span>
+          <span class="chip">Charging Ports</span>
+          <span class="chip">Back Glass</span>
+          <span class="chip">Camera Lens</span>
+          <span class="chip">Liquid Damage</span>
+          <span class="chip">Diagnostics</span>
+          <span class="chip">Data Transfer</span>
+          <span class="chip">Data Recovery</span>
+          <span class="chip">Unlocking</span>
+          <span class="chip">Factory Reset</span>
+          <span class="chip">Virus &amp; Malware Removal</span>
+          <span class="chip">Special Orders</span>
+        </div>
+      </article>
+      <article class="slide" aria-label="3 of 5">
+        <div class="slide-count">3 / 5</div>
+        <div class="slide-icon">📱</div>
+        <h3 class="slide-title">Devices We Fix</h3>
+        <div class="chips">
+          <span class="chip">iPhone</span>
+          <span class="chip">Samsung (S, A, Note, Z Fold, Z Flip)</span>
+          <span class="chip">Google Pixel</span>
+          <span class="chip">Motorola</span>
+          <span class="chip">LG</span>
+          <span class="chip">OnePlus</span>
+          <span class="chip">TCL</span>
+          <span class="chip">Nokia</span>
+          <span class="chip">iPad &amp; Tablets</span>
+          <span class="chip">MacBook</span>
+          <span class="chip">Windows Laptops &amp; PCs</span>
+          <span class="chip">PlayStation, Xbox &amp; Switch 2</span>
+          <span class="chip">Apple Watch</span>
+        </div>
+        <p class="card-note">Don&rsquo;t see yours? We fix any device &mdash; bring it in!</p>
+      </article>
+      <article class="slide" aria-label="4 of 5">
+        <div class="slide-count">4 / 5</div>
+        <div class="slide-icon">💰</div>
+        <h3 class="slide-title">We Buy &amp; Sell</h3>
+        <div class="chips">
+          <span class="chip chip-hot">We Buy Your Devices</span>
+          <span class="chip chip-hot">Refurbished iPhone, iPad, Samsung &amp; MacBook</span>
+          <span class="chip chip-hot">Cases, Chargers &amp; Accessories</span>
+        </div>
+        <p class="card-note">Selling your phone or tablet? Walk in and we&rsquo;ll take a look. Refurbished stock changes weekly &mdash; ask what we have.</p>
+      </article>
+      <article class="slide" aria-label="5 of 5">
+        <div class="slide-count">5 / 5</div>
+        <div class="slide-icon">🕒</div>
+        <h3 class="slide-title">Hours &amp; Good to Know</h3>
+        <ul class="facts">
+          <li><b>Mon&ndash;Sat</b> 9AM&ndash;8PM &nbsp;&middot;&nbsp; <b>Sun</b> 10AM&ndash;6PM</li>
+          <li>3025 Artesia Blvd STE 101, Torrance, CA 90504</li>
+          <li>Laptops, MacBooks &amp; consoles: parts ordered, usually <b>next day</b> (up to 1 week)</li>
+          <li>Keep your receipt for warranty claims</li>
+        </ul>
+      </article>
+      </div>
+      <button type="button" class="slide-nav next" aria-label="Next">›</button>
+    </div>
+    <div class="dots" id="dots"><button type="button" aria-label="Go to 1"></button><button type="button" aria-label="Go to 2"></button><button type="button" aria-label="Go to 3"></button><button type="button" aria-label="Go to 4"></button><button type="button" aria-label="Go to 5"></button></div>
+  </section>
 
-  <!-- 1. VISIT OR CALL -->
-  <div class="section-label" id="step1"><span>1</span><b>Step 1</b>&nbsp;&middot; Tap to Call or Get Directions</div>
+  <!-- BUTTONS -->
+  <div class="section-label">Call or Visit</div>
   <div class="links">
 
     <!-- Call -->
@@ -538,60 +608,7 @@
 
   </div>
 
-  <!-- 2. WHAT WE DO — folded so the page stays short; tap to open -->
-  <details class="offer" id="what-we-do">
-    <summary>
-      <span class="sum-icon">🔧</span>
-      <span class="sum-text"><span class="sum-title">See Everything We Fix &amp; Sell</span><span class="sum-sub">Phones, tablets, laptops, consoles, watches &amp; more</span><span class="tap-pill">TAP TO SEE FULL LIST</span></span>
-      <span class="sum-chev" aria-hidden="true">⌄</span>
-    </summary>
-    <div class="offer-body">
-    <div class="offer-promise">Most repairs done while you wait<br>90-day warranty on every part we replace</div>
-    <div class="offer-group">Repairs</div>
-    <div class="chips">
-      <span class="chip">Screen Repair</span>
-      <span class="chip">Battery Replacement</span>
-      <span class="chip">Charging Ports</span>
-      <span class="chip">Back Glass</span>
-      <span class="chip">Camera Lens</span>
-      <span class="chip">Liquid Damage</span>
-      <span class="chip">Diagnostics</span>
-      <span class="chip">Data Transfer</span>
-      <span class="chip">Data Recovery</span>
-      <span class="chip">Unlocking</span>
-      <span class="chip">Factory Reset</span>
-      <span class="chip">Virus &amp; Malware Removal</span>
-      <span class="chip">Special Orders</span>
-    </div>
-    <div class="offer-group">Devices</div>
-    <div class="chips">
-      <span class="chip">iPhone</span>
-      <span class="chip">Samsung (S, A, Note, Z Fold, Z Flip)</span>
-      <span class="chip">Google Pixel</span>
-      <span class="chip">Motorola</span>
-      <span class="chip">LG</span>
-      <span class="chip">OnePlus</span>
-      <span class="chip">TCL</span>
-      <span class="chip">Nokia</span>
-      <span class="chip">iPad &amp; Tablets</span>
-      <span class="chip">MacBook</span>
-      <span class="chip">Windows Laptops &amp; PCs</span>
-      <span class="chip">PlayStation, Xbox &amp; Switch 2</span>
-      <span class="chip">Apple Watch</span>
-    </div>
-    <div class="offer-group">Buy &amp; Sell</div>
-    <div class="chips">
-      <span class="chip chip-hot">We Buy Your Devices</span>
-      <span class="chip chip-hot">Refurbished Phones, iPads &amp; MacBooks</span>
-      <span class="chip chip-hot">Cases, Chargers &amp; Accessories</span>
-    </div>
-    <div class="offer-note">Laptops, MacBooks &amp; game consoles: parts are ordered, usually ready the next day (up to 1 week).<br>Don&rsquo;t see your device? We fix any device &mdash; bring it in.<br>Walk in, no appointment needed.</div>
-    </div>
-  </details>
-
-  <!-- 3. HELP US GROW -->
-  <div class="section-label" id="step2"><span>2</span><b>Step 2</b>&nbsp;&middot; Tap to Leave a Review or Share</div>
-  <div class="step-note">It takes 30 seconds and really helps our small shop &mdash; thank you! ❤️</div>
+  <div class="section-label">Help Us Grow &mdash; It Means a Lot!</div>
   <div class="links">
 
     <!-- Google review -->
@@ -625,8 +642,7 @@
 
   </div>
 
-  <!-- 4. SAVE & FOLLOW -->
-  <div class="section-label" id="step3"><span>3</span><b>Step 3</b>&nbsp;&middot; Tap to Save Our Card or Follow Us</div>
+  <div class="section-label">Save Us &amp; Follow Us</div>
   <div class="links">
 
     <!-- Digital business card -->
@@ -682,12 +698,8 @@
 </div><!-- /page -->
 
 
-<!-- Visible scroll line: shows there is more, drag the handle to scroll -->
-<div class="scroll-rail" id="scrollRail" aria-hidden="true">
-  <div class="scroll-thumb" id="scrollThumb"><span>SCROLL</span><b>⌄</b></div>
-</div>
-
-<button type="button" class="guide-bar" id="guideBar" aria-label="Scroll down to the next step"><span class="guide-arrow">👇</span> <span id="guideText">Scroll down &middot; 2 more steps below</span></button>
+<!-- Slim scroll bar on the right: always visible, hold and drag to scroll -->
+<div class="scroll-rail" id="scrollRail" aria-hidden="true"><div class="scroll-thumb" id="scrollThumb"></div></div>
 
 <script>
   (function () {
@@ -705,29 +717,7 @@
       else { prompt('Copy this link:', data.url); }
     }
     document.querySelectorAll('[data-share]').forEach(function (b) { b.addEventListener('click', share); });
-    // Guide bar: tells people there is more and walks them to the next step
-    var bar = document.getElementById('guideBar'), txt = document.getElementById('guideText');
-    var s2 = document.getElementById('step2'), s3 = document.getElementById('step3');
-    function nextTarget() {
-      var vh = window.innerHeight;
-      if (s2.getBoundingClientRect().top > vh * 0.75) return s2;
-      if (s3.getBoundingClientRect().top > vh * 0.75) return s3;
-      return null;
-    }
-    function updateBar() {
-      var t = nextTarget();
-      var atEnd = window.innerHeight + window.scrollY >= document.body.scrollHeight - 40;
-      if (!t || atEnd) { bar.classList.add('hide'); return; }
-      bar.classList.remove('hide');
-      txt.innerHTML = t === s2 ? 'Scroll down &middot; 2 more steps below' : 'Keep going &middot; 1 more step below';
-    }
-    window.addEventListener('scroll', updateBar, { passive: true });
-    window.addEventListener('resize', updateBar);
-    bar.addEventListener('click', function () {
-      var t = nextTarget();
-      if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 16, behavior: 'smooth' });
-    });
-    updateBar();
+
     // Scroll line: thumb follows the page; drag it (or tap the line) to scroll
     var rail = document.getElementById('scrollRail'), thumb = document.getElementById('scrollThumb');
     function maxScroll() { return Math.max(1, document.documentElement.scrollHeight - window.innerHeight); }
@@ -757,8 +747,25 @@
     rail.addEventListener('pointercancel', endDrag);
     window.addEventListener('scroll', layoutThumb, { passive: true });
     window.addEventListener('resize', layoutThumb);
-    document.querySelector('details.offer').addEventListener('toggle', layoutThumb);
     layoutThumb();
+
+    // Carousel: dots, arrows, counter
+    var slider = document.getElementById('slider'), slides = slider.querySelectorAll('.slide');
+    var dots = document.querySelectorAll('#dots button');
+    function current() { return Math.round(slider.scrollLeft / slides[0].offsetWidth); }
+    function go(i) { i = Math.max(0, Math.min(slides.length - 1, i)); slider.scrollTo({ left: slides[i].offsetLeft - slides[0].offsetLeft, behavior: 'smooth' }); }
+    function mark() {
+      var c = current();
+      dots.forEach(function (d, i) { d.classList.toggle('on', i === c); });
+      document.querySelector('.slide-nav.prev').classList.toggle('off', c === 0);
+      document.querySelector('.slide-nav.next').classList.toggle('off', c === slides.length - 1);
+      if (c > 0) document.querySelector('.swipe-hint').classList.add('seen');
+    }
+    slider.addEventListener('scroll', function () { window.requestAnimationFrame(mark); }, { passive: true });
+    dots.forEach(function (d, i) { d.addEventListener('click', function () { go(i); }); });
+    document.querySelector('.slide-nav.prev').addEventListener('click', function () { go(current() - 1); });
+    document.querySelector('.slide-nav.next').addEventListener('click', function () { go(current() + 1); });
+    mark();
   })();
 </script>
 </body>
