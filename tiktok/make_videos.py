@@ -179,6 +179,11 @@ def render_slide(img, slide, t, idx, total, handle):
             draw_lines(img, lines, fnt, sz, cx, y, t - 0.25, color=color, line_gap=1.2)
             y += len(lines) * sz * 1.2 + 34
 
+    if total > 12:  # long video: a progress bar instead of dots
+        x0, x1 = cx - 260, cx + 260
+        d.rounded_rectangle((x0, 294, x1, 306), 6, fill=(70, 70, 70))
+        d.rounded_rectangle((x0, 294, x0 + (x1 - x0) * (idx + min(t / slide["seconds"], 1)) / total, 306), 6, fill=ORANGE)
+        return
     # progress dots along the top
     dots_w = total * 34
     for i in range(total):
