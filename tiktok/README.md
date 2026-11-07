@@ -1,7 +1,7 @@
 # Phone ElectriK social videos
 
 Ready-to-post vertical videos (1080x1920) for TikTok, Instagram Reels, Facebook Reels and YouTube Shorts.
-Every video has an AI voice reading it, and every video ends with the warranty slide and the shop's info.
+Every video has an AI voice reading it, and every video ends with the 90-day warranty, the address and the phone number.
 
 - **Videos:** `out/*.mp4` (the `-cover.jpg` next to each one is the opening screen, to use as the cover)
 - **Captions:** `CAPTIONS.md` (TikTok, Instagram, Facebook and YouTube versions for every video)
@@ -14,25 +14,17 @@ Every video has an AI voice reading it, and every video ends with the warranty s
 5. Post the same video to TikTok, Instagram Reels, Facebook Reels and YouTube Shorts.
    Tip: Instagram can share each Reel to your Facebook page automatically (turn on "Share to Facebook" when posting).
 
-## 3-week posting plan (1–2 a day)
-Strongest videos first, and a mix of repairs, trust and selling.
+## Posting plan: one video a day
+Post them in number order: 01 (posted), 02, 03 … 20. That's 20 days of posts.
+Best times: around 12–2 PM or 6–9 PM. After 2 weeks, check which videos got the most views and make more like those.
 
-| Day | Morning | Evening |
-|---|---|---|
-| 1 | 00 full video | 02 battery signs |
-| 2 | 01 water damage | 07 why us |
-| 3 | 03 cracked screen | 09 we buy phones |
-| 4 | 04 charging port | 08 walk in |
-| 5 | 06 screen signs | 10 refurbished |
-| 6 | 11 diagnostic | 17 game consoles |
-| 7 | 05 more than phones | 20 South Bay |
-| 8 | 14 slow phone | 12 data transfer |
-| 9 | 15 back glass | 19 accessories |
-| 10 | 13 unlocking | 18 Apple Watch |
-| 11 | 16 camera lens | |
-| 12–21 | Repost the 5 that got the most views, then ask for a new batch | |
-
-Best times to post: around 12–2 PM and 6–9 PM.
+What changed in 02–20 (after looking at the real TikTok and Instagram numbers):
+- Shorter: most videos are now 15–25 seconds, so more people watch to the end and see the address.
+- The opening line shows from the very first frame (that frame is also the thumbnail).
+- "TORRANCE · WALK-INS WELCOME" on every screen, so every second is a local ad.
+- One ending screen: 90-day warranty, address, phone and "Walk in today".
+- A slightly faster voice.
+- New captions that ask a question, to get comments.
 
 ## Making more videos
 Write new videos in `videos.json` (wrap a word in `*stars*` to make it orange; add `"say"` to change what the voice reads), then:

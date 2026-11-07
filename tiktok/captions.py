@@ -11,26 +11,21 @@ SHOP = ["📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA",
         "🚶 No appointment needed · 🛡️ 90-day warranty on every repair"]
 LOCAL = "#phoneelectrik #torrance #southbay #phonerepair"
 
-full = {
-    "id": "00-full-video",
-    "title": "4 phone problems you should never ignore",
-    "caption": "4 phone problems you should NEVER ignore 📱🔥 Save this so you have it when you need it.",
-    "tags": "#batterylife #waterdamage #crackedscreen #chargingport",
-}
+TIKTOK_END = "📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome"
 
 out = ["# Captions for every video",
        "",
        "Copy the box for the platform you're posting on. Every caption ends with the shop's info and hashtags.",
        "On TikTok and Instagram, always tag the location **Phone ElectriK, Torrance**.",
        ""]
-for v in [full] + data["videos"]:
+for v in data["videos"]:
     tags = " ".join(dict.fromkeys(f"{v['tags']} {LOCAL}".split()))  # no repeats
     # a plain-text caption file next to each video, with the same name: 01-water-damage.mp4 -> 01-water-damage.txt
     line = "-" * 40
     open(os.path.join(HERE, "out", v["id"] + ".txt"), "w").write("\n".join([
         f"VIDEO: {v['id']}.mp4", f"TOPIC: {v['title']}", "",
         line, "TIKTOK (caption)", line,
-        f"{v['caption']} Walk in today, no appointment needed. 📍 Torrance", "", tags, "",
+        v["caption"], "", TIKTOK_END, "", tags, "",
         line, "INSTAGRAM REELS (caption)", line,
         v["caption"], "", *SHOP, "", tags, "",
         line, "FACEBOOK REELS (description)", line,
@@ -41,7 +36,7 @@ for v in [full] + data["videos"]:
         "TITLE:", f"{v['title']} #shorts", "", "DESCRIPTION:",
         v["caption"], "", *SHOP, "🌐 phoneelectrik.com", "", tags + " #shorts", ""]))
     out += [f"## {v['id']}.mp4: {v['title']}", "",
-            "**TikTok**", "```", f"{v['caption']} Walk in today, no appointment needed. 📍 Torrance", "", tags, "```",
+            "**TikTok**", "```", v["caption"], "", TIKTOK_END, "", tags, "```",
             "**Instagram Reels**", "```", v["caption"], "", *SHOP, "", tags, "```",
             "**Facebook Reels**", "```", v["caption"], "",
             "Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.",
@@ -51,4 +46,4 @@ for v in [full] + data["videos"]:
             "Title:", "```", f"{v['title']} #shorts", "```",
             "Description:", "```", v["caption"], "", *SHOP, "🌐 phoneelectrik.com", "", tags + " #shorts", "```", ""]
 open(os.path.join(HERE, "CAPTIONS.md"), "w").write("\n".join(out))
-print("wrote CAPTIONS.md for", len(data["videos"]) + 1, "videos")
+print("wrote CAPTIONS.md for", len(data["videos"]), "videos")

@@ -79,7 +79,7 @@ def draw_lines(img, lines, fnt, size, cx, top, t, color=WHITE, line_gap=1.12):
     """Draw word-wrapped lines centered on cx, each line sliding up and fading in."""
     space = fnt.getlength(" ")
     for i, ln in enumerate(lines):
-        p = ease_out((t - i * 0.08) / 0.35)
+        p = ease_out((t - i * 0.05) / 0.22)
         if p <= 0:
             continue
         layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
@@ -129,15 +129,18 @@ def render_slide(img, slide, t, idx, total, handle):
     d = ImageDraw.Draw(img)
 
     if kind != "end":
-        paste_scaled(img, MARK, 150, cx, 110)
+        paste_scaled(img, MARK, 130, cx, 100)
+        tf = font("Bold", 34)
+        tag = "TORRANCE  ·  WALK-INS WELCOME"
+        d.text((cx - tf.getlength(tag) / 2, 192), tag, font=tf, fill=MUTED)
 
     if kind == "hook":
         words = parse(slide["text"])
         fnt, lines, size = fit(words, "Black", 150, SAFE_R - SAFE_L, 900)
         block_h = len(lines) * size * 1.12
-        pop = 1 + 0.06 * math.sin(min(t, 1) * math.pi)  # small "punch" as it lands
+        pop = 1 + 0.05 * math.sin(min(t / 0.6, 1) * math.pi)  # small "punch" as it lands
         layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
-        draw_lines(layer, lines, fnt, size, cx, (SAFE_TOP + SAFE_BOTTOM) / 2 - block_h / 2, t * 1.6)
+        draw_lines(layer, lines, fnt, size, cx, (SAFE_TOP + SAFE_BOTTOM) / 2 - block_h / 2, 10)
         if pop != 1:
             big = layer.resize((int(W * pop), int(H * pop)), Image.LANCZOS)
             layer = big.crop(((big.width - W) // 2, (big.height - H) // 2,
@@ -154,7 +157,7 @@ def render_slide(img, slide, t, idx, total, handle):
             block += 50 + len(slines) * ssize * 1.25
         top = max(SAFE_TOP + 80, (SAFE_TOP + 80 + SAFE_BOTTOM) / 2 - block / 2)
         if slide.get("label"):
-            lp = ease_out(t / 0.3)
+            lp = ease_out(t / 0.2)
             lf = font("Black", 64)
             label = slide["label"]
             lw = lf.getlength(label)
@@ -169,39 +172,36 @@ def render_slide(img, slide, t, idx, total, handle):
         draw_lines(img, lines, fnt, size, cx, top, t)
         if slide.get("sub"):
             sub_top = top + len(lines) * size * 1.12 + 50
-            draw_lines(img, slines, sfnt, ssize, cx, sub_top, t - 0.35, color=MUTED, line_gap=1.25)
+            draw_lines(img, slines, sfnt, ssize, cx, sub_top, t - 0.2, color=MUTED, line_gap=1.25)
 
     elif kind == "end":
-        p = ease_out(t / 0.5)
-        h = paste_scaled(img, LOGO, 620, cx, 330, alpha=p)
-        y = 330 + h + 40
+        p = ease_out(t / 0.35)
+        h = paste_scaled(img, LOGO, 520, cx, 300, alpha=p)
+        y = 300 + h + 30
         for text, weight, size, color in [
             (slide.get("text", "Phone ElectriK"), "Black", 84, WHITE),
-            (slide.get("sub", "3025 Artesia Blvd, Torrance"), "SemiBold", 52, MUTED),
-            (slide.get("cta", f"Follow {handle} for more tips"), "ExtraBold", 60, ORANGE),
+            (slide.get("badge", "*90-day warranty*"), "ExtraBold", 60, WHITE),
+            (slide.get("sub", "3025 Artesia Blvd, Torrance"), "SemiBold", 50, MUTED),
+            (slide.get("phone", ""), "SemiBold", 50, MUTED),
+            (slide.get("cta", "Walk in today. We've got you."), "ExtraBold", 62, ORANGE),
         ]:
+            if not text:
+                continue
             words = parse(text)
             fnt, lines, sz = fit(words, weight, size, SAFE_R - SAFE_L, 300)
-            draw_lines(img, lines, fnt, sz, cx, y, t - 0.25, color=color, line_gap=1.2)
-            y += len(lines) * sz * 1.2 + 34
+            draw_lines(img, lines, fnt, sz, cx, y, t - 0.15, color=color, line_gap=1.2)
+            y += len(lines) * sz * 1.2 + 30
 
-    if total > 12:  # long video: a progress bar instead of dots
-        x0, x1 = cx - 260, cx + 260
-        d.rounded_rectangle((x0, 294, x1, 306), 6, fill=(70, 70, 70))
-        d.rounded_rectangle((x0, 294, x0 + (x1 - x0) * (idx + min(t / slide["seconds"], 1)) / total, 306), 6, fill=ORANGE)
-        return
-    # progress dots along the top
-    dots_w = total * 34
-    for i in range(total):
-        x = cx - dots_w / 2 + i * 34 + 17
-        r = 9 if i == idx else 6
-        d.ellipse((x - r, 300 - r, x + r, 300 + r), fill=ORANGE if i <= idx else (70, 70, 70))
+    x0, x1 = cx - 220, cx + 220
+    d.rounded_rectangle((x0, 262, x1, 270), 4, fill=(60, 60, 60))
+    d.rounded_rectangle((x0, 262, x0 + (x1 - x0) * (idx + min(t / slide["seconds"], 1)) / total, 270), 4, fill=ORANGE)
 
 
 # ---------- voiceover ----------
 # Kokoro is a free, natural-sounding AI voice that runs on this computer.
 # Model files go in tiktok/models (see README.md). Voices: af_heart, af_bella, am_michael, am_adam...
 VOICE = os.environ.get("VOICE", "af_heart")
+SPEED = float(os.environ.get("SPEED", "1.15"))
 MODELS = os.path.join(HERE, "models")
 CACHE = os.path.join(HERE, ".voice_cache")
 SR = 24000
@@ -232,14 +232,14 @@ def speak(text, voice):
     import numpy as np
     import soundfile as sf
     os.makedirs(CACHE, exist_ok=True)
-    key = hashlib.sha1(f"{voice}|1.08|{text}".encode()).hexdigest()[:16]
+    key = hashlib.sha1(f"{voice}|{SPEED}|{text}".encode()).hexdigest()[:16]
     path = os.path.join(CACHE, key + ".wav")
     if not os.path.exists(path):
         global _kokoro
         if _kokoro is None:
             from kokoro_onnx import Kokoro
             _kokoro = Kokoro(os.path.join(MODELS, "kokoro-v1.0.int8.onnx"), os.path.join(MODELS, "voices-v1.0.bin"))
-        audio, sr = _kokoro.create(text, voice=voice, speed=1.08, lang="en-us")
+        audio, sr = _kokoro.create(text, voice=voice, speed=SPEED, lang="en-us")
         sf.write(path, audio, sr)
     audio, _ = sf.read(path, dtype="float32")
     return np.asarray(audio)
@@ -252,7 +252,7 @@ def render(video, handle, voice=True):
     path = os.path.join(OUT, video["id"] + ".mp4")
     slides = [dict(s) for s in video["slides"]]
     # each slide lasts at least its written time, longer if the voice needs it
-    lead, tail = 0.15, 0.4
+    lead, tail = 0.1, 0.3
     clips = []
     for s in slides:
         clip = speak(spoken(s), video.get("voice", VOICE)) if voice else np.zeros(0, dtype="float32")
@@ -293,7 +293,7 @@ def render(video, handle, voice=True):
 
 def with_ending(video, data):
     """Every video ends with the same 'why us' slide and the shop's end card."""
-    return {**video, "slides": video["slides"] + [data["why"], data["end"]]}
+    return {**video, "slides": video["slides"] + [data["end"]]}
 
 
 if __name__ == "__main__":
