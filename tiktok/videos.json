@@ -40,12 +40,24 @@
     },
     {
       "id": "02-battery-signs",
-      "caption": "5 signs your battery is on its way out 🔋 Which one is your phone doing? #batterylife #iphonebattery #phonerepair #techtips #torrance",
+      "caption": "Your phone battery could be a fire hazard 🔥🔋 If your phone does ANY of these, come see us at Phone ElectriK in Torrance. We've got you. #batterylife #iphonebattery #phonerepair #firehazard #torrance #southbay",
       "slides": [
         {
           "type": "hook",
-          "text": "5 signs your phone *battery* is dying",
-          "seconds": 2.4
+          "text": "Your phone battery could be a *fire hazard*",
+          "seconds": 2.6
+        },
+        {
+          "type": "text",
+          "label": "WARNING",
+          "text": "An old or swollen battery can *overheat* and catch fire",
+          "sub": "In your pocket. On your bed. While you sleep.",
+          "seconds": 3.4
+        },
+        {
+          "type": "text",
+          "text": "If your phone does *any* of these, replace your battery *now*",
+          "seconds": 2.8
         },
         {
           "type": "text",
@@ -87,9 +99,18 @@
           "seconds": 3.2
         },
         {
+          "type": "text",
+          "label": "DON'T WAIT",
+          "text": "Sound like your phone? Come see us *today*",
+          "sub": "Walk in. We'll check your battery and get you back to a phone that lasts all day.",
+          "seconds": 3.6
+        },
+        {
           "type": "end",
-          "text": "Battery replacement in Torrance",
-          "seconds": 3.0
+          "text": "Torrance's *Phone ElectriK*",
+          "sub": "3025 Artesia Blvd, Torrance",
+          "cta": "Walk in today. We've got you.",
+          "seconds": 3.4
         }
       ]
     },
