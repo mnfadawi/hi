@@ -442,16 +442,35 @@
     .soc-ig { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
     .soc-tt { background: #111; border: 2px solid #25f4ee; color: #25f4ee; }
     .soc-yt { background: #111; border: 2px solid #ff0000; color: #ff4444; }
-    .more-hint {
-      position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
-      background: #F26522; color: #fff; border: none; border-radius: 999px;
-      padding: 10px 18px; font-family: inherit; font-size: .85rem; font-weight: 800;
-      box-shadow: 0 8px 24px rgba(0,0,0,.5); cursor: pointer; z-index: 50;
-      animation: bob 1.4s ease-in-out infinite; transition: opacity .3s;
+    .welcome {
+      width: 100%; text-align: center; background: linear-gradient(135deg, rgba(242,101,34,.18), rgba(242,101,34,.06));
+      border: 1px solid rgba(242,101,34,.45); border-radius: 18px; padding: 14px 16px; margin-bottom: 20px;
     }
-    .more-hint span { display: inline-block; margin-left: 4px; }
-    .more-hint.hide { opacity: 0; pointer-events: none; }
-    @keyframes bob { 0%,100% { transform: translate(-50%,0); } 50% { transform: translate(-50%,6px); } }
+    .welcome-hi { font-size: 1.15rem; font-weight: 800; color: #fff; }
+    .welcome-how { font-size: .9rem; color: rgba(255,255,255,.85); margin-top: 4px; line-height: 1.45; }
+    .welcome-how strong { color: #F26522; }
+    .welcome-steps { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+    .welcome-steps span { font-size: .72rem; font-weight: 800; color: #fff; background: #F26522; border-radius: 999px; padding: 4px 10px; }
+    .section-label b { color: #F26522; font-weight: 800; }
+    .section-label { text-transform: none; letter-spacing: .02em; font-size: .92rem; color: #fff; }
+    .step-note { width: 100%; font-size: .8rem; color: rgba(255,255,255,.6); margin: -4px 0 10px 32px; }
+    .tap-pill {
+      align-self: flex-start; margin-top: 7px; font-size: .66rem; font-weight: 800; letter-spacing: .1em;
+      color: #fff; background: #F26522; border-radius: 999px; padding: 4px 9px;
+    }
+    .btn-call { animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { box-shadow: 0 4px 20px rgba(242,101,34,.4); } 50% { box-shadow: 0 4px 34px rgba(242,101,34,.85), 0 0 0 4px rgba(242,101,34,.25); } }
+    .guide-bar {
+      position: fixed; left: 12px; right: 12px; bottom: 14px; max-width: 456px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      background: #F26522; color: #fff; border: 2px solid rgba(255,255,255,.85); border-radius: 16px;
+      padding: 14px 16px; font-family: inherit; font-size: 1rem; font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,.6); cursor: pointer; z-index: 50; transition: opacity .3s, transform .3s;
+    }
+    .guide-arrow { display: inline-block; animation: bob 1.2s ease-in-out infinite; }
+    .guide-bar.hide { opacity: 0; transform: translateY(20px); pointer-events: none; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+    .page { padding-bottom: 110px; }
   </style>
 </head>
 <body>
@@ -466,8 +485,15 @@
     <span class="connect-label">Most repairs done while you wait</span>
   </div>
 
+  <!-- WELCOME: tells people what to do -->
+  <div class="welcome">
+    <div class="welcome-hi">👋 Thanks for scanning!</div>
+    <div class="welcome-how">Just <strong>tap a button</strong> below &mdash; <strong>3 quick steps</strong>, keep scrolling to see them all.</div>
+    <div class="welcome-steps"><span>1 Call or Visit</span><span>2 Review &amp; Share</span><span>3 Save &amp; Follow</span></div>
+  </div>
+
   <!-- 1. VISIT OR CALL -->
-  <div class="section-label"><span>1</span> Visit or Call</div>
+  <div class="section-label" id="step1"><span>1</span><b>Step 1</b>&nbsp;&middot; Tap to Call or Get Directions</div>
   <div class="links">
 
     <!-- Call -->
@@ -496,7 +522,7 @@
   <details class="offer" id="what-we-do">
     <summary>
       <span class="sum-icon">🔧</span>
-      <span class="sum-text"><span class="sum-title">See Everything We Fix &amp; Sell</span><span class="sum-sub">Phones, tablets, laptops, consoles, watches &amp; more</span></span>
+      <span class="sum-text"><span class="sum-title">See Everything We Fix &amp; Sell</span><span class="sum-sub">Phones, tablets, laptops, consoles, watches &amp; more</span><span class="tap-pill">TAP TO SEE FULL LIST</span></span>
       <span class="sum-chev" aria-hidden="true">⌄</span>
     </summary>
     <div class="offer-body">
@@ -544,7 +570,8 @@
   </details>
 
   <!-- 3. HELP US GROW -->
-  <div class="section-label"><span>2</span> Help Us Grow &mdash; It Means a Lot!</div>
+  <div class="section-label" id="step2"><span>2</span><b>Step 2</b>&nbsp;&middot; Tap to Leave a Review or Share</div>
+  <div class="step-note">It takes 30 seconds and really helps our small shop &mdash; thank you! ❤️</div>
   <div class="links">
 
     <!-- Google review -->
@@ -579,7 +606,7 @@
   </div>
 
   <!-- 4. SAVE & FOLLOW -->
-  <div class="section-label"><span>3</span> Save Us &amp; Follow Us</div>
+  <div class="section-label" id="step3"><span>3</span><b>Step 3</b>&nbsp;&middot; Tap to Save Our Card or Follow Us</div>
   <div class="links">
 
     <!-- Digital business card -->
@@ -634,7 +661,7 @@
 
 </div><!-- /page -->
 
-<button type="button" class="more-hint" id="moreHint" aria-label="Scroll down for more">More below <span>⌄</span></button>
+<button type="button" class="guide-bar" id="guideBar" aria-label="Scroll down to the next step"><span class="guide-arrow">👇</span> <span id="guideText">Scroll down &middot; 2 more steps below</span></button>
 
 <script>
   (function () {
@@ -652,10 +679,29 @@
       else { prompt('Copy this link:', data.url); }
     }
     document.querySelectorAll('[data-share]').forEach(function (b) { b.addEventListener('click', share); });
-    var hint = document.getElementById('moreHint');
-    function checkHint() { if (window.scrollY > 60) hint.classList.add('hide'); }
-    window.addEventListener('scroll', checkHint, { passive: true });
-    hint.addEventListener('click', function () { window.scrollBy({ top: window.innerHeight * 0.7, behavior: 'smooth' }); });
+    // Guide bar: tells people there is more and walks them to the next step
+    var bar = document.getElementById('guideBar'), txt = document.getElementById('guideText');
+    var s2 = document.getElementById('step2'), s3 = document.getElementById('step3');
+    function nextTarget() {
+      var vh = window.innerHeight;
+      if (s2.getBoundingClientRect().top > vh * 0.75) return s2;
+      if (s3.getBoundingClientRect().top > vh * 0.75) return s3;
+      return null;
+    }
+    function updateBar() {
+      var t = nextTarget();
+      var atEnd = window.innerHeight + window.scrollY >= document.body.scrollHeight - 40;
+      if (!t || atEnd) { bar.classList.add('hide'); return; }
+      bar.classList.remove('hide');
+      txt.innerHTML = t === s2 ? 'Scroll down &middot; 2 more steps below' : 'Keep going &middot; 1 more step below';
+    }
+    window.addEventListener('scroll', updateBar, { passive: true });
+    window.addEventListener('resize', updateBar);
+    bar.addEventListener('click', function () {
+      var t = nextTarget();
+      if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 16, behavior: 'smooth' });
+    });
+    updateBar();
   })();
 </script>
 </body>
