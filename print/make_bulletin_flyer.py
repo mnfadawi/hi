@@ -1,14 +1,8 @@
-"""Phone ElectriK bulletin-board flyer.
+"""Phone ElectriK bulletin-board flyer (pinned on a board: people read it or snap a photo).
 
 Run from the repo root:  python3 print/make_bulletin_flyer.py
 Makes print/phone-electrik-bulletin-flyer.png + .pdf (US Letter, 300 DPI).
-
-Based on the CELL PHONE REPAIR stand sign (make_poster.py on the
-phone-mockup-cracked-screen branch), adapted for a bulletin board:
-  - white safety margin on every side so home/office printers never cut it off
-  - QR code (phoneelectrik.com/links: call, directions, reviews, socials)
-  - 90-day warranty line
-  - tear-off tabs with the phone number along the bottom
+White 0.4" margin on every side so no printer cuts anything off.
 """
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import img2pdf, os, qrcode
@@ -16,76 +10,66 @@ import img2pdf, os, qrcode
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'print')
 BOLD = '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf'
-REG = '/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf'
 
-ORANGE, WHITE, BLACK, BG = '#F26522', '#FFFFFF', '#111111', '#0D0D0D'
+ORANGE, WHITE, DARK, BG, GREY = '#F26522', '#FFFFFF', '#1A1A1A', '#0D0D0D', '#BBBBBB'
 DPI = 300
-W, H = int(8.5 * DPI), int(11 * DPI)          # 2550 x 3300
-M = int(0.4 * DPI)                              # 0.4" white margin all round
-TAB_H = int(1.55 * DPI)                         # tear-off strip
-TAB_GAP = 40
-CW = W - 2 * M
-CH = H - 2 * M - TAB_H - TAB_GAP
-PAD = 50
+W, H = int(8.5 * DPI), int(11 * DPI)
+M = int(0.4 * DPI)
+CW, CH = W - 2 * M, H - 2 * M
+PAD = 70
 
-page = Image.new('RGB', (W, H), WHITE)
-
-# ── Card (the sign itself) ────────────────────────────────────────────────────
-# Built for a pinned board people walk past: one huge hook, little text, clear order.
-HOOK_H, HDR_H, PHONE_H, LABEL_H = 430, 270, 540, 75
-PROMISE_H, SVC_H, NUM_H = 215, 300, 230
-FOOT_H = CH - (HOOK_H + HDR_H + PHONE_H + LABEL_H + PROMISE_H + SVC_H + NUM_H)
-assert FOOT_H >= 420, FOOT_H
+HOOK_H, BRAND_H, PHONE_H, LABEL_H, INFO_H, NUM_H = 520, 300, 860, 80, 430, 350
+FOOT_H = CH - (HOOK_H + BRAND_H + PHONE_H + LABEL_H + INFO_H + NUM_H)
+assert FOOT_H >= 480, FOOT_H
 
 card = Image.new('RGB', (CW, CH), BG)
-y_ph = HOOK_H + HDR_H
+py = HOOK_H + BRAND_H
 glow = Image.new('RGB', (CW, CH), BG)
 gd = ImageDraw.Draw(glow)
-gd.ellipse([0, y_ph + 40, CW // 2, y_ph + PHONE_H], fill='#2a0f00')
-gd.ellipse([CW // 2, y_ph + 40, CW, y_ph + PHONE_H], fill='#001a2e')
-card = Image.blend(card, glow.filter(ImageFilter.GaussianBlur(110)), 0.85)
+gd.ellipse([40, py + 60, CW // 2, py + PHONE_H], fill='#2a0f00')
+gd.ellipse([CW // 2, py + 60, CW - 40, py + PHONE_H], fill='#001a2e')
+card = Image.blend(card, glow.filter(ImageFilter.GaussianBlur(120)), 0.85)
 d = ImageDraw.Draw(card)
 
 
-def fit(text, max_w, size, font=BOLD):
+def fit(text, max_w, size):
     while size > 20:
-        f = ImageFont.truetype(font, size)
+        f = ImageFont.truetype(BOLD, size)
         if d.textlength(text, font=f) <= max_w:
             return f
         size -= 2
-    return ImageFont.truetype(font, size)
+    return ImageFont.truetype(BOLD, size)
 
 
 def center(text, y, f, fill, cx=None):
     d.text((CW // 2 if cx is None else cx, y), text, font=f, fill=fill, anchor='mm')
 
 
-# 1. HOOK — the one line that stops someone walking past
+# 1. Headline
 y = 0
 d.rectangle([0, 0, CW, HOOK_H], fill=ORANGE)
-center('BROKEN PHONE?', 175, fit('BROKEN PHONE?', CW - 2 * PAD, 280), WHITE)
-sub = 'Cracked Screen  ·  Dead Battery  ·  Won\'t Charge'
-center(sub, 355, fit(sub, CW - 3 * PAD, 84), '#1A1A1A')
+center('BROKEN PHONE?', 215, fit('BROKEN PHONE?', CW - 2 * PAD, 320), WHITE)
+sub = 'We fix it. Most repairs done while you wait.'
+center(sub, 425, fit(sub, CW - 3 * PAD, 84), DARK)
 y = HOOK_H
 
-# 2. WHO — brand
+# 2. Brand
 logo = Image.open(os.path.join(OUT, 'assets', 'logo_pe_cropped.png')).convert('RGB')
-LOGO_H = 170
+LOGO_H = 180
 logo = logo.resize((int(logo.width * LOGO_H / logo.height), LOGO_H), Image.LANCZOS)
-row_cy = y + 110
-fb = fit('PHONE ELECTRIK', CW - 2 * PAD - logo.width - 60, 175)
-name_w = d.textlength('PHONE ELECTRIK', font=fb)
-x0 = (CW - (logo.width + 60 + name_w)) // 2
-card.paste(logo, (int(x0), row_cy - LOGO_H // 2))
+cy = y + 145
+fb = fit('PHONE ELECTRIK', CW - 2 * PAD - logo.width - 60, 180)
+nw = d.textlength('PHONE ELECTRIK', font=fb)
+x0 = (CW - (logo.width + 60 + nw)) // 2
+card.paste(logo, (int(x0), cy - LOGO_H // 2))
 tx = x0 + logo.width + 60
-d.text((tx, row_cy), 'PHONE ', font=fb, fill=WHITE, anchor='lm')
-d.text((tx + d.textlength('PHONE ', font=fb), row_cy), 'ELECTRIK', font=fb, fill=ORANGE, anchor='lm')
-tag = 'Phones  ·  iPads  ·  MacBooks  ·  Laptops  ·  Game Consoles  ·  Apple Watches'
-center(tag, y + HDR_H - 40, fit(tag, CW - 2 * PAD, 58), '#BBBBBB')
-y += HDR_H
+d.text((tx, cy), 'PHONE ', font=fb, fill=WHITE, anchor='lm')
+d.text((tx + d.textlength('PHONE ', font=fb), cy), 'ELECTRIK', font=fb, fill=ORANGE, anchor='lm')
+y += BRAND_H
 
 
-def rounded(img, r=50):
+# 3. Phones
+def rounded(img, r=60):
     img = img.convert('RGBA')
     m = Image.new('L', img.size, 0)
     ImageDraw.Draw(m).rounded_rectangle([0, 0, img.width - 1, img.height - 1], r, fill=255)
@@ -95,107 +79,55 @@ def rounded(img, r=50):
 
 for i, fn in enumerate(['IMG_0096.jpeg', 'IMG_0097.jpeg']):
     im = Image.open(os.path.join(ROOT, fn))
-    s = min(PHONE_H / im.height, (CW // 2 - 60) / im.width)
+    s = min(PHONE_H / im.height, (CW // 2 - 80) / im.width)
     im = rounded(im.resize((int(im.width * s), int(im.height * s)), Image.LANCZOS))
     sx = i * CW // 2 + (CW // 2 - im.width) // 2
     card.paste(im, (sx, y + PHONE_H - im.height), im)
 y += PHONE_H
-fl = ImageFont.truetype(BOLD, 52)
-center('iPhone 17 Pro Max', y + LABEL_H // 2, fl, '#BBBBBB', CW // 4)
-center('Samsung Galaxy S26', y + LABEL_H // 2, fl, '#BBBBBB', 3 * CW // 4)
+fl = ImageFont.truetype(BOLD, 50)
+center('iPhone 17 Pro Max', y + LABEL_H // 2, fl, GREY, CW // 4)
+center('Samsung Galaxy S26', y + LABEL_H // 2, fl, GREY, 3 * CW // 4)
 y += LABEL_H
 
-# 3. WHY COME IN
-d.rectangle([0, y, CW, y + PROMISE_H], fill='#181818')
-d.rectangle([0, y, CW, y + 5], fill=ORANGE)
-p1 = 'Most Repairs Done While You Wait'
-p2 = '90-Day Warranty  ·  Any Brand, Any Model  ·  Walk-Ins Welcome'
-center(p1, y + 80, fit(p1, CW - 120, 100), ORANGE)
-center(p2, y + 160, fit(p2, CW - 120, 60), WHITE)
-y += PROMISE_H
+# 4. What we do (three clean lines, all centred)
+d.rectangle([CW // 2 - 300, y + 30, CW // 2 + 300, y + 36], fill=ORANGE)
+i1 = 'Screens  ·  Batteries  ·  Charging Ports  ·  Cameras'
+i2 = 'We Buy & Sell Phones, Tablets & Laptops'
+i3 = 'Any Brand  ·  Any Model  ·  90-Day Warranty  ·  Walk-Ins Welcome'
+fi = ImageFont.truetype(BOLD, min(fit(i1, CW - 2 * PAD, 84).size, fit(i2, CW - 2 * PAD, 84).size))
+center(i1, y + 135, fi, WHITE)
+center(i2, y + 255, fi, ORANGE)
+center(i3, y + 365, fit(i3, CW - 2 * PAD, 60), GREY)
+y += INFO_H
 
-# 4. WHAT WE DO — two money lanes
-d.rectangle([0, y, CW, y + SVC_H], fill=WHITE)
-half = CW // 2
-d.rectangle([half - 3, y + 45, half + 3, y + SVC_H - 45], fill='#DDDDDD')
-colw = half - 2 * PAD
-ft = ImageFont.truetype(BOLD, min(fit('WE BUY & SELL', colw, 115).size, fit('WE REPAIR', colw, 115).size))
-center('WE REPAIR', y + 100, ft, ORANGE, half // 2)
-center('WE BUY & SELL', y + 100, ft, BLACK, half + half // 2)
-a = 'Screens · Batteries · Ports · Cameras'
-b = 'Phones · Tablets · Laptops'
-fs = ImageFont.truetype(BOLD, min(fit(a, colw, 60).size, fit(b, colw, 60).size))
-center(a, y + 215, fs, '#222222', half // 2)
-center(b, y + 215, fs, '#222222', half + half // 2)
-y += SVC_H
-
-# 5. CALL
+# 5. Phone number
 d.rectangle([0, y, CW, y + NUM_H], fill=ORANGE)
-t = 'CALL / TEXT  (323) 348-6756'
-center(t, y + NUM_H // 2, fit(t, CW - 120, 190), WHITE)
+center('CALL OR TEXT', y + 75, ImageFont.truetype(BOLD, 62), DARK)
+center('(323) 348-6756', y + 220, fit('(323) 348-6756', CW - 2 * PAD, 210), WHITE)
 y += NUM_H
 
-# 6. WHERE + tell a friend, QR on the right
-d.rectangle([0, y, CW, CH], fill='#141414')
-QR = FOOT_H - 120
+# 6. Where + QR
+QR = FOOT_H - 150
 q = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, border=2, box_size=20)
 q.add_data('https://phoneelectrik.com/links')
 q.make(fit=True)
 qimg = q.make_image(fill_color='black', back_color='white').convert('RGB').resize((QR, QR), Image.NEAREST)
 qx = CW - PAD - QR
-card.paste(qimg, (qx, y + 35))
-center('SCAN ME', y + 35 + QR + 42, ImageFont.truetype(BOLD, 50), ORANGE, qx + QR // 2)
-left_w = qx - 2 * PAD
-lines = [
-    ('3025 Artesia Blvd STE 101', WHITE, 78),
-    ('Torrance, CA 90504', WHITE, 78),
-    ('Mon–Sat 9AM–8PM  ·  Sun 10AM–6PM', '#BBBBBB', 60),
-    ('Love us? Tell a friend & leave a review!', ORANGE, 60),
-]
-fbig = ImageFont.truetype(BOLD, min(fit(t, left_w, sz).size for t, _, sz in lines if sz == 78))
-fsm = ImageFont.truetype(BOLD, min(fit(t, left_w, sz).size for t, _, sz in lines if sz == 60))
-ys = [y + 85, y + 175, y + 285, y + 385]
-for (t, c, sz), yy in zip(lines, ys):
-    d.text((PAD, yy), t, font=fbig if sz == 78 else fsm, fill=c, anchor='lm')
+card.paste(qimg, (qx, y + 50))
+center('SCAN ME', y + 50 + QR + 48, ImageFont.truetype(BOLD, 52), ORANGE, qx + QR // 2)
+lw = qx - 2 * PAD
+fa = fit('3025 Artesia Blvd STE 101', lw, 84)
+fs = fit('Snap a photo & share with a friend!', lw, 62)
+d.text((PAD, y + 110), '3025 Artesia Blvd STE 101', font=fa, fill=WHITE, anchor='lm')
+d.text((PAD, y + 205), 'Torrance, CA 90504', font=fa, fill=WHITE, anchor='lm')
+d.text((PAD, y + 315), 'Mon–Sat 9AM–8PM  ·  Sun 10AM–6PM', font=fs, fill=GREY, anchor='lm')
+d.text((PAD, y + 420), 'Snap a photo & share with a friend!', font=fs, fill=ORANGE, anchor='lm')
 
-# Paste card with rounded corners
+# Page with white margin, rounded card
+page = Image.new('RGB', (W, H), WHITE)
 mask = Image.new('L', (CW, CH), 0)
-ImageDraw.Draw(mask).rounded_rectangle([0, 0, CW - 1, CH - 1], 36, fill=255)
+ImageDraw.Draw(mask).rounded_rectangle([0, 0, CW - 1, CH - 1], 40, fill=255)
 page.paste(card, (M, M), mask)
-
-# ── Tear-off tabs ─────────────────────────────────────────────────────────────
-pd = ImageDraw.Draw(page)
-ty = M + CH + TAB_GAP
-N = 8
-tw = CW / N
-
-
-def dashed(x1, y1, x2, y2, dash=22, gap=14, w=4):
-    import math
-    L = math.hypot(x2 - x1, y2 - y1)
-    n = 0.0
-    while n < L:
-        e = min(n + dash, L)
-        pd.line([(x1 + (x2 - x1) * n / L, y1 + (y2 - y1) * n / L),
-                 (x1 + (x2 - x1) * e / L, y1 + (y2 - y1) * e / L)], fill='#777', width=w)
-        n += dash + gap
-
-
-dashed(M, ty, M + CW, ty)
-for i in range(N + 1):
-    dashed(M + i * tw, ty, M + i * tw, ty + TAB_H)
-cap_f = ImageFont.truetype(BOLD, 34)
-pd.rectangle([W // 2 - 360, ty - 24, W // 2 + 360, ty + 24], fill=WHITE)
-pd.text((W // 2, ty), 'TAKE ONE  ·  SHARE WITH A FRIEND', font=cap_f, fill='#444', anchor='mm')
-
-for i in range(N):
-    tab = Image.new('RGB', (TAB_H - 30, int(tw) - 24), WHITE)
-    td = ImageDraw.Draw(tab)
-    td.text((tab.width // 2, 50), 'PHONE ELECTRIK', font=ImageFont.truetype(BOLD, 44), fill=ORANGE, anchor='mm')
-    td.text((tab.width // 2, 125), '(323) 348-6756', font=ImageFont.truetype(BOLD, 62), fill=BLACK, anchor='mm')
-    td.text((tab.width // 2, 200), '3025 Artesia Blvd', font=ImageFont.truetype(REG, 38), fill='#333', anchor='mm')
-    tab = tab.rotate(90, expand=True)
-    page.paste(tab, (int(M + i * tw + 12), ty + 15))
 
 png = os.path.join(OUT, 'phone-electrik-bulletin-flyer.png')
 pdf = os.path.join(OUT, 'phone-electrik-bulletin-flyer.pdf')
