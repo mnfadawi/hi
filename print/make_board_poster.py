@@ -215,7 +215,7 @@ footer_lines = [
     ('WALK-IN  ·  NO APPOINTMENT NEEDED',                ORANGE),
     ('MON–SAT  9AM–8PM  ·  SUN  10AM–6PM',               WHITE),
     ('3025 Artesia Blvd STE 101, Torrance, CA 90504',    WHITE),
-    ('SCAN: WEBSITE · SOCIALS · DIRECTIONS · REVIEWS',   ORANGE),
+    ('SCAN: SERVICES · REVIEWS · SOCIALS · DIRECTIONS',  ORANGE),
 ]
 fnt_footer = ImageFont.truetype(BOLD, min(fit_font(t, TXT_W, 100)[0].size for t, _ in footer_lines))
 footer_bbs = [draw.textbbox((0,0), t, font=fnt_footer) for t, _ in footer_lines]

@@ -213,6 +213,62 @@
     .btn-shop:hover { box-shadow: 0 6px 28px rgba(242,101,34,.45); transform: translateY(-1px); }
     .btn-shop .btn-label { color: #F26522; }
 
+    /* Yelp review */
+    .btn-yelp {
+      background: #d32323;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(211,35,35,.3);
+    }
+    .btn-yelp:hover { box-shadow: 0 6px 28px rgba(211,35,35,.55); transform: translateY(-1px); }
+
+    /* ── WHAT WE DO ── */
+    .offer {
+      width: 100%;
+      background: #1a1a1a;
+      border: 1px solid rgba(242,101,34,.35);
+      border-radius: 18px;
+      padding: 20px 18px 18px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .offer-title {
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #F26522;
+      margin-bottom: 6px;
+    }
+    .offer-promise {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
+    }
+    .chip {
+      font-size: .78rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.85);
+      background: #242424;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 999px;
+      padding: 6px 11px;
+    }
+    .chip-hot { color: #fff; background: #F26522; border-color: #F26522; }
+    .offer-note {
+      margin-top: 12px;
+      font-size: .78rem;
+      color: rgba(255,255,255,.5);
+      line-height: 1.5;
+    }
+
     /* ── CHEVRON ── */
     .btn-arrow {
       font-size: 1rem;
@@ -320,6 +376,29 @@
     <span class="connect-label">Connect With Phone ElectriK</span>
   </div>
 
+  <!-- WHAT WE DO -->
+  <div class="offer">
+    <div class="offer-title">What We Do</div>
+    <div class="offer-promise">Most repairs done while you wait<br>90-day warranty on every repair</div>
+    <div class="chips">
+      <span class="chip">Screen Repair</span>
+      <span class="chip">Batteries</span>
+      <span class="chip">Charging Ports</span>
+      <span class="chip">Camera &amp; Lens</span>
+      <span class="chip">Back Glass</span>
+      <span class="chip">Liquid Damage</span>
+      <span class="chip">Data Transfer &amp; Recovery</span>
+      <span class="chip">Unlocking</span>
+      <span class="chip">iPads &amp; Tablets</span>
+      <span class="chip">MacBooks &amp; Laptops</span>
+      <span class="chip">Game Consoles</span>
+      <span class="chip">Apple Watch</span>
+      <span class="chip chip-hot">We Buy &amp; Sell Devices</span>
+      <span class="chip chip-hot">Cases &amp; Accessories</span>
+    </div>
+    <div class="offer-note">Any brand, any model: iPhone, Samsung, Google Pixel, Motorola, LG, OnePlus &amp; more.<br>Walk in, no appointment needed.</div>
+  </div>
+
   <!-- LINKS -->
   <div class="links">
 
@@ -349,6 +428,16 @@
       <span class="btn-text">
         <span class="btn-label">Leave Us a Google Review</span>
         <span class="btn-sub">★★★★★ Takes 30 seconds &mdash; thank you!</span>
+      </span>
+      <span class="btn-arrow">›</span>
+    </a>
+
+    <!-- Yelp review -->
+    <a href="https://www.yelp.com/biz/phone-electrik-torrance-2" target="_blank" rel="noopener" class="btn btn-yelp">
+      <span class="btn-icon">⭐</span>
+      <span class="btn-text">
+        <span class="btn-label">Review Us on Yelp</span>
+        <span class="btn-sub">Help others find a shop they can trust</span>
       </span>
       <span class="btn-arrow">›</span>
     </a>
