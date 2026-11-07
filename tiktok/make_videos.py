@@ -4,8 +4,8 @@
 Usage:  python3 tiktok/make_videos.py            # render every video
         python3 tiktok/make_videos.py battery    # render videos whose id contains "battery"
 
-Videos are silent on purpose: add a trending sound inside the TikTok app,
-which helps reach more than a fixed soundtrack would.
+Every slide is read out loud by an AI voice (Kokoro). Add a trending sound at low
+volume inside TikTok/Instagram on top of it for extra reach.
 Wrap words in *stars* in videos.json to color them orange.
 """
 import json, math, os, subprocess, sys
@@ -192,16 +192,82 @@ def render_slide(img, slide, t, idx, total, handle):
         d.ellipse((x - r, 300 - r, x + r, 300 + r), fill=ORANGE if i <= idx else (70, 70, 70))
 
 
-def render(video, handle):
+# ---------- voiceover ----------
+# Kokoro is a free, natural-sounding AI voice that runs on this computer.
+# Model files go in tiktok/models (see README.md). Voices: af_heart, af_bella, am_michael, am_adam...
+VOICE = os.environ.get("VOICE", "af_heart")
+MODELS = os.path.join(HERE, "models")
+CACHE = os.path.join(HERE, ".voice_cache")
+SR = 24000
+_kokoro = None
+
+SPOKEN = [("ElectriK", "Electric"), ("Blvd", "Boulevard"), ("→", ","), ("&", "and"), ("·", ","),
+          ("3025 Artesia", "thirty twenty five Artesia"), ("iPHONE", "iPhone"), ("90-day", "ninety day"),
+          ("(323) 348-6756", "3 2 3, 3 4 8, 6 7 5 6"), ("PS5", "P S 5"), ("PS4", "P S 4"), ("HDMI", "H D M I"), (" SE ", " S E ")]
+
+
+def spoken(slide):
+    if "say" in slide:
+        text = slide["say"]
+    else:
+        text = slide["text"] + (". " + slide["sub"] if slide.get("sub") else "")
+        if slide["type"] == "end":
+            text = (slide.get("text", "Phone ElectriK") + ". " + slide.get("sub", "") + ". "
+                    + slide.get("cta", ""))
+    text = text.replace("*", "")
+    for a, b in SPOKEN:
+        text = text.replace(a, b)
+    return text
+
+
+def speak(text, voice):
+    """Return the voiceover for one slide as a numpy array (cached on disk)."""
+    import hashlib
+    import numpy as np
+    import soundfile as sf
+    os.makedirs(CACHE, exist_ok=True)
+    key = hashlib.sha1(f"{voice}|1.08|{text}".encode()).hexdigest()[:16]
+    path = os.path.join(CACHE, key + ".wav")
+    if not os.path.exists(path):
+        global _kokoro
+        if _kokoro is None:
+            from kokoro_onnx import Kokoro
+            _kokoro = Kokoro(os.path.join(MODELS, "kokoro-v1.0.int8.onnx"), os.path.join(MODELS, "voices-v1.0.bin"))
+        audio, sr = _kokoro.create(text, voice=voice, speed=1.08, lang="en-us")
+        sf.write(path, audio, sr)
+    audio, _ = sf.read(path, dtype="float32")
+    return np.asarray(audio)
+
+
+def render(video, handle, voice=True):
+    import numpy as np
+    import soundfile as sf
     os.makedirs(OUT, exist_ok=True)
     path = os.path.join(OUT, video["id"] + ".mp4")
-    slides = video["slides"]
-    frames = [(i, f) for i, s in enumerate(slides) for f in range(int(s["seconds"] * FPS))]
+    slides = [dict(s) for s in video["slides"]]
+    # each slide lasts at least its written time, longer if the voice needs it
+    lead, tail = 0.15, 0.4
+    clips = []
+    for s in slides:
+        clip = speak(spoken(s), video.get("voice", VOICE)) if voice else np.zeros(0, dtype="float32")
+        s["seconds"] = round(max(s["seconds"], lead + len(clip) / SR + tail) * FPS) / FPS
+        clips.append(clip)
+    track = np.zeros(int(sum(s["seconds"] for s in slides) * SR) + SR, dtype="float32")
+    pos = 0.0
+    for s, clip in zip(slides, clips):
+        a = int((pos + lead) * SR)
+        track[a:a + len(clip)] += clip
+        pos += s["seconds"]
+    wav = os.path.join(OUT, video["id"] + ".tmp.wav")
+    sf.write(wav, track[:int(pos * SR)], SR)
+
+    frames = [(i, f) for i, s in enumerate(slides) for f in range(round(s["seconds"] * FPS))]
     proc = subprocess.Popen(
         ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
-         "-r", str(FPS), "-i", "-", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo", "-shortest",
+         "-r", str(FPS), "-i", "-", "-i", wav,
          "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
-         "-c:a", "aac", "-movflags", "+faststart", path],
+         "-af", "loudnorm=I=-14:TP=-1.5:LRA=11,aresample=44100", "-ac", "2",
+         "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", path],
         stdin=subprocess.PIPE)
     start = {}
     for n, (i, f) in enumerate(frames):
@@ -211,11 +277,17 @@ def render(video, handle):
         proc.stdin.write(img.convert("RGB").tobytes())
     proc.stdin.close()
     proc.wait()
-    # also save a thumbnail of the hook for checking / as a cover image
+    os.remove(wav)
+    # also save a still of the opening, to use as the cover image
     cover = background(0)
     render_slide(cover, slides[0], 2.0, 0, len(slides), handle)
     cover.convert("RGB").save(os.path.join(OUT, video["id"] + "-cover.jpg"), quality=90)
-    print("made", os.path.relpath(path, ROOT), f"({len(frames) / FPS:.1f}s)")
+    print("made", os.path.relpath(path, ROOT), f"({len(frames) / FPS:.1f}s)", flush=True)
+
+
+def with_ending(video, data):
+    """Every video ends with the same 'why us' slide and the shop's end card."""
+    return {**video, "slides": video["slides"] + [data["why"], data["end"]]}
 
 
 if __name__ == "__main__":
@@ -223,4 +295,4 @@ if __name__ == "__main__":
     want = sys.argv[1] if len(sys.argv) > 1 else ""
     for v in data["videos"]:
         if want in v["id"]:
-            render(v, data["handle"])
+            render(with_ending(v, data), data["handle"])

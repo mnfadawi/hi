@@ -1,279 +1,278 @@
 {
   "handle": "@phoneelectrik",
+  "why": {"type": "text", "label": "WHY US", "text": "We tell you the *truth.* Every repair has a *90-day warranty.*", "sub": "Honest answers. No pressure.", "say": "We tell you the truth. And every repair comes with a 90-day warranty.", "seconds": 3.4},
+  "end": {"type": "end", "text": "Torrance's *Phone ElectriK*", "sub": "3025 Artesia Blvd, Torrance · (323) 348-6756", "cta": "Walk in today. We've got you.", "say": "Phone ElectriK. 3025 Artesia Blvd, Torrance. Walk in today. We've got you.", "seconds": 3.6},
   "videos": [
     {
-      "id": "01-rice-myth",
-      "caption": "Stop putting wet phones in rice 🍚❌ Do this instead. Save this for later! Honest answers + a 90-day warranty on every repair. #phonerepair #waterdamage #iphonetips #lifehack #torrance",
+      "id": "01-water-damage",
+      "title": "Dropped your phone in water? Don't wait 24 hours in rice",
+      "caption": "Rice won't save your phone. Time will. 💧 The faster your phone gets to us, the better the chance we can save it.",
+      "tags": "#waterdamage #phonerepair #iphonetips #ricemyth",
       "slides": [
-        {
-          "type": "hook",
-          "text": "Dropped your phone in water? *DON'T* put it in rice",
-          "seconds": 2.6
-        },
-        {
-          "type": "text",
-          "label": "MYTH",
-          "text": "Rice does *not* pull the water out",
-          "sub": "Apple even says not to do it. Rice dust and starch can get stuck in the ports.",
-          "seconds": 3.4
-        },
-        {
-          "type": "text",
-          "label": "DO THIS",
-          "text": "Turn it *off* right away",
-          "sub": "Don't charge it. Don't keep turning it on to check.",
-          "seconds": 3.0
-        },
-        {
-          "type": "text",
-          "label": "THEN",
-          "text": "Get it opened up *fast*",
-          "sub": "Corrosion starts within hours. The sooner it's cleaned inside, the better your chances.",
-          "seconds": 3.4
-        },
-        {
-          "type": "text",
-          "label": "WHY US",
-          "text": "We tell you the *truth.* Every repair comes with a *90-day warranty.*",
-          "sub": "Honest answers. Real repairs.",
-          "seconds": 3.4
-        },
-        {
-          "type": "end",
-          "text": "Water damage? Bring it in.",
-          "seconds": 3.0,
-          "sub": "3025 Artesia Blvd, Torrance · 90-day warranty"
-        }
+        {"type": "hook", "text": "Dropped your phone in water? *DON'T* leave it in rice for 24 hours", "say": "Dropped your phone in water? Don't leave it in rice for 24 hours.", "seconds": 2.8},
+        {"type": "text", "label": "THE TRUTH", "text": "While it sits in rice, *corrosion* keeps spreading inside", "sub": "Rice doesn't fix water damage. It just wastes time.", "seconds": 3.4},
+        {"type": "text", "label": "DO THIS", "text": "Turn it off and bring it to us *ASAP*", "say": "Turn it off and bring it to us, A S A P.", "seconds": 2.8},
+        {"type": "text", "text": "The *faster* it gets to us, the better the chance we can *save your phone*", "seconds": 3.2},
+        {"type": "text", "label": "HOW IT WORKS", "text": "We find the problem first. Then *you decide.*", "sub": "No pressure either way.", "seconds": 3.0}
       ]
     },
     {
       "id": "02-battery-signs",
-      "caption": "Your phone battery could be a fire hazard 🔥🔋 If your phone does ANY of these, come see us at Phone ElectriK in Torrance. We've got you. Honest answers + a 90-day warranty on every repair. #batterylife #iphonebattery #phonerepair #firehazard #torrance #southbay",
+      "title": "Your phone battery could be a fire hazard: 5 signs to replace it",
+      "caption": "Your phone battery could be a fire hazard 🔥🔋 If your phone does ANY of these, come see us.",
+      "tags": "#batterylife #iphonebattery #phonerepair #firehazard",
       "slides": [
-        {
-          "type": "hook",
-          "text": "Your phone battery could be a *fire hazard*",
-          "seconds": 2.6
-        },
-        {
-          "type": "text",
-          "label": "WARNING",
-          "text": "An old or swollen battery can *overheat* and catch fire",
-          "sub": "In your pocket. On your bed. While you sleep.",
-          "seconds": 3.4
-        },
-        {
-          "type": "text",
-          "text": "If your phone does *any* of these, replace your battery *now*",
-          "seconds": 2.8
-        },
-        {
-          "type": "text",
-          "label": "1",
-          "text": "It only lasts *a couple hours* after charging to 100%",
-          "sub": "It can't hold a charge anymore.",
-          "seconds": 3.2
-        },
-        {
-          "type": "text",
-          "label": "2",
-          "text": "It shuts off at *20%* or more",
-          "seconds": 2.6
-        },
-        {
-          "type": "text",
-          "label": "3",
-          "text": "It *shuts off* and turns back on by itself",
-          "seconds": 2.8
-        },
-        {
-          "type": "text",
-          "label": "4",
-          "text": "It gets *hot* when you're barely using it",
-          "seconds": 2.8
-        },
-        {
-          "type": "text",
-          "label": "5",
-          "text": "The screen is *lifting* or the back is bulging",
-          "sub": "That's a swollen battery. Stop charging it and get it checked.",
-          "seconds": 3.6
-        },
-        {
-          "type": "text",
-          "label": "iPHONE TIP",
-          "text": "Settings → Battery → *Battery Health*",
-          "sub": "Under 80% means it's time for a new one.",
-          "seconds": 3.2
-        },
-        {
-          "type": "text",
-          "label": "DON'T WAIT",
-          "text": "Sound like your phone? Come see us *today*",
-          "sub": "Walk in. We'll check your battery and get you back to a phone that lasts all day.",
-          "seconds": 3.6
-        },
-        {
-          "type": "text",
-          "label": "WHY US",
-          "text": "We tell you the *truth.* Every repair comes with a *90-day warranty.*",
-          "sub": "Honest answers. Real repairs.",
-          "seconds": 3.4
-        },
-        {
-          "type": "end",
-          "text": "Torrance's *Phone ElectriK*",
-          "sub": "3025 Artesia Blvd, Torrance · 90-day warranty",
-          "cta": "Walk in today. We've got you.",
-          "seconds": 3.4
-        }
+        {"type": "hook", "text": "Your phone battery could be a *fire hazard*", "seconds": 2.6},
+        {"type": "text", "label": "WARNING", "text": "An old or swollen battery can *overheat* and catch fire", "sub": "In your pocket. On your bed. While you sleep.", "seconds": 3.4},
+        {"type": "text", "text": "If your phone does *any* of these, replace your battery *now*", "seconds": 2.8},
+        {"type": "text", "label": "1", "text": "It only lasts *a couple hours* after charging to 100%", "sub": "It can't hold a charge anymore.", "say": "One. It only lasts a couple hours after charging to 100 percent. It can't hold a charge anymore.", "seconds": 3.2},
+        {"type": "text", "label": "2", "text": "It shuts off at *20%* or more", "say": "Two. It shuts off at 20 percent or more.", "seconds": 2.6},
+        {"type": "text", "label": "3", "text": "It *shuts off* and turns back on by itself", "say": "Three. It shuts off and turns back on by itself.", "seconds": 2.8},
+        {"type": "text", "label": "4", "text": "It gets *hot* when you're barely using it", "say": "Four. It gets hot when you're barely using it.", "seconds": 2.8},
+        {"type": "text", "label": "5", "text": "The screen is *lifting* or the back is bulging", "sub": "That's a swollen battery. Stop charging it and get it checked.", "say": "Five. The screen is lifting, or the back is bulging. That's a swollen battery. Stop charging it and get it checked.", "seconds": 3.6},
+        {"type": "text", "label": "iPHONE TIP", "text": "Settings → Battery → *Battery Health*", "sub": "Under 80% means it's time for a new one.", "say": "iPhone tip. Go to Settings, Battery, Battery Health. Under 80 percent means it's time for a new one.", "seconds": 3.2},
+        {"type": "text", "label": "DON'T WAIT", "text": "Sound like your phone? Come see us *today*", "sub": "Walk in. Most batteries are replaced while you wait.", "seconds": 3.6}
       ]
     },
     {
       "id": "03-cracked-screen",
-      "caption": "That 'small' crack isn't staying small 📱💥 Honest answers + a 90-day warranty on every repair. #crackedscreen #screenrepair #iphonerepair #samsungrepair #torrance",
+      "title": "Your cracked screen is about to get worse",
+      "caption": "That 'small' crack isn't staying small 📱💥 Get it fixed before it costs you more.",
+      "tags": "#crackedscreen #screenrepair #iphonerepair #samsungrepair",
       "slides": [
-        {
-          "type": "hook",
-          "text": "Your cracked screen is about to get *worse*",
-          "seconds": 2.4
-        },
-        {
-          "type": "text",
-          "label": "1",
-          "text": "Cracks *spread*",
-          "sub": "Every bump and every hot or cold day pushes them further.",
-          "seconds": 3.0
-        },
-        {
-          "type": "text",
-          "label": "2",
-          "text": "Water gets in through the *cracks*",
-          "sub": "And water damage costs more than a screen.",
-          "seconds": 3.0
-        },
-        {
-          "type": "text",
-          "label": "3",
-          "text": "Touch starts *ghost tapping*",
-          "sub": "Random taps. Apps opening on their own.",
-          "seconds": 3.0
-        },
-        {
-          "type": "text",
-          "label": "4",
-          "text": "Broken glass can cut your *fingers*",
-          "seconds": 2.6
-        },
-        {
-          "type": "text",
-          "label": "WHY US",
-          "text": "We tell you the *truth.* Every repair comes with a *90-day warranty.*",
-          "sub": "Honest answers. Real repairs.",
-          "seconds": 3.4
-        },
-        {
-          "type": "end",
-          "text": "Fix it before it spreads",
-          "seconds": 3.0,
-          "sub": "3025 Artesia Blvd, Torrance · 90-day warranty"
-        }
+        {"type": "hook", "text": "Your cracked screen is about to get *worse*", "seconds": 2.4},
+        {"type": "text", "label": "1", "text": "Cracks *spread*", "sub": "Every bump and every hot or cold day pushes them further.", "seconds": 3.0},
+        {"type": "text", "label": "2", "text": "Water gets in through the *cracks*", "sub": "And water damage costs more than a screen.", "seconds": 3.0},
+        {"type": "text", "label": "3", "text": "Touch starts *ghost tapping*", "sub": "Random taps. Apps opening on their own.", "seconds": 3.0},
+        {"type": "text", "label": "4", "text": "Broken glass can cut your *fingers*", "seconds": 2.6},
+        {"type": "text", "label": "DON'T WAIT", "text": "Fix it before it gets *worse*", "sub": "Walk in. Most screens are replaced while you wait.", "seconds": 3.2}
       ]
     },
     {
       "id": "04-charging-port",
-      "caption": "Phone won't charge? Try this before you pay for a repair 🔌 Honest answers + a 90-day warranty on every repair. #chargingport #phonehacks #iphonetips #androidtips #torrance",
+      "title": "Phone not charging right? Bring it to us",
+      "caption": "Only charges sometimes? Have to hold the cable just right? Won't charge at all? 🔌 Bring it to us. We'll clean it or replace it.",
+      "tags": "#chargingport #phonenotcharging #phonerepair #iphonerepair",
       "slides": [
-        {
-          "type": "hook",
-          "text": "Phone won't charge? Try this *before* you pay for a repair",
-          "seconds": 2.8
-        },
-        {
-          "type": "text",
-          "label": "STEP 1",
-          "text": "Turn the phone *off*",
-          "seconds": 2.4
-        },
-        {
-          "type": "text",
-          "label": "STEP 2",
-          "text": "Shine a *light* into the port",
-          "sub": "Pocket lint packs in tight and stops the plug going all the way in.",
-          "seconds": 3.2
-        },
-        {
-          "type": "text",
-          "label": "STEP 3",
-          "text": "Gently scrape it out with a *wooden* toothpick",
-          "sub": "Never anything metal.",
-          "seconds": 3.2
-        },
-        {
-          "type": "text",
-          "label": "STEP 4",
-          "text": "Still nothing? Try a *different cable*",
-          "seconds": 2.6
-        },
-        {
-          "type": "text",
-          "label": "WHY US",
-          "text": "We tell you the *truth.* Every repair comes with a *90-day warranty.*",
-          "sub": "Honest answers. Real repairs.",
-          "seconds": 3.4
-        },
-        {
-          "type": "end",
-          "text": "Still won't charge? Bring it in.",
-          "sub": "3025 Artesia Blvd, Torrance · 90-day warranty",
-          "seconds": 3.2
-        }
+        {"type": "hook", "text": "Is your phone *not charging* right?", "seconds": 2.4},
+        {"type": "text", "label": "SIGN 1", "text": "It only charges *sometimes*", "seconds": 2.4},
+        {"type": "text", "label": "SIGN 2", "text": "You have to *hold the cable* at a certain angle", "seconds": 2.8},
+        {"type": "text", "label": "SIGN 3", "text": "It won't charge *at all*", "seconds": 2.4},
+        {"type": "text", "label": "DON'T WAIT", "text": "Bring it to us before it *dies for good*", "sub": "We'll clean your charging port or replace it.", "seconds": 3.4}
       ]
     },
     {
       "id": "05-more-than-phones",
-      "caption": "Phones are just the start 👀 What should we fix next? Honest answers + a 90-day warranty on every repair. #repairshop #nintendoswitch #macbookrepair #ipadrepair #torrance #smallbusiness",
+      "title": "We fix more than phones",
+      "caption": "iPads, MacBooks, Apple Watch, PlayStation, Xbox, Nintendo Switch 🎮💻⌚ If it's broken, bring it in.",
+      "tags": "#ipadrepair #macbookrepair #applewatch #ps5 #nintendoswitch",
       "slides": [
-        {
-          "type": "hook",
-          "text": "We don't just fix *phones*",
-          "seconds": 2.2
-        },
-        {
-          "type": "text",
-          "text": "*Laptops* & MacBooks",
-          "sub": "Screens, batteries, keyboards & more",
-          "seconds": 2.4
-        },
-        {
-          "type": "text",
-          "text": "*Tablets* & iPads",
-          "seconds": 2.0
-        },
-        {
-          "type": "text",
-          "text": "*Nintendo Switch*",
-          "sub": "All models",
-          "seconds": 2.0
-        },
-        {
-          "type": "text",
-          "text": "*Smart watches*",
-          "seconds": 2.0
-        },
-        {
-          "type": "text",
-          "label": "WHY US",
-          "text": "We tell you the *truth.* Every repair comes with a *90-day warranty.*",
-          "sub": "Honest answers. Real repairs.",
-          "seconds": 3.4
-        },
-        {
-          "type": "end",
-          "text": "Phone ElectriK",
-          "seconds": 3.2,
-          "sub": "3025 Artesia Blvd, Torrance · 90-day warranty"
-        }
+        {"type": "hook", "text": "We fix *more* than phones", "seconds": 2.2},
+        {"type": "text", "text": "*iPads* & tablets", "sub": "Screen, battery, charging port", "seconds": 2.4},
+        {"type": "text", "text": "*MacBooks* & laptops", "sub": "Screen, battery, keyboard & more", "seconds": 2.4},
+        {"type": "text", "text": "*Apple Watch*", "sub": "Cracked screen & battery", "seconds": 2.2},
+        {"type": "text", "text": "*PlayStation*, *Xbox* & *Nintendo Switch*", "sub": "HDMI ports, disc drives, controllers & more", "seconds": 2.8},
+        {"type": "text", "label": "DON'T SEE YOURS?", "text": "Bring it in. We fix *most* makes and models.", "seconds": 2.8}
+      ]
+    },
+    {
+      "id": "06-screen-signs",
+      "title": "Does your screen need to be replaced? Watch for these signs",
+      "caption": "Lines, black screen, ghost touch, ink spreading? 📱 Your screen needs replacing. We do it while you wait.",
+      "tags": "#screenrepair #ghosttouch #crackedscreen #iphonerepair",
+      "slides": [
+        {"type": "hook", "text": "Does your screen need to be *replaced?*", "seconds": 2.4},
+        {"type": "text", "text": "If you see *any* of these, it's time", "seconds": 2.2},
+        {"type": "text", "label": "1", "text": "*Lines* across the screen", "sub": "Up and down or side to side", "seconds": 2.6},
+        {"type": "text", "label": "2", "text": "A *black, white or green* screen", "seconds": 2.6},
+        {"type": "text", "label": "3", "text": "*Glitching* or flickering", "seconds": 2.4},
+        {"type": "text", "label": "4", "text": "It's typing *on its own*", "sub": "That's called ghost touch.", "seconds": 2.6},
+        {"type": "text", "label": "5", "text": "Black *ink* spreading", "seconds": 2.4},
+        {"type": "text", "label": "DON'T WAIT", "text": "Walk in. We replace screens *while you wait.*", "sub": "iPhone, Samsung, Google Pixel, iPad & more", "seconds": 3.4}
+      ]
+    },
+    {
+      "id": "07-why-us",
+      "title": "Why the South Bay brings their phones to us",
+      "caption": "4.7 stars. 268 Yelp reviews. 10+ years. ⭐ This is why the South Bay trusts us with their phones.",
+      "tags": "#phonerepair #smallbusiness #southbay #yelp",
+      "slides": [
+        {"type": "hook", "text": "Why the South Bay brings their phones to *us*", "seconds": 2.6},
+        {"type": "text", "text": "*4.7 stars* on Yelp", "sub": "From 268 reviews", "say": "Four point seven stars on Yelp, from 268 reviews.", "seconds": 2.6},
+        {"type": "text", "text": "*10+ years* fixing phones", "say": "Over ten years fixing phones.", "seconds": 2.4},
+        {"type": "text", "text": "We tell you *what's wrong* before we start", "sub": "No surprises. No pressure.", "seconds": 3.0},
+        {"type": "text", "text": "Most repairs done *the same day*", "sub": "Often while you wait.", "seconds": 2.6},
+        {"type": "text", "text": "*No appointment* needed", "sub": "Just walk in.", "seconds": 2.4}
+      ]
+    },
+    {
+      "id": "08-walk-in",
+      "title": "No appointment needed. Just walk in.",
+      "caption": "No appointment. No waiting weeks. 🚶 Walk in and most repairs are done the same day.",
+      "tags": "#phonerepair #walkin #iphonerepair #samsungrepair",
+      "slides": [
+        {"type": "hook", "text": "No appointment. *Just walk in.*", "seconds": 2.4},
+        {"type": "text", "label": "OPEN 7 DAYS", "text": "Mon–Sat *9AM–8PM*", "sub": "Sunday 10AM–6PM", "say": "We're open seven days. Monday to Saturday, nine A M to eight P M. Sunday, ten to six.", "seconds": 3.2},
+        {"type": "text", "label": "FIND US", "text": "3025 Artesia Blvd, *Torrance*", "sub": "Suite 101", "seconds": 2.8},
+        {"type": "text", "label": "PAY YOUR WAY", "text": "Cash, card, *Zelle*, *Apple Pay* & *Google Pay*", "seconds": 2.8},
+        {"type": "text", "label": "QUESTIONS?", "text": "Call or text *(323) 348-6756*", "sub": "We answer calls and texts.", "seconds": 3.4}
+      ]
+    },
+    {
+      "id": "09-we-buy-phones",
+      "title": "Old phone in your drawer? We buy devices",
+      "caption": "That old phone in your drawer could be cash 💵 We buy phones, tablets and more. Walk in and we'll take a look.",
+      "tags": "#sellyourphone #webuyphones #cashforphones #iphone",
+      "slides": [
+        {"type": "hook", "text": "Old phone sitting in your *drawer?*", "seconds": 2.4},
+        {"type": "text", "text": "We *buy* devices", "sub": "Phones, tablets and more", "seconds": 2.4},
+        {"type": "text", "text": "Any make. *Any model.*", "seconds": 2.2},
+        {"type": "text", "text": "Walk in and we'll *take a look*", "sub": "Anytime during business hours", "seconds": 2.8},
+        {"type": "text", "label": "BONUS", "text": "Selling it somewhere else? We'll *wipe it clean* first", "sub": "Back up your data before you come in.", "seconds": 3.4}
+      ]
+    },
+    {
+      "id": "10-refurbished",
+      "title": "Need a phone without paying full price?",
+      "caption": "Why pay full price? 📱 Refurbished iPhone, Samsung, Google Pixel, iPad and MacBook. New stock every week.",
+      "tags": "#refurbishediphone #usedphones #iphone #samsung",
+      "slides": [
+        {"type": "hook", "text": "Need a phone without paying *full price?*", "seconds": 2.6},
+        {"type": "text", "text": "We sell *refurbished* phones", "sub": "iPhone, Samsung, Google Pixel, Motorola & more", "seconds": 3.0},
+        {"type": "text", "text": "Plus *iPads* and *MacBooks*", "seconds": 2.2},
+        {"type": "text", "text": "New stock *every week*", "sub": "Walk in and ask what we have.", "seconds": 2.8}
+      ]
+    },
+    {
+      "id": "11-diagnostic",
+      "title": "Don't know what's wrong with your phone? We'll find out",
+      "caption": "Won't turn on? Stuck on the logo? Frozen? 🔍 We find out exactly what's wrong. Then YOU decide. No pressure.",
+      "tags": "#phonerepair #bootloop #phonewontturnon #iphonerepair",
+      "slides": [
+        {"type": "hook", "text": "Don't know what's *wrong* with your phone?", "seconds": 2.4},
+        {"type": "text", "text": "It *won't turn on?*", "seconds": 2.0},
+        {"type": "text", "text": "Stuck on the *logo* or keeps *restarting?*", "seconds": 2.6},
+        {"type": "text", "text": "Screen *frozen?*", "seconds": 2.0},
+        {"type": "text", "text": "We find out *exactly* what's wrong", "sub": "Then we call you with the price.", "seconds": 2.8},
+        {"type": "text", "text": "*You* decide", "sub": "Fix it or walk away. No pressure either way.", "seconds": 2.8}
+      ]
+    },
+    {
+      "id": "12-data-transfer",
+      "title": "Switching phones? We move everything for you",
+      "caption": "iPhone to Samsung? Samsung to iPhone? 🔀 We move your contacts, photos, videos, messages and apps. Bring both phones in.",
+      "tags": "#newphone #iphonetosamsung #datatransfer #techhelp",
+      "slides": [
+        {"type": "hook", "text": "Switching from *iPhone* to *Samsung?*", "seconds": 2.4},
+        {"type": "text", "text": "We move *everything*", "sub": "Contacts, photos, videos, messages & apps", "seconds": 3.0},
+        {"type": "text", "text": "*Any phone* to any phone", "sub": "Any brand. Any model.", "seconds": 2.4},
+        {"type": "text", "text": "Even phone to *laptop*", "seconds": 2.0},
+        {"type": "text", "text": "Bring *both* phones in", "sub": "We'll handle the rest.", "seconds": 2.6}
+      ]
+    },
+    {
+      "id": "13-unlocking",
+      "title": "Locked out of your phone? Want to switch carriers?",
+      "caption": "Forgot your passcode? Want to switch carriers? 🔓 iPhone, Samsung, Google Pixel and more. Walk in or call to check your phone.",
+      "tags": "#phoneunlock #carrierunlock #forgotpasscode #iphone",
+      "slides": [
+        {"type": "hook", "text": "*Locked out* of your phone?", "seconds": 2.2},
+        {"type": "text", "text": "Forgot your *passcode?*", "sub": "We can unlock your device.", "seconds": 2.6},
+        {"type": "text", "text": "Want to *switch carriers?*", "sub": "We do carrier unlocks.", "seconds": 2.6},
+        {"type": "text", "text": "*iPhone*, *Samsung*, *Google Pixel* & more", "seconds": 2.4},
+        {"type": "text", "text": "Walk in or call to *check* your phone", "seconds": 2.6}
+      ]
+    },
+    {
+      "id": "14-slow-phone",
+      "title": "Is your phone slow for no reason?",
+      "caption": "Slow phone? Pop-ups? Apps acting weird? 🦠 It could be a virus. We remove it and speed it up, even if you don't know why it's slow.",
+      "tags": "#slowphone #phonevirus #techhelp #phonerepair",
+      "slides": [
+        {"type": "hook", "text": "Is your phone *slow* for no reason?", "seconds": 2.4},
+        {"type": "text", "text": "*Pop-ups* everywhere?", "seconds": 2.0},
+        {"type": "text", "text": "Apps *acting strange?*", "seconds": 2.0},
+        {"type": "text", "text": "It could be a *virus*", "seconds": 2.0},
+        {"type": "text", "text": "We remove it and *speed it up*", "sub": "Even if you don't know why it's slow", "seconds": 2.8},
+        {"type": "text", "text": "Phones, laptops, *MacBooks* & computers", "seconds": 2.4}
+      ]
+    },
+    {
+      "id": "15-back-glass",
+      "title": "Cracked the back of your iPhone? We replace back glass",
+      "caption": "Cracked back glass? 🪟 We make it look and feel like new again. All iPhone models.",
+      "tags": "#backglass #iphonerepair #crackediphone #phonerepair",
+      "slides": [
+        {"type": "hook", "text": "Cracked the *back* of your iPhone?", "seconds": 2.4},
+        {"type": "text", "text": "We replace *back glass*", "sub": "All iPhone models, plus other makes", "seconds": 2.8},
+        {"type": "text", "text": "Looks and feels *like new* again", "seconds": 2.4},
+        {"type": "text", "text": "*90-day warranty* on the part we replace", "seconds": 2.6}
+      ]
+    },
+    {
+      "id": "16-camera-lens",
+      "title": "Blurry photos? Your camera lens might be cracked",
+      "caption": "Blurry photos? 📷 A cracked camera lens could be why. We replace the lens glass, front or back.",
+      "tags": "#cameralens #iphonecamera #blurryphotos #iphonerepair",
+      "slides": [
+        {"type": "hook", "text": "Photos coming out *blurry?*", "seconds": 2.2},
+        {"type": "text", "text": "Your camera *lens* might be cracked", "seconds": 2.4},
+        {"type": "text", "text": "We replace the *lens glass*", "sub": "Front and rear cameras", "seconds": 2.6},
+        {"type": "text", "text": "Clear photos *again*", "seconds": 2.0}
+      ]
+    },
+    {
+      "id": "17-game-consoles",
+      "title": "PS5, Xbox or Nintendo Switch broken? We fix them",
+      "caption": "PS5 no picture? Joy-Con acting up? Disc drive dead? 🎮 We fix PlayStation, Xbox and Nintendo Switch.",
+      "tags": "#ps5repair #nintendoswitch #xbox #gamer",
+      "slides": [
+        {"type": "hook", "text": "Console *broken?*", "seconds": 2.0},
+        {"type": "text", "text": "*No picture* on your TV?", "sub": "Could be the HDMI port.", "seconds": 2.6},
+        {"type": "text", "text": "*Disc drive* not working?", "seconds": 2.2},
+        {"type": "text", "text": "*Controller* or *Joy-Con* acting up?", "seconds": 2.4},
+        {"type": "text", "text": "We fix *PlayStation*, *Xbox* & *Nintendo Switch*", "seconds": 2.8},
+        {"type": "text", "text": "We order the *right part*", "sub": "Usually next day, up to one week", "seconds": 2.8}
+      ]
+    },
+    {
+      "id": "18-apple-watch",
+      "title": "Cracked your Apple Watch? We fix it",
+      "caption": "Cracked Apple Watch screen? Battery dying fast? ⌚ We fix every series.",
+      "tags": "#applewatch #applewatchrepair #apple #phonerepair",
+      "slides": [
+        {"type": "hook", "text": "Cracked your *Apple Watch?*", "seconds": 2.2},
+        {"type": "text", "text": "We replace the *screen*", "seconds": 2.0},
+        {"type": "text", "text": "Battery dying *fast?*", "sub": "We replace that too.", "seconds": 2.4},
+        {"type": "text", "text": "*Every* series", "sub": "Series 1 to 10, SE & Ultra", "seconds": 2.6}
+      ]
+    },
+    {
+      "id": "19-accessories",
+      "title": "Need a case or charger today?",
+      "caption": "Cases, chargers, power banks, car mounts, screen protectors and more 🛍️ Walk in and see it all.",
+      "tags": "#phonecase #phoneaccessories #charger #screenprotector",
+      "slides": [
+        {"type": "hook", "text": "Need a *case* or *charger* today?", "seconds": 2.4},
+        {"type": "text", "text": "Cases for *most* phones", "sub": "Plus iPad and AirPod cases", "seconds": 2.6},
+        {"type": "text", "text": "*Chargers*, cables & power banks", "seconds": 2.4},
+        {"type": "text", "text": "*Car mounts* & car chargers", "seconds": 2.2},
+        {"type": "text", "text": "*Screen protectors*", "seconds": 2.0},
+        {"type": "text", "text": "Headphones & *Bluetooth speakers*", "seconds": 2.4},
+        {"type": "text", "text": "Walk in and *see it all*", "seconds": 2.2}
+      ]
+    },
+    {
+      "id": "20-south-bay",
+      "title": "Live in the South Bay? We're your phone repair shop",
+      "caption": "Redondo, Hermosa, Manhattan Beach, Gardena, Carson, Long Beach and more 📍 We're your phone repair shop, right here in Torrance.",
+      "tags": "#southbay #redondobeach #manhattanbeach #longbeach",
+      "slides": [
+        {"type": "hook", "text": "Live in the *South Bay?*", "seconds": 2.2},
+        {"type": "text", "text": "Redondo. Hermosa. *Manhattan Beach.*", "seconds": 2.6},
+        {"type": "text", "text": "Gardena. Carson. *Lomita.*", "seconds": 2.4},
+        {"type": "text", "text": "Long Beach. Hawthorne. *Lawndale.*", "seconds": 2.6},
+        {"type": "text", "text": "We're *your* phone repair shop", "sub": "Right here in Torrance", "seconds": 2.6}
       ]
     }
   ]
