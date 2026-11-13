@@ -1362,11 +1362,22 @@
           "seconds": 2.2
         },
         {
-          "type": "text",
+          "type": "qr",
           "label": "LEAVE A REVIEW",
-          "text": "Rate us on *Google* & *Yelp*",
-          "sub": "Scan the code, tap Google or Yelp, pick your stars. Takes 30 seconds.",
-          "seconds": 2.4
+          "text": "Scan to rate us",
+          "images": [
+            [
+              "qr-google.png",
+              "Google"
+            ],
+            [
+              "qr-yelp.png",
+              "Yelp"
+            ]
+          ],
+          "sub": "Can't scan? Go to phoneelectrik.com/links and tap Google or Yelp",
+          "say": "Leave us a review. Scan the Google code or the Yelp code, and pick your stars. It takes 30 seconds. Can't scan? Go to phone electric dot com slash links.",
+          "seconds": 4.5
         },
         {
           "type": "text",

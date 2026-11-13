@@ -186,11 +186,22 @@ def render_slide(img, slide, t, idx, total, handle):
         fnt, lines, size = fit(parse(slide["text"]), "ExtraBold", 84, SAFE_R - SAFE_L, 200)
         draw_lines(img, lines, fnt, size, cx, top, t)
         top += len(lines) * size * 1.12 + 30
-        q = Image.open(os.path.join(HERE, slide["image"])).convert("RGBA")
-        qs = 560
-        d.rounded_rectangle((cx - qs / 2 - 24, top, cx + qs / 2 + 24, top + qs + 48), 28, fill=WHITE)
-        img.alpha_composite(q.resize((qs, qs), Image.NEAREST), (int(cx - qs / 2), int(top + 24)))
-        top += qs + 48 + 30
+        if slide.get("images"):  # two codes side by side, each with a name under it
+            qs, gap = 330, 60
+            lf = font("Black", 56)
+            for k, (path, name) in enumerate(slide["images"]):
+                x = cx + (k - 0.5) * (qs + 48 + gap)
+                q = Image.open(os.path.join(HERE, path)).convert("RGBA")
+                d.rounded_rectangle((x - qs / 2 - 24, top, x + qs / 2 + 24, top + qs + 48), 24, fill=WHITE)
+                img.alpha_composite(q.resize((qs, qs), Image.NEAREST), (int(x - qs / 2), int(top + 24)))
+                d.text((x - lf.getlength(name) / 2, top + qs + 70), name, font=lf, fill=ORANGE)
+            top += qs + 48 + 70 + 56 + 40
+        else:
+            q = Image.open(os.path.join(HERE, slide["image"])).convert("RGBA")
+            qs = 560
+            d.rounded_rectangle((cx - qs / 2 - 24, top, cx + qs / 2 + 24, top + qs + 48), 28, fill=WHITE)
+            img.alpha_composite(q.resize((qs, qs), Image.NEAREST), (int(cx - qs / 2), int(top + 24)))
+            top += qs + 48 + 30
         if slide.get("sub"):
             sfnt, slines, ssize = fit(parse(slide["sub"]), "Bold", 58, SAFE_R - SAFE_L, 160)
             draw_lines(img, slines, sfnt, ssize, cx, top, 10, color=WHITE)

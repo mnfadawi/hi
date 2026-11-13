@@ -2508,7 +2508,7 @@ Screen repair for every budget 📱 We have more than one screen quality option,
 4. **WEBSITE:** phoneelectrik.com
 5. **ALL OUR LINKS:** Scan with your camera _(phoneelectrik.com/links)_
 6. **DIGITAL BUSINESS CARD:** Save us to your contacts in one tap _(phoneelectrik.com/card)_
-7. **LEAVE A REVIEW:** Rate us on Google & Yelp _(Scan the code, tap Google or Yelp, pick your stars. Takes 30 seconds.)_
+7. **LEAVE A REVIEW:** Scan to rate us _(Can't scan? Go to phoneelectrik.com/links and tap Google or Yelp)_
 8. **THANK YOU:** Every follow & review helps a local shop grow
 
 **Captions for this video:**
