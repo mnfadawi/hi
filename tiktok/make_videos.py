@@ -174,6 +174,27 @@ def render_slide(img, slide, t, idx, total, handle):
             sub_top = top + len(lines) * size * 1.12 + 50
             draw_lines(img, slines, sfnt, ssize, cx, sub_top, t - 0.2, color=MUTED, line_gap=1.25)
 
+    elif kind == "qr":
+        # a big scannable QR code with a short line above and the web address below
+        top = SAFE_TOP + 40
+        if slide.get("label"):
+            lf = font("Black", 60)
+            lw = lf.getlength(slide["label"])
+            d.rounded_rectangle((cx - lw / 2 - 28, top, cx + lw / 2 + 28, top + 94), 20, fill=ORANGE)
+            d.text((cx - lw / 2, top + 13), slide["label"], font=lf, fill=WHITE)
+            top += 130
+        fnt, lines, size = fit(parse(slide["text"]), "ExtraBold", 84, SAFE_R - SAFE_L, 200)
+        draw_lines(img, lines, fnt, size, cx, top, t)
+        top += len(lines) * size * 1.12 + 30
+        q = Image.open(os.path.join(HERE, slide["image"])).convert("RGBA")
+        qs = 560
+        d.rounded_rectangle((cx - qs / 2 - 24, top, cx + qs / 2 + 24, top + qs + 48), 28, fill=WHITE)
+        img.alpha_composite(q.resize((qs, qs), Image.NEAREST), (int(cx - qs / 2), int(top + 24)))
+        top += qs + 48 + 30
+        if slide.get("sub"):
+            sfnt, slines, ssize = fit(parse(slide["sub"]), "Bold", 58, SAFE_R - SAFE_L, 160)
+            draw_lines(img, slines, sfnt, ssize, cx, top, 10, color=WHITE)
+
     elif kind == "end":
         p = ease_out(t / 0.35)
         h = paste_scaled(img, LOGO, 520, cx, 300, alpha=p)

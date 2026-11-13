@@ -1309,6 +1309,72 @@
           "seconds": 2.2
         }
       ]
+    },
+    {
+      "id": "39-follow-us",
+      "title": "Follow us, save our contact, and leave us a review",
+      "caption": "Stay connected with Phone ElectriK 📲 Follow @phoneelectrik on TikTok, Instagram and YouTube. Scan the QR code or visit phoneelectrik.com/links for everything: call, directions, our digital business card, and reviews. Already been in? Leave us a review on Google or Yelp, it takes 30 seconds and helps a local shop grow 🙏",
+      "tags": "#supportlocal #smallbusiness #followus #leaveareview",
+      "slides": [
+        {
+          "type": "hook",
+          "text": "Stay connected with *Phone ElectriK*",
+          "say": "Stay connected with Phone ElectriK.",
+          "seconds": 1.8
+        },
+        {
+          "type": "text",
+          "label": "FOLLOW US",
+          "text": "*@phoneelectrik*",
+          "sub": "TikTok · Instagram · YouTube",
+          "say": "Follow us at phone electric, on TikTok, Instagram and YouTube.",
+          "seconds": 1.8
+        },
+        {
+          "type": "text",
+          "label": "CONTACT US",
+          "text": "Call or text *(323) 348-6756*",
+          "sub": "The fastest way to reach us. You can also DM us.",
+          "seconds": 2.0
+        },
+        {
+          "type": "text",
+          "label": "WEBSITE",
+          "text": "*phoneelectrik.com*",
+          "say": "Visit our website, phone electric dot com.",
+          "seconds": 1.6
+        },
+        {
+          "type": "qr",
+          "label": "ALL OUR LINKS",
+          "text": "Scan with your camera",
+          "image": "qr-links.png",
+          "sub": "phoneelectrik.com/links",
+          "say": "Scan this code with your camera to get all our links in one place: call us, get directions, and more.",
+          "seconds": 4.5
+        },
+        {
+          "type": "text",
+          "label": "DIGITAL BUSINESS CARD",
+          "text": "Save us to your contacts in *one tap*",
+          "sub": "phoneelectrik.com/card",
+          "say": "Our digital business card lets you save us to your contacts in one tap. Go to phone electric dot com slash card.",
+          "seconds": 2.2
+        },
+        {
+          "type": "text",
+          "label": "LEAVE A REVIEW",
+          "text": "Rate us on *Google* & *Yelp*",
+          "sub": "Scan the code, tap Google or Yelp, pick your stars. Takes 30 seconds.",
+          "seconds": 2.4
+        },
+        {
+          "type": "text",
+          "label": "THANK YOU",
+          "text": "Every follow & review helps a *local shop* grow",
+          "seconds": 2.2
+        }
+      ]
     }
   ]
 }

@@ -2497,3 +2497,72 @@ Screen repair for every budget 📱 We have more than one screen quality option,
 
 #screenrepair #affordable #iphonerepair #samsungrepair #phoneelectrik #torrance #southbay #phonerepair #shorts
 ```
+
+---
+## 39-follow-us: Follow us, save our contact, and leave us a review
+
+**What's on screen (and what the voice says):**
+1. Stay connected with Phone ElectriK
+2. **FOLLOW US:** @phoneelectrik _(TikTok · Instagram · YouTube)_
+3. **CONTACT US:** Call or text (323) 348-6756 _(The fastest way to reach us. You can also DM us.)_
+4. **WEBSITE:** phoneelectrik.com
+5. **ALL OUR LINKS:** Scan with your camera _(phoneelectrik.com/links)_
+6. **DIGITAL BUSINESS CARD:** Save us to your contacts in one tap _(phoneelectrik.com/card)_
+7. **LEAVE A REVIEW:** Rate us on Google & Yelp _(Scan the code, tap Google or Yelp, pick your stars. Takes 30 seconds.)_
+8. **THANK YOU:** Every follow & review helps a local shop grow
+
+**Captions for this video:**
+
+```
+VIDEO: 39-follow-us.mp4
+TOPIC: Follow us, save our contact, and leave us a review
+
+----------------------------------------
+TIKTOK (caption)
+----------------------------------------
+Stay connected with Phone ElectriK 📲 Follow @phoneelectrik on TikTok, Instagram and YouTube. Scan the QR code or visit phoneelectrik.com/links for everything: call, directions, our digital business card, and reviews. Already been in? Leave us a review on Google or Yelp, it takes 30 seconds and helps a local shop grow 🙏
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#supportlocal #smallbusiness #followus #leaveareview #phoneelectrik #torrance #southbay #phonerepair
+
+----------------------------------------
+INSTAGRAM REELS (caption)
+----------------------------------------
+Stay connected with Phone ElectriK 📲 Follow @phoneelectrik on TikTok, Instagram and YouTube. Scan the QR code or visit phoneelectrik.com/links for everything: call, directions, our digital business card, and reviews. Already been in? Leave us a review on Google or Yelp, it takes 30 seconds and helps a local shop grow 🙏
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#supportlocal #smallbusiness #followus #leaveareview #phoneelectrik #torrance #southbay #phonerepair
+
+----------------------------------------
+FACEBOOK REELS (description)
+----------------------------------------
+Stay connected with Phone ElectriK 📲 Follow @phoneelectrik on TikTok, Instagram and YouTube. Scan the QR code or visit phoneelectrik.com/links for everything: call, directions, our digital business card, and reviews. Already been in? Leave us a review on Google or Yelp, it takes 30 seconds and helps a local shop grow 🙏
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+
+----------------------------------------
+YOUTUBE SHORTS
+----------------------------------------
+TITLE:
+Follow us, save our contact, and leave us a review #shorts
+
+DESCRIPTION:
+Stay connected with Phone ElectriK 📲 Follow @phoneelectrik on TikTok, Instagram and YouTube. Scan the QR code or visit phoneelectrik.com/links for everything: call, directions, our digital business card, and reviews. Already been in? Leave us a review on Google or Yelp, it takes 30 seconds and helps a local shop grow 🙏
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#supportlocal #smallbusiness #followus #leaveareview #phoneelectrik #torrance #southbay #phonerepair #shorts
+```
