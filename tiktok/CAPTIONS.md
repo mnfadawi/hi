@@ -1102,3 +1102,803 @@ Every repair at Phone ElectriK comes with a 90-day warranty 🛡️ If the part 
 
 #warranty #phonerepair #iphonerepair #honestbusiness #phoneelectrik #torrance #southbay #shorts
 ```
+
+## 23-laptop-macbook.mp4: MacBook or laptop broken? We fix it
+
+**TikTok**
+```
+Cracked laptop screen? Battery dead? Keys not working? 💻 We fix MacBooks and Windows laptops: screens, batteries, keyboards and more. Torrance. What's wrong with yours? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#macbookrepair #laptoprepair #macbook #brokenlaptop #phoneelectrik #torrance #southbay #phonerepair
+```
+**Instagram Reels**
+```
+Cracked laptop screen? Battery dead? Keys not working? 💻 We fix MacBooks and Windows laptops: screens, batteries, keyboards and more. Torrance. What's wrong with yours? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#macbookrepair #laptoprepair #macbook #brokenlaptop #phoneelectrik #torrance #southbay #phonerepair
+```
+**Facebook Reels**
+```
+Cracked laptop screen? Battery dead? Keys not working? 💻 We fix MacBooks and Windows laptops: screens, batteries, keyboards and more. Torrance. What's wrong with yours? 👇
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+MacBook or laptop broken? We fix it #shorts
+```
+Description:
+```
+Cracked laptop screen? Battery dead? Keys not working? 💻 We fix MacBooks and Windows laptops: screens, batteries, keyboards and more. Torrance. What's wrong with yours? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#macbookrepair #laptoprepair #macbook #brokenlaptop #phoneelectrik #torrance #southbay #phonerepair #shorts
+```
+
+## 24-ipad-tablet.mp4: Cracked your iPad? We fix it
+
+**TikTok**
+```
+Cracked iPad screen? Not charging? Battery dying? 📱 We fix iPads and Android tablets, and most are done while you wait. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#ipadrepair #crackedipad #tabletrepair #ipad #phoneelectrik #torrance #southbay #phonerepair
+```
+**Instagram Reels**
+```
+Cracked iPad screen? Not charging? Battery dying? 📱 We fix iPads and Android tablets, and most are done while you wait. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#ipadrepair #crackedipad #tabletrepair #ipad #phoneelectrik #torrance #southbay #phonerepair
+```
+**Facebook Reels**
+```
+Cracked iPad screen? Not charging? Battery dying? 📱 We fix iPads and Android tablets, and most are done while you wait. Torrance.
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+Cracked your iPad? We fix it #shorts
+```
+Description:
+```
+Cracked iPad screen? Not charging? Battery dying? 📱 We fix iPads and Android tablets, and most are done while you wait. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#ipadrepair #crackedipad #tabletrepair #ipad #phoneelectrik #torrance #southbay #phonerepair #shorts
+```
+
+## 25-data-recovery.mp4: Phone won't turn on? Your photos might still be saved
+
+**TikTok**
+```
+Phone won't turn on and your photos are stuck inside? 📸 Bring it in and we'll check if we can recover your photos, contacts and files. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#datarecovery #lostphotos #phonewontturnon #recoverphotos #phoneelectrik #torrance #southbay #phonerepair
+```
+**Instagram Reels**
+```
+Phone won't turn on and your photos are stuck inside? 📸 Bring it in and we'll check if we can recover your photos, contacts and files. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#datarecovery #lostphotos #phonewontturnon #recoverphotos #phoneelectrik #torrance #southbay #phonerepair
+```
+**Facebook Reels**
+```
+Phone won't turn on and your photos are stuck inside? 📸 Bring it in and we'll check if we can recover your photos, contacts and files. Torrance.
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+Phone won't turn on? Your photos might still be saved #shorts
+```
+Description:
+```
+Phone won't turn on and your photos are stuck inside? 📸 Bring it in and we'll check if we can recover your photos, contacts and files. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#datarecovery #lostphotos #phonewontturnon #recoverphotos #phoneelectrik #torrance #southbay #phonerepair #shorts
+```
+
+## 26-factory-reset.mp4: Selling your phone? Wipe it first
+
+**TikTok**
+```
+Selling or giving away your phone? 🔁 We'll wipe it clean so nobody sees your stuff. Back up first, because a reset deletes everything. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#factoryreset #sellyourphone #privacy #phonetips #phoneelectrik #torrance #southbay #phonerepair
+```
+**Instagram Reels**
+```
+Selling or giving away your phone? 🔁 We'll wipe it clean so nobody sees your stuff. Back up first, because a reset deletes everything. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#factoryreset #sellyourphone #privacy #phonetips #phoneelectrik #torrance #southbay #phonerepair
+```
+**Facebook Reels**
+```
+Selling or giving away your phone? 🔁 We'll wipe it clean so nobody sees your stuff. Back up first, because a reset deletes everything. Torrance.
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+Selling your phone? Wipe it first #shorts
+```
+Description:
+```
+Selling or giving away your phone? 🔁 We'll wipe it clean so nobody sees your stuff. Back up first, because a reset deletes everything. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#factoryreset #sellyourphone #privacy #phonetips #phoneelectrik #torrance #southbay #phonerepair #shorts
+```
+
+## 27-special-orders.mp4: Rare phone? We can order the part
+
+**TikTok**
+```
+Got a less common phone or device? 📦 Bring it in so we can see it, confirm the model and order the right part, usually next day to one week. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#phonerepair #rarephone #specialorder #anyphone #phoneelectrik #torrance #southbay
+```
+**Instagram Reels**
+```
+Got a less common phone or device? 📦 Bring it in so we can see it, confirm the model and order the right part, usually next day to one week. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#phonerepair #rarephone #specialorder #anyphone #phoneelectrik #torrance #southbay
+```
+**Facebook Reels**
+```
+Got a less common phone or device? 📦 Bring it in so we can see it, confirm the model and order the right part, usually next day to one week. Torrance.
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+Rare phone? We can order the part #shorts
+```
+Description:
+```
+Got a less common phone or device? 📦 Bring it in so we can see it, confirm the model and order the right part, usually next day to one week. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#phonerepair #rarephone #specialorder #anyphone #phoneelectrik #torrance #southbay #shorts
+```
+
+## 28-samsung-foldables.mp4: Samsung Z Fold or Z Flip broken?
+
+**TikTok**
+```
+Z Fold or Z Flip screen broken? 📱 We fix Samsung foldables, plus every S, A and Note model. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#zfold #zflip #samsungrepair #galaxy #phoneelectrik #torrance #southbay #phonerepair
+```
+**Instagram Reels**
+```
+Z Fold or Z Flip screen broken? 📱 We fix Samsung foldables, plus every S, A and Note model. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#zfold #zflip #samsungrepair #galaxy #phoneelectrik #torrance #southbay #phonerepair
+```
+**Facebook Reels**
+```
+Z Fold or Z Flip screen broken? 📱 We fix Samsung foldables, plus every S, A and Note model. Torrance.
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+Samsung Z Fold or Z Flip broken? #shorts
+```
+Description:
+```
+Z Fold or Z Flip screen broken? 📱 We fix Samsung foldables, plus every S, A and Note model. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#zfold #zflip #samsungrepair #galaxy #phoneelectrik #torrance #southbay #phonerepair #shorts
+```
+
+## 29-all-brands.mp4: Not an iPhone? We fix it too
+
+**TikTok**
+```
+Not an iPhone? No problem 📱 We fix Samsung, Google Pixel, Motorola, OnePlus, LG, TCL, Nokia and more. Which phone do you have? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#googlepixel #motorola #oneplus #androidrepair #phoneelectrik #torrance #southbay #phonerepair
+```
+**Instagram Reels**
+```
+Not an iPhone? No problem 📱 We fix Samsung, Google Pixel, Motorola, OnePlus, LG, TCL, Nokia and more. Which phone do you have? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#googlepixel #motorola #oneplus #androidrepair #phoneelectrik #torrance #southbay #phonerepair
+```
+**Facebook Reels**
+```
+Not an iPhone? No problem 📱 We fix Samsung, Google Pixel, Motorola, OnePlus, LG, TCL, Nokia and more. Which phone do you have? 👇
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+Not an iPhone? We fix it too #shorts
+```
+Description:
+```
+Not an iPhone? No problem 📱 We fix Samsung, Google Pixel, Motorola, OnePlus, LG, TCL, Nokia and more. Which phone do you have? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#googlepixel #motorola #oneplus #androidrepair #phoneelectrik #torrance #southbay #phonerepair #shorts
+```
+
+## 30-battery-17.mp4: Phone says 100% then dies at 17%?
+
+**TikTok**
+```
+Phone shows 100%, then jumps to 17% and shuts off? 🔋 That's your battery. We replace it, and most are done while you wait. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#batterydrain #iphonebattery #batteryreplacement #phonedies #phoneelectrik #torrance #southbay #phonerepair
+```
+**Instagram Reels**
+```
+Phone shows 100%, then jumps to 17% and shuts off? 🔋 That's your battery. We replace it, and most are done while you wait. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#batterydrain #iphonebattery #batteryreplacement #phonedies #phoneelectrik #torrance #southbay #phonerepair
+```
+**Facebook Reels**
+```
+Phone shows 100%, then jumps to 17% and shuts off? 🔋 That's your battery. We replace it, and most are done while you wait. Torrance.
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+Phone says 100% then dies at 17%? #shorts
+```
+Description:
+```
+Phone shows 100%, then jumps to 17% and shuts off? 🔋 That's your battery. We replace it, and most are done while you wait. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#batterydrain #iphonebattery #batteryreplacement #phonedies #phoneelectrik #torrance #southbay #phonerepair #shorts
+```
+
+## 31-swollen-battery.mp4: Swollen battery? Stop charging it now
+
+**TikTok**
+```
+Is your phone's back bulging or the screen lifting? ⚠️ That's a swollen battery. Stop charging it and bring it in right away. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#swollenbattery #batterysafety #firehazard #phonesafety #phoneelectrik #torrance #southbay #phonerepair
+```
+**Instagram Reels**
+```
+Is your phone's back bulging or the screen lifting? ⚠️ That's a swollen battery. Stop charging it and bring it in right away. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#swollenbattery #batterysafety #firehazard #phonesafety #phoneelectrik #torrance #southbay #phonerepair
+```
+**Facebook Reels**
+```
+Is your phone's back bulging or the screen lifting? ⚠️ That's a swollen battery. Stop charging it and bring it in right away. Torrance.
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+Swollen battery? Stop charging it now #shorts
+```
+Description:
+```
+Is your phone's back bulging or the screen lifting? ⚠️ That's a swollen battery. Stop charging it and bring it in right away. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#swollenbattery #batterysafety #firehazard #phonesafety #phoneelectrik #torrance #southbay #phonerepair #shorts
+```
+
+## 32-black-screen.mp4: Phone rings but the screen is black?
+
+**TikTok**
+```
+Phone rings but the screen stays black? 📱 It's probably the screen, not the whole phone. Bring it in and we'll check it. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#blackscreen #screenrepair #iphonerepair #phonerepair #phoneelectrik #torrance #southbay
+```
+**Instagram Reels**
+```
+Phone rings but the screen stays black? 📱 It's probably the screen, not the whole phone. Bring it in and we'll check it. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#blackscreen #screenrepair #iphonerepair #phonerepair #phoneelectrik #torrance #southbay
+```
+**Facebook Reels**
+```
+Phone rings but the screen stays black? 📱 It's probably the screen, not the whole phone. Bring it in and we'll check it. Torrance.
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+Phone rings but the screen is black? #shorts
+```
+Description:
+```
+Phone rings but the screen stays black? 📱 It's probably the screen, not the whole phone. Bring it in and we'll check it. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#blackscreen #screenrepair #iphonerepair #phonerepair #phoneelectrik #torrance #southbay #shorts
+```
+
+## 33-how-it-works.mp4: What happens when you walk in
+
+**TikTok**
+```
+Never been in? Here's how it works 🚶 Walk in, we check your device, tell you exactly what's wrong and the price, and YOU decide. No pressure. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#phonerepair #howitworks #honestbusiness #walkin #phoneelectrik #torrance #southbay
+```
+**Instagram Reels**
+```
+Never been in? Here's how it works 🚶 Walk in, we check your device, tell you exactly what's wrong and the price, and YOU decide. No pressure. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#phonerepair #howitworks #honestbusiness #walkin #phoneelectrik #torrance #southbay
+```
+**Facebook Reels**
+```
+Never been in? Here's how it works 🚶 Walk in, we check your device, tell you exactly what's wrong and the price, and YOU decide. No pressure. Torrance.
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+What happens when you walk in #shorts
+```
+Description:
+```
+Never been in? Here's how it works 🚶 Walk in, we check your device, tell you exactly what's wrong and the price, and YOU decide. No pressure. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#phonerepair #howitworks #honestbusiness #walkin #phoneelectrik #torrance #southbay #shorts
+```
+
+## 34-text-for-quote.mp4: Want a price? Call or text us
+
+**TikTok**
+```
+Want a price on your repair? 📞 Call or text (323) 348-6756. It's the fastest way to reach us, and we answer calls and texts. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#phonerepair #repairquote #callortext #torrance #phoneelectrik #southbay
+```
+**Instagram Reels**
+```
+Want a price on your repair? 📞 Call or text (323) 348-6756. It's the fastest way to reach us, and we answer calls and texts. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#phonerepair #repairquote #callortext #torrance #phoneelectrik #southbay
+```
+**Facebook Reels**
+```
+Want a price on your repair? 📞 Call or text (323) 348-6756. It's the fastest way to reach us, and we answer calls and texts. Torrance.
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+Want a price? Call or text us #shorts
+```
+Description:
+```
+Want a price on your repair? 📞 Call or text (323) 348-6756. It's the fastest way to reach us, and we answer calls and texts. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#phonerepair #repairquote #callortext #torrance #phoneelectrik #southbay #shorts
+```
+
+## 35-open-sunday.mp4: Phone broke on a Sunday? We're open
+
+**TikTok**
+```
+Phone broke on a Sunday? 📅 We're open! Sunday 10AM–6PM, Monday–Saturday 9AM–8PM. Walk in, no appointment. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#opensunday #phonerepair #weekend #torrance #phoneelectrik #southbay
+```
+**Instagram Reels**
+```
+Phone broke on a Sunday? 📅 We're open! Sunday 10AM–6PM, Monday–Saturday 9AM–8PM. Walk in, no appointment. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#opensunday #phonerepair #weekend #torrance #phoneelectrik #southbay
+```
+**Facebook Reels**
+```
+Phone broke on a Sunday? 📅 We're open! Sunday 10AM–6PM, Monday–Saturday 9AM–8PM. Walk in, no appointment. Torrance.
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+Phone broke on a Sunday? We're open #shorts
+```
+Description:
+```
+Phone broke on a Sunday? 📅 We're open! Sunday 10AM–6PM, Monday–Saturday 9AM–8PM. Walk in, no appointment. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#opensunday #phonerepair #weekend #torrance #phoneelectrik #southbay #shorts
+```
+
+## 36-screen-protector.mp4: A screen protector costs less than a new screen
+
+**TikTok**
+```
+A screen protector costs way less than a new screen 🛡️ Grab one when you're in, or get one put on after your repair. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#screenprotector #protectyourphone #phonecase #phoneaccessories #phoneelectrik #torrance #southbay #phonerepair
+```
+**Instagram Reels**
+```
+A screen protector costs way less than a new screen 🛡️ Grab one when you're in, or get one put on after your repair. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#screenprotector #protectyourphone #phonecase #phoneaccessories #phoneelectrik #torrance #southbay #phonerepair
+```
+**Facebook Reels**
+```
+A screen protector costs way less than a new screen 🛡️ Grab one when you're in, or get one put on after your repair. Torrance.
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+A screen protector costs less than a new screen #shorts
+```
+Description:
+```
+A screen protector costs way less than a new screen 🛡️ Grab one when you're in, or get one put on after your repair. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#screenprotector #protectyourphone #phonecase #phoneaccessories #phoneelectrik #torrance #southbay #phonerepair #shorts
+```
+
+## 37-holiday-gifts.mp4: Holiday gift ideas for anyone with a phone
+
+**TikTok**
+```
+Holiday gift ideas for anyone with a phone 🎁 Earbuds, Bluetooth speakers, power banks, car chargers and cases, all in stock in Torrance. Who are you shopping for? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#giftideas #holidaygifts #techgifts #christmasgifts #phoneelectrik #torrance #southbay #phonerepair
+```
+**Instagram Reels**
+```
+Holiday gift ideas for anyone with a phone 🎁 Earbuds, Bluetooth speakers, power banks, car chargers and cases, all in stock in Torrance. Who are you shopping for? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#giftideas #holidaygifts #techgifts #christmasgifts #phoneelectrik #torrance #southbay #phonerepair
+```
+**Facebook Reels**
+```
+Holiday gift ideas for anyone with a phone 🎁 Earbuds, Bluetooth speakers, power banks, car chargers and cases, all in stock in Torrance. Who are you shopping for? 👇
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+Holiday gift ideas for anyone with a phone #shorts
+```
+Description:
+```
+Holiday gift ideas for anyone with a phone 🎁 Earbuds, Bluetooth speakers, power banks, car chargers and cases, all in stock in Torrance. Who are you shopping for? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#giftideas #holidaygifts #techgifts #christmasgifts #phoneelectrik #torrance #southbay #phonerepair #shorts
+```
+
+## 38-screen-options.mp4: Screen repair for every budget
+
+**TikTok**
+```
+Screen repair for every budget 📱 We have more than one screen quality option, so you can pick what works for you. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#screenrepair #affordable #iphonerepair #samsungrepair #phoneelectrik #torrance #southbay #phonerepair
+```
+**Instagram Reels**
+```
+Screen repair for every budget 📱 We have more than one screen quality option, so you can pick what works for you. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#screenrepair #affordable #iphonerepair #samsungrepair #phoneelectrik #torrance #southbay #phonerepair
+```
+**Facebook Reels**
+```
+Screen repair for every budget 📱 We have more than one screen quality option, so you can pick what works for you. Torrance.
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+Screen repair for every budget #shorts
+```
+Description:
+```
+Screen repair for every budget 📱 We have more than one screen quality option, so you can pick what works for you. Torrance.
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#screenrepair #affordable #iphonerepair #samsungrepair #phoneelectrik #torrance #southbay #phonerepair #shorts
+```
