@@ -763,6 +763,49 @@
           "seconds": 2.2
         }
       ]
+    },
+    {
+      "id": "22-warranty",
+      "title": "Every repair comes with a 90-day warranty",
+      "caption": "Every repair at Phone ElectriK comes with a 90-day warranty 🛡️ If the part we replaced has a problem, bring it back with your receipt and we'll make it right. Does your repair shop do that? 👇",
+      "tags": "#warranty #phonerepair #iphonerepair #honestbusiness",
+      "slides": [
+        {
+          "type": "hook",
+          "text": "Every repair comes with a *90-day warranty*",
+          "say": "Every repair comes with a 90-day warranty.",
+          "seconds": 1.8
+        },
+        {
+          "type": "text",
+          "text": "Part we replaced has a problem? *We make it right.*",
+          "sub": "Within 90 days.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "text": "We *stand behind* our work",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "GOOD TO KNOW",
+          "text": "It covers the *part we replaced*",
+          "sub": "Not new drops or water damage.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "text": "Just keep your *receipt*",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "DON'T WAIT",
+          "text": "Get it fixed *the right way*",
+          "seconds": 2.2
+        }
+      ]
     }
   ]
 }

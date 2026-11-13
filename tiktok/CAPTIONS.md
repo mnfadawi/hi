@@ -1052,3 +1052,53 @@ Fix it, don't replace it 📱🔧 Most repairs are done while you wait. You keep
 
 #fixdontreplace #phonerepair #savemoney #righttorepair #phoneelectrik #torrance #southbay #shorts
 ```
+
+## 22-warranty.mp4: Every repair comes with a 90-day warranty
+
+**TikTok**
+```
+Every repair at Phone ElectriK comes with a 90-day warranty 🛡️ If the part we replaced has a problem, bring it back with your receipt and we'll make it right. Does your repair shop do that? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#warranty #phonerepair #iphonerepair #honestbusiness #phoneelectrik #torrance #southbay
+```
+**Instagram Reels**
+```
+Every repair at Phone ElectriK comes with a 90-day warranty 🛡️ If the part we replaced has a problem, bring it back with your receipt and we'll make it right. Does your repair shop do that? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#warranty #phonerepair #iphonerepair #honestbusiness #phoneelectrik #torrance #southbay
+```
+**Facebook Reels**
+```
+Every repair at Phone ElectriK comes with a 90-day warranty 🛡️ If the part we replaced has a problem, bring it back with your receipt and we'll make it right. Does your repair shop do that? 👇
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+Every repair comes with a 90-day warranty #shorts
+```
+Description:
+```
+Every repair at Phone ElectriK comes with a 90-day warranty 🛡️ If the part we replaced has a problem, bring it back with your receipt and we'll make it right. Does your repair shop do that? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#warranty #phonerepair #iphonerepair #honestbusiness #phoneelectrik #torrance #southbay #shorts
+```

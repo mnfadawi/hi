@@ -1386,3 +1386,70 @@ Fix it, don't replace it 📱🔧 Most repairs are done while you wait. You keep
 
 #fixdontreplace #phonerepair #savemoney #righttorepair #phoneelectrik #torrance #southbay #shorts
 ```
+
+---
+## 22-warranty: Every repair comes with a 90-day warranty
+
+**What's on screen (and what the voice says):**
+1. Every repair comes with a 90-day warranty
+2. Part we replaced has a problem? We make it right. _(Within 90 days.)_
+3. We stand behind our work
+4. **GOOD TO KNOW:** It covers the part we replaced _(Not new drops or water damage.)_
+5. Just keep your receipt
+6. **DON'T WAIT:** Get it fixed the right way
+
+**Captions for this video:**
+
+```
+VIDEO: 22-warranty.mp4
+TOPIC: Every repair comes with a 90-day warranty
+
+----------------------------------------
+TIKTOK (caption)
+----------------------------------------
+Every repair at Phone ElectriK comes with a 90-day warranty 🛡️ If the part we replaced has a problem, bring it back with your receipt and we'll make it right. Does your repair shop do that? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#warranty #phonerepair #iphonerepair #honestbusiness #phoneelectrik #torrance #southbay
+
+----------------------------------------
+INSTAGRAM REELS (caption)
+----------------------------------------
+Every repair at Phone ElectriK comes with a 90-day warranty 🛡️ If the part we replaced has a problem, bring it back with your receipt and we'll make it right. Does your repair shop do that? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#warranty #phonerepair #iphonerepair #honestbusiness #phoneelectrik #torrance #southbay
+
+----------------------------------------
+FACEBOOK REELS (description)
+----------------------------------------
+Every repair at Phone ElectriK comes with a 90-day warranty 🛡️ If the part we replaced has a problem, bring it back with your receipt and we'll make it right. Does your repair shop do that? 👇
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+
+----------------------------------------
+YOUTUBE SHORTS
+----------------------------------------
+TITLE:
+Every repair comes with a 90-day warranty #shorts
+
+DESCRIPTION:
+Every repair at Phone ElectriK comes with a 90-day warranty 🛡️ If the part we replaced has a problem, bring it back with your receipt and we'll make it right. Does your repair shop do that? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#warranty #phonerepair #iphonerepair #honestbusiness #phoneelectrik #torrance #southbay #shorts
+```
