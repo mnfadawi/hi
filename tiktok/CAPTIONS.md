@@ -1002,3 +1002,53 @@ Redondo, Hermosa, Manhattan Beach, Gardena, Carson, Lomita, Long Beach 📍 We'r
 
 #southbay #redondobeach #manhattanbeach #gardena #phoneelectrik #torrance #phonerepair #shorts
 ```
+
+## 21-fix-dont-replace.mp4: Phone broken? Fix it, don't replace it
+
+**TikTok**
+```
+Fix it, don't replace it 📱🔧 Most repairs are done while you wait. You keep your phone, your photos and your apps, and you pay way less than a new phone. Would you rather fix or replace? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#fixdontreplace #phonerepair #savemoney #righttorepair #phoneelectrik #torrance #southbay
+```
+**Instagram Reels**
+```
+Fix it, don't replace it 📱🔧 Most repairs are done while you wait. You keep your phone, your photos and your apps, and you pay way less than a new phone. Would you rather fix or replace? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#fixdontreplace #phonerepair #savemoney #righttorepair #phoneelectrik #torrance #southbay
+```
+**Facebook Reels**
+```
+Fix it, don't replace it 📱🔧 Most repairs are done while you wait. You keep your phone, your photos and your apps, and you pay way less than a new phone. Would you rather fix or replace? 👇
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+Phone broken? Fix it, don't replace it #shorts
+```
+Description:
+```
+Fix it, don't replace it 📱🔧 Most repairs are done while you wait. You keep your phone, your photos and your apps, and you pay way less than a new phone. Would you rather fix or replace? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#fixdontreplace #phonerepair #savemoney #righttorepair #phoneelectrik #torrance #southbay #shorts
+```

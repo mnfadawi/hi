@@ -1317,3 +1317,72 @@ Redondo, Hermosa, Manhattan Beach, Gardena, Carson, Lomita, Long Beach 📍 We'r
 
 #southbay #redondobeach #manhattanbeach #gardena #phoneelectrik #torrance #phonerepair #shorts
 ```
+
+---
+## 21-fix-dont-replace: Phone broken? Fix it, don't replace it
+
+**What's on screen (and what the voice says):**
+1. Phone broken? Fix it. Don't replace it.
+2. **SMARTER:** Fixing usually costs way less than a new phone _(You pay less right now.)_
+3. **THE MYTH:** "Repairs take too long"
+4. **THE TRUTH:** Most repairs are done while you wait
+5. No ordering a new phone. No waiting for shipping.
+6. No transferring all your data _(No hours on Wi-Fi. No starting over when it fails.)_
+7. Keep your phone _(Same photos. Same apps. Same everything.)_
+8. **DON'T WAIT:** Bring it in. Fix it today.
+
+**Captions for this video:**
+
+```
+VIDEO: 21-fix-dont-replace.mp4
+TOPIC: Phone broken? Fix it, don't replace it
+
+----------------------------------------
+TIKTOK (caption)
+----------------------------------------
+Fix it, don't replace it 📱🔧 Most repairs are done while you wait. You keep your phone, your photos and your apps, and you pay way less than a new phone. Would you rather fix or replace? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#fixdontreplace #phonerepair #savemoney #righttorepair #phoneelectrik #torrance #southbay
+
+----------------------------------------
+INSTAGRAM REELS (caption)
+----------------------------------------
+Fix it, don't replace it 📱🔧 Most repairs are done while you wait. You keep your phone, your photos and your apps, and you pay way less than a new phone. Would you rather fix or replace? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#fixdontreplace #phonerepair #savemoney #righttorepair #phoneelectrik #torrance #southbay
+
+----------------------------------------
+FACEBOOK REELS (description)
+----------------------------------------
+Fix it, don't replace it 📱🔧 Most repairs are done while you wait. You keep your phone, your photos and your apps, and you pay way less than a new phone. Would you rather fix or replace? 👇
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+
+----------------------------------------
+YOUTUBE SHORTS
+----------------------------------------
+TITLE:
+Phone broken? Fix it, don't replace it #shorts
+
+DESCRIPTION:
+Fix it, don't replace it 📱🔧 Most repairs are done while you wait. You keep your phone, your photos and your apps, and you pay way less than a new phone. Would you rather fix or replace? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#fixdontreplace #phonerepair #savemoney #righttorepair #phoneelectrik #torrance #southbay #shorts
+```

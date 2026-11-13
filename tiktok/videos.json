@@ -707,6 +707,62 @@
           "seconds": 2.2
         }
       ]
+    },
+    {
+      "id": "21-fix-dont-replace",
+      "title": "Phone broken? Fix it, don't replace it",
+      "caption": "Fix it, don't replace it 📱🔧 Most repairs are done while you wait. You keep your phone, your photos and your apps, and you pay way less than a new phone. Would you rather fix or replace? 👇",
+      "tags": "#fixdontreplace #phonerepair #savemoney #righttorepair",
+      "slides": [
+        {
+          "type": "hook",
+          "text": "Phone broken? *Fix it.* Don't replace it.",
+          "seconds": 1.8
+        },
+        {
+          "type": "text",
+          "label": "SMARTER",
+          "text": "Fixing usually costs *way less* than a new phone",
+          "sub": "You pay less right now.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "THE MYTH",
+          "text": "\"Repairs take too long\"",
+          "say": "People think repairs take too long.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "THE TRUTH",
+          "text": "Most repairs are done *while you wait*",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "text": "No ordering a new phone. *No waiting for shipping.*",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "text": "No *transferring* all your data",
+          "sub": "No hours on Wi-Fi. No starting over when it fails.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "text": "Keep *your* phone",
+          "sub": "Same photos. Same apps. Same everything.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "DON'T WAIT",
+          "text": "Bring it in. *Fix it today.*",
+          "seconds": 2.2
+        }
+      ]
     }
   ]
 }
