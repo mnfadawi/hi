@@ -1235,33 +1235,42 @@
     },
     {
       "id": "37-holiday-gifts",
-      "title": "Holiday gift ideas for anyone with a phone",
-      "caption": "Holiday gift ideas for anyone with a phone 🎁 Earbuds, Bluetooth speakers, power banks, car chargers and cases, all in stock in Torrance. Who are you shopping for? 👇",
-      "tags": "#giftideas #holidaygifts #techgifts #christmasgifts",
+      "title": "Holiday shopping? We've got you covered",
+      "caption": "Holiday shopping for your kids, family or someone you care about? 🎁 We've got you covered: phones, cases and screen protectors for their new phone, earbuds, speakers and power banks. You can even gift a repair and fix a loved one's broken phone. Who are you shopping for? 👇",
+      "tags": "#holidaygifts #giftideas #techgifts #holidayshopping",
       "slides": [
         {
           "type": "hook",
-          "text": "Holiday gift ideas for anyone with a *phone*",
+          "text": "Holiday shopping? *We've got you covered.*",
           "seconds": 1.8
         },
         {
           "type": "text",
-          "text": "*Earbuds* & headphones",
+          "text": "Gifts for your *kids*, family & *loved ones*",
           "seconds": 1.6
         },
         {
           "type": "text",
-          "text": "*Bluetooth speakers*",
+          "label": "GIFT A PHONE",
+          "text": "We sell *phones*",
+          "sub": "Refurbished iPhone, Samsung & more",
           "seconds": 1.6
         },
         {
           "type": "text",
-          "text": "*Power banks* & car chargers",
+          "text": "*Cases* & *screen protectors* for their new phone",
           "seconds": 1.6
         },
         {
           "type": "text",
-          "text": "*Cases* & AirPod cases",
+          "text": "*Earbuds*, speakers & *power banks*",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "GIFT A REPAIR",
+          "text": "Fix a loved one's *broken phone*",
+          "sub": "A gift they'll use every day.",
           "seconds": 1.6
         },
         {

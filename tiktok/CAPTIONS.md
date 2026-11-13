@@ -1803,30 +1803,30 @@ A screen protector costs way less than a new screen 🛡️ Grab one when you're
 #screenprotector #protectyourphone #phonecase #phoneaccessories #phoneelectrik #torrance #southbay #phonerepair #shorts
 ```
 
-## 37-holiday-gifts.mp4: Holiday gift ideas for anyone with a phone
+## 37-holiday-gifts.mp4: Holiday shopping? We've got you covered
 
 **TikTok**
 ```
-Holiday gift ideas for anyone with a phone 🎁 Earbuds, Bluetooth speakers, power banks, car chargers and cases, all in stock in Torrance. Who are you shopping for? 👇
+Holiday shopping for your kids, family or someone you care about? 🎁 We've got you covered: phones, cases and screen protectors for their new phone, earbuds, speakers and power banks. You can even gift a repair and fix a loved one's broken phone. Who are you shopping for? 👇
 
 📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
 
-#giftideas #holidaygifts #techgifts #christmasgifts #phoneelectrik #torrance #southbay #phonerepair
+#holidaygifts #giftideas #techgifts #holidayshopping #phoneelectrik #torrance #southbay #phonerepair
 ```
 **Instagram Reels**
 ```
-Holiday gift ideas for anyone with a phone 🎁 Earbuds, Bluetooth speakers, power banks, car chargers and cases, all in stock in Torrance. Who are you shopping for? 👇
+Holiday shopping for your kids, family or someone you care about? 🎁 We've got you covered: phones, cases and screen protectors for their new phone, earbuds, speakers and power banks. You can even gift a repair and fix a loved one's broken phone. Who are you shopping for? 👇
 
 📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
 📞 Call or text (323) 348-6756
 🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
 🚶 No appointment needed · 🛡️ 90-day warranty on every repair
 
-#giftideas #holidaygifts #techgifts #christmasgifts #phoneelectrik #torrance #southbay #phonerepair
+#holidaygifts #giftideas #techgifts #holidayshopping #phoneelectrik #torrance #southbay #phonerepair
 ```
 **Facebook Reels**
 ```
-Holiday gift ideas for anyone with a phone 🎁 Earbuds, Bluetooth speakers, power banks, car chargers and cases, all in stock in Torrance. Who are you shopping for? 👇
+Holiday shopping for your kids, family or someone you care about? 🎁 We've got you covered: phones, cases and screen protectors for their new phone, earbuds, speakers and power banks. You can even gift a repair and fix a loved one's broken phone. Who are you shopping for? 👇
 
 Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
 📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
@@ -1838,11 +1838,11 @@ Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
 
 Title:
 ```
-Holiday gift ideas for anyone with a phone #shorts
+Holiday shopping? We've got you covered #shorts
 ```
 Description:
 ```
-Holiday gift ideas for anyone with a phone 🎁 Earbuds, Bluetooth speakers, power banks, car chargers and cases, all in stock in Torrance. Who are you shopping for? 👇
+Holiday shopping for your kids, family or someone you care about? 🎁 We've got you covered: phones, cases and screen protectors for their new phone, earbuds, speakers and power banks. You can even gift a repair and fix a loved one's broken phone. Who are you shopping for? 👇
 
 📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
 📞 Call or text (323) 348-6756
@@ -1850,7 +1850,7 @@ Holiday gift ideas for anyone with a phone 🎁 Earbuds, Bluetooth speakers, pow
 🚶 No appointment needed · 🛡️ 90-day warranty on every repair
 🌐 phoneelectrik.com
 
-#giftideas #holidaygifts #techgifts #christmasgifts #phoneelectrik #torrance #southbay #phonerepair #shorts
+#holidaygifts #giftideas #techgifts #holidayshopping #phoneelectrik #torrance #southbay #phonerepair #shorts
 ```
 
 ## 38-screen-options.mp4: Screen repair for every budget
