@@ -2520,7 +2520,16 @@ TOPIC: Follow us, save our contact, and leave us a review
 ----------------------------------------
 TIKTOK (caption)
 ----------------------------------------
-Stay connected with Phone ElectriK 📲 Follow @phoneelectrik on TikTok, Instagram and YouTube. Scan the QR code or visit phoneelectrik.com/links for everything: call, directions, our digital business card, and reviews. Already been in? Leave us a review on Google or Yelp, it takes 30 seconds and helps a local shop grow 🙏
+Stay connected with Phone ElectriK 📲
+
+Can't scan the QR code? Use these links:
+🔗 All our links: phoneelectrik.com/links
+📇 Digital business card (save us in one tap): phoneelectrik.com/card
+⭐ Review us on Google: google.com/search?q=Phone+ElectriK+Torrance+reviews
+⭐ Review us on Yelp: yelp.com/biz/phone-electrik-torrance-2
+🌐 Website: phoneelectrik.com
+
+Follow @phoneelectrik on TikTok, Instagram and YouTube. Already been in? A review takes 30 seconds and helps a local shop grow 🙏
 
 📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
 
@@ -2529,7 +2538,16 @@ Stay connected with Phone ElectriK 📲 Follow @phoneelectrik on TikTok, Instagr
 ----------------------------------------
 INSTAGRAM REELS (caption)
 ----------------------------------------
-Stay connected with Phone ElectriK 📲 Follow @phoneelectrik on TikTok, Instagram and YouTube. Scan the QR code or visit phoneelectrik.com/links for everything: call, directions, our digital business card, and reviews. Already been in? Leave us a review on Google or Yelp, it takes 30 seconds and helps a local shop grow 🙏
+Stay connected with Phone ElectriK 📲
+
+Can't scan the QR code? Use these links:
+🔗 All our links: phoneelectrik.com/links
+📇 Digital business card (save us in one tap): phoneelectrik.com/card
+⭐ Review us on Google: google.com/search?q=Phone+ElectriK+Torrance+reviews
+⭐ Review us on Yelp: yelp.com/biz/phone-electrik-torrance-2
+🌐 Website: phoneelectrik.com
+
+Follow @phoneelectrik on TikTok, Instagram and YouTube. Already been in? A review takes 30 seconds and helps a local shop grow 🙏
 
 📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
 📞 Call or text (323) 348-6756
@@ -2541,7 +2559,16 @@ Stay connected with Phone ElectriK 📲 Follow @phoneelectrik on TikTok, Instagr
 ----------------------------------------
 FACEBOOK REELS (description)
 ----------------------------------------
-Stay connected with Phone ElectriK 📲 Follow @phoneelectrik on TikTok, Instagram and YouTube. Scan the QR code or visit phoneelectrik.com/links for everything: call, directions, our digital business card, and reviews. Already been in? Leave us a review on Google or Yelp, it takes 30 seconds and helps a local shop grow 🙏
+Stay connected with Phone ElectriK 📲
+
+Can't scan the QR code? Use these links:
+🔗 All our links: phoneelectrik.com/links
+📇 Digital business card (save us in one tap): phoneelectrik.com/card
+⭐ Review us on Google: google.com/search?q=Phone+ElectriK+Torrance+reviews
+⭐ Review us on Yelp: yelp.com/biz/phone-electrik-torrance-2
+🌐 Website: phoneelectrik.com
+
+Follow @phoneelectrik on TikTok, Instagram and YouTube. Already been in? A review takes 30 seconds and helps a local shop grow 🙏
 
 Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
 📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
@@ -2556,7 +2583,16 @@ TITLE:
 Follow us, save our contact, and leave us a review #shorts
 
 DESCRIPTION:
-Stay connected with Phone ElectriK 📲 Follow @phoneelectrik on TikTok, Instagram and YouTube. Scan the QR code or visit phoneelectrik.com/links for everything: call, directions, our digital business card, and reviews. Already been in? Leave us a review on Google or Yelp, it takes 30 seconds and helps a local shop grow 🙏
+Stay connected with Phone ElectriK 📲
+
+Can't scan the QR code? Use these links:
+🔗 All our links: phoneelectrik.com/links
+📇 Digital business card (save us in one tap): phoneelectrik.com/card
+⭐ Review us on Google: google.com/search?q=Phone+ElectriK+Torrance+reviews
+⭐ Review us on Yelp: yelp.com/biz/phone-electrik-torrance-2
+🌐 Website: phoneelectrik.com
+
+Follow @phoneelectrik on TikTok, Instagram and YouTube. Already been in? A review takes 30 seconds and helps a local shop grow 🙏
 
 📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
 📞 Call or text (323) 348-6756
