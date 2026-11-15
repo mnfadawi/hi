@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex" />
+<title>Phone ElectriK — Save Our Number (TV slide)</title>
+<!-- Portrait 1080x1920 slide for the TV loop, rendered by build.py.
+     contact-qr.svg encodes phone-electrik-contact.vcf: scanning it offers to
+     add Phone ElectriK (phone, address, website, hours) to the phone's
+     contacts. The number is printed big for anyone who doesn't scan. The
+     [data-pulse] frame glows in the video. -->
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+  body{position:relative;color:#fff;font-family:Inter,"Liberation Sans",sans-serif;display:flex;flex-direction:column;justify-content:center;align-items:center;
+       background:radial-gradient(ellipse 120% 55% at 50% 0%,#3a1505 0%,#000 62%)}
+  .bar{position:absolute;left:0;width:1080px;height:18px;background:linear-gradient(90deg,#c94a10,#F26522,#c94a10)}
+  .bar.top{top:0}.bar.bottom{bottom:0}
+  .o{color:#F26522}
+
+  h1{font-family:"Inter Display",Inter,sans-serif;font-weight:900;text-align:center;line-height:.95}
+  h1 span{display:block}
+  h1 .a{font-size:140px}
+  h1 .b{font-size:140px}
+  .sub{text-align:center;margin-top:38px;font-size:48px;font-weight:700;color:#ffd9c4}
+
+  .qr{width:780px;height:780px;margin:70px auto 0;background:#fff;border-radius:34px;padding:22px;
+      border:10px solid #F26522}
+  body.lit .qr{box-shadow:0 0 90px 18px rgba(255,122,58,.8);border-color:#ff7a3a}
+  .qr img{display:block;width:100%;height:100%}
+  .cam{text-align:center;margin-top:34px;font-size:46px;font-weight:800}
+
+  .num{text-align:center;margin-top:50px;font-family:"Inter Display",Inter,sans-serif;font-weight:900;font-size:116px;letter-spacing:.01em}
+  .web{text-align:center;margin-top:16px;font-size:42px;font-weight:700;color:#d6d6d6}
+</style>
+</head>
+<body>
+  <div class="bar top"></div>
+
+  <h1><span class="a">SAVE OUR</span><span class="b o">NUMBER</span></h1>
+  <div class="sub">So you have us next time you need us</div>
+
+  <div class="qr" data-pulse><img src="contact-qr.svg" alt="QR code: add Phone ElectriK to contacts" /></div>
+  <div class="cam">📷 Point your camera here</div>
+
+  <div class="num">(323) 348-6756</div>
+  <div class="web">phoneelectrik.com</div>
+
+  <div class="bar bottom"></div>
+</body>
+</html>

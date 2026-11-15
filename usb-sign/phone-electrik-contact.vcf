@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+N:;Phone ElectriK;;;
+FN:Phone ElectriK
+TEL;TYPE=WORK:+13233486756
+ADR;TYPE=WORK:;;3025 Artesia Blvd STE 101;Torrance;CA;90504;USA
+URL:https://phoneelectrik.com
+NOTE:Phone repair. Mon-Sat 9AM-8PM\, Sun 10AM-6PM
+END:VCARD

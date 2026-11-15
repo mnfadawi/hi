@@ -8,13 +8,14 @@ reads upright once the panel is physically turned 90 degrees.
 Outputs, per mount direction:
   PhoneElectriK-Welcome.mp4   slide 1 only (../tv-poster.png)
   PhoneElectriK-2Slide.mp4    slide 1 (15 s) -> slide 2 services (15 s), looping
-  PhoneElectriK-3Slide.mp4    welcome -> what we fix -> we buy & sell, 15 s each,
-                              with an orange wipe between slides and a glowing
-                              "Ask us" button
+  PhoneElectriK-4Slide.mp4    welcome (10 s) -> fixed while you wait (10 s) ->
+                              need a phone? (10 s) -> save our number QR (12 s),
+                              with an orange wipe between slides and glowing
+                              "Ask us!" button and QR frame
   *.jpg                       baseline still of each slide, for checking orientation
 
 Run:    python3 usb-sign/build.py          (everything)
-        python3 usb-sign/build.py 3slide   (only the 3-slide loop)
+        python3 usb-sign/build.py loop     (only the 4-slide loop)
 Needs Pillow, numpy, ffmpeg, node + playwright.
 """
 import json, os, shutil, subprocess, sys, tempfile
@@ -24,11 +25,17 @@ from PIL import Image
 HERE = os.path.dirname(os.path.abspath(__file__))
 POSTER = os.path.join(HERE, "..", "tv-poster.png")
 SERVICES_HTML = os.path.join(HERE, "slide2-services.html")
-REPAIRS_HTML = os.path.join(HERE, "slide-repairs.html")
-BUYSELL_HTML = os.path.join(HERE, "slide-buysell.html")
-WIPE_S = 0.6          # 3-slide loop: orange band sweeps down between slides
-PULSE_S = 1.6         # 3-slide loop: one glow cycle of the "Ask us" button
-DURATION_3_S = 15 * 60  # 3-slide loop: its motion costs more bytes; Repeat One loops it
+# 4-slide loop: (page, seconds on screen). Short enough that a walk-in sees
+# every slide; the QR slide gets extra time to pull out a phone and scan.
+LOOP_SLIDES = [
+    (None, 10),                                             # welcome poster
+    (os.path.join(HERE, "slide-fix.html"), 10),
+    (os.path.join(HERE, "slide-phones.html"), 10),          # glowing "Ask us!"
+    (os.path.join(HERE, "slide-save-number.html"), 12),     # glowing QR frame
+]
+WIPE_S = 0.6          # orange band sweeps down between slides
+PULSE_S = 1.6         # one glow cycle of a slide's [data-pulse] element
+DURATION_LOOP_S = 15 * 60  # its motion costs more bytes; Repeat One loops it
 FPS = 30
 SLIDE_S = 15          # 2-slide loop: each slide shows this long, then a clean cut
 SHINE_S = 12          # Welcome loop: one shine sweep per cycle
@@ -129,18 +136,22 @@ def wipe(old, new, t):
     return f
 
 
-def three_slide_frames(welcome, repairs, buysell, buysell_lit, box):
-    slides = [np.asarray(s, dtype=np.float32) for s in (welcome, repairs, buysell)]
-    lit = np.asarray(buysell_lit, dtype=np.float32)
-    pad = 60  # glow spreads beyond the button
-    x0, y0 = max(0, int(box["x"]) - pad), max(0, int(box["y"]) - pad)
-    x1, y1 = min(1080, int(box["x"] + box["w"]) + pad), min(1920, int(box["y"] + box["h"]) + pad)
-    n, nw = FPS * SLIDE_S, int(FPS * WIPE_S)
-    for k, cur in enumerate(slides):
-        nxt = slides[(k + 1) % len(slides)]
+def loop_frames(slides):
+    """slides: list of (image, seconds, lit_image or None, pulse box or None)."""
+    arrs = [np.asarray(s[0], dtype=np.float32) for s in slides]
+    nw = int(FPS * WIPE_S)
+    pad = 60  # glow spreads beyond the element
+    for k, (_, secs, lit, box) in enumerate(slides):
+        cur, nxt = arrs[k], arrs[(k + 1) % len(arrs)]
+        if lit is not None:
+            lit = np.asarray(lit, dtype=np.float32)
+            x0, y0 = max(0, int(box["x"]) - pad), max(0, int(box["y"]) - pad)
+            x1 = min(1080, int(box["x"] + box["w"]) + pad)
+            y1 = min(1920, int(box["y"] + box["h"]) + pad)
+        n = FPS * secs
         for i in range(n):
             f = cur
-            if k == 2:
+            if lit is not None:
                 m = 0.5 - 0.5 * np.cos(2 * np.pi * i / (FPS * PULSE_S))
                 f = cur.copy()
                 f[y0:y1, x0:x1] = cur[y0:y1, x0:x1] * (1 - m) + lit[y0:y1, x0:x1] * m
@@ -151,7 +162,7 @@ def three_slide_frames(welcome, repairs, buysell, buysell_lit, box):
             yield f
 
 
-def encode(frames, transpose, out_mp4, tmp, gop=GOP, duration=DURATION_S):
+def encode(frames, transpose, out_mp4, tmp, gop=GOP, duration=DURATION_S, keyframes=None):
     frame_dir = os.path.join(tmp, "frames")
     os.makedirs(frame_dir)
     count = 0
@@ -169,6 +180,7 @@ def encode(frames, transpose, out_mp4, tmp, gop=GOP, duration=DURATION_S):
         "-c:v", "libx264", "-preset", "slow", "-profile:v", "baseline", "-level", "4.0",
         "-crf", "18", "-maxrate", "8M", "-bufsize", "8M",
         "-g", str(gop), "-keyint_min", str(gop), "-sc_threshold", "0",
+        *(["-force_key_frames", ",".join(map(str, keyframes))] if keyframes else []),
         "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
         "-color_range", "tv",
         cycle,
@@ -196,24 +208,32 @@ def save_jpg(img, transpose, path):
                                   progressive=False, optimize=True)
 
 
-def build_three_slide(tmp):
-    welcome = load_poster(pure_black=True)
-    repairs = render_slide(REPAIRS_HTML, tmp, "repairs")
-    buysell, buysell_lit, box = render_slide(BUYSELL_HTML, tmp, "buysell", lit=True)
+def build_loop(tmp):
+    slides = []
+    for k, (src, secs) in enumerate(LOOP_SLIDES):
+        if src is None:
+            slides.append((load_poster(pure_black=True), secs, None, None))
+        elif "data-pulse" in open(src).read():
+            img, lit, box = render_slide(src, tmp, f"slide{k}", lit=True)
+            slides.append((img, secs, lit, box))
+        else:
+            slides.append((render_slide(src, tmp, f"slide{k}"), secs, None, None))
+    starts = [sum(s for _, s in LOOP_SLIDES[:k]) for k in range(len(LOOP_SLIDES))]
     for name, transpose in VARIANTS.items():
         stem = os.path.join(HERE, name, "PhoneElectriK-")
-        save_jpg(repairs, transpose, stem + "Repairs.jpg")
-        save_jpg(buysell, transpose, stem + "BuySell.jpg")
-        encode(three_slide_frames(welcome, repairs, buysell, buysell_lit, box),
-               transpose, stem + "3Slide.mp4", tmp, duration=DURATION_3_S)
-        print("built 3-slide", name)
+        for k, (img, *_) in enumerate(slides[1:], start=2):
+            save_jpg(img, transpose, stem + f"4Slide-slide{k}.jpg")
+        encode(loop_frames(slides), transpose, stem + "4Slide.mp4", tmp,
+               gop=FPS * max(s for _, s in LOOP_SLIDES), duration=DURATION_LOOP_S,
+               keyframes=starts)
+        print("built 4-slide loop", name)
 
 
 def main():
     tmp = tempfile.mkdtemp()
-    if sys.argv[1:] == ["3slide"]:
+    if sys.argv[1:] == ["loop"]:
         try:
-            build_three_slide(tmp)
+            build_loop(tmp)
         finally:
             shutil.rmtree(tmp)
         return
@@ -230,7 +250,7 @@ def main():
                    gop=FPS * SHINE_S)
             encode(two_slide_frames(slides), transpose, stem + "2Slide.mp4", tmp)
             print("built", name)
-        build_three_slide(tmp)
+        build_loop(tmp)
     finally:
         shutil.rmtree(tmp)
 
