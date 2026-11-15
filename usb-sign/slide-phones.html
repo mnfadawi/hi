@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex" />
+<title>Phone ElectriK — Need a Phone? (TV slide)</title>
+<!-- Portrait 1080x1920 slide for the TV loop, rendered by build.py.
+     Selling only (no buying), no models or stock levels on purpose.
+     Ratings from index.html; the Yelp award hangs in the shop. The
+     [data-pulse] pill glows in the video. -->
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+  body{position:relative;color:#fff;font-family:Inter,"Liberation Sans",sans-serif;display:flex;flex-direction:column;justify-content:center;align-items:center;
+       background:radial-gradient(ellipse 120% 55% at 50% 0%,#3a1505 0%,#000 62%)}
+  .bar{position:absolute;left:0;width:1080px;height:18px;background:linear-gradient(90deg,#c94a10,#F26522,#c94a10)}
+  .bar.top{top:0}.bar.bottom{bottom:0}
+  .o{color:#F26522}
+  .logo{display:block;width:250px;height:206px;object-fit:contain}
+
+  h1{font-family:"Inter Display",Inter,sans-serif;font-weight:900;text-align:center;line-height:.95;margin-top:90px}
+  h1 span{display:block}
+  h1 .a{font-size:190px}
+  h1 .b{font-size:190px}
+
+  .sub{text-align:center;margin-top:70px;font-size:66px;font-weight:800;line-height:1.2}
+
+  .pill{display:block;width:660px;margin:90px auto 0;border-radius:999px;background:#F26522;text-align:center;
+        font-family:"Inter Display",Inter,sans-serif;font-weight:900;font-size:88px;padding:34px 0}
+  body.lit .pill{background:#ff7a3a;box-shadow:0 0 80px 14px rgba(255,122,58,.75)}
+
+  .trust{width:980px;margin:110px auto 0;display:flex;align-items:center;border-top:2px solid #3a3a3a;padding-top:44px}
+  .stat{text-align:center;flex:1}
+  .stat b{display:block;font-size:80px;font-weight:900;line-height:1}
+  .stat b .s{color:#ffc93c}
+  .stat i{display:block;font-style:normal;font-size:33px;font-weight:600;color:#cfcfcf;margin-top:12px}
+  .stat + .stat{border-left:2px solid #3a3a3a}
+  .award{text-align:center;margin-top:50px;font-size:40px;font-weight:800}
+  .award .r{display:inline-block;background:#d32323;border-radius:12px;padding:10px 22px;margin-right:14px;font-size:32px}
+</style>
+</head>
+<body>
+  <div class="bar top"></div>
+  <img class="logo" src="logo.png" alt="Phone ElectriK" />
+
+  <h1><span class="a">NEED A</span><span class="b o">PHONE?</span></h1>
+  <div class="sub">Refurbished devices<br>available</div>
+
+  <div class="pill" data-pulse>ASK US!</div>
+
+  <div class="trust">
+    <div class="stat"><b><span class="s">★</span> 4.7</b><i>Yelp · 268+ reviews</i></div>
+    <div class="stat"><b><span class="s">★</span> 4.6</b><i>Google rating</i></div>
+    <div class="stat"><b>10+</b><i>years experience</i></div>
+  </div>
+  <div class="award"><span class="r">PEOPLE LOVE US</span>Yelp award</div>
+
+  <div class="bar bottom"></div>
+</body>
+</html>

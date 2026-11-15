@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex" />
+<title>Phone ElectriK — All Our Links (TV slide)</title>
+<!-- Portrait 1080x1920 slide for the TV loop, rendered by build.py.
+     links-qr.svg encodes https://phoneelectrik.com/links (the same page as the
+     counter stand). "What's inside" names sections that links.html and its
+     digital business card (card.html) actually have. Buying devices is on
+     the page too but is left off the TV on purpose. The [data-pulse] frame
+     glows. -->
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+  body{position:relative;color:#fff;font-family:Inter,"Liberation Sans",sans-serif;display:flex;flex-direction:column;justify-content:center;align-items:center;
+       background:radial-gradient(ellipse 120% 55% at 50% 0%,#3a1505 0%,#000 62%)}
+  .bar{position:absolute;left:0;width:1080px;height:18px;background:linear-gradient(90deg,#c94a10,#F26522,#c94a10)}
+  .bar.top{top:0}.bar.bottom{bottom:0}
+  .o{color:#F26522}
+
+  h1{font-family:"Inter Display",Inter,sans-serif;font-weight:900;text-align:center;line-height:.95}
+  h1 span{display:block}
+  h1 .a{font-size:118px}
+  h1 .b{font-size:118px}
+
+  .qr{width:600px;height:600px;margin-top:50px;background:#fff;border-radius:34px;padding:20px;border:10px solid #F26522}
+  body.lit .qr{box-shadow:0 0 90px 18px rgba(255,122,58,.8);border-color:#ff7a3a}
+  .qr img{display:block;width:100%;height:100%}
+  .cam{text-align:center;margin-top:24px;font-size:40px;font-weight:800}
+  .url{text-align:center;margin-top:14px;font-family:"Inter Display",Inter,sans-serif;font-weight:900;font-size:72px}
+
+  .inside{width:1000px;margin-top:40px;border-top:2px solid #3a3a3a;padding-top:30px}
+  .inside h2{text-align:center;font-size:40px;font-weight:900;letter-spacing:.12em;color:#F26522}
+  .inside ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;column-gap:30px;row-gap:16px;margin-top:22px}
+  .inside li{font-size:37px;font-weight:800;line-height:1.15;display:flex;align-items:center;gap:14px;white-space:nowrap}
+  .inside li::before{content:"✓";flex:none;width:38px;height:38px;border-radius:50%;background:#F26522;color:#fff;
+    font-size:26px;font-weight:900;display:flex;align-items:center;justify-content:center}
+  .inside li.wide{grid-column:1/-1;justify-content:center}
+</style>
+</head>
+<body>
+  <div class="bar top"></div>
+
+  <h1><span class="a">ALL OUR LINKS</span><span class="b o">IN ONE SCAN</span></h1>
+
+  <div class="qr" data-pulse><img src="links-qr.svg" alt="QR code: phoneelectrik.com/links" /></div>
+  <div class="cam">📷 Point your camera here</div>
+  <div class="url">phoneelectrik.com/<span class="o">links</span></div>
+
+  <div class="inside">
+    <h2>WHAT'S INSIDE</h2>
+    <ul>
+      <li>Call or text us</li>
+      <li>Hours &amp; directions</li>
+      <li>Repairs we do</li>
+      <li>Devices we fix</li>
+      <li>Phones for sale</li>
+      <li>Save our contact</li>
+      <li>Review us: Google &amp; Yelp</li>
+      <li>Share with a friend</li>
+      <li class="wide">Instagram · TikTok · YouTube · Website</li>
+    </ul>
+  </div>
+
+  <div class="bar bottom"></div>
+</body>
+</html>

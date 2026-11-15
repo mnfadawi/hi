@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex" />
+<title>Phone ElectriK — Our Repair Services (TV slide)</title>
+<!-- Portrait 1080x1920 slide for the TV loop, rendered by build.py.
+     Service names from services.html ("Everything We Repair"); footer line
+     from index.html. Repairs only: nothing about buying devices. Shown inside
+     the shop, so no "walk in" / "come back" wording. -->
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+  body{position:relative;color:#fff;font-family:Inter,"Liberation Sans",sans-serif;display:flex;flex-direction:column;justify-content:center;align-items:center;
+       background:radial-gradient(ellipse 120% 55% at 50% 0%,#3a1505 0%,#000 62%)}
+  .bar{position:absolute;left:0;width:1080px;height:18px;background:linear-gradient(90deg,#c94a10,#F26522,#c94a10)}
+  .bar.top{top:0}.bar.bottom{bottom:0}
+  .o{color:#F26522}
+
+  h1{font-family:"Inter Display",Inter,sans-serif;font-weight:900;text-align:center;line-height:.95}
+  h1 span{display:block}
+  h1 .a{font-size:92px}
+  h1 .b{font-size:132px}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;width:1000px;margin-top:64px}
+  .tile{height:166px;border-radius:24px;background:linear-gradient(160deg,#1f1f1f,#121212);border:2px solid #3a3a3a;
+        display:flex;align-items:center;gap:20px;padding:0 24px}
+  .tile svg{flex:none;width:78px;height:78px;stroke:#F26522;stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .tile span{font-size:40px;font-weight:800;line-height:1.05}
+
+  .more{text-align:center;margin-top:50px;font-size:40px;font-weight:800;line-height:1.3}
+</style>
+</head>
+<body>
+  <div class="bar top"></div>
+
+  <h1><span class="a">OUR REPAIR</span><span class="b o">SERVICES</span></h1>
+
+  <div class="grid">
+    <div class="tile"><svg viewBox="0 0 64 64"><rect x="16" y="4" width="32" height="56" rx="6"/><path d="M22 16l10 12-6 6 12 14"/></svg><span>Screen<br>Repair</span></div>
+    <div class="tile"><svg viewBox="0 0 64 64"><rect x="6" y="18" width="46" height="28" rx="5"/><path d="M52 27h6v10h-6M14 32h8M18 28v8"/></svg><span>Battery<br>Replacement</span></div>
+    <div class="tile"><svg viewBox="0 0 64 64"><path d="M22 6v14M42 6v14M16 20h32v12a16 16 0 0 1-32 0zM32 48v12"/></svg><span>Charging<br>Port</span></div>
+    <div class="tile"><svg viewBox="0 0 64 64"><rect x="16" y="4" width="32" height="56" rx="6"/><rect x="22" y="10" width="11" height="11" rx="3"/><path d="M30 34l8 6-6 6 8 6"/></svg><span>Back<br>Glass</span></div>
+    <div class="tile"><svg viewBox="0 0 64 64"><path d="M8 20h12l5-7h14l5 7h12v34H8z"/><circle cx="32" cy="36" r="10"/></svg><span>Camera<br>Lens</span></div>
+    <div class="tile"><svg viewBox="0 0 64 64"><path d="M32 6C24 18 14 28 14 40a18 18 0 0 0 36 0C50 28 40 18 32 6z"/></svg><span>Liquid<br>Damage</span></div>
+    <div class="tile"><svg viewBox="0 0 64 64"><rect x="10" y="4" width="44" height="56" rx="6"/><path d="M28 52h8"/></svg><span>iPad &amp;<br>Tablet</span></div>
+    <div class="tile"><svg viewBox="0 0 64 64"><rect x="12" y="12" width="40" height="28" rx="3"/><path d="M4 48h56l-4 6H8z"/></svg><span>MacBook &amp;<br>Laptop</span></div>
+    <div class="tile"><svg viewBox="0 0 64 64"><rect x="16" y="14" width="32" height="36" rx="9"/><path d="M22 14l3-10h14l3 10M22 50l3 10h14l3-10"/></svg><span>Apple<br>Watch</span></div>
+    <div class="tile"><svg viewBox="0 0 64 64"><path d="M18 20h28a12 12 0 0 1 12 12v8a8 8 0 0 1-14 5l-4-5H24l-4 5a8 8 0 0 1-14-5v-8a12 12 0 0 1 12-12z"/><path d="M20 28v10M15 33h10"/><circle cx="44" cy="30" r="1.5"/><circle cx="48" cy="36" r="1.5"/></svg><span>Game<br>Consoles</span></div>
+    <div class="tile"><svg viewBox="0 0 64 64"><rect x="4" y="14" width="22" height="38" rx="4"/><rect x="38" y="14" width="22" height="38" rx="4"/><path d="M28 28h8l-4-4M36 38h-8l4 4"/></svg><span>Data Transfer<br>&amp; Recovery</span></div>
+    <div class="tile"><svg viewBox="0 0 64 64"><rect x="12" y="28" width="40" height="30" rx="5"/><path d="M20 28v-8a12 12 0 0 1 23-5M32 40v8"/></svg><span>Unlocking &amp;<br>Virus Removal</span></div>
+  </div>
+
+  <div class="more">Don't see your device? <span class="o">Ask us!</span><br>We fix most makes &amp; models.</div>
+
+  <div class="bar bottom"></div>
+</body>
+</html>

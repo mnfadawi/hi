@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex" />
+<title>Phone ElectriK — Fixed Fast (TV slide)</title>
+<!-- Portrait 1080x1920 slide for the TV loop, rendered by build.py.
+     Wording from index.html ("Most Common Repairs", "Most repairs done while
+     you wait", "Every repair backed by a 90-day warranty"). -->
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+  body{position:relative;color:#fff;font-family:Inter,"Liberation Sans",sans-serif;display:flex;flex-direction:column;justify-content:center;align-items:center;
+       background:radial-gradient(ellipse 120% 55% at 50% 0%,#3a1505 0%,#000 62%)}
+  .bar{position:absolute;left:0;width:1080px;height:18px;background:linear-gradient(90deg,#c94a10,#F26522,#c94a10)}
+  .bar.top{top:0}.bar.bottom{bottom:0}
+  .o{color:#F26522}
+  .logo{display:block;width:250px;height:206px;object-fit:contain}
+
+  .q{font-family:"Inter Display",Inter,sans-serif;font-weight:900;text-align:center;line-height:1}
+  .q div{font-size:110px;margin-top:44px;white-space:nowrap}
+  .q div:first-child{margin-top:80px}
+
+  .band{width:1000px;margin:120px auto 0;border-radius:30px;background:linear-gradient(90deg,#d8501a,#F26522);
+        text-align:center;padding:40px 20px;box-shadow:0 0 70px rgba(242,101,34,.5)}
+  .band b{display:block;font-family:"Inter Display",Inter,sans-serif;font-weight:900;font-size:84px;line-height:1.02}
+
+  .warranty{text-align:center;margin-top:90px;font-family:"Inter Display",Inter,sans-serif;font-weight:900;font-size:76px}
+  .devices{text-align:center;margin-top:30px;font-size:42px;font-weight:600;color:#d6d6d6}
+</style>
+</head>
+<body>
+  <div class="bar top"></div>
+  <img class="logo" src="logo.png" alt="Phone ElectriK" />
+
+  <div class="q">
+    <div>Cracked <span class="o">screen?</span></div>
+    <div>Dead <span class="o">battery?</span></div>
+    <div>Won't <span class="o">charge?</span></div>
+  </div>
+
+  <div class="band"><b>MOST REPAIRS DONE<br>WHILE YOU WAIT</b></div>
+
+  <div class="warranty">90-DAY WARRANTY</div>
+  <div class="devices">iPhone · Samsung · iPad · MacBook &amp; more</div>
+
+  <div class="bar bottom"></div>
+</body>
+</html>
