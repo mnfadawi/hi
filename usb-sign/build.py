@@ -10,7 +10,7 @@ Outputs, per mount direction:
   PhoneElectriK-2Slide.mp4    slide 1 (15 s) -> slide 2 services (15 s), looping
   PhoneElectriK-5Slide.mp4    welcome (10 s) -> fixed while you wait (10 s) ->
                               our repair services (12 s) -> need a phone? (10 s)
-                              -> save our number QR (12 s), with an orange wipe
+                              -> links page QR (12 s), with an orange wipe
                               between slides and glowing "Ask us!" button and QR
   *.jpg                       baseline still of each slide, for checking orientation
 
@@ -32,7 +32,7 @@ LOOP_SLIDES = [
     (os.path.join(HERE, "slide-fix.html"), 10),
     (os.path.join(HERE, "slide-services.html"), 12),        # more to read
     (os.path.join(HERE, "slide-phones.html"), 10),          # glowing "Ask us!"
-    (os.path.join(HERE, "slide-save-number.html"), 12),     # glowing QR frame
+    (os.path.join(HERE, "slide-links.html"), 12),           # glowing QR frame
 ]
 WIPE_S = 0.6          # orange band sweeps down between slides
 PULSE_S = 1.6         # one glow cycle of a slide's [data-pulse] element
