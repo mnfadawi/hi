@@ -8,14 +8,14 @@ reads upright once the panel is physically turned 90 degrees.
 Outputs, per mount direction:
   PhoneElectriK-Welcome.mp4   slide 1 only (../tv-poster.png)
   PhoneElectriK-2Slide.mp4    slide 1 (15 s) -> slide 2 services (15 s), looping
-  PhoneElectriK-4Slide.mp4    welcome (10 s) -> fixed while you wait (10 s) ->
-                              need a phone? (10 s) -> save our number QR (12 s),
-                              with an orange wipe between slides and glowing
-                              "Ask us!" button and QR frame
+  PhoneElectriK-5Slide.mp4    welcome (10 s) -> fixed while you wait (10 s) ->
+                              our repair services (12 s) -> need a phone? (10 s)
+                              -> save our number QR (12 s), with an orange wipe
+                              between slides and glowing "Ask us!" button and QR
   *.jpg                       baseline still of each slide, for checking orientation
 
 Run:    python3 usb-sign/build.py          (everything)
-        python3 usb-sign/build.py loop     (only the 4-slide loop)
+        python3 usb-sign/build.py loop     (only the 5-slide loop)
 Needs Pillow, numpy, ffmpeg, node + playwright.
 """
 import json, os, shutil, subprocess, sys, tempfile
@@ -25,11 +25,12 @@ from PIL import Image
 HERE = os.path.dirname(os.path.abspath(__file__))
 POSTER = os.path.join(HERE, "..", "tv-poster.png")
 SERVICES_HTML = os.path.join(HERE, "slide2-services.html")
-# 4-slide loop: (page, seconds on screen). Short enough that a walk-in sees
+# 5-slide loop: (page, seconds on screen). Short enough that a walk-in sees
 # every slide; the QR slide gets extra time to pull out a phone and scan.
 LOOP_SLIDES = [
     (None, 10),                                             # welcome poster
     (os.path.join(HERE, "slide-fix.html"), 10),
+    (os.path.join(HERE, "slide-services.html"), 12),        # more to read
     (os.path.join(HERE, "slide-phones.html"), 10),          # glowing "Ask us!"
     (os.path.join(HERE, "slide-save-number.html"), 12),     # glowing QR frame
 ]
@@ -185,11 +186,15 @@ def encode(frames, transpose, out_mp4, tmp, gop=GOP, duration=DURATION_S, keyfra
         "-color_range", "tv",
         cycle,
     ], check=True)
-    # ...then repeat it bit-for-bit (no re-encode) to fill the full length.
+    # ...then repeat it bit-for-bit (no re-encode) to fill the full length,
+    # rounded to whole cycles so the picture and the silent audio end together
+    # and Repeat restarts on a clean slide boundary.
     cycle_s = count / FPS
+    cycles = max(1, round(duration / cycle_s))
+    duration = cycles * cycle_s
     listing = os.path.join(tmp, "list.txt")
     with open(listing, "w") as fh:
-        fh.write(f"file '{cycle}'\n" * int(duration // cycle_s))
+        fh.write(f"file '{cycle}'\n" * cycles)
     subprocess.run([
         "ffmpeg", "-y", "-loglevel", "error",
         "-f", "concat", "-safe", "0", "-i", listing,
@@ -222,11 +227,11 @@ def build_loop(tmp):
     for name, transpose in VARIANTS.items():
         stem = os.path.join(HERE, name, "PhoneElectriK-")
         for k, (img, *_) in enumerate(slides[1:], start=2):
-            save_jpg(img, transpose, stem + f"4Slide-slide{k}.jpg")
-        encode(loop_frames(slides), transpose, stem + "4Slide.mp4", tmp,
+            save_jpg(img, transpose, stem + f"5Slide-slide{k}.jpg")
+        encode(loop_frames(slides), transpose, stem + "5Slide.mp4", tmp,
                gop=FPS * max(s for _, s in LOOP_SLIDES), duration=DURATION_LOOP_S,
                keyframes=starts)
-        print("built 4-slide loop", name)
+        print("built 5-slide loop", name)
 
 
 def main():
