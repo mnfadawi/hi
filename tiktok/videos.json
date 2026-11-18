@@ -1386,6 +1386,123 @@
           "seconds": 2.2
         }
       ]
+    },
+    {
+      "id": "40-why-trust-us",
+      "title": "Why you can trust Phone ElectriK",
+      "caption": "Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Google, 10+ years in Torrance, and we always tell you what's wrong before we touch anything. Have you been in? Tell us how it went 👇",
+      "tags": "#trustedrepair #phonerepair #honestbusiness #5stars",
+      "slides": [
+        {
+          "type": "hook",
+          "text": "Why you can *trust* Phone ElectriK",
+          "seconds": 1.8
+        },
+        {
+          "type": "text",
+          "text": "*4.7 stars* on Yelp · *4.6* on Google",
+          "sub": "Hundreds of real reviews",
+          "say": "Four point seven stars on Yelp, and four point six on Google, from hundreds of real reviews.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "text": "*10+ years* in Torrance",
+          "sub": "Thousands of South Bay customers",
+          "say": "Over ten years in Torrance, with thousands of South Bay customers.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "REAL REVIEW",
+          "text": "\"I'd *trust these guys* with all my electronics!\"",
+          "sub": "Dania F., Yelp review",
+          "say": "Here's a real review: I'd trust these guys with all my electronics.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "text": "We tell you *what's wrong* first",
+          "sub": "Then you decide. No pressure.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "text": "*90-day warranty* on the parts we replace",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "COME SEE US",
+          "text": "Walk in. *See for yourself.*",
+          "seconds": 2.2
+        }
+      ]
+    },
+    {
+      "id": "41-why-different",
+      "title": "What makes us different from other repair shops",
+      "caption": "What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are done while you wait, no appointment, open 7 days, and a 90-day warranty on every repair. Which one matters most to you? 👇",
+      "tags": "#phonerepair #localbusiness #honestbusiness #fixdontreplace",
+      "slides": [
+        {
+          "type": "hook",
+          "text": "What makes us *different* from other repair shops",
+          "seconds": 1.8
+        },
+        {
+          "type": "text",
+          "label": "1",
+          "text": "We tell you the *truth*",
+          "sub": "We explain the problem before we touch anything.",
+          "say": "One. We tell you the truth. We explain the problem before we touch anything.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "2",
+          "text": "Most repairs done *while you wait*",
+          "sub": "Not days. Not weeks.",
+          "say": "Two. Most repairs are done while you wait. Not days. Not weeks.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "3",
+          "text": "*No appointment.* Open *7 days.*",
+          "say": "Three. No appointment, and we're open seven days.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "4",
+          "text": "*90-day warranty* on every repair",
+          "say": "Four. A 90-day warranty on every repair.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "5",
+          "text": "We fix *almost anything*",
+          "sub": "Phones, iPads, laptops, consoles & watches",
+          "say": "Five. We fix almost anything. Phones, iPads, laptops, consoles and watches.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "6",
+          "text": "We'd rather you *fix it* than buy new",
+          "sub": "That's why we opened our shop.",
+          "say": "Six. We'd rather you fix it than buy new. That's why we opened our shop.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "COME SEE US",
+          "text": "That's the *Phone ElectriK* difference",
+          "seconds": 2.2
+        }
+      ]
     }
   ]
 }

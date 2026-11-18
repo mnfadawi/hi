@@ -2602,3 +2602,140 @@ Follow @phoneelectrik on TikTok, Instagram and YouTube. Already been in? A revie
 
 #supportlocal #smallbusiness #followus #leaveareview #phoneelectrik #torrance #southbay #phonerepair #shorts
 ```
+
+---
+## 40-why-trust-us: Why you can trust Phone ElectriK
+
+**What's on screen (and what the voice says):**
+1. Why you can trust Phone ElectriK
+2. 4.7 stars on Yelp · 4.6 on Google _(Hundreds of real reviews)_
+3. 10+ years in Torrance _(Thousands of South Bay customers)_
+4. **REAL REVIEW:** "I'd trust these guys with all my electronics!" _(Dania F., Yelp review)_
+5. We tell you what's wrong first _(Then you decide. No pressure.)_
+6. 90-day warranty on the parts we replace
+7. **COME SEE US:** Walk in. See for yourself.
+
+**Captions for this video:**
+
+```
+VIDEO: 40-why-trust-us.mp4
+TOPIC: Why you can trust Phone ElectriK
+
+----------------------------------------
+TIKTOK (caption)
+----------------------------------------
+Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Google, 10+ years in Torrance, and we always tell you what's wrong before we touch anything. Have you been in? Tell us how it went 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#trustedrepair #phonerepair #honestbusiness #5stars #phoneelectrik #torrance #southbay
+
+----------------------------------------
+INSTAGRAM REELS (caption)
+----------------------------------------
+Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Google, 10+ years in Torrance, and we always tell you what's wrong before we touch anything. Have you been in? Tell us how it went 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#trustedrepair #phonerepair #honestbusiness #5stars #phoneelectrik #torrance #southbay
+
+----------------------------------------
+FACEBOOK REELS (description)
+----------------------------------------
+Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Google, 10+ years in Torrance, and we always tell you what's wrong before we touch anything. Have you been in? Tell us how it went 👇
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+
+----------------------------------------
+YOUTUBE SHORTS
+----------------------------------------
+TITLE:
+Why you can trust Phone ElectriK #shorts
+
+DESCRIPTION:
+Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Google, 10+ years in Torrance, and we always tell you what's wrong before we touch anything. Have you been in? Tell us how it went 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#trustedrepair #phonerepair #honestbusiness #5stars #phoneelectrik #torrance #southbay #shorts
+```
+
+---
+## 41-why-different: What makes us different from other repair shops
+
+**What's on screen (and what the voice says):**
+1. What makes us different from other repair shops
+2. **1:** We tell you the truth _(We explain the problem before we touch anything.)_
+3. **2:** Most repairs done while you wait _(Not days. Not weeks.)_
+4. **3:** No appointment. Open 7 days.
+5. **4:** 90-day warranty on every repair
+6. **5:** We fix almost anything _(Phones, iPads, laptops, consoles & watches)_
+7. **6:** We'd rather you fix it than buy new _(That's why we opened our shop.)_
+8. **COME SEE US:** That's the Phone ElectriK difference
+
+**Captions for this video:**
+
+```
+VIDEO: 41-why-different.mp4
+TOPIC: What makes us different from other repair shops
+
+----------------------------------------
+TIKTOK (caption)
+----------------------------------------
+What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are done while you wait, no appointment, open 7 days, and a 90-day warranty on every repair. Which one matters most to you? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#phonerepair #localbusiness #honestbusiness #fixdontreplace #phoneelectrik #torrance #southbay
+
+----------------------------------------
+INSTAGRAM REELS (caption)
+----------------------------------------
+What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are done while you wait, no appointment, open 7 days, and a 90-day warranty on every repair. Which one matters most to you? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#phonerepair #localbusiness #honestbusiness #fixdontreplace #phoneelectrik #torrance #southbay
+
+----------------------------------------
+FACEBOOK REELS (description)
+----------------------------------------
+What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are done while you wait, no appointment, open 7 days, and a 90-day warranty on every repair. Which one matters most to you? 👇
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+
+----------------------------------------
+YOUTUBE SHORTS
+----------------------------------------
+TITLE:
+What makes us different from other repair shops #shorts
+
+DESCRIPTION:
+What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are done while you wait, no appointment, open 7 days, and a 90-day warranty on every repair. Which one matters most to you? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#phonerepair #localbusiness #honestbusiness #fixdontreplace #phoneelectrik #torrance #southbay #shorts
+```
