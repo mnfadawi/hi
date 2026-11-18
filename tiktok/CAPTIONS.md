@@ -1993,7 +1993,7 @@ Follow @phoneelectrik on TikTok, Instagram and YouTube. Already been in? A revie
 
 **TikTok**
 ```
-Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Google, 10+ years in Torrance, and we always tell you what's wrong before we touch anything. Have you been in? Tell us how it went 👇
+Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Google, 10+ years in Torrance. We tell you what's wrong and the price before we start, with no surprises and no extra charges. Our job is simple: find the problem, fix it, and get you back up and running. We only win when your device works. Have you been in? Tell us how it went 👇
 
 📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
 
@@ -2001,7 +2001,7 @@ Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Goog
 ```
 **Instagram Reels**
 ```
-Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Google, 10+ years in Torrance, and we always tell you what's wrong before we touch anything. Have you been in? Tell us how it went 👇
+Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Google, 10+ years in Torrance. We tell you what's wrong and the price before we start, with no surprises and no extra charges. Our job is simple: find the problem, fix it, and get you back up and running. We only win when your device works. Have you been in? Tell us how it went 👇
 
 📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
 📞 Call or text (323) 348-6756
@@ -2012,7 +2012,7 @@ Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Goog
 ```
 **Facebook Reels**
 ```
-Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Google, 10+ years in Torrance, and we always tell you what's wrong before we touch anything. Have you been in? Tell us how it went 👇
+Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Google, 10+ years in Torrance. We tell you what's wrong and the price before we start, with no surprises and no extra charges. Our job is simple: find the problem, fix it, and get you back up and running. We only win when your device works. Have you been in? Tell us how it went 👇
 
 Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
 📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
@@ -2028,7 +2028,7 @@ Why you can trust Phone ElectriK #shorts
 ```
 Description:
 ```
-Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Google, 10+ years in Torrance, and we always tell you what's wrong before we touch anything. Have you been in? Tell us how it went 👇
+Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Google, 10+ years in Torrance. We tell you what's wrong and the price before we start, with no surprises and no extra charges. Our job is simple: find the problem, fix it, and get you back up and running. We only win when your device works. Have you been in? Tell us how it went 👇
 
 📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
 📞 Call or text (323) 348-6756

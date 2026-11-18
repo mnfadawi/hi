@@ -1390,7 +1390,7 @@
     {
       "id": "40-why-trust-us",
       "title": "Why you can trust Phone ElectriK",
-      "caption": "Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Google, 10+ years in Torrance, and we always tell you what's wrong before we touch anything. Have you been in? Tell us how it went 👇",
+      "caption": "Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Google, 10+ years in Torrance. We tell you what's wrong and the price before we start, with no surprises and no extra charges. Our job is simple: find the problem, fix it, and get you back up and running. We only win when your device works. Have you been in? Tell us how it went 👇",
       "tags": "#trustedrepair #phonerepair #honestbusiness #5stars",
       "slides": [
         {
@@ -1422,8 +1422,24 @@
         },
         {
           "type": "text",
-          "text": "We tell you *what's wrong* first",
-          "sub": "Then you decide. No pressure.",
+          "label": "OUR PROMISE",
+          "text": "We tell you *what's wrong* and the *price* before we start",
+          "sub": "No surprises. No extra charges. No pressure.",
+          "say": "Our promise: we tell you what's wrong, and the price, before we start. No surprises. No extra charges. No pressure.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "OUR JOB",
+          "text": "Find the problem. Fix it. *Get you back up and running.*",
+          "say": "Our job is simple. Find the problem, fix it, and get you back up and running.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "text": "We only win when your device *works*",
+          "sub": "That's why we do it right.",
+          "say": "We only win when your device works. That's why we do it right.",
           "seconds": 1.6
         },
         {
