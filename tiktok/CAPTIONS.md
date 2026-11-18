@@ -2043,7 +2043,7 @@ Why the South Bay trusts us with their phones ⭐ 4.7 stars on Yelp, 4.6 on Goog
 
 **TikTok**
 ```
-What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are done while you wait, no appointment, open 7 days, and a 90-day warranty on every repair. Which one matters most to you? 👇
+What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are done while you wait, and we're open 7 days a week with no days off. We're here for Torrance and the whole South Bay: Redondo, Hermosa, Manhattan Beach, Gardena, Carson, Lomita, Long Beach and more. Repair it, don't replace it: save your money, your data and your time. Which one matters most to you? 👇
 
 📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
 
@@ -2051,7 +2051,7 @@ What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are
 ```
 **Instagram Reels**
 ```
-What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are done while you wait, no appointment, open 7 days, and a 90-day warranty on every repair. Which one matters most to you? 👇
+What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are done while you wait, and we're open 7 days a week with no days off. We're here for Torrance and the whole South Bay: Redondo, Hermosa, Manhattan Beach, Gardena, Carson, Lomita, Long Beach and more. Repair it, don't replace it: save your money, your data and your time. Which one matters most to you? 👇
 
 📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
 📞 Call or text (323) 348-6756
@@ -2062,7 +2062,7 @@ What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are
 ```
 **Facebook Reels**
 ```
-What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are done while you wait, no appointment, open 7 days, and a 90-day warranty on every repair. Which one matters most to you? 👇
+What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are done while you wait, and we're open 7 days a week with no days off. We're here for Torrance and the whole South Bay: Redondo, Hermosa, Manhattan Beach, Gardena, Carson, Lomita, Long Beach and more. Repair it, don't replace it: save your money, your data and your time. Which one matters most to you? 👇
 
 Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
 📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
@@ -2078,7 +2078,7 @@ What makes us different from other repair shops #shorts
 ```
 Description:
 ```
-What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are done while you wait, no appointment, open 7 days, and a 90-day warranty on every repair. Which one matters most to you? 👇
+What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are done while you wait, and we're open 7 days a week with no days off. We're here for Torrance and the whole South Bay: Redondo, Hermosa, Manhattan Beach, Gardena, Carson, Lomita, Long Beach and more. Repair it, don't replace it: save your money, your data and your time. Which one matters most to you? 👇
 
 📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
 📞 Call or text (323) 348-6756

@@ -1442,7 +1442,7 @@
     {
       "id": "41-why-different",
       "title": "What makes us different from other repair shops",
-      "caption": "What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are done while you wait, no appointment, open 7 days, and a 90-day warranty on every repair. Which one matters most to you? 👇",
+      "caption": "What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are done while you wait, and we're open 7 days a week with no days off. We're here for Torrance and the whole South Bay: Redondo, Hermosa, Manhattan Beach, Gardena, Carson, Lomita, Long Beach and more. Repair it, don't replace it: save your money, your data and your time. Which one matters most to you? 👇",
       "tags": "#phonerepair #localbusiness #honestbusiness #fixdontreplace",
       "slides": [
         {
@@ -1469,8 +1469,9 @@
         {
           "type": "text",
           "label": "3",
-          "text": "*No appointment.* Open *7 days.*",
-          "say": "Three. No appointment, and we're open seven days.",
+          "text": "Open *7 days a week.* No days off.",
+          "sub": "Mon–Sat 9AM–8PM · Sun 10AM–6PM · No appointment",
+          "say": "Three. We're open seven days a week. No days off, and no appointment needed.",
           "seconds": 1.6
         },
         {
@@ -1490,10 +1491,18 @@
         },
         {
           "type": "text",
-          "label": "6",
-          "text": "We'd rather you *fix it* than buy new",
-          "sub": "That's why we opened our shop.",
-          "say": "Six. We'd rather you fix it than buy new. That's why we opened our shop.",
+          "label": "WE'RE HERE FOR YOU",
+          "text": "We're here for *Torrance* & the *South Bay*",
+          "sub": "Redondo · Hermosa · Manhattan Beach · Gardena · Carson · Lomita · Long Beach & more",
+          "say": "We're here for you, Torrance, and the whole South Bay. Redondo, Hermosa, Manhattan Beach, Gardena, Carson, Lomita, Long Beach and more.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "OUR GOAL",
+          "text": "Save your *money*, your *data* & your *time*",
+          "sub": "Repair it. Don't replace it.",
+          "say": "Our goal is simple. Save your money, your data, and your time. Repair it. Don't replace it.",
           "seconds": 1.6
         },
         {
