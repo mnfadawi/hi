@@ -2742,3 +2742,73 @@ What makes Phone ElectriK different 🔧 We tell you the truth, most repairs are
 
 #phonerepair #localbusiness #honestbusiness #fixdontreplace #phoneelectrik #torrance #southbay #shorts
 ```
+
+---
+## 42-thank-you-south-bay: Thank you, South Bay
+
+**What's on screen (and what the voice says):**
+1. Thank you, South Bay
+2. To every customer who trusted us with their phone
+3. **THANK YOU:** Torrance · Redondo · Hermosa · Manhattan Beach
+4. **THANK YOU:** El Segundo · Lomita · Gardena · Carson
+5. **THANK YOU:** Long Beach · Wilmington · Hawthorne · Lawndale _(Compton · Palos Verdes & more)_
+6. Because of you: 10+ years & 4.7 stars _(We couldn't do it without you.)_
+7. **WE'RE HERE FOR YOU:** We're always here for you _(Open 7 days · Phones, iPads, laptops & more)_
+8. **HELP US GROW:** Leave us a review _(Or share this with someone who needs a repair)_
+9. **TELL US:** Comment your city below
+
+**Captions for this video:**
+
+```
+VIDEO: 42-thank-you-south-bay.mp4
+TOPIC: Thank you, South Bay
+
+----------------------------------------
+TIKTOK (caption)
+----------------------------------------
+Thank you, South Bay 🧡 To everyone in Torrance, Redondo Beach, Hermosa Beach, Manhattan Beach, El Segundo, Lomita, Gardena, Carson, Long Beach, Wilmington, Hawthorne, Lawndale, Compton, Palos Verdes and beyond: thank you for trusting us with your phones for 10+ years. We couldn't do it without you, and we're here for you 7 days a week. Comment your city below 👇 and tag someone who needs a repair. Already been in? A Google or Yelp review helps us more than you know 🙏
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#thankyou #southbay #supportlocal #smallbusiness #phoneelectrik #torrance #phonerepair
+
+----------------------------------------
+INSTAGRAM REELS (caption)
+----------------------------------------
+Thank you, South Bay 🧡 To everyone in Torrance, Redondo Beach, Hermosa Beach, Manhattan Beach, El Segundo, Lomita, Gardena, Carson, Long Beach, Wilmington, Hawthorne, Lawndale, Compton, Palos Verdes and beyond: thank you for trusting us with your phones for 10+ years. We couldn't do it without you, and we're here for you 7 days a week. Comment your city below 👇 and tag someone who needs a repair. Already been in? A Google or Yelp review helps us more than you know 🙏
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#thankyou #southbay #supportlocal #smallbusiness #phoneelectrik #torrance #phonerepair
+
+----------------------------------------
+FACEBOOK REELS (description)
+----------------------------------------
+Thank you, South Bay 🧡 To everyone in Torrance, Redondo Beach, Hermosa Beach, Manhattan Beach, El Segundo, Lomita, Gardena, Carson, Long Beach, Wilmington, Hawthorne, Lawndale, Compton, Palos Verdes and beyond: thank you for trusting us with your phones for 10+ years. We couldn't do it without you, and we're here for you 7 days a week. Comment your city below 👇 and tag someone who needs a repair. Already been in? A Google or Yelp review helps us more than you know 🙏
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+
+----------------------------------------
+YOUTUBE SHORTS
+----------------------------------------
+TITLE:
+Thank you, South Bay #shorts
+
+DESCRIPTION:
+Thank you, South Bay 🧡 To everyone in Torrance, Redondo Beach, Hermosa Beach, Manhattan Beach, El Segundo, Lomita, Gardena, Carson, Long Beach, Wilmington, Hawthorne, Lawndale, Compton, Palos Verdes and beyond: thank you for trusting us with your phones for 10+ years. We couldn't do it without you, and we're here for you 7 days a week. Comment your city below 👇 and tag someone who needs a repair. Already been in? A Google or Yelp review helps us more than you know 🙏
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#thankyou #southbay #supportlocal #smallbusiness #phoneelectrik #torrance #phonerepair #shorts
+```

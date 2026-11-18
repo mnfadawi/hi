@@ -1528,6 +1528,87 @@
           "seconds": 2.2
         }
       ]
+    },
+    {
+      "id": "42-thank-you-south-bay",
+      "title": "Thank you, South Bay",
+      "caption": "Thank you, South Bay 🧡 To everyone in Torrance, Redondo Beach, Hermosa Beach, Manhattan Beach, El Segundo, Lomita, Gardena, Carson, Long Beach, Wilmington, Hawthorne, Lawndale, Compton, Palos Verdes and beyond: thank you for trusting us with your phones for 10+ years. We couldn't do it without you, and we're here for you 7 days a week. Comment your city below 👇 and tag someone who needs a repair. Already been in? A Google or Yelp review helps us more than you know 🙏",
+      "tags": "#thankyou #southbay #supportlocal #smallbusiness",
+      "slides": [
+        {
+          "type": "hook",
+          "text": "Thank you, *South Bay*",
+          "seconds": 1.8
+        },
+        {
+          "type": "text",
+          "text": "To every customer who trusted us with their *phone*",
+          "say": "To every customer who trusted us with their phone. Thank you.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "THANK YOU",
+          "text": "Torrance · Redondo · Hermosa · *Manhattan Beach*",
+          "say": "Torrance. Redondo. Hermosa. Manhattan Beach.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "THANK YOU",
+          "text": "El Segundo · Lomita · Gardena · *Carson*",
+          "say": "El Segundo. Lomita. Gardena. Carson.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "THANK YOU",
+          "text": "Long Beach · Wilmington · Hawthorne · *Lawndale*",
+          "sub": "Compton · Palos Verdes & more",
+          "say": "Long Beach. Wilmington. Hawthorne. Lawndale. Compton. Palos Verdes, and more.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "text": "Because of *you*: 10+ years & 4.7 stars",
+          "sub": "We couldn't do it without you.",
+          "say": "Because of you, we've been here over ten years, with four point seven stars. We couldn't do it without you.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "WE'RE HERE FOR YOU",
+          "text": "We're *always here* for you",
+          "sub": "Open 7 days · Phones, iPads, laptops & more",
+          "say": "And we're always here for you. Open seven days a week, for your phones, iPads, laptops and more.",
+          "seconds": 1.6
+        },
+        {
+          "type": "qr",
+          "label": "HELP US GROW",
+          "text": "Leave us a review",
+          "images": [
+            [
+              "qr-google.png",
+              "Google"
+            ],
+            [
+              "qr-yelp.png",
+              "Yelp"
+            ]
+          ],
+          "sub": "Or share this with someone who needs a repair",
+          "say": "Want to help a local shop grow? Leave us a review on Google or Yelp, or share this with someone who needs a repair.",
+          "seconds": 4.5
+        },
+        {
+          "type": "text",
+          "label": "TELL US",
+          "text": "Comment your *city* below",
+          "say": "And tell us, what city are you from? Comment below.",
+          "seconds": 2.2
+        }
+      ]
     }
   ]
 }
