@@ -2,10 +2,10 @@
 
 8.5 × 5.5 in landscape insert (half a letter sheet) for the counter acrylic holder.
 
-- `rate-us-on-nfc-sign-letter-2up.pdf`: two signs on one letter sheet. Print at **100% / Actual size** with background graphics on, then cut in half.
+- **`PRINT-ME-rate-us-on-sign.pdf`**: print this one. Letter paper, one sign per page, cut on the dashed line. The cut sign is 7.9 × 5.1 in. Print at **100% / Actual size** with background graphics on.
 - `rate-us-on-nfc-sign.pdf`: one sign, page size 8.5 × 5.5 in.
 - `rate-us-on-nfc-sign.png`: 2550 × 1650 px (300 DPI) preview/print image.
-- `sign.html`: the source (`letter.html` puts two on a letter page). `make_qr.py` regenerates the QR data.
+- `sign.html`: the source (`print.html` places it on the letter page). `make_qr.py` regenerates the QR data.
 
 | Side | QR opens | NFC sticker |
 |------|----------|-------------|
