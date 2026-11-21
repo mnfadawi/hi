@@ -4,8 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="robots" content="noindex" />
 <title>ICH / Al-Huda — Principal Badge (front &amp; back)</title>
-<!-- Same 2.125" x 3.375" (CR80) card, logo and colours as volunteer-badge.html
-     (?c=1), for the principal, with a back. Front and back sit side by side
+<!-- Same 2.125" x 3.375" (CR80) card and look as the shop's printed ICH
+     Security Guard badge (photo): black card, white/grey text, black-and-white
+     logo, grey role band, name under the band. For the principal, with a back. Front and back sit side by side
      on US Letter sharing one edge: print at 100% / Actual size with background
      graphics on, cut around the outside as one piece, fold on the dashed
      line (back to back) and slide into the vertical badge holder.
@@ -22,32 +23,33 @@
   .label{font-size:9pt;color:#666;margin-top:.3in;text-align:center;line-height:1.5}
 
   .card{position:relative;width:2.125in;height:3.375in;color:#fff;overflow:hidden;
-        background:linear-gradient(180deg,#355536,#26402a);display:flex;flex-direction:column;align-items:center}
-  .frame{position:absolute;inset:.09in;border:1px solid rgba(255,255,255,.45);border-radius:.09in}
+        background:#111;display:flex;flex-direction:column;align-items:center}
+  .frame{position:absolute;inset:.09in;border:1px solid #6e6e6e;border-radius:.09in}
 
-  .org{margin-top:.32in;font-size:6.3pt;font-weight:700;letter-spacing:.1em;text-align:center}
-  .school{margin-top:.05in;font-size:5.6pt;font-weight:600;letter-spacing:.2em;color:#ffd2bd;padding-left:.2em}
-  .diamond{margin-top:.07in;width:.05in;height:.05in;background:#ee5a24;transform:rotate(45deg)}
-  .logo{margin-top:.13in;width:1.14in;height:1.14in;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;
-        box-shadow:0 0 0 2px #ee5a24}
-  .logo img{width:1.08in;height:1.08in;border-radius:50%;object-fit:cover;transform:scale(1.03)}
+  .org{margin-top:.25in;font-size:6.3pt;font-weight:700;letter-spacing:.1em;text-align:center}
+  .school{margin-top:.05in;font-size:5.6pt;font-weight:600;letter-spacing:.2em;color:#d4d4d4;padding-left:.2em}
+  .diamond{margin-top:.07in;width:.05in;height:.05in;background:#d0d0d0;transform:rotate(45deg)}
+  .logo{margin-top:.11in;width:1.02in;height:1.02in;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;
+        box-shadow:0 0 0 1.5px #d0d0d0}
+  .logo img{width:.96in;height:.96in;border-radius:50%;object-fit:cover;transform:scale(1.03);filter:grayscale(1) contrast(1.15)}
+  .vol{margin-top:.13in;font-size:7.2pt;font-weight:700;letter-spacing:.26em;color:#fff;padding-left:.26em}
 
-  .role{margin-top:.2in;width:100%;background:#ee5a24;border-top:1px solid #ffb08a;border-bottom:1px solid #ffb08a;
-        text-align:center;padding:.1in 0}
-  .role span{font-size:12pt;font-weight:700;letter-spacing:.14em;padding-left:.14em}
-  .name{margin-top:.13in;font-size:10.5pt;font-weight:700;letter-spacing:.06em;text-align:center}
+  .role{margin-top:.1in;width:100%;background:#303030;border-top:1px solid #5a5a5a;border-bottom:1px solid #5a5a5a;
+        text-align:center;padding:.09in 0}
+  .role span{font-size:11.5pt;font-weight:700;letter-spacing:.06em;padding-left:.06em;color:#fff}
+  .name{width:100%;padding:.09in 0 .08in;border-bottom:1px solid #5a5a5a;font-size:10pt;font-weight:700;letter-spacing:.06em;text-align:center;color:#e6e6e6}
 
-  .rule{margin-top:.13in;width:.5in;height:1px;background:#ee5a24}
-  .place{margin-top:.09in;font-size:5.4pt;font-weight:600;letter-spacing:.2em;color:#e4efe4;padding-left:.2em}
+  .rule{margin-top:.1in;width:.5in;height:1px;background:#8a8a8a}
+  .place{margin-top:.07in;font-size:5.4pt;font-weight:600;letter-spacing:.2em;color:#cfcfcf;padding-left:.2em}
 
   /* back */
   .back .logo{margin-top:.44in;width:.78in;height:.78in}
   .back .logo img{width:.74in;height:.74in}
-  .found{margin-top:.2in;font-size:6.2pt;font-weight:700;letter-spacing:.16em;color:#ffd2bd;padding-left:.16em}
+  .found{margin-top:.2in;font-size:6.2pt;font-weight:700;letter-spacing:.16em;color:#d4d4d4;padding-left:.16em}
   .addr{margin-top:.1in;text-align:center;font-size:7.6pt;font-weight:700;line-height:1.45}
   .addr .n{font-size:8.4pt}
   .phone{margin-top:.12in;font-size:11pt;font-weight:700;letter-spacing:.03em}
-  .web{margin-top:.04in;font-size:7.6pt;font-weight:700;color:#ffd2bd}
+  .web{margin-top:.04in;font-size:7.6pt;font-weight:700;color:#d4d4d4}
   .back .rule{margin-top:.16in}
 </style>
 </head>
@@ -60,6 +62,7 @@
         <div class="school">AL-HUDA ISLAMIC SCHOOL</div>
         <div class="diamond"></div>
         <div class="logo"><img src="ich-logo-sharp.svg" alt="Islamic Center of Hawthorne"></div>
+        <div class="vol">STAFF</div>
         <div class="role"><span>PRINCIPAL</span></div>
         <div class="name">SUHAIR MUDALLAL</div>
         <div class="rule"></div>
