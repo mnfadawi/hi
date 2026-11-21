@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex" />
+<title>Al-Huda Islamic School — Principal Badge</title>
+<!-- One 2.125" x 3.375" (CR80) vertical badge on US Letter, same size and
+     colours as volunteer-badge.html (?c=1). Print at 100% / Actual size with
+     background graphics on, cut along the thin outline, slide into a vertical
+     badge holder. No school logo on file, so the circle shows the initials
+     instead of an invented logo. -->
+<style>
+  @page{size:8.5in 11in;margin:0}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#fff}
+  body{font-family:"Liberation Sans",Arial,Helvetica,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sheet{width:8.5in;height:11in;display:flex;align-items:center;justify-content:center}
+
+  .card{position:relative;width:2.125in;height:3.375in;color:#fff;outline:.5px solid #999;overflow:hidden;
+        background:linear-gradient(180deg,#355536,#26402a);display:flex;flex-direction:column;align-items:center}
+  .frame{position:absolute;inset:.09in;border:1px solid rgba(255,255,255,.45);border-radius:.09in}
+
+  .org{margin-top:.27in;font-size:13pt;font-weight:700;letter-spacing:.08em;text-align:center;line-height:1}
+  .school{margin-top:.05in;font-size:6.2pt;font-weight:700;letter-spacing:.24em;color:#ffd2bd;padding-left:.24em}
+  .diamond{margin-top:.08in;width:.05in;height:.05in;background:#ee5a24;transform:rotate(45deg)}
+
+  .initials{margin-top:.1in;width:.92in;height:.92in;border-radius:50%;background:#fff;box-shadow:0 0 0 2px #ee5a24;
+            display:flex;align-items:center;justify-content:center;color:#2c4a2e;font-size:27pt;font-weight:700;letter-spacing:.02em}
+
+  .name{margin-top:.13in;text-align:center;font-weight:700;line-height:1.05}
+  .name .first{display:block;font-size:14pt;letter-spacing:.06em}
+  .name .last{display:block;font-size:14pt;letter-spacing:.06em}
+
+  .role{margin-top:.11in;width:100%;background:#ee5a24;border-top:1px solid #ffb08a;border-bottom:1px solid #ffb08a;
+        text-align:center;padding:.08in 0}
+  .role span{font-size:12.5pt;font-weight:700;letter-spacing:.14em;padding-left:.14em}
+
+  .rule{margin-top:.14in;width:.5in;height:1px;background:#ee5a24}
+  .place{margin-top:.08in;font-size:5.4pt;font-weight:700;letter-spacing:.2em;color:#e4efe4;padding-left:.2em}
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="card">
+      <div class="frame"></div>
+      <div class="org">AL-HUDA</div>
+      <div class="school">ISLAMIC SCHOOL</div>
+      <div class="diamond"></div>
+      <div class="initials">SM</div>
+      <div class="name"><span class="first">SUHAIR</span><span class="last">MUDALLAL</span></div>
+      <div class="role"><span>PRINCIPAL</span></div>
+      <div class="rule"></div>
+      <div class="place">HAWTHORNE · CALIFORNIA</div>
+    </div>
+  </div>
+</body>
+</html>
