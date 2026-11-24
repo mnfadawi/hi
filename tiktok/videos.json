@@ -1664,13 +1664,14 @@
     },
     {
       "id": "45-thank-you-followers",
-      "title": "Thank you for following Phone ElectriK",
+      "title": "Thank you for following & subscribing",
       "caption": "Thank you 🧡 To everyone who follows, subscribes, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't liked, commented, shared, followed or subscribed yet, pause the video and do it right now. It makes a difference and helps us grow 🙏 Follow us on Instagram, TikTok & Facebook and subscribe on YouTube @phoneelectrik for more real repairs and updates 🔧",
       "tags": "#thankyou #followers #supportlocal #smallbusiness",
       "slides": [
         {
           "type": "hook",
-          "text": "*Thank you* for following us",
+          "text": "*Thank you* for following & subscribing",
+          "say": "Thank you for following and subscribing.",
           "seconds": 1.8
         },
         {

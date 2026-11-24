@@ -2283,7 +2283,7 @@ Is this your phone right now? 📱 Don't buy a new one, fix it. It's cheaper, yo
 #crackedscreen #fixdontreplace #phonerepair #smallbusiness #phoneelectrik #torrance #southbay #shorts
 ```
 
-## 45-thank-you-followers.mp4: Thank you for following Phone ElectriK
+## 45-thank-you-followers.mp4: Thank you for following & subscribing
 
 **TikTok**
 ```
@@ -2319,7 +2319,7 @@ Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance, CA 90504.
 
 Title:
 ```
-Thank you for following Phone ElectriK #shorts
+Thank you for following & subscribing #shorts
 ```
 Description:
 ```
