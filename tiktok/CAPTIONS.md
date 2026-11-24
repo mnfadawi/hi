@@ -2193,7 +2193,7 @@ Heading out to see family this week? 🚗✈️ Don't get stuck with a dying bat
 
 **TikTok**
 ```
-Is this your phone right now? 📱 Don't buy a new one, fix it. It's cheaper, you keep your photos and contacts, and you skip hours of transferring data to a new phone. Most repairs are done while you wait. Come see us, we're here for you 🙌
+Is this your phone right now? 📱 Don't buy a new one, fix it. It's cheaper, you keep your info, photos and contacts, and you skip hours of transferring data to a new phone. Most repairs are done while you wait. Come see us, we're here for you 🙌
 
 📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
 
@@ -2201,7 +2201,7 @@ Is this your phone right now? 📱 Don't buy a new one, fix it. It's cheaper, yo
 ```
 **Instagram Reels**
 ```
-Is this your phone right now? 📱 Don't buy a new one, fix it. It's cheaper, you keep your photos and contacts, and you skip hours of transferring data to a new phone. Most repairs are done while you wait. Come see us, we're here for you 🙌
+Is this your phone right now? 📱 Don't buy a new one, fix it. It's cheaper, you keep your info, photos and contacts, and you skip hours of transferring data to a new phone. Most repairs are done while you wait. Come see us, we're here for you 🙌
 
 📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
 📞 Call or text (323) 348-6756
@@ -2212,7 +2212,7 @@ Is this your phone right now? 📱 Don't buy a new one, fix it. It's cheaper, yo
 ```
 **Facebook Reels**
 ```
-Is this your phone right now? 📱 Don't buy a new one, fix it. It's cheaper, you keep your photos and contacts, and you skip hours of transferring data to a new phone. Most repairs are done while you wait. Come see us, we're here for you 🙌
+Is this your phone right now? 📱 Don't buy a new one, fix it. It's cheaper, you keep your info, photos and contacts, and you skip hours of transferring data to a new phone. Most repairs are done while you wait. Come see us, we're here for you 🙌
 
 Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
 📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
@@ -2228,7 +2228,7 @@ Cracked screen? Don't buy a new phone, fix it #shorts
 ```
 Description:
 ```
-Is this your phone right now? 📱 Don't buy a new one, fix it. It's cheaper, you keep your photos and contacts, and you skip hours of transferring data to a new phone. Most repairs are done while you wait. Come see us, we're here for you 🙌
+Is this your phone right now? 📱 Don't buy a new one, fix it. It's cheaper, you keep your info, photos and contacts, and you skip hours of transferring data to a new phone. Most repairs are done while you wait. Come see us, we're here for you 🙌
 
 📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
 📞 Call or text (323) 348-6756
