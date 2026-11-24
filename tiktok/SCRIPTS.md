@@ -2995,9 +2995,11 @@ Is this your phone right now? 📱 Don't buy a new one, fix it. It's cheaper, yo
 4. **NEW HERE?:** We're Phone ElectriK in Torrance
 5. We fix phones, iPads, laptops, game consoles & Apple Watches
 6. Most repairs done while you wait _(90-day warranty on every repair)_
-7. **IF YOU HAVEN'T YET:** Like · Comment · Share · Follow
+7. **IF YOU HAVEN'T YET:** Like · Comment · Share · Follow · Subscribe
 8. Pause the video and do it right now
-9. **THANK YOU:** It makes a difference. It helps us grow.
+9. It makes a difference. It helps us grow.
+10. **DON'T MISS THE NEXT ONE:** Follow us on Instagram, TikTok & Facebook _(*Subscribe* on YouTube · @phoneelectrik)_
+11. Thank you!
 
 **Captions for this video:**
 
@@ -3008,7 +3010,7 @@ TOPIC: Thank you for following Phone ElectriK
 ----------------------------------------
 TIKTOK (caption)
 ----------------------------------------
-Thank you 🧡 To everyone who follows, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't liked, commented, shared or followed yet, pause the video and do it right now. It makes a difference and helps us grow 🙏
+Thank you 🧡 To everyone who follows, subscribes, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't liked, commented, shared, followed or subscribed yet, pause the video and do it right now. It makes a difference and helps us grow 🙏 Follow us on Instagram, TikTok & Facebook and subscribe on YouTube @phoneelectrik for more real repairs and updates 🔧
 
 📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
 🛡️ 90-day warranty · 🚶 Walk-ins welcome
@@ -3018,7 +3020,7 @@ Thank you 🧡 To everyone who follows, watches, likes, comments and shares our 
 ----------------------------------------
 INSTAGRAM REELS (caption)
 ----------------------------------------
-Thank you 🧡 To everyone who follows, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't liked, commented, shared or followed yet, pause the video and do it right now. It makes a difference and helps us grow 🙏
+Thank you 🧡 To everyone who follows, subscribes, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't liked, commented, shared, followed or subscribed yet, pause the video and do it right now. It makes a difference and helps us grow 🙏 Follow us on Instagram, TikTok & Facebook and subscribe on YouTube @phoneelectrik for more real repairs and updates 🔧
 
 📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
 📞 Call or text (323) 348-6756
@@ -3030,7 +3032,7 @@ Thank you 🧡 To everyone who follows, watches, likes, comments and shares our 
 ----------------------------------------
 FACEBOOK REELS (description)
 ----------------------------------------
-Thank you 🧡 To everyone who follows, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't liked, commented, shared or followed yet, pause the video and do it right now. It makes a difference and helps us grow 🙏
+Thank you 🧡 To everyone who follows, subscribes, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't liked, commented, shared, followed or subscribed yet, pause the video and do it right now. It makes a difference and helps us grow 🙏 Follow us on Instagram, TikTok & Facebook and subscribe on YouTube @phoneelectrik for more real repairs and updates 🔧
 
 Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance, CA 90504.
 📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
@@ -3045,7 +3047,7 @@ TITLE:
 Thank you for following Phone ElectriK #shorts
 
 DESCRIPTION:
-Thank you 🧡 To everyone who follows, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't liked, commented, shared or followed yet, pause the video and do it right now. It makes a difference and helps us grow 🙏
+Thank you 🧡 To everyone who follows, subscribes, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't liked, commented, shared, followed or subscribed yet, pause the video and do it right now. It makes a difference and helps us grow 🙏 Follow us on Instagram, TikTok & Facebook and subscribe on YouTube @phoneelectrik for more real repairs and updates 🔧
 
 📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
 📞 Call or text (323) 348-6756

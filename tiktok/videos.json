@@ -1665,7 +1665,7 @@
     {
       "id": "45-thank-you-followers",
       "title": "Thank you for following Phone ElectriK",
-      "caption": "Thank you 🧡 To everyone who follows, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't liked, commented, shared or followed yet, pause the video and do it right now. It makes a difference and helps us grow 🙏",
+      "caption": "Thank you 🧡 To everyone who follows, subscribes, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't liked, commented, shared, followed or subscribed yet, pause the video and do it right now. It makes a difference and helps us grow 🙏 Follow us on Instagram, TikTok & Facebook and subscribe on YouTube @phoneelectrik for more real repairs and updates 🔧",
       "tags": "#thankyou #followers #supportlocal #smallbusiness",
       "slides": [
         {
@@ -1708,8 +1708,8 @@
         {
           "type": "text",
           "label": "IF YOU HAVEN'T YET",
-          "text": "*Like · Comment · Share · Follow*",
-          "say": "If you haven't liked, commented, shared, or followed us yet,",
+          "text": "*Like · Comment · Share · Follow · Subscribe*",
+          "say": "If you haven't liked, commented, shared, followed, or subscribed yet,",
           "seconds": 1.6
         },
         {
@@ -1720,10 +1720,23 @@
         },
         {
           "type": "text",
-          "label": "THANK YOU",
           "text": "It makes a *difference.* It helps us *grow.*",
-          "say": "It makes a difference, and it helps us grow. Thank you.",
-          "seconds": 2.2
+          "say": "It makes a difference, and it helps us grow.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "DON'T MISS THE NEXT ONE",
+          "text": "*Follow* us on Instagram, TikTok & Facebook",
+          "sub": "*Subscribe* on YouTube · @phoneelectrik",
+          "say": "Follow us on Instagram, TikTok and Facebook, and subscribe on YouTube, for more real repairs and updates.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "text": "*Thank you!*",
+          "say": "Thank you!",
+          "seconds": 1.6
         }
       ]
     }
