@@ -1,0 +1,5 @@
+models/
+.voice_cache/
+out/*.tmp.wav
+__pycache__/
+raw/
