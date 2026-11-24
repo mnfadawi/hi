@@ -1665,7 +1665,7 @@
     {
       "id": "45-thank-you-followers",
       "title": "Thank you for following Phone ElectriK",
-      "caption": "Thank you 🧡 To everyone who follows, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't yet, like, share, comment and follow for more real repairs 🔧",
+      "caption": "Thank you 🧡 To everyone who follows, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't liked, commented, shared or followed yet, pause the video and do it right now. It makes a difference and helps us grow 🙏",
       "tags": "#thankyou #followers #supportlocal #smallbusiness",
       "slides": [
         {
@@ -1708,15 +1708,21 @@
         {
           "type": "text",
           "label": "IF YOU HAVEN'T YET",
-          "text": "*Like · Comment · Share*",
-          "say": "If you haven't already, like, comment, and share this video.",
+          "text": "*Like · Comment · Share · Follow*",
+          "say": "If you haven't liked, commented, shared, or followed us yet,",
           "seconds": 1.6
         },
         {
           "type": "text",
-          "label": "DON'T MISS THE NEXT ONE",
-          "text": "*Follow & subscribe* for more real repairs",
-          "say": "And follow and subscribe, for more real repairs and updates.",
+          "text": "*Pause the video* and do it *right now*",
+          "say": "pause the video, and go ahead and do it right now.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "THANK YOU",
+          "text": "It makes a *difference.* It helps us *grow.*",
+          "say": "It makes a difference, and it helps us grow. Thank you.",
           "seconds": 2.2
         }
       ]
