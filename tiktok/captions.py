@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write tiktok/CAPTIONS.md: a ready-to-paste caption for every video for TikTok, Instagram, Facebook and YouTube."""
+"""Write tiktok/CAPTIONS.md: a ready-to-paste caption for every video for TikTok, Instagram and YouTube."""
 import json, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -28,20 +28,12 @@ for v in data["videos"]:
         v["caption"], "", TIKTOK_END, "", tags, "",
         line, "INSTAGRAM REELS (caption)", line,
         v["caption"], "", *SHOP, "", tags, "",
-        line, "FACEBOOK REELS (description)", line,
-        v["caption"], "", "Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance, CA 90504.",
-        "📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed",
-        "🛡️ 90-day warranty on every repair", "", "#phonerepair #torrance #southbay", "",
         line, "YOUTUBE SHORTS", line,
         "TITLE:", f"{v['title']} #shorts", "", "DESCRIPTION:",
         v["caption"], "", *SHOP, "🌐 phoneelectrik.com", "", tags + " #shorts", ""]))
     out += [f"## {v['id']}.mp4: {v['title']}", "",
             "**TikTok**", "```", v["caption"], "", TIKTOK_END, "", tags, "```",
             "**Instagram Reels**", "```", v["caption"], "", *SHOP, "", tags, "```",
-            "**Facebook Reels**", "```", v["caption"], "",
-            "Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance, CA 90504.",
-            "📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed",
-            "🛡️ 90-day warranty on every repair", "", "#phonerepair #torrance #southbay", "```",
             "**YouTube Shorts**", "",
             "Title:", "```", f"{v['title']} #shorts", "```",
             "Description:", "```", v["caption"], "", *SHOP, "🌐 phoneelectrik.com", "", tags + " #shorts", "```", ""]
