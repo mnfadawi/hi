@@ -2282,3 +2282,54 @@ Is this your phone right now? 📱 Don't buy a new one, fix it. It's cheaper, yo
 
 #crackedscreen #fixdontreplace #phonerepair #smallbusiness #phoneelectrik #torrance #southbay #shorts
 ```
+
+## 45-thank-you-followers.mp4: Thank you for following Phone ElectriK
+
+**TikTok**
+```
+Thank you 🧡 To everyone who follows, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't yet, like, share, comment and follow for more real repairs 🔧
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
+🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#thankyou #followers #supportlocal #smallbusiness #phoneelectrik #torrance #southbay #phonerepair
+```
+**Instagram Reels**
+```
+Thank you 🧡 To everyone who follows, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't yet, like, share, comment and follow for more real repairs 🔧
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#thankyou #followers #supportlocal #smallbusiness #phoneelectrik #torrance #southbay #phonerepair
+```
+**Facebook Reels**
+```
+Thank you 🧡 To everyone who follows, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't yet, like, share, comment and follow for more real repairs 🔧
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance, CA 90504.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+Thank you for following Phone ElectriK #shorts
+```
+Description:
+```
+Thank you 🧡 To everyone who follows, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't yet, like, share, comment and follow for more real repairs 🔧
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#thankyou #followers #supportlocal #smallbusiness #phoneelectrik #torrance #southbay #phonerepair #shorts
+```

@@ -1661,6 +1661,65 @@
       "tags": "#crackedscreen #fixdontreplace #phonerepair #smallbusiness",
       "slides": [],
       "source": "clips/44-mohammed-fix-it.json"
+    },
+    {
+      "id": "45-thank-you-followers",
+      "title": "Thank you for following Phone ElectriK",
+      "caption": "Thank you 🧡 To everyone who follows, watches, likes, comments and shares our videos: we see you, and we appreciate you. New here? We're Phone ElectriK in Torrance. We fix phones, iPads, laptops, game consoles and Apple Watches, and most repairs are done while you wait. If you haven't yet, like, share, comment and follow for more real repairs 🔧",
+      "tags": "#thankyou #followers #supportlocal #smallbusiness",
+      "slides": [
+        {
+          "type": "hook",
+          "text": "*Thank you* for following us",
+          "seconds": 1.8
+        },
+        {
+          "type": "text",
+          "text": "To everyone who *watches, likes,* comments & *shares*",
+          "say": "To everyone who watches, likes, comments, and shares our videos.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "text": "We *see you.* We *appreciate you.*",
+          "say": "We see you, and we appreciate you.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "NEW HERE?",
+          "text": "We're *Phone ElectriK* in Torrance",
+          "say": "New here? We're Phone ElectriK, in Torrance.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "text": "We fix *phones, iPads, laptops,* game consoles & *Apple Watches*",
+          "say": "We fix phones, iPads, laptops, game consoles, and Apple Watches.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "text": "Most repairs done *while you wait*",
+          "sub": "90-day warranty on every repair",
+          "say": "Most repairs are done while you wait, with a 90-day warranty on every repair.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "IF YOU HAVEN'T YET",
+          "text": "*Like · Comment · Share*",
+          "say": "If you haven't already, like, comment, and share this video.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "DON'T MISS THE NEXT ONE",
+          "text": "*Follow & subscribe* for more real repairs",
+          "say": "And follow and subscribe, for more real repairs and updates.",
+          "seconds": 2.2
+        }
+      ]
     }
   ]
 }
