@@ -332,5 +332,5 @@ if __name__ == "__main__":
     data = json.load(open(os.path.join(HERE, "videos.json")))
     want = sys.argv[1] if len(sys.argv) > 1 else ""
     for v in data["videos"]:
-        if want in v["id"]:
+        if want in v["id"] and v["slides"]:  # real-footage clips (no slides) are made by talking_clip.py
             render(with_ending(v, data), data["handle"])
