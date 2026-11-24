@@ -5,13 +5,13 @@ import json, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 data = json.load(open(os.path.join(HERE, "videos.json")))
 
-SHOP = ["📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA",
+SHOP = ["📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504",
         "📞 Call or text (323) 348-6756",
         "🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM",
         "🚶 No appointment needed · 🛡️ 90-day warranty on every repair"]
 LOCAL = "#phoneelectrik #torrance #southbay #phonerepair"
 
-TIKTOK_END = "📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome"
+TIKTOK_END = "📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504\n🛡️ 90-day warranty · 🚶 Walk-ins welcome"
 
 out = ["# Captions for every video",
        "",
@@ -29,7 +29,7 @@ for v in data["videos"]:
         line, "INSTAGRAM REELS (caption)", line,
         v["caption"], "", *SHOP, "", tags, "",
         line, "FACEBOOK REELS (description)", line,
-        v["caption"], "", "Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.",
+        v["caption"], "", "Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance, CA 90504.",
         "📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed",
         "🛡️ 90-day warranty on every repair", "", "#phonerepair #torrance #southbay", "",
         line, "YOUTUBE SHORTS", line,
@@ -39,7 +39,7 @@ for v in data["videos"]:
             "**TikTok**", "```", v["caption"], "", TIKTOK_END, "", tags, "```",
             "**Instagram Reels**", "```", v["caption"], "", *SHOP, "", tags, "```",
             "**Facebook Reels**", "```", v["caption"], "",
-            "Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.",
+            "Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance, CA 90504.",
             "📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed",
             "🛡️ 90-day warranty on every repair", "", "#phonerepair #torrance #southbay", "```",
             "**YouTube Shorts**", "",
