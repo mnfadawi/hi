@@ -2138,3 +2138,53 @@ Thank you, South Bay 🧡 To everyone in Torrance, Redondo Beach, Hermosa Beach,
 
 #thankyou #southbay #supportlocal #smallbusiness #phoneelectrik #torrance #phonerepair #shorts
 ```
+
+## 43-holiday-travel.mp4: Traveling this week? Don't let your phone die
+
+**TikTok**
+```
+Heading out to see family this week? 🚗✈️ Don't get stuck with a dying battery, a charger that only works at an angle, or a cracked screen. Most repairs are done while you wait, and we've got power banks, car chargers and cables too. Walk in before your trip. Where are you headed? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd, Torrance · 🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#holidaytravel #roadtrip #phonebattery #powerbank #phoneelectrik #torrance #southbay #phonerepair
+```
+**Instagram Reels**
+```
+Heading out to see family this week? 🚗✈️ Don't get stuck with a dying battery, a charger that only works at an angle, or a cracked screen. Most repairs are done while you wait, and we've got power banks, car chargers and cables too. Walk in before your trip. Where are you headed? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#holidaytravel #roadtrip #phonebattery #powerbank #phoneelectrik #torrance #southbay #phonerepair
+```
+**Facebook Reels**
+```
+Heading out to see family this week? 🚗✈️ Don't get stuck with a dying battery, a charger that only works at an angle, or a cracked screen. Most repairs are done while you wait, and we've got power banks, car chargers and cables too. Walk in before your trip. Where are you headed? 👇
+
+Come see us at Phone ElectriK: 3025 Artesia Blvd STE 101, Torrance.
+📞 Call or text (323) 348-6756 · Open 7 days · No appointment needed
+🛡️ 90-day warranty on every repair
+
+#phonerepair #torrance #southbay
+```
+**YouTube Shorts**
+
+Title:
+```
+Traveling this week? Don't let your phone die #shorts
+```
+Description:
+```
+Heading out to see family this week? 🚗✈️ Don't get stuck with a dying battery, a charger that only works at an angle, or a cracked screen. Most repairs are done while you wait, and we've got power banks, car chargers and cables too. Walk in before your trip. Where are you headed? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#holidaytravel #roadtrip #phonebattery #powerbank #phoneelectrik #torrance #southbay #phonerepair #shorts
+```

@@ -1609,6 +1609,50 @@
           "seconds": 2.2
         }
       ]
+    },
+    {
+      "id": "43-holiday-travel",
+      "title": "Traveling this week? Don't let your phone die",
+      "caption": "Heading out to see family this week? 🚗✈️ Don't get stuck with a dying battery, a charger that only works at an angle, or a cracked screen. Most repairs are done while you wait, and we've got power banks, car chargers and cables too. Walk in before your trip. Where are you headed? 👇",
+      "tags": "#holidaytravel #roadtrip #phonebattery #powerbank",
+      "slides": [
+        {
+          "type": "hook",
+          "text": "Traveling this week? Don't let your phone *die*",
+          "seconds": 1.8
+        },
+        {
+          "type": "text",
+          "text": "Battery dying *fast?*",
+          "sub": "Most batteries replaced while you wait.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "text": "Charger only works at an *angle?*",
+          "sub": "We fix or replace charging ports.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "text": "Cracked screen before the *family photos?*",
+          "sub": "Most screens replaced while you wait.",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "GRAB BEFORE YOU GO",
+          "text": "*Power banks*, car chargers & cables",
+          "seconds": 1.6
+        },
+        {
+          "type": "text",
+          "label": "DON'T WAIT",
+          "text": "Walk in *before* your trip",
+          "sub": "No appointment needed.",
+          "seconds": 2.2
+        }
+      ]
     }
   ]
 }
