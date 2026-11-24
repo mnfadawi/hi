@@ -2,52 +2,127 @@
  "id": "44-mohammed-fix-it",
  "source": "raw/44-mohammed.mov",
  "start": 0.5,
- "end": 55.6,
+ "end": 57.1,
  "captions": [
   [
-   0.5,
-   2.3,
+   0.8,
+   2.2,
    "Is this your *phone* right now?"
   ],
   [
-   2.3,
+   2.2,
    3.6,
    "*Cracked* screen?"
   ],
   [
-   3.6,
+   3.8,
+   5.2,
+   "Don't buy a *new phone!*"
+  ],
+  [
+   5.3,
+   6.1,
+   "*Fix it.*"
+  ],
+  [
+   6.1,
    7.8,
-   "Don't buy a new phone. *Fix it.* It's *cheaper.*"
+   "It is *cheaper.*"
   ],
   [
-   7.8,
-   13.0,
-   "Keep your *info, photos, contacts* & everything"
+   7.9,
+   10.0,
+   "You keep your *info,*"
   ],
   [
-   13.0,
+   10.1,
+   12.4,
+   "your *photos,* your *contacts* and everything,"
+  ],
+  [
+   12.4,
+   14.4,
+   "and you don't have to *transfer* it."
+  ],
+  [
+   14.4,
+   17.0,
+   "You don't even have to sit there *for hours,*"
+  ],
+  [
+   17.0,
+   20.8,
+   "having two phones *next to each other*"
+  ],
+  [
+   20.9,
    24.4,
-   "No hours of *transferring data* to a new phone"
+   "and waiting for everything to *transfer* and stuff like that."
   ],
   [
-   24.4,
+   24.6,
+   27.6,
+   "Within *20 minutes* on most phones,"
+  ],
+  [
+   27.7,
+   31.6,
+   "if not, at least minimum *one hour* if it's a phone screen."
+  ],
+  [
+   32.1,
+   34.8,
+   "We can get it done, get it done *right,*"
+  ],
+  [
+   35.0,
+   37.5,
+   "then *while you're waiting.*"
+  ],
+  [
+   37.6,
    40.5,
-   "Most repairs done *while you wait*"
+   "And most repairs are done *while you wait.*"
   ],
   [
-   41.4,
-   46.0,
-   "Mohammed · *Phone ElectriK* · Artesia & Crenshaw, Torrance"
+   41.5,
+   42.9,
+   "I'm *Mohammed Fadawi*"
   ],
   [
-   46.0,
+   42.9,
+   44.2,
+   "from *Phone ElectriK.*"
+  ],
+  [
+   44.2,
+   46.2,
+   "We are on *Artesia and Crenshaw,*"
+  ],
+  [
+   46.2,
+   49.6,
+   "and we are here *open seven days a week.*"
+  ],
+  [
    49.8,
-   "Open *7 days a week*"
+   51.6,
+   "We are *here for you* guys."
   ],
   [
-   49.8,
-   55.6,
-   "*We're here for you.* Come see us!"
+   51.6,
+   54.5,
+   "Come see us at *Phone ElectriK* in Torrance."
+  ],
+  [
+   54.5,
+   56.2,
+   "*Thank you* so much."
+  ],
+  [
+   56.2,
+   57.1,
+   "Goodbye!"
   ]
  ]
 }
