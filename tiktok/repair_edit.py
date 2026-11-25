@@ -137,16 +137,16 @@ def piece(src, seg, W, H, wide, tmp, idx, tag):
         else:
             geo = f"scale={W}:{H}"
     else:
-        cw = seg.get("cw", 540)  # a little tighter than full height, so the phone fills more of the screen
-        ch = int(cw * 16 / 9)
-        cx = min(max(seg.get("cx", 960), cw / 2), 1920 - cw / 2)
-        cy = min(max(seg.get("cy", 640), ch / 2), 1080 - ch / 2)
-        geo = f"crop={cw}:{ch}:{int(cx - cw / 2)}:{int(cy - ch / 2)},scale={W}:{H}:flags=lanczos"
-    amb = seg.get("ambient", 0.25)
+        geo = None  # framed layout, built below
+    amb = seg.get("ambient", 0.15)
     out = os.path.join(tmp, f"p{idx:02d}.mp4")
     ff("-ss", str(a), "-to", str(b), "-i", src, "-i", ovl, "-i", tag, "-i", vwav,
        "-filter_complex",
-       f"[0:v]setpts=PTS/{speed},fps={mv.FPS},{geo},setsar=1[v0];[v0][1:v]overlay=0:0[v1];[v1][2:v]overlay=0:0[v];"
+       (f"[0:v]setpts=PTS/{speed},fps={mv.FPS},{geo},setsar=1[v0];" if geo else
+        f"[0:v]setpts=PTS/{speed},fps={mv.FPS},split[s1][s2];"
+        f"[s1]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},boxblur=40:3,eq=brightness=-0.18:saturation=0.8[bg];"
+        f"[s2]scale={W}:-2:flags=lanczos[fg];[bg][fg]overlay=0:(H-h)/2,setsar=1[v0];")
+       + "[v0][1:v]overlay=0:0[v1];[v1][2:v]overlay=0:0[v];"
        f"[0:a]{atempo(speed)},volume={amb},aresample={SR},apad[amb];[3:a]volume=1.6[vo];"
        f"[amb][vo]amix=inputs=2:duration=longest:normalize=0,atrim=0:{dur:.3f},aresample=44100[a]",
        "-map", "[v]", "-map", "[a]", "-t", f"{dur:.3f}", "-c:v", "libx264", "-preset", "medium", "-crf", "21",
@@ -167,13 +167,18 @@ def card_piece(png, seconds, say, tmp, idx):
     return out
 
 
-def join(parts, out):
-    lst = out + ".txt"
+def join(parts, out, tmp, music_vol=0.16):
+    import music
+    lst = os.path.join(tmp, "list.txt")
     open(lst, "w").write("".join(f"file '{p}'\n" for p in parts))
-    ff("-f", "concat", "-safe", "0", "-i", lst, "-c:v", "libx264", "-preset", "medium", "-crf", "22",
-       "-pix_fmt", "yuv420p", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11,aresample=44100",
-       "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", out)
-    os.remove(lst)
+    total = sum(float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p],
+                                     capture_output=True, text=True).stdout) for p in parts)
+    bed = music.make(total, os.path.join(tmp, "music.wav"))
+    ff("-f", "concat", "-safe", "0", "-i", lst, "-i", bed,
+       "-filter_complex", f"[1:a]volume={music_vol}[m];[0:a][m]amix=inputs=2:duration=first:normalize=0,"
+       "loudnorm=I=-14:TP=-1.5:LRA=11,aresample=44100[a]",
+       "-map", "0:v", "-map", "[a]", "-c:v", "libx264", "-preset", "medium", "-crf", "23",
+       "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", out)
 
 
 def build(plan, video, src, wide):
@@ -200,9 +205,10 @@ def build(plan, video, src, wide):
         else:
             img = mv.background(0); mv.render_slide(img, dict(end, seconds=3.5), 5, 0, 1, "")
             img.convert("RGB").save(png)
-        parts.append(card_piece(png, 3.5, None, tmp, 99))
+        if video.get("end_card", True):
+            parts.append(card_piece(png, 3.5, None, tmp, 99))
         out = os.path.join(mv.OUT, video["id"] + ".mp4")
-        join(parts, out)
+        join(parts, out, tmp, video.get("music", 0.16))
         print("made", os.path.relpath(out, mv.ROOT))
 
 

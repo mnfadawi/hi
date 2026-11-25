@@ -1750,26 +1750,10 @@
       "source": "clips/17pro-screen.json"
     },
     {
-      "id": "47-iphone17pro-before-after",
-      "title": "iPhone 17 Pro: broken screen to good as new",
-      "caption": "This iPhone 17 Pro came in broken… and left good as new 📱✨ Most repairs are done while you wait. Would you fix it or buy a new one? 👇",
-      "tags": "#iphone17pro #beforeandafter #screenrepair #iphonerepair",
-      "slides": [],
-      "source": "clips/17pro-screen.json"
-    },
-    {
-      "id": "48-iphone17pro-in-60-seconds",
-      "title": "iPhone 17 Pro screen replacement in under 60 seconds",
-      "caption": "iPhone 17 Pro screen replacement in under 60 seconds ⏱️🔧 Real repair from our shop in Torrance. Follow for more!",
-      "tags": "#iphone17pro #screenreplacement #satisfying #iphonerepair",
-      "slides": [],
-      "source": "clips/17pro-screen.json"
-    },
-    {
-      "id": "49-iphone17pro-fix-dont-replace",
-      "title": "Broken iPhone 17 Pro? Don't replace it, fix it",
-      "caption": "Broken screen on your iPhone 17 Pro? Don't buy a new phone. Fix it 🔧 It usually costs way less, you keep your photos, info and apps, and most repairs are done while you wait. Would you fix it or replace it? 👇",
-      "tags": "#iphone17pro #fixdontreplace #savemoney #phonerepair",
+      "id": "47-iphone17pro-teaser",
+      "title": "This iPhone 17 Pro came in broken… will it turn back on?",
+      "caption": "This iPhone 17 Pro came in with a broken screen 😬 We opened it up, took out the broken screen, put in a brand-new one… but did it turn back on? 👀 Watch the full repair on our YouTube: Phone ElectriK (link in bio) 🔧",
+      "tags": "#iphone17pro #screenrepair #iphonerepair #phonerepair",
       "slides": [],
       "source": "clips/17pro-screen.json"
     }
