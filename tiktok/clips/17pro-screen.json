@@ -1,0 +1,364 @@
+{
+ "source": "raw/17pro-screen.mov",
+ "videos": [
+  {
+   "id": "46-iphone17pro-full-youtube",
+   "kind": "long",
+   "parts": [
+    {
+     "from": 0.5,
+     "to": 4.5,
+     "zoom": [
+      968,
+      724,
+      820
+     ],
+     "label": "BEFORE",
+     "text": "iPhone 17 Pro with a *broken screen*",
+     "voice": "This iPhone 17 Pro came in with a broken screen. Let's fix it."
+    },
+    {
+     "from": 579,
+     "to": 584,
+     "zoom": [
+      824,
+      740,
+      900
+     ],
+     "label": "AFTER",
+     "text": "*Good as new*",
+     "voice": "Here's how it turned out."
+    },
+    {
+     "card": true,
+     "seconds": 2.6,
+     "lines": [
+      [
+       "iPhone 17 Pro *Screen Replacement*",
+       "Black",
+       96,
+       "white"
+      ],
+      [
+       "Phone ElectriK · Torrance, CA",
+       "SemiBold",
+       48,
+       "muted"
+      ]
+     ],
+     "voice": "iPhone 17 Pro screen replacement, at Phone ElectriK in Torrance."
+    },
+    {
+     "from": 0,
+     "to": 28,
+     "speed": 2,
+     "label": "STEP 1",
+     "text": "Remove the *bottom screws* & loosen the screen",
+     "voice": "Step one. Remove the bottom screws, and loosen the screen."
+    },
+    {
+     "from": 28,
+     "to": 62,
+     "speed": 2,
+     "label": "STEP 2",
+     "text": "Carefully *open the phone*",
+     "voice": "Step two. Carefully open the phone."
+    },
+    {
+     "from": 62,
+     "to": 160,
+     "speed": 3,
+     "label": "STEP 3",
+     "text": "Disconnect & remove the *broken screen*",
+     "voice": "Step three. Disconnect, and remove the broken screen."
+    },
+    {
+     "from": 160,
+     "to": 186,
+     "speed": 4,
+     "ambient": 0,
+     "label": "STEP 4",
+     "text": "Install the *new screen*",
+     "voice": "Step four. Install the new screen."
+    },
+    {
+     "from": 186,
+     "to": 470,
+     "speed": 4,
+     "label": "STEP 4",
+     "text": "Install the *new screen*"
+    },
+    {
+     "from": 470,
+     "to": 520,
+     "speed": 2,
+     "label": "STEP 5",
+     "text": "Close it up & *power on*",
+     "voice": "Step five. Close it up, and power it on."
+    },
+    {
+     "from": 520,
+     "to": 530,
+     "zoom": [
+      690,
+      780,
+      1000
+     ],
+     "label": "IT'S ALIVE",
+     "text": "There's the *Apple logo!*",
+     "voice": "And there's the Apple logo."
+    },
+    {
+     "from": 530,
+     "to": 548,
+     "speed": 3,
+     "label": "STEP 6",
+     "text": "Final *check* inside"
+    },
+    {
+     "from": 563,
+     "to": 588,
+     "zoom": [
+      880,
+      720,
+      1100
+     ],
+     "label": "TESTING",
+     "text": "Display & touch *working perfectly*",
+     "voice": "Testing the display and touch. Working perfectly."
+    },
+    {
+     "from": 588,
+     "to": 615,
+     "speed": 3,
+     "label": "STEP 7",
+     "text": "Screws back in. *Done!*",
+     "voice": "Screws back in, and done."
+    },
+    {
+     "card": true,
+     "seconds": 3.2,
+     "logo": false,
+     "lines": [
+      [
+       "*Subscribe* for more real repairs",
+       "Black",
+       96,
+       "white"
+      ],
+      [
+       "New repairs from our shop in Torrance, CA",
+       "SemiBold",
+       48,
+       "muted"
+      ]
+     ],
+     "voice": "If you like watching phones come back to life, subscribe for more real repairs."
+    }
+   ]
+  },
+  {
+   "id": "47-iphone17pro-before-after",
+   "kind": "short",
+   "parts": [
+    {
+     "from": 0.5,
+     "to": 4.5,
+     "cx": 968,
+     "text": "This iPhone 17 Pro came in *broken*",
+     "voice": "This iPhone 17 Pro came in with a broken screen.",
+     "cy": 740
+    },
+    {
+     "from": 28,
+     "to": 470,
+     "speed": 40,
+     "cx": 760,
+     "ambient": 0,
+     "label": "A FEW MINUTES LATER",
+     "text": "New screen *going in*",
+     "cy": 860
+    },
+    {
+     "from": 520,
+     "to": 529,
+     "cx": 690,
+     "text": "There's the *Apple logo!*",
+     "voice": "And there's the Apple logo.",
+     "cy": 880
+    },
+    {
+     "from": 565,
+     "to": 583,
+     "cx": 860,
+     "label": "AFTER",
+     "text": "*Good as new*",
+     "voice": "Good as new. Done while the customer waited.",
+     "cy": 780
+    },
+    {
+     "card": true,
+     "seconds": 2.4,
+     "lines": [
+      [
+       "Cracked screen? *We fix it while you wait.*",
+       "Black",
+       84,
+       "white"
+      ]
+     ],
+     "voice": "Cracked screen? We fix it while you wait."
+    }
+   ]
+  },
+  {
+   "id": "48-iphone17pro-in-60-seconds",
+   "kind": "short",
+   "parts": [
+    {
+     "from": 0.5,
+     "to": 4,
+     "cx": 968,
+     "text": "iPhone 17 Pro screen replacement *in under 60 seconds*",
+     "voice": "iPhone 17 Pro screen replacement, in under sixty seconds.",
+     "cy": 740
+    },
+    {
+     "from": 4,
+     "to": 28,
+     "speed": 8,
+     "cx": 900,
+     "label": "STEP 1",
+     "text": "Remove the *bottom screws*",
+     "voice": "Remove the bottom screws.",
+     "cy": 740
+    },
+    {
+     "from": 28,
+     "to": 62,
+     "speed": 8,
+     "cx": 920,
+     "label": "STEP 2",
+     "text": "Open the *phone*",
+     "voice": "Open the phone."
+    },
+    {
+     "from": 62,
+     "to": 160,
+     "speed": 14,
+     "cx": 920,
+     "label": "STEP 3",
+     "text": "Remove the *broken screen*",
+     "voice": "Remove the broken screen."
+    },
+    {
+     "from": 160,
+     "to": 470,
+     "speed": 30,
+     "cx": 760,
+     "ambient": 0,
+     "label": "STEP 4",
+     "text": "Install the *new screen*",
+     "voice": "Install the new screen.",
+     "cy": 860
+    },
+    {
+     "from": 470,
+     "to": 520,
+     "speed": 10,
+     "cx": 760,
+     "label": "STEP 5",
+     "text": "Close it & *power on*",
+     "voice": "Close it up, and power on.",
+     "cy": 860
+    },
+    {
+     "from": 520,
+     "to": 526,
+     "cx": 690,
+     "text": "There's the *Apple logo!*",
+     "voice": "There's the Apple logo.",
+     "cy": 880
+    },
+    {
+     "from": 565,
+     "to": 576,
+     "cx": 860,
+     "label": "TESTING",
+     "text": "Working *perfectly*",
+     "voice": "Working perfectly.",
+     "cy": 780,
+     "speed": 1.3
+    },
+    {
+     "card": true,
+     "seconds": 2.6,
+     "lines": [
+      [
+       "*Follow* for more real repairs",
+       "Black",
+       84,
+       "white"
+      ],
+      [
+       "@phoneelectrik",
+       "SemiBold",
+       54,
+       "muted"
+      ]
+     ],
+     "voice": "Follow for more real repairs."
+    }
+   ]
+  },
+  {
+   "id": "49-iphone17pro-fix-dont-replace",
+   "kind": "short",
+   "parts": [
+    {
+     "from": 0.5,
+     "to": 4.5,
+     "cx": 968,
+     "text": "*Broken screen* on your iPhone 17 Pro?",
+     "voice": "Broken screen on your iPhone 17 Pro?",
+     "cy": 740
+    },
+    {
+     "from": 62,
+     "to": 160,
+     "speed": 12,
+     "cx": 920,
+     "ambient": 0,
+     "text": "Don't buy a *new phone*",
+     "voice": "Don't buy a new phone."
+    },
+    {
+     "from": 186,
+     "to": 470,
+     "speed": 25,
+     "cx": 760,
+     "ambient": 0,
+     "text": "*Fix it.* It usually costs *way less.*",
+     "voice": "Fix it. It usually costs way less.",
+     "cy": 860
+    },
+    {
+     "from": 520,
+     "to": 529,
+     "cx": 690,
+     "text": "You keep your *photos, info & apps*",
+     "voice": "And you keep your photos, info and apps.",
+     "cy": 880
+    },
+    {
+     "from": 565,
+     "to": 583,
+     "cx": 860,
+     "text": "Most repairs done *while you wait*",
+     "voice": "And most repairs are done while you wait.",
+     "cy": 780
+    }
+   ]
+  }
+ ]
+}

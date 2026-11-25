@@ -2553,3 +2553,207 @@ Thank you 🧡 To everyone who follows, subscribes, watches, likes, comments and
 
 #thankyou #followers #supportlocal #smallbusiness #phoneelectrik #torrance #southbay #phonerepair #shorts
 ```
+
+---
+## 46-iphone17pro-full-youtube: iPhone 17 Pro Screen Replacement | Full Repair | Phone ElectriK Torrance
+
+**What's on screen (and what the voice says):**
+
+**Captions for this video:**
+
+```
+VIDEO: 46-iphone17pro-full-youtube.mp4
+TOPIC: iPhone 17 Pro Screen Replacement | Full Repair | Phone ElectriK Torrance
+
+----------------------------------------
+TIKTOK (caption)
+----------------------------------------
+iPhone 17 Pro screen replacement 📱🔧 This iPhone 17 Pro came in with a broken screen. Watch the full repair from start to finish: opening it up, removing the broken screen, installing the new one, and testing. Phone ElectriK in Torrance, most repairs done while you wait. Subscribe for more real repairs from our shop!
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
+🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#iphone17pro #screenreplacement #iphonerepair #phonerepair #phoneelectrik #torrance #southbay
+
+----------------------------------------
+INSTAGRAM REELS (caption)
+----------------------------------------
+iPhone 17 Pro screen replacement 📱🔧 This iPhone 17 Pro came in with a broken screen. Watch the full repair from start to finish: opening it up, removing the broken screen, installing the new one, and testing. Phone ElectriK in Torrance, most repairs done while you wait. Subscribe for more real repairs from our shop!
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#iphone17pro #screenreplacement #iphonerepair #phonerepair #phoneelectrik #torrance #southbay
+
+----------------------------------------
+YOUTUBE SHORTS
+----------------------------------------
+TITLE:
+iPhone 17 Pro Screen Replacement | Full Repair | Phone ElectriK Torrance #shorts
+
+DESCRIPTION:
+iPhone 17 Pro screen replacement 📱🔧 This iPhone 17 Pro came in with a broken screen. Watch the full repair from start to finish: opening it up, removing the broken screen, installing the new one, and testing. Phone ElectriK in Torrance, most repairs done while you wait. Subscribe for more real repairs from our shop!
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#iphone17pro #screenreplacement #iphonerepair #phonerepair #phoneelectrik #torrance #southbay #shorts
+```
+
+---
+## 47-iphone17pro-before-after: iPhone 17 Pro: broken screen to good as new
+
+**What's on screen (and what the voice says):**
+
+**Captions for this video:**
+
+```
+VIDEO: 47-iphone17pro-before-after.mp4
+TOPIC: iPhone 17 Pro: broken screen to good as new
+
+----------------------------------------
+TIKTOK (caption)
+----------------------------------------
+This iPhone 17 Pro came in broken… and left good as new 📱✨ Most repairs are done while you wait. Would you fix it or buy a new one? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
+🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#iphone17pro #beforeandafter #screenrepair #iphonerepair #phoneelectrik #torrance #southbay #phonerepair
+
+----------------------------------------
+INSTAGRAM REELS (caption)
+----------------------------------------
+This iPhone 17 Pro came in broken… and left good as new 📱✨ Most repairs are done while you wait. Would you fix it or buy a new one? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#iphone17pro #beforeandafter #screenrepair #iphonerepair #phoneelectrik #torrance #southbay #phonerepair
+
+----------------------------------------
+YOUTUBE SHORTS
+----------------------------------------
+TITLE:
+iPhone 17 Pro: broken screen to good as new #shorts
+
+DESCRIPTION:
+This iPhone 17 Pro came in broken… and left good as new 📱✨ Most repairs are done while you wait. Would you fix it or buy a new one? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#iphone17pro #beforeandafter #screenrepair #iphonerepair #phoneelectrik #torrance #southbay #phonerepair #shorts
+```
+
+---
+## 48-iphone17pro-in-60-seconds: iPhone 17 Pro screen replacement in under 60 seconds
+
+**What's on screen (and what the voice says):**
+
+**Captions for this video:**
+
+```
+VIDEO: 48-iphone17pro-in-60-seconds.mp4
+TOPIC: iPhone 17 Pro screen replacement in under 60 seconds
+
+----------------------------------------
+TIKTOK (caption)
+----------------------------------------
+iPhone 17 Pro screen replacement in under 60 seconds ⏱️🔧 Real repair from our shop in Torrance. Follow for more!
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
+🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#iphone17pro #screenreplacement #satisfying #iphonerepair #phoneelectrik #torrance #southbay #phonerepair
+
+----------------------------------------
+INSTAGRAM REELS (caption)
+----------------------------------------
+iPhone 17 Pro screen replacement in under 60 seconds ⏱️🔧 Real repair from our shop in Torrance. Follow for more!
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#iphone17pro #screenreplacement #satisfying #iphonerepair #phoneelectrik #torrance #southbay #phonerepair
+
+----------------------------------------
+YOUTUBE SHORTS
+----------------------------------------
+TITLE:
+iPhone 17 Pro screen replacement in under 60 seconds #shorts
+
+DESCRIPTION:
+iPhone 17 Pro screen replacement in under 60 seconds ⏱️🔧 Real repair from our shop in Torrance. Follow for more!
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#iphone17pro #screenreplacement #satisfying #iphonerepair #phoneelectrik #torrance #southbay #phonerepair #shorts
+```
+
+---
+## 49-iphone17pro-fix-dont-replace: Broken iPhone 17 Pro? Don't replace it, fix it
+
+**What's on screen (and what the voice says):**
+
+**Captions for this video:**
+
+```
+VIDEO: 49-iphone17pro-fix-dont-replace.mp4
+TOPIC: Broken iPhone 17 Pro? Don't replace it, fix it
+
+----------------------------------------
+TIKTOK (caption)
+----------------------------------------
+Broken screen on your iPhone 17 Pro? Don't buy a new phone. Fix it 🔧 It usually costs way less, you keep your photos, info and apps, and most repairs are done while you wait. Would you fix it or replace it? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
+🛡️ 90-day warranty · 🚶 Walk-ins welcome
+
+#iphone17pro #fixdontreplace #savemoney #phonerepair #phoneelectrik #torrance #southbay
+
+----------------------------------------
+INSTAGRAM REELS (caption)
+----------------------------------------
+Broken screen on your iPhone 17 Pro? Don't buy a new phone. Fix it 🔧 It usually costs way less, you keep your photos, info and apps, and most repairs are done while you wait. Would you fix it or replace it? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+
+#iphone17pro #fixdontreplace #savemoney #phonerepair #phoneelectrik #torrance #southbay
+
+----------------------------------------
+YOUTUBE SHORTS
+----------------------------------------
+TITLE:
+Broken iPhone 17 Pro? Don't replace it, fix it #shorts
+
+DESCRIPTION:
+Broken screen on your iPhone 17 Pro? Don't buy a new phone. Fix it 🔧 It usually costs way less, you keep your photos, info and apps, and most repairs are done while you wait. Would you fix it or replace it? 👇
+
+📍 Phone ElectriK · 3025 Artesia Blvd STE 101, Torrance, CA 90504
+📞 Call or text (323) 348-6756
+🕘 Mon–Sat 9AM–8PM · Sun 10AM–6PM
+🚶 No appointment needed · 🛡️ 90-day warranty on every repair
+🌐 phoneelectrik.com
+
+#iphone17pro #fixdontreplace #savemoney #phonerepair #phoneelectrik #torrance #southbay #shorts
+```
